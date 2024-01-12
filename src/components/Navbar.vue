@@ -7,7 +7,7 @@
           <div class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
             <ul class="flex md:flex-row flex-col md:items-center md:gap-[3vw] gap-8">
               <li>
-                <a class="hover:text-orange-500 font-semibold" href="">Home</a>
+               <router-link to="/" class="hover:text-orange-500 font-semibold" href="">Home</router-link>
               </li>
               <li class="service-dropdown relative">
                 <a class="hover:text-orange-500 font-semibold" href="">
@@ -15,7 +15,7 @@
                     <span class="dropdown-arrow"></span>
                 </a>
                 <div class="nav-link-submenu">
-                    <a href="#">Submenu</a>
+                    <router-link to="/services">Nikah</router-link>
                     <a href="#">Submenu</a>
                 </div>
               </li>

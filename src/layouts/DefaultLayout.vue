@@ -4,7 +4,10 @@
      <Navbar/>
     </header>
     <main> 
-      <slot /> <!-- This is where the page content will be rendered -->
+      <div class="py-[70px]">
+           <slot /> <!-- This is where the page content will be rendered -->
+      </div>
+   
     </main>
     
       <!-- Footer content -->
