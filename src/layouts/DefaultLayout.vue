@@ -1,20 +1,20 @@
 <template>
    <div>
     <header>
-     <Navbar />
+     <Navbar/>
     </header>
-    <main>
-    
+    <main> 
       <slot /> <!-- This is where the page content will be rendered -->
     </main>
-    <footer>
+    
       <!-- Footer content -->
-    </footer>
+      <foot/>
   </div>
 </template>
 
 <script setup lang="ts">
-import Navbar from './Navbar.vue';
+import Navbar from '../components/Navbar.vue';
+import foot from '../components/footer.vue'
 
 
 </script>
