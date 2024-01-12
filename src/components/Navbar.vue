@@ -1,91 +1,77 @@
 <template>
-  <header class="bg-white flex items-center justify-between h-[70px] fixed z-[99] top-0 w-full px-[5%]">
-        <nav class="flex items-center justify-between w-full mx-auto">
-          <div>
-            <img src="../assets/image/common/n1.png" alt="logo" class="h-[50px]">
-          </div>
-          <div class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
-            <ul class="flex md:flex-row flex-col md:items-center md:gap-[3vw] gap-8">
-              <li>
-                <a class="hover:text-orange-500 font-semibold" href="">Home</a>
-              </li>
-              <li class="service-dropdown relative">
-                <a class="hover:text-orange-500 font-semibold" href="">
-                    Services
-                    <span class="dropdown-arrow"></span>
-                </a>
-                <div class="nav-link-submenu">
-                    <a href="#">Submenu</a>
-                    <a href="#">Submenu</a>
-                </div>
-              </li>
-              <li>
-                <a class="hover:text-orange-500 font-semibold" href="">Watch</a>
-              </li>
-              <li>
-                <a class="hover:text-orange-500 font-semibold" href="">Learning Center</a>
-              </li>
-              <li>
-                <a class="hover:text-orange-500 font-semibold" href="">About Us</a>
-              </li>
-              <li>
-                <a class="hover:text-orange-500 font-semibold" href="">Contact</a>
-              </li>
-              <li>
-                <a class="hover:text-orange-500 font-semibold" href="">Event</a>
-              </li>
-              <li>
-                <a class="hover:text-orange-500 font-semibold" href="">More</a>
-              </li>
+  <div class="h-[70px] w-full flex justify-between items-center text-black fixed top-0 z-40 px-[5%] bg-white duration-300 " :class="searchBar==true ? '':'bg-slate-50'" id="navBar">  
+      <div>
+        <img src="/src/assets/image/common/n1.png" alt="" class="h-[50px]">
+      </div> 
+      <div class="flex gap-6 uppercase font-semibold">
+          <router-link to="/" class="py-6 flex items-center">
+              Home
+          </router-link>  
+          <ul class="group cursor-pointer relative ">
+              <a class="py-6 flex items-center">Service</a>
+              <ul class="w-0 group-hover:w-[450px] group-hover:h-auto h-0 p-0 group-hover:p-5 overflow-hidden flex flex-col gap-2 bg-slate-50 absolute top-[101%] rounded-md duration-200">
+                <router-link to="/Shop" class="hover:pl-5 duration-300">Nikha Service</router-link>
+                <li class="hover:pl-5 duration-300">Funeral Service</li>
+                <li class="hover:pl-5 duration-300">New Muslim Service</li>
+                <li class="hover:pl-5 duration-300">Special Needs Service</li>
+                <li class="hover:pl-5 duration-300">Matrimony Service</li>
+              </ul>
+          </ul>
+
+          <ul class="group cursor-pointer relative ">
+            <router-link to="/Shop" class="py-6 flex items-center">Watch</router-link>
+          </ul>
+
+          <ul class="group cursor-pointer relative ">
+            <router-link to="/Clearance" class="py-6 flex items-center">Learning Center</router-link>
+          </ul>
+
+          <ul class="group cursor-pointer relative ">
+            <router-link to="/Contact" class="py-6 flex items-center">About Us</router-link>
+            <ul class="w-0 group-hover:w-[450px] group-hover:h-auto h-0 p-0 group-hover:p-5 overflow-hidden flex flex-col gap-2 bg-slate-50 absolute top-[101%] rounded-md duration-200">
+                <router-link to="/Shop" class="hover:pl-5 duration-300">About Us</router-link>
+                <li class="hover:pl-5 duration-300">Board Of Directors</li>
+                <li class="hover:pl-5 duration-300">Committees</li>
+                <li class="hover:pl-5 duration-300">Team</li>
+                <li class="hover:pl-5 duration-300">Policies</li>
             </ul>
-          </div>
-          <div class="flex items-center gap-6 mx-5">
-            <button class="bg-orange-300 text-white px-6 py-1 rounded-full hover:bg-orange-500">Donation</button>
-            <button class="bg-orange-300 text-white px-6 py-1 rounded-full hover:bg-orange-500">Member</button>
-            <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden" ></ion-icon>
-          </div>
-    
-        </nav>
-    
-      </header>
+          </ul>
+
+          <ul class="group cursor-pointer relative ">
+            <router-link to="/Event" class="py-6 flex items-center">Contact</router-link>
+            <ul class="w-0 group-hover:w-[450px] group-hover:h-auto h-0 p-0 group-hover:p-5 overflow-hidden flex flex-col gap-2 bg-slate-50 absolute top-[101%] rounded-md duration-200">
+                <router-link to="/Shop" class="hover:pl-5 duration-300">Ask Imam</router-link>
+                <li class="hover:pl-5 duration-300">Mashjid Info</li>
+            </ul>
+          </ul>
+
+          <ul class="group cursor-pointer relative ">
+            <router-link to="/Blog" class="py-6 flex items-center">Event</router-link>
+          </ul>
+          <ul class="group cursor-pointer relative ">
+            <router-link to="/Blog" class="py-6 flex items-center">More</router-link>
+            <ul class="w-0 group-hover:w-[450px] group-hover:h-auto h-0 p-0 group-hover:p-5 overflow-hidden flex flex-col gap-2 bg-slate-50 absolute top-[101%] rounded-md duration-200">
+                <router-link to="/Shop">Future Projects</router-link>
+                <li class="hover:pl-5 duration-300">Dua</li>
+                <li class="hover:pl-5 duration-300">Ramadan Special</li>
+                <li class="hover:pl-5 duration-300">Hajj And Umrah</li>
+            </ul>
+          </ul>
+      </div>
+      <div class="flex items-center gap-2 text-white font-bold">
+        <button class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500">Donation</button>
+        <button class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500">Member</button>
+      </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
 
-const props = defineProps({
-  // You can pass any props you want to use in the component
-});
 </script>
 
 <style scoped>
-        .dropdown-arrow {
-          display: inline-block;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 6px 6px 0 6px;
-          border-color: #000 transparent transparent transparent;
-          position: relative;
-          top: -2px;
-          left: 4px;
-        }
-    
-        .service-dropdown:hover .nav-link-submenu {
-          display: block;
-        }
-    
-        .nav-link-submenu {
-          display: none;
-          position: absolute;
-          background-color: #fff;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          z-index: 1;
-        }
-    
-        .nav-link-submenu a {
-          color: #333;
-          padding: 10px;
-          display: block;
-        }
+
+.router-link-active{
+ color: rgb(201, 130, 0);
+}
 </style>
