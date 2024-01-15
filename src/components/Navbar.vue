@@ -10,11 +10,14 @@
           <ul class="group cursor-pointer relative ">
               <a class="py-6 flex items-center">Service</a>
               <ul class="w-0 group-hover:w-[450px] group-hover:h-auto h-0 p-0 group-hover:p-5 overflow-hidden flex flex-col gap-2 bg-slate-50 absolute top-[101%] rounded-md duration-200">
-                <router-link to="/services" class="hover:pl-5 duration-300">Nikha Service</router-link>
-                <li class="hover:pl-5 duration-300">Funeral Service</li>
-                <li class="hover:pl-5 duration-300">New Muslim Service</li>
-                <li class="hover:pl-5 duration-300">Special Needs Service</li>
-                <li class="hover:pl-5 duration-300">Matrimony Service</li>
+                <router-link to="/services/nikah" class="hover:pl-5 duration-300">Nikha Service</router-link>
+                <router-link to="/services/facilities" class="hover:pl-5 duration-300">Facilities Service</router-link>
+                <router-link to="/services/funeral" class="hover:pl-5 duration-300">Funeral Service</router-link>
+                <router-link to="/services/new_muslim" class="hover:pl-5 duration-300">New Muslim Service</router-link>
+                <router-link to="/services/special_needs" class="hover:pl-5 duration-300">Special Needs Service</router-link>
+                <router-link to="/services/matrimony" class="hover:pl-5 duration-300">Matrimony Service</router-link>
+                <router-link to="/services/education" class="hover:pl-5 duration-300">Education Service</router-link>
+              
               </ul>
           </ul>
 
