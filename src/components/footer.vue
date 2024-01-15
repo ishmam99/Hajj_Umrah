@@ -20,7 +20,7 @@
                 <p>Work Hours</p>
             </div>
         </div>
-        <div class="text-sm">
+        <div class="text-sm text-white">
             <h4 class="text-2xl font-semibold py-3">Account</h4>
             <p class="pb-3">Wishlist</p>
             <p class="pb-3">Cart</p>
