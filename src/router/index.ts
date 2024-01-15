@@ -10,9 +10,39 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/services',
-      name: 'services',
-      component: () => import('../views/Services.vue')
+      path: '/services/nikah',
+      name: 'services/nikah',
+      component: () => import('../views/Services/NikahService.vue')
+    },
+    {
+      path: '/services/facilities',
+      name: 'services/facilities',
+      component: () => import('../views/Services/FacilitiesService.vue')
+    },
+    {
+      path: '/services/education',
+      name: 'services/education',
+      component: () => import('../views/Services/EducationService.vue')
+    },
+    {
+      path: '/services/funeral',
+      name: 'services/funeral',
+      component: () => import('../views/Services/FuneralService.vue')
+    },
+    {
+      path: '/services/matrimony',
+      name: 'services/matrimony',
+      component: () => import('../views/Services/MatrimonyService.vue')
+    },
+    {
+      path: '/services/new_muslim',
+      name: 'services/new_muslim',
+      component: () => import('../views/Services/NewMuslimService.vue')
+    },
+    {
+      path: '/services/special_needs',
+      name: 'services/special_needs',
+      component: () => import('../views/Services/SpecialNeedsService.vue')
     },
     {
       path: '/about',
