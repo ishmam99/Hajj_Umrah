@@ -1,7 +1,7 @@
 <template>
-   <div>
+   <div class="w-1/4">
           <p class="font-[750] text-slate-800 py-3 text-lg">More..</p>
-          <div class="bg-white rounded-xl p-5 w-[450px]">
+          <div class="bg-white rounded-xl p-5">
             <div class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

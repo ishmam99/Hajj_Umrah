@@ -27,196 +27,51 @@
           </div>
         </div>
       </div>
-      <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
-        <div class="space-y-8">
-          <Card
-            :headline="'Nikah Policy and Procedure'"
-            :text="'These rules, regulations, and forms are for those who intend to have their Nikah and Marriage conducted at EPIC Masjid'"
-          />
-          <Card
-            :headline="'Overview'"
-            :text="'East Plano Islamic Center (EPIC) offers Nikah Service for Muslims to get married at EPIC. All Nikahs and marriages are officiated by Imam Nadim Bashir or Ustadh Mohamed Baajour if specifically requested by the family and depending on their availability.The families can also invite any approved scholar from outside of EPIC to officiate their marriage This document describes the policies and procedures of hosting nikah service at EPIC'"
-          />
-          <div class="bg-white rounded-xl p-5 w-[800px]">
-            <h1 class="text-3xl underline py-3">Procedure</h1>
-            <div class="px-5">
-              <ul>
-                <li class="list-disc">Submit a nikah request online at</li>
-                <li class="list-disc">https://epicmasjid.org/nikah-services/</li>
+      <div class="bg-gray-100 h-full py-5 mt-10 flex gap-5 px-20 w-full">
+        <div class="space-y-8 w-3/4">
+          <div class="bg-white rounded-xl p-5 w-full">
+            <!-- <h1 class="text-3xl underline py-3">Shahada Service</h1> -->
+            <p>Funeral Services at East Plano Islamic Center (Islamic Digital Lane) were started to cater the needs of DFW Muslim community. It is a not-for-profit community service that provides a range of end-to-end offerings.</p>
+            <p class="py-3">Islamic Digital Lane Funeral Services at Islamic Digital Lane include:</p>
+            <ul class="px-10">
                 <li class="list-disc">
-                  Upload or Attach all necessary documents as described in the policy section above
+                  Body transportation in collaboration with Hughes funeral home
                 </li>
                 <li class="list-disc">
-                  The system will send an acknowledgment email to the submitter. Please keep it for
-                  record purposes
-                </li>
-                <li class="list-disc">EPIC operations team will</li>
-                <li class="list-disc">communicate with the person in charge via email or phone</li>
-                <li class="list-disc">
-                  schedule a meeting with the family to go over the program flow and other
-                  requirements
+                  Ghusl (body wash) at masjid premise
                 </li>
                 <li class="list-disc">
-                  Inform the family whether or not the nikah has been approved
+                  Private viewing at masjid
                 </li>
                 <li class="list-disc">
-                  EPIC operations team will also send a form to be filled out by the family members.
-                  This must be filled out as soon as possible
+                  Salat-ul-Janazah (Funeral prayer) at masjid
                 </li>
-              </ul>
-            </div>
+                <li class="list-disc">
+                  Burial in Farmersville
+                </li>
+                <li class="list-disc">
+                  Counselling with religious leadership
+                </li>
+                <li class="list-disc">
+                  Community announcements
+                </li>
+                <li class="list-disc">
+                  Azza and dua facilitation after general congregations
+                </li>
+            </ul>
+            <p class="py-3"><span class="font-semibold text-yellow-600">Please Note: </span>Islamic Digital Lane Funeral Service utilizes one of the nearest cemeteries in the area.</p>
+            <ul class="pl-10 text-blue-600">
+              <li class="list-disc">Farmersville Cemetery</li>
+            </ul>
           </div>
-          <div class="bg-white rounded-xl p-5 w-[800px]">
-            <h1 class="text-3xl underline py-3">Policy</h1>
-            <div class="px-5">
-              The following are the policies for hosting Nikah Service at EPIC
-
-              <ul>
-                <li class="list-disc">
-                  All rules and policies must be followed. A refusal of any type could lead to a
-                  termination of the program.
-                </li>
-                <li class="list-disc">
-                  Only prepacked sweets can be distributed to the guests for take along from the
-                  lobby area, no breakfast, lunch, or dinner.
-                </li>
-                <li class="list-disc">
-                  Modest attire for ALL GUESTS AND PARTICIPANTS (Muslim or Non-Muslim) and hired
-                  photographers are REQUIRED. ANYONE VIOLATING THIS RULE WILL BE ASKED
-                </li>
-                <li class="list-disc">TO LEAVE THE PREMISES. NO EXCEPTIONS. Violations include</li>
-                <li class="list-disc">Transparent and see-through clothing and</li>
-                <li class="list-disc">Skirts Music / Nasheed is strictly prohibited.</li>
-                <li class="list-disc">Men and women will be seated separately</li>
-                <li class="list-disc">
-                  The start and end times of the event will be strictly enforced
-                </li>
-                <li class="list-disc">Only partitions provided by EPIC are allowed.</li>
-                <li class="list-disc">
-                  Any cultural or banquet hall practices, such as flower curtains, formal entrances,
-                  and men and women gathering at entrances or lobby areas, will not be allowed under
-                  any circumstances.
-                </li>
-                <li class="list-disc">
-                  EPIC reserves the right to refuse service with or without reason.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl p-5 w-[800px]">
-            <h1 class="text-3xl underline font-bold text-gray-700 py-3">Nikah Service Request</h1>
-            <p>
-              Please fill out this form to request for Nikah Service at EPIC. Please select a date
-              when you would like to have the Nikah Service Performed. The date is not final until
-              approved by EPIC administration.
-            </p>
-            <div class="py-5 space-y-7 mt-5">
-              <div class="flex w-full gap-5">
-                <div class="relative mb-3 w-full">
-                  <input
-                    type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                    id="exampleFormControlInput50"
-                    value=""
-                  />
-                  <label
-                    for="exampleFormControlInput50"
-                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                    >First Name <span class="text-red-500">*</span>
-                  </label>
-                </div>
-                <div class="relative mb-3 w-full">
-                  <input
-                    type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                    id="exampleFormControlInput50"
-                    value=""
-                  />
-                  <label
-                    for="exampleFormControlInput50"
-                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                    >Last Name <span class="text-red-500">*</span>
-                  </label>
-                </div>
-              </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Email <span class="text-red-500">*</span>
-                </label>
-              </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Phone Number <span class="text-red-500">*</span>
-                </label>
-              </div>
-            </div>
-            <div class="flex gap-5">
-              <div>
-                <p class="text-2xl font-bold text-slate-800">
-                  Nikah Service Request Date <span class="text-red-500">*</span>
-                </p>
-                <input
-                  id="datepicker"
-                  class="border-2 border-gray-300 rounded px-3 py-2 w-56"
-                  type="date"
-                  placeholder="Select a date"
-                />
-              </div>
-              <div>
-                <p class="text-2xl font-bold text-slate-800">
-                  Event Timer <span class="text-red-500">*</span>
-                </p>
-                <div class="flex">
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-yellow-500 border-transparent"
-                  />
-                  Duhr
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
-                  />
-                  Asr
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
-                  />
-                  Maghrib
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
-                  />
-                  Ishaa
-                </label>
-                </div>
-              </div>
-            </div>
+          <div class="flex flex-col items-center gap-3 text-center w-full">
+            <img src="/src/assets/image/hero/h1.png" alt="" class="rounded-xl">
+            <p class="text-blue-600"><span class="font-semibold text-black">E-Mail: </span>funeral.services@epicmasjid.org</p>
+            <p class="text-blue-600">Website: https://epicmasjid.org/funeral-services/</p>
+            <p class="text-blue-600"><span class="font-semibold text-black">Address: </span>4700 14th Street Plano TX 75074</p>
           </div>
         </div>
-        <FacilitiesMore />
+       <FacilitiesMore />
       </div>
     </DefaultLayout>
   </div>
@@ -225,7 +80,7 @@
 <script setup>
 import DefaultLayout from '../../layouts/DefaultLayout.vue'
 import Card from '../../components/CardSection.vue'
-import FacilitiesMore from '../../components/FacilitesMore.vue'
+import FacilitiesMore from '../../components/FacilitiesMore.vue'
 </script>
 
 <style lang="scss" scoped></style>

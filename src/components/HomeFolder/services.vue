@@ -5,71 +5,49 @@
         <!-- Responsive Card Layout -->
         <div class="grid grid-cols-4 gap-x-5 gap-y-16">
         <!-- Loop through service items to generate cards -->
-            <div
-                v-for="service in services"
-                :key="service.id"
-                class="bg-white rounded-2xl shadow-2xl p-12 pt-14 border border-white h-full flex flex-col items-center uppercase text-center relative"
-                >
-                <img
-                    src="/src/assets/image/home/s1.png"
-                    alt="logo 1"
-                    class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"
-                />
-                <h2 class="font-bold mb-2">{{ service.title }}</h2>
-                <p class="text-gray-600 text-sm">{{ service.description }}</p>
+            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                <img src="/src/assets/image/home/s1.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
+                <h2 class="font-bold mb-2">SCHOLARS</h2>
+                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                <img src="/src/assets/image/home/s2.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
+                <h2 class="font-bold mb-2">Social Services</h2>
+                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                <img src="/src/assets/image/home/s3.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
+                <h2 class="font-bold mb-2">New Muslim Services</h2>
+                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                <img src="/src/assets/image/home/s4.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
+                <h2 class="font-bold mb-2">Special Needs Services</h2>
+                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                <img src="/src/assets/image/home/s5.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
+                <h2 class="font-bold mb-2">Nikah Services</h2>
+                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                <img src="/src/assets/image/home/s6.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
+                <h2 class="font-bold mb-2">Funeral Service</h2>
+                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                <img src="/src/assets/image/home/s7.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
+                <h2 class="font-bold mb-2">Financial Aid</h2>
+                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                <img src="/src/assets/image/home/s8.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
+                <h2 class="font-bold mb-2">Facilities Services</h2>
+                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
             </div>
         </div>
     </section>
 </template>
 <script setup>
-const services = [
-  {
-    id: 1,
-    title: "Service 1",
-    description: "Description for Service 1",
-    imageUrl: "../../assets/union.png",
-  },
-  {
-    id: 2,
-    title: "Service 2",
-    description: "Description for Service 2",
-    imageUrl: "../../assets/union.png",
-  },
-  {
-    id: 3,
-    title: "Service 3",
-    description: "Description for Service 3",
-    imageUrl: "../../assets/union.png",
-  },
-  {
-    id: 4,
-    title: "Service 4",
-    description: "Description for Service 4",
-    imageUrl: "../../assets/union.png",
-  },
-  {
-    id: 1,
-    title: "Service 1",
-    description: "Description for Service 1",
-    imageUrl: "../../assets/union.png",
-  },
-  {
-    id: 2,
-    title: "Service 2",
-    description: "Description for Service 2",
-    imageUrl: "../../assets/union.png",
-  },
-  {
-    id: 3,
-    title: "Service 3",
-    description: "Description for Service 3",
-    imageUrl: "../../assets/union.png",
-  },
-  {
-    id: 4,
-    title: "Service 4",
-    description: "Description for Service 4",
-    imageUrl: "../../assets/union.png",
-  },
-];
+
 </script>

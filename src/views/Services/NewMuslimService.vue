@@ -27,89 +27,38 @@
           </div>
         </div>
       </div>
-      <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
-        <div class="space-y-8">
-          <Card
-            :headline="'Nikah Policy and Procedure'"
-            :text="'These rules, regulations, and forms are for those who intend to have their Nikah and Marriage conducted at EPIC Masjid'"
-          />
-          <Card
-            :headline="'Overview'"
-            :text="'East Plano Islamic Center (EPIC) offers Nikah Service for Muslims to get married at EPIC. All Nikahs and marriages are officiated by Imam Nadim Bashir or Ustadh Mohamed Baajour if specifically requested by the family and depending on their availability.The families can also invite any approved scholar from outside of EPIC to officiate their marriage This document describes the policies and procedures of hosting nikah service at EPIC'"
-          />
-          <div class="bg-white rounded-xl p-5 w-[800px]">
-            <h1 class="text-3xl underline py-3">Procedure</h1>
-            <div class="px-5">
-              <ul>
-                <li class="list-disc">Submit a nikah request online at</li>
-                <li class="list-disc">https://epicmasjid.org/nikah-services/</li>
+      <div class="bg-gray-100 h-full py-5 mt-10 flex gap-5 px-20 w-full">
+        <div class="space-y-8 w-3/4">
+          <div class="bg-white rounded-xl p-5 w-full">
+            <h1 class="text-3xl underline py-3">Shahada Service</h1>
+            <p>"There is no God but Allah, and Muhammad is his messenger. <br>"The Arabic transliteration of the English phrase above is: "Ashhadu Alla Ilaha Illa Allah Wa Ashhadu Anna Muhammad Ar-Rasulu Allah <br>"This is the basic statement of the Islamic faith. Reciting this statement wholeheartedly and with sincerity in front of witnesses is all that anyone needs to do to become a Muslim. The Shahadah is the first of the Five Pillars of Islam.</p>
+            <p class="py-3">When a Muslim recites this they proclaim:-</p>
+            <ul class="px-10">
                 <li class="list-disc">
-                  Upload or Attach all necessary documents as described in the policy section above
+                  That Allah is the only God, and that Muhammad is his prophet-
                 </li>
                 <li class="list-disc">
-                  The system will send an acknowledgment email to the submitter. Please keep it for
-                  record purposes
-                </li>
-                <li class="list-disc">EPIC operations team will</li>
-                <li class="list-disc">communicate with the person in charge via email or phone</li>
-                <li class="list-disc">
-                  schedule a meeting with the family to go over the program flow and other
-                  requirements
+                  That they personally accept this as true
                 </li>
                 <li class="list-disc">
-                  Inform the family whether or not the nikah has been approved
+                  That they will obey all the commitments of Islam in their life.
                 </li>
-                <li class="list-disc">
-                  EPIC operations team will also send a form to be filled out by the family members.
-                  This must be filled out as soon as possible
-                </li>
-              </ul>
-            </div>
+            </ul>
+            <p class="py-3">If you are ready to take the Shahada, please fill out this form and the Imam will schedule an appropriate time for you to take the Shahada.</p>
           </div>
-          <div class="bg-white rounded-xl p-5 w-[800px]">
-            <h1 class="text-3xl underline py-3">Policy</h1>
-            <div class="px-5">
-              The following are the policies for hosting Nikah Service at EPIC
-
-              <ul>
-                <li class="list-disc">
-                  All rules and policies must be followed. A refusal of any type could lead to a
-                  termination of the program.
-                </li>
-                <li class="list-disc">
-                  Only prepacked sweets can be distributed to the guests for take along from the
-                  lobby area, no breakfast, lunch, or dinner.
-                </li>
-                <li class="list-disc">
-                  Modest attire for ALL GUESTS AND PARTICIPANTS (Muslim or Non-Muslim) and hired
-                  photographers are REQUIRED. ANYONE VIOLATING THIS RULE WILL BE ASKED
-                </li>
-                <li class="list-disc">TO LEAVE THE PREMISES. NO EXCEPTIONS. Violations include</li>
-                <li class="list-disc">Transparent and see-through clothing and</li>
-                <li class="list-disc">Skirts Music / Nasheed is strictly prohibited.</li>
-                <li class="list-disc">Men and women will be seated separately</li>
-                <li class="list-disc">
-                  The start and end times of the event will be strictly enforced
-                </li>
-                <li class="list-disc">Only partitions provided by EPIC are allowed.</li>
-                <li class="list-disc">
-                  Any cultural or banquet hall practices, such as flower curtains, formal entrances,
-                  and men and women gathering at entrances or lobby areas, will not be allowed under
-                  any circumstances.
-                </li>
-                <li class="list-disc">
-                  EPIC reserves the right to refuse service with or without reason.
-                </li>
-              </ul>
+          
+          <div class="bg-white rounded-xl p-5 w-full">
+            <p class="text-xl font-bold py-5">Are you?<span class="text-red-600">*</span></p>
+            <div class="flex gap-5">
+              <div class="flex items-center gap-2 font-semibold py-2">
+                <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4">
+                <label for="Dhur">Interested in Islam</label>
+              </div>
+              <div class="flex items-center gap-2 font-semibold py-2">
+                <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4">
+                <label for="Asr">Recent revert needing information</label>
+              </div>
             </div>
-          </div>
-          <div class="bg-white rounded-xl p-5 w-[800px]">
-            <h1 class="text-3xl underline font-bold text-gray-700 py-3">Nikah Service Request</h1>
-            <p>
-              Please fill out this form to request for Nikah Service at EPIC. Please select a date
-              when you would like to have the Nikah Service Performed. The date is not final until
-              approved by EPIC administration.
-            </p>
             <div class="py-5 space-y-7 mt-5">
               <div class="flex w-full gap-5">
                 <div class="relative mb-3 w-full">
@@ -149,6 +98,19 @@
                 <label
                   for="exampleFormControlInput50"
                   class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                  >Age <span class="text-red-500">*</span>
+                </label>
+              </div>
+              <div class="relative mb-3 w-full">
+                <input
+                  type="text"
+                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                  id="exampleFormControlInput50"
+                  value=""
+                />
+                <label
+                  for="exampleFormControlInput50"
+                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
                   >Email <span class="text-red-500">*</span>
                 </label>
               </div>
@@ -165,58 +127,48 @@
                   >Phone Number <span class="text-red-500">*</span>
                 </label>
               </div>
+
             </div>
+            <p class="text-xl font-bold pt-5 pb-2">Gender<span class="text-red-600">*</span></p>
             <div class="flex gap-5">
-              <div>
-                <p class="text-2xl font-bold text-slate-800">
-                  Nikah Service Request Date <span class="text-red-500">*</span>
-                </p>
-                <input
-                  id="datepicker"
-                  class="border-2 border-gray-300 rounded px-3 py-2 w-56"
-                  type="date"
-                  placeholder="Select a date"
-                />
+              <div class="flex items-center gap-2 font-semibold py-2">
+                <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4">
+                <label for="Dhur">Male</label>
               </div>
-              <div>
-                <p class="text-2xl font-bold text-slate-800">
-                  Event Timer <span class="text-red-500">*</span>
-                </p>
-                <div class="flex">
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-yellow-500 border-transparent"
-                  />
-                  Duhr
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
-                  />
-                  Asr
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
-                  />
-                  Maghrib
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
-                  />
-                  Ishaa
-                </label>
+              <div class="flex items-center gap-2 font-semibold py-2">
+                <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4">
+                <label for="Asr">Female</label>
+              </div>
+            </div>
+            <p class="text-xl font-bold pt-5 pb-2">Marital Status<span class="text-red-600">*</span></p>
+            <div class="grid grid-cols-2 gap-2">
+                <div class="flex items-center gap-2 font-semibold">
+                  <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4">
+                  <label for="Dhur">Married</label>
                 </div>
-              </div>
+                <div class="flex items-center gap-2 font-semibold">
+                  <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4">
+                  <label for="Asr">Engaged</label>
+                </div>
+                <div class="flex items-center gap-2 font-semibold">
+                  <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4">
+                  <label for="Dhur">Single</label>
+                </div>
+                <div class="flex items-center gap-2 font-semibold">
+                  <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4">
+                  <label for="Asr">Divorced</label>
+                </div>
+            </div>
+            <div>
+              <p class="text-xl font-bold py-5">Any Question or Comments</p>
+              <textarea name="" id="" cols="" rows="4" placeholder="Ex:23" class="w-full p-3 rounded-md shadow-lg border border-black"></textarea>
+            </div>
+            <div class="flex justify-center py-3 ">
+              <button class="w-[350px] h-[45px] rounded-2xl bg-yellow-600 text-white font-bold mx-auto">Apply</button>
             </div>
           </div>
         </div>
-        <FacilitiesMore />
+       <FacilitiesMore />
       </div>
     </DefaultLayout>
   </div>
