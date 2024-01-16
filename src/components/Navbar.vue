@@ -17,7 +17,7 @@
                 <router-link to="/services/new_muslim" class="hover:pl-5 duration-300">New Muslim Service</router-link>
                 <router-link to="/services/special_needs" class="hover:pl-5 duration-300">Special Needs Service</router-link>
                 <router-link to="/services/matrimony" class="hover:pl-5 duration-300">Matrimony Service</router-link>
-                <router-link to="/services/education" class="hover:pl-5 duration-300">Education Service</router-link>
+                <a href="http://islamicdigitallane.com/learning-center" class="hover:pl-5 duration-300">Education Service</a>
                 <a class="hover:pl-5 duration-300">IT Training Services</a>
                 <router-link to="/services/social" class="hover:pl-5 duration-300">Social Services</router-link>
                 <a class="hover:pl-5 duration-300">Financial Aid</a>
@@ -70,6 +70,7 @@
                 <li class="hover:pl-5 duration-300">Ramadan Special</li>
                 <li class="hover:pl-5 duration-300">Hajj And Umrah</li>
                 <li class="hover:pl-5 duration-300">Registration</li>
+                
             </ul>
           </ul>
       </div>
