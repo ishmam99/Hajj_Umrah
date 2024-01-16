@@ -30,7 +30,7 @@
       <div class="bg-gray-100 h-full py-5 mt-10 flex gap-5 px-20 w-full">
         <div class="space-y-8 w-3/4">
           <div class="bg-white rounded-xl p-5 w-full">
-            <!-- <h1 class="text-3xl underline py-3">Shahada Service</h1> -->
+            <h1 class="text-3xl underline py-3">Funeral Services</h1>
             <p>Funeral Services at East Plano Islamic Center (Islamic Digital Lane) were started to cater the needs of DFW Muslim community. It is a not-for-profit community service that provides a range of end-to-end offerings.</p>
             <p class="py-3">Islamic Digital Lane Funeral Services at Islamic Digital Lane include:</p>
             <ul class="px-10">
