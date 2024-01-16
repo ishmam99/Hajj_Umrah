@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[70px] w-full flex justify-between items-center text-black fixed top-0 z-40 px-[5%] bg-white duration-300 " :class="searchBar==true ? '':'bg-slate-50'" id="navBar">  
+  <div class="h-[70px] w-full flex justify-between items-center text-black fixed top-0 z-40 px-[5%] bg-white duration-300">  
       
       <div class="flex items-center gap-6 uppercase text-sm w-full font-semibold">
           <div>
