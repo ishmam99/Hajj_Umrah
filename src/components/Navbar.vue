@@ -18,7 +18,7 @@
                 <router-link to="/services/matrimony" class="hover:pl-5 duration-300">Matrimony Service</router-link>
                 <router-link to="/services/education" class="hover:pl-5 duration-300">Education Service</router-link>
                 <a class="hover:pl-5 duration-300">IT Training Services</a>
-                <a class="hover:pl-5 duration-300">Social Services</a>
+                <router-link to="/services/social" class="hover:pl-5 duration-300">Social Services</router-link>
                 <a class="hover:pl-5 duration-300">Financial Aid</a>
               </ul>
           </ul>
