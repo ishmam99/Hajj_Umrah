@@ -16,7 +16,7 @@ const emits = defineEmits<MenubarRootEmits>()
     v-bind="props"
     :class="
       cn(
-        'flex h-10 items-center space-x-1 rounded-md border border-border p-1',
+        'flex gap-2 h-10 items-center rounded-md border border-border',
         props.class,
       )
     "
