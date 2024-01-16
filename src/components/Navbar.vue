@@ -24,7 +24,13 @@
           </ul>
 
           <ul class="group cursor-pointer relative ">
-            <router-link to="/Shop" class="py-6 flex items-center">Watch</router-link>
+            <router-link to="/Shop" class="py-6 flex items-center">Explore</router-link>
+            <ul class="w-0 group-hover:w-[450px] group-hover:h-auto h-0 p-0 group-hover:p-5 overflow-hidden flex flex-col gap-2 bg-slate-50 absolute top-[101%] rounded-md duration-200">
+                <li class="hover:pl-5 duration-300">Dua</li>
+                <li class="hover:pl-5 duration-300">Quran</li>
+                <li class="hover:pl-5 duration-300">Hadith</li>
+                <li class="hover:pl-5 duration-300">Watch</li>
+            </ul>
           </ul>
 
           <ul class="group cursor-pointer relative ">
@@ -34,7 +40,6 @@
           <ul class="group cursor-pointer relative ">
             <router-link to="/Contact" class="py-6 flex items-center">About Us</router-link>
             <ul class="w-0 group-hover:w-[450px] group-hover:h-auto h-0 p-0 group-hover:p-5 overflow-hidden flex flex-col gap-2 bg-slate-50 absolute top-[101%] rounded-md duration-200">
-                <router-link to="/Shop" class="hover:pl-5 duration-300">About Us</router-link>
                 <li class="hover:pl-5 duration-300">Board Of Directors</li>
                 <li class="hover:pl-5 duration-300">Committees</li>
                 <li class="hover:pl-5 duration-300">Team</li>
@@ -56,8 +61,8 @@
           <ul class="group cursor-pointer relative ">
             <router-link to="/Blog" class="py-6 flex items-center">More</router-link>
             <ul class="w-0 group-hover:w-[450px] group-hover:h-auto h-0 p-0 group-hover:p-5 overflow-hidden flex flex-col gap-2 bg-slate-50 absolute top-[101%] rounded-md duration-200">
-                <router-link to="/Shop">Future Projects</router-link>
-                <li class="hover:pl-5 duration-300">Dua</li>
+                <router-link to="/Shop" class="hover:pl-5 duration-300">Future Projects</router-link>
+                <!-- <li class="hover:pl-5 duration-300">Dua</li> -->
                 <li class="hover:pl-5 duration-300">Ramadan Special</li>
                 <li class="hover:pl-5 duration-300">Hajj And Umrah</li>
             </ul>

@@ -28,192 +28,92 @@
         </div>
       </div>
       <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
-        <div class="space-y-8">
-          <Card
-            :headline="'Nikah Policy and Procedure'"
-            :text="'These rules, regulations, and forms are for those who intend to have their Nikah and Marriage conducted at EPIC Masjid'"
-          />
-          <Card
-            :headline="'Overview'"
-            :text="'East Plano Islamic Center (EPIC) offers Nikah Service for Muslims to get married at EPIC. All Nikahs and marriages are officiated by Imam Nadim Bashir or Ustadh Mohamed Baajour if specifically requested by the family and depending on their availability.The families can also invite any approved scholar from outside of EPIC to officiate their marriage This document describes the policies and procedures of hosting nikah service at EPIC'"
-          />
-          <div class="bg-white rounded-xl p-5 w-[800px]">
-            <h1 class="text-3xl underline py-3">Procedure</h1>
-            <div class="px-5">
-              <ul>
-                <li class="list-disc">Submit a nikah request online at</li>
-                <li class="list-disc">https://epicmasjid.org/nikah-services/</li>
-                <li class="list-disc">
-                  Upload or Attach all necessary documents as described in the policy section above
-                </li>
-                <li class="list-disc">
-                  The system will send an acknowledgment email to the submitter. Please keep it for
-                  record purposes
-                </li>
-                <li class="list-disc">EPIC operations team will</li>
-                <li class="list-disc">communicate with the person in charge via email or phone</li>
-                <li class="list-disc">
-                  schedule a meeting with the family to go over the program flow and other
-                  requirements
-                </li>
-                <li class="list-disc">
-                  Inform the family whether or not the nikah has been approved
-                </li>
-                <li class="list-disc">
-                  EPIC operations team will also send a form to be filled out by the family members.
-                  This must be filled out as soon as possible
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl p-5 w-[800px]">
-            <h1 class="text-3xl underline py-3">Policy</h1>
-            <div class="px-5">
-              The following are the policies for hosting Nikah Service at EPIC
-
-              <ul>
-                <li class="list-disc">
-                  All rules and policies must be followed. A refusal of any type could lead to a
-                  termination of the program.
-                </li>
-                <li class="list-disc">
-                  Only prepacked sweets can be distributed to the guests for take along from the
-                  lobby area, no breakfast, lunch, or dinner.
-                </li>
-                <li class="list-disc">
-                  Modest attire for ALL GUESTS AND PARTICIPANTS (Muslim or Non-Muslim) and hired
-                  photographers are REQUIRED. ANYONE VIOLATING THIS RULE WILL BE ASKED
-                </li>
-                <li class="list-disc">TO LEAVE THE PREMISES. NO EXCEPTIONS. Violations include</li>
-                <li class="list-disc">Transparent and see-through clothing and</li>
-                <li class="list-disc">Skirts Music / Nasheed is strictly prohibited.</li>
-                <li class="list-disc">Men and women will be seated separately</li>
-                <li class="list-disc">
-                  The start and end times of the event will be strictly enforced
-                </li>
-                <li class="list-disc">Only partitions provided by EPIC are allowed.</li>
-                <li class="list-disc">
-                  Any cultural or banquet hall practices, such as flower curtains, formal entrances,
-                  and men and women gathering at entrances or lobby areas, will not be allowed under
-                  any circumstances.
-                </li>
-                <li class="list-disc">
-                  EPIC reserves the right to refuse service with or without reason.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl p-5 w-[800px]">
-            <h1 class="text-3xl underline font-bold text-gray-700 py-3">Nikah Service Request</h1>
+        <div class="space-y-8 w-3/4">
+          <div class="bg-white px-8 py-5 mt-5 gap-5 rounded-lg">
             <p>
-              Please fill out this form to request for Nikah Service at EPIC. Please select a date
-              when you would like to have the Nikah Service Performed. The date is not final until
-              approved by EPIC administration.
+              <span class="font-semibold"
+                >IDL-Masjid presents a new matrimony program to help those in the community wishing
+                to get married</span
+              >. To provide that program, we have partnered with a non-profit that is dedicated to
+              the institution of marriage in the Muslim communities:
+              <a class="text-sky-500" href="https://www.muslimmatrimonynetwork.org/"
+                >Muslim Matrimony Network.</a
+              >
             </p>
-            <div class="py-5 space-y-7 mt-5">
-              <div class="flex w-full gap-5">
-                <div class="relative mb-3 w-full">
-                  <input
-                    type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                    id="exampleFormControlInput50"
-                    value=""
-                  />
-                  <label
-                    for="exampleFormControlInput50"
-                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                    >First Name <span class="text-red-500">*</span>
-                  </label>
-                </div>
-                <div class="relative mb-3 w-full">
-                  <input
-                    type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                    id="exampleFormControlInput50"
-                    value=""
-                  />
-                  <label
-                    for="exampleFormControlInput50"
-                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                    >Last Name <span class="text-red-500">*</span>
-                  </label>
-                </div>
-              </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Email <span class="text-red-500">*</span>
-                </label>
-              </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Phone Number <span class="text-red-500">*</span>
-                </label>
-              </div>
+          </div>
+          <div class="bg-white px-8 py-5 mt-10 gap-5 rounded-lg">
+            <h1 class="text-3xl underline space-y-8">FEES AND PROCESS</h1>
+            <p class="mt-5">
+              Fees are kept minimal to be affordable to everyone. There is a one-time non-refundable
+              $100 registration fee. There are no monthly fees so singles can stay in our database
+              and work with a dedicated matchmaker until they get married. The only requirement to
+              stay is to be serious about marriage and to be responsive.
+            </p>
+            <p class="mt-5">
+              Once there is a match where both parties are interested, the matchmakers will arrange
+              a conference call between the two singles to help them get introduced and ask their
+              most important questions first to establish compatibility for marriage. The
+              matchmakers will be on the conference call with both singles to offer their guidance
+              and support. There is a modest fee of $25 per half hour for the conference calls.
+            </p>
+            <p class="mt-5">
+              If the conference call(s) go well, the singles can move forward to the contact
+              exchange step where the matchmakers will hand it off to the families and continue to
+              get updates from both parties to ensure everything is going in the right direction
+              insha’Allah. There is a modest fee of $100 for the final contact exchange.
+            </p>
+          </div>
+          <div class="bg-white px-8 py-5 mt-10 gap-5 rounded-lg">
+            <h1 class="text-3xl underline space-y-8">TO REGISTER</h1>
+            <p>
+              The first step is to complete the 5 minute registration at:
+              <a class="text-sky-500" href="https://www.muslimmatrimonynetwork.org/"
+                >IDL-Masjid Matrimony Program Registration..</a
+              >
+            </p>
+          </div>
+          <div class="bg-white px-8 py-5 mt-10 gap-5 rounded-lg">
+            <h1 class="text-3xl underline space-y-8">ONCE YOU RESIGTER</h1>
+            <div class="mt-10 ml-2">
+              <ol class="list-decimal list-inside text-l">
+                <li>You will pay the $100 non-refundable registration fee.</li>
+                <li>
+                  After you pay, you will be able to login and finish your marriage profile by
+                  uploading 4-5 pictures and answering a questionnaire.
+                </li>
+                <li>
+                  Once you finish your profile, you can schedule a time with the registration
+                  specialist to go over your profile together.
+                </li>
+                <li>
+                  After that, you will be assigned a dedicated matchmaker to work with. Each month
+                  you can reach out to your matchmaker to go over potentianl matches and provide
+                  your feedback over the phone.
+                </li>
+              </ol>
             </div>
-            <div class="flex gap-5">
-              <div>
-                <p class="text-2xl font-bold text-slate-800">
-                  Nikah Service Request Date <span class="text-red-500">*</span>
-                </p>
-                <input
-                  id="datepicker"
-                  class="border-2 border-gray-300 rounded px-3 py-2 w-56"
-                  type="date"
-                  placeholder="Select a date"
-                />
-              </div>
-              <div>
-                <p class="text-2xl font-bold text-slate-800">
-                  Event Timer <span class="text-red-500">*</span>
-                </p>
-                <div class="flex">
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-yellow-500 border-transparent"
-                  />
-                  Duhr
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
-                  />
-                  Asr
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
-                  />
-                  Maghrib
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
-                  />
-                  Ishaa
-                </label>
-                </div>
-              </div>
-            </div>
+          </div>
+          <div class="bg-white px-8 py-5 mt-10 gap-5 rounded-lg">
+            <p class="italic">
+              <span class="font-semibold text-yellow-600">A Note About Privacy:</span>
+              The system is built around confidentiality so only your matchmaker has your detailed
+              information. Your anonymous profile is shared with other matchmakers and only to
+              clients who are highly qualified. Once there is a match where both parties are
+              interested, the matchmakers help the singles get introduced and determine
+              compatibility for marriage on a conference call. No contact information is shared at
+              this point. After the conference call(s), if both parties want to move forward, they
+              can get the families involved and proceed with contact information exchange
+              insha’Allah. Your matchmaker will be with you through the entire process to provide
+              guidance and advice.
+            </p>
+          </div>
+          <div class="bg-white px-8 py-5 mt-10 gap-5 rounded-lg">
+            <p class="italic">
+              <span class="font-semibold text-yellow-600">Note:</span>
+              IDL-Masjid is providing matrimony services through 3rd party non-profits institutions.
+              Any personal information collected on the form is securely kept with the institutions.
+              For General Inquires Contact: info@muslimmatrimonynetwork.org.
+            </p>
           </div>
         </div>
         <FacilitiesMore />
