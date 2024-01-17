@@ -111,12 +111,35 @@ const router = createRouter({
       component: () => import('../views/Contact/MashjidInfo.vue')
     },
 
+
+
+    {
+      path: '/activity/event',
+      name: 'activity/event',
+      component: () => import('../views/Activity/Event.vue')
+    },
+    {
+      path: '/activity/project',
+      name: 'activity/project',
+      component: () => import('../views/Activity/Project.vue')
+    },
+
+
+    
+    {
+      path: '/volunteer/educate_the_children',
+      name: 'volunteer/educate_the_children',
+      component: () => import('../views/Volunteer/EducateTheChildren.vue')
+    },
+    
+
     
     {
       path: '/more/hajj_and_umrah',
       name: 'more/hajj_and_umrah',
       component: () => import('../views/More/HajjAndUmrah.vue')
-    },{
+    },
+    {
       path: '/more/ramadan_special',
       name: 'more/ramadan_special',
       component: () => import('../views/More/RamadanSpecial.vue')
