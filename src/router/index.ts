@@ -125,11 +125,31 @@ const router = createRouter({
     },
 
 
-    
+
     {
       path: '/volunteer/educate_the_children',
       name: 'volunteer/educate_the_children',
       component: () => import('../views/Volunteer/EducateTheChildren.vue')
+    },
+    {
+      path: '/volunteer/shelter_the_homeless',
+      name: 'volunteer/shelter_the_homeless',
+      component: () => import('../views/Volunteer/ShelterHomeless.vue')
+    },
+    {
+      path: '/volunteer/enhance_social_sustice',
+      name: 'volunteer/enhance_social_sustice',
+      component: () => import('../views/Volunteer/EnhanceSocialJustice.vue')
+    },
+    {
+      path: '/volunteer/feed_the_hungry',
+      name: 'volunteer/feed_the_hungry',
+      component: () => import('../views/Volunteer/FeedTheHungry.vue')
+    },
+    {
+      path: '/volunteer/comfort_the_sick',
+      name: 'volunteer/comfort_the_sick',
+      component: () => import('../views/Volunteer/ComfortTheSick.vue')
     },
     
 
