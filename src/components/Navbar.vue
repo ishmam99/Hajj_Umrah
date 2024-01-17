@@ -119,16 +119,16 @@
                 <router-link to="/volunteer/educate_the_children" class="hover:pl-5 duration-300">Educate The Children</router-link>
               </MenubarItem>
               <MenubarItem>
-                <router-link to="/contact/mashjid_info" class="hover:pl-5 duration-300">Shetler The Homeless</router-link>
+                <router-link to="/volunteer/shelter_the_homeless" class="hover:pl-5 duration-300">Shetler The Homeless</router-link>
               </MenubarItem>
               <MenubarItem>
-                <router-link to="/contact/mashjid_info" class="hover:pl-5 duration-300">Comfort The Sick</router-link>
+                <router-link to="/volunteer/comfort_the_sick" class="hover:pl-5 duration-300">Comfort The Sick</router-link>
               </MenubarItem>
               <MenubarItem>
-                <router-link to="/contact/mashjid_info" class="hover:pl-5 duration-300">Enhance Social Justice</router-link>
+                <router-link to="/volunteer/enhance_social_sustice" class="hover:pl-5 duration-300">Enhance Social Justice</router-link>
               </MenubarItem>
               <MenubarItem>
-                <router-link to="/contact/mashjid_info" class="hover:pl-5 duration-300">Feed The Hungry</router-link>
+                <router-link to="/volunteer/feed_the_hungry" class="hover:pl-5 duration-300">Feed The Hungry</router-link>
               </MenubarItem>
             </MenubarContent>
           </MenubarMenu>
