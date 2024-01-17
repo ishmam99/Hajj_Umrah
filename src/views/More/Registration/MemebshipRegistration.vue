@@ -27,9 +27,9 @@
           </div>
         </div>
       </div>
-      <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
+      <div class="bg-gray-100 h-full py-5 mt-10 flex gap-5 px-20 w-full">
         <div class="space-y-8 w-3/4">
-          <div class="bg-white px-2 py-5 mt-5 gap-5 rounded-lg">
+          <div class="bg-white rounded-xl p-5 w-full">
             <h1 class="text-3xl font-semibold">Masjid Membership Registration</h1>
             <p class="pt-5">
               IDL-Masjid membership is for community members living in Zip Codes: 75074, 75075,
@@ -43,7 +43,7 @@
               </ul>
             </div>
           </div>
-          <div class="bg-white px-2 py-5 pt-5 gap-5 rounded-lg">
+          <div class="bg-white rounded-xl p-5 w-full">
             <h2 class="text-xl font-semibold">ARTICLE VI – MEMBERSHIP</h2>
             <div>
               <p class="pt-5">A. IDL-Masjid membership is open to all Sunni Muslims who:</p>
@@ -111,7 +111,7 @@
               </p>
             </div>
           </div>
-          <div class="bg-white px-2 py-5 pt-2 gap-5 rounded-lg">
+          <div class="bg-white rounded-xl p-5 w-full">
             <p class="text-xl font-bold pt-2 pb-2">
               Membership Type<span class="text-red-600">*</span>
             </p>
@@ -157,83 +157,76 @@
                   </label>
                 </div>
               </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Email <span class="text-red-500">*</span>
-                </label>
+              <div class="flex w-full gap-5">
+                <div class="relative mb-3 w-full">
+                  <input
+                    type="text"
+                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                    id="exampleFormControlInput50"
+                    value=""
+                  />
+                  <label
+                    for="exampleFormControlInput50"
+                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                    >Email <span class="text-red-500">*</span>
+                  </label>
+                </div>
+                <div class="relative mb-3 w-full">
+                  <input
+                    type="text"
+                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                    id="exampleFormControlInput50"
+                    value=""
+                  />
+                  <label
+                    for="exampleFormControlInput50"
+                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                    >Phone Number <span class="text-red-500">*</span>
+                  </label>
+                </div>
               </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Address <span class="text-red-500">*</span>
-                </label>
-              </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >City <span class="text-red-500">*</span>
-                </label>
-              </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >State <span class="text-red-500">*</span>
-                </label>
-              </div>
-              <!-- <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Zip Code <span class="text-red-500">*</span>
-                </label>
-              </div> -->
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Phone Number <span class="text-red-500">*</span>
-                </label>
+              <div class="flex w-full gap-5">
+                <div class="relative mb-3 w-full">
+                  <input
+                    type="text"
+                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                    id="exampleFormControlInput50"
+                    value=""
+                  />
+                  <label
+                    for="exampleFormControlInput50"
+                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                    >Address <span class="text-red-500">*</span>
+                  </label>
+                </div>
+                <div class="flex w-full gap-5">
+                  <div class="relative mb-3 w-full">
+                    <input
+                      type="text"
+                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      id="exampleFormControlInput50"
+                      value=""
+                    />
+                    <label
+                      for="exampleFormControlInput50"
+                      class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                      >City <span class="text-red-500">*</span>
+                    </label>
+                  </div>
+                  <div class="relative mb-3 w-full">
+                    <input
+                      type="text"
+                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      id="exampleFormControlInput50"
+                      value=""
+                    />
+                    <label
+                      for="exampleFormControlInput50"
+                      class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                      >State <span class="text-red-500">*</span>
+                    </label>
+                  </div>
+                </div>
               </div>
               <div class="relative mb-3 w-full">
                 <div class="gap-5">
@@ -241,14 +234,14 @@
                   <div class="pt-2">
                     <input
                       type="date"
-                      class="py-2 px-6 rounded-2xl w-1/2 shadow-lg border border-black"
+                      class="py-2 px-6 rounded-2xl w-full border-2 border-grau-400"
                     />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="bg-white px-2 py-5 pt-0 gap-5 rounded-lg">
+          <div class="bg-white rounded-xl p-5 w-full">
             <div class="w-1/2">
               <p class="text-sm font-semibold">
                 I have donated excess $100 (Family) or $50 (Individual) this year to Masjid
@@ -289,7 +282,7 @@
               </div>
             </div>
           </div>
-          <div class="bg-white px-2 py-5 pt-0 gap-5 rounded-lg">
+          <div class="bg-white rounded-xl p-5 w-full">
             <div class="py-3 flex flex-col gap-5 items-c">
               <p class="text-lg font-bold">Credit Card Details</p>
               <div class="flex gap-10">
