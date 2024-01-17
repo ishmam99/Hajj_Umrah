@@ -9,9 +9,11 @@
               viewBox="0 0 24 24"
               width="16"
               height="16"
-              fill="currentColor">
+              fill="currentColor"
+            >
               <path
-                d="M19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20C20 20.5523 19.5523 21 19 21ZM6 19H18V9.15745L12 3.7029L6 9.15745V19ZM9 9.99998H15V16H9V9.99998ZM11 12V14H13V12H11Z"></path>
+                d="M19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20C20 20.5523 19.5523 21 19 21ZM6 19H18V9.15745L12 3.7029L6 9.15745V19ZM9 9.99998H15V16H9V9.99998ZM11 12V14H13V12H11Z"
+              ></path>
             </svg>
             <p>Home</p>
             <p>/ Services</p>
@@ -163,84 +165,143 @@
                   >Phone Number <span class="text-red-500">*</span>
                 </label>
               </div>
-
             </div>
             <div class="flex gap-10">
               <div class="w-1/2">
-                  <p class="text-xl font-bold py-5">Nikah Service Request Date <span class="text-red-600">*</span></p>
-                  <Calendar v-model="date" class="rounded-md border" />
+                <p class="text-xl font-bold py-5">
+                  Nikah Service Request Date <span class="text-red-600">*</span>
+                </p>
+                <Calendar v-model="date" class="rounded-md border" />
               </div>
               <div class="w-1/2">
                 <div>
-                    <p class="text-xl font-bold py-5">Event Time<span class="text-red-600">*</span></p>
+                  <p class="text-xl font-bold py-5">
+                    Event Time<span class="text-red-600">*</span>
+                  </p>
                   <div class="flex items-center gap-2 font-semibold py-2">
-                    <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4">
+                    <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4" />
                     <label for="Dhur">Dhur</label>
                   </div>
                   <div class="flex items-center gap-2 font-semibold py-2">
-                    <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4">
+                    <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4" />
                     <label for="Asr">Asr</label>
                   </div>
                   <div class="flex items-center gap-2 font-semibold py-2">
-                    <input type="radio" id="Maghreb" name="Event_Time" value="Maghreb" class="h-4 w-4">
+                    <input
+                      type="radio"
+                      id="Maghreb"
+                      name="Event_Time"
+                      value="Maghreb"
+                      class="h-4 w-4"
+                    />
                     <label for="Maghreb">Maghreb</label>
                   </div>
                   <div class="flex items-center gap-2 font-semibold py-2">
-                    <input type="radio" id="Ishaa" name="Event_Time" value="Ishaa" class="h-4 w-4">
+                    <input
+                      type="radio"
+                      id="Ishaa"
+                      name="Event_Time"
+                      value="Ishaa"
+                      class="h-4 w-4"
+                    />
                     <label for="Ishaa">Ishaa</label>
                   </div>
                 </div>
                 <div>
                   <p class="text-xl font-bold py-5">Question or Comments</p>
-                  <textarea name="" id="" cols="" rows="4" placeholder="Ex:23" class="w-full p-3 rounded-md shadow-lg border border-black"></textarea>
+                  <textarea
+                    name=""
+                    id=""
+                    cols=""
+                    rows="4"
+                    placeholder="Ex:23"
+                    class="w-full p-3 rounded-md shadow-lg border border-black"
+                  ></textarea>
                 </div>
-                
               </div>
             </div>
             <div class="flex gap-10">
               <div class="w-1/2">
-                  <p class="text-xl font-bold py-5">Number of Guests Expecteds <span class="text-red-600">*</span></p>
-                  <input type="text" placeholder="Ex:50" class="py-2 px-4 rounded-2xl w-full shadow-lg border border-black">
-                  <div class="flex items-center gap-2 py-2 px-2">
-                    <input type="checkbox" name="" id="">
-                    <label for="" class="text-xs">I agree to <span class="text-blue-600">terms & conditions.</span><span class="text-red-600">*</span></label>
-                  </div>
+                <p class="text-xl font-bold py-5">
+                  Number of Guests Expecteds <span class="text-red-600">*</span>
+                </p>
+                <input
+                  type="text"
+                  placeholder="Ex:50"
+                  class="py-2 px-4 rounded-2xl w-full shadow-lg border border-black"
+                />
+                <div class="flex items-center gap-2 py-2 px-2">
+                  <input type="checkbox" name="" id="" />
+                  <label for="" class="text-xs"
+                    >I agree to <span class="text-blue-600">terms & conditions.</span
+                    ><span class="text-red-600">*</span></label
+                  >
+                </div>
               </div>
-              <div class="w-1/2 ">
+              <div class="w-1/2">
                 <p class="text-xl font-bold py-5">Attach a File</p>
-                <div class="w-full h-[40px] rounded-2xl bg-white px-4 py-2 shadow-lg text-sm text-gray-500 text-center relative border border-black">
-                  <input type="file" name="" id="" class="h-full w-full opacity-0 absolute top-0">
+                <div
+                  class="w-full h-[40px] rounded-2xl bg-white px-4 py-2 shadow-lg text-sm text-gray-500 text-center relative border border-black"
+                >
+                  <input type="file" name="" id="" class="h-full w-full opacity-0 absolute top-0" />
                   Choose File
                 </div>
               </div>
             </div>
             <div class="w-1/2">
-              <p class="text-xl font-bold py-5">Nikah Service <span class="text-red-600">*</span></p>
+              <p class="text-xl font-bold py-5">
+                Nikah Service <span class="text-red-600">*</span>
+              </p>
               <div class="flex items-center gap-2 pb-2">
-                <input type="checkbox" name="" id="">
-                <label for="" class="font-semibold">Nikah Service Fee <span class="text-blue-600">$500</span></label>
+                <input type="checkbox" name="" id="" />
+                <label for="" class="font-semibold"
+                  >Nikah Service Fee <span class="text-blue-600">$500</span></label
+                >
               </div>
               <p class="text-xs text-gray-600">This is a one time fee for Nikah Services.</p>
             </div>
             <div>
-              <div class="flex items-center justify-between text-xl font-bold py-3 border-b border-b-black">
+              <div
+                class="flex items-center justify-between text-xl font-bold py-3 border-b border-b-black"
+              >
                 <p>Total :</p>
                 <p>$500</p>
               </div>
               <div class="py-3 flex flex-col gap-5 items-c">
                 <p class="text-lg font-bold">Credit Card Details</p>
                 <div class="flex gap-10">
-                  <input type="text" placeholder="First Name" class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black">
-                  <input type="text" placeholder="Last Name" class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black"
+                  />
                 </div>
                 <div class="flex gap-10">
-                    <div class="rounded-2xl w-1/2 shadow-lg border border-black flex items-center justify-between px-4">
-                      <input type="text" placeholder="1111 2222 3333 4444 5555" class="py-2 w-1/2 rounded-2xl">
-                      <img src="/src/assets/image/common/ft5.png" alt="" class="h-5">
-                    </div>
-                    <div class="flex gap-5 w-1/2">
-                      <input type="date" class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black">
-                      <input type="text" placeholder="CVC" class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black">
+                  <div
+                    class="rounded-2xl w-1/2 shadow-lg border border-black flex items-center justify-between px-4"
+                  >
+                    <input
+                      type="text"
+                      placeholder="1111 2222 3333 4444 5555"
+                      class="py-2 w-1/2 rounded-2xl"
+                    />
+                    <img src="/src/assets/image/common/ft5.png" alt="" class="h-5" />
+                  </div>
+                  <div class="flex gap-5 w-1/2">
+                    <input
+                      type="date"
+                      class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black"
+                    />
+                    <input
+                      type="text"
+                      placeholder="CVC"
+                      class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black"
+                    />
                   </div>
                 </div>
                 <Select class="">
@@ -250,33 +311,24 @@
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>Country</SelectLabel>
-                      <SelectItem value="apple">
-                        BanglaDesh
-                      </SelectItem>
-                      <SelectItem value="banana">
-                        UsA
-                      </SelectItem>
-                      <SelectItem value="blueberry">
-                        Canada
-                      </SelectItem>
-                      <SelectItem value="grapes">
-                        Australia
-                      </SelectItem>
-                      <SelectItem value="pineapple">
-                        Rasia
-                      </SelectItem>
+                      <SelectItem value="apple"> BanglaDesh </SelectItem>
+                      <SelectItem value="banana"> UsA </SelectItem>
+                      <SelectItem value="blueberry"> Canada </SelectItem>
+                      <SelectItem value="grapes"> Australia </SelectItem>
+                      <SelectItem value="pineapple"> Rasia </SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
-                <button class="w-[350px] h-[45px] rounded-2xl bg-yellow-600 text-white font-bold mx-auto">Apply</button>
+                <button
+                  class="w-[350px] h-[45px] rounded-2xl bg-yellow-600 text-white font-bold mx-auto"
+                >
+                  Apply
+                </button>
               </div>
             </div>
           </div>
-          
-          
-          
         </div>
-       <FacilitesMore />
+        <FacilitesMore />
       </div>
     </DefaultLayout>
   </div>
@@ -299,9 +351,8 @@ import {
   SelectItem,
   SelectLabel,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from '/components/ui/select'
-
 </script>
 
 <style lang="scss" scoped></style>
