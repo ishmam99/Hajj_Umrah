@@ -262,9 +262,9 @@
               </div>
             </div>
             <p class="text-sm font-semibold pt-5 pb-2">
-              By my signature I/We indicate that I/We have read and understand EPIC Constitution. I
-              am Muslim above 18 years of age that agrees to abide by the policies of EPIC and its
-              Constitution.<span class="text-red-600">*</span>
+              By my signature I/We indicate that I/We have read and understand IDL-Masjid
+              Constitution. I am Muslim above 18 years of age that agrees to abide by the policies
+              of EPIC and its Constitution.<span class="text-red-600">*</span>
             </p>
             <div class="grid grid-cols-2 gap-2 px-2">
               <div class="flex items-center gap-2">
