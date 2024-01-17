@@ -27,8 +27,8 @@
           </div>
         </div>
       </div>
-      <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
-        <div class="space-y-8">
+      <div class="bg-gray-100 h-full py-5 mt-10 flex gap-5 px-20 w-full">
+        <div class="space-y-8 w-3/4">
           <Card
             :headline="'Call for details'"
             :text="'For special needs services you can call any our contact given below or visit our physical office for more details'"

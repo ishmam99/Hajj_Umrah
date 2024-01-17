@@ -137,8 +137,8 @@ const router = createRouter({
       component: () => import('../views/Volunteer/ShelterHomeless.vue')
     },
     {
-      path: '/volunteer/enhance_social_sustice',
-      name: 'volunteer/enhance_social_sustice',
+      path: '/volunteer/enhance_social_jsustice',
+      name: 'volunteer/enhance_social_jsustice',
       component: () => import('../views/Volunteer/EnhanceSocialJustice.vue')
     },
     {

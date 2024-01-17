@@ -17,10 +17,10 @@
               </svg>
               <p>Home</p>
               <p>/ Volunteer</p>
-              <p class="text-yellow-500">/ Shelter The Homeless</p>
+              <p class="text-yellow-500">/ Feed The Hungry</p>
             </div>
             <div class="bg-white rounded-lg relative py-3">
-              <h1 class="text-yellow-500 text-4xl font-semibold">Shelter The Homeless</h1>
+              <h1 class="text-yellow-500 text-4xl font-semibold">Feed The Hungry</h1>
               <div>
                 <p></p>
               </div>
@@ -31,35 +31,46 @@
           <div class="space-y-8 w-3/4">
             <div class="bg-white rounded-xl p-5 w-full">
               <h1 class="text-3xl underline py-3">Introduction</h1>
-              <p>Homelessness or the risk of homelessness affects millions of people every year. Job loss, low wages, disability, substance abuse, family conflict, domestic violence and other factors contribute to the problem. While most people experiencing or facing homelessness are adults, particularly veterans, many of the homeless are families with children. Even though we can’t reach to all or part, the idea is to help little of those in need.</p>
+              <p>The Prophet Muhammad said, “Charity is a proof”. It is a proof of your belief. How you give to others is the very proof of your creed, your own faith. Feeding those that are hungry, according to the Quran (and previous scriptures), has always been important to God, and therefore to those who believe in Him. People and communities of faith have a responsibility to meet the needs of the poor and hunger. Feed the needy!In this modern age of increasing obesity and satiety, it is inexcusable that we have people dying of starvation. To quote, “There is more fruit in a rich man’s shampoo, than a poor man’s plate. Feed the needy! <br>
+              Feeding the Hungry is one amongst several pillars of charity that the East Plano Islamic Center (EPIC) erected under its EPIC CARES program and is dedicated to the mission of ending hunger by partnering up with local food banks and pantries to provide access to daily meals for hungry children, seniors, families of the DFW community.Just as the Prophet Muhammad (PBUH) fed on average 70 people each day, and Prophet Jesus repeatedly shared meals with “tax collectors and sinners”, people that the rest of society largely ignored or despised, so too we shall follow in their blessed footsteps.</p>
             </div>
             <div class="bg-white rounded-xl p-5 w-full">
                 <h1 class="text-3xl underline py-3">Strategy</h1>
                 <ul class="pl-10">
-                    <li class="list-disc">Collaborate and work with other organizations currently working with ‘Sheltering the homeless’</li>
-                    <li class="list-disc">Reach out to homeless individuals through street outreach and mobile outreach services and once we engage with homeless individuals.</li>
-                    <li class="list-disc">Provide emergency shelter for people in a housing crisis and assist them in finding and keeping permanent housing.</li>
-                    <li class="list-disc">Offer a number of temporary, transitional, permanent and supportive housing options for seniors, individuals, and families; and for people who are disabled, chronically mentally ill or homeless.</li>
-                    <li class="list-disc">Understand the legal implications associated with the Homeless people</li>
+                    <li class="list-disc">Partner up with local food banks and pantries to regularly source volunteers to serve Dallas and surrounding counties to fight</li>
+                    <li class="list-disc">Help local food distribution centers in the periodic sorting and packing of food at the facility.</li>
+                    <li class="list-disc">Hit the road and assist food banks in their mobile efforts to bring food to the front door of those that are homebound or with disabilities.</li>
+                    <li class="list-disc">Step up EPIC CARES own Feeding the Hungry drives in the Holy Month of Ramadan.</li>
+                    <li class="list-disc">Partner with food banks and schools to deliver shelf-stable food and produce to inner city elementary schools and other facilities.</li>
+                    <li class="list-disc">Leverage solutions as outlined by the Dallas Coalition for Hunger Solutions and take appropriate action.</li>
                 </ul>
             </div>
             <div class="bg-white rounded-xl p-5 w-full">
                 <h1 class="text-3xl underline py-3">Facts</h1>
-                <p>Homelessness is one of our nation’s most misunderstood and vexing social problems. Homelessness does not discriminate. Families with children, single adults, teenagers and older individuals of all races struggle with the devastating effects of homelessness. <br>
-                Every year 600,000 families with 1.35 million children experience homelessness in the United States, making up about 50 percent of the homeless population over the course of the year.</p>
+                <ul class="pl-10">
+                    <li class="list-disc">Texas ranks #2 in nationally in food-insecure population. More than 4.65 million Texans last year—including nearly 1.9 million children—had limited or uncertain access to enough food for a healthy lifestyle, a study by Feeding America revealed.</li>
+                    <li class="list-disc">One in every six individuals of all ages (517,800) faces food insecurity.</li>
+                    <li class="list-disc">One in every four kids in North Texas is food insecure. In Dallas County alone, there are approximately 179, 020 children who are food insecure, meaning they have a lack of access at times to enough food for an active, healthy life.</li>
+                    <li class="list-disc">Food insecure children are sick more often and are more likely to suffer developmental delays.</li>
+                    <li class="list-disc">In North Texas, 1 in 6 food-insecure households is home to a veteran</li>
+                </ul>
             </div>
             <div class="bg-white rounded-xl p-5 w-full">
-                <h1 class="text-3xl underline py-3">Cause of this phenomena or why this is happening more and more every year?</h1>
-                <p>The primary cause of homelessness is a lack of affordable housing, domestic violence etc . Over five million low-income households have serious housing problems due to high housing costs, substandard housing conditions or both. While the problem of homelessness seems daunting, we can end homelessness in our nation.<br>
-                There are hundreds of families living in dangerously overcrowded housing. They’re moving from place to place, night after night, in a constant state of fear and mere survival.</p>
+                <h1 class="text-3xl underline py-3">Root Causes</h1>
+                <ul class="pl-10">
+                    <li class="list-disc">Unemployment is the primary driver of food insecurity….without income that comes from a job, people often lack the resources to purchase an adequate amount of food.</li>
+                    <li class="list-disc">Dallas’ poor population has exploded over the past couple of years.</li>
+                    <li class="list-disc">More children are living in high-poverty following the Great Recession.</li>
+                    <li class="list-disc">Level of food assistance (i.e. food stamps) given to families isn’t enough for a month’s worth of meals.</li>
+                </ul>
             </div>
             <div class="bg-white rounded-xl p-5 w-full">
-                <h1 class="text-3xl underline py-3">How can we make a difference and how can we measure the change?</h1>
-                <p>While permanent housing, often coupled with supportive services, is the best way to end homelessness, many individuals and families need short-term stabilization before they can find housing that will meet their long term needs. Through EPIC volunteering services we can provide emergency assistance to homeless persons in the form of homeless shelters. We can operate drop-in centers — places where homeless youth or adults can get off the streets and find a temporary safe haven. And often, when homeless persons begin to trust our volunteering work, they agree to leave the streets and enter transitional or permanent housing.<br>
-                    We can work with the group they already working and familiar with this type of volunteering work and handling it’s legality etc.,
-                <br>
-                For a significant number of homeless Americans with mental or physical impairments, often coupled with drug and/or alcohol use issues, long-term homelessness can only be ended by providing permanent housing coupled with intensive supportive services.We can also work on a transitional housing program to operate with one goal in mind — to help individuals and families obtain permanent housing as quickly as possible. Identify the individuals, identify their family members, communicate with the family, understand the situation and work towards solving issues.
-            </p>
+                <h1 class="text-3xl underline py-3">Making a Difference</h1>
+                <p>The coming together of various organizations in local hunger relief efforts is key to fighting the good fight in ending food insecurity and hunger. EPIC aims to be in the middle of it all. Our Muslim community, as with all other faith-based communities, can and will make a difference TOGETHER. Every congregation must take action and leverage the tried and tested solutions to the problem of hunger. These solutions exist in the community, require limited financial support, and they need the support of local congregations that can make an impact.</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 w-full">
+                <h1 class="text-3xl underline py-3">Our Partners</h1>
+                <p>The North Texas Food Bank (NTFB) is a top-ranked nonprofit relief organization, providing access to more than 190,000 meals each day for hungry children, seniors and families through a network of more than 1,000 programs and 200 Partner Agencies in our 13-county service area. In fiscal year 2016, NTFB provided access to some 70 million meals but the need for hunger relief in North Texas today is much larger. To combat increasing food insecurity in North Texas, the Food Bank recently launched a 10-year plan to provide access to 92 million nutritious meals annually by 2025. NTFB is a member of Feeding America, a national hunger relief organization.</p>
             </div>
             <div class="bg-white rounded-xl p-5 w-full">
                 <h1 class="text-3xl underline py-3">Apply for Volunteering</h1>

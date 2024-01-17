@@ -17,10 +17,10 @@
               </svg>
               <p>Home</p>
               <p>/ Volunteer</p>
-              <p class="text-yellow-500">/ Shelter The Homeless</p>
+              <p class="text-yellow-500">/ Comfort The Sick</p>
             </div>
             <div class="bg-white rounded-lg relative py-3">
-              <h1 class="text-yellow-500 text-4xl font-semibold">Shelter The Homeless</h1>
+              <h1 class="text-yellow-500 text-4xl font-semibold">Comfort The Sick</h1>
               <div>
                 <p></p>
               </div>
@@ -30,36 +30,14 @@
         <div class="bg-gray-100 h-full py-5 mt-10 flex gap-5 px-20 w-full">
           <div class="space-y-8 w-3/4">
             <div class="bg-white rounded-xl p-5 w-full">
-              <h1 class="text-3xl underline py-3">Introduction</h1>
-              <p>Homelessness or the risk of homelessness affects millions of people every year. Job loss, low wages, disability, substance abuse, family conflict, domestic violence and other factors contribute to the problem. While most people experiencing or facing homelessness are adults, particularly veterans, many of the homeless are families with children. Even though we can’t reach to all or part, the idea is to help little of those in need.</p>
+              <p>EPIC volunteering integrates environmental and community development practices in the way we live. The mission is to establish and maintain a program that identifies and provides opportunities for EPIC community members where we can make positive and consistent contributions to our society with our personal time & presence. We believe that community members have better cohesion and are more invested in the community if they are collectively engaged in activities that demonstrate our mutual societal responsibilities. Our participation in the social sphere is a direct manifestation of our Islamic faith and shows the world who we are and what we stand for. Additionally when we invest in our society’s interests, we create unbreakable bonds with our surrounding neighbors.</p>
             </div>
             <div class="bg-white rounded-xl p-5 w-full">
-                <h1 class="text-3xl underline py-3">Strategy</h1>
+                <h1 class="text-3xl underline py-3">Volunteer Opportunities</h1>
                 <ul class="pl-10">
-                    <li class="list-disc">Collaborate and work with other organizations currently working with ‘Sheltering the homeless’</li>
-                    <li class="list-disc">Reach out to homeless individuals through street outreach and mobile outreach services and once we engage with homeless individuals.</li>
-                    <li class="list-disc">Provide emergency shelter for people in a housing crisis and assist them in finding and keeping permanent housing.</li>
-                    <li class="list-disc">Offer a number of temporary, transitional, permanent and supportive housing options for seniors, individuals, and families; and for people who are disabled, chronically mentally ill or homeless.</li>
-                    <li class="list-disc">Understand the legal implications associated with the Homeless people</li>
+                    <li class="list-disc">Collaborate and work with other organizations currently working with ‘Comforting the sick’</li>
+                    <li class="list-disc">Reach out to sick individuals through street outreach and mobile outreach services and once we engage with sick individuals.</li>
                 </ul>
-            </div>
-            <div class="bg-white rounded-xl p-5 w-full">
-                <h1 class="text-3xl underline py-3">Facts</h1>
-                <p>Homelessness is one of our nation’s most misunderstood and vexing social problems. Homelessness does not discriminate. Families with children, single adults, teenagers and older individuals of all races struggle with the devastating effects of homelessness. <br>
-                Every year 600,000 families with 1.35 million children experience homelessness in the United States, making up about 50 percent of the homeless population over the course of the year.</p>
-            </div>
-            <div class="bg-white rounded-xl p-5 w-full">
-                <h1 class="text-3xl underline py-3">Cause of this phenomena or why this is happening more and more every year?</h1>
-                <p>The primary cause of homelessness is a lack of affordable housing, domestic violence etc . Over five million low-income households have serious housing problems due to high housing costs, substandard housing conditions or both. While the problem of homelessness seems daunting, we can end homelessness in our nation.<br>
-                There are hundreds of families living in dangerously overcrowded housing. They’re moving from place to place, night after night, in a constant state of fear and mere survival.</p>
-            </div>
-            <div class="bg-white rounded-xl p-5 w-full">
-                <h1 class="text-3xl underline py-3">How can we make a difference and how can we measure the change?</h1>
-                <p>While permanent housing, often coupled with supportive services, is the best way to end homelessness, many individuals and families need short-term stabilization before they can find housing that will meet their long term needs. Through EPIC volunteering services we can provide emergency assistance to homeless persons in the form of homeless shelters. We can operate drop-in centers — places where homeless youth or adults can get off the streets and find a temporary safe haven. And often, when homeless persons begin to trust our volunteering work, they agree to leave the streets and enter transitional or permanent housing.<br>
-                    We can work with the group they already working and familiar with this type of volunteering work and handling it’s legality etc.,
-                <br>
-                For a significant number of homeless Americans with mental or physical impairments, often coupled with drug and/or alcohol use issues, long-term homelessness can only be ended by providing permanent housing coupled with intensive supportive services.We can also work on a transitional housing program to operate with one goal in mind — to help individuals and families obtain permanent housing as quickly as possible. Identify the individuals, identify their family members, communicate with the family, understand the situation and work towards solving issues.
-            </p>
             </div>
             <div class="bg-white rounded-xl p-5 w-full">
                 <h1 class="text-3xl underline py-3">Apply for Volunteering</h1>
