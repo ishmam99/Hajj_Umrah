@@ -8,16 +8,16 @@
          <Menubar class="rounded-none border-0">
           <MenubarMenu>
             <MenubarTrigger>
-              <router-link to="/" class="py-6 flex items-center uppercase  text-sm font-semibold">Home</router-link> 
+              <router-link to="/" class="font-semibold">Home</router-link> 
             </MenubarTrigger>
           </MenubarMenu>
            
           <MenubarMenu>
-            <MenubarTrigger>SERVICE <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+            <MenubarTrigger>Service <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
             </MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
-            <router-link to="/services/nikah" class="hover:pl-5 duration-300">Nikha Service</router-link>
+                <router-link to="/services/nikah" class="hover:pl-5 duration-300">Nikha Service</router-link>
               </MenubarItem>
               <MenubarItem>
                 <router-link to="/services/facilities" class="hover:pl-5 duration-300">Facilities Service</router-link>
@@ -47,7 +47,7 @@
           </MenubarMenu>
 
           <MenubarMenu>
-            <MenubarTrigger>EXPLORE <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
+            <MenubarTrigger>Explore <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
                 <a href="" class="hover:pl-5 duration-300 text-sm">Dua</a>
@@ -66,12 +66,12 @@
 
           <MenubarMenu>
             <MenubarTrigger>
-              <router-link to="/Clearance" class="py-6 flex items-center uppercase  text-sm font-semibold">Learning Center</router-link>
+              <router-link to="/Clearance" class="text-sm font-semibold">Learning Center</router-link>
             </MenubarTrigger>
           </MenubarMenu>
   
           <MenubarMenu>
-            <MenubarTrigger>ABOUT US <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
+            <MenubarTrigger>Abut Us <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
                 <a href="" class="hover:pl-5 duration-300">Board Of Directors</a>
@@ -89,32 +89,52 @@
           </MenubarMenu>
 
           <MenubarMenu>
-            <MenubarTrigger>CONTACT <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
+            <MenubarTrigger>Contact <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
                 <router-link to="/contact/ask_imam" class="hover:pl-5 duration-300">Ask Imam</router-link>
               </MenubarItem>
               <MenubarItem>
-                <router-link to="/contact/ask_imam" class="hover:pl-5 duration-300">Mashjid Info</router-link>
+                <router-link to="/contact/mashjid_info" class="hover:pl-5 duration-300">Mashjid Info</router-link>
               </MenubarItem>
-            
             </MenubarContent>
           </MenubarMenu>
 
           <MenubarMenu>
-            <MenubarTrigger>
-              <router-link to="/Clearance" class="py-6 flex items-center uppercase  text-sm font-semibold">Event</router-link>
-            </MenubarTrigger>
+            <MenubarTrigger>Activity <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>
+                <router-link to="/activity/event" class="hover:pl-5 duration-300">Events</router-link>
+              </MenubarItem>
+              <MenubarItem>
+                <router-link to="/activity/project" class="hover:pl-5 duration-300">Projects</router-link>
+              </MenubarItem>
+            </MenubarContent>
           </MenubarMenu>
 
           <MenubarMenu>
-            <MenubarTrigger>
-              <router-link to="/Clearance" class="py-6 flex items-center uppercase  text-sm font-semibold">Volunteer</router-link>
-            </MenubarTrigger>
+            <MenubarTrigger>Volunteer <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>
+                <router-link to="/volunteer/educate_the_children" class="hover:pl-5 duration-300">Educate The Children</router-link>
+              </MenubarItem>
+              <MenubarItem>
+                <router-link to="/contact/mashjid_info" class="hover:pl-5 duration-300">Shetler The Homeless</router-link>
+              </MenubarItem>
+              <MenubarItem>
+                <router-link to="/contact/mashjid_info" class="hover:pl-5 duration-300">Comfort The Sick</router-link>
+              </MenubarItem>
+              <MenubarItem>
+                <router-link to="/contact/mashjid_info" class="hover:pl-5 duration-300">Enhance Social Justice</router-link>
+              </MenubarItem>
+              <MenubarItem>
+                <router-link to="/contact/mashjid_info" class="hover:pl-5 duration-300">Feed The Hungry</router-link>
+              </MenubarItem>
+            </MenubarContent>
           </MenubarMenu>
 
           <MenubarMenu>
-            <MenubarTrigger>MORE <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+            <MenubarTrigger>More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
             </MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
