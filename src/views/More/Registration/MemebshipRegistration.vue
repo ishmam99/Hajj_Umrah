@@ -343,7 +343,7 @@
             </div>
           </div>
         </div>
-        <FacilitiesMore />
+        <RegistrationMore />
       </div>
     </DefaultLayout>
   </div>
@@ -352,7 +352,7 @@
 <script setup>
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import Card from '/src/components/cardSection.vue'
-import FacilitiesMore from '/src/components/FacilitiesMore.vue'
+import RegistrationMore from '/src/components/RgistrationMore.vue'
 
 import {
   Select,
