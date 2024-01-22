@@ -170,7 +170,7 @@
         </Menubar>
       </div>
       <div class="flex items-center gap-2 text-white font-bold text-sm">
-        <button class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500">Donation</button>
+        <router-link to="/Donation" class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500 border-2 border-yellow-600 hover:border-yellow-500">Donation</router-link>
         <button class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500">Member</button>
       </div>
        
@@ -199,5 +199,6 @@ import {
 
 .router-link-active{
  color: rgb(201, 130, 0);
+ background: transparent;
 }
 </style>

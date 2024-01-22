@@ -169,6 +169,14 @@ const router = createRouter({
       name: 'more/registration/memebship_registration',
       component: () => import('../views/More/Registration/MemebshipRegistration.vue')
     },
+
+
+
+    {
+      path: '/Donation',
+      name: 'Donation',
+      component: () => import('../views/Donation/DonationPage.vue')
+    },
   ]
 })
 
