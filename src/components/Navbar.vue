@@ -68,25 +68,38 @@
           </MenubarMenu>
 
           <MenubarMenu>
-            <MenubarTrigger>
-              <router-link to="/Clearance" class="text-sm font-semibold">Learning Center</router-link>
+            <MenubarTrigger>Learning Center  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
             </MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>
+                <router-link to="/onsitelearning" class=" w-full hover:pl-5 duration-300 text-sm">Onsite learning center
+</router-link>
+              </MenubarItem>
+              <MenubarItem>
+                <a href="" class=" w-full hover:pl-5 duration-300 text-sm">Online learning center
+</a>
+              </MenubarItem>
+             
+            </MenubarContent>
           </MenubarMenu>
   
           <MenubarMenu>
             <MenubarTrigger>Abut Us <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
-                <a href="" class=" w-full hover:pl-5 duration-300">Board Of Directors</a>
+                <router-link to="/about/about_us" class=" w-full hover:pl-5 duration-300">About</router-link>
               </MenubarItem>
               <MenubarItem>
-                <a href="" class=" w-full hover:pl-5 duration-300">Committees</a>
+                <router-link to="/about/board_of_directors" class=" w-full hover:pl-5 duration-300">Board Of Directors</router-link>
               </MenubarItem>
               <MenubarItem>
-                <a href="" class=" w-full hover:pl-5 duration-300">Team</a>
+                <router-link to="/about/committees" class=" w-full hover:pl-5 duration-300">Committees</router-link>
               </MenubarItem>
               <MenubarItem>
-                <a href="" class=" w-full hover:pl-5 duration-300">Policies</a>
+                <router-link to="/about/team" class=" w-full hover:pl-5 duration-300">Team</router-link>
+              </MenubarItem>
+              <MenubarItem>
+                <router-link to="/about/policies" class=" w-full hover:pl-5 duration-300">Policies</router-link>
               </MenubarItem>
             </MenubarContent>
           </MenubarMenu>
@@ -144,7 +157,7 @@
                 <a href="" class=" w-full hover:pl-5 duration-300">Ramadan Special</a>
               </MenubarItem>
               <MenubarItem>
-                <a href="" class=" w-full hover:pl-5 duration-300">Hajj And Umrah</a>
+                <a href="" class=" w-full hover:pl-5 duration-300">Hajj And Umrah Registration</a>
               </MenubarItem>
               <MenubarSub>
                   <MenubarSubTrigger>
@@ -170,7 +183,9 @@
         </Menubar>
       </div>
       <div class="flex items-center gap-2 text-white font-bold text-sm">
-        <button class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500">Donation</button>
+        <router-link to="/donation" class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500 border-2 border-yellow-500">
+          Donate
+        </router-link>
         <button class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500">Member</button>
       </div>
        
@@ -199,5 +214,6 @@ import {
 
 .router-link-active{
  color: rgb(201, 130, 0);
+ background: white;
 }
 </style>

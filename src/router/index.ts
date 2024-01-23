@@ -4,7 +4,7 @@ import HomeView from '../views/HomeView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior() {
-    document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('app').scrollIntoView({ behavior: 'smooth' })
   },
   routes: [
     {
@@ -53,8 +53,6 @@ const router = createRouter({
       component: () => import('../views/Services/SocialService.vue')
     },
 
-
-
     {
       path: '/explore/dua',
       name: 'explore/dua',
@@ -76,12 +74,15 @@ const router = createRouter({
       component: () => import('../views/Explore/Quran.vue')
     },
 
-
-
     {
       path: '/about/board_of_directors',
       name: 'about/board_of_directors',
       component: () => import('../views/AboutUs/BoardOfDirectors.vue')
+    },
+    {
+      path: '/about/about_us',
+      name: 'about/about_us',
+      component: () => import('../views/AboutUs/About.vue')
     },
     {
       path: '/about/committees',
@@ -99,7 +100,6 @@ const router = createRouter({
       component: () => import('../views/AboutUs/Team.vue')
     },
 
-
     {
       path: '/contact/ask_imam',
       name: 'contact/ask_imam',
@@ -111,8 +111,6 @@ const router = createRouter({
       component: () => import('../views/Contact/MashjidInfo.vue')
     },
 
-
-
     {
       path: '/activity/event',
       name: 'activity/event',
@@ -123,8 +121,6 @@ const router = createRouter({
       name: 'activity/project',
       component: () => import('../views/Activity/Project.vue')
     },
-
-
 
     {
       path: '/volunteer/educate_the_children',
@@ -151,9 +147,7 @@ const router = createRouter({
       name: 'volunteer/comfort_the_sick',
       component: () => import('../views/Volunteer/ComfortTheSick.vue')
     },
-    
 
-    
     {
       path: '/more/hajj_and_umrah',
       name: 'more/hajj_and_umrah',
@@ -165,10 +159,20 @@ const router = createRouter({
       component: () => import('../views/More/RamadanSpecial.vue')
     },
     {
+      path: '/donation',
+      name: 'donation',
+      component: () => import('../views/Donation/DonationView.vue')
+    },
+    {
+      path: '/onsitelearning',
+      name: 'onsitelearning',
+      component: () => import('../views/OnSiteEducation.vue')
+    },
+    {
       path: '/more/registration/memebship_registration',
       name: 'more/registration/memebship_registration',
       component: () => import('../views/More/Registration/MemebshipRegistration.vue')
-    },
+    }
   ]
 })
 

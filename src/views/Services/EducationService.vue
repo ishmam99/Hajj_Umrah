@@ -31,11 +31,11 @@
         <div class="space-y-8">
           <Card
             :headline="'Nikah Policy and Procedure'"
-            :text="'These rules, regulations, and forms are for those who intend to have their Nikah and Marriage conducted at EPIC Masjid'"
+            :text="'These rules, regulations, and forms are for those who intend to have their Nikah and Marriage conducted at IDL Masjid'"
           />
           <Card
             :headline="'Overview'"
-            :text="'East Plano Islamic Center (EPIC) offers Nikah Service for Muslims to get married at EPIC. All Nikahs and marriages are officiated by Imam Nadim Bashir or Ustadh Mohamed Baajour if specifically requested by the family and depending on their availability.The families can also invite any approved scholar from outside of EPIC to officiate their marriage This document describes the policies and procedures of hosting nikah service at EPIC'"
+            :text="'Islamin Digital Lane (IDL) offers Nikah Service for Muslims to get married at IDL. All Nikahs and marriages are officiated by Imam Nadim Bashir or Ustadh Mohamed Baajour if specifically requested by the family and depending on their availability.The families can also invite any approved scholar from outside of IDL to officiate their marriage This document describes the policies and procedures of hosting nikah service at IDL'"
           />
           <div class="bg-white rounded-xl p-5 w-[800px]">
             <h1 class="text-3xl underline py-3">Procedure</h1>
@@ -50,7 +50,7 @@
                   The system will send an acknowledgment email to the submitter. Please keep it for
                   record purposes
                 </li>
-                <li class="list-disc">EPIC operations team will</li>
+                <li class="list-disc">IDL operations team will</li>
                 <li class="list-disc">communicate with the person in charge via email or phone</li>
                 <li class="list-disc">
                   schedule a meeting with the family to go over the program flow and other
@@ -60,7 +60,7 @@
                   Inform the family whether or not the nikah has been approved
                 </li>
                 <li class="list-disc">
-                  EPIC operations team will also send a form to be filled out by the family members.
+                  IDL operations team will also send a form to be filled out by the family members.
                   This must be filled out as soon as possible
                 </li>
               </ul>
@@ -69,7 +69,7 @@
           <div class="bg-white rounded-xl p-5 w-[800px]">
             <h1 class="text-3xl underline py-3">Policy</h1>
             <div class="px-5">
-              The following are the policies for hosting Nikah Service at EPIC
+              The following are the policies for hosting Nikah Service at IDL
 
               <ul>
                 <li class="list-disc">
@@ -91,14 +91,14 @@
                 <li class="list-disc">
                   The start and end times of the event will be strictly enforced
                 </li>
-                <li class="list-disc">Only partitions provided by EPIC are allowed.</li>
+                <li class="list-disc">Only partitions provided by IDL are allowed.</li>
                 <li class="list-disc">
                   Any cultural or banquet hall practices, such as flower curtains, formal entrances,
                   and men and women gathering at entrances or lobby areas, will not be allowed under
                   any circumstances.
                 </li>
                 <li class="list-disc">
-                  EPIC reserves the right to refuse service with or without reason.
+                  IDL reserves the right to refuse service with or without reason.
                 </li>
               </ul>
             </div>
@@ -106,9 +106,9 @@
           <div class="bg-white rounded-xl p-5 w-[800px]">
             <h1 class="text-3xl underline font-bold text-gray-700 py-3">Nikah Service Request</h1>
             <p>
-              Please fill out this form to request for Nikah Service at EPIC. Please select a date
+              Please fill out this form to request for Nikah Service at IDL. Please select a date
               when you would like to have the Nikah Service Performed. The date is not final until
-              approved by EPIC administration.
+              approved by IDL administration.
             </p>
             <div class="py-5 space-y-7 mt-5">
               <div class="flex w-full gap-5">
@@ -183,40 +183,40 @@
                   Event Timer <span class="text-red-500">*</span>
                 </p>
                 <div class="flex">
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-yellow-500 border-transparent"
-                  />
-                  Duhr
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
-                  />
-                  Asr
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
-                  />
-                  Maghrib
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
-                  />
-                  Ishaa
-                </label>
+                  <label class="inline-flex items-center">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-yellow-500 border-transparent"
+                    />
+                    Duhr
+                  </label>
+                  <label class="inline-flex items-center">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
+                    />
+                    Asr
+                  </label>
+                  <label class="inline-flex items-center">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
+                    />
+                    Maghrib
+                  </label>
+                  <label class="inline-flex items-center">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-transparent border-transparent checked:text-yellow-500"
+                    />
+                    Ishaa
+                  </label>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      <FacilitiesMore />
+        <FacilitiesMore />
       </div>
     </DefaultLayout>
   </div>

@@ -31,47 +31,46 @@
         <div class="space-y-8 w-3/4">
           <div class="bg-white rounded-xl p-5 w-full">
             <h1 class="text-3xl underline py-3">Funeral Services</h1>
-            <p>Funeral Services at East Plano Islamic Center (Islamic Digital Lane) were started to cater the needs of DFW Muslim community. It is a not-for-profit community service that provides a range of end-to-end offerings.</p>
-            <p class="py-3">Islamic Digital Lane Funeral Services at Islamic Digital Lane include:</p>
+            <p>
+              Funeral Services at Islamin Digital Lane (Islamic Digital Lane) were started to cater
+              the needs of DFW Muslim community. It is a not-for-profit community service that
+              provides a range of end-to-end offerings.
+            </p>
+            <p class="py-3">
+              Islamic Digital Lane Funeral Services at Islamic Digital Lane include:
+            </p>
             <ul class="px-10">
-                <li class="list-disc">
-                  Body transportation in collaboration with Hughes funeral home
-                </li>
-                <li class="list-disc">
-                  Ghusl (body wash) at masjid premise
-                </li>
-                <li class="list-disc">
-                  Private viewing at masjid
-                </li>
-                <li class="list-disc">
-                  Salat-ul-Janazah (Funeral prayer) at masjid
-                </li>
-                <li class="list-disc">
-                  Burial in Farmersville
-                </li>
-                <li class="list-disc">
-                  Counselling with religious leadership
-                </li>
-                <li class="list-disc">
-                  Community announcements
-                </li>
-                <li class="list-disc">
-                  Azza and dua facilitation after general congregations
-                </li>
+              <li class="list-disc">
+                Body transportation in collaboration with Hughes funeral home
+              </li>
+              <li class="list-disc">Ghusl (body wash) at masjid premise</li>
+              <li class="list-disc">Private viewing at masjid</li>
+              <li class="list-disc">Salat-ul-Janazah (Funeral prayer) at masjid</li>
+              <li class="list-disc">Burial in Farmersville</li>
+              <li class="list-disc">Counselling with religious leadership</li>
+              <li class="list-disc">Community announcements</li>
+              <li class="list-disc">Azza and dua facilitation after general congregations</li>
             </ul>
-            <p class="py-3"><span class="font-semibold text-yellow-600">Please Note: </span>Islamic Digital Lane Funeral Service utilizes one of the nearest cemeteries in the area.</p>
+            <p class="py-3">
+              <span class="font-semibold text-yellow-600">Please Note: </span>Islamic Digital Lane
+              Funeral Service utilizes one of the nearest cemeteries in the area.
+            </p>
             <ul class="pl-10 text-blue-600">
               <li class="list-disc">Farmersville Cemetery</li>
             </ul>
           </div>
           <div class="flex flex-col items-center gap-3 text-center w-full">
-            <img src="/src/assets/image/hero/h1.png" alt="" class="rounded-xl">
-            <p class="text-blue-600"><span class="font-semibold text-black">E-Mail: </span>funeral.services@epicmasjid.org</p>
+            <img src="/src/assets/image/hero/h1.png" alt="" class="rounded-xl" />
+            <p class="text-blue-600">
+              <span class="font-semibold text-black">E-Mail: </span>funeral.services@epicmasjid.org
+            </p>
             <p class="text-blue-600">Website: https://epicmasjid.org/funeral-services/</p>
-            <p class="text-blue-600"><span class="font-semibold text-black">Address: </span>4700 14th Street Plano TX 75074</p>
+            <p class="text-blue-600">
+              <span class="font-semibold text-black">Address: </span>4700 14th Street Plano TX 75074
+            </p>
           </div>
         </div>
-       <FacilitiesMore />
+        <FacilitiesMore />
       </div>
     </DefaultLayout>
   </div>
