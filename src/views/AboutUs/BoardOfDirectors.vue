@@ -17,10 +17,10 @@
             </svg>
             <p>Home /About /</p>
 
-            <p class="text-yellow-500">About Board of Directors</p>
+            <p class="text-yellow-500">Board of Directors</p>
           </div>
           <div class="bg-white rounded-lg relative py-3">
-            <h1 class="text-yellow-500 text-4xl font-semibold">About Board of Directors</h1>
+            <h1 class="text-yellow-500 text-4xl font-semibold">Board of Directors</h1>
             <div>
               <p></p>
             </div>
