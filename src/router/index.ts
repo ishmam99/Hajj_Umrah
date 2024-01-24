@@ -202,6 +202,41 @@ const router = createRouter({
       path: '/more/registration/esl_class_registration',
       name: 'more/registration/esl_class_registration',
       component: () => import('../views/More/Registration/ESLClassRegistration.vue')
+    },
+    {
+      path: '/Login',
+      name: 'Login',
+      component:()=>import('../views/Auth/LogIn.vue')
+    },
+    {
+      path: '/Signup',
+      name: 'Signup',
+      component:()=>import('../views/Auth/SingnUp.vue')
+    },
+    {
+      path: '/Membar_Dashboard',
+      name: 'Membar_Dashboard',
+      component:()=>import('../views/Member/MembarDashbord.vue')
+    },
+    {
+      path: '/Membar_Event_History',
+      name: 'Membar_Event_History',
+      component:()=>import('../views/Member/MemberEventHistory.vue')
+    },
+    {
+      path: '/Membar_Donation_History',
+      name: 'Membar_Donation_History',
+      component:()=>import('../views/Member/MembarDonation.vue')
+    },
+    {
+      path: '/Membar_Payment_History',
+      name: 'Membar_Payment_History',
+      component:()=>import('../views/Member/MembarPaymentHistory.vue')
+    },
+    {
+      path: '/Membar_Change_Password',
+      name: 'Membar_Change_Password',
+      component:()=>import('../views/Member/MemberPassChange.vue')
     }
   ]
 })
