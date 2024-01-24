@@ -35,7 +35,11 @@ export const useAuthStore = defineStore('store',{
     logout () {
       this.isAuthenticated = false;
       this.user = null;
-    },
+      },
+      signup (user) {
+        this.isAuthenticated = true;
+        this.user = user;
+      },
   },
 });
 

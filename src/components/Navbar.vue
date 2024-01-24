@@ -193,7 +193,7 @@
               <router-link to="/Signup" class="py-1.5">Sign up</router-link>
           </div>
         </div>
-        <router-link v-else to="/Membar_Payment_History" class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500 border-2 border-yellow-500">
+        <router-link v-else to="/Membar_Dashboard" class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500 border-2 border-yellow-500">
           Member
         </router-link>
       </div>
