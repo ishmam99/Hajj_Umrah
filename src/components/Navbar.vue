@@ -111,7 +111,7 @@
                 <router-link to="/contact/ask_imam" class=" w-full hover:pl-5 duration-300">Ask Imam</router-link>
               </MenubarItem>
               <MenubarItem>
-                <router-link to="/contact/mashjid_info" class=" w-full hover:pl-5 duration-300">Mashjid Info</router-link>
+                <router-link to="/contact/contact_us" class=" w-full hover:pl-5 duration-300">Contact Us</router-link>
               </MenubarItem>
             </MenubarContent>
           </MenubarMenu>
@@ -154,10 +154,10 @@
             </MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
-                <a href="" class=" w-full hover:pl-5 duration-300">Ramadan Special</a>
+                <a href="/more/ramadan_special" class=" w-full hover:pl-5 duration-300">Ramadan Special</a>
               </MenubarItem>
               <MenubarItem>
-                <a href="" class=" w-full hover:pl-5 duration-300">Hajj And Umrah Registration</a>
+                <a href="/more/hajj_and_umrah" class=" w-full hover:pl-5 duration-300">Hajj And Umrah Registration</a>
               </MenubarItem>
               <MenubarSub>
                   <MenubarSubTrigger>
@@ -168,13 +168,13 @@
                       <router-link to="/more/registration/memebship_registration" class=" w-full hover:pl-5 duration-300">Membership Registration</router-link>
                     </MenubarItem>
                     <MenubarItem>
-                      <a href="" class=" w-full hover:pl-5 duration-300">Masjid Wavier & Release Liability</a>
+                      <a href="/more/registration/mosjid_wavier_and_release_liability" class=" w-full hover:pl-5 duration-300">Masjid Wavier & Release Liability</a>
                     </MenubarItem>
                     <MenubarItem>
-                      <a href="" class=" w-full hover:pl-5 duration-300">Sports & Recreation Events</a>
+                      <a href="/more/registration/sports_and_recreation_event" class=" w-full hover:pl-5 duration-300">Sports & Recreation Events</a>
                     </MenubarItem>
                     <MenubarItem>
-                      <a href="" class=" w-full hover:pl-5 duration-300">ESL Class Registration</a>
+                      <a href="/more/registration/esl_class_registration" class=" w-full hover:pl-5 duration-300">ESL Class Registration</a>
                     </MenubarItem>
                   </MenubarSubContent>
                 </MenubarSub>

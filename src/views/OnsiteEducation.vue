@@ -32,38 +32,56 @@ import { Separator } from '/components/ui/separator'
         </div>
       </div>
       <Separator />
-    <div class="flex item-center justify-center py-3">
+    <div class="flex item-center justify-center py-3 bg-gray-100/50">
         <div class="grid grid-cols-3 gap-3 my-5 py-5 px-4">
-              <div class=" bg-[url('../assets/image/home/l2.jpg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content">
-            <div class="flex flex-col items-start justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
-                <p class="text-4xl px-10 font-semibold mb-2">Full Time Hifz</p>
+          <router-link class="view-all" to="/learing-center/education-form">
+            <div class=" bg-[url('../assets/image/home/l2.jpg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content transition-transform transform group-hover:scale-105 opacity-100 duration-300 cursor-pointer">
+                <div class="flex flex-col items-center justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
+                    <p class="text-4xl px-10 font-semibold mb-2"><span class="px-4 py-2 rounded-full bg-white opacity-100 text-yellow-600 hover:shadow-lg shadow-yellow-600">Full Time Hifz</span></p>
+                </div>
             </div>
-        </div>
-              <div class=" bg-[url('../assets/image/home/l3.jpeg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content">
-            <div class="flex flex-col items-start justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
-                <p class="text-4xl px-10 font-semibold mb-2">Part Time Hifz</p>
+          </router-link>
+          
+          <router-link class="view-all" to="/learing-center/education-form">
+            <div class=" bg-[url('../assets/image/home/l3.jpeg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content transition-transform transform group-hover:scale-105 opacity-100 duration-300 cursor-pointer">
+                <div class="flex flex-col items-center justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
+                    <p class="text-4xl px-10 font-semibold mb-2"><span class="px-4 py-2 rounded-full bg-white opacity-100 text-yellow-600 hover:shadow-lg shadow-yellow-600">Part Time Hifz</span></p>
+                </div>
             </div>
-        </div>
-              <div class=" bg-[url('../assets/image/home/l4.jpg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content">
-            <div class="flex flex-col items-start justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
-                <p class="text-4xl px-10 font-semibold mb-2">Summer School</p>
+          </router-link>
+
+          <router-link class="view-all" to="/learing-center/education-form">
+            <div class=" bg-[url('../assets/image/home/l4.jpg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content transition-transform transform group-hover:scale-105 opacity-100 duration-300 cursor-pointer">
+                <div class="flex flex-col items-center justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
+                    <p class="text-4xl px-10 font-semibold mb-2"><span class="px-4 py-2 rounded-full bg-white opacity-100 text-yellow-600 hover:shadow-lg shadow-yellow-600">Summer School</span></p>
+                </div>
             </div>
-        </div>
-              <div class=" bg-[url('../assets/image/home/l4.png')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content">
-            <div class="flex flex-col items-start justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
-                <p class="text-4xl px-10 font-semibold mb-2">Sunday School</p>
+          </router-link>
+
+          <router-link class="view-all" to="/learing-center/education-form">
+            <div class=" bg-[url('../assets/image/home/l5.png')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content transition-transform transform group-hover:scale-105 opacity-100 duration-300 cursor-pointer">
+                <div class="flex flex-col items-center justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
+                    <p class="text-4xl px-10 font-semibold mb-2"><span class="px-4 py-2 rounded-full bg-white opacity-100 text-yellow-600 hover:shadow-lg shadow-yellow-600">Sunday School</span></p>
+                </div>
             </div>
-        </div>
-              <div class=" bg-[url('../assets/image/home/l5.png')] h-[400px] bg-opacity-25 w-full bg-top bg-cover rounded-xl bg-origin-content">
-            <div class="flex flex-col items-start justify-center h-full w-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
-                <p class="text-4xl px-10 font-semibold mb-2">Special Needs School</p>
+          </router-link>
+
+          <router-link class="view-all" to="/learing-center/education-form">
+            <div class=" bg-[url('../assets/image/home/l6.jpg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content transition-transform transform group-hover:scale-105 opacity-100 duration-300 cursor-pointer">
+                <div class="flex flex-col items-center justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
+                    <p class="text-3xl px-10 font-semibold mb-2"><span class="px-4 py-2 rounded-full bg-white opacity-100 text-yellow-600 hover:shadow-lg shadow-yellow-600">Special Needs School</span></p>
+                </div>
             </div>
-        </div>
-              <div class=" bg-[url('../assets/image/home/l7.jpg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content">
-            <div class="flex flex-col items-start justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
-                <p class="text-4xl px-10 font-semibold mb-2">Fityah Program</p>
+          </router-link>
+
+          <router-link class="view-all" to="/learing-center/education-form">
+            <div class=" bg-[url('../assets/image/home/l7.jpg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content transition-transform transform group-hover:scale-105 opacity-100 duration-300 cursor-pointer">
+                <div class="flex flex-col items-center justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
+                    <p class="text-4xl px-10 font-semibold mb-2"><span class="px-4 py-2 rounded-full bg-white opacity-100 text-yellow-600 hover:shadow-lg shadow-yellow-600">Fityah Program</span></p>
+                </div>
             </div>
-        </div>
+          </router-link>
+
         </div>
         </div>
 

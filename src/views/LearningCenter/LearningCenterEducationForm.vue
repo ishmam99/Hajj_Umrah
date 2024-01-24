@@ -16,11 +16,11 @@
                 ></path>
               </svg>
               <p>Home</p>
-              <p>/ More</p>
-              <p class="text-yellow-500">/ Hajj &amp; Umrah Registration</p>
+              <p>/ Learning Center</p>
+              <p class="text-yellow-500">/ Onsite Learning Center</p>
             </div>
             <div class="bg-white rounded-lg relative py-3">
-              <h1 class="text-yellow-500 text-4xl font-semibold">Hajj &amp; Umrah Registration</h1>
+              <h1 class="text-yellow-500 text-4xl font-semibold">Dar-ul-Quran: Full Time Hifz Program</h1>
               <div>
                 <p></p>
               </div>
@@ -30,7 +30,7 @@
         <div class="bg-gray-100 h-full py-5 mt-10 flex gap-5 px-20 w-full">
           <div class="space-y-8 w-3/4">
             <div class="bg-white rounded-xl p-5 w-full">
-              <h1 class="text-3xl font-semibold">Hajj &amp; Umrah Registration</h1>
+              <h1 class="text-3xl font-semibold">Dar-ul-Quran: Full Time Hifz Program</h1>
               <p class="pt-5">
                 IDL-Masjid membership is for community members living in Zip Codes: 75074, 75075,
                 75080, 75081, 75082, 75044, 75002, 75094, 75048, 75044, 75098.
