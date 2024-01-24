@@ -25,38 +25,42 @@
                 <p></p>
               </div>
             </div>
+            
           </div>
         </div>
-        <div class="bg-gray-100 h-full py-5 mt-10 flex gap-5 px-20 w-full">
+        <div class="w-full bg-[url('../assets/image/home/dua_banner.png')] bg-amber-400">
+          <h1 class="py-10 text-center bg-[#2d292938] text-4xl text-white font-bold">To Inquire or Register in RAMADAN Programs</h1>
+          <!-- <p>{{ surahOfTheDay}}</p> -->
+              
+        </div>
+        <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
           <div class="space-y-8 w-3/4">
 
             <div class="bg-white rounded-xl p-5 w-full">
-              <h1 class="text-3xl font-semibold pb-3 text-yellow-500">To Inquire or Register in RAMADAN Programs</h1>
-              <!-- <img src="../../assets/image/common/ramadan-dpecial.jpg" alr="ramadan special" class="w-full h-auto rounded-lg shadow-lg"> -->
-              <p class="pt-5 font-semibold">Choose the program/s that you interested in:</p>
+              <p class="pt-5 text-lg font-semibold">Choose the program/s that you interested in:</p>
               <div class="pt-5 ml-10">
                 <div class="grid grid-cols-2 gap-4">
-                    <div>
+                    <div class="flex items-center gap-2 font-semibold">
                         <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3 px-2 " />
                         <label for="Asr" class="text-lg ">RAMADAN KHATMA</label>
                     </div>
-                    <div>
+                    <div class="flex items-center gap-2 font-semibold">
                         <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3 px-2" />
                         <label for="Asr" class="text-lg ">Surat Al-Kahf</label>
                     </div>
-                    <div>
+                    <div class="flex items-center gap-2 font-semibold">
                         <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3 px-2" />
                         <label for="Asr" class="text-lg ">Imam and Hafiz Program</label>
                     </div>
-                    <div>
+                    <div class="flex items-center gap-2 font-semibold">
                         <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3 px-2" />
                         <label for="Asr" class="text-lg ">Best Stories</label>
                     </div>
-                    <div>
+                    <div class="flex items-center gap-2 font-semibold">
                         <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3 px-2" />
                         <label for="Asr" class="text-lg ">Fiqh of Fasting</label>
                     </div>
-                    <div>
+                    <div class="flex items-center gap-2 font-semibold">
                         <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3 px-2" />
                         <label for="Asr" class="text-lg">Azkar Program</label>
                     </div>

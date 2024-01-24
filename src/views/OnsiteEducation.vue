@@ -37,7 +37,7 @@ import { Separator } from '/components/ui/separator'
           <router-link class="view-all" to="/learing-center/education-form">
             <div class=" bg-[url('../assets/image/home/l2.jpg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content transition-transform transform group-hover:scale-105 opacity-100 duration-300 cursor-pointer">
                 <div class="flex flex-col items-center justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
-                    <p class="text-4xl px-10 font-semibold mb-2"><span class="px-4 py-2 rounded-full bg-white opacity-100 text-yellow-600 hover:shadow-lg shadow-yellow-600">Full Time Hifz</span></p>
+                    <p class="text-4xl px-10 font-semibold mb-2">Full Time Hifz</p>
                 </div>
             </div>
           </router-link>
@@ -45,7 +45,7 @@ import { Separator } from '/components/ui/separator'
           <router-link class="view-all" to="/learing-center/education-form">
             <div class=" bg-[url('../assets/image/home/l3.jpeg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content transition-transform transform group-hover:scale-105 opacity-100 duration-300 cursor-pointer">
                 <div class="flex flex-col items-center justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
-                    <p class="text-4xl px-10 font-semibold mb-2"><span class="px-4 py-2 rounded-full bg-white opacity-100 text-yellow-600 hover:shadow-lg shadow-yellow-600">Part Time Hifz</span></p>
+                    <p class="text-4xl px-10 font-semibold mb-2">Part Time Hifz</p>
                 </div>
             </div>
           </router-link>
@@ -53,7 +53,7 @@ import { Separator } from '/components/ui/separator'
           <router-link class="view-all" to="/learing-center/education-form">
             <div class=" bg-[url('../assets/image/home/l4.jpg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content transition-transform transform group-hover:scale-105 opacity-100 duration-300 cursor-pointer">
                 <div class="flex flex-col items-center justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
-                    <p class="text-4xl px-10 font-semibold mb-2"><span class="px-4 py-2 rounded-full bg-white opacity-100 text-yellow-600 hover:shadow-lg shadow-yellow-600">Summer School</span></p>
+                    <p class="text-4xl px-10 font-semibold mb-2">Summer School</p>
                 </div>
             </div>
           </router-link>
@@ -61,7 +61,7 @@ import { Separator } from '/components/ui/separator'
           <router-link class="view-all" to="/learing-center/education-form">
             <div class=" bg-[url('../assets/image/home/l5.png')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content transition-transform transform group-hover:scale-105 opacity-100 duration-300 cursor-pointer">
                 <div class="flex flex-col items-center justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
-                    <p class="text-4xl px-10 font-semibold mb-2"><span class="px-4 py-2 rounded-full bg-white opacity-100 text-yellow-600 hover:shadow-lg shadow-yellow-600">Sunday School</span></p>
+                    <p class="text-4xl px-10 font-semibold mb-2">Sunday School</p>
                 </div>
             </div>
           </router-link>
@@ -69,7 +69,7 @@ import { Separator } from '/components/ui/separator'
           <router-link class="view-all" to="/learing-center/education-form">
             <div class=" bg-[url('../assets/image/home/l6.jpg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content transition-transform transform group-hover:scale-105 opacity-100 duration-300 cursor-pointer">
                 <div class="flex flex-col items-center justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
-                    <p class="text-3xl px-10 font-semibold mb-2"><span class="px-4 py-2 rounded-full bg-white opacity-100 text-yellow-600 hover:shadow-lg shadow-yellow-600">Special Needs School</span></p>
+                    <p class="text-3xl px-10 font-semibold mb-2">Special Needs School</p>
                 </div>
             </div>
           </router-link>
@@ -77,7 +77,7 @@ import { Separator } from '/components/ui/separator'
           <router-link class="view-all" to="/learing-center/education-form">
             <div class=" bg-[url('../assets/image/home/l7.jpg')] h-[400px] w-full bg-top bg-cover rounded-xl bg-origin-content transition-transform transform group-hover:scale-105 opacity-100 duration-300 cursor-pointer">
                 <div class="flex flex-col items-center justify-center h-full bg-opacity-25 rounded-xl bg-slate-500 text-white">
-                    <p class="text-4xl px-10 font-semibold mb-2"><span class="px-4 py-2 rounded-full bg-white opacity-100 text-yellow-600 hover:shadow-lg shadow-yellow-600">Fityah Program</span></p>
+                    <p class="text-4xl px-10 font-semibold mb-2">Fityah Program</p>
                 </div>
             </div>
           </router-link>

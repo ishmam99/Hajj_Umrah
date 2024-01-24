@@ -5,6 +5,7 @@ import Announcement from '../components/HomeFolder/announcement.vue'
 import Prayer from '../components/HomeFolder/prayer.vue'
 import UpcommingEvent from '../components/HomeFolder/UpcommingEvent.vue'
 import Services from '../components/HomeFolder/services.vue';
+import LearningCenter from '../components/HomeFolder/learningCenter.vue'
 </script>
 
 <template>
@@ -16,5 +17,6 @@ import Services from '../components/HomeFolder/services.vue';
     </div>
     <UpcommingEvent/>
     <Services/>
+    <LearningCenter/>
   </DefaultLayout>
 </template>
