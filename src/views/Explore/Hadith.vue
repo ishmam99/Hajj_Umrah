@@ -33,6 +33,14 @@
     <!-- <p>{{ hadithOfTheDay}}</p> -->
    </div>
     <div class="p-20 bg-gray-100 gap-5 ">
+          <div class="grid grid-cols-3 gap-3 w-full" v-if="!hadithList">
+             <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
+             <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
+             <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
+             <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
+             <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
+             <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
+            </div>
         <div class="grid grid-cols-3 gap-3 w-full">
             <div v-for="hadith in hadithList">
                 <Card class="rounded-2xl" :class="hadith.id == currentHadith?.id ?'bg-green-600' : ''">

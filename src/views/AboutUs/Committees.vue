@@ -275,17 +275,26 @@
               </div>
             </div>
             <p class="text-xl font-bold pt-5 pb-2">Volunteering For?*<span class="text-red-600">*</span></p>
-            <div class="flex gap-5">
-              <div class="flex items-center space-x-2">
-    <Checkbox id="terms" />
-    <label
-      for="terms"
-      class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-    >
-      Accept terms and conditions
-    </label>
-  </div>
+            <div class="px-6 py-3 grid grid-cols-3">
+              <div class="flex gap-3">
+                   <Input type="checkbox"></Input><Label>Comfort The Sick</Label>
+              </div>
+              <div class="flex gap-3">
+                   <Input type="checkbox"></Input><Label>Educate The Children</Label>
+              </div>
+              <div class="flex gap-3">
+                   <Input type="checkbox"></Input><Label> Enhance Social Justice</Label>
+              </div>
+              <div class="flex gap-3">
+                   <Input type="checkbox"></Input><Label>Feed The Hungry</Label>
+              </div>
+              <div class="flex gap-3">
+                   <Input type="checkbox"></Input><Label>Shelter The Homeless</Label>
+              </div>
+              
             </div>
+            
+          
             <div>
               <p class="text-xl font-bold py-5">Any Question or Comments</p>
               <textarea
@@ -297,7 +306,19 @@
                 class="w-full p-3 rounded-md shadow-lg border border-black"
               ></textarea>
             </div>
-            <div class="flex justify-center py-3">
+              <div class="flex gap-5 mt-3">
+              <Input type="checkbox"></Input>
+              <div class="flex items-center space-x-2">
+    <Checkbox id="terms" />
+    <label
+      for="terms"
+      class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+    >
+      Accept terms and conditions
+    </label>
+  </div>
+            </div>
+            <div class="flex justify-center py-3 mt-3">
               <button
                 class="w-[350px] h-[45px] rounded-2xl bg-yellow-600 text-white font-bold mx-auto"
               >

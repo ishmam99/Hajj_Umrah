@@ -107,7 +107,7 @@
                <router-link to="/services/social" class="text-xl py-3">Social Services</router-link>
             </div>
             <hr />
-            <div class="flex items-center">
+            <!-- <div class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -121,7 +121,7 @@
               </svg>
               <h1 class="text-xl py-3">IT Training Services</h1>
             </div>
-            <hr />
+            <hr /> -->
             <div class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -136,8 +136,8 @@
               </svg>
               <a href="http://islamicdigitallane.com/learning-center"  class="text-xl py-3">Education Services</a >
             </div>
-            <hr />
-            <div class="flex items-center">
+         
+            <!-- <div class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -150,8 +150,8 @@
                 ></path>
               </svg>
               <h1 class="text-xl py-3">Financial Aid</h1>
-            </div>
-            <hr />
+            </div> -->
+          
           </div>
         </div>
 </template>

@@ -5,45 +5,53 @@
         <!-- Responsive Card Layout -->
         <div class="grid grid-cols-4 gap-x-5 gap-y-16">
         <!-- Loop through service items to generate cards -->
-            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+            <div class="bg-white rounded-2xl bg-[url('../assets/image/commitees/8.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl  border border-white h-full flex flex-col items-center uppercase text-center relative">
+                 <div class="h-full rounded-2xl flex flex-col items-center  bg-[#0000007c] w-full px-5 py-14">
                 <img src="/src/assets/image/home/s1.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
-                <h2 class="font-bold mb-2">SCHOLARS</h2>
-                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+                <h2 class="font-bold mb-2 text-white">Education Service</h2>
+               </div>
             </div>
-            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                      <div class="bg-white rounded-2xl bg-[url('../assets/image/commitees/0.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl  border border-white h-full flex flex-col items-center uppercase text-center relative">
+ <div class="h-full rounded-2xl flex flex-col items-center  bg-[#0000007c] w-full px-5 py-14">
                 <img src="/src/assets/image/home/s2.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
-                <h2 class="font-bold mb-2">Social Services</h2>
-                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+                <h2 class="font-bold mb-2 text-white">Social Services</h2>
+               </div>
             </div>
-            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                        <div class="bg-white rounded-2xl bg-[url('../assets/image/home/e3.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative">
+ <div class="h-full rounded-2xl flex flex-col items-center  bg-[#0000007c] w-full px-5 py-14">
                 <img src="/src/assets/image/home/s3.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
-                <h2 class="font-bold mb-2">New Muslim Services</h2>
-                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+                <h2 class="font-bold mb-2 text-white">New Muslim Services</h2>
+               </div>
             </div>
-            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                      <div class="bg-white rounded-2xl bg-[url('../assets/image/home/l5.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative">
+ <div class="h-full rounded-2xl flex flex-col items-center  bg-[#0000007c] w-full px-5 py-14">
                 <img src="/src/assets/image/home/s4.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
-                <h2 class="font-bold mb-2">Special Needs Services</h2>
-                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+                <h2 class="font-bold mb-2 text-white">Special Needs Services</h2>
+               </div>
             </div>
-            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                       <div class="bg-white rounded-2xl bg-[url('../assets/image/home/w.jpg')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative">
+ <div class="h-full rounded-2xl flex flex-col items-center  bg-[#0000007c] w-full px-5 py-14">
                 <img src="/src/assets/image/home/s5.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
-                <h2 class="font-bold mb-2">Nikah Services</h2>
-                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+                <h2 class="font-bold mb-2 text-white">Nikah Services</h2>
+               </div>
             </div>
-            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                        <div class="bg-white rounded-2xl bg-[url('../assets/image/home/f.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative">
+ <div class="h-full rounded-2xl flex flex-col items-center  bg-[#0000007c] w-full px-5 py-14">
                 <img src="/src/assets/image/home/s6.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
-                <h2 class="font-bold mb-2">Funeral Service</h2>
-                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+                <h2 class="font-bold mb-2 text-white">Funeral Service</h2>
+               </div>
             </div>
-            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                       <div class="bg-white rounded-2xl bg-[url('../assets/image/donation/d3.jpg')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative">
+  <div class="h-full rounded-2xl flex flex-col items-center  bg-[#0000007c] w-full px-5 py-14">
                 <img src="/src/assets/image/home/s7.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
-                <h2 class="font-bold mb-2">Financial Aid</h2>
-                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+                <h2 class="font-bold mb-2 text-white">Financial Aid</h2>
+               </div>
             </div>
-            <div class="bg-white rounded-2xl shadow-2xl px-5 py-14 border border-white h-full flex flex-col items-center uppercase text-center relative">
+                       <div class="bg-white rounded-2xl bg-[url('../assets/image/commitees/6.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative">
+                        <div class="h-full rounded-2xl flex flex-col items-center  bg-[#0000004f] w-full px-5 py-14">
                 <img src="/src/assets/image/home/s8.png" alt="logo 1" class="mb-4 absolute top-[-25%] p-4 rounded-full bg-white"/>
-                <h2 class="font-bold mb-2">Facilities Services</h2>
-                <p class="text-gray-600 text-xs">Imam Abaidullah Rana is the son of a scholar and chemical...</p>
+                <h2 class="font-bold mb-2  text-white">Facilities Services</h2>
+               </div>
             </div>
         </div>
     </section>

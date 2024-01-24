@@ -40,12 +40,12 @@
               <MenubarItem >
                 <a href="http://islamicdigitallane.com/learning-center" class=" w-full hover:pl-5 duration-300">Education Service</a>
               </MenubarItem>
-              <MenubarItem >
+              <!-- <MenubarItem >
                 <a class=" w-full hover:pl-5 duration-300">IT Training Services</a>
               </MenubarItem> 
               <MenubarItem >
                 <a class=" w-full hover:pl-5 duration-300">Financial Aid</a>
-              </MenubarItem>  
+              </MenubarItem>   -->
             </MenubarContent>
           </MenubarMenu>
 
@@ -95,9 +95,9 @@
               <MenubarItem>
                 <router-link to="/about/committees" class=" w-full hover:pl-5 duration-300">Committees</router-link>
               </MenubarItem>
-              <MenubarItem>
+              <!-- <MenubarItem>
                 <router-link to="/about/team" class=" w-full hover:pl-5 duration-300">Team</router-link>
-              </MenubarItem>
+              </MenubarItem> -->
               <MenubarItem>
                 <router-link to="/about/policies" class=" w-full hover:pl-5 duration-300">Policies</router-link>
               </MenubarItem>

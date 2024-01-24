@@ -33,6 +33,7 @@
     <!-- <p>{{ surahOfTheDay}}</p> -->
    </div>
     <div class="p-20 bg-gray-100 gap-5 ">
+      
         <div class="grid grid-cols-3 gap-3 w-full">
           
             <div v-for="surah in surahList.data" v-if="surahList">
@@ -47,6 +48,14 @@
             <p class="text-green-700 font-bold">Revealed at : {{ surah.revelationType}}</p> 
         </CardContent>
       </Card>
+            </div>
+             <div class="grid grid-cols-3 gap-3 w-full">
+             <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
+             <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
+             <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
+             <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
+             <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
+             <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
             </div>
       </div>
      
@@ -66,6 +75,7 @@ import {
   CardHeader,
   CardTitle
 } from '/components/ui/card'
+import {Skeleton } from '/components/ui/skeleton'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '/components/ui/accordion'
 
 import {Button
