@@ -43,74 +43,7 @@
                 </ul>
               </div>
             </div>
-            <div class="bg-white rounded-xl p-5 w-full">
-              <h2 class="text-xl font-semibold">ARTICLE VI – MEMBERSHIP</h2>
-              <div>
-                <p class="pt-5">A. IDL-Masjid membership is open to all Sunni Muslims who:</p>
-                <div class="pt-5 ml-10">
-                  <ul class="list-decimal">
-                    <li>
-                      Subscribe to the vision, mission and objectives of IDL-Masjid as referenced
-                      above in Article II
-                    </li>
-                    <li>
-                      Agree to work under general guidance of the IDL-Masjid BOD and in accordance
-                      with the Constitution of IDL-Masjid.
-                    </li>
-                    <li>Apply to be a member of IDL-Masjid.</li>
-                    <li>
-                      Live in the following zip codes: 75074, 75075, 75080, 75081, 75082, 75044,
-                      75002, 75094, 75048, 75044, 75098.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="pt-10">
-                <p>
-                  B. All membership applications will be submitted to the Board of Directors of
-                  IDL-Masjid. The BOD shall approve a process by which applications for membership are
-                  reviewed. The BOD through its process of reviewing applications, will approve
-                  applications within thirty (30) days of their receipt if prospective members have
-                  satisfied and fulfilled the requirements of membership. IDL-Masjid Membership begins
-                  from the day the application for membership is made and expires annually on a date
-                  as determined by BOD.
-                </p>
-              </div>
-              <div class="pt-10">
-                <p>
-                  C. The BOD, in keeping the interests of IDL-Masjid and its membership in mind, shall
-                  have the authority to involuntarily revoke the membership of a member or members of
-                  IDL-Masjid if they fail to meet the requirements of membership or, in accordance
-                  with the procedures set out in Article V(G), if they fail to comply with IDL-Masjid
-                  policies, guidelines and this Constitution. A membership that has been revoked by
-                  the BOD cannot become eligible for IDL-Masjid Membership until six (6) months have
-                  passed since the date the membership was initially revoked.
-                </p>
-              </div>
-              <div class="pt-10">
-                <p>
-                  D. Members of IDL-Masjid may voluntarily withdraw their membership as long as the
-                  member provides IDL-Masjid BOD thirty (30) day’s written notice of their intention
-                  to withdraw as a member of IDL-Masjid. Said notice shall provide a concise
-                  explanation of the reason behind their desire to withdraw from membership. A
-                  withdrawal of membership shall become effective once the notice is given to the BOD.
-                  A membership interest that has been voluntarily withdrawn cannot be reinstated until
-                  six (6) months have passed since the effective date the membership was initially
-                  withdrawn.
-                </p>
-              </div>
-              <div class="pt-10">
-                <p>
-                  E. The membership fee is a donation of $100.00 for families and $50.00 for
-                  individuals and this membership expires on the date set by BOD. The BOD may waive
-                  membership fees in their discretion for individuals and families facing hardship,
-                  which will be determined on a case-by-case basis. A donation in any other fund other
-                  than as membership fee, would not renew membership. All members would have the same
-                  membership renewal date. The BOD has the discretion to change the membership fee and
-                  membership renewal date without requiring a change to the constitution.
-                </p>
-              </div>
-            </div>
+
             <div class="bg-white rounded-xl p-5 w-full">
               <p class="text-xl font-bold pt-2 pb-2">
                 Membership Type<span class="text-red-600">*</span>
