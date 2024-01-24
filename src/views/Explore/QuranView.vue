@@ -43,10 +43,11 @@
             <p>Number of Ayah : {{ surah.numberOfAyahs}}</p> 
             <p class="text-green-700 font-bold">Revealed at : {{ surah.revelationType}}</p> 
         </CardHeader>
-        <CardContent class="text-gray-600  border-2 rounded-xl" >
+        <Separator />
+        <CardContent class="text-gray-600  " >
           
               <div class="py-5">
-                 <p v-for="ayah in surah?.real.ayahs" class="text-center">{{ ayah.text}}</p>
+                 <p v-for="ayah in surah?.real?.ayahs" class="text-center">{{ ayah.text}}</p>
               </div>
             
                <div class="flex-wrap justify-end py-5">

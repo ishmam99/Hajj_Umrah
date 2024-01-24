@@ -32,7 +32,17 @@
     <h1 class="py-10 text-center bg-[#2d292938] text-4xl text-white font-bold">Dua of the Day</h1>
    </div>
     <div class="p-20 flex bg-gray-100 gap-5 ">
-    
+        <div class="grid grid-cols-5 gap-5">
+            <div v-for="dua in duaList">
+
+          
+             <Card  :class="dua == currentDua?'bg-yellow-600':''"  >
+            <CardContent @click="currentDua = dua" class="py-10">
+                 <h1 class="text-xl font-bold text-center" :class="dua == currentDua? 'text-white':'text-slate-600'">{{ dua.name}}</h1>
+            </CardContent>
+        </Card>
+        </div>  </div>
+       
 </div>
      </DefaultLayout>
   </div>
@@ -51,6 +61,25 @@ import {
 } from '/components/ui/card'
 import ContactMore from '/src/components/ContactMore.vue'
 import { Separator } from '/components/ui/separator'
+import { ref } from 'vue'
+const currentDua = ref()
+const duaList = ref([
+    { name: 'The Dua for the Oppressed' },
+    { name: '5 Duas of Prophet Muhammed (PBUH)' },
+    { name: 'Muhammad ﷺ' },
+    { name: 'The Dua for the Oppressed' },
+    { name: 'Dua for taqwa' },
+    { name: 'Dua for success' },
+    { name: 'Dua for good character' },
+    { name: 'Dua for blessed family' },
+    { name: 'Dua for having children' },
+    { name: 'Dua for relief from distress, laziness, debts' },
+    { name: 'Dua for a healthy body' },
+    { name: 'Dua for the sick' },
+    { name: 'Dua to avoid sudden afflictions' },
+    { name: 'Dua for preservation' },
+    { name: 'Dua that removes anxietyDua for preservation' },
+])
 </script>
 
 <style lang="scss" scoped></style>
