@@ -9,15 +9,18 @@
     </div>
 </template>
 <script setup>
-import { watch } from 'vue'
+import { watch,ref } from 'vue'
 import { useAuthStore } from '/src/stores/AuthStore'
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const store = useAuthStore()
-watch(()=>store => {
-    if (store.isAuthenticated == flase) {
-        router.push({ name: '/' });
+
+watch(() => store.isAuthenticated, (newIsAuthenticated) => {
+    console.log( newIsAuthenticated);
+
+    if (!newIsAuthenticated) {
+        router.push('/');
     }
 })
 </script>
