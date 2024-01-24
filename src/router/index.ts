@@ -106,6 +106,11 @@ const router = createRouter({
       component: () => import('../views/Contact/AskImam.vue')
     },
     {
+      path: '/contact/contact_us',
+      name: 'contact/contact_us',
+      component: () => import('../views/Contact/ContactUs.vue')
+    },
+    {
       path: '/contact/mashjid_info',
       name: 'contact/mashjid_info',
       component: () => import('../views/Contact/MashjidInfo.vue')
@@ -169,9 +174,29 @@ const router = createRouter({
       component: () => import('../views/OnSiteEducation.vue')
     },
     {
+      path: '/learing-center/education-form',
+      name: '/learing-center/education-form',
+      component: () => import('../views/LearningCenter/LearningCenterEducationForm.vue')
+    },
+    {
       path: '/more/registration/memebship_registration',
       name: 'more/registration/memebship_registration',
       component: () => import('../views/More/Registration/MemebshipRegistration.vue')
+    },
+    {
+      path: '/more/registration/mosjid_wavier_and_release_liability',
+      name: 'more/registration/mosjid_wavier_and_release_liability',
+      component: () => import('../views/More/Registration/MosjidWavierAndReleaseLiability.vue')
+    },
+    {
+      path: '/more/registration/sports_and_recreation_event',
+      name: 'more/registration/sports_and_recreation_event',
+      component: () => import('../views/More/Registration/SportsAndRecreationEvent.vue')
+    },
+    {
+      path: '/more/registration/esl_class_registration',
+      name: 'more/registration/esl_class_registration',
+      component: () => import('../views/More/Registration/ESLClassRegistration.vue')
     }
   ]
 })

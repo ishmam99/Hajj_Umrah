@@ -2,7 +2,7 @@
    <div class="w-1/4">
           <p class="font-[750] text-slate-800 py-3 text-lg">More..</p>
           <div class="bg-white rounded-xl p-5">
-            <div class="flex items-center">
+            <div class="flex items-center hover:pl-5 duration-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
