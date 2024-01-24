@@ -157,11 +157,6 @@
 </template>
 <script setup lang="ts">
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
-import Hero from '../components/hero.vue';
-import Announcement from '../components/HomeFolder/announcement.vue'
-import Prayer from '../components/HomeFolder/prayer.vue'
-import UpcommingEvent from '../components/HomeFolder/UpcommingEvent.vue'
-import Services from '../components/HomeFolder/services.vue';
 import { Button } from '/components/ui/button'
 import { Separator  } from '/components/ui/separator'
 import {

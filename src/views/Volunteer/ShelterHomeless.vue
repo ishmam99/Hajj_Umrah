@@ -226,7 +226,6 @@
 
 <script setup>
 import DefaultLayout from '../../layouts/DefaultLayout.vue'
-import Card from '../../components/CardSection.vue'
 import VolunteerMore from '../../components/VolunteerMore.vue'
 </script>
 

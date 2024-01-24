@@ -53,17 +53,17 @@
             <MenubarTrigger>Explore <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
-                <a href="" class=" w-full hover:pl-5 duration-300 text-sm">Dua</a>
+                <router-link to="/explore/dua" class=" w-full hover:pl-5 duration-300 text-sm">Dua</router-link>
               </MenubarItem>
               <MenubarItem>
-                <a href="" class=" w-full hover:pl-5 duration-300 text-sm">Quran</a>
+                <router-link to="/explore/quran" class=" w-full hover:pl-5 duration-300 text-sm">Quran</router-link>
               </MenubarItem>
               <MenubarItem>
-                <a href="" class=" w-full hover:pl-5 duration-300 text-sm">Hadith</a>
+                  <router-link to="/explore/hadith"  class=" w-full hover:pl-5 duration-300 text-sm">Hadith</router-link>
               </MenubarItem>
-              <MenubarItem>
+              <!-- <MenubarItem>
                 <a href="" class=" w-full hover:pl-5 duration-300 text-sm">Watch</a>
-              </MenubarItem>
+              </MenubarItem> -->
             </MenubarContent>
           </MenubarMenu>
 

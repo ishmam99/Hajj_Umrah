@@ -73,6 +73,11 @@ const router = createRouter({
       name: 'explore/quran',
       component: () => import('../views/Explore/Quran.vue')
     },
+    {
+      path: '/explore/quran/:id',
+      name: 'explore/quranview',
+      component: () => import('../views/Explore/QuranView.vue')
+    },
 
     {
       path: '/about/board_of_directors',
@@ -166,7 +171,7 @@ const router = createRouter({
     {
       path: '/onsitelearning',
       name: 'onsitelearning',
-      component: () => import('../views/OnSiteEducation.vue')
+      component: () => import('../views/OnsiteEducation.vue')
     },
     {
       path: '/more/registration/memebship_registration',
