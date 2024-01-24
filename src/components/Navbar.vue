@@ -189,8 +189,8 @@
         <div class="relative group">
           <button @click="MemberDropMenu=!MemberDropMenu" class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500 ">Member</button>
           <div v-show="MemberDropMenu==true"  class="flex flex-col absolute top-[110%] w-[150px] right-0 z-50 p-3 rounded-md shadow-md text-black bg-white">
-            <router-link to="/Login">Sign in</router-link>
-            <router-link to="/Signup">Sign up</router-link>
+            <router-link to="/Login" class="py-1.5">Sign in</router-link>
+            <router-link to="/Signup" class="py-1.5">Sign up</router-link>
           </div>
         </div>
         

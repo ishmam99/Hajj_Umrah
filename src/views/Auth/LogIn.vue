@@ -13,7 +13,10 @@
                 </div>
                 <p class="text-xs text-gray-400">Forgot Password?</p>
             </div>
-            <button class="bg-yellow-600 w-full px-3 py-2 rounded-md my-3 text-white font-semibold">Login</button>
+            <!-- <button class="bg-yellow-600 w-full px-3 py-2 rounded-md my-3 text-white font-semibold">Login</button> -->
+            <div class="bg-yellow-600 w-full flex justify-center rounded-md my-3 text-white font-semibold">
+                <router-link to="/Membar_Dashboard" class="w-full text-center px-3 py-2 ">Login</router-link>
+            </div>
             <p class="text-center text-sm text-gray-600">OR</p>
             <button class="border border-gray-400 w-full px-3 py-2 rounded-md my-3 font-bold text-gray-400 flex items-center justify-center gap-2"><ion-icon name="logo-google"></ion-icon>Sign in with Google</button>
             <div class="flex text-sm justify-between gap-2">
