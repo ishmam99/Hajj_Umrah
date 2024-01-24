@@ -206,7 +206,7 @@ const router = createRouter({
     {
       path: '/Login',
       name: 'Login',
-      component:()=>import('../views/Auth/LogIn.vue')
+      component: () => import('../views/Auth/LogIn.vue'),
     },
     {
       path: '/Signup',
@@ -216,27 +216,27 @@ const router = createRouter({
     {
       path: '/Membar_Dashboard',
       name: 'Membar_Dashboard',
-      component:()=>import('../views/Member/MembarDashbord.vue')
+      component: () => import('../views/Member/MembarDashbord.vue'),
     },
     {
       path: '/Membar_Event_History',
       name: 'Membar_Event_History',
-      component:()=>import('../views/Member/MemberEventHistory.vue')
+      component: () => import('../views/Member/MemberEventHistory.vue'),
     },
     {
       path: '/Membar_Donation_History',
       name: 'Membar_Donation_History',
-      component:()=>import('../views/Member/MembarDonation.vue')
+      component: () => import('../views/Member/MembarDonation.vue'),
     },
     {
       path: '/Membar_Payment_History',
       name: 'Membar_Payment_History',
-      component:()=>import('../views/Member/MembarPaymentHistory.vue')
+      component: () => import('../views/Member/MembarPaymentHistory.vue'),
     },
     {
       path: '/Membar_Change_Password',
       name: 'Membar_Change_Password',
-      component:()=>import('../views/Member/MemberPassChange.vue')
+      component: () => import('../views/Member/MemberPassChange.vue'),
     }
   ]
 })

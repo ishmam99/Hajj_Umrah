@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white text-lg w-1/4 p-5 flex flex-col gap-2 rounded-md shadow-md font-semibold">
+    <div class="bg-white text-lg w-1/4 p-5 h-fit flex flex-col gap-2 rounded-md shadow-md font-semibold">
         <router-link to="/Membar_Dashboard">Profile</router-link>
         <router-link to="/Membar_Event_History">Event History</router-link>
         <router-link to="/Membar_Donation_History">Donation History</router-link>

@@ -1,28 +1,67 @@
 <template>
-    <div class="w-full bg-[url('/src/assets/image/common/n1.png')]  bg-[50%] h-screen flex justify-center items-center">
-        <div class="max-h-[750px] max-w-[300px] bg-[#ffffffec] p-5 rounded-lg shadow-md">
-            <img src="/src/assets/image/common/n1.png" alt="" class="w-12 m-auto">
-            <p class="font-semibold py-1.5">Email</p>
-            <input type="email" class="border border-gray-300 focus:outline-yellow-600 rounded-md w-full py-1.5 px-3">
-            <p class="font-semibold py-1.5">Password</p>
-            <input type="password" class="border border-gray-300 focus:outline-yellow-600 rounded-md w-full py-1.5 px-3">
-            <div class="flex justify-between items-center gap-5 my-3">
-                <div class="flex items-center gap-2">
-                    <input type="checkbox" class="">
-                    <p class="text-xs">Remember me</p>
+    <Default-Layout>
+        <div class="w-full h-screen flex justify-center items-center bg-slate-50">
+            <form @submit.prevent="login(user)">
+                <div class="max-h-[750px] w-[600px] bg-[#ffffff] p-5 rounded-lg shadow-md">
+                    <img src="/src/assets/image/common/n1.png" alt="" class="w-12 m-auto">
+                    <p class="font-semibold py-1.5">Email</p>
+                    <input @change="error=false" v-model="data.email" type="email" class="border border-gray-300 focus:outline-yellow-600 rounded-md w-full py-1.5 px-3">
+                    <p class="font-semibold py-1.5">Password</p>
+                    <input v-model="data.password" type="password" class="border border-gray-300 focus:outline-yellow-600 rounded-md w-full py-1.5 px-3">
+                    <div class="flex justify-between items-center gap-5 my-3">
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" class="">
+                            <p class="text-xs">Remember me</p>
+                        </div>
+                        <p class="text-xs text-gray-400">Forgot Password?</p>
+                    </div>
+                    <p v-if="error" class="text-red-600 text-center">No user found</p>
+                    <button type="submit" class="bg-yellow-600 w-full px-3 py-2 rounded-md my-3 text-white font-semibold">Login</button>
+                    <!-- <div class="bg-yellow-600 w-full flex justify-center rounded-md my-3 text-white font-semibold">
+                        <router-link to="/Membar_Dashboard" class="w-full text-center px-3 py-2 ">Login</router-link>
+                    </div> -->
+                    <p class="text-center text-sm text-gray-600">OR</p>
+                    <button class="border border-gray-400 w-full px-3 py-2 rounded-md my-3 font-bold text-gray-400 flex items-center justify-center gap-2"><ion-icon name="logo-google"></ion-icon>Sign in with Google</button>
+                    <div class="flex text-sm justify-between gap-2">
+                        <p class="text-gray-500">Don't have an account ? </p>
+                        <router-link to="/Signup" class="text-gray-500 font-semibold hover:text-yellow-600 cursor-pointer">Register</router-link>
+                    </div>
                 </div>
-                <p class="text-xs text-gray-400">Forgot Password?</p>
-            </div>
-            <!-- <button class="bg-yellow-600 w-full px-3 py-2 rounded-md my-3 text-white font-semibold">Login</button> -->
-            <div class="bg-yellow-600 w-full flex justify-center rounded-md my-3 text-white font-semibold">
-                <router-link to="/Membar_Dashboard" class="w-full text-center px-3 py-2 ">Login</router-link>
-            </div>
-            <p class="text-center text-sm text-gray-600">OR</p>
-            <button class="border border-gray-400 w-full px-3 py-2 rounded-md my-3 font-bold text-gray-400 flex items-center justify-center gap-2"><ion-icon name="logo-google"></ion-icon>Sign in with Google</button>
-            <div class="flex text-sm justify-between gap-2">
-                <p class="text-gray-500">Don't have an account ? </p>
-                <router-link to="/Signup" class="text-gray-500 font-semibold hover:text-yellow-600 cursor-pointer">Register</router-link>
-            </div>
+            </form>
+            
         </div>
-    </div>
+    </Default-Layout>
+    
 </template>
+<script setup>
+import DefaultLayout from '@/layouts/DefaultLayout.vue';
+import { useAuthStore } from '/src/stores/AuthStore.ts';
+import { ref } from 'vue'
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const error= ref(false)
+
+const data = ref({
+  email:'',
+  password: '',
+});
+const authStore = useAuthStore();
+const login = () => {
+    if (data.value.email == '' || data.value.password == '') {
+        alert('Email or password is missing')
+    }
+    else {
+        let check = authStore.userList.find((user) => 
+        user.email == data.value.email)
+        // console.log(check , data.value)
+        if (check && check.password==data.value.password) {
+            authStore.login(data.value);
+            router.push({ name: 'Membar_Dashboard' });
+        }
+        else
+        error.value=true
+    }
+    
+};
+</script>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 ml-10">
+      <div class="w-full">
         <div class="bg-white">
           <div class="flex items-center gap-2">
             <svg
