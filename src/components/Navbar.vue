@@ -25,25 +25,25 @@
                   </MenubarSubTrigger>
                   <MenubarSubContent>
                     <MenubarItem>
-                      <router-link to="/more/registration/memebship_registration" >Prayer Time</router-link>
+                      <router-link to="/Prayer_Time" >Prayer Time</router-link>
                     </MenubarItem>
                     <MenubarItem>
-                      <a href="/more/registration/mosjid_wavier_and_release_liability" class=" w-full hover:pl-5 duration-300">Prayer Announcement</a>
+                      <router-link to="/Prayer_Announcement" class=" w-full hover:pl-5 duration-300">Prayer Announcement</router-link>
                     </MenubarItem>
                     <MenubarItem>
-                      <a href="/more/registration/sports_and_recreation_event" class=" w-full hover:pl-5 duration-300">Next Prayer Service</a>
+                      <router-link to="/Next_Prayer_Service" class=" w-full hover:pl-5 duration-300">Next Prayer Service</router-link> 
                     </MenubarItem>
                     <MenubarItem>
-                      <a href="/more/registration/esl_class_registration" class=" w-full hover:pl-5 duration-300">Recent Prayer Services</a>
+                      <router-link to="/Recent_Prayer_Service" class=" w-full hover:pl-5 duration-300">Recent Prayer Services</router-link>
                     </MenubarItem>
                     <MenubarItem>
-                      <a href="/more/registration/esl_class_registration" class=" w-full hover:pl-5 duration-300">Makkah Live</a>
+                      <router-link to="/Makkah_Live" class=" w-full hover:pl-5 duration-300">Makkah Live</router-link>
                     </MenubarItem>
                     <MenubarItem>
-                      <a href="/more/registration/esl_class_registration" class=" w-full hover:pl-5 duration-300">Janaja Prayer Announcement</a>
+                      <router-link to="Janaja_Announcement" class=" w-full hover:pl-5 duration-300">Janaja Prayer Announcement</router-link>
                     </MenubarItem>
                     <MenubarItem>
-                      <a href="/more/registration/esl_class_registration" class=" w-full hover:pl-5 duration-300">Ramadan Prayer Timings</a>
+                      <router-link to="Ranadam_Payer_Time" class=" w-full hover:pl-5 duration-300">Ramadan Prayer Timings</router-link>
                     </MenubarItem>
                   </MenubarSubContent>
                 </MenubarSub>
