@@ -34,7 +34,7 @@
             <!-- <p class="text-xl font-bold pt-2 pb-2">Student Admission Form</p> -->
 
             <div class="pt-10">
-              <h1 class="text-2xl font-bold">Student Information</h1>
+              <h1 class="text-2xl font-bold">Student Application</h1>
             </div>
             <div class="py-5 space-y-7 mt-5">
               <div class="flex w-full gap-5">
