@@ -184,6 +184,16 @@ const router = createRouter({
       component: () => import('../views/OnsiteEducation.vue')
     },
     {
+      path: '/studentadmission',
+      name: 'studentadmission',
+      component: () => import('../views/LearningCenter/StudentAdmission.vue')
+    },
+    {
+      path: '/volunteers/volunteeradmission',
+      name: 'volunteeradmission',
+      component: () => import('../views/GetInvolved/Volunteers/VolunteerAdmission.vue')
+    },
+    {
       path: '/learing-center/education-form',
       name: '/learing-center/education-form',
       component: () => import('../views/LearningCenter/LearningCenterEducationForm.vue')

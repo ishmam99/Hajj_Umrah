@@ -108,10 +108,10 @@
             </MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
-                <router-link to="/onsitelearning" class=" w-full hover:pl-5 duration-300 text-sm">Student Admission  </router-link>
+                <router-link to="/studentadmission" class=" w-full hover:pl-5 duration-300 text-sm">Student Admission  </router-link>
                 </MenubarItem>
                   <MenubarItem>
-                <router-link to="/onsitelearning" class=" w-full hover:pl-5 duration-300 text-sm">Student Login
+                <router-link to="/Login" class=" w-full hover:pl-5 duration-300 text-sm">Student Login
                 </router-link></MenubarItem>  <MenubarItem>
                 <router-link to="/onsitelearning" class=" w-full hover:pl-5 duration-300 text-sm">Onsite learning center
                 </router-link>
@@ -135,7 +135,7 @@
                 <router-link to="/activity/project" class=" w-full hover:pl-5 duration-300">Projects</router-link>
               </MenubarItem>
               <MenubarItem>
-                <router-link to="/activity/project" class=" w-full hover:pl-5 duration-300">Board Member Login</router-link>
+                <router-link to="/login" class=" w-full hover:pl-5 duration-300">Board Member Login</router-link>
               </MenubarItem>
             </MenubarContent>
           </MenubarMenu>
@@ -150,10 +150,13 @@
                   </MenubarSubTrigger>
                   <MenubarSubContent>
                     <MenubarItem>
-                      <router-link to="/more/registration/memebship_registration" class=" w-full hover:pl-5 duration-300">Apply for the volunteer</router-link>
+                      <router-link to="/volunteers/volunteeradmission" class=" w-full hover:pl-5 duration-300">Apply for the volunteer</router-link>
                     </MenubarItem>
                     <MenubarItem>
-                      <a href="/more/registration/mosjid_wavier_and_release_liability" class=" w-full hover:pl-5 duration-300">Volunteer Login</a>
+                      <router-link to="/Login" class=" w-full hover:pl-5 duration-300 text-sm">
+                        Volunteer Login
+                      </router-link>
+                      <!-- <a href="/more/registration/mosjid_wavier_and_release_liability" class=" w-full hover:pl-5 duration-300">Volunteer Login</a> -->
                     </MenubarItem>
                     <!-- <MenubarItem> -->
                        <MenubarSub>
@@ -246,7 +249,7 @@
             <MenubarTrigger>Employees <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
-                <router-link to="/contact/ask_imam" class=" w-full hover:pl-5 duration-300">Employee Login</router-link>
+                <router-link to="/login" class=" w-full hover:pl-5 duration-300">Employee Login</router-link>
               </MenubarItem>
               <MenubarItem>
                 <router-link to="/contact/contact_us" class=" w-full hover:pl-5 duration-300">HR Management</router-link>
@@ -279,11 +282,15 @@
             <MenubarTrigger>Member<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
+<<<<<<< HEAD
                 <router-link to="/Login" class=" w-full hover:pl-5 duration-300">Login</router-link>
               </MenubarItem>
               <MenubarItem>
                 <router-link to="/more/registration/memebship_registration" class=" w-full hover:pl-5 duration-300">Sign up</router-link>
+=======
+>>>>>>> 5db6dd0a7843cf7220ca1300f7c7cfa9071eab7e
               </MenubarItem>
+
             </MenubarContent>
           </MenubarMenu>
          <div class="flex items-center justify-between gap-2 text-white font-bold text-sm">
