@@ -29,11 +29,9 @@
           </div>
         </div>
         <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
-          <div class="space-y-8 w-3/4">
+          <div class="space-y-8 w-full">
             <div class="bg-white rounded-xl p-5 text-center">
-                <iframe width="" height="" class="w-full h-[400px]"
-                src="https://www.youtube.com/">
-                </iframe>
+               <iframe width="1080" height="580" src="https://www.youtube.com/embed/moQtMet7F7w?si=huGKs-iEtDCxTwIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
           </div>
           <PrayerServiceMore />
