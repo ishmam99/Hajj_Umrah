@@ -135,7 +135,7 @@
                 <router-link to="/activity/project" class=" w-full hover:pl-5 duration-300">Projects</router-link>
               </MenubarItem>
               <MenubarItem>
-                <router-link to="/login" class=" w-full hover:pl-5 duration-300">Board Member Login</router-link>
+                <router-link to="/boardmemberlogin" class=" w-full hover:pl-5 duration-300">Board Member Login</router-link>
               </MenubarItem>
             </MenubarContent>
           </MenubarMenu>
@@ -153,7 +153,7 @@
                       <router-link to="/volunteers/volunteeradmission" class=" w-full hover:pl-5 duration-300">Apply for the volunteer</router-link>
                     </MenubarItem>
                     <MenubarItem>
-                      <router-link to="/Login" class=" w-full hover:pl-5 duration-300 text-sm">
+                      <router-link to="/volunteers/volunteerlogin" class=" w-full hover:pl-5 duration-300 text-sm">
                         Volunteer Login
                       </router-link>
                       <!-- <a href="/more/registration/mosjid_wavier_and_release_liability" class=" w-full hover:pl-5 duration-300">Volunteer Login</a> -->

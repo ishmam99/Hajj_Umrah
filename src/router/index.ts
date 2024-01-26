@@ -189,6 +189,11 @@ const router = createRouter({
       component: () => import('../views/GetInvolved/Volunteers/VolunteerAdmission.vue')
     },
     {
+      path: '/volunteers/volunteerlogin',
+      name: 'volunteerlogin',
+      component: () => import('../views/GetInvolved/Volunteers/VolunteerLogin.vue')
+    },
+    {
       path: '/learing-center/education-form',
       name: '/learing-center/education-form',
       component: () => import('../views/LearningCenter/LearningCenterEducationForm.vue')
@@ -222,6 +227,11 @@ const router = createRouter({
       path: '/Signup',
       name: 'Signup',
       component:()=>import('../views/Auth/SingnUp.vue')
+    },
+    {
+      path: '/boardmemberlogin',
+      name: 'boardmemberlogin',
+      component: () => import('../views/Activity/BoardMemberLogin.vue'),
     },
     {
       path: '/Membar_Dashboard',
