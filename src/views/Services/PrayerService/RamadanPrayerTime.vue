@@ -18,10 +18,10 @@
               <p>Home</p>
               <p>/ Services</p>
               <p>/ Prayer Service</p>
-              <p class="text-yellow-500">/ Ramadan Prayer Timming</p>
+              <p class="text-yellow-500">/ Ramadan Prayer Timing</p>
             </div>
             <div class="bg-white rounded-lg relative py-3">
-              <h1 class="text-yellow-500 text-4xl font-semibold">Ramadan Prayer Timming</h1>
+              <h1 class="text-yellow-500 text-4xl font-semibold">Ramadan Prayer Timing</h1>
               <div>
                 <p></p>
               </div>
@@ -31,21 +31,21 @@
         <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
           <div class="space-y-8 w-3/4">
             <div class="bg-white rounded-xl p-5 text-center">
-              <h1 class="text-3xl underline font-bold text-gray-700 py-3">Ramadan Prayer Time form April 2024</h1>
+              <h1 class="text-3xl underline font-bold text-gray-700 py-3">Ramadan Prayer Time form March 2024</h1>
               <div class="w-full px-10">
                 <h1 class="text-3xl font-bold uppercase pb-3">Prayer time</h1>
                 <div class="bg-white p-10 rounded-2xl drop-shadow-md">
-                    <p class="mx-3 text-sm font-semibold text-gray-500 text-center">11 th January,2024</p>
+                    <p class="mx-3 text-sm font-semibold text-gray-500 text-center">10 th March,2024</p>
                     <div class="grid grid-cols-2">
                         <div>
-                            <h4 class="text-blue-600 text-4xl font-semibold uppercase">Next</h4>
-                            <p class="text-gray-500 text-xl font-semibold">Prayer</p>
+                            <!-- <h4 class="text-blue-600 text-4xl font-semibold uppercase">Next</h4>
+                            <p class="text-gray-500 text-xl font-semibold">Prayer</p> -->
                         </div>
-                        <div class="text-right text-sm font-semibold">
-                            <p class="text-gray-600">Dhuhr</p>
-                            <p class="text-yellow-600">1:00 PM</p>
-                            <p class="text-green-600">4h 16m left</p>
-                        </div>
+                        <!-- <div class="text-right text-sm font-semibold">
+                            <p class="text-gray-600">Fajr</p>
+                            <p class="text-yellow-600">05:00</p>
+                            <p class="text-green-600">8h 16m left</p>
+                        </div> -->
                     </div>
                     <div>
                         <div class="pt-3 pb-1 flex gap-2 text-center font-semibold border-b">
@@ -54,13 +54,13 @@
                             <p class="w-1/3 text-sm">Iqamah</p>
                         </div>
                         <div class="pt-3 pb-1 flex gap-2 text-center border-b">
-                            <p class="w-1/3 text-sm">fajr</p>
-                            <p class="w-1/3 text-sm">06:18 AM</p>
-                            <p class="w-1/3 text-sm">06:30 AM</p>
+                            <p class="w-1/3 text-sm">Fajr</p>
+                            <p class="w-1/3 text-sm">04:52 AM</p>
+                            <p class="w-1/3 text-sm">05:00 AM</p>
                         </div>
                         <div class="pt-3 pb-1 flex gap-2 text-center border-b">
                             <p class="w-1/3 text-sm">Sunrise</p>
-                            <p class="w-1/3 text-sm">07:31 AM</p>
+                            <p class="w-1/3 text-sm">06:54 AM</p>
                             <p class="w-1/3 text-sm"></p>
                         </div>
                         <div class="pt-3 pb-1 flex gap-2 text-center border-b">

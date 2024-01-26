@@ -169,8 +169,13 @@ const router = createRouter({
       component: () => import('../views/More/RamadanSpecial.vue')
     },
     {
-      path: '/donation',
-      name: 'donation',
+      path: '/Member_Donation',
+      name: 'Member Donation',
+      component: () => import('../views/Donation/DonationView.vue')
+    },
+    {
+      path: '/Guest_Donation',
+      name: 'Guest Donation',
       component: () => import('../views/Donation/DonationView.vue')
     },
     {

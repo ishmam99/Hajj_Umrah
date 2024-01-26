@@ -36,7 +36,7 @@
               <p>Assalamu Alaikum,</p>
               <p>We hope this message finds you in good health and high spirits. As part of our commitment to keeping the community informed and connected, we would like to announce the prayer times for the upcoming week:</p>
               <div class="text-center">
-                <p class="font-semibold">1. Fajr (Dawn) Prayer:</p>
+                <p class="font-semibold">Fajr (Dawn) Prayer:</p>
                 <p class="pl-2">Adhaan: 06:18 AM</p>
                 <p class="pl-2">Jamat: 06:30 AM</p>
                 <p class="font-semibold">Dhuhr (Noon) Prayer:</p>

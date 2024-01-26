@@ -19,7 +19,7 @@
             <p class="text-yellow-500">Donation</p>
           </div>
           <div class="bg-white rounded-lg relative py-3">
-            <h1 class="text-yellow-500 text-4xl font-semibold">Donation</h1>
+            <h1 class="text-yellow-500 text-4xl font-semibold">{{ route.name}}</h1>
             <div>
               <p></p>
             </div>
@@ -176,5 +176,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from'/components/ui/select'
+} from '/components/ui/select'
+
+import { useRoute } from 'vue-router'
+const route = useRoute();
 </script>
