@@ -180,33 +180,18 @@
                 </div>
                 <div>
                   <p for="" class="mb-4">Preferred Time <span class="text-red-500">*</span> </p>
-                  <div class="relative mb-3 w-full">
-                    <div class="grid grid-cols-1 lg:grid-cols-9 gap-2">
-                      <div class="flex items-center gap-2 font-semibold">
-                        <input id="Asr" type="radio" name="Event_Time" value="Dhur" class="h-3 w-3" />
-                        <label for="Dhur">6 - 9</label>
-                      </div>
-                      <div class="flex items-center gap-2 font-semibold">
-                        <input id="Asr" type="radio" name="Event_Time" value="Dhur" class="h-3 w-3" />
-                        <label for="Dhur">9 - 12</label>
-                      </div>
-                      <div class="flex items-center gap-2 font-semibold">
-                        <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3" />
-                        <label for="Asr">12 - 3</label>
-                      </div>
-                      <div class="flex items-center gap-2 font-semibold">
-                        <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3" />
-                        <label for="Asr">3 - 6</label>
-                      </div>
-                      <div class="flex items-center gap-2 font-semibold">
-                        <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3" />
-                        <label for="Asr">6 - 9</label>
-                      </div>
-                      <div class="flex items-center gap-2 font-semibold">
-                        <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3" />
-                        <label for="Asr">9 - 12</label>
-                      </div>
-                    </div>
+                  <div class=" w-full">
+                    <input
+                      type="time"
+                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      id="exampleFormControlInput50"
+                      value=""
+                    />
+                    <label
+                      for="exampleFormControlInput50"
+                      class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                      >Address <span class="text-red-500">*</span>
+                    </label>
                   </div>
                 </div>
                 <!-- <div>
