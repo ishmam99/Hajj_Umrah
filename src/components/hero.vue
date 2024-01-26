@@ -22,8 +22,7 @@
                         <div class="head">
                           <p>Welcome To</p>
                           <h1>Islamic Digital Lane</h1>
-                          <!-- <button class="py-2 px-3 rounded-lg border-1 border-white">Join Now</button> -->
-                          <router-link to="/Signup" class="py-2 px-3 rounded-lg border-1 border-white">Join Now</router-link>
+                          <button class="py-2 px-3 rounded-lg border-1 border-white"><router-link to="/Signup">Join Now</router-link></button>
                         </div>
                     </swiper-slide>
                     <swiper-slide> 
@@ -31,8 +30,7 @@
                         <div class="head">
                           <p>IDL</p>
                           <h1>Learning Center</h1>
-                          <!-- <button class="py-2 px-3 rounded-lg border-1 border-white">Join Now</button> -->
-                          <router-link to="/Signup" class="py-2 px-3 rounded-lg border-1 border-white">Join Now</router-link>
+                          <button class="py-2 px-3 rounded-lg border-1 border-white"><router-link to="/onsitelearning">Join Now</router-link></button>
                         </div>
                     </swiper-slide>        
                     <swiper-slide> 
@@ -40,7 +38,7 @@
                         <div class="head">
                           <p>IDL</p>
                           <h1>Prayer Service</h1>
-                          <button class="py-2 px-3 rounded-lg border-1 border-white">Join Now</button>
+                          <button class="py-2 px-3 rounded-lg border-1 border-white"><router-link to="/Signup">Join Now</router-link></button>
                         </div>
                     </swiper-slide>
                     <swiper-slide> 
@@ -48,7 +46,7 @@
                         <div class="head">
                           <p>IDL</p>
                           <h1>New Muslim Service</h1>
-                          <button class="py-2 px-3 rounded-lg border-1 border-white">Join Now</button>
+                          <button class="py-2 px-3 rounded-lg border-1 border-white"><router-link to="/services/new_muslim">Join Now</router-link></button>
                         </div>
                     </swiper-slide>
             </swiper>
@@ -117,6 +115,7 @@
 }
 .head button{
   font-size: 24px;
+  font-weight: 500;
   padding: 10px 20px;
   border: 2px solid white;
   text-shadow: 2px 2px 3px black;
@@ -126,7 +125,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: 5s banimg linear;
+  /* animation: 5s banimg linear; */
 }
 
 @keyframes banimg {
