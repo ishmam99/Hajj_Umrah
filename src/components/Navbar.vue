@@ -1,26 +1,26 @@
 <template>
-  <div class="h-[70px] w-full flex justify-center items-center text-black fixed top-0 z-40 px-[2%] bg-white duration-300">  
+  <div class="h-[70px] w-full flex justify-center  bg-repeat-x items-center text-black fixed top-0 z-40 px-[2%] bg-white duration-300">  
       
-      <div class="flex items-center gap-6 uppercase text-sm w-full font-semibold">
+      <div class="flex items-center gap-6  uppercase text-sm w-full font-semibold">
           <div>
             <img src="/src/assets/image/common/n1.png" alt="" class="h-[50px]">
           </div> 
          <Menubar class="rounded-none border-0 gap-1">
           <MenubarMenu>
-            <MenubarTrigger>
+            <MenubarTrigger class="px-1">
               <router-link to="/" class="font-semibold">Home</router-link> 
             </MenubarTrigger>
           </MenubarMenu>
            
           <MenubarMenu>
-            <MenubarTrigger>Services <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+            <MenubarTrigger class="px-1">Services <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
             </MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
                   <!-- <MenubarTrigger>Prayer Service <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger> -->
                
                   <MenubarSub>
-                  <MenubarSubTrigger>
+                  <MenubarSubTrigger class="px-1">
                     <p href="" class=" w-full hover:pl-5 duration-300">Prayer Service</p>
                   </MenubarSubTrigger>
                   <MenubarSubContent>
@@ -83,7 +83,7 @@
           </MenubarMenu>
 
           <MenubarMenu>
-            <MenubarTrigger>Digital Library <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
+            <MenubarTrigger class="px-1">Digital Library <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
                 <router-link to="/explore/dua" class=" w-full hover:pl-5 duration-300 text-sm">Dua</router-link>
@@ -104,7 +104,7 @@
           </MenubarMenu>
 
           <MenubarMenu>
-            <MenubarTrigger>Learning Center  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+            <MenubarTrigger class="px-1">Learning Center  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
             </MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
@@ -126,7 +126,7 @@
   
          
           <MenubarMenu>
-            <MenubarTrigger>Activities <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
+            <MenubarTrigger class="px-1">Activities <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
                 <router-link to="/activity/event" class=" w-full hover:pl-5 duration-300">Events</router-link>
@@ -141,11 +141,11 @@
           </MenubarMenu>
 
           <MenubarMenu>
-            <MenubarTrigger>Get Involved <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
+            <MenubarTrigger class="px-1">Get Involved <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
                  <MenubarSub>
-                <MenubarSubTrigger>
+                <MenubarSubTrigger class="px-1">
                    Volunteers
                   </MenubarSubTrigger>
                   <MenubarSubContent>
@@ -157,7 +157,7 @@
                     </MenubarItem>
                     <MenubarItem>
                        <MenubarSub>
-                <MenubarSubTrigger>
+                <MenubarSubTrigger class="px-1">
                     <p href="" class=" w-full">Volunteer Services</p>
                   </MenubarSubTrigger>
                   <MenubarSubContent>
@@ -195,7 +195,7 @@
           </MenubarMenu>
 
           <MenubarMenu>
-            <MenubarTrigger>More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+            <MenubarTrigger class="px-1">More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
             </MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
@@ -211,7 +211,7 @@
             </MenubarContent>
           </MenubarMenu>
            <MenubarMenu>
-            <MenubarTrigger>About Us <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
+            <MenubarTrigger class="px-1">About Us <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
                 <router-link to="/about/about_us" class=" w-full hover:pl-5 duration-300">About</router-link>
@@ -232,7 +232,7 @@
           </MenubarMenu>
 
           <MenubarMenu>
-            <MenubarTrigger>Contact <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
+            <MenubarTrigger class="px-1">Contact <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
                 <router-link to="/contact/ask_imam" class=" w-full hover:pl-5 duration-300">Ask Imam</router-link>
@@ -338,5 +338,7 @@ const store = useAuthStore()
 .router-link-active{
  color: rgb(201, 130, 0);
  background: white;
+ border-radius: 20%;
+ padding: 5px;
 }
 </style>
