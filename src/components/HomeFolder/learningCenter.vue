@@ -1,5 +1,5 @@
 <template>
-    <section class="container bg-slate-100 mx-auto my-8 py-5 px-[5%]">
+    <section class=" bg-slate-100 my-8 py-5 px-[5%]">
     <!-- Service Section Header -->
         <h2 class="text-3xl font-bold pb-16 uppercase">Learning Center</h2>
         <!-- Responsive Card Layout -->
