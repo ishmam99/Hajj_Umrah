@@ -17,13 +17,15 @@
                 <button class="border border-gray-400 w-full px-3 py-2 rounded-md my-3 font-bold text-gray-400 flex items-center justify-center gap-2"><ion-icon name="logo-google"></ion-icon>Sign up with Google</button>
             </div>
         </div>
-        {{ data }}
     </DefaultLayout>
 </template>
 <script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import { useAuthStore } from '/src/stores/AuthStore.ts';
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 
 
@@ -43,6 +45,7 @@ const signup = () => {
     }
     else {
         authStore.signup({ email: data.value.email, password: data.value.password });
+        router.push({ name: 'Membar_Dashboard' });
     }
 }
     

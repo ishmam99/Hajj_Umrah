@@ -5,11 +5,24 @@
         <router-link to="/Membar_Donation_History">Donation History</router-link>
         <router-link to="/Membar_Payment_History">Payment History</router-link>
         <router-link to="/Membar_Change_Password">Change Password</router-link>
-        <router-link to="/">Log out</router-link>
+        <button type="button" @click="store.logout()" class="py-2 px-5 bg-yellow-600 rounded-md text-white">Log out</button>
     </div>
 </template>
 <script setup>
+import { watch,ref } from 'vue'
+import { useAuthStore } from '/src/stores/AuthStore'
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
+const store = useAuthStore()
+
+watch(() => store.isAuthenticated, (newIsAuthenticated) => {
+    console.log( newIsAuthenticated);
+
+    if (!newIsAuthenticated) {
+        router.push('/');
+    }
+})
 </script>
 <style scoped>
 .router-link-active{
