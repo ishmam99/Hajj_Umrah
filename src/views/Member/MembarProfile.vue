@@ -3,11 +3,11 @@
         <img src="/src/assets/image/home/h1.png" alt="" class="h-[100px] w-[100px] rounded-full border shadow-md">
         <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
             <p class="text-sm text-gray-500 pt-2">Name</p>
-            <p class="text-xl font-semibold pb-2">Azim</p>
+            <p class="text-xl font-semibold pb-2">User</p>
         </div>
         <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
             <p class="text-sm text-gray-500 pt-2">Email Address</p>
-            <p class="text-xl font-semibold pb-2">abc@gmail.com</p>
+            <p class="text-xl font-semibold pb-2">user@idl.com</p>
         </div>
         <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
             <p class="text-sm text-gray-500 pt-2">Phone Number</p>
