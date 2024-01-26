@@ -44,39 +44,12 @@
             <div class="bg-white rounded-xl p-5 w-full">
               <h1 class="text-3xl underline py-3">Up Comming Project</h1>
               <div class="class grid grid-cols-3 gap-5">
-                <div class="border border-gray-699 p-5 flex flex-col gap-2 text-center rounded-md">
-                    <img src="/src/assets/image/home/e2.png" alt="" class="w-full">
-                    <h3 class="text-2xl font-bold">Feed The Hungry</h3>
-                    <p class="text-sm font-semibold text-yellow-600">20 JAN 2024</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.</p>
-                    <button class="h-[50px] w-full border border-gray-600 rounded-md">Register</button>
-                </div>
-                <div class="border border-gray-699 p-5 flex flex-col gap-2 text-center rounded-md">
-                    <img src="/src/assets/image/home/e2.png" alt="" class="w-full">
-                    <h3 class="text-2xl font-bold">Feed The Hungry</h3>
-                    <p class="text-sm font-semibold text-yellow-600">20 JAN 2024</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.</p>
-                    <button class="h-[50px] w-full border border-gray-600 rounded-md">Register</button>
-                </div>
-                <div class="border border-gray-699 p-5 flex flex-col gap-2 text-center rounded-md">
-                    <img src="/src/assets/image/home/e2.png" alt="" class="w-full">
-                    <h3 class="text-2xl font-bold">Feed The Hungry</h3>
-                    <p class="text-sm font-semibold text-yellow-600">20 JAN 2024</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.</p>
-                    <button class="h-[50px] w-full border border-gray-600 rounded-md">Register</button>
-                </div>
-                <div class="border border-gray-699 p-5 flex flex-col gap-2 text-center rounded-md">
-                    <img src="/src/assets/image/home/e2.png" alt="" class="w-full">
-                    <h3 class="text-2xl font-bold">Feed The Hungry</h3>
-                    <p class="text-sm font-semibold text-yellow-600">20 JAN 2024</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.</p>
-                    <button class="h-[50px] w-full border border-gray-600 rounded-md">Register</button>
-                </div>
-                <div class="border border-gray-699 p-5 flex flex-col gap-2 text-center rounded-md">
-                    <img src="/src/assets/image/home/e2.png" alt="" class="w-full">
-                    <h3 class="text-2xl font-bold">Feed The Hungry</h3>
-                    <p class="text-sm font-semibold text-yellow-600">20 JAN 2024</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.</p>
+                <div v-for="item in project"
+                class="border border-gray-699 p-5 flex flex-col gap-2 text-center rounded-md">
+                    <img :src="item.image" alt="" class="w-full">
+                    <h3 class="text-2xl font-bold">{{ item.title }}</h3>
+                    <p class="text-sm font-semibold text-yellow-600">{{ item.date }}</p>
+                    <p>{{ item.des }}</p>
                     <button class="h-[50px] w-full border border-gray-600 rounded-md">Register</button>
                 </div>
               </div>
@@ -92,6 +65,39 @@
   import DefaultLayout from '../../layouts/DefaultLayout.vue'
   import Card from '../../components/CardSection.vue'
   import ActivityMore from '../../components/ActivityMore.vue'
+
+  import { ref } from 'vue'
+
+const project =ref([
+    {
+        id: 1,
+        title: 'Feed the hungry',
+        date: '20 jan 2024',
+        image: '/src/assets/image/home/h1.png',
+        des : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.'
+    },
+    {
+        id: 2,
+        title: 'Help the weak',
+        date: '24 jan 2024',
+        image: '/src/assets/image/home/h2.png',
+        des : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.'
+    },
+    {
+        id: 3,
+        title: 'Comfort the sick',
+        date: '28 jan 2024',
+        image: '/src/assets/image/home/h3.png',
+        des : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.'
+    },
+    {
+        id: 4,
+        title: 'Educate children',
+        date: '20 jan 2024',
+        image: '/src/assets/image/home/h1.png',
+        des : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.'
+    },
+  ])
   </script>
   
   <style lang="scss" scoped></style>
