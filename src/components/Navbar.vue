@@ -16,16 +16,16 @@
             <MenubarTrigger class="px-1">Services <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
             </MenubarTrigger>
             <MenubarContent>
-              <MenubarItem>
+              <!-- <MenubarItem> -->
                   <!-- <MenubarTrigger>Prayer Service <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger> -->
                
                   <MenubarSub>
-                  <MenubarSubTrigger class="px-1">
-                    <p href="" class=" w-full hover:pl-5 duration-300">Prayer Service</p>
+                  <MenubarSubTrigger>
+                    Prayer Service
                   </MenubarSubTrigger>
                   <MenubarSubContent>
                     <MenubarItem>
-                      <router-link to="/more/registration/memebship_registration" class=" w-full hover:pl-5 duration-300">Prayer Time</router-link>
+                      <router-link to="/more/registration/memebship_registration" >Prayer Time</router-link>
                     </MenubarItem>
                     <MenubarItem>
                       <a href="/more/registration/mosjid_wavier_and_release_liability" class=" w-full hover:pl-5 duration-300">Prayer Announcement</a>
@@ -47,7 +47,7 @@
                     </MenubarItem>
                   </MenubarSubContent>
                 </MenubarSub>
-              </MenubarItem>
+              <!-- </MenubarItem> -->
              
               <MenubarItem>
                 <router-link to="/services/facilities" class=" w-full hover:pl-5 duration-300">Facilities Service</router-link>
@@ -143,7 +143,7 @@
           <MenubarMenu>
             <MenubarTrigger class="px-1">Get Involved <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger>
             <MenubarContent>
-              <MenubarItem>
+              <!-- <MenubarItem> -->
                  <MenubarSub>
                 <MenubarSubTrigger class="px-1">
                    Volunteers
@@ -155,7 +155,7 @@
                     <MenubarItem>
                       <a href="/more/registration/mosjid_wavier_and_release_liability" class=" w-full hover:pl-5 duration-300">Volunteer Login</a>
                     </MenubarItem>
-                    <MenubarItem>
+                    <!-- <MenubarItem> -->
                        <MenubarSub>
                 <MenubarSubTrigger class="px-1">
                     <p href="" class=" w-full">Volunteer Services</p>
@@ -178,10 +178,10 @@
               </MenubarItem>
                       </MenubarSubContent>
                     </MenubarSub>
-                    </MenubarItem>
+                    <!-- </MenubarItem> -->
                     </MenubarSubContent>
                     </MenubarSub>
-              </MenubarItem>
+              <!-- </MenubarItem> -->
            <MenubarItem>
                 <a href="/more/ramadan_special" class=" w-full hover:pl-5 duration-300">Speakers</a>
               </MenubarItem>
