@@ -169,8 +169,13 @@ const router = createRouter({
       component: () => import('../views/More/RamadanSpecial.vue')
     },
     {
-      path: '/donation',
-      name: 'donation',
+      path: '/Member_Donation',
+      name: 'Member Donation',
+      component: () => import('../views/Donation/DonationView.vue')
+    },
+    {
+      path: '/Guest_Donation',
+      name: 'Guest Donation',
       component: () => import('../views/Donation/DonationView.vue')
     },
     {
@@ -267,7 +272,42 @@ const router = createRouter({
       path: '/Membar_Change_Password',
       name: 'Membar_Change_Password',
       component: () => import('../views/Member/MemberPassChange.vue'),
-    }
+    },
+    {
+      path: '/Prayer_Time',
+      name: 'Prayer_Time',
+      component: () => import('../views/Services/PrayerService/PrayerTime.vue'),
+    },
+    {
+      path: '/Prayer_Announcement',
+      name: 'Prayer_Announcement',
+      component: () => import('../views/Services/PrayerService/PrayerAnnouncement.vue'),
+    },
+    {
+      path: '/Next_Prayer_Service',
+      name: 'Next_Prayer_Service',
+      component: () => import('../views/Services/PrayerService/NextPrayerService.vue'),
+    },
+    {
+      path: '/Recent_Prayer_Service',
+      name: 'Recent_Prayer_Service',
+      component: () => import('../views/Services/PrayerService/RecentPrayerService.vue'),
+    },
+    {
+      path: '/Makkah_Live',
+      name: 'Makkah_Live',
+      component: () => import('../views/Services/PrayerService/MakkhaLive.vue'),
+    },
+    {
+      path: '/Janaja_Announcement',
+      name: 'Janaja_Announcement',
+      component: () => import('../views/Services/PrayerService/JanajaService.vue'),
+    },
+    {
+      path: '/Ranadam_Payer_Time',
+      name: 'Ranadam_Payer_Time',
+      component: () => import('../views/Services/PrayerService/RamadanPrayerTime.vue'),
+    },
   ]
 })
 

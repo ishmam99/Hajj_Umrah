@@ -11,8 +11,8 @@ import LearningCenter from '../components/HomeFolder/learningCenter.vue'
 <template>
   <DefaultLayout>
     <Hero/>
-    <div class="py-[30px] px-[5%] bg-slate-100 flex gap-5 my-10">
-        <Prayer/>
+    <div class="py-[30px] px-[5%] bg-slate-100 flex justify-center gap-5 my-10">
+        <!-- <Prayer/> -->
         <Announcement/>
     </div>
     <UpcommingEvent/>
