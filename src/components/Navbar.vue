@@ -97,6 +97,9 @@
               <MenubarItem>
                   <router-link to="/explore/hadith"  class=" w-full hover:pl-5 duration-300 text-sm">Watch</router-link>
               </MenubarItem>
+              <MenubarItem>
+                  <router-link to="/explore/hadith"  class=" w-full hover:pl-5 duration-300 text-sm">Publication & Books</router-link>
+              </MenubarItem>
               <!-- <MenubarItem>
                 <a href="" class=" w-full hover:pl-5 duration-300 text-sm">Watch</a>
               </MenubarItem> -->
