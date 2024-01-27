@@ -163,6 +163,33 @@
                     </div>
                   </div>
                 </div>
+                <div class="relative mb-3 w-full">
+                  <input
+                    type="text"
+                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                    id="exampleFormControlInput50"
+                    value=""
+                  />
+                  <label
+                    for="exampleFormControlInput50"
+                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                    >Subject <span class="text-red-500">*</span>
+                  </label>
+                </div>
+                <div class="relative mb-3 w-full">
+                  <textarea
+                    rows="4"
+                    type="text"
+                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                    id="exampleFormControlInput50"
+                    value=""
+                  />
+                  <label
+                    for="exampleFormControlInput50"
+                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                    >Description <span class="text-red-500">*</span>
+                  </label>
+                </div>
                 <!-- <div>
                   <p for="" class="mb-3">Preferred Program <span class="text-red-500">*</span> </p>
                   <Select>

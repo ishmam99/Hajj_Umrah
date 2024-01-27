@@ -174,7 +174,7 @@
                     <SelectGroup>
                       <SelectLabel>Program</SelectLabel>
                       <SelectItem value="apple"> Educate The Children </SelectItem>
-                      <SelectItem value="apple"> Shelter The Homeless </SelectItem>
+                      <SelectItem value="shelter"> Shelter The Homeless </SelectItem>
                       <SelectItem value="banana"> Comfort The Sick </SelectItem>
                       <SelectItem value="blueberry"> Enhance Social Justice </SelectItem>
                       <SelectItem value="grapes"> Feed The Hungry </SelectItem>
