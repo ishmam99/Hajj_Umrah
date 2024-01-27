@@ -186,10 +186,10 @@
                     </MenubarSub>
               <!-- </MenubarItem> -->
            <MenubarItem>
-                <a href="/more/ramadan_special" class=" w-full hover:pl-5 duration-300">Speakers</a>
+                <a href="/getinvolved/applyforspeaker" class=" w-full hover:pl-5 duration-300">Speakers</a>
               </MenubarItem>
            <MenubarItem>
-                <a href="/more/ramadan_special" class=" w-full hover:pl-5 duration-300">Guest Imam</a>
+                <a href="/getinvolved/applyforimam" class=" w-full hover:pl-5 duration-300">Guest Imam</a>
               </MenubarItem>
            <MenubarItem>
                 <a href="/more/ramadan_special" class=" w-full hover:pl-5 duration-300">Fund Raising</a>
