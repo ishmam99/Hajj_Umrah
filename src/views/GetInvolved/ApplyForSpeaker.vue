@@ -27,6 +27,10 @@
             </div>
           </div>
         </div>
+        <Separator/>
+        <div class="w-full bg-[url('../assets/image/home/dua_banner.png')] bg-amber-400">
+          <h1 class="py-10 text-center bg-[#2d292938] text-4xl text-white font-bold"></h1>
+         </div>
         <div
           class="bg-gray-100 h-full py-5 mt-10 flex items-center justify-center gap-5 px-20 w-full"
         >
@@ -34,7 +38,7 @@
             <div class="bg-white rounded-xl p-5 w-full">
               <!-- <p class="text-xl font-bold pt-2 pb-2">Student Admission Form</p> -->
   
-              <div class="pt-10">
+              <div class="pt-2">
                 <h1 class="text-2xl font-bold">Speaker Application</h1>
               </div>
               <div class="py-5 space-y-7 mt-5">
@@ -190,24 +194,6 @@
                     >Description <span class="text-red-500">*</span>
                   </label>
                 </div>
-                <!-- <div>
-                  <p for="" class="mb-3">Preferred Program <span class="text-red-500">*</span> </p>
-                  <Select>
-                    <SelectTrigger class="w-full">
-                      <SelectValue placeholder="Select a program" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectGroup>
-                        <SelectLabel>Program</SelectLabel>
-                        <SelectItem value="apple"> Educate The Children </SelectItem>
-                        <SelectItem value="apple"> Shelter The Homeless </SelectItem>
-                        <SelectItem value="banana"> Comfort The Sick </SelectItem>
-                        <SelectItem value="blueberry"> Enhance Social Justice </SelectItem>
-                        <SelectItem value="grapes"> Feed The Hungry </SelectItem>
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
-                </div> -->
   
                 <button class="w-[350px] h-[45px] rounded-2xl bg-yellow-600 text-white font-bold mx-auto flex items-center text-center justify-center">
                   Apply
@@ -224,7 +210,7 @@
   import DefaultLayout from '/src/layouts/DefaultLayout.vue'
   import Card from '/src/components/cardSection.vue'
   import RegistrationMore from '/src/components/RgistrationMore.vue'
-  
+  import { Separator } from '/components/ui/separator'
   import {
     Select,
     SelectContent,
