@@ -28,8 +28,10 @@
             </div>
           </div>
         </div>
-        <div class="w-full h-screen flex justify-center items-center bg-slate-50">
-            <form @submit.prevent="login(user)">
+        <div class="w-full h-screen flex justify-center items-center bg-[url('/src/assets/image/common/bg-islam-4.avif')] bg-cover">
+            
+            <div class="h-full w-full flex items-center justify-center bg-[#00000043]">
+              <form @submit.prevent="login(user)">
                 <div class="max-h-[750px] w-[600px] bg-[#ffffff] p-5 rounded-lg shadow-md">
                     <img src="/src/assets/image/common/n1.png" alt="" class="w-12 m-auto">
                     <p class="font-semibold py-1.5">Email</p>
@@ -53,7 +55,7 @@
                     </div>
                 </div>
             </form>
-            
+            </div>
         </div>
       </DefaultLayout>
     </div>

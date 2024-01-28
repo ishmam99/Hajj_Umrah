@@ -27,7 +27,7 @@
             </div>
           </div>
         </div>
-        <div class="w-full h-screen flex justify-center items-center bg-slate-50">
+        <div class="w-full h-screen flex justify-center items-center bg-[url('/src/assets/image/common/bg-islam-3.jpg')] bg-cover">
             <form @submit.prevent="login(user)">
                 <div class="max-h-[750px] w-[600px] bg-[#ffffff] p-5 rounded-lg shadow-md">
                     <img src="/src/assets/image/common/n1.png" alt="" class="w-12 m-auto">

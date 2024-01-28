@@ -27,6 +27,10 @@
             </div>
           </div>
         </div>
+        <Separator/>
+        <div class="w-full bg-[url('../assets/image/home/dua_banner.png')] bg-amber-400">
+          <h1 class="py-10 text-center bg-[#2d292938] text-4xl text-white font-bold">To Inquire or Register For Hajj &amp; Umrah Programs</h1>
+         </div>
         <div class="bg-gray-100 h-full py-5 mt-10 flex gap-5 px-20 w-full">
           <div class="space-y-8 w-3/4">
             <div class="bg-white rounded-xl p-5 w-full">
@@ -286,7 +290,7 @@
   import DefaultLayout from '/src/layouts/DefaultLayout.vue'
   import Card from '/src/components/cardSection.vue'
   import RegistrationMore from '/src/components/RgistrationMore.vue'
-  
+  import { Separator } from '/components/ui/separator'
   import {
     Select,
     SelectContent,

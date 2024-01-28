@@ -33,7 +33,7 @@
     <div class="space-y-8 w-3/4">
       <Card class="rounded-2xl">
         <CardHeader>
-          <CardTitle></CardTitle>
+          <CardTitle>Board of Directors</CardTitle>
           
         </CardHeader>
         <CardContent class="text-gray-600"> The BOD at IDL is responsible for administering the day-to-day affairs of IDL, taking care of and maintaining IDL’s facilities and properties, managing expenses as approved by the BOD, and performing such acts that may be necessary for achieving the goals, vision and overall objectives of IDL. </CardContent>
@@ -54,101 +54,7 @@
         </CardHeader>
         <CardContent class="text-gray-600">Candidates for the Board of Directors must be: a) Good law abiding legal resident and Sunni Muslims who believe in the Quran and Prophet Muhammad (Peace be upon him) as the last Prophet and his teachings as the guiding principles. b) General body member in good standing and active member of one IDL Committee for at least one (1) year. </CardContent>
       </Card>
-      <Card class="rounded-2xl">
-        <CardHeader>
-          <!-- <CardTitle class="underline underline-offset-4 text-3xl text-slate-700">Eligibilty 
-          </CardTitle>-->
-          
-        </CardHeader>
-        <CardContent class="text-gray-600">IDL has Seven (7) Board of Directors (BoD) that are elected to office by the General Body members. The current Board of Directors elected are: 
 
-            <div class="flex justify-center items-center">
-                <div class="flex flex-wrap items-center justify-center">               
-                <div class="bg-gray-200 rounded-full flex  items-center justify-center p-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
-                    
-                </div>
-                <div class="w-full">
-                     <h1 class="uppercase text-center font-bold">Vice president</h1>
-                    <p class="uppercase text-xs text-gray-600 text-center font-semibold">mohammed yahya shaikh</p>
-                </div>
-                   
-                </div>
-                <div class="flex flex-wrap items-center justify-center">               
-                <div class="bg-gray-200 rounded-full flex  items-center justify-center p-14">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="74" height="74" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
-                    
-                </div>
-                <div class="w-full">
-                     <h1 class="uppercase text-center font-bold text-xl font-mono"> president</h1>
-                    <p class="uppercase text-xs text-gray-600 text-center font-semibold">imran chawdhary</p>
-                </div>
-                   
-                </div>
-                <div class="flex flex-wrap items-center justify-center">               
-                <div class="bg-gray-200 rounded-full flex  items-center justify-center p-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
-                    
-                </div>
-                <div class="w-full">
-                     <h1 class="uppercase text-center font-bold">Treasurer</h1>
-                    <p class="uppercase text-xs text-gray-600 text-center font-semibold">naveed siddiqui</p>
-                </div>
-                   
-                </div>
-              
-            </div>
-            <div class="flex justify-center items-center mt-10">
-                <div class="flex flex-wrap items-center justify-center">               
-                <div class="bg-gray-200 rounded-full flex  items-center justify-center p-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
-                    
-                </div>
-                <div class="w-full">
-                     <h1 class="uppercase text-center font-bold">Secretary</h1>
-                    <p class="uppercase text-xs text-gray-600 text-center font-semibold">Mohammed Mahbubur Rahman</p>
-                </div>
-                   
-                </div>
-              
-                <div class="flex flex-wrap items-center justify-center">               
-                <div class="bg-gray-200 rounded-full flex  items-center justify-center p-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
-                    
-                </div>
-                <div class="w-full">
-                     <h1 class="uppercase text-center font-bold">board member</h1>
-                    <p class="uppercase text-xs text-gray-600 text-center font-semibold">Baseer Syed</p>
-                </div>
-                   
-                </div>
-                <div class="flex flex-wrap items-center justify-center">               
-                <div class="bg-gray-200 rounded-full flex  items-center justify-center p-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
-                    
-                </div>
-                <div class="w-full">
-                     <h1 class="uppercase text-center font-bold">board member</h1>
-                    <p class="uppercase text-xs text-gray-600 text-center font-semibold">Mohammad Razi Uddin</p>
-                </div>
-                   
-                </div>
-              
-                <div class="flex flex-wrap items-center justify-center">               
-                <div class="bg-gray-200 rounded-full flex  items-center justify-center p-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
-                    
-                </div>
-                <div class="w-full">
-                     <h1 class="uppercase text-center font-bold">board member</h1>
-                    <p class="uppercase text-xs text-gray-600 text-center font-semibold">Fazal Saiyed</p>
-                </div>
-                   
-                </div>
-              
-            </div>
-        </CardContent>
-      </Card>
        <Card class="rounded-2xl">
         <CardHeader>
        
@@ -165,7 +71,102 @@
 </CardContent>
       </Card>
     </div>
-     <FacilitiesMore />
+     <!-- <FacilitiesMore /> -->
+     <Card class="rounded-2xl">
+      <CardHeader>
+        <!-- <CardTitle class="underline underline-offset-4 text-3xl text-slate-700">Eligibilty 
+        </CardTitle>-->
+        
+      </CardHeader>
+      <CardContent class="text-gray-600 text-lg font-semibold text-center">IDL has Seven (7) Board of Directors (BoD) that are elected to office by the General Body members. The current Board of Directors elected are: 
+
+          <div class="flex justify-center items-center pt-8">
+              <div class="flex flex-wrap items-center justify-center">               
+              <div class="bg-gray-200 rounded-full flex  items-center justify-center p-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
+                  
+              </div>
+              <div class="w-full">
+                   <h1 class="uppercase text-center font-bold">Vice president</h1>
+                  <p class="uppercase text-xs text-gray-600 text-center font-semibold">mohammed yahya shaikh</p>
+              </div>
+                 
+              </div>
+              <div class="flex flex-wrap items-center justify-center">               
+              <div class="bg-gray-200 rounded-full flex  items-center justify-center p-14">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="74" height="74" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
+                  
+              </div>
+              <div class="w-full">
+                   <h1 class="uppercase text-center font-bold text-xl font-mono"> president</h1>
+                  <p class="uppercase text-xs text-gray-600 text-center font-semibold">imran chawdhary</p>
+              </div>
+                 
+              </div>
+              <div class="flex flex-wrap items-center justify-center">               
+              <div class="bg-gray-200 rounded-full flex  items-center justify-center p-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
+                  
+              </div>
+              <div class="w-full">
+                   <h1 class="uppercase text-center font-bold">Treasurer</h1>
+                  <p class="uppercase text-xs text-gray-600 text-center font-semibold">naveed siddiqui</p>
+              </div>
+                 
+              </div>
+            
+          </div>
+          <div class="flex justify-center items-center mt-10">
+              <div class="flex flex-wrap items-center justify-center">               
+              <div class="bg-gray-200 rounded-full flex  items-center justify-center p-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
+                  
+              </div>
+              <div class="w-full">
+                   <h1 class="uppercase text-center font-bold">Secretary</h1>
+                  <p class="uppercase text-xs text-gray-600 text-center font-semibold">Mohammed Mahbubur Rahman</p>
+              </div>
+                 
+              </div>
+            
+              <div class="flex flex-wrap items-center justify-center">               
+              <div class="bg-gray-200 rounded-full flex  items-center justify-center p-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
+                  
+              </div>
+              <div class="w-full">
+                   <h1 class="uppercase text-center font-bold">board member</h1>
+                  <p class="uppercase text-xs text-gray-600 text-center font-semibold">Baseer Syed</p>
+              </div>
+                 
+              </div>
+              <div class="flex flex-wrap items-center justify-center">               
+              <div class="bg-gray-200 rounded-full flex  items-center justify-center p-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
+                  
+              </div>
+              <div class="w-full">
+                   <h1 class="uppercase text-center font-bold">board member</h1>
+                  <p class="uppercase text-xs text-gray-600 text-center font-semibold">Mohammad Razi Uddin</p>
+              </div>
+                 
+              </div>
+            
+              <div class="flex flex-wrap items-center justify-center">               
+              <div class="bg-gray-200 rounded-full flex  items-center justify-center p-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
+                  
+              </div>
+              <div class="w-full">
+                   <h1 class="uppercase text-center font-bold">board member</h1>
+                  <p class="uppercase text-xs text-gray-600 text-center font-semibold">Fazal Saiyed</p>
+              </div>
+                 
+              </div>
+            
+          </div>
+      </CardContent>
+    </Card>
 </div>
      </DefaultLayout>
   </div>

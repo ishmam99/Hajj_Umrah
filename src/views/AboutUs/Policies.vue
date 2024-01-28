@@ -1,7 +1,7 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="w-full">
+      <div class="px-20 ml-10">
         <div class="bg-white">
           <div class="flex items-center gap-2">
             <svg
@@ -158,7 +158,7 @@
             </CardContent>
           </Card>
         </div>
-        <FacilitiesMore />
+        <!-- <FacilitiesMore /> -->
       </div>
     </DefaultLayout>
   </div>
