@@ -28,7 +28,8 @@
           </div>
         </div>
       </div>
-      <div class="bg-gray-100 h-full py-5 mt-10 flex items-center justify-center gap-5 px-20 w-full">
+      <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')]  h-full py-5 mt-10 flex items-center justify-center gap-5 px-20 w-full">
+
         <div class="space-y-8 w-3/4">
           <div class="bg-white rounded-xl p-5 w-full">
             <!-- <p class="text-xl font-bold pt-2 pb-2">Student Admission Form</p> -->
@@ -216,12 +217,12 @@
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>Program</SelectLabel>
-                      <SelectItem value="fullhifz"> Full Time Hifz </SelectItem>
-                      <SelectItem value="parthifz"> Part Time Hifz </SelectItem>
-                      <SelectItem value="summer"> Summer School </SelectItem>
-                      <SelectItem value="sunday"> Sunday School </SelectItem>
-                      <SelectItem value="special"> Special Needs School </SelectItem>
-                      <SelectItem value="fityah"> Fityah Program </SelectItem>
+                      <SelectItem value="apple"> Full Time Hifz </SelectItem>
+                      <SelectItem value="apple"> Part Time Hifz </SelectItem>
+                      <SelectItem value="banana"> Summer School </SelectItem>
+                      <SelectItem value="blueberry"> Sunday School </SelectItem>
+                      <SelectItem value="grapes"> Special Needs School </SelectItem>
+                      <SelectItem value="grapes"> Fityah Program </SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
@@ -388,4 +389,4 @@ import {
 } from '/components/ui/select'
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped></style>

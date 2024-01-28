@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-4 mx-[5%] gap-5 py-10 border-b">
+    <div class="grid grid-cols-4 mx-[5%] gap-5 py-10 border-b ">
         <div class="text-sm">
             <p class="text-2xl font-bold text-yellow-600 py-3">MASJID</p>
             <!-- <img src="../assets/landing/l1.png" alt="" class="py-3"> -->
@@ -20,7 +20,7 @@
                 <p>Work Hours</p>
             </div>
         </div>
-        <div class="text-sm text-white">
+        <div class="text-sm">
             <h4 class="text-2xl font-semibold py-3">Account</h4>
             <p class="pb-3">Wishlist</p>
             <p class="pb-3">Cart</p>
