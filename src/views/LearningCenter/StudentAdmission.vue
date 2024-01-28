@@ -216,12 +216,12 @@
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>Program</SelectLabel>
-                      <SelectItem value="apple"> Full Time Hifz </SelectItem>
-                      <SelectItem value="apple"> Part Time Hifz </SelectItem>
-                      <SelectItem value="banana"> Summer School </SelectItem>
-                      <SelectItem value="blueberry"> Sunday School </SelectItem>
-                      <SelectItem value="grapes"> Special Needs School </SelectItem>
-                      <SelectItem value="grapes"> Fityah Program </SelectItem>
+                      <SelectItem value="fullhifz"> Full Time Hifz </SelectItem>
+                      <SelectItem value="parthifz"> Part Time Hifz </SelectItem>
+                      <SelectItem value="summer"> Summer School </SelectItem>
+                      <SelectItem value="sunday"> Sunday School </SelectItem>
+                      <SelectItem value="special"> Special Needs School </SelectItem>
+                      <SelectItem value="fityah"> Fityah Program </SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
