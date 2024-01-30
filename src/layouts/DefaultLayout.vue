@@ -56,10 +56,3 @@ onMounted(async() => {
 
 </script>
 
-<style>
-body{
-    background-image: url('../assets/image/home/pattern-1.png');
-    background-repeat: repeat;
-    background-color: #36897b34;
-}
-</style>
