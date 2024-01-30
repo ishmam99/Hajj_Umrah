@@ -1,36 +1,36 @@
 <template>
     <div>
       <DefaultLayout>
-        <div class="px-20 flex justify-center pt-20 py-5 bg-blue-300 bg-repeat shadow-xl bg-[url('../assets/image/home/pattern-1.png')]">
-        <div class="mt-3 pb rounded-xl bg-white border-blue-50 w-1/2 shadow-xl border-[3px]">
-          <div class="flex items-center justify-center gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="16"
-              height="16"
-              fill="currentColor"
-            >
-              <path
-                d="M19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20C20 20.5523 19.5523 21 19 21ZM6 19H18V9.15745L12 3.7029L6 9.15745V19ZM9 9.99998H15V16H9V9.99998ZM11 12V14H13V12H11Z"
-              ></path>
-            </svg>
-            <p>Home</p>
-            <p>/ Services/ Prayer Service</p>
-            <!-- <p>/ Volunteers</p> -->
-            <p class="text-[#1a5047]">/ Prayer Time</p>
-          </div>
-          <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-[#1a5047] text-4xl font-semibold">Prayer Time</h1>
-            <div>
-              <p></p>
+        <div class="px-20 pt-20 mt-5 py-5 bg-cyan-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+          <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+            <div class="flex items-center justify-center gap-2 font-semibold">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="currentColor"
+              >
+                <path
+                  d="M19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20C20 20.5523 19.5523 21 19 21ZM6 19H18V9.15745L12 3.7029L6 9.15745V19ZM9 9.99998H15V16H9V9.99998ZM11 12V14H13V12H11Z"
+                ></path>
+              </svg>
+              <p>Home</p>
+              <p>/ Services</p>
+              <p>/ Prayer Service</p>
+              <p class="text-cyan-800">/ Prayer Time</p>
+            </div>
+            <div class="rounded-lg flex items-center justify-center relative py-3">
+              <h1 class="text-cyan-800 text-4xl font-bold"> Prayer Time </h1>
+              <div>
+                <p></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-        <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
+        <div class="bg-gray-100 h-full px-20 pl-28 py-5  flex justify-between gap-5">
           <div class="w-3/4 px-5">
-            <h1 class="text-3xl font-bold uppercase pb-3">Prayer time</h1>
+            <!-- <h1 class="text-3xl font-bold uppercase pb-3">Prayer time</h1> -->
             <div class="bg-white p-5 rounded-2xl drop-shadow-md">
                 <!-- <p class="mx-3 text-sm font-semibold text-gray-500 text-center">11 th January,2024</p> -->
                 <div class="flex justify-center items-center gap-3 w-full relative">

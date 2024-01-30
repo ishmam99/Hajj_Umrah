@@ -1,9 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 pt-20 py-5 bg-cyan-800 bg-[url('../assets/image/home/bg111.png')] bg-repeat shadow-xl">
+      <div class="px-20 pt-20 mt-5 py-5 bg-teal-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
         <div class="pt-3 mx-36 pb rounded-xl bg-white  border-blue-50 shadow-xl border-[3px]">
-          <div class="flex items-center justify-center gap-2">
+          <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -18,10 +18,10 @@
             <p>Home</p>
             <p>/ Digital Library</p>
             <!-- <p>/ Volunteers</p> -->
-            <p class="text-[#1a5047]">/ Quran</p>
+            <p class="text-teal-800">/ Quran</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-[#b4a33a] text-4xl font-semibold">Quran</h1>
+            <h1 class="text-teal-800 text-4xl font-bold">Quran</h1>
             <div>
               <p></p>
             </div>

@@ -1,9 +1,9 @@
 <template>
     <div>
       <DefaultLayout>
-        <div class="px-20 ml-10">
-          <div class="bg-white">
-            <div class="flex items-center gap-2">
+        <div class="px-20 pt-20 mt-5 py-5 bg-emerald-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+          <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+            <div class="flex items-center justify-center gap-2 font-semibold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -16,18 +16,19 @@
                 ></path>
               </svg>
               <p>Home</p>
-              <p>/ Avtivity</p>
-              <p class="text-yellow-500">/ Event</p>
+              <p>/ Activities</p>
+              <!-- <p>/ Volunteers</p> -->
+              <p class="text-emerald-800">/ Events</p>
             </div>
-            <div class="bg-white rounded-lg relative py-3">
-              <h1 class="text-yellow-500 text-4xl font-semibold">Event</h1>
+            <div class="rounded-lg flex items-center justify-center relative py-3">
+              <h1 class="text-emerald-800 text-4xl font-bold"> Events</h1>
               <div>
                 <p></p>
               </div>
             </div>
           </div>
         </div>
-        <div class="bg-gray-100 h-full py-5 mt-10 flex gap-5 px-20 w-full">
+        <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
           <div class="space-y-8 w-3/4">
             <div class="bg-white rounded-xl p-5 w-full">
               <h1 class="text-3xl underline py-3">On Going Event</h1>

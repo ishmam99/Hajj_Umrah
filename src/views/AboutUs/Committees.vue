@@ -1,9 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 ml-10">
-        <div class="bg-white">
-          <div class="flex items-center gap-2">
+      <div class="px-20 pt-20 mt-5 py-5 bg-teal-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+        <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+          <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -15,21 +15,22 @@
                 d="M19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20C20 20.5523 19.5523 21 19 21ZM6 19H18V9.15745L12 3.7029L6 9.15745V19ZM9 9.99998H15V16H9V9.99998ZM11 12V14H13V12H11Z"
               ></path>
             </svg>
-            <p>Home /About /</p>
-
-            <p class="text-yellow-500">Committees</p>
+            <p>Home</p>
+            <p>/ About Us</p>
+            <!-- <p>/ Volunteers</p> -->
+            <p class="text-teal-800">/ About</p>
           </div>
-          <div class="bg-white rounded-lg relative py-3">
-            <h1 class="text-yellow-500 text-4xl font-semibold">Committees</h1>
+          <div class="rounded-lg flex items-center justify-center relative py-3">
+            <h1 class="text-teal-800 text-4xl font-bold"> About</h1>
             <div>
               <p></p>
             </div>
           </div>
         </div>
       </div>
-      <Separator />
+      <!-- <Separator /> -->
 
-      <div class="p-20 flex bg-gray-100 gap-5">
+      <div class="px-20 flex bg-gray-100 gap-5">
         <div class="space-y-8 w-full">
           <div class=" w-full">
             <div class="grid grid-cols-3 gap-3 my-5 py-5 px-4">
@@ -60,7 +61,7 @@
                   class="flex flex-col items-center justify-center w-full h-full bg-opacity-25 rounded-xl bg-[#00000050] text-white"
                 >
                   <p class="text-xl text-center px-10 font-semibold mb-2 uppercase">
-                    EPIC Sports & Recreation
+                    EPIC Sports &#38; Recreation
                   </p>
                 </div>
               </div>
@@ -200,7 +201,7 @@
             </CardContent>
           </Card>
           <div class="flex justify-center items-center">
-          <Card class="rounded-2xl mx-2 w-2/3">
+          <Card class="rounded-2xl mx-2 mb-10 w-2/3">
             <CardContent>
             <h1 class="text-xl py-3">Assalaamu Alaikum (Peace be with you),</h1>
             <p class="py-3">
@@ -320,7 +321,7 @@
             </div>
             <div class="flex justify-center py-3 mt-3">
               <button
-                class="w-[350px] h-[45px] rounded-2xl bg-yellow-600 text-white font-bold mx-auto"
+                class="w-[350px] h-[45px] rounded-2xl bg-teal-800 text-white font-bold mx-auto"
               >
                 Apply
               </button>
