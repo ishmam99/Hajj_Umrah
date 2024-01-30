@@ -1,9 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 pt-20 py-5 bg-blue-50 bg-repeat shadow-xl">
-        <div class="pt-3 pb rounded-xl bg-white border-blue-50 shadow-xl border-[3px]">
-          <div class="flex items-center justify-center gap-2">
+      <div class="px-20 pt-20 mt-5 py-5 bg-emerald-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+        <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+          <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -18,10 +18,10 @@
             <p>Home</p>
             <p>/ Get Involved</p>
             <!-- <p>/ Volunteers</p> -->
-            <p class="text-[#1a5047ed]">/ Apply For Speakers</p>
+            <p class="text-emerald-800">/ Apply For Speaker</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-[#1a5047f2] text-4xl font-semibold">Apply For Speakers</h1>
+            <h1 class="text-emerald-800 text-4xl font-bold"> Apply For Speaker</h1>
             <div>
               <p></p>
             </div>
@@ -33,7 +33,7 @@
           <div class="bg-white rounded-xl p-5 w-full">
             <!-- <p class="text-xl font-bold pt-2 pb-2">Student Admission Form</p> -->
 
-            <div class="pt-10">
+            <div class="pt-5">
               <h1 class="text-2xl font-bold">Speaker Application</h1>
             </div>
             <div class="py-5 space-y-7 mt-5">
@@ -190,7 +190,7 @@
                 </label>
               </div>
 
-              <button class="w-[350px] h-[45px] rounded-2xl bg-yellow-600 text-white font-bold mx-auto flex items-center text-center justify-center">
+              <button class="w-[350px] h-[45px] rounded-2xl bg-emerald-800 text-white font-bold mx-auto flex items-center text-center justify-center">
                 Apply
               </button>
             </div>

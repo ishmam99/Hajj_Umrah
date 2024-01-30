@@ -1,9 +1,9 @@
 <template>
     <div>
       <DefaultLayout>
-        <div class="px-20 ml-10">
-          <div class="bg-white">
-            <div class="flex items-center gap-2">
+        <div class="px-20 pt-20 mt-5 py-5 bg-pink-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+          <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+            <div class="flex items-center justify-center gap-2 font-semibold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -18,17 +18,17 @@
               <p>Home</p>
               <p>/ Services</p>
               <p>/ Prayer Service</p>
-              <p class="text-yellow-500">/ Makkah Live</p>
+              <p class="text-pink-800">/ Makkah Live</p>
             </div>
-            <div class="bg-white rounded-lg relative py-3">
-              <h1 class="text-yellow-500 text-4xl font-semibold">Makkah Live</h1>
+            <div class="rounded-lg flex items-center justify-center relative py-3">
+              <h1 class="text-pink-800 text-4xl font-bold"> Makkah Live </h1>
               <div>
                 <p></p>
               </div>
             </div>
           </div>
         </div>
-        <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
+        <div class="bg-gray-100 h-full px-20 pl-28 py-5 flex justify-between gap-5">
           <div class="space-y-8 w-full">
             <div class="bg-white rounded-xl p-5 text-center">
                <iframe class="h-[450px] w-full" src="https://www.youtube.com/embed/moQtMet7F7w?si=huGKs-iEtDCxTwIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -1,9 +1,9 @@
 <template>
     <div>
       <DefaultLayout>
-        <div class="bg-[#c38a2972]">
-          <div class="px-20">
-            <div class="flex items-center gap-2">
+        <div class="px-20 pt-20 mt-5 py-5 bg-emerald-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+          <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+            <div class="flex items-center justify-center gap-2 font-semibold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -17,18 +17,18 @@
               </svg>
               <p>Home</p>
               <p>/ More</p>
-              <p class="text-white">/ Ramadan Special</p>
+              <!-- <p>/ Volunteers</p> -->
+              <p class="text-emerald-800">/ Ramadan Special</p>
             </div>
-            <div class="rounded-lg relative py-3">
-              <h1 class="text-white text-4xl font-semibold">Ramadan Special</h1>
+            <div class="rounded-lg flex items-center justify-center relative py-3">
+              <h1 class="text-emerald-800 text-4xl font-bold"> Ramadan Special</h1>
               <div>
                 <p></p>
               </div>
             </div>
-            
           </div>
         </div>
-        <div class="w-full bg-[url('../assets/image/home/dua_banner.png')] bg-amber-400">
+        <div class="w-full bg-[url('../assets/image/home/dua_banner.png')] bg-emerald-800">
           <h1 class="py-10 text-center bg-[#2d292938] text-4xl text-white font-bold">To Inquire or Register in RAMADAN Programs</h1>
           <!-- <p>{{ surahOfTheDay}}</p> -->
               
@@ -293,7 +293,7 @@
                   </SelectContent>
                 </Select>
                 <button
-                  class="w-[350px] h-[45px] rounded-2xl bg-yellow-600 text-white font-bold mx-auto"
+                  class="w-[350px] h-[45px] rounded-2xl bg-emerald-800 text-white font-bold mx-auto"
                 >
                   Apply
                 </button>

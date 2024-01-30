@@ -1,9 +1,9 @@
 <template>
     <div>
       <DefaultLayout>
-        <div class="px-20 ml-10">
-          <div class="bg-white">
-            <div class="flex items-center gap-2">
+        <div class="px-20 pt-20 mt-5 py-5 bg-indigo-900 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+          <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+            <div class="flex items-center justify-center gap-2 font-semibold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -18,17 +18,17 @@
               <p>Home</p>
               <p>/ Services</p>
               <p>/ Prayer Service</p>
-              <p class="text-yellow-500">/ Ramadan Prayer Timing</p>
+              <p class="text-indigo-900">/ Ramadan Prayer Service</p>
             </div>
-            <div class="bg-white rounded-lg relative py-3">
-              <h1 class="text-yellow-500 text-4xl font-semibold">Ramadan Prayer Timing</h1>
+            <div class="rounded-lg flex items-center justify-center relative py-3">
+              <h1 class="text-indigo-900 text-4xl font-bold"> Ramadan Prayer Service </h1>
               <div>
                 <p></p>
               </div>
             </div>
           </div>
         </div>
-        <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
+        <div class="bg-gray-100 h-full px-20 pl-28 py-5 flex justify-between gap-5">
           <div class="space-y-8 w-3/4">
             <div class="bg-white rounded-xl p-5 text-center">
               <h1 class="text-3xl underline font-bold text-gray-700 py-3">Ramadan Prayer Time form March 2024</h1>
@@ -74,6 +74,11 @@
                             <p class="w-1/3 text-sm">Iqamah</p>
                         </div>
                         <div class="pt-3 pb-1 flex gap-2 text-center border-b">
+                            <p class="w-1/3 text-sm">Sehri</p>
+                            <p class="w-1/3 text-sm">Before 04:52 AM</p>
+                            <p class="w-1/3 text-sm"></p>
+                        </div>
+                        <div class="pt-3 pb-1 flex gap-2 text-center border-b">
                             <p class="w-1/3 text-sm">Fajr</p>
                             <p class="w-1/3 text-sm">04:52 AM</p>
                             <p class="w-1/3 text-sm">05:00 AM</p>
@@ -94,6 +99,11 @@
                             <p class="w-1/3 text-sm">04:00 PM</p>
                         </div>
                         <div class="pt-3 pb-1 flex gap-2 text-center border-b">
+                            <p class="w-1/3 text-sm">Iftar</p>
+                            <p class="w-1/3 text-sm">05:39 PM</p>
+                            <p class="w-1/3 text-sm"></p>
+                        </div>
+                        <div class="pt-3 pb-1 flex gap-2 text-center border-b">
                             <p class="w-1/3 text-sm">Maghrib</p>
                             <p class="w-1/3 text-sm">05:39 PM</p>
                             <p class="w-1/3 text-sm">05:44 PM</p>
@@ -103,10 +113,20 @@
                             <p class="w-1/3 text-sm">06:52 PM</p>
                             <p class="w-1/3 text-sm">08:00 PM</p>
                         </div>
+                        <div class="pt-3 pb-1 flex gap-2 text-center border-b">
+                            <p class="w-1/3 text-sm">Tarawih</p>
+                            <p class="w-1/3 text-sm">06:52 PM</p>
+                            <p class="w-1/3 text-sm"></p>
+                        </div>
+                        <div class="pt-3 pb-1 flex gap-2 text-center border-b">
+                            <p class="w-1/3 text-sm">Qiyyam Al-Lail</p>
+                            <p class="w-1/3 text-sm">After 12:00 PM</p>
+                            <p class="w-1/3 text-sm"></p>
+                        </div>
                         <div class="pt-3 pb-1 flex gap-2 text-center">
                             <p class="w-1/3 text-sm">Jumu’ah</p>
-                            <p class="w-1/3 text-sm">06:52 PM</p>
-                            <p class="w-1/3 text-sm">08:00 PM</p>
+                            <p class="w-1/3 text-sm">12:00 PM</p>
+                            <p class="w-1/3 text-sm">01:30 PM</p>
                         </div>
                     </div>
                 </div>

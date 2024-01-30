@@ -21,13 +21,16 @@ import FundComponent from '../components/HomeFolder/FundComponent.vue'
               
                 <iframe width="760" height="415" src="https://www.youtube.com/embed/IrBh3UM6J9M?si=cmKWZsNIS8HW0SVJ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                 <div class="px-4 py-5 bg-white rounded-lg ">
-                <div class="px-4 py-10 bg-gray-800 rounded-lg ">
+                <div class="px-4 py-5 bg-gray-800 rounded-lg ">
                   <!-- <p class="text-3xl uppercase text-yellow-800 font-bold">Intro</p> -->
-                  <p class="text-lg font-semibold text-yellow-400 text-start">
+                  <p class="text-lg font-semibold text-yellow-400 flex flex-col justify-end items-center text-start">
+                   <span>
                     Welcome to IDL Islamic Center. We serve the need of the Muslim Community living in and around the City of Dallas. Our goal is to grow a Masjid-centric community which puts all its resources, hard work and hopes into the obedience of Allah, the Creator, the Provider, the Most Beneficent, the Most Merciful. with a focus on: 
+                   </span>
                     <br>
-                    <br>
-                    Raising Muslim generations following the Qur’an and Sunnah as presented by the Prophet Muhammad (pbuh) and exercised by the companions, providing a home and extended family environment for all ages (Muslim and interested non-Muslim).
+                    <span> 
+                      Nurturing Muslim generations involves embracing the teachings of the Qur'an and Sunnah, exemplified by Prophet Muhammad (pbuh) and his companions. Creating a home and extended family environment that welcomes all ages, including both Muslims and interested non-Muslims, is essential. This inclusive setting encourages a profound understanding of Islamic principles, fostering learning, dialogue, and the embodiment of values like unity, compassion, and spiritual growth. This intentional approach ensures the transmission of Islamic values across generations, fostering a sense of belonging for both Muslims and non-Muslims within the family unit.                                      
+                    </span>
                   </p>
                 </div>
                 </div>
