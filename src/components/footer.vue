@@ -1,7 +1,7 @@
 <template>
     <div class="bg-[#36897b] bg-[url('../assets/image/home/pattern-1.png')] ">
     <div class="grid grid-cols-3  gap-5   bg-[#23646dcb] bg-repeat ">
-        <div class="text-sm px-20 py-10">
+        <div class="text-sm px-20 font-bold py-10">
             <p class="text-2xl font-bold text-white py-3">MASJID</p>
             <!-- <img src="../assets/landing/l1.png" alt="" class="py-3"> -->
             <div class="flex gap-3 items-center pb-3 text-white">
@@ -28,13 +28,13 @@
             <p class="pb-3">Track Order</p>
             <p class="pb-3">Shipping Details</p>
         </div> -->
-        <div class="text-sm px-20 py-10 text-white">
+        <div class="text-sm px-20 py-10 font-bold text-white">
             <h4 class="text-2xl font-semibold py-3">Useful Links</h4>
             <p class="pb-3">About Us</p>
             <p class="pb-3">Hot deals</p>
             <p class="pb-3">New products</p>
         </div>
-        <div class="text-sm px-20 py-10 text-white">
+        <div class="text-sm px-20 py-10 font-bold text-white">
             <h4 class="text-2xl font-semibold py-3">Help Center</h4>
             <p class="pb-3">Payments</p>
             <p class="pb-3">Refund</p>
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="flex justify-between px-[5%] bg-[#23646dcb] py-5">
-        <p class="text-sm text-white">© 2022, All rights reserved</p>
+        <p class="text-sm text-white font-bold">© 2022, All rights reserved</p>
         <div>
             <img src="../assets/image/common/ft5.png" alt="">
         </div>

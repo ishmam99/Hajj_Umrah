@@ -210,7 +210,7 @@ const router = createRouter({
     },
     {
       path: '/getinvolved/fund-raising',
-      name: 'applyforspeaker',
+      name: 'fundraise',
       component: () => import('../views/GetInvolved/Fundraise.vue')
     },
     {
