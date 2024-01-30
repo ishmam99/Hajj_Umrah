@@ -23,7 +23,7 @@ import FundComponent from '../components/HomeFolder/FundComponent.vue'
                 <div class="px-4 py-5 bg-white rounded-lg ">
                 <div class="px-4 py-5 bg-gray-800 rounded-lg ">
                   <!-- <p class="text-3xl uppercase text-yellow-800 font-bold">Intro</p> -->
-                  <p class="text-lg font-semibold text-yellow-400 flex flex-col justify-end items-center text-start">
+                  <p class="text-base font-semibold text-yellow-400 flex flex-col justify-end items-center text-start">
                    <span>
                     Welcome to IDL Islamic Center. We serve the need of the Muslim Community living in and around the City of Dallas. Our goal is to grow a Masjid-centric community which puts all its resources, hard work and hopes into the obedience of Allah, the Creator, the Provider, the Most Beneficent, the Most Merciful. with a focus on: 
                    </span>
