@@ -30,24 +30,29 @@
         </div>
         <div class="bg-gray-100 h-full px-20 pl-28 py-5 flex justify-between gap-5">
           <div class="space-y-8 w-3/4">
-            <div class="bg-white rounded-xl p-5 text-center">
-              <h1 class="text-3xl underline font-bold text-gray-700 py-3">Recent Prayer Service Update</h1>
+            <div class="bg-white rounded-xl p-5 ">
+              <h1 class="text-3xl underline font-bold text-gray-700 py-3 text-center">Recent Prayer Service Update</h1>
               <p>Dear Brothers and Sisters,</p>
               <p>Assalamu Alaikum,</p>
               <p>We hope this message finds you well. We are delighted to share an update on the recent prayer service held at Mosque/Community. The congregation came together in a spirit of unity and devotion, creating a truly blessed and memorable experience.</p>
-              <div class="text-center">
-                <p class="font-semibold">Recent Prayer Service Highlights:</p>
-                <p class="font-semibold">Prayer: <span class="font-md">Dhuhr</span></p>
-                <p class="font-semibold">Date: <span class="font-md">26jan</span></p>
-                <p class="font-semibold">Time: <span class="font-md">1.30 PM</span></p>
-                <p class="font-semibold">Imam: <span class="font-md">Md. Saiful Islam</span></p>
-                <p class="font-semibold">Reflections: <span class="font-md">Zakat</span></p>
-                <p class="font-semibold">Attendance: <span class="font-md">40 Person</span></p>
-                <p class="font-semibold">Location: <span class="font-md">Mashjid Premises</span></p>
-                <p>We kindly remind everyone to be punctual for prayers and to adhere to the guidelines and etiquettes of the mosque.</p>
+              <div class="flex gap-5 items-center px-10 pb-5">
+                <div class="w-1/2 text-xl">
+                  <p class="">Recent Prayer Service Highlights:</p>
+                  <p class="">Prayer: <span class="">Dhuhr</span></p>
+                  <p class="">Date: <span class="">26jan</span></p>
+                  <p class="">Time: <span class="">1.30 PM</span></p>
+                  <p class="">Reflections: <span class="">Zakat</span></p>
+                  <p class="">Attendance: <span class="">40 Person</span></p>
+                  <p class="">Location: <span class="">Mashjid Premises</span></p>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-3 w-1/2">
+                  <img src="" alt="" class="w-[250px] h-[250px] rounded-full bg-blue-300">
+                  <p class="font-semibold">Imam: <span class="font-md">Md. Saiful Islam</span></p>
+                </div>
+              </div>
+              <p>We kindly remind everyone to be punctual for prayers and to adhere to the guidelines and etiquettes of the mosque.</p>
                 <p>May Allah bless us all and accept our prayers.</p>
                 <p>JazakAllah Khair,</p>
-              </div>
             </div>
           </div>
           <PrayerServiceMore />
