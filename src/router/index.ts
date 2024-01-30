@@ -313,6 +313,11 @@ const router = createRouter({
       name: 'Fund_Raising',
       component: () => import('../views/FundRaising/FundRaising.vue'),
     },
+    {
+      path: '/Fund_Raising_Form',
+      name: 'Fund_Raising_Form',
+      component: () => import('../views/FundRaising/FundRaisingForm.vue'),
+    },
   ]
 })
 
