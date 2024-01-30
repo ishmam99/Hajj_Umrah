@@ -1,7 +1,7 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 pt-20 mt-5 py-5 bg-purple-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+      <div class="px-20 pt-20 mt-5 py-5 bg-pink-900 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
         <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
           <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
@@ -18,10 +18,10 @@
             <p>Home</p>
             <p>/ Services</p>
             <!-- <p>/ Volunteers</p> -->
-            <p class="text-purple-800">/ Nikah Service</p>
+            <p class="text-pink-900">/ Nikah Service</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-purple-800 text-4xl font-bold"> Nikah Service </h1>
+            <h1 class="text-pink-900 text-4xl font-bold"> Nikah Service </h1>
             <div>
               <p></p>
             </div>
@@ -321,7 +321,7 @@
                   </SelectContent>
                 </Select>
                 <button
-                  class="w-[350px] h-[45px] rounded-2xl bg-purple-800 text-white font-bold mx-auto"
+                  class="w-[350px] h-[45px] rounded-2xl bg-pink-900 text-white font-bold mx-auto"
                 >
                   Apply
                 </button>

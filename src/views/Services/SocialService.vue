@@ -1,7 +1,7 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 pt-20 mt-5 py-5 bg-indigo-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+      <div class="px-20 pt-20 mt-5 py-5 bg-indigo-900 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
         <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
           <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
@@ -18,10 +18,10 @@
             <p>Home</p>
             <p>/ Services</p>
             <!-- <p>/ Volunteers</p> -->
-            <p class="text-indigo-800">/ Social Service</p>
+            <p class="text-indigo-900">/ Social Service</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-indigo-800 text-4xl font-bold"> Social Service </h1>
+            <h1 class="text-indigo-900 text-4xl font-bold"> Social Service </h1>
             <div>
               <p></p>
             </div>
@@ -55,15 +55,15 @@
             </div> -->
             <div class="mt-5">
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <button class="p-4 bg-indigo-600 text-white rounded-xl">Medical Clinic</button>
-                <button class="p-4 bg-indigo-600 text-white rounded-xl">
+                <button class="p-4 bg-indigo-900 text-white rounded-xl">Medical Clinic</button>
+                <button class="p-4 bg-indigo-900 text-white rounded-xl">
                   Visiting and helping refugees
                 </button>
-                <button class="p-4 bg-indigo-600 text-white rounded-xl">Food Bank</button>
-                <button class="p-4 bg-indigo-600 text-white rounded-xl">
+                <button class="p-4 bg-indigo-900 text-white rounded-xl">Food Bank</button>
+                <button class="p-4 bg-indigo-900 text-white rounded-xl">
                   Distribution of Zakat funds
                 </button>
-                <button class="p-4 bg-indigo-600 text-white rounded-xl">
+                <button class="p-4 bg-indigo-900 text-white rounded-xl">
                   Ansaar (Helpers) Program for reverts and newcomers
                 </button>
               </div>
@@ -244,7 +244,7 @@
                   <div class="flex justify-center py-3">
                     <button type="submit"
 
-                      class="w-full h-[45px] rounded-2xl bg-indigo-800 text-white font-bold mx-auto"
+                      class="w-full h-[45px] rounded-2xl bg-indigo-900 text-white font-bold mx-auto"
                     >
                       Submit
                     </button>
