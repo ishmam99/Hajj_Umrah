@@ -32,7 +32,27 @@
           <div class="w-3/4 px-5">
             <h1 class="text-3xl font-bold uppercase pb-3">Prayer time</h1>
             <div class="bg-white p-5 rounded-2xl drop-shadow-md">
-                <p class="mx-3 text-sm font-semibold text-gray-500 text-center">11 th January,2024</p>
+                <!-- <p class="mx-3 text-sm font-semibold text-gray-500 text-center">11 th January,2024</p> -->
+                <div class="flex justify-center w-full relative">
+                  <Popover>
+                    <PopoverTrigger as-child class="hover:bg-slate-100">
+                      <Button
+                        :variant="'outline'"
+                        :class="cn(
+                          'w-[280px] justify-start text-left font-normal',
+                          !date && 'text-muted-foreground',
+                        )"
+                      >
+                        <CalendarIcon class="mr-2 h-4 w-4" />
+                        <span>{{ date ? format(date, "PPP") : "Pick a date" }}</span>
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent class="w-auto p-0">
+                      <Calendar v-model="date" />
+                    </PopoverContent>
+                  </Popover>
+                </div>
+                
                 <div class="grid grid-cols-2">
                     <div>
                         <h4 class="text-blue-600 text-4xl font-semibold uppercase">Next</h4>
@@ -97,6 +117,20 @@
 <script setup>
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import PrayerServiceMore from '/src/components/PrayerServiceMore.vue'
+import { format } from 'date-fns'
+import { Calendar as CalendarIcon } from 'lucide-vue-next'
+
+import { ref } from 'vue'
+import { cn } from '/src/lib/utils'
+import { Button } from '/components/ui/button'
+import { Calendar } from '/components/ui/calendar'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '/components/ui/popover'
+
+const date = ref()
 </script>
 
 <style lang="scss" scoped></style>

@@ -60,7 +60,7 @@
             </ul>
           </div>
           <div class="flex flex-col items-center gap-3 text-center w-full">
-            <img src="/src/assets/image/hero/h1.png" alt="" class="rounded-xl" />
+            <img src="/src/assets/image/hero/h1.jpg" alt="" class="rounded-xl" />
             <p class="text-blue-600">
               <span class="font-semibold text-black">E-Mail: </span>funeral.services@epicmasjid.org
             </p>

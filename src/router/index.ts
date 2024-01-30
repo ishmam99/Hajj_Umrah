@@ -308,6 +308,11 @@ const router = createRouter({
       name: 'Ranadam_Payer_Time',
       component: () => import('../views/Services/PrayerService/RamadanPrayerTime.vue'),
     },
+    {
+      path: '/Fund_Raising',
+      name: 'Fund_Raising',
+      component: () => import('../views/FundRaising/FundRaising.vue'),
+    },
   ]
 })
 
