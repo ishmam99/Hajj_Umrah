@@ -32,7 +32,7 @@
             <p class="flex p-2 text-3xl font-bold text-white bg-green-500 w-fit">Fundraise with</p>
             <p class="flex py-2 px-3 text-5xl font-bold text-white bg-cyan-500 w-fit">Islamic Digital Lane</p>
             <p class="text-lg text-gray-600">Fundraise for one of our many campaigns or for one of our upcoming <br> events with a click of a few buttons!</p>
-            <Button class="w-1/5 text-lg bg-teal-600 hover:bg-blue-500">Start fund Raising for today</Button>
+            <router-link to="/Fund_Raising_Form" class="w-1/5 py-4 px-3 rounded-lg text-white text-lg bg-teal-600 hover:bg-blue-500">Start fund Raising for today</router-link>
         </div>
         <div class="grid grid-cols-3 gap-10 p-[10%] bg-slate-200">
             <div class="flex flex-col gap-3 rounded-md p-5 bg-white">
