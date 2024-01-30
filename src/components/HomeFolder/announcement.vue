@@ -1,4 +1,5 @@
 <template>
+    <div class="w-full bg-[url('../assets/image/home/pattern-1.png')] bg-repeat">
     <div class="w-full px-5">
         <h1 class="text-3xl font-bold uppercase pb-3">Announcement</h1>
         <div>
@@ -34,6 +35,7 @@
             </div>
            
         </div>
+    </div>
     </div>
 </template>
 <script setup>

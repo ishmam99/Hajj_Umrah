@@ -1,9 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 ml-10">
-        <div class="bg-white">
-          <div class="flex items-center gap-2">
+      <div class="px-20 pt-20 bg-white">
+        <div class="pt-3">
+          <div class="flex items-center justify-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -18,24 +18,22 @@
             <p>Home</p>
             <p>/ Get Involved</p>
             <p>/ Volunteers</p>
-            <p class="text-yellow-500">/ Apply For Volunteer</p>
+            <p class="text-[#1a504785]">/ Apply For Volunteer </p>
           </div>
-          <div class="bg-white rounded-lg relative py-3">
-            <h1 class="text-yellow-500 text-4xl font-semibold">Apply For Volunteer</h1>
+          <div class="rounded-lg flex items-center justify-center relative py-3">
+            <h1 class="text-[#1a504785] text-4xl font-semibold">Apply For Volunteer Program</h1>
             <div>
               <p></p>
             </div>
           </div>
         </div>
       </div>
-      <div
-        class="bg-gray-100 h-full py-5 mt-10 flex items-center justify-center gap-5 px-20 w-full"
-      >
+      <div class="bg-[#1a504785] h-full py-5 pt-10 flex items-center justify-center gap-5 px-20 w-full">
         <div class="space-y-8 w-3/4">
           <div class="bg-white rounded-xl p-5 w-full">
             <!-- <p class="text-xl font-bold pt-2 pb-2">Student Admission Form</p> -->
 
-            <div class="pt-10">
+            <div class="pt-4">
               <h1 class="text-2xl font-bold">Volunteer Application</h1>
             </div>
             <div class="py-5 space-y-7 mt-5">
@@ -188,7 +186,69 @@
               </button>
             </div>
           </div>
+
+          <!-- <div class="bg-white rounded-xl p-5 w-full">
+            <div class="py-3 flex flex-col gap-5 items-c">
+              <p class="text-lg font-bold">Credit Card Details</p>
+              <div class="flex gap-10">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black"
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black"
+                />
+              </div>
+              <div class="flex gap-10">
+                <div
+                  class="rounded-2xl w-1/2 shadow-lg border border-black flex items-center justify-between px-4"
+                >
+                  <input
+                    type="text"
+                    placeholder="1111 2222 3333 4444 5555"
+                    class="py-2 w-1/2 rounded-2xl"
+                  />
+                  <img src="/src/assets/image/common/ft5.png" alt="" class="h-5" />
+                </div>
+                <div class="flex gap-5 w-1/2">
+                  <input
+                    type="date"
+                    class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black"
+                  />
+                  <input
+                    type="text"
+                    placeholder="CVC"
+                    class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black"
+                  />
+                </div>
+              </div>
+              <Select class="">
+                <SelectTrigger class="w-full rounded-2xl py-2 px-4 border border-black">
+                  <SelectValue placeholder="Country" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Country</SelectLabel>
+                    <SelectItem value="apple"> BanglaDesh </SelectItem>
+                    <SelectItem value="banana"> UsA </SelectItem>
+                    <SelectItem value="blueberry"> Canada </SelectItem>
+                    <SelectItem value="grapes"> Australia </SelectItem>
+                    <SelectItem value="pineapple"> Rasia </SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+              <button
+                class="w-[350px] h-[45px] rounded-2xl bg-yellow-600 text-white font-bold mx-auto"
+              >
+                Apply
+              </button>
+            </div>
+          </div> -->
         </div>
+        <!-- <RegistrationMore /> -->
       </div>
     </DefaultLayout>
   </div>

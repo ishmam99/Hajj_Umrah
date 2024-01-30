@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[80vh] pb-5 relative">
+    <div class="h-[80vh] relative">
         <div class="h-full">
             <swiper
                 :slidesPerView="'1'"
