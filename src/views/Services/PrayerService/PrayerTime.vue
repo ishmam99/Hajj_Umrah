@@ -1,8 +1,8 @@
 <template>
     <div>
       <DefaultLayout>
-        <div class="px-20 pt-20 py-5 bg-blue-50 bg-repeat shadow-xl bg-[url('../assets/image/home/pattern-1.png')]">
-        <div class="pt-3 pb rounded-xl bg-white border-blue-50 shadow-xl border-[3px]">
+        <div class="px-20 flex justify-center pt-20 py-5 bg-blue-300 bg-repeat shadow-xl bg-[url('../assets/image/home/pattern-1.png')]">
+        <div class="mt-3 pb rounded-xl bg-white border-blue-50 w-1/2 shadow-xl border-[3px]">
           <div class="flex items-center justify-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,8 @@
             <h1 class="text-3xl font-bold uppercase pb-3">Prayer time</h1>
             <div class="bg-white p-5 rounded-2xl drop-shadow-md">
                 <!-- <p class="mx-3 text-sm font-semibold text-gray-500 text-center">11 th January,2024</p> -->
-                <div class="flex justify-center w-full relative">
+                <div class="flex justify-center items-center gap-3 w-full relative">
+                  <Button class="bg-gray-200 hover:bg-gray-300 h-14 text-gray-800" @click="date.addDays(-1)"> prev </Button>
                   <Popover>
                     <PopoverTrigger as-child class="hover:bg-slate-100">
                       <Button
@@ -51,6 +52,7 @@
                       <Calendar v-model="date" />
                     </PopoverContent>
                   </Popover>
+                  <Button class="bg-gray-200 hover:bg-gray-300 h-14 text-gray-800"> next </Button>
                 </div>
                 
                 <div class="grid grid-cols-2">
@@ -130,7 +132,7 @@ import {
   PopoverTrigger,
 } from '/components/ui/popover'
 
-const date = ref()
+const date = ref(new Date())
 </script>
 
 <style lang="scss" scoped></style>
