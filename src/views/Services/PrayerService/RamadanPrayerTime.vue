@@ -35,7 +35,27 @@
               <div class="w-full px-10">
                 <h1 class="text-3xl font-bold uppercase pb-3">Prayer time</h1>
                 <div class="bg-white p-10 rounded-2xl drop-shadow-md">
-                    <p class="mx-3 text-sm font-semibold text-gray-500 text-center">10 th March,2024</p>
+                    <div class="flex justify-center items-center gap-3 w-full relative">
+                      <Button class="bg-gray-200 hover:bg-gray-300 h-14 text-gray-800" @click="subDays"> prev </Button>
+                      <Popover>
+                        <PopoverTrigger as-child class="hover:bg-slate-100">
+                          <Button
+                            :variant="'outline'"
+                            :class="cn(
+                              'w-[280px] justify-start text-left font-normal',
+                              !date && 'text-muted-foreground',
+                            )"
+                          >
+                            <CalendarIcon class="mr-2 h-4 w-4" />
+                            <span>{{ date ? date.format('MMMM Do YYYY') : "Pick a date" }}</span>
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent class="w-auto p-0">
+                          <Calendar v-model="date" />
+                        </PopoverContent>
+                      </Popover>
+                      <Button class="bg-gray-200 hover:bg-gray-300 h-14 text-gray-800" @click="addDays"> next </Button>
+                    </div>
                     <div class="grid grid-cols-2">
                         <div>
                             <!-- <h4 class="text-blue-600 text-4xl font-semibold uppercase">Next</h4>
@@ -102,6 +122,26 @@
 <script setup>
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import PrayerServiceMore from '/src/components/PrayerServiceMore.vue'
+import { format } from 'date-fns'
+import { Calendar as CalendarIcon } from 'lucide-vue-next'
+import moment from 'moment'
+import { ref } from 'vue'
+import { cn } from '/src/lib/utils'
+import { Button } from '/components/ui/button'
+import { Calendar } from '/components/ui/calendar'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '/components/ui/popover'
+
+const date = ref(moment())
+const subDays = () => {
+  date.value = moment(date.value).subtract(1,'d')
+}
+const addDays = () => {
+  date.value = moment(date.value).add(1,'d')
+}
 </script>
 
 <style lang="scss" scoped></style>
