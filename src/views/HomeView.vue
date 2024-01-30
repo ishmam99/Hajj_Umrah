@@ -10,7 +10,7 @@ import LearningCenter from '../components/HomeFolder/learningCenter.vue'
 
 <template>
   <DefaultLayout>
-    <Hero/> <div class="py-[30px] px-[5%] bg-slate-100 flex justify-center gap-5 my-10">
+    <Hero/> <div class="py-[30px] px-[5%] bg-slate-100 flex justify-center gap-5">
       <div class="w-full px-5">
         <h1 class="text-3xl font-bold uppercase pb-3">Virtual Tour</h1>
         <div>
@@ -35,14 +35,14 @@ import LearningCenter from '../components/HomeFolder/learningCenter.vue'
         </div>
       </div>
     </div>
-    <div class="py-[30px] px-[5%] bg-slate-100 flex justify-center gap-5 my-10">
+    <div class="py-[30px] px-[5%] bg-slate-100 bg-[url('../assets/image/home/pattern-1.png')] flex justify-center gap-5 my-10">
         <!-- <Prayer/> -->
         <Announcement/>
     </div>
     <UpcommingEvent/>
     <Services/>
     <LearningCenter/>
-     <div class="py-[30px] px-[5%] bg-slate-100 flex justify-center gap-5 my-10">
+     <div class="py-[30px] px-[5%]  bg-repeat  flex justify-center gap-5 ">
       <div class="w-full px-5">
         <h1 class="text-3xl font-bold uppercase pb-3">Gallery</h1>
         <div>

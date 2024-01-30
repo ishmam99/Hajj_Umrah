@@ -204,6 +204,11 @@ const router = createRouter({
       component: () => import('../views/GetInvolved/ApplyForSpeaker.vue')
     },
     {
+      path: '/getinvolved/fund-raising',
+      name: 'fundraise',
+      component: () => import('../views/GetInvolved/Fundraise.vue')
+    },
+    {
       path: '/getinvolved/applyforimam',
       name: 'applyforimam',
       component: () => import('../views/GetInvolved/ApplyForGuestImam.vue')

@@ -108,7 +108,7 @@
         <SelectTrigger class="w-full">
           <SelectValue placeholder="Others"  />
         </SelectTrigger>
-        Others
+       
         <SelectContent>
           <SelectGroup>
             <SelectLabel>Other Donations</SelectLabel>
