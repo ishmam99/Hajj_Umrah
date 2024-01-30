@@ -1,9 +1,9 @@
 <template>
     <div>
       <DefaultLayout>
-        <div class="px-20 ml-10">
-          <div class="bg-white">
-            <div class="flex items-center gap-2">
+        <div class="px-20 pt-20 mt-5 py-5 bg-lime-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+          <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+            <div class="flex items-center justify-center gap-2 font-semibold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -17,17 +17,18 @@
               </svg>
               <p>Home</p>
               <p>/ Activities</p>
-              <p class="text-yellow-500">/ Board Member Login</p>
+              <!-- <p>/ Volunteers</p> -->
+              <p class="text-lime-800">/ Board Member Login</p>
             </div>
-            <div class="bg-white rounded-lg relative py-3">
-              <h1 class="text-yellow-500 text-4xl font-semibold">Board Member Login</h1>
+            <div class="rounded-lg flex items-center justify-center relative py-3">
+              <h1 class="text-lime-800 text-4xl font-bold"> Board Member Login</h1>
               <div>
                 <p></p>
               </div>
             </div>
           </div>
         </div>
-        <div class="w-full h-screen flex justify-center items-center bg-slate-50">
+        <div class="w-full h-screen flex justify-center items-center bg-[url('/src/assets/image/common/bg-islam-3.jpg')] bg-cover">
             <form @submit.prevent="login(user)">
                 <div class="max-h-[750px] w-[600px] bg-[#ffffff] p-5 rounded-lg shadow-md">
                     <img src="/src/assets/image/common/n1.png" alt="" class="w-12 m-auto">
@@ -43,7 +44,7 @@
                         <p class="text-xs text-gray-400">Forgot Password?</p>
                     </div>
                     <p v-if="error" class="text-red-600 text-center font-bold">No user found</p>
-                    <button type="submit" class="bg-yellow-600 w-full px-3 py-2 rounded-md my-3 text-white font-semibold">Login</button>
+                    <button type="submit" class="bg-lime-800 w-full px-3 py-2 rounded-md my-3 text-white font-semibold">Login</button>
                     <p class="text-center text-sm text-gray-600">OR</p>
                     <button class="border border-gray-400 w-full px-3 py-2 rounded-md my-3 font-bold text-gray-400 flex items-center justify-center gap-2"><ion-icon name="logo-google"></ion-icon>Sign in with Google</button>
                     <div class="flex text-sm justify-between gap-2">

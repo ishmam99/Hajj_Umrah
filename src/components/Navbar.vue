@@ -162,15 +162,7 @@
                     Volunteers
                     </MenubarSubTrigger>
                     <MenubarSubContent>
-                      <MenubarItem>
-                        <router-link to="/volunteers/volunteeradmission" class=" w-full hover:pl-5 duration-300">Apply for the volunteer</router-link>
-                      </MenubarItem>
-                      <MenubarItem>
-                        <router-link to="/volunteers/volunteerlogin" class=" w-full hover:pl-5 duration-300 text-sm">
-                          Volunteer Login
-                        </router-link>
-                        <!-- <a href="/more/registration/mosjid_wavier_and_release_liability" class=" w-full hover:pl-5 duration-300">Volunteer Login</a> -->
-                      </MenubarItem>
+                    
                       <!-- <MenubarItem> -->
                         <MenubarSub>
                   <MenubarSubTrigger class="px-1">
@@ -194,6 +186,15 @@
                 </MenubarItem>
                         </MenubarSubContent>
                       </MenubarSub>
+                        <MenubarItem>
+                        <router-link to="/volunteers/volunteeradmission" class=" w-full hover:pl-5 duration-300">Apply for the volunteer</router-link>
+                      </MenubarItem>
+                      <MenubarItem>
+                        <router-link to="/volunteers/volunteerlogin" class=" w-full hover:pl-5 duration-300 text-sm">
+                          Volunteer Login
+                        </router-link>
+                        <!-- <a href="/more/registration/mosjid_wavier_and_release_liability" class=" w-full hover:pl-5 duration-300">Volunteer Login</a> -->
+                      </MenubarItem>
                       <!-- </MenubarItem> -->
                       </MenubarSubContent>
                     </MenubarSub>

@@ -1,9 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-     <div class="px-20 pt-20 py-5 bg-emerald-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
-        <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffffd8] border-blue-50 shadow-xl border-[3px]">
-          <div class="flex items-center justify-center gap-2">
+     <div class="px-20 pt-20 mt-5 py-5 bg-emerald-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+        <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+          <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -21,7 +21,7 @@
             <p class="text-emerald-800">/ Publication & Books</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-emerald-800 text-4xl font-semibold"> Publication & Books</h1>
+            <h1 class="text-emerald-800 text-4xl font-bold"> Publication & Books</h1>
             <div>
               <p></p>
             </div>

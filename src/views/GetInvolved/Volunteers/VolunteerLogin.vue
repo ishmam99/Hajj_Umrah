@@ -1,9 +1,9 @@
 <template>
     <div>
       <DefaultLayout>
-        <div class="px-20 ml-10">
-          <div class="bg-white">
-            <div class="flex items-center gap-2">
+        <div class="px-20 pt-20 mt-5 py-5 bg-blue-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+          <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+            <div class="flex items-center justify-center gap-2 font-semibold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -17,25 +17,27 @@
               </svg>
               <p>Home</p>
               <p>/ Get Involved</p>
-              <p>/ Volunteers</p>
-              <p class="text-yellow-500">/ Volunteer Login</p>
+              <!-- <p>/ Volunteers</p> -->
+              <p class="text-blue-800">/ Apply For Volunteer</p>
             </div>
-            <div class="bg-white rounded-lg relative py-3">
-              <h1 class="text-yellow-500 text-4xl font-semibold">Volunteer Login</h1>
+            <div class="rounded-lg flex items-center justify-center relative py-3">
+              <h1 class="text-blue-800 text-4xl font-bold"> Apply For Volunteer</h1>
               <div>
                 <p></p>
               </div>
             </div>
           </div>
         </div>
-        <div class="w-full h-screen flex justify-center items-center bg-slate-50">
-            <form @submit.prevent="login(user)">
+        <div class="w-full h-screen flex justify-center items-center bg-[url('/src/assets/image/common/bg-fund.jpg')] bg-cover">
+            
+            <div class="h-full w-full flex items-center justify-center bg-[#00000043]">
+              <form @submit.prevent="login(user)">
                 <div class="max-h-[750px] w-[600px] bg-[#ffffff] p-5 rounded-lg shadow-md">
                     <img src="/src/assets/image/common/n1.png" alt="" class="w-12 m-auto">
                     <p class="font-semibold py-1.5">Email</p>
-                    <input @change="error=false" v-model="data.email" type="email" class="border border-gray-300 focus:outline-yellow-600 rounded-md w-full py-1.5 px-3">
+                    <input @change="error=false" v-model="data.email" type="email" class="border border-gray-300 focus:outline-blue-600 rounded-md w-full py-1.5 px-3">
                     <p class="font-semibold py-1.5">Password</p>
-                    <input v-model="data.password" type="password" class="border border-gray-300 focus:outline-yellow-600 rounded-md w-full py-1.5 px-3">
+                    <input v-model="data.password" type="password" class="border border-gray-300 focus:outline-blue-600 rounded-md w-full py-1.5 px-3">
                     <div class="flex justify-between items-center gap-5 my-3">
                         <div class="flex items-center gap-2">
                             <input type="checkbox" class="">
@@ -44,16 +46,16 @@
                         <p class="text-xs text-gray-400">Forgot Password?</p>
                     </div>
                     <p v-if="error" class="text-red-600 text-center font-bold">No user found</p>
-                    <button type="submit" class="bg-yellow-600 w-full px-3 py-2 rounded-md my-3 text-white font-semibold">Login</button>
+                    <button type="submit" class="bg-blue-600 w-full px-3 py-2 rounded-md my-3 text-white font-semibold">Login</button>
                     <p class="text-center text-sm text-gray-600">OR</p>
                     <button class="border border-gray-400 w-full px-3 py-2 rounded-md my-3 font-bold text-gray-400 flex items-center justify-center gap-2"><ion-icon name="logo-google"></ion-icon>Sign in with Google</button>
                     <div class="flex text-sm justify-between gap-2">
                         <p class="text-gray-500">Don't have an account ? </p>
-                        <router-link to="/Signup" class="text-gray-500 font-semibold hover:text-yellow-600 cursor-pointer">Register</router-link>
+                        <router-link to="/Signup" class="text-gray-500 font-semibold hover:text-blue-600 cursor-pointer">Register</router-link>
                     </div>
                 </div>
             </form>
-            
+            </div>
         </div>
       </DefaultLayout>
     </div>
