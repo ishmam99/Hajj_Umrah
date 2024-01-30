@@ -207,7 +207,7 @@
                 <router-link to="/getinvolved/applyforimam" class=" w-full hover:pl-5 duration-300">Guest Imam</router-link>
               </MenubarItem>
            <MenubarItem>
-            <router-link to="/getinvolved/fund-raising" class=" w-full hover:pl-5 duration-300">Fund Raising</router-link>
+            <router-link to="/Fund_Raising" class=" w-full hover:pl-5 duration-300">Fund Raising</router-link>
               </MenubarItem>
             </MenubarContent>
           </MenubarMenu>
