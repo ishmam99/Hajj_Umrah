@@ -1,6 +1,6 @@
 <template>
     <DefaultLayout>
-      <div class="px-20 pt-20 mt-5 py-5 bg-cyan-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+      <!-- <div class="px-20 pt-20 mt-5 py-5 bg-cyan-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
         <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
           <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
@@ -16,7 +16,6 @@
             </svg>
             <p>Home</p>
             <p>/ Get Involved</p>
-            <!-- <p>/ Volunteers</p> -->
             <p class="text-cyan-800">/ Fund Raising</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
@@ -26,8 +25,8 @@
             </div>
           </div>
         </div>
-      </div>
-        <div class="flex px-[5%] mt-10">
+      </div> -->
+        <div class="flex px-[5%] pt-20 mt-10 bg-[#58a2b9b2]">
             <div class="w-1/2 bg-[url('/src/assets/image/common/v6.jpg')] opacity-85 rounded-s-lg p-10 flex flex-col gap-3">
                 <p class="text-3xl font-bold text-white">Create your <br> Fundraising page</p>
                 <p class="text-lg text-white">Create your fundraising page with a click of a few buttons and start fundraising for your chosen cause. Let's make a difference together!</p>
@@ -62,7 +61,7 @@
 
             </div>
         </div>
-        <div class="">
+        <div class="bg-[#58a2b9b2]">
             <h1 class="px-20 text-4xl font-bold text-center pt-10">Why do fundraisers choose us?</h1>
             <div class="grid grid-cols-3 gap-10 px-20 py-20">
                 <div class="p-5 rounded-md bg-green-600 text-white">

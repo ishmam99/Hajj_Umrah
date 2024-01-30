@@ -27,8 +27,8 @@
             </div>
           </div>
         </div> -->
-        <div class="bg-gray-100 pt-20 mt-5 h-full py-5 flex gap-5 px-20 w-full">
-          <div class="space-y-8 w-3/4">
+        <div class="bg-gray-100 h-full py-5 flex gap-5 w-full">
+          <div class="space-y-8 w-full">
             <div class="bg-white rounded-xl p-5 w-full">
               <!-- <h1 class="text-3xl underline font-semibold py-3">Active Events</h1> -->
               <div class="min-w-[350px] min-h-[500px] overflow-hidden relative rounded-3xl">
@@ -41,32 +41,9 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="bg-white rounded-xl p-5 w-full">
-              <h1 class="text-3xl font-semibold underline py-3">Up Coming Events</h1>
-              <div class="class grid grid-cols-3 gap-5">
-                <div v-for="item in event" class="border border-gray-600 p-5 flex flex-col gap-2 text-center rounded-md">
-                    <img :src="item.image" alt="" class="w-full">
-                    <h3 class="text-2xl font-bold">{{ item.title }}</h3>
-                    <p class="text-sm font-semibold text-yellow-600">{{ item.date }}</p>
-                    <p>{{ item.des }}</p>
-                    <button class="h-[50px] w-full border border-gray-600 rounded-md">Register</button>
-                </div>
-              </div>
-            </div> -->
-            <!-- <div class="bg-white rounded-xl p-5 w-full">
-              <h1 class="text-3xl font-semibold underline py-3">Event History</h1>
-              <div class="class grid grid-cols-3 gap-5">
-                <div v-for="item in event" class="border border-gray-600 p-5 flex flex-col gap-2 text-center rounded-md">
-                    <img :src="item.image" alt="" class="w-full">
-                    <h3 class="text-2xl font-bold">{{ item.title }}</h3>
-                    <p class="text-sm font-semibold text-yellow-600">{{ item.date }}</p>
-                    <p>{{ item.des }}</p>
-                </div>
-              </div>
-            </div> -->
+
 
           </div>
-         <ActivityMore />
         </div>
       </DefaultLayout>
     </div>
