@@ -43,8 +43,9 @@ const data = ref({
   email:'',
   password: '',
 });
-const authStore = useAuthStore();
+const authStore = useAuthStore()
 const login = () => {
+    
     if (data.value.email == '' || data.value.password == '') {
         alert('Email or password is missing')
     }
