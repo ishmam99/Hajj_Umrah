@@ -28,13 +28,13 @@
             </div>
           </div>
         </div>
-        <div class="bg-gray-100 h-full px-20 pl-28 py-5 flex justify-between gap-5">
+        <div class="bg-fuchsia-100 h-full px-20 pl-28 py-5 flex justify-between gap-5">
           <div class="space-y-8 w-3/4">
             <div class="bg-white rounded-xl p-5 text-center">
-              <h1 class="text-3xl underline font-bold text-gray-700 py-3">Ramadan Prayer Time form March 2024</h1>
+              <h1 class="text-3xl underline font-bold text-gray-700 py-3">Ramadan Prayer Time from March 2024</h1>
               <div class="w-full px-10">
                 <h1 class="text-3xl font-bold uppercase pb-3">Prayer time</h1>
-                <div class="bg-white p-10 rounded-2xl drop-shadow-md">
+                <div class="bg-slate-100 p-10 rounded-2xl drop-shadow-md">
                     <div class="flex justify-center items-center gap-3 w-full relative">
                       <Button class="bg-gray-200 hover:bg-gray-300 h-14 text-gray-800" @click="subDays"> prev </Button>
                       <Popover>

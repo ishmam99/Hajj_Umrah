@@ -11,7 +11,7 @@ import FundComponent from '../components/HomeFolder/FundComponent.vue'
 
 <template>
   <DefaultLayout>
-    <Hero/> <div class="py-[30px] px-[5%] bg-sky-100 bg-[url('../assets/image/home/pattern-1.png')] flex justify-center gap-5">
+    <Hero/> <div class="py-[30px] px-[5%] bg-slate-50 bg-[url('../assets/image/home/pattern-1.png')] flex justify-center gap-5">
       <div class="w-full px-5">
         <h1 class="text-3xl font-bold uppercase pb-3">Virtual Tour</h1>
         <div>
@@ -21,9 +21,9 @@ import FundComponent from '../components/HomeFolder/FundComponent.vue'
               
                 <iframe width="760" height="415" src="https://www.youtube.com/embed/IrBh3UM6J9M?si=cmKWZsNIS8HW0SVJ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                 <div class="px-4 py-5 bg-white rounded-lg ">
-                <div class="px-4 py-5 bg-gray-800 rounded-lg ">
+                <div class="px-4 py-5 bg-sky-200 rounded-lg ">
                   <!-- <p class="text-3xl uppercase text-yellow-800 font-bold">Intro</p> -->
-                  <p class="text-base font-semibold text-yellow-400 flex flex-col justify-end items-center text-start">
+                  <p class="text-base font-semibold text-teal-800 flex flex-col justify-end items-center text-start">
                    <span>
                     Welcome to IDL Islamic Center. We serve the need of the Muslim Community living in and around the City of Dallas. Our goal is to grow a Masjid-centric community which puts all its resources, hard work and hopes into the obedience of Allah, the Creator, the Provider, the Most Beneficent, the Most Merciful. with a focus on: 
                    </span>
