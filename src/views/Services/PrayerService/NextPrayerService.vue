@@ -30,22 +30,24 @@
         </div>
         <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
           <div class="space-y-8 w-3/4">
-            <div class="bg-white rounded-xl p-5 text-center">
-              <h1 class="text-3xl underline font-bold text-gray-700 py-3">Next Prayer Service Announcement</h1>
+            <div class="bg-white rounded-xl p-5">
+              <h1 class="text-3xl underline font-bold text-gray-700 py-3 text-center">Next Prayer Service Announcement</h1>
               <p>Dear Brothers and Sisters,</p>
               <p>Assalamu Alaikum,</p>
               <p>We hope this message reaches you in good health and imaan. We are pleased to inform you of the upcoming prayer service at IDL Mashjid on Friday, 26 jan. Please join us in congregational prayers to seek the blessings of Allah.</p>
-              <div class="text-center">
-                <p class="font-semibold">Next Prayer Service Details:</p>
-                <p class="font-semibold">Prayer: <span class="font-md">Dhuhr</span></p>
-                <p class="font-semibold">Date: <span class="font-md">26jan</span></p>
-                <p class="font-semibold">Time: <span class="font-md">1.30 PM</span></p>
-                <p class="font-semibold">Imam: <span class="font-md">Md. Saiful Islam</span></p>
-                <p class="font-semibold">Location: <span class="font-md">Mashjid Premises</span></p>
-                <p>We kindly remind everyone to be punctual for prayers and to adhere to the guidelines and etiquettes of the mosque.</p>
+              <p class="text-xl underline font-bold text-gray-700 py-3">Next Prayer Service Details:</p>
+              <div class="grid grid-cols-3 px-5">
+                <div class="p-3 rounded-md shadow-md">
+                  <p class="font-semibold">Prayer: <span class="font-md">Dhuhr</span></p>
+                  <p class="font-semibold">Date: <span class="font-md">26 Jan</span></p>
+                  <p class="font-semibold">Time: <span class="font-md">1.30 PM</span></p>
+                  <p class="font-semibold">Imam: <span class="font-md">Md. Saiful Islam</span></p>
+                  <p class="font-semibold">Location: <span class="font-md">Mashjid Premises</span></p>
+                </div>
+              </div>
+                <p class="pt-3">We kindly remind everyone to be punctual for prayers and to adhere to the guidelines and etiquettes of the mosque.</p>
                 <p>May Allah bless us all and accept our prayers.</p>
                 <p>JazakAllah Khair,</p>
-              </div>
             </div>
           </div>
           <PrayerServiceMore />

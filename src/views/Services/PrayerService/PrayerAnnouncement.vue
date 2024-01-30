@@ -30,32 +30,49 @@
         </div>
         <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
           <div class="space-y-8 w-3/4">
-            <div class="bg-white rounded-xl p-5 text-center">
-              <h1 class="text-3xl underline font-bold text-gray-700 py-3">Latest Announcement</h1>
+            <div class="bg-white rounded-xl p-5">
+              <h1 class="text-3xl underline font-bold text-gray-700 py-3 text-center">Latest Announcement</h1>
               <p>Dear Community/Mosque Members</p>
               <p>Assalamu Alaikum,</p>
               <p>We hope this message finds you in good health and high spirits. As part of our commitment to keeping the community informed and connected, we would like to announce the prayer times for the upcoming week:</p>
-              <div class="text-center">
-                <p class="font-semibold">Fajr (Dawn) Prayer:</p>
-                <p class="pl-2">Adhaan: 06:18 AM</p>
-                <p class="pl-2">Jamat: 06:30 AM</p>
-                <p class="font-semibold">Dhuhr (Noon) Prayer:</p>
-                <p class="pl-2">Adhaan: 12:35 PM</p>
-                <p class="pl-2">Jamat: 1:35 PM</p>
-                <p class="font-semibold">Asr (Afternoon) Prayer:</p>
-                <p class="pl-2">Adhaan: 03:20 PM</p>
-                <p class="pl-2">Jamat: 03:50 PM</p>
-                <p class="font-semibold">Maghrib (Evening) Prayer:</p>
-                <p class="pl-2">Adhaan: 05:39 PM</p>
-                <p class="pl-2">Jamat: 05:45 PM</p>
-                <p class="font-semibold">Isha (Night) Prayer</p>
-                <p class="pl-2">Adhaan: 06:52 PM</p>
-                <p class="pl-2">Jamat: 08:00 PM</p>
-                <p>We kindly remind everyone to be punctual for prayers and to adhere to the guidelines and etiquettes of the mosque.</p>
+              <h1 class="text-xl font-bold text-gray-700 pt-6 underline">Announcement On Prayer Time</h1>
+              <div class="grid grid-cols-3 py-2 px-5 gap-5">
+                <div class="shadow-md rounded-md p-3">
+                  <p class="font-semibold">Fajr (Dawn) Prayer:</p>
+                  <p class="">Adhaan: 06:18 AM</p>
+                  <p class="">Jamat: 06:30 AM</p>
+                </div>
+                <div class="shadow-md rounded-md p-3">
+                  <p class="font-semibold">Dhuhr (Noon) Prayer:</p>
+                  <p class="">Adhaan: 12:35 PM</p>
+                  <p class="">Jamat: 1:35 PM</p>
+                </div>
+                <div class="shadow-md rounded-md p-3">
+                  <p class="font-semibold">Asr (Afternoon) Prayer:</p>
+                  <p class="">Adhaan: 03:20 PM</p>
+                  <p class="">Jamat: 03:50 PM</p>
+                </div>
+                <div class="shadow-md rounded-md p-3">
+                  <p class="font-semibold">Maghrib (Evening) Prayer:</p>
+                  <p class="">Adhaan: 05:39 PM</p>
+                  <p class="">Jamat: 05:45 PM</p>
+                </div>
+                <div class="shadow-md rounded-md p-3">
+                  <p class="font-semibold">Isha (Night) Prayer</p>
+                  <p class="">Adhaan: 06:52 PM</p>
+                  <p class="">Jamat: 08:00 PM</p>
+                </div>
+              </div>
+              <h1 class="text-xl font-bold text-gray-700 pt-6 underline">Announcement On Dawat</h1>
+              <div class="grid grid-cols-3 py-2 px-5 gap-5">
+                <div class="shadow-md rounded-md p-3">
+                  <p class="font-semibold">After Asr (Afternoon) Prayer:</p>
+                  <p class="">Invite people of the community to come to mashjid </p>
+                </div>
+              </div>
+                <p class="pt-3">We kindly remind everyone to be punctual for prayers and to adhere to the guidelines and etiquettes of the mosque.</p>
                 <p>May Allah bless us all and accept our prayers.</p>
                 <p>JazakAllah Khair,</p>
-              </div>
-              
               
             </div>
           </div>

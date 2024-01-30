@@ -30,7 +30,8 @@
         </div>
         <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
           <div class="space-y-8 w-3/4">
-            <div class="bg-white rounded-xl p-5">
+            <div class="bg-white rounded-xl p-5 relative">
+              <img src="/src/assets/image/common/pngwing.com.png" alt="" class="absolute top-2 h-20 right-0">
               <h1 class="text-3xl underline font-bold text-gray-700 py-3 text-center pb-10"> Funeral Announcement for Jamil Islam</h1>
               <div class="flex gap-5">
                 <div class="w-2/3">
@@ -52,7 +53,8 @@
                 </div>
               </div> 
             </div>
-            <div class="bg-white rounded-xl p-5">
+            <div class="bg-white rounded-xl p-5 relative">
+              <img src="/src/assets/image/common/pngwing.com.png" alt="" class="absolute top-2 h-20 right-0">
               <h1 class="text-3xl underline font-bold text-gray-700 py-3 text-center pb-10"> Funeral Announcement for Md. Abdul Karim </h1>
               <div class="flex gap-5">
                 <div class="w-2/3">
