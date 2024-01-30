@@ -69,6 +69,11 @@ const router = createRouter({
       component: () => import('../views/Explore/Watch.vue')
     },
     {
+      path: '/explore/publications',
+      name: 'explore/publications',
+      component: () => import('../views/Explore/Publications.vue')
+    },
+    {
       path: '/explore/quran',
       name: 'explore/quran',
       component: () => import('../views/Explore/Quran.vue')
@@ -202,6 +207,11 @@ const router = createRouter({
       path: '/getinvolved/applyforspeaker',
       name: 'applyforspeaker',
       component: () => import('../views/GetInvolved/ApplyForSpeaker.vue')
+    },
+    {
+      path: '/getinvolved/fund-raising',
+      name: 'applyforspeaker',
+      component: () => import('../views/GetInvolved/Fundraise.vue')
     },
     {
       path: '/getinvolved/applyforimam',

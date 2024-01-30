@@ -1,8 +1,8 @@
 <template>
     <div>
       <DefaultLayout>
-        <div class="px-20 ml-10">
-          <div class="bg-white">
+        <div class="bg-[#c38a2972]">
+          <div class="px-20">
             <div class="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -17,10 +17,10 @@
               </svg>
               <p>Home</p>
               <p>/ More</p>
-              <p class="text-yellow-500">/ Ramadan Special</p>
+              <p class="text-white">/ Ramadan Special</p>
             </div>
-            <div class="bg-white rounded-lg relative py-3">
-              <h1 class="text-yellow-500 text-4xl font-semibold">Ramadan Special</h1>
+            <div class="rounded-lg relative py-3">
+              <h1 class="text-white text-4xl font-semibold">Ramadan Special</h1>
               <div>
                 <p></p>
               </div>
@@ -33,7 +33,7 @@
           <!-- <p>{{ surahOfTheDay}}</p> -->
               
         </div>
-        <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
+        <div class="bg-gray-100 bg-[url('../assets/image/home/pattern-1.png')] bg-repeat h-full py-5 flex gap-5 px-20 w-full">
           <div class="space-y-8 w-3/4">
 
             <div class="bg-white rounded-xl p-5 w-full">
