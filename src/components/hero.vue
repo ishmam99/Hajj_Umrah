@@ -1,4 +1,7 @@
 <template>
+    <div class="pt-[80px]">
+
+    </div>
     <div class="h-[80vh] relative">
         <div class="h-full">
             <swiper

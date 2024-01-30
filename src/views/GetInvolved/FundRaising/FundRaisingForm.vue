@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="flex px-[5%]">
-            <div class="w-1/2 bg-[url('/src/assets/image/common/v6.jpg')] p-10 flex flex-col gap-3">
+            <div class="w-1/2 bg-[#2783b88c] p-10 flex flex-col gap-3">
                 <p class="text-3xl font-bold text-white">Create your <br> Fundraising page</p>
                 <p class="text-lg text-white">Create your fundraising page with a click of a few buttons and start fundraising for your chosen cause. Let's make a difference together!</p>
                 <input type="text" name="" id="" placeholder="Enter Fundraiser Title" class="py-1.5 px-2 rounded-md w-full">
