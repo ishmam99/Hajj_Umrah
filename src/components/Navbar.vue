@@ -149,52 +149,7 @@
             </MenubarContent>
           </MenubarMenu>
 
-          <MenubarMenu>
-            <MenubarTrigger class="px-1">Get Involved 
-              <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
-            </MenubarTrigger>
-            <MenubarContent>
-              <!-- <MenubarItem> -->
-             <MenubarSub>
-                <MenubarSubTrigger class="px-1">
-                   Volunteers
-                  </MenubarSubTrigger>
-                  <MenubarSubContent>
-                    <MenubarItem>
-                      <router-link to="/volunteers/volunteeradmission" class=" w-full hover:pl-5 duration-300">Apply for the volunteer</router-link>
-                    </MenubarItem>
-                    <MenubarItem>
-                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 text-sm">Student Login
-                  </router-link></MenubarItem>  <MenubarItem>
-                  <router-link to="/onsitelearning" class=" w-full hover:pl-5 duration-300 text-sm">Onsite learning center
-                  </router-link>
-                </MenubarItem>
-                <MenubarItem>
-                  <a href="" class=" w-full hover:pl-5 duration-300 text-sm">Online learning center
-                  </a>
-                </MenubarItem>
-                </MenubarSubContent>
-             </MenubarSub>
-              </MenubarContent>
-            </MenubarMenu>
-    
-          
-            <MenubarMenu>
-              <MenubarTrigger class="px-1">Activities
-                 <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
-                </MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem>
-                  <router-link to="/activity/event" class=" w-full hover:pl-5 duration-300">Events</router-link>
-                </MenubarItem>
-                <MenubarItem>
-                  <router-link to="/activity/project" class=" w-full hover:pl-5 duration-300">Projects</router-link>
-                </MenubarItem>
-                <MenubarItem>
-                  <router-link to="/boardmemberlogin" class=" w-full hover:pl-5 duration-300">Board Member Login</router-link>
-                </MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
+         
 
             <MenubarMenu>
               <MenubarTrigger class="px-1">Get Involved 
