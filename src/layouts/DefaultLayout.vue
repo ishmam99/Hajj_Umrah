@@ -3,14 +3,14 @@
     <header>
      <Navbar/>
     </header>
-    <main> 
-      <div class="py-[70px]">
+    <main class="h-full"> 
+      <div >
            <slot /> <!-- This is where the page content will be rendered -->
       </div>
    
     </main>
     
-      <!-- Footer content -->
+      
       <foot/>
   </div>
 </template>
@@ -57,5 +57,9 @@ onMounted(async() => {
 </script>
 
 <style>
-/* Add your CSS styles for the layout here */
+body{
+    background-image: url('../assets/image/home/pattern-1.png');
+    background-repeat: repeat;
+    background-color: #36897b34;
+}
 </style>

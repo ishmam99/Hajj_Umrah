@@ -1,8 +1,8 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 ml-10">
-        <div class="bg-white">
+      <div class="px-20   bg-[#40a9618c]">
+        <div class="pt-3">
           <div class="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -18,27 +18,20 @@
             <p>Home</p>
             <p>/ Learning Center</p>
             <!-- <p>/ Student Admission</p> -->
-            <p class="text-yellow-500">/ Student Admission</p>
+            <p class="text-white">/ Student Admission</p>
           </div>
-          <div class="bg-white rounded-lg relative py-3">
-            <h1 class="text-yellow-500 text-4xl font-semibold">Student Admission</h1>
+          <div class="rounded-lg relative py-3">
+            <h1 class="text-white text-4xl font-semibold">Student Admission</h1>
             <div>
               <p></p>
             </div>
           </div>
         </div>
       </div>
-      <!-- <Separator/>
-      <div class="w-full bg-[url('../assets/image/home/dua_banner.png')] bg-amber-400">
-        <h1 class="py-10 text-center bg-[#2d292938] text-4xl text-white font-bold"></h1>
-       </div> -->
-      <div>
-        <div
-          class="bg-[url('../assets/image/common/bg-islam-2.jpg')] h-full py-5 mt-10 flex items-center justify-center gap-5 px-20 w-full"
-        >
-          <div class=" space-y-8 w-1/2">
-            <div class="bg-[#ffffff] rounded-xl p-10 w-full">
-              <!-- <p class="text-xl font-bold pt-2 pb-2">Student Admission Form</p> -->
+      <div class="bg-[url('../assets/image/home/pattern-1.png')] bg-repeat bg-cyan-700 h-full py-5 mt-10 flex items-center justify-center gap-5 px-20 w-full">
+        <div class="space-y-8 w-3/4">
+          <div class="bg-white rounded-xl p-5 w-full">
+            <!-- <p class="text-xl font-bold pt-2 pb-2">Student Admission Form</p> -->
 
               <div class="pt-2">
                 <h1 class="text-2xl font-bold">Student Application</h1>

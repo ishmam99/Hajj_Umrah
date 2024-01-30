@@ -34,7 +34,7 @@
             :text="'For special needs services you can call any our contact given below or visit our physical office for more details'"
           />
            <div class="flex flex-col items-center gap-3 text-center w-full">
-            <img src="/src/assets/image/hero/h1.png" alt="" class="rounded-xl">
+            <img src="/src/assets/image/hero/h1.jpg" alt="" class="rounded-xl">
             <p class="text-blue-600"><span class="font-semibold text-black">E-Mail: </span>funeral.services@epicmasjid.org</p>
             <p class="text-blue-600">Website: https://epicmasjid.org/funeral-services/</p>
             <p class="text-blue-600"><span class="font-semibold text-black">Address: </span>4700 14th Street Plano TX 75074</p>
@@ -50,6 +50,7 @@
 import DefaultLayout from '../../layouts/DefaultLayout.vue'
 import Card from '../../components/CardSection.vue'
 import FacilitesMore from '../../components/FacilitiesMore.vue'
+
 </script>
 
 <style lang="scss" scoped></style>

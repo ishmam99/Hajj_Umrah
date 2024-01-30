@@ -69,6 +69,11 @@ const router = createRouter({
       component: () => import('../views/Explore/Watch.vue')
     },
     {
+      path: '/explore/publications',
+      name: 'explore/publications',
+      component: () => import('../views/Explore/Publications.vue')
+    },
+    {
       path: '/explore/quran',
       name: 'explore/quran',
       component: () => import('../views/Explore/Quran.vue')
@@ -204,6 +209,11 @@ const router = createRouter({
       component: () => import('../views/GetInvolved/ApplyForSpeaker.vue')
     },
     {
+      path: '/getinvolved/fund-raising',
+      name: 'fundraise',
+      component: () => import('../views/GetInvolved/Fundraise.vue')
+    },
+    {
       path: '/getinvolved/applyforimam',
       name: 'applyforimam',
       component: () => import('../views/GetInvolved/ApplyForGuestImam.vue')
@@ -307,6 +317,11 @@ const router = createRouter({
       path: '/Ranadam_Payer_Time',
       name: 'Ranadam_Payer_Time',
       component: () => import('../views/Services/PrayerService/RamadanPrayerTime.vue'),
+    },
+    {
+      path: '/Fund_Raising',
+      name: 'Fund_Raising',
+      component: () => import('../views/FundRaising/FundRaising.vue'),
     },
   ]
 })
