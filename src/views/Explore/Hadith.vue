@@ -40,70 +40,65 @@
              <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
              <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
              <Skeleton class="w-[400px] h-[190px] rounded-2xl bg-slate-300"/>
-            </div>
+          </div>
         <div class="grid grid-cols-3 gap-3 w-full">
             <div v-for="hadith in hadithList">
-                <Card class="rounded-2xl" :class="hadith.id == currentHadith?.id ?'bg-green-600' : ''">
-        <CardHeader @click="getHadithSection(hadith)" >
-           <CardTitle class="text-3xl text-slate-700" :class="hadith.id == currentHadith?.id ?'text-white' : ''">{{ hadith.name}} <span class="text-xl" >({{ hadith.arabic_book_name}})</span></CardTitle>
-            
-          
-        </CardHeader>
-        <CardContent @click="getHadithSection(hadith)" class="text-gray-600" :class="hadith.id == currentHadith?.id ?'text-white' : ''">
-            <p>Number of Hadiths : {{ hadith.total_hadith_number}}</p> </CardContent>
-      </Card>
+              <Card class="rounded-2xl" :class="hadith.id == currentHadith?.id ?'bg-green-600' : ''">
+                <CardHeader @click="getHadithSection(hadith)" >
+                  <CardTitle class="text-3xl text-slate-700" :class="hadith.id == currentHadith?.id ?'text-white' : ''">{{ hadith.name}} <span class="text-xl" >({{ hadith.arabic_book_name}})</span></CardTitle>
+                </CardHeader>
+                <CardContent @click="getHadithSection(hadith)" class="text-gray-600" :class="hadith.id == currentHadith?.id ?'text-white' : ''">
+                  <p>Number of Hadiths : {{ hadith.total_hadith_number}}</p>
+                </CardContent>
+              </Card>
             </div>
       </div>
       <Card class="py-10 mt-5" v-if="currentHadith">
           <CardHeader>
-         
-         
-       <CardTitle  class="text-4xl text-center  flex justify-center items-center gap-1">{{ currentHadith.name}}  ({{ currentHadith.arabic_book_name}})</CardTitle> 
-       <CardTitle v-if="currentSection" class="text-2xl text-center  flex justify-center items-center gap-1">Section : {{ currentSection.name}} </CardTitle> 
-       <CardTitle v-if="hadith" class="text-xl text-center  flex justify-center items-center gap-1">Chapter : {{ hadith.name}} </CardTitle> 
-      
-     </CardHeader>
-       <CardContent>
-         <div v-if="hadith">
-            <div v-for="hd in hadith.data" class="bg-gray-50 p-4 my-2 rounded-xl border-2">
-                <!-- <p>{{ hd.hadith_index}}</p> -->
-                <p class="text-lg text-teal-700"> {{ hd.arabic_description}}</p>
-                <p class="text-lg text-sky-700">{{ hd.translation}}</p>
-                <p class="font-semibold">Authenticated By : {{ hd.authenticate_name}}</p>
-                <p class="font-semibold">Narrated By :{{ hd.narrate_name}}</p>
+            <CardTitle  class="text-4xl text-center  flex justify-center items-center gap-1">{{ currentHadith.name}}  ({{ currentHadith.arabic_book_name}})
+            </CardTitle> 
+            <CardTitle v-if="currentSection" class="text-2xl text-center  flex justify-center items-center gap-1">Section : {{ currentSection.name}}
+            </CardTitle> 
+            <CardTitle v-if="hadith" class="text-xl text-center  flex justify-center items-center gap-1">Chapter : {{ hadith.name}}
+            </CardTitle> 
+         </CardHeader>
+        <CardContent>
+          <div v-if="hadith">
+              <div v-for="hd in hadith.data" class="bg-gray-50 p-4 my-2 rounded-xl border-2">
+                  <!-- <p>{{ hd.hadith_index}}</p> -->
+                  <p class="text-lg text-teal-700"> {{ hd.arabic_description}}</p>
+                  <p class="text-lg text-sky-700">{{ hd.translation}}</p>
+                  <p class="font-semibold">Authenticated By : {{ hd.authenticate_name}}</p>
+                  <p class="font-semibold">Narrated By :{{ hd.narrate_name}}</p>
+                  
+              </div>
                 
-            </div>
-              
-            </div>
-          <div v-if="currentSection" class="p-5">
-
-         
-          <Accordion type="single"  collapsible>
-    <AccordionItem value="item-1">
-      <AccordionTrigger>{{currentSection.name}}</AccordionTrigger>
-      <AccordionContent>
-      <div class="grid grid-cols-2 gap-5" >
-            <div v-for="section in currentSection?.data">
-                 <Button variant="secondary" @click="getHadith(section)" class="w-full text-start" >{{ section.name}}</Button>
-            </div>
-           
+              </div>
+            <div v-if="currentSection" class="p-5">         
+              <Accordion type="single"  collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>{{currentSection.name}}</AccordionTrigger>
+                  <AccordionContent>
+                  <div class="grid grid-cols-2 gap-5" >
+                        <div v-for="section in currentSection?.data">
+                            <Button variant="secondary" @click="getHadith(section)" class="w-full text-start" >{{ section.name}}</Button>
+                        </div>
+                      
+                      </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
           </div>
-      </AccordionContent>
-    </AccordionItem>
-  </Accordion>
-         </div>
-           
-          <div class="grid grid-cols-4 gap-5">
-            <div v-for="section in currentHadith?.data">
-                 <Button variant="secondary" @click="getHadithChapters(section)" class="w-full" >{{ section.name}}</Button>
+            <div class="grid grid-cols-4 gap-5">
+              <div v-for="section in currentHadith?.data">
+                  <Button variant="secondary" @click="getHadithChapters(section)" class="w-full" >{{ section.name}}</Button>
+              </div>
+            
             </div>
-           
-          </div>
-          <div>
-          
-          </div>
-       </CardContent>
-          
+            <div>
+            
+            </div>
+        </CardContent>
      </Card>
 </div>
      </DefaultLayout>

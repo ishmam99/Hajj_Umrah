@@ -42,4 +42,3 @@ export const useAuthStore = defineStore('store',{
       },
   },
 });
-

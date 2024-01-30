@@ -34,7 +34,7 @@
             <div class="bg-white p-5 rounded-2xl drop-shadow-md">
                 <!-- <p class="mx-3 text-sm font-semibold text-gray-500 text-center">11 th January,2024</p> -->
                 <div class="flex justify-center items-center gap-3 w-full relative">
-                  <Button class="bg-gray-200 hover:bg-gray-300 h-14 text-gray-800" @click="date.addDays(-1)"> prev </Button>
+                  <Button class="bg-gray-200 hover:bg-gray-300 h-14 text-gray-800" @click="subDays"> prev </Button>
                   <Popover>
                     <PopoverTrigger as-child class="hover:bg-slate-100">
                       <Button
@@ -45,14 +45,14 @@
                         )"
                       >
                         <CalendarIcon class="mr-2 h-4 w-4" />
-                        <span>{{ date ? format(date, "PPP") : "Pick a date" }}</span>
+                        <span>{{ date ? date.format('MMMM Do YYYY') : "Pick a date" }}</span>
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent class="w-auto p-0">
                       <Calendar v-model="date" />
                     </PopoverContent>
                   </Popover>
-                  <Button class="bg-gray-200 hover:bg-gray-300 h-14 text-gray-800"> next </Button>
+                  <Button class="bg-gray-200 hover:bg-gray-300 h-14 text-gray-800" @click="addDays"> next </Button>
                 </div>
                 
                 <div class="grid grid-cols-2">
@@ -121,7 +121,7 @@ import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import PrayerServiceMore from '/src/components/PrayerServiceMore.vue'
 import { format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-vue-next'
-
+import moment from 'moment'
 import { ref } from 'vue'
 import { cn } from '/src/lib/utils'
 import { Button } from '/components/ui/button'
@@ -132,7 +132,13 @@ import {
   PopoverTrigger,
 } from '/components/ui/popover'
 
-const date = ref(new Date())
+const date = ref(moment())
+const subDays = () => {
+  date.value = moment(date.value).subtract(1,'d')
+}
+const addDays = () => {
+  date.value = moment(date.value).add(1,'d')
+}
 </script>
 
 <style lang="scss" scoped></style>

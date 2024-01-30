@@ -214,14 +214,19 @@ const router = createRouter({
       component: () => import('../views/GetInvolved/ApplyForSpeaker.vue')
     },
     {
-      path: '/getinvolved/fund-raising',
-      name: 'fundraise',
-      component: () => import('../views/GetInvolved/Fundraise.vue')
-    },
-    {
       path: '/getinvolved/applyforimam',
       name: 'applyforimam',
       component: () => import('../views/GetInvolved/ApplyForGuestImam.vue')
+    },
+    {
+      path: '/Fund_Raising',
+      name: 'Fund_Raising',
+      component: () => import('../views/GetInvolved/FundRaising/FundRaising.vue'),
+    },
+    {
+      path: '/Fund_Raising_Form',
+      name: 'Fund_Raising_Form',
+      component: () => import('../views/GetInvolved/FundRaising/FundRaisingForm.vue'),
     },
     {
       path: '/learing-center/education-form',
@@ -323,16 +328,29 @@ const router = createRouter({
       name: 'Ranadam_Payer_Time',
       component: () => import('../views/Services/PrayerService/RamadanPrayerTime.vue'),
     },
+
     {
-      path: '/Fund_Raising',
-      name: 'Fund_Raising',
-      component: () => import('../views/FundRaising/FundRaising.vue'),
+      path: '/Kabah',
+      name: 'Kabah',
+      component: () => import('../views/Gallery/Kabah.vue'),
     },
     {
-      path: '/Fund_Raising_Form',
-      name: 'Fund_Raising_Form',
-      component: () => import('../views/FundRaising/FundRaisingForm.vue'),
+      path: '/Mashjib',
+      name: 'Mashjib',
+      component: () => import('../views/Gallery/Mashjid.vue'),
     },
+    {
+      path: '/Social_Gallery',
+      name: 'Social_Gallery',
+      component: () => import('../views/Gallery/SocialGallery.vue'),
+    },
+    {
+      path: '/Event_Gallery',
+      name: 'Event_Gallery',
+      component: () => import('../views/Gallery/EventGallery.vue'),
+    },
+
+    
   ]
 })
 

@@ -8,14 +8,28 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-
+import moment from 'moment'
 import api from './config/api.ts'
-window.api = api
+
+declare global {
+  interface Window {
+    api: typeof api // Declare the 'api' property on the 'Window' interface
+  }
+}
 
 const app = createApp(App)
 const pinia = createPinia()
 app.use(createPinia())
 pinia.use(piniaPluginPersistedstate)
 app.use(router)
+
 app.use(VueAxios, axios)
+app.mount('#app')
+window.api = api
+app.config.globalProperties.$filters = {
+  timeAgo(date) {
+    return moment(date).fromNow()
+  }
+}
+app.use(router).use(store)
 app.mount('#app')
