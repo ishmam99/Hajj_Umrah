@@ -21,12 +21,12 @@
                   <!-- <MenubarTrigger>Prayer Service <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></MenubarTrigger> -->
                
                   <MenubarSub>
-                  <MenubarSubTrigger>
-                    Prayer Service
+                  <MenubarSubTrigger> 
+                    <p class="hover:pl-5 duration-300"> Prayer Service</p>
                   </MenubarSubTrigger>
                   <MenubarSubContent>
                     <MenubarItem>
-                      <router-link to="/Prayer_Time" >Prayer Time</router-link>
+                      <router-link to="/Prayer_Time" class=" w-full hover:pl-5 duration-300">Prayer Time</router-link>
                     </MenubarItem>
                     <MenubarItem>
                       <router-link to="/Prayer_Announcement" class=" w-full hover:pl-5 duration-300">Prayer Announcement</router-link>
@@ -41,10 +41,10 @@
                       <router-link to="/Makkah_Live" class=" w-full hover:pl-5 duration-300">Makkah Live</router-link>
                     </MenubarItem>
                     <MenubarItem>
-                      <router-link to="Janaja_Announcement" class=" w-full hover:pl-5 duration-300">Janaja Prayer Announcement</router-link>
+                      <router-link to="/Janaja_Announcement" class=" w-full hover:pl-5 duration-300">Janaja Prayer Announcement</router-link>
                     </MenubarItem>
                     <MenubarItem>
-                      <router-link to="Ranadam_Payer_Time" class=" w-full hover:pl-5 duration-300">Ramadan Prayer Timings</router-link>
+                      <router-link to="/Ranadam_Payer_Time" class=" w-full hover:pl-5 duration-300">Ramadan Prayer Timings</router-link>
                     </MenubarItem>
                   </MenubarSubContent>
                 </MenubarSub>

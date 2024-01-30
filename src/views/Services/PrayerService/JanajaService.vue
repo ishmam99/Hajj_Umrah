@@ -30,24 +30,49 @@
         </div>
         <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
           <div class="space-y-8 w-3/4">
-            <div class="bg-white rounded-xl p-5 text-center">
-              <h1 class="text-3xl underline font-bold text-gray-700 py-3"> Funeral Announcement for Jamil Islam</h1>
-              <p>Dear Brothers and Sisters,</p>
-              <p>Assalamu Alaikum,</p>
-              <p>It is with a heavy heart that we inform you of the passing of our dear Brother Jamil Islam. After bravely facing  illness , he left this world on 26 jan 2024.</p>
-              <p>The Janaza (funeral prayer) will be conducted at [Masjid Name] on [Date]. Your attendance and support during this difficult time are greatly appreciated. The schedule for the Janaza prayer is as follows:</p>
-              <div class="text-center">
-                <p class="font-semibold">Janaja Prayer Details:</p>
-                <p class="font-semibold">Janaza Prayer: <span class="font-md">After Dhuhr Prayer</span></p>
-                <p class="font-semibold">Location: <span class="font-md">Mashjid Premises</span></p>
-                <p>In lieu of flowers, the family suggests making donations to Idl , in accordance with the wishes of the deceased.
-
-                Your presence and prayers are a source of comfort for the grieving family. We extend our sincere gratitude for your support.
-
-                May Allah (SWT) grant Zamil Islam peace and mercy and provide strength and patience to the family during this trying time.</p>
-                <p>May Allah bless us all and accept our prayers.</p>
-                <p>JazakAllah Khair,</p>
-              </div>
+            <div class="bg-white rounded-xl p-5">
+              <h1 class="text-3xl underline font-bold text-gray-700 py-3 text-center pb-10"> Funeral Announcement for Jamil Islam</h1>
+              <div class="flex gap-5">
+                <div class="w-2/3">
+                  <p>Dear Brothers and Sisters,</p>
+                  <p>Assalamu Alaikum,</p>
+                  <p>It is with a heavy heart that we inform you of the passing of our dear Brother Jamil Islam. After bravely facing  illness , he left this world on 26 jan 2024.</p>
+                  <p>The Janaza (funeral prayer) will be conducted at [Masjid Name] on [Date]. Your attendance and support during this difficult time are greatly appreciated. The schedule for the Janaza prayer is as follows:</p>
+                  <p>In lieu of flowers, the family suggests making donations to Idl , in accordance with the wishes of the deceased.
+                    Your presence and prayers are a source of comfort for the grieving family. We extend our sincere gratitude for your support.
+                    May Allah (SWT) grant Zamil Islam peace and mercy and provide strength and patience to the family during this trying time.</p>
+                    <p>May Allah bless us all and accept our prayers.</p>
+                    <p>JazakAllah Khair,</p>
+                </div>
+                <div class="w-1/3 flex flex-col gap-3 items-center">
+                  <img src="" alt="" class="bg-blue-200 h-[250px] w-[250px] rounded-full">
+                  <!-- <p class="font-semibold">Janaja Prayer Details:</p> -->
+                  <p class="font-semibold">Janaza Prayer: <span class="font-md">After Dhuhr Prayer</span></p>
+                  <p class="font-semibold">Location: <span class="font-md">Mashjid Premises</span></p>
+                </div>
+              </div> 
+            </div>
+            <div class="bg-white rounded-xl p-5">
+              <h1 class="text-3xl underline font-bold text-gray-700 py-3 text-center pb-10"> Funeral Announcement for Md. Abdul Karim </h1>
+              <div class="flex gap-5">
+                <div class="w-2/3">
+                  <p>Dear Brothers and Sisters,</p>
+                  <p>Assalamu Alaikum,</p>
+                  <p>It is with a heavy heart that we inform you of the passing of our dear Brother Md. Abdul Karim. After bravely facing  illness , he left this world on 26 jan 2024.</p>
+                  <p>The Janaza (funeral prayer) will be conducted at [Masjid Name] on [Date]. Your attendance and support during this difficult time are greatly appreciated. The schedule for the Janaza prayer is as follows:</p>
+                  <p>In lieu of flowers, the family suggests making donations to Idl , in accordance with the wishes of the deceased.
+                    Your presence and prayers are a source of comfort for the grieving family. We extend our sincere gratitude for your support.
+                    May Allah (SWT) grant Md. Abdul Karim peace and mercy and provide strength and patience to the family during this trying time.</p>
+                    <p>May Allah bless us all and accept our prayers.</p>
+                    <p>JazakAllah Khair,</p>
+                </div>
+                <div class="w-1/3 flex flex-col gap-3 items-center">
+                  <img src="" alt="" class="bg-blue-200 h-[250px] w-[250px] rounded-full">
+                  <!-- <p class="font-semibold">Janaja Prayer Details:</p> -->
+                  <p class="font-semibold">Janaza Prayer: <span class="font-md">After Asr Prayer</span></p>
+                  <p class="font-semibold">Location: <span class="font-md">Mashjid Premises</span></p>
+                </div>
+              </div> 
             </div>
           </div>
           <PrayerServiceMore />
