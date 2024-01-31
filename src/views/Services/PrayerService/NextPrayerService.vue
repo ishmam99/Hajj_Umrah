@@ -31,7 +31,7 @@
         <div class="bg-gray-100 h-full px-20 pl-28 py-5 flex justify-between gap-5">
           <div class="space-y-8 w-3/4">
             <div class="bg-white rounded-xl p-5">
-              <h1 class="text-3xl underline font-bold text-gray-700 py-3 text-center">Next Prayer Service Announcement</h1>
+              <h1 class="text-3xl underline font-bold text-gray-700 py-3 text-center">Next Prayer Service </h1>
               <p>Dear Brothers and Sisters,</p>
               <p>Assalamu Alaikum,</p>
               <p>We hope this message reaches you in good health and imaan. We are pleased to inform you of the upcoming prayer service at IDL Mashjid on Friday, 26 jan. Please join us in congregational prayers to seek the blessings of Allah.</p>

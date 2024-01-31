@@ -1,8 +1,8 @@
 <template>
     <div>
       <DefaultLayout>
-        <div class="px-20 pt-20 mt-5 py-5 bg-black bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
-          <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+        <div class="px-20 pt-20 mt-5 py-5 bg-gray-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+          <div class="pt-3 mx-36 pb rounded-xl bg-[#e0d4d4] border-blue-50 shadow-xl border-[3px]">
             <div class="flex items-center justify-center gap-2 font-semibold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -18,10 +18,10 @@
               <p>Home</p>
               <p>/ Services</p>
               <p>/ Prayer Service</p>
-              <p class="text-black">/ Janajah Announcement</p>
+              <p class="text-gray-800">/ Janajah Prayer Announcement</p>
             </div>
             <div class="rounded-lg flex items-center justify-center relative py-3">
-              <h1 class="text-black text-4xl font-bold"> Janajah Announcement </h1>
+              <h1 class="text-gray-800 text-4xl font-bold">  Janajah Prayer Announcement</h1>
               <div>
                 <p></p>
               </div>
@@ -46,7 +46,7 @@
                     <p>JazakAllah Khair,</p>
                 </div>
                 <div class="w-1/3 flex flex-col gap-3 items-center">
-                  <img src="" alt="" class="bg-blue-200 h-[250px] w-[250px] rounded-full">
+                  <img src="/src/assets/image/home/download.jpeg" alt="" class="bg-blue-200 h-[250px] w-[250px] rounded-full">
                   <!-- <p class="font-semibold">Janaja Prayer Details:</p> -->
                   <p class="font-semibold">Janaza Prayer: <span class="font-md">After Dhuhr Prayer</span></p>
                   <p class="font-semibold">Location: <span class="font-md">Mashjid Premises</span></p>
@@ -69,7 +69,7 @@
                     <p>JazakAllah Khair,</p>
                 </div>
                 <div class="w-1/3 flex flex-col gap-3 items-center">
-                  <img src="" alt="" class="bg-blue-200 h-[250px] w-[250px] rounded-full">
+                  <img src="/src/assets/image/home/download.jpeg" alt="" class="bg-blue-200 h-[250px] w-[250px] rounded-full">
                   <!-- <p class="font-semibold">Janaja Prayer Details:</p> -->
                   <p class="font-semibold">Janaza Prayer: <span class="font-md">After Asr Prayer</span></p>
                   <p class="font-semibold">Location: <span class="font-md">Mashjid Premises</span></p>

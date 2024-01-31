@@ -31,7 +31,7 @@
         <div class="bg-gray-100 h-full px-20 pl-28 py-5 flex justify-between gap-5">
           <div class="space-y-8 w-3/4">
             <div class="bg-white rounded-xl p-5 ">
-              <h1 class="text-3xl underline font-bold text-gray-700 py-3 text-center">Recent Prayer Service Update</h1>
+              <h1 class="text-3xl  font-bold text-gray-700 py-3 text-center">Recent Prayer </h1>
               <p>Dear Brothers and Sisters,</p>
               <p>Assalamu Alaikum,</p>
               <p>We hope this message finds you well. We are delighted to share an update on the recent prayer service held at Mosque/Community. The congregation came together in a spirit of unity and devotion, creating a truly blessed and memorable experience.</p>
