@@ -33,7 +33,7 @@
 <script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import { useAuthStore } from '/src/stores/AuthStore.ts';
-import { ref } from 'vue'
+import { ref,onMounted } from 'vue'
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
@@ -62,4 +62,8 @@ const login = () => {
     }
     
 };
+onMounted(async() => {
+    const authStore = useAuthStore()
+    console.log(authStore)
+})
 </script>

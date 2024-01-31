@@ -281,17 +281,27 @@ const router = createRouter({
     {
       path: '/Membar_Donation_History',
       name: 'Membar_Donation_History',
-      component: () => import('../views/Member/MembarDonation.vue'),
+      component: () => import('../views/Member/Profile/MemberDonationHistory.vue'),
     },
     {
       path: '/Membar_Payment_History',
       name: 'Membar_Payment_History',
-      component: () => import('../views/Member/MembarPaymentHistory.vue'),
+      component: () => import('../views/Member/Profile/MembarPaymentHistory.vue'),
     },
     {
       path: '/Membar_Change_Password',
       name: 'Membar_Change_Password',
-      component: () => import('../views/Member/MemberPassChange.vue'),
+      component: () => import('../views/Member/Profile/MemberPassChange.vue'),
+    },
+    {
+      path: '/Select_Volunteer',
+      name: 'Select Volunteer',
+      component: () => import('../views/Member/MemberVolunteerSelect.vue'),
+    },
+    {
+      path: '/Select_Imam',
+      name: 'Select Imam',
+      component: () => import('../views/Member/MemberImamSelect.vue'),
     },
     {
       path: '/Prayer_Time',
