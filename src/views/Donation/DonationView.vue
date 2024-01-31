@@ -28,7 +28,7 @@
       </div>
     </div>
       <!-- <Separator /> -->
-    <div class="flex item-center bg-[url('/src/assets/image/common/bg-2.jpg')] bg-cover justify-center py-10">
+    <div class="flex item-center bg-[#0c371ad8] bg-cover justify-center py-10">
      <Card>
     <CardHeader>
       <CardTitle>Donation Method</CardTitle>

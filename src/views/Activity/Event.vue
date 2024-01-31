@@ -34,17 +34,17 @@
         <div class="space-y-8 w-3/4">
           <div class="bg-white rounded-xl p-5 w-full">
             <h1 class="text-3xl underline font-semibold py-3">Active Events</h1>
-            <div class="min-w-[350px] min-h-[250px] overflow-hidden relative rounded-3xl">
-              <img src="/src/assets/image/home/e1.png" alt="" class="w-full absolute top-0" />
-              <div class="absolute z-10 bottom-0 mb-4 p-5 text-white flex flex-col gap-2">
-                <p class="text-xl text-yellow-600">20 JAN 2024</p>
-                <h3 class="text-2xl font-bold">Feed The Hungry</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.</p>
-                <router-link to="/activity/events" class="w-full hover:pl-5 duration-300">
-                  <button class="h-[50px] w-[250px] border border-white rounded-xl">
-                    Go To Event
-                  </button>
-                </router-link>
+            <div class="min-w-[350px] min-h-[450px] overflow-hidden relative rounded-3xl">
+              <img src="/src/assets/image/hungry/hungry-2.jpg" alt="" class="w-full absolute top-0">
+              <div class="absolute z-10 bottom-0 p-5 text-white flex flex-col gap-2">
+                  <p class="text-xl text-white">20 JAN 2024</p>
+                  <h3 class="text-2xl font-bold">Feed The Hungry</h3>
+                  <p>Feed The Hungry event of IDL Masjid</p>
+                  <router-link to="/activity/events" class="w-full hover:pl-5 duration-300">
+                    <button class="h-[50px] w-[250px] bg-emerald-800 rounded-xl">
+                      Go To Event
+                    </button>
+                  </router-link>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@
                 <h3 class="text-2xl font-bold">{{ item.title }}</h3>
                 <p class="text-sm font-semibold text-yellow-600">{{ item.date }}</p>
                 <p>{{ item.des }}</p>
-                <button class="h-[50px] w-full border border-gray-600 rounded-md">Register</button>
+                <button class="h-[50px] w-full bg-emerald-800 text-white rounded-md">Register</button>
               </div>
             </div>
           </div>

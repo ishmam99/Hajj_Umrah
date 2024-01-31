@@ -116,6 +116,16 @@ const router = createRouter({
       component: () => import('../views/Contact/AskImam.vue')
     },
     {
+      path: '/contact/ask_scholar',
+      name: 'contact/ask_scholar',
+      component: () => import('../views/Contact/AskScholar.vue')
+    },
+    {
+      path: '/contact/get_appointment',
+      name: 'contact/get_appointment',
+      component: () => import('../views/Contact/GetAppointment.vue')
+    },
+    {
       path: '/contact/contact_us',
       name: 'contact/contact_us',
       component: () => import('../views/Contact/ContactUs.vue')
@@ -140,6 +150,11 @@ const router = createRouter({
       path: '/activity/project',
       name: 'activity/project',
       component: () => import('../views/Activity/Project.vue')
+    },
+    {
+      path: '/activity/projects',
+      name: 'projects',
+      component: () => import('../views/Activity/Projects.vue')
     },
 
     {
@@ -348,6 +363,17 @@ const router = createRouter({
       path: '/Event_Gallery',
       name: 'Event_Gallery',
       component: () => import('../views/Gallery/EventGallery.vue'),
+    },
+
+    {
+      path: '/Supply_Chain/supplier',
+      name: 'supplier',
+      component: () => import('../views/SupplyChain/Supplier.vue')
+    },
+    {
+      path: '/Supply_Chain/customer',
+      name: 'customer',
+      component: () => import('../views/SupplyChain/Customer.vue')
     },
 
     
