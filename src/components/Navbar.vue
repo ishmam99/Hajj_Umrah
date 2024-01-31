@@ -145,6 +145,12 @@
                 <router-link to="/activity/project" class=" w-full hover:pl-5 duration-300">Projects</router-link>
               </MenubarItem>
               <MenubarItem>
+                <a href="/more/ramadan_special" class=" w-full hover:pl-5 duration-300">Ramadan Special</a>
+              </MenubarItem>
+              <MenubarItem>
+                <a href="/more/hajj_and_umrah" class=" w-full hover:pl-5 duration-300">Hajj And Umrah Registration</a>
+              </MenubarItem>
+              <MenubarItem>
                 <router-link to="/boardmemberlogin" class=" w-full hover:pl-5 duration-300">Board Member Login</router-link>
               </MenubarItem>
             </MenubarContent>
@@ -219,18 +225,13 @@
                <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
             </MenubarTrigger>
             <MenubarContent>
+              
               <MenubarItem>
-                <a href="/more/ramadan_special" class=" w-full hover:pl-5 duration-300">Ramadan Special</a>
-              </MenubarItem>
-              <MenubarItem>
-                <a href="/more/hajj_and_umrah" class=" w-full hover:pl-5 duration-300">Hajj And Umrah Registration</a>
-              </MenubarItem>
-              <!-- <MenubarItem>
                 <a href="/more/hajj_and_umrah" class=" w-full hover:pl-5 duration-300">Employee Login</a>
-              </MenubarItem> -->
+              </MenubarItem>
             
             </MenubarContent>
-          </MenubarMenu>
+          </MenubarMenu> -->
            <MenubarMenu>
             <MenubarTrigger class="px-1 font-bold">About Us
                <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->

@@ -28,8 +28,8 @@
                 </div>
             </div>
             <div class="pt-[10px] flex justify-between gap-5 px-[5%] pb-10">
-                <MembarProfile/>
                 <MembarSidebar/>
+                <MembarProfile/>
             </div>
         </div>
     </DefaultLayout>
@@ -37,8 +37,6 @@
 </template>
 <script setup>
 import MembarSidebar from '/src/views/Member/MembarSidevar.vue'
-import MembarProfile from '/src/views/Member/MembarProfile.vue'
-import MembarNavbar from './MembarNavbar.vue'
-import foot from '/src/components/footer.vue'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
+import MembarProfile from '@/views/Member/Profile/MembarProfile.vue'
 </script>

@@ -43,31 +43,12 @@
                   <p class="">Jamat: 06:30 AM</p>
                 </div>
                 <div class="shadow-md rounded-md p-3">
-                  <p class="font-semibold">Dhuhr (Noon) Prayer:</p>
-                  <p class="">Adhaan: 12:35 PM</p>
-                  <p class="">Jamat: 1:35 PM</p>
-                </div>
-                <div class="shadow-md rounded-md p-3">
-                  <p class="font-semibold">Asr (Afternoon) Prayer:</p>
-                  <p class="">Adhaan: 03:20 PM</p>
-                  <p class="">Jamat: 03:50 PM</p>
-                </div>
-                <div class="shadow-md rounded-md p-3">
-                  <p class="font-semibold">Maghrib (Evening) Prayer:</p>
-                  <p class="">Adhaan: 05:39 PM</p>
-                  <p class="">Jamat: 05:45 PM</p>
-                </div>
-                <div class="shadow-md rounded-md p-3">
-                  <p class="font-semibold">Isha (Night) Prayer</p>
-                  <p class="">Adhaan: 06:52 PM</p>
-                  <p class="">Jamat: 08:00 PM</p>
-                </div>
-              </div>
-              <h1 class="text-xl font-bold text-gray-700 pt-6 underline">Announcement On Dawat</h1>
-              <div class="grid grid-cols-3 py-2 px-5 gap-5">
-                <div class="shadow-md rounded-md p-3">
                   <p class="font-semibold">After Asr (Afternoon) Prayer:</p>
                   <p class="">Invite people of the community to come to mashjid </p>
+                </div>
+                <div class="shadow-md rounded-md p-3">
+                  <p class="font-semibold">Maghrib Prayer:</p>
+                  <p class="">Todays Maghrib prayer will be performed by Imam Saiful Islam</p>
                 </div>
               </div>
                 <p class="pt-3">We kindly remind everyone to be punctual for prayers and to adhere to the guidelines and etiquettes of the mosque.</p>
