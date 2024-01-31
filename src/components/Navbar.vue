@@ -72,7 +72,7 @@
                 <router-link to="/services/matrimony" class=" w-full hover:pl-5 duration-300">Matrimony Service</router-link>
               </MenubarItem>
               <MenubarItem >
-                <a href="http://islamicdigitallane.com/learning-center" class=" w-full hover:pl-5 duration-300">Education Service</a>
+                <a href="http://localhost:5173/" class=" w-full hover:pl-5 duration-300">Education Service</a>
               </MenubarItem>
               <!-- <MenubarItem >
                 <a class=" w-full hover:pl-5 duration-300">IT Training Services</a>
@@ -111,7 +111,8 @@
 
           <MenubarMenu>
             <MenubarTrigger class="px-1">
-              Learning Center  
+              <a href="http://localhost:5173/"> Learning Center  </a>
+             
             </MenubarTrigger>
             <!-- <MenubarContent>
               <MenubarItem>
