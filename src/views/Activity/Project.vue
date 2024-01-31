@@ -31,30 +31,51 @@
         <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
           <div class="space-y-8 w-3/4">
             <div class="bg-white rounded-xl p-5 w-full">
-              <h1 class="text-3xl underline py-3">On Going Project</h1>
-              <div class="min-w-[350px] min-h-[250px] overflow-hidden relative rounded-3xl">
-                <img src="/src/assets/image/home/e1.png" alt="" class="w-full absolute top-0">
+              <h1 class="text-3xl underline py-3 mb-4">On Going Project</h1>
+              <div class="min-w-[350px] min-h-[450px] overflow-hidden relative rounded-3xl">
+                <img src="/src/assets/image/home/l4.png" alt="" class="w-full absolute top-0">
                 <div class="absolute z-10 bottom-0 p-5 text-white flex flex-col gap-2">
-                    <p class="text-xl text-yellow-600">20 JAN 2024</p>
-                    <h3 class="text-2xl font-bold">Feed The Hungry</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.</p>
-                    <button class="h-[50px] w-[250px] border border-white rounded-xl">Register</button>
+                    <p class="text-xl text-white">20 JAN 2024</p>
+                    <h3 class="text-2xl font-extrabold">Youth Development Project</h3>
+                    <p class="font-semibold">Youth Development project of IDL Masjid</p>
+                    <router-link to="/activity/projects" class="w-full hover:pl-5 duration-300">
+                      <button class="h-[50px] w-[250px] bg-cyan-800 rounded-xl">
+                        Go To Project
+                      </button>
+                    </router-link>
                 </div>
               </div>
             </div>
-            <div class="bg-white rounded-xl p-5 w-full">
-              <h1 class="text-3xl underline py-3">Up Comming Project</h1>
-              <div class="class grid grid-cols-3 gap-5">
-                <div v-for="item in project"
-                class="border border-gray-699 p-5 flex flex-col gap-2 text-center rounded-md">
-                    <img :src="item.image" alt="" class="w-full">
-                    <h3 class="text-2xl font-bold">{{ item.title }}</h3>
-                    <p class="text-sm font-semibold text-yellow-600">{{ item.date }}</p>
-                    <p>{{ item.des }}</p>
-                    <button class="h-[50px] w-full border border-gray-600 rounded-md">Register</button>
-                </div>
-              </div>
-            </div>
+<div class="flex gap-4">
+  <div class="bg-white rounded-xl p-5 w-[50%]">
+    <h1 class="text-3xl underline py-3">Up Coming Projects</h1>
+    <div class="class grid grid-cols-1 gap-5">
+      <div v-for="item in project"
+      class="border border-gray-699 p-5 flex flex-col gap-2 text-center rounded-md">
+      <p class="absolute text-white text-2xl font-bold p-6 bg-[#0000005d] m-2 rounded-xl">Upcoming Projects</p>
+          <img :src="item.image" alt="" class="w-full h-[50%] rounded-2xl">
+          <h3 class="text-2xl font-bold">{{ item.title }}</h3>
+          <p class="text-sm font-semibold text-cyan-600">{{ item.date }}</p>
+          <p>{{ item.des }}</p>
+          <button class="h-[50px] w-full border bg-cyan-800 text-white rounded-md">Register</button>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white rounded-xl p-5 w-[50%]">
+    <h1 class="text-3xl underline py-3">Project History</h1>
+    <div class="class grid grid-cols-1 gap-5">
+      <div v-for="item in history"
+      class="border border-gray-699 p-5 flex flex-col gap-2 text-center rounded-md">
+      <p class="absolute text-white text-2xl font-bold p-6 bg-[#0000005d] m-2 rounded-xl">Project History</p>
+          <img :src="item.image" alt="" class="w-full h-[50%] rounded-2xl">
+          <h3 class="text-2xl font-bold">{{ item.title }}</h3>
+          <p class="text-sm font-semibold text-cyan-600">{{ item.date }}</p>
+          <p>{{ item.des }}</p>
+          <button class="h-[50px] w-full border bg-cyan-800 text-white rounded-md">Register</button>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
          <ActivityMore />
         </div>
@@ -72,30 +93,60 @@
 const project =ref([
     {
         id: 1,
-        title: 'Feed the hungry',
+        title: 'Eco-Friendly and Sustainability Projects',
         date: '20 jan 2024',
-        image: '/src/assets/image/home/h1.png',
+        image: '/src/assets/image/home/l3.jpeg',
         des : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.'
     },
     {
         id: 2,
-        title: 'Help the weak',
+        title: 'Interfaith Dialogues',
         date: '24 jan 2024',
-        image: '/src/assets/image/home/h2.png',
+        image: '/src/assets/image/home/l2.jpg',
         des : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.'
     },
     {
         id: 3,
-        title: 'Comfort the sick',
+        title: 'Technology and Media Outreach',
         date: '28 jan 2024',
-        image: '/src/assets/image/home/h3.png',
+        image: '/src/assets/image/home/l4.jpg',
         des : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.'
     },
     {
         id: 4,
-        title: 'Educate children',
+        title: 'Infrastructure Development',
         date: '20 jan 2024',
-        image: '/src/assets/image/home/h1.png',
+        image: '/src/assets/image/home/l2.jpg',
+        des : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.'
+    },
+  ])
+const history =ref([
+    {
+        id: 1,
+        title: 'Health and Wellness Initiatives Project',
+        date: '10 jan 2024',
+        image: '/src/assets/image/commitees/0.png',
+        des : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.'
+    },
+    {
+        id: 2,
+        title: 'Humanitarian Projects',
+        date: '14 jan 2024',
+        image: '/src/assets/image/commitees/1.png',
+        des : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.'
+    },
+    {
+        id: 3,
+        title: 'Islamic Education Initiatives',
+        date: '08 jan 2024',
+        image: '/src/assets/image/commitees/2.png',
+        des : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.'
+    },
+    {
+        id: 4,
+        title: 'Community Outreach Project',
+        date: '05 jan 2024',
+        image: '/src/assets/image/commitees/3.png',
         des : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, distinctio.'
     },
   ])

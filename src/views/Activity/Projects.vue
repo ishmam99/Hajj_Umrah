@@ -3,25 +3,15 @@
       <DefaultLayout>
 
         <div class="bg-gray-100 h-full pt-10 py-5 gap-5 w-full">
-            <div class="bg-[url('/src/assets/image/home/bg-food-3.jpg')] bg-cover" >
+            <div class="bg-[url('/src/assets/image/home/l4.png')] bg-cover" >
                 <div class="bg-[#00000057] rounded-none pt-20">
                     <div class=""></div>
                     <div class="hero-content text-center text-neutral-content">
                       <div class="text-left">
                         <div class="px-10 py-6">
-                          <h1 class="mb-5 text-5xl text-white font-bold">Feed The Hungry</h1>
+                          <h1 class="mb-5 text-5xl text-white font-bold">Youth Development Project</h1>
                           <p class="mb-5 text-lg font-semibold bg-[#00000042] p-2 w-3/6 rounded-lg text-white">
-                            "Feed the Hungry" was created five years ago by Pious Projects. It's a non-profit
-                            that allows people to participate in humanitarian projects all over the world. For
-                            Cleveland’s campaign, nearly one hundred volunteers gathered at the Islamic Center
-                            to put together 2,000 bagged meals. Then, they gave them out to several local
-                            homeless shelters. The local campaign is spearheaded by a group of local Muslims who
-                            say the mission goes hand in hand with the teachings of the faith. "Its in our Quran
-                            which is our book that we follow. It says that you should never discriminate. It
-                            doesn't matter what religion, race, or ethnicity, it doesn't matter where they're
-                            from that as long as you have a hungry friend or a neighbor, you should feed them.
-                            That is part of your duty as a Muslim,” Yamamah Rashid, one of the organizers of the
-                            Cleveland event, said.
+                                The Youth Development Project is a targeted initiative dedicated to empowering our community's young individuals. Through mentorship, workshops, and character-building activities, we aim to instill values of leadership, responsibility, and resilience. Focused on educational enrichment, this project equips youth with the skills needed to navigate challenges and contribute meaningfully to society. It stands as a commitment to shaping a generation of leaders who embody integrity, empathy, and a strong sense of social responsibility. 
                           </p>
                         </div>
                       </div>
@@ -32,14 +22,33 @@
             <div class="bg-gray-100 h-full py-5 flex items-center justify-center gap-5 px-20 w-full">
               <div class="space-y-8 w-3/4">
                 <Card
-                  :headline="'Feed The Hungry'"
-                  :text="'Empowering volunteers to assemble and distribute 2,000 meals, our Feed the Hungry campaign at the Islamic Center embodies the spirit of compassion and inclusivity guided by Islamic teachings.'"
+                  :headline="'Youth Development Project'"
+                  :text="'Organize activities, workshops, and educational programs to support the development of Muslim youth within the community..'"
                 />
                 <Card
                   :headline="'Overview'"
-                  :text="'Feed the Hungry, a non-profit created by Pious Projects five years ago, conducts global humanitarian projects, with a recent initiative in Cleveland showcasing its impactful work. In this local campaign, around a hundred volunteers gathered at the Islamic Center to assemble 2,000 bagged meals for distribution to various homeless shelters. Led by a group of local Muslims, the initiative is rooted in the teachings of Islam, emphasizing non-discrimination and the duty to feed the hungry, as stated in the Quran. This event underscores the commitment of Clevelands Muslim community to address hunger and contribute to their local community, reflecting the organizations broader global efforts.'"
+                  :text="'The Youth Development Project is a transformative initiative designed to cultivate the potential of young individuals within our community. Through a multifaceted approach encompassing mentorship, workshops, and character-building activities, the project aims to instill values of leadership, responsibility, and resilience. Focused on educational enrichment, it equips youth with the skills necessary to navigate lifes challenges while encouraging personal growth. The program creates a supportive environment that empowers participants to become not only successful individuals but also compassionate contributors to society. By fostering a commitment to community service and active citizenship, the Youth Development Project stands as a testament to our dedication to shaping a generation of leaders characterized by integrity, empathy, and a strong sense of social responsibility. It serves as a beacon for youth empowerment, ensuring they are prepared to positively impact both their immediate surroundings and the wider world.'"
                 />
-                <div class="bg-white rounded-xl p-5 w-full">
+
+                
+
+<div class="grid grid-cols-2 gap-2">
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="/src/assets/image/home/l3.jpeg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="/src/assets/image/home/l4.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="/src/assets/image/home/l7.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="/src/assets/image/home/l4.png" alt="">
+    </div>
+</div>
+
+
+                <!-- <div class="bg-white rounded-xl p-5 w-full">
 
                   <div class="grid gap-4">
                     <div>
@@ -64,32 +73,32 @@
                     </div>
                 </div>
                 
-                </div>
+                </div> -->
                 <div class="bg-white rounded-xl p-5 w-full">
                   <h1 class="text-3xl underline py-3">Procedure</h1>
                   <div class="px-5">
                     <ul>
-                      <li class="list-disc">Organize volunteers at the Islamic Center for meal assembly.</li>
-                      <li class="list-disc">Prepare 2,000 bagged meals for distribution.</li>
+                      <li class="list-disc">Design and implement mentorship programs for personalized guidance.</li>
+                      <li class="list-disc">Conduct educational workshops to enhance academic and practical skills.</li>
                       <li class="list-disc">
-                        Coordinate with local homeless shelters for meal delivery.
+                        Facilitate character-building activities to instill leadership and resilience.
                       </li>
                       <li class="list-disc">
-                        Ensure non-discriminatory distribution based on need.
+                        Create a supportive environment fostering open communication and collaboration.
                       </li>
-                      <li class="list-disc">Emphasize adherence to Islamic teachings on helping the hungry.</li>
-                      <li class="list-disc">Monitor and manage the overall logistics of the campaign.</li>
+                      <li class="list-disc">Develop partnerships with educational institutions and professionals for expertise.</li>
+                      <li class="list-disc">Assess and address individual needs through personalized development plans.</li>
                       <li class="list-disc">
-                        Promote community engagement and awareness for future initiatives.
-                      </li>
-                      <li class="list-disc">
-                        Collaborate with Pious Projects to align with global humanitarian goals.
+                        Organize community service projects to instill a sense of social responsibility.
                       </li>
                       <li class="list-disc">
-                        Evaluate the effectiveness of the campaign and gather feedback.
+                        Encourage active participation in extracurricular and leadership activities.
                       </li>
                       <li class="list-disc">
-                        Document the event for reporting and future reference.
+                        Provide resources for career exploration and skill development.
+                      </li>
+                      <li class="list-disc">
+                        Evaluate and adapt program effectiveness based on ongoing feedback and assessments.
                       </li>
                     </ul>
                   </div>
@@ -98,7 +107,7 @@
                 <div class="bg-white rounded-xl p-5 w-full">
                   <h1 class="text-3xl underline py-3">Policy</h1>
                   <div class="px-5 ">
-                    <p class="mb-2">The following are the policies for hosting Feed The Hungry event at IDL</p>
+                    <p class="mb-2">The following are the policies for hosting Youth Development Project at IDL</p>
       
                     <ul>
                       <li class="list-disc">
@@ -106,26 +115,24 @@
                         termination of the program.
                       </li>
                       <li class="list-disc">
-                        All volunteers must adhere to respectful and inclusive behavior during the campaign.
+                        Implement a code of conduct emphasizing respect, inclusivity, and collaboration among participants.
                       </li>
                       <li class="list-disc">
-                        Ensure fair and equal distribution of meals to individuals in need, irrespective of background.
+                        Ensure equal access to program resources and opportunities for all youth involved.
                       </li>
-                      <li class="list-disc"> Implement measures to prioritize the well-being of volunteers and recipients during meal preparation and distribution.</li>
-                      <li class="list-disc">Maintain the privacy and confidentiality of individuals receiving assistance.</li>
-                      <li class="list-disc">Establish mechanisms for tracking and reporting the usage of resources during the campaign.</li>
-                      <li class="list-disc">Promote eco-friendly practices, such as using recyclable materials in meal packaging.</li>
+                      <li class="list-disc"> Maintain confidentiality regarding personal information shared during mentorship and counseling sessions.</li>
+                      <li class="list-disc">Prioritize a safe and secure environment, adhering to child protection policies.</li>
+                      <li class="list-disc">Foster a zero-tolerance policy for discrimination, bullying, or any form of harassment.</li>
+                      <li class="list-disc">Establish clear guidelines for mentor-mentee interactions to maintain professional boundaries.</li>
                       <li class="list-disc">
-                        Foster partnerships with local shelters and community organizations for a unified approach to addressing hunger.
+                        Require parental consent and involvement for participants under a certain age.
                       </li>
                       <li class="list-disc">
-                        Establish a system for volunteers and recipients to provide feedback, facilitating continuous improvement.
+                        Regularly assess and update program content to stay relevant and impactful.
                       </li>
-                      <li class="list-disc">Only partitions provided by IDL are allowed.</li>
+                      <li class="list-disc">Promote diversity and cultural sensitivity in all program activities and materials.</li>
                       <li class="list-disc">
-                        Any cultural or banquet hall practices, such as flower curtains, formal entrances,
-                        and men and women gathering at entrances or lobby areas, will not be allowed under
-                        any circumstances.
+                        Implement an effective grievance resolution process to address concerns promptly and fairly.
                       </li>
                       <li class="list-disc">
                         IDL reserves the right to refuse service with or without reason.
@@ -133,7 +140,7 @@
                     </ul>
                   </div>
                 </div>
-                <div class="bg-white rounded-xl p-5 w-full">
+                <!-- <div class="bg-white rounded-xl p-5 w-full">
                   <div class="space-y-8 w-3/4">
                     <div class="bg-white rounded-xl p-5 w-full">
                         <div class="pt-2">
@@ -302,7 +309,7 @@
                         </div>
                       </div>
                     </div>
-                </div>
+                </div> -->
               </div>
             </div>
         </div>

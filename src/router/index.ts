@@ -141,6 +141,11 @@ const router = createRouter({
       name: 'activity/project',
       component: () => import('../views/Activity/Project.vue')
     },
+    {
+      path: '/activity/projects',
+      name: 'projects',
+      component: () => import('../views/Activity/Projects.vue')
+    },
 
     {
       path: '/volunteer/educate_the_children',
