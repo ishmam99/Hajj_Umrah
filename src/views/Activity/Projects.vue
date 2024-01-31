@@ -10,9 +10,15 @@
                       <div class="text-left">
                         <div class="px-10 py-6">
                           <h1 class="mb-5 text-5xl text-white font-bold">Youth Development Project</h1>
+                          
                           <p class="mb-5 text-lg font-semibold bg-[#00000042] p-2 w-3/6 rounded-lg text-white">
                                 The Youth Development Project is a targeted initiative dedicated to empowering our community's young individuals. Through mentorship, workshops, and character-building activities, we aim to instill values of leadership, responsibility, and resilience. Focused on educational enrichment, this project equips youth with the skills needed to navigate challenges and contribute meaningfully to society. It stands as a commitment to shaping a generation of leaders who embody integrity, empathy, and a strong sense of social responsibility. 
                           </p>
+                          <router-link to="/signup" class="w-full hover:pl-5 duration-300">
+                            <button class="h-[50px] w-[250px] bg-cyan-800 text-white rounded-xl">
+                              Register
+                            </button>
+                          </router-link>
                         </div>
                       </div>
                     </div>

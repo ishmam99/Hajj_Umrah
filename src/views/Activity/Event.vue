@@ -40,8 +40,8 @@
                   <p class="text-xl text-white">20 JAN 2024</p>
                   <h3 class="text-2xl font-bold">Feed The Hungry</h3>
                   <p>Feed The Hungry event of IDL Masjid</p>
-                  <router-link to="/activity/projects" class="w-full hover:pl-5 duration-300">
-                    <button class="h-[50px] w-[250px] bg-lime-800 rounded-xl">
+                  <router-link to="/activity/events" class="w-full hover:pl-5 duration-300">
+                    <button class="h-[50px] w-[250px] bg-emerald-800 rounded-xl">
                       Go To Event
                     </button>
                   </router-link>
@@ -59,7 +59,7 @@
                 <h3 class="text-2xl font-bold">{{ item.title }}</h3>
                 <p class="text-sm font-semibold text-yellow-600">{{ item.date }}</p>
                 <p>{{ item.des }}</p>
-                <button class="h-[50px] w-full border border-gray-600 rounded-md">Register</button>
+                <button class="h-[50px] w-full bg-emerald-800 text-white rounded-md">Register</button>
               </div>
             </div>
           </div>

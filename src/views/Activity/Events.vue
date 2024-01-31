@@ -11,17 +11,7 @@
                         <div class="px-10 py-6">
                           <h1 class="mb-5 text-5xl text-white font-bold">Feed The Hungry</h1>
                           <p class="mb-5 text-lg font-semibold bg-[#00000042] p-2 w-3/6 rounded-lg text-white">
-                            "Feed the Hungry" was created five years ago by Pious Projects. It's a non-profit
-                            that allows people to participate in humanitarian projects all over the world. For
-                            Cleveland’s campaign, nearly one hundred volunteers gathered at the Islamic Center
-                            to put together 2,000 bagged meals. Then, they gave them out to several local
-                            homeless shelters. The local campaign is spearheaded by a group of local Muslims who
-                            say the mission goes hand in hand with the teachings of the faith. "Its in our Quran
-                            which is our book that we follow. It says that you should never discriminate. It
-                            doesn't matter what religion, race, or ethnicity, it doesn't matter where they're
-                            from that as long as you have a hungry friend or a neighbor, you should feed them.
-                            That is part of your duty as a Muslim,” Yamamah Rashid, one of the organizers of the
-                            Cleveland event, said.
+                            At IDL Masjid, our mission is to alleviate hunger and nourish souls. Through dedicated efforts, we strive to provide sustenance to those in need, offering nourishing meals to the hungry. Fueled by compassion and a commitment to community welfare, we aim to make a positive impact by addressing hunger and fostering a sense of belonging.
                           </p>
                         </div>
                       </div>
@@ -32,12 +22,12 @@
             <div class="bg-gray-100 h-full py-5 flex items-center justify-center gap-5 px-20 w-full">
               <div class="space-y-8 w-3/4">
                 <Card
-                  :headline="'Feed The Hungry'"
+                  :headline="'Feed The Hungry Event'"
                   :text="'Empowering volunteers to assemble and distribute 2,000 meals, our Feed the Hungry campaign at the Islamic Center embodies the spirit of compassion and inclusivity guided by Islamic teachings.'"
                 />
                 <Card
                   :headline="'Overview'"
-                  :text="'Feed the Hungry, a non-profit created by Pious Projects five years ago, conducts global humanitarian projects, with a recent initiative in Cleveland showcasing its impactful work. In this local campaign, around a hundred volunteers gathered at the Islamic Center to assemble 2,000 bagged meals for distribution to various homeless shelters. Led by a group of local Muslims, the initiative is rooted in the teachings of Islam, emphasizing non-discrimination and the duty to feed the hungry, as stated in the Quran. This event underscores the commitment of Clevelands Muslim community to address hunger and contribute to their local community, reflecting the organizations broader global efforts.'"
+                  :text="'In our noble mission, we strive to alleviate hunger and nourish the vulnerable in our community. Committed to the values of compassion and social responsibility, we dedicate ourselves to feeding those in need. Every day, we work tirelessly to provide nutritious meals, ensuring that no one goes to bed hungry. Our initiative goes beyond immediate relief, aiming to empower individuals and build sustainable solutions for long-term food security. With the support of our dedicated team and generous community, we envision a future where hunger is eradicated, fostering a world where every person has access to the fundamental right of wholesome sustenance and the hope for a brighter tomorrow.'"
                 />
                 <div class="bg-white rounded-xl p-5 w-full">
 
@@ -133,11 +123,11 @@
                     </ul>
                   </div>
                 </div>
-                <div class="bg-white rounded-xl p-5 w-full">
-                  <div class="space-y-8 w-3/4">
-                    <div class="bg-white rounded-xl p-5 w-full">
+                <div class="bg-white rounded-xl p-5 w-full flex items-center justify-center">
+                  <div class="space-y-8 w-full">
+                    <div class="bg-white rounded-xl w-full">
                         <div class="pt-2">
-                          <h1 class="text-2xl font-bold">Feed The Hungry</h1>
+                          <h1 class="text-2xl font-bold">Event Application</h1>
                         </div>
                         <div class="py-5 space-y-7 mt-5">
                           <div class="flex w-full gap-5">

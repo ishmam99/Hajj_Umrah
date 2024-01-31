@@ -46,7 +46,7 @@
                 </div>
               </div>
             </div>
-<div class="flex gap-4">
+<div class="flex gap-6">
   <div class="bg-white rounded-xl p-5 w-[50%]">
     <h1 class="text-3xl underline py-3">Up Coming Projects</h1>
     <div class="class grid grid-cols-1 gap-5">
