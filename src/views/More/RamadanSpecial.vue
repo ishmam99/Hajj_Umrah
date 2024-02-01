@@ -33,7 +33,7 @@
           <!-- <p>{{ surahOfTheDay}}</p> -->
               
         </div>
-        <div class="bg-gray-100 bg-[url('../assets/image/home/pattern-1.png')] bg-repeat h-full py-5 flex gap-5 px-20 w-full">
+        <div class="bg-slate-200 bg-[url('../assets/image/home/pattern-1.png')] bg-repeat h-full py-5 flex items-center justify-center gap-5 px-20 w-full">
           <div class="space-y-8 w-3/4">
 
             <div class="bg-white rounded-xl p-5 w-full">
@@ -300,7 +300,7 @@
               </div>
             </div>
           </div>
-          <RegistrationMore />
+          
         </div>
       </DefaultLayout>
     </div>
