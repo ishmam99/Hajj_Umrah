@@ -19,7 +19,7 @@ declare global {
 
 const app = createApp(App)
 const pinia = createPinia()
-app.use(createPinia())
+app.use(pinia)
 pinia.use(piniaPluginPersistedstate)
 app.use(router)
 
@@ -31,5 +31,5 @@ app.config.globalProperties.$filters = {
     return moment(date).fromNow()
   }
 }
-app.use(router).use(store)
+app.use(router)
 app.mount('#app')
