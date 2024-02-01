@@ -21,8 +21,8 @@ const app = createApp(App)
 const pinia = createPinia()
 app.use(createPinia())
 pinia.use(piniaPluginPersistedstate)
-app.use(router)
 
+app.use(router)
 app.use(VueAxios, axios)
 app.mount('#app')
 window.api = api
@@ -31,5 +31,6 @@ app.config.globalProperties.$filters = {
     return moment(date).fromNow()
   }
 }
-app.use(router).use(store)
-app.mount('#app')
+// app.use(router)
+// // app.use(router).use(store)
+// app.mount('#app')
