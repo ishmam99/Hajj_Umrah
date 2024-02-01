@@ -1,39 +1,32 @@
 <template>
     <DefaultLayout>
-        <div class="px-[5%] bg-white">
-            <div class="">
-                <div class="flex items-center gap-2">
-                    <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    >
-                    <path
-                        d="M19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20C20 20.5523 19.5523 21 19 21ZM6 19H18V9.15745L12 3.7029L6 9.15745V19ZM9 9.99998H15V16H9V9.99998ZM11 12V14H13V12H11Z"
-                    ></path>
-                    </svg>
-                    <p>Member / </p>
-
-                    <p class="text-yellow-500">Change Password</p>
-                </div>
-                <div class="bg-white rounded-lg relative py-3">
-                    <h1 class="text-yellow-500 text-4xl font-semibold">Change Password</h1>
-                    <div>
-                        <p></p>
+        <div class=" bg-slate-50">
+            <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover">
+                <div class="bg-[#11295d9a]">
+                  <div class="bg-[#00000057] rounded-none pt-20">
+                    <div class=""></div>
+                    <div class="hero-content text-center text-neutral-content">
+                      <div class="text-left">
+                        <div class="px-10 py-6">
+                          <h1 class="mb-5 text-5xl text-white font-bold">Change Password</h1>
+                          <p class="mb-5 text-lg font-semibold bg-[#0000002d] p-2 w-3/6 rounded-lg text-white">
+                            Welcome to the IDL Masjid Account Settings! Ensure your account's security by updating your password here. Your commitment to a secure account helps maintain the integrity of our community platform. Thank you for your vigilance.
+                          </p>
+                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>
+              </div>
         </div>
         <div class=" bg-slate-50">
-            <div class="pt-10 flex justify-between gap-5 px-[5%] pb-10">
-                <div class="px-[5%] flex flex-col gap-3 bg-white py-5 pb-5 rounded-md shadow-md w-3/4">
-                    <p  class="text-2xl text-yellow-600 text-center font-bold pb-8">Change Password</p>
-                    <input type="password" placeholder="Old Password" class="w-full rounded-md px-2 py-1.5 text-sm border border-gray-500">
-                    <input type="password" placeholder="New Password" class="w-full rounded-md px-2 py-1.5 text-sm border border-gray-500">
-                    <input type="password" placeholder="Confirm Password" class="w-full rounded-md px-2 py-1.5 text-sm border border-gray-500">
-                    <button class="bg-yellow-600 text-white text-sm font-semibold py-2 w-full rounded-md">Change Password</button>
+            <div class="pt-10 flex flex-row-reverse justify-between gap-5 px-8 pb-10">
+                <div class="px-[5%] flex flex-col items-center justify-center gap-3 bg-white py-5 pb-5 rounded-md shadow-md w-3/4">
+                    <p  class="text-2xl text-[#11295dc7] text-center font-bold pb-8">Change Password</p>
+                    <input type="password" placeholder="Old Password" class="w-3/4 rounded-md px-2 py-1.5 text-sm border border-gray-500">
+                    <input type="password" placeholder="New Password" class="w-3/4 rounded-md px-2 py-1.5 text-sm border border-gray-500">
+                    <input type="password" placeholder="Confirm Password" class="w-3/4 rounded-md px-2 py-1.5 text-sm border border-gray-500">
+                    <button class="bg-[#11295dc7] text-white text-sm font-semibold py-2 w-3/4 rounded-md">Change Password</button>
                 </div>
                 <MembarSidebar/>
             </div>

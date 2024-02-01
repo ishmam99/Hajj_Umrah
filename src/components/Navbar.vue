@@ -145,13 +145,20 @@
                 <router-link to="/activity/project" class=" w-full hover:pl-5 duration-300 font-semibold">Projects</router-link>
               </MenubarItem>
               <MenubarItem>
-                <a href="/more/ramadan_special" class=" w-full hover:pl-5 duration-300 font-semibold">Ramadan Special</a>
+                <router-link to="/more/ramadan_special" class=" w-full hover:pl-5 duration-300 font-semibold">Ramadan Special</router-link>
+                <!-- <a href="/more/ramadan_special" class=" w-full hover:pl-5 duration-300 font-semibold">Ramadan Special</a> -->
               </MenubarItem>
               <MenubarItem>
-                <a href="/more/hajj_and_umrah" class=" w-full hover:pl-5 duration-300 font-semibold">Hajj And Umrah Registration</a>
+                <router-link to="/more/hajj_and_umrah" class=" w-full hover:pl-5 duration-300 font-semibold">Hajj And Umrah Registration</router-link>
+                <!-- <a href="/more/hajj_and_umrah" class=" w-full hover:pl-5 duration-300 font-semibold">Hajj And Umrah Registration</a> -->
+              </MenubarItem>
+              <MenubarItem>
+                <router-link to="/more/registration/memebship_registration" class=" w-full hover:pl-5 duration-300 font-semibold">Membership Registration</router-link>
+                <!-- <a href="/more/registration/memebship_registration" class=" w-full hover:pl-5 duration-300 font-semibold">Membership Registration</a> -->
               </MenubarItem>
               <MenubarItem>
                 <router-link to="/boardmemberlogin" class=" w-full hover:pl-5 duration-300 font-semibold">Board Member Login</router-link>
+                <!-- <router-link to="/boardmemberlogin" class=" w-full hover:pl-5 duration-300 font-semibold">Board Member Login</router-link> -->
               </MenubarItem>
             </MenubarContent>
           </MenubarMenu>
@@ -312,7 +319,7 @@
                   <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Login</router-link>
                 </MenubarItem>
                 <MenubarItem>
-                  <router-link to="/more/registration/memebship_registration" class=" w-full hover:pl-5 duration-300 font-semibold">Sign up</router-link>
+                  <router-link to="/Signup" class=" w-full hover:pl-5 duration-300 font-semibold">Sign up</router-link>
                 </MenubarItem>
 
               </MenubarContent>

@@ -8,8 +8,8 @@
             <router-link to="/Membar_Donation_History">Donation</router-link>
             <router-link to="/Membar_Payment_History" class="">Payment</router-link>
             <router-link to="/" class="">Appointment</router-link>
-            <router-link to="/" class="">Change Password</router-link>
-            <button type="button" @click="store.logout()" class="py-2 px-5 bg-yellow-600 rounded-md text-white">Log out</button>
+            <router-link to="/Membar_Change_Password" class="">Change Password</router-link>
+            <button type="button" @click="store.logout()" class="py-2 px-5 mt-2 w-1/2 bg-red-800 rounded-md text-white hover:mx-2 duration-300">Log Out</button>
         </div>
     </div>
 </template>
@@ -33,6 +33,6 @@ watch(() => store.isAuthenticated, (newIsAuthenticated) => {
 </script>
 <style scoped>
 .router-link-active{
- color: rgb(201, 130, 0);
+ color: rgb(20, 123, 99);
 }
 </style>
