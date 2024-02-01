@@ -36,7 +36,7 @@
 </template>
 <script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
-import { useAuthStore } from '/src/stores/AuthStore.ts';
+import { useAuthStore } from '@/stores/AuthStore';
 import { ref,onMounted } from 'vue'
 import { useRouter } from 'vue-router';
 import Tilt from 'vanilla-tilt-vue';
@@ -50,7 +50,7 @@ const data = ref({
 });
 const authStore = useAuthStore()
 const login = () => {
-    
+  
     if (data.value.email == '' || data.value.password == '') {
         alert('Email or password is missing')
     }
@@ -67,8 +67,4 @@ const login = () => {
     }
     
 };
-onMounted(async() => {
-    const authStore = useAuthStore()
-    console.log(authStore)
-})
 </script>

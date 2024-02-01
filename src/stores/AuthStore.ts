@@ -3,7 +3,7 @@ import { defineStore } from 'pinia';
 
 // const pinia = createPinia();
 
-export const useAuthStore = defineStore('store',{
+export const useAuthStore = defineStore('authStore',{
   state: () => ({
     isAuthenticated: false,
         user: null,
