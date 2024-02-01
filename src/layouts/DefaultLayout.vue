@@ -21,8 +21,9 @@ import foot from '../components/footer.vue'
 
 import { ref, onMounted } from 'vue'
 import {useStore} from '../stores/store.ts'
+import {useAuthStore} from '../stores/AuthStore.ts'
 const store = useStore()
-
+const authStore = useAuthStore()
 const gatprayerTime = async () => {
   const { data } = await api().get('get-prayer-time')
     // console.log(data)
