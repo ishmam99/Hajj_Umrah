@@ -18,10 +18,10 @@
               <p>Home</p>
               <p>/ More</p>
               <!-- <p>/ Volunteers</p> -->
-              <p class="text-cyan-800">/ Hajj &#38; Umrah</p>
+              <p class="text-cyan-800">/ Hajj &amp; Umrah</p>
             </div>
             <div class="rounded-lg flex items-center justify-center relative py-3">
-              <h1 class="text-cyan-800 text-4xl font-bold"> Hajj &#38; Umrah</h1>
+              <h1 class="text-cyan-800 text-4xl font-bold"> Hajj &amp; Umrah</h1>
               <div>
                 <p></p>
               </div>
@@ -32,7 +32,7 @@
         <div class="w-full bg-[url('../assets/image/home/dua_banner.png')] bg-cyan-800">
           <h1 class="py-10 text-center bg-[#2d292938] text-4xl text-white font-bold">To Inquire or Register For Hajj &amp; Umrah Programs</h1>
          </div>
-        <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
+        <div class="bg-gray-100 h-full py-5 flex items-center justify-center gap-5 px-20 w-full">
           <div class="space-y-8 w-3/4">
             <div class="bg-white rounded-xl p-5 w-full">
               <h1 class="text-3xl font-semibold">Hajj &amp; Umrah Registration</h1>
@@ -46,6 +46,23 @@
                   <li>Individual ($50/year) (Age 18+)</li>
                   <li>Family ($100/year)</li>
                 </ul>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-5 w-full">
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                    <img class="h-auto max-w-full rounded-lg" src="../../assets/image/hajj/hajj-1.jpg" alt="">
+                </div>
+                <div>
+                    <img class="h-auto max-w-full rounded-lg" src="../../assets/image/hajj/hajj-2.jpg" alt="">
+                </div>
+                <div>
+                    <img class="h-auto max-w-full rounded-lg" src="../../assets/image/hajj/hajj-3.webp" alt="">
+                </div>
+                <div>
+                    <img class="h-auto max-w-full rounded-lg" src="../../assets/image/hajj/hajj-5.jpg" alt="">
+                </div>
               </div>
             </div>
 
@@ -281,7 +298,7 @@
               </div>
             </div>
           </div>
-          <RegistrationMore />
+          
         </div>
       </DefaultLayout>
     </div>
