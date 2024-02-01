@@ -38,6 +38,12 @@ const gatprayerTime = async () => {
 //     })
 //     store.category = categoryList
 // }
+
+const gatServiceList = async () => {
+  const { data } = await api().get('get-service-list')
+  store.serviceList = data
+  console.log(store.serviceList[0])
+}
 const getEvent=async()=>{
     const { data } = await api().get('get-event')
     // console.log(data)
@@ -45,13 +51,14 @@ const getEvent=async()=>{
 }
 const getAnnouncement=async()=>{
     const { data } = await api().get('get-announcement')
-    console.log(data)
+    // console.log(data)
     store.announcement = data
 }
 onMounted(async() => {
   gatprayerTime()
   getEvent()
   getAnnouncement()
+  gatServiceList()
 })
 
 </script>

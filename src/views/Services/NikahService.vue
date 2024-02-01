@@ -21,23 +21,26 @@
             <p class="text-pink-900">/ Nikah Service</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-pink-900 text-4xl font-bold"> Nikah Service </h1>
+            <h1 class="text-pink-900 text-4xl font-bold"> {{ nikahServices.service_name }} </h1>
             <div>
-              <p></p>
             </div>
           </div>
         </div>
       </div>
       <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
+        {{ nikahPolicy }}
         <div class="space-y-8 w-3/4">
-          <Card
-            :headline="'Nikah Policy and Procedure'"
-            :text="'These rules, regulations, and forms are for those who intend to have their Nikah and Marriage conducted at IDL Masjid'"
+          <div v-for="item in nikahPolicy">
+            <Card 
+            :headline="item.heading"
+            :text="item.description"
           />
-          <Card
-            :headline="'Overview'"
+          </div>
+          
+          <!-- <Card
+            :headline="overView.heading"
             :text="'Islamin Digital Lane (IDL) offers Nikah Service for Muslims to get married at IDL. All Nikahs and marriages are officiated by Imam Nadim Bashir or Ustadh Mohamed Baajour if specifically requested by the family and depending on their availability.The families can also invite any approved scholar from outside of IDL to officiate their marriage This document describes the policies and procedures of hosting nikah service at IDL'"
-          />
+          /> -->
           <div class="bg-white rounded-xl p-5 w-full">
             <h1 class="text-3xl underline py-3">Procedure</h1>
             <div class="px-5">
@@ -342,9 +345,7 @@ import FacilitesMore from '../../components/FacilitiesMore.vue'
 
 import { ref } from 'vue'
 import { Calendar } from '/components/ui/calendar'
-
-const date = ref()
-
+import {useStore} from '/src/stores/store'
 import {
   Select,
   SelectContent,
@@ -354,6 +355,12 @@ import {
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
+
+const date = ref()
+const store = useStore()
+const nikahServices = store.serviceList[0]
+const nikahPolicy = store.serviceList[0].object[0]
+// const overView = store.serviceList[0].object[1]
 </script>
 
 <style lang="scss" scoped></style>
