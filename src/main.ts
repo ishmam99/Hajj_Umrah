@@ -31,5 +31,5 @@ app.config.globalProperties.$filters = {
     return moment(date).fromNow()
   }
 }
-app.use(router)
+app.use(router).use(store)
 app.mount('#app')
