@@ -38,9 +38,10 @@
         </CardHeader>
         <form  @submit.prevent="submit()">
           <CardContent class="grid gap-6">
-            <RadioGroup default-value="card" class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+           
+            <RadioGroup default-value="card" v-model="donation.type"  class="grid grid-cols-1 lg:grid-cols-3 gap-4">
               <div>
-                <RadioGroupItem id="card" v-model="donation.specialNeed" value="specialNeed" class="peer sr-only" />
+                <RadioGroupItem id="card" value="specialNeed" class="peer sr-only" />
                 <Label
                   for="card"
                   class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
@@ -53,7 +54,7 @@
                 <RadioGroupItem
                   id="paypal"
                   value="fityah"
-                  v-model="donation.fityah"
+               
                   class="peer sr-only"
                 />
                 <Label
@@ -68,7 +69,7 @@
                 <RadioGroupItem 
                 id="apple" 
                 value="zaqat"
-                v-model="donation.zaqat"
+              
                 class="peer sr-only" />
                 <Label
                   for="apple"
@@ -79,7 +80,7 @@
                 </Label>
               </div>
               <div>
-                <RadioGroupItem id="sadaqah" value="sadaqah"  v-model="donation" class="peer sr-only" />
+                <RadioGroupItem id="sadaqah" value="sadaqah"   class="peer sr-only" />
                 <Label
                   for="sadaqah"
                   class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
@@ -89,7 +90,7 @@
                 </Label>
               </div>
               <div >
-                <RadioGroupItem id="mashjid" value="mashjidop" v-model="donation.mashjidop" class="peer sr-only" />
+                <RadioGroupItem id="mashjid" value="mashjidop"  class="peer sr-only" />
                 <Label
                   for="mashjid"
                   class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
@@ -99,7 +100,7 @@
                 </Label>
               </div>
               <div >
-                <RadioGroupItem id="others" value="others" v-model="donation.others" class="peer sr-only" />
+                <RadioGroupItem id="others" value="others" :selected="donation.type.includes('others')" class="peer sr-only" />
                 <Label
                   type="others"
                   for="others"
@@ -112,32 +113,38 @@
               </div>
 
             </RadioGroup>
-            <Select>
+            <div v-if="donation.type.includes('others')">
+               <Label
+                class="py-3"
+                >Others</Label>
+            
+            <Select  v-model="donation.type">
               <SelectTrigger class="w-full">
                 <SelectValue placeholder="Others"  />
               </SelectTrigger>
             
               <SelectContent>
                 <SelectGroup>
-                  <SelectLabel>Other Donations</SelectLabel>
-                  <SelectItem value="palestine"> Donation For Palestine </SelectItem>
-                  <SelectItem value="syria"> Donation For Syria </SelectItem>
-                  <SelectItem value="afghanistan"> Donation For Afghanistan </SelectItem>
+                
+                  <SelectItem value="others_palestine"> Donation For Palestine </SelectItem>
+                  <SelectItem value="others_syria"> Donation For Syria </SelectItem>
+                  <SelectItem value="others_afghanistan"> Donation For Afghanistan </SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
+            </div>
             <div class="grid gap-2">
               <Label for="name">Name</Label>
-              <Input id="name" placeholder="First Last" />
+              <Input id="name" v-model="donation.name" placeholder="First Last" />
             </div>
             <div class="grid gap-2">
               <Label for="number">Card number</Label>
-              <Input id="number" placeholder="" />
+              <Input id="number"  v-model="donation.card_number" placeholder="" />
             </div>
             <div class="grid grid-cols-3 gap-4">
               <div class="grid gap-2">
                 <Label for="month">Expires</Label>
-                <Select>
+                <Select  v-model="donation.card_expires">
                   <SelectTrigger id="month">
                     <SelectValue placeholder="Month" />
                   </SelectTrigger>
@@ -183,7 +190,7 @@
               </div>
               <div class="grid gap-2">
                 <Label for="year">Year</Label>
-                <Select>
+                <Select  v-model="donation.card_years">
                   <SelectTrigger id="year">
                     <SelectValue placeholder="Year" />
                   </SelectTrigger>
@@ -196,7 +203,7 @@
               </div>
               <div class="grid gap-2">
                 <Label for="cvc">CVC</Label>
-                <Input id="cvc" placeholder="CVC" />
+                <Input id="cvc"  v-model="donation.card_cvc" placeholder="CVC" />
               </div>
             </div>
           </CardContent>
@@ -234,11 +241,17 @@ import {
   SelectValue,
 } from '/components/ui/select'
 
+import {ref} from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute();
 
-import {ref} from 'vue'
-const donation = ref({})
+const donation = ref({
+  type: '',
+  name: '',
+  card_number:'',
+  card_cvc:'',
+  card_years:'',
+})
 
 const submit = () => {
   console.log(donation.value)
