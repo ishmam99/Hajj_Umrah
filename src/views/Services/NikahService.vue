@@ -1,7 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 pt-20 mt-5 py-5 bg-pink-900 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+      <div
+        class="px-20 pt-20 mt-5 py-5 bg-pink-900 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl"
+      >
         <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
           <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
@@ -21,20 +23,17 @@
             <p class="text-pink-900">/ Nikah Service</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-pink-900 text-4xl font-bold"> {{ nikahServices.service_name }} </h1>
-            <div>
-            </div>
+            <h1 class="text-pink-900 text-4xl font-bold">{{ nikahServices.service_name }}</h1>
+            <div></div>
           </div>
         </div>
       </div>
       <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
-    
         <div class="space-y-8 w-3/4">
           <div v-for="object in nikahServices.object">
-            <Card :object="object"/>
+            <Card :object="object" />
           </div>
-          
-          
+
           <div class="bg-white rounded-xl p-5 w-full">
             <h1 class="text-3xl underline font-bold text-gray-700 py-3">Nikah Service Request</h1>
             <p>
@@ -267,13 +266,12 @@
 </template>
 
 <script setup>
-import DefaultLayout from '../../layouts/DefaultLayout.vue'
 import Card from '../../components/CardSection.vue'
 import FacilitesMore from '../../components/FacilitiesMore.vue'
+import DefaultLayout from '../../layouts/DefaultLayout.vue'
 
 import { ref } from 'vue'
 import { Calendar } from '/components/ui/calendar'
-import {useStore} from '/src/stores/store'
 import {
   Select,
   SelectContent,
@@ -283,11 +281,11 @@ import {
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
+import { useStore } from '/src/stores/store'
 
 const date = ref()
 const store = useStore()
-const nikahServices = store.serviceList.find((e)=>e.service_name == 'Nikah Services')
-
+const nikahServices = store.serviceList.find((e) => e.service_name == 'Nikah Services')
 </script>
 
 <style lang="scss" scoped></style>
