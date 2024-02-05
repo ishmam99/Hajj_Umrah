@@ -104,11 +104,11 @@
               </ul>
             </div>
           </div>
-          <div class="bg-white rounded-xl p-5 w-[800px]">
-            <h1 class="text-3xl underline font-bold text-gray-700 py-3">Nikah Service Request</h1>
+          <div class="bg-white rounded-xl p-5 w-3/4">
+            <h1 class="text-3xl underline font-bold text-gray-700 py-3">Education Service Request</h1>
             <p>
-              Please fill out this form to request for Nikah Service at IDL. Please select a date
-              when you would like to have the Nikah Service Performed. The date is not final until
+              Please fill out this form to request for Education Service at IDL. Please select a date
+              when you would like to have the Education Service Performed. The date is not final until
               approved by IDL administration.
             </p>
             <div class="py-5 space-y-7 mt-5">
