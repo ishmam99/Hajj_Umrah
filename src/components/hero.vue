@@ -25,31 +25,31 @@
                         <div class="head">
                           <p>Welcome To</p>
                           <h1>Islamic Digital Lane</h1>
-                          <button class="py-2 px-3 rounded-lg border-1 border-white"><router-link to="/Signup">Join Now</router-link></button>
+                          <button class=""><router-link to="/Signup">Join Now</router-link></button>
                         </div>
                     </swiper-slide>
                     <swiper-slide> 
                         <img src="/src/assets/image/hero/h2.jpg" alt="" class="">
                         <div class="head">
-                          <p>IDL</p>
+                          <p>Islamic Digital Lane</p>
                           <h1>Learning Center</h1>
-                          <button class="py-2 px-3 rounded-lg border-1 border-white"><router-link to="/onsitelearning">Join Now</router-link></button>
+                          <button class=""><router-link to="/onsitelearning">Join Now</router-link></button>
                         </div>
                     </swiper-slide>        
                     <swiper-slide> 
                         <img src="/src/assets/image/hero/h5.jpg" alt="" class="">
                         <div class="head">
-                          <p>IDL</p>
+                          <p>Islamic Digital Lane</p>
                           <h1>Prayer Service</h1>
-                          <button class="py-2 px-3 rounded-lg border-1 border-white"><router-link to="/Signup">Join Now</router-link></button>
+                          <button class=""><router-link to="/Signup">Join Now</router-link></button>
                         </div>
                     </swiper-slide>
                     <swiper-slide> 
                         <img src="/src/assets/image/hero/h6.jpg" alt="" class="">
                         <div class="head">
-                          <p>IDL</p>
+                          <p>Islamic Digital Lane</p>
                           <h1>New Muslim Service</h1>
-                          <button class="py-2 px-3 rounded-lg border-1 border-white"><router-link to="/services/new_muslim">Join Now</router-link></button>
+                          <button class=""><router-link to="/services/new_muslim">Join Now</router-link></button>
                         </div>
                     </swiper-slide>
             </swiper>
@@ -161,14 +161,22 @@
 .head p{
   text-shadow: 2px 2px 3px black;
   font-size: 34px;
-  color: rgb(194, 127, 3);
+  color: rgb(255, 255, 255);
 }
 .head button{
   font-size: 24px;
   font-weight: 500;
-  padding: 10px 20px;
-  border: 2px solid white;
+  padding: 8px 12px;
+  border: 3px solid white;
   text-shadow: 2px 2px 3px black;
+  border-radius: 8px;
+  /* transition: .2s ease-in-out; */
+}
+.head button:hover{
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-shadow:none;
+    /* transition: .2s ease-in-out; */
 }
 .swiper-slide img {
   display: block;

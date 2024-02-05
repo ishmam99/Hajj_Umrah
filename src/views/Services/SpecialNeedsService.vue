@@ -30,10 +30,10 @@
       </div>
       <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
         <div class="space-y-8 w-3/4">
-          <Card
+          <!-- <Card
             :headline="'Call for details'"
             :text="'For special needs services you can call any our contact given below or visit our physical office for more details'"
-          />
+          /> -->
            <div class="flex flex-col items-center gap-3 text-center w-full">
             <img src="/src/assets/image/hero/h1.jpg" alt="" class="rounded-xl">
             <p class="text-blue-600"><span class="font-semibold text-black">E-Mail: </span>specialneeds.services@epicmasjid.org</p>
