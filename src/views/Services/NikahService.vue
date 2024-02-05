@@ -1,7 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 pt-20 mt-5 py-5 bg-pink-900 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+      <div
+        class="px-20 pt-20 mt-5 py-5 bg-pink-900 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl"
+      >
         <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
           <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
@@ -21,89 +23,17 @@
             <p class="text-pink-900">/ Nikah Service</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-pink-900 text-4xl font-bold"> Nikah Service </h1>
-            <div>
-              <p></p>
-            </div>
+            <h1 class="text-pink-900 text-4xl font-bold">{{ nikahServices.service_name }}</h1>
+            <div></div>
           </div>
         </div>
       </div>
       <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
         <div class="space-y-8 w-3/4">
-          <Card
-            :headline="'Nikah Policy and Procedure'"
-            :text="'These rules, regulations, and forms are for those who intend to have their Nikah and Marriage conducted at IDL Masjid'"
-          />
-          <Card
-            :headline="'Overview'"
-            :text="'Islamin Digital Lane (IDL) offers Nikah Service for Muslims to get married at IDL. All Nikahs and marriages are officiated by Imam Nadim Bashir or Ustadh Mohamed Baajour if specifically requested by the family and depending on their availability.The families can also invite any approved scholar from outside of IDL to officiate their marriage This document describes the policies and procedures of hosting nikah service at IDL'"
-          />
-          <div class="bg-white rounded-xl p-5 w-full">
-            <h1 class="text-3xl underline py-3">Procedure</h1>
-            <div class="px-5">
-              <ul>
-                <li class="list-disc">Submit a nikah request online at</li>
-                <li class="list-disc">https://epicmasjid.org/nikah-services/</li>
-                <li class="list-disc">
-                  Upload or Attach all necessary documents as described in the policy section above
-                </li>
-                <li class="list-disc">
-                  The system will send an acknowledgment email to the submitter. Please keep it for
-                  record purposes
-                </li>
-                <li class="list-disc">IDL operations team will</li>
-                <li class="list-disc">communicate with the person in charge via email or phone</li>
-                <li class="list-disc">
-                  schedule a meeting with the family to go over the program flow and other
-                  requirements
-                </li>
-                <li class="list-disc">
-                  Inform the family whether or not the nikah has been approved
-                </li>
-                <li class="list-disc">
-                  IDL operations team will also send a form to be filled out by the family members.
-                  This must be filled out as soon as possible
-                </li>
-              </ul>
-            </div>
+          <div v-for="object in nikahServices.object">
+            <Card :object="object" />
           </div>
-          <div class="bg-white rounded-xl p-5 w-full">
-            <h1 class="text-3xl underline py-3">Policy</h1>
-            <div class="px-5">
-              The following are the policies for hosting Nikah Service at IDL
 
-              <ul>
-                <li class="list-disc">
-                  All rules and policies must be followed. A refusal of any type could lead to a
-                  termination of the program.
-                </li>
-                <li class="list-disc">
-                  Only prepacked sweets can be distributed to the guests for take along from the
-                  lobby area, no breakfast, lunch, or dinner.
-                </li>
-                <li class="list-disc">
-                  Modest attire for ALL GUESTS AND PARTICIPANTS (Muslim or Non-Muslim) and hired
-                  photographers are REQUIRED. ANYONE VIOLATING THIS RULE WILL BE ASKED
-                </li>
-                <li class="list-disc">TO LEAVE THE PREMISES. NO EXCEPTIONS. Violations include</li>
-                <li class="list-disc">Transparent and see-through clothing and</li>
-                <li class="list-disc">Skirts Music / Nasheed is strictly prohibited.</li>
-                <li class="list-disc">Men and women will be seated separately</li>
-                <li class="list-disc">
-                  The start and end times of the event will be strictly enforced
-                </li>
-                <li class="list-disc">Only partitions provided by IDL are allowed.</li>
-                <li class="list-disc">
-                  Any cultural or banquet hall practices, such as flower curtains, formal entrances,
-                  and men and women gathering at entrances or lobby areas, will not be allowed under
-                  any circumstances.
-                </li>
-                <li class="list-disc">
-                  IDL reserves the right to refuse service with or without reason.
-                </li>
-              </ul>
-            </div>
-          </div>
           <div class="bg-white rounded-xl p-5 w-full">
             <h1 class="text-3xl underline font-bold text-gray-700 py-3">Nikah Service Request</h1>
             <p>
@@ -336,15 +266,12 @@
 </template>
 
 <script setup>
-import DefaultLayout from '../../layouts/DefaultLayout.vue'
 import Card from '../../components/CardSection.vue'
 import FacilitesMore from '../../components/FacilitiesMore.vue'
+import DefaultLayout from '../../layouts/DefaultLayout.vue'
 
 import { ref } from 'vue'
 import { Calendar } from '/components/ui/calendar'
-
-const date = ref()
-
 import {
   Select,
   SelectContent,
@@ -354,6 +281,11 @@ import {
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
+import { useStore } from '/src/stores/store'
+
+const date = ref()
+const store = useStore()
+const nikahServices = store.serviceList.find((e) => e.service_name == 'Nikah Services')
 </script>
 
 <style lang="scss" scoped></style>
