@@ -1,7 +1,7 @@
 <template>
-   <div>
+  <div>
     <header>
-     <Navbar/>
+      <Navbar />
     </header>
     <main class="h-full"> 
       <div >
@@ -9,19 +9,18 @@
            <slot /> <!-- This is where the page content will be rendered -->
       </div>
     </main>
-    
-      
-      <foot/>
+
+    <foot />
   </div>
 </template>
 
 <script setup lang="ts">
-import Navbar from '../components/Navbar.vue';
+import Navbar from '../components/Navbar.vue'
 import foot from '../components/footer.vue'
 import Toaster from '/components/ui/toast/Toaster.vue'
 import { ref, onMounted } from 'vue'
-import {useStore} from '../stores/store.ts'
-import {useAuthStore} from '../stores/AuthStore.ts'
+import { useStore } from '../stores/store.ts'
+import { useAuthStore } from '../stores/AuthStore.ts'
 const store = useStore()
 const authStore = useAuthStore()
 
@@ -70,23 +69,11 @@ const getDonationType = async () => {
     console.log(error)
   }  
 }
-onMounted(async() => {
+onMounted(async () => {
   gatprayerTime()
   getEvent()
   getAnnouncement()
   getServiceList()
   getDonationType()
 })
-
-// const getCategories =async() =>{
-//     const { data } = await api().get('product-category')
-//     let categoryList = []
-//     data.map((c) => {
-//         let cat = c.category
-//         cat.products = c.products
-//         categoryList.push(cat)
-//     })
-//     store.category = categoryList
-// }
 </script>
-

@@ -52,11 +52,25 @@
           </div>
 
           <button
-            class="text-white font-semibold text-sm px-3 py-3 rounded-lg bg-green-600 mt-1"
+            :disabled="loading"
+            class="text-white font-semibold text-sm px-3 py-3 rounded-lg bg-green-600 mt-2"
             type="submit"
           >
-            <p class="animate-spin">x</p>
-            Create Your Fundrasing
+            <p v-if="loading" class="flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="#fff"
+                class="animate-spin w-5 h-5"
+              >
+                <path
+                  d="M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z"
+                ></path>
+              </svg>
+              Creating...
+            </p>
+            <p v-else>Create Your Fundraising</p>
+            <!-- <p class="animate-spin">x</p> -->
           </button>
         </form>
       </div>
@@ -95,9 +109,9 @@
               d="M6.38231 5.9681C7.92199 4.73647 9.87499 4 12 4C14.125 4 16.078 4.73647 17.6177 5.9681L19.0711 4.51472L20.4853 5.92893L19.0319 7.38231C20.2635 8.92199 21 10.875 21 13C21 17.9706 16.9706 22 12 22C7.02944 22 3 17.9706 3 13C3 10.875 3.73647 8.92199 4.9681 7.38231L3.51472 5.92893L4.92893 4.51472L6.38231 5.9681ZM12 20C15.866 20 19 16.866 19 13C19 9.13401 15.866 6 12 6C8.13401 6 5 9.13401 5 13C5 16.866 8.13401 20 12 20ZM13 12H16L11 18.5V14H8L13 7.4952V12ZM8 1H16V3H8V1Z"
             ></path>
           </svg>
-          <p class="text-2xl font-bold py-2">Simple & quick</p>
+          <p class="text-2xl font-bold py-2">Simple &amp; quick</p>
           <p class="text-lg">
-            Our user-friendly fundrasing platform makes it easy to setup your fundraising page.
+            Our user-friendly fundraising platform makes it easy to setup your fundraising page.
           </p>
         </div>
         <div class="p-5 rounded-md bg-cyan-900 text-white">
@@ -123,6 +137,7 @@
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import { ref } from 'vue'
 // import api from '/config/api'
+import { useToast } from '/components/ui/toast/use-toast'
 
 import {
   Select,
@@ -134,6 +149,8 @@ import {
   SelectValue
 } from '/components/ui/select'
 
+const loading = ref(false)
+const { toast } = useToast()
 const fundRaising = ref({
   title: '',
   program: '',
@@ -142,14 +159,25 @@ const fundRaising = ref({
 })
 
 const fundRaisingSubmission = async () => {
+  loading.value = true
   try {
     const data = await api().post('fundraise-page-store', {
       method: 'post',
       body: fundRaising
     })
+    toast({
+      title: 'Success',
+      description: data.data.message
+    })
     console.log(data)
   } catch (error) {
     console.log(error)
+    toast({
+      title: 'Something went wrong.',
+      description: 'Please try again',
+      variant: 'destructive'
+    })
   }
+  loading.value = false
 }
 </script>
