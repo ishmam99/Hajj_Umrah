@@ -172,7 +172,7 @@
                 </div>
                 <div>
                   <p for="" class="mb-3">Preferred Program <span class="text-red-500">*</span> </p>
-                  <Select>
+                  <Select v-model="volunteerAdmission.preferred_program">
                     <SelectTrigger class="w-full">
                       <SelectValue placeholder="Select a program" />
                     </SelectTrigger>
@@ -217,6 +217,8 @@ import {
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
+import { useToast } from '/components/ui/toast/use-toast'
+const { toast } = useToast()
 const volunteerAdmission = ref({
   first_name: '',
   last_name: '',
@@ -229,9 +231,37 @@ const volunteerAdmission = ref({
   preferred_time: '',
   preferred_program: '',
 })
-const volunteerAdmissionSubmit = () => {
-  console.log(volunteerAdmission.value)
-  api().post('volunteer-app-store',volunteerAdmission)
+
+const volunteerAdmissionSubmit = async () => {
+  try {
+    const data = api().post('volunteer-app-store', {
+    method: 'post',
+      body: volunteerAdmission,
+    })
+    console.log(data)
+    toast({
+      title:"sucess",
+      description: 'Friday, February 10, 2023 at 5:57 PM',
+    });
+  } catch (error) {
+    console.log(error)
+    toast({
+      title:"error",
+      description: 'Friday, February 10, 2023 at 5:57 PM',
+    });
+  }
+  volunteerAdmission.value = {
+  first_name: '',
+  last_name: '',
+  email: '',
+  phone_number: '',
+  address: '',
+  city: '',
+  state: '',
+  preferred_date: '',
+  preferred_time: '',
+  preferred_program: '',
+}
 }
 </script>
 

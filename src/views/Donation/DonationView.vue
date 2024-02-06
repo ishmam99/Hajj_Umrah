@@ -39,7 +39,7 @@
         <form  @submit.prevent="submit()">
           <CardContent class="grid gap-6">
            
-            <RadioGroup default-value="card" v-model="donation.type"  class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <RadioGroup default-value="card" v-model="donation.donation_method_id"  class="grid grid-cols-1 lg:grid-cols-3 gap-4">
               <div>
                 <RadioGroupItem id="card" value="specialNeed" class="peer sr-only" />
                 <Label
@@ -100,9 +100,9 @@
                 </Label>
               </div>
               <div >
-                <RadioGroupItem id="others" value="others" :selected="donation.type.includes('others')" class="peer sr-only" />
+                <RadioGroupItem id="others" value="others" :selected="donation.donation_method_id.includes('others')" class="peer sr-only" />
                 <Label
-                  type="others"
+                donation_method_id="others"
                   for="others"
                   class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                 >
@@ -113,25 +113,25 @@
               </div>
 
             </RadioGroup>
-            <div v-if="donation.type.includes('others')">
+            <div v-if="donation.donation_method_id.includes('others')">
                <Label
                 class="py-3"
                 >Others</Label>
             
-            <Select  v-model="donation.type">
-              <SelectTrigger class="w-full">
-                <SelectValue placeholder="Others"  />
-              </SelectTrigger>
-            
-              <SelectContent>
-                <SelectGroup>
+                <Select  v-model="donation.donation_method_id">
+                  <SelectTrigger class="w-full">
+                    <SelectValue placeholder="Others"  />
+                  </SelectTrigger>
                 
-                  <SelectItem value="others_palestine"> Donation For Palestine </SelectItem>
-                  <SelectItem value="others_syria"> Donation For Syria </SelectItem>
-                  <SelectItem value="others_afghanistan"> Donation For Afghanistan </SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+                  <SelectContent>
+                    <SelectGroup>
+                    
+                      <SelectItem value="others_palestine"> Donation For Palestine </SelectItem>
+                      <SelectItem value="others_syria"> Donation For Syria </SelectItem>
+                      <SelectItem value="others_afghanistan"> Donation For Afghanistan </SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
             </div>
             <div class="grid gap-2">
               <Label for="name">Name</Label>
@@ -144,7 +144,7 @@
             <div class="grid grid-cols-3 gap-4">
               <div class="grid gap-2">
                 <Label for="month">Expires</Label>
-                <Select  v-model="donation.card_expires">
+                <Select  v-model="donation.expire_month">
                   <SelectTrigger id="month">
                     <SelectValue placeholder="Month" />
                   </SelectTrigger>
@@ -190,7 +190,7 @@
               </div>
               <div class="grid gap-2">
                 <Label for="year">Year</Label>
-                <Select  v-model="donation.card_years">
+                <Select  v-model="donation.expire_year">
                   <SelectTrigger id="year">
                     <SelectValue placeholder="Year" />
                   </SelectTrigger>
@@ -203,7 +203,7 @@
               </div>
               <div class="grid gap-2">
                 <Label for="cvc">CVC</Label>
-                <Input id="cvc"  v-model="donation.card_cvc" placeholder="CVC" />
+                <Input id="cvc"  v-model="donation.cvc" placeholder="CVC" />
               </div>
             </div>
           </CardContent>
@@ -243,17 +243,36 @@ import {
 
 import {ref} from 'vue'
 import { useRoute } from 'vue-router'
+import { useToast } from '/components/ui/toast/use-toast'
+const { toast } = useToast()
 const route = useRoute();
 
 const donation = ref({
-  type: '',
+  donation_method_id: '',
   name: '',
-  card_number:'',
-  card_cvc:'',
-  card_years:'',
+  card_number: '',
+  expire_month: '',
+  expire_year: '',
+  cvc:'',
 })
 
-const submit = () => {
-  console.log(donation.value)
+const submit = async () => {
+  try {
+    const data = api().post('donation-store', {
+    method: 'post',
+      body: donation,
+    })
+    console.log(data)
+    toast({
+      title:"sucess",
+      description: 'Friday, February 10, 2023 at 5:57 PM',
+    });
+  } catch (error) {
+    console.log(error)
+    toast({
+      title:"error",
+      description: 'Friday, February 10, 2023 at 5:57 PM',
+    });
+  }
 }
 </script>

@@ -219,7 +219,6 @@
                       />
                     </div>
                   </div>
-                  {{ NikahForm.country }}
                   <Select class=""
                   v-model="NikahForm.country">
                     <SelectTrigger class="w-full rounded-2xl py-2 px-4 border border-black">
@@ -267,8 +266,11 @@ import { Input } from '/components/ui/input'
 import { Label } from '/components/ui/label'
 import { useStore } from '/src/stores/store'
 import api from '@/config/api'
-const store = useStore()
 
+import { useToast } from '/components/ui/toast/use-toast'
+
+const store = useStore()
+const { toast } = useToast()
 const NikahForm = ref({
   first_name: '',
   last_name: '',
@@ -287,10 +289,21 @@ const NikahForm = ref({
   file: '',
   card_number: '',
 })
-const NikahFormApply = () => {
-  console.log(NikahForm.value)
- api().post('nikah-service-request',NikahForm)
-
+const NikahFormApply = async () => {
+  try {
+    const data = await api().post('nikah-service-request', {
+      method: 'post',
+      body: NikahForm,
+    })
+    console.log(data)
+    toast({
+        title: 'Scheduled: Catch up',
+        description: 'Friday, February 10, 2023 at 5:57 PM',
+      });
+  }
+  catch (error) {
+    console.log(error)
+  }
 }
 // const uploadFile = (event) => {
 //   const selectedFile = event.target.files[0];
