@@ -54,7 +54,7 @@
                 <router-link to="/services/facilities" class=" w-full hover:pl-5 duration-300 font-semibold">Facilities Service</router-link>
               </MenubarItem>
                <MenubarItem>
-                <router-link to="/services/nikah" class=" w-full hover:pl-5 duration-300 font-semibold">Nikha Service</router-link>
+                <router-link to="/services/nikah" class=" w-full hover:pl-5 duration-300 font-semibold">Nikah Service</router-link>
               </MenubarItem>
               <MenubarItem >
               <router-link to="/services/funeral" class=" w-full hover:pl-5 duration-300 font-semibold">Funeral Service</router-link>
