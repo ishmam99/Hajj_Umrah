@@ -1,73 +1,121 @@
 <template>
-    <div>
-      <DefaultLayout>
-        <div class="px-20 pt-20 mt-5 py-5 bg-emerald-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
-          <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
-            <div class="flex items-center justify-center gap-2 font-semibold">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="16"
-                height="16"
-                fill="currentColor"
-              >
-                <path
-                  d="M19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20C20 20.5523 19.5523 21 19 21ZM6 19H18V9.15745L12 3.7029L6 9.15745V19ZM9 9.99998H15V16H9V9.99998ZM11 12V14H13V12H11Z"
-                ></path>
-              </svg>
-              <p>Home</p>
-              <p>/ More</p>
-              <!-- <p>/ Volunteers</p> -->
-              <p class="text-emerald-800">/ Ramadan Special</p>
-            </div>
-            <div class="rounded-lg flex items-center justify-center relative py-3">
-              <h1 class="text-emerald-800 text-4xl font-bold"> Ramadan Special</h1>
-              <div>
-                <p></p>
-              </div>
+  <div>
+    <DefaultLayout>
+      <div
+        class="px-20 pt-20 mt-5 py-5 bg-emerald-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl"
+      >
+        <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+          <div class="flex items-center justify-center gap-2 font-semibold">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="currentColor"
+            >
+              <path
+                d="M19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20C20 20.5523 19.5523 21 19 21ZM6 19H18V9.15745L12 3.7029L6 9.15745V19ZM9 9.99998H15V16H9V9.99998ZM11 12V14H13V12H11Z"
+              ></path>
+            </svg>
+            <p>Home</p>
+            <p>/ More</p>
+            <!-- <p>/ Volunteers</p> -->
+            <p class="text-emerald-800">/ Ramadan Special</p>
+          </div>
+          <div class="rounded-lg flex items-center justify-center relative py-3">
+            <h1 class="text-emerald-800 text-4xl font-bold">Ramadan Special</h1>
+            <div>
+              <p></p>
             </div>
           </div>
         </div>
-        <div class="w-full bg-[url('../assets/image/home/dua_banner.png')] bg-emerald-800">
-          <h1 class="py-10 text-center bg-[#2d292938] text-4xl text-white font-bold">To Inquire or Register in RAMADAN Programs</h1>
-          <!-- <p>{{ surahOfTheDay}}</p> -->
-              
-        </div>
-        <div class="bg-slate-200 bg-[url('../assets/image/home/pattern-1.png')] bg-repeat h-full py-5 flex items-center justify-center gap-5 px-20 w-full">
-          <div class="space-y-8 w-3/4">
+      </div>
+      <div class="w-full bg-[url('../assets/image/home/dua_banner.png')] bg-emerald-800">
+        <h1 class="py-10 text-center bg-[#2d292938] text-4xl text-white font-bold">
+          To Inquire or Register in RAMADAN Programs
+        </h1>
+        <!-- <p>{{ surahOfTheDay}}</p> -->
+      </div>
+      <div
+        class="bg-gray-100 bg-repeat h-full py-5 flex items-center justify-center gap-5 px-20 w-full"
+      >
+        <div class="space-y-8 w-3/4">
+          <form @submit.prevent="ramadanProgramSubmission()">
 
             <div class="bg-white rounded-xl p-5 w-full">
               <p class="pt-5 text-lg font-semibold">Choose the program/s that you interested in:</p>
               <div class="pt-5 ml-10">
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="flex items-center gap-2 font-semibold">
-                        <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3 px-2 " />
-                        <label for="Asr" class="text-lg ">RAMADAN KHATMA</label>
-                    </div>
-                    <div class="flex items-center gap-2 font-semibold">
-                        <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3 px-2" />
-                        <label for="Asr" class="text-lg ">Surat Al-Kahf</label>
-                    </div>
-                    <div class="flex items-center gap-2 font-semibold">
-                        <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3 px-2" />
-                        <label for="Asr" class="text-lg ">Imam and Hafiz Program</label>
-                    </div>
-                    <div class="flex items-center gap-2 font-semibold">
-                        <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3 px-2" />
-                        <label for="Asr" class="text-lg ">Best Stories</label>
-                    </div>
-                    <div class="flex items-center gap-2 font-semibold">
-                        <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3 px-2" />
-                        <label for="Asr" class="text-lg ">Fiqh of Fasting</label>
-                    </div>
-                    <div class="flex items-center gap-2 font-semibold">
-                        <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3 px-2" />
-                        <label for="Asr" class="text-lg">Azkar Program</label>
-                    </div>
+                  <div class="flex items-center gap-2 font-semibold">
+                    <input
+                      type="checkbox"
+                      id="Asr"
+                      name="Event_Time"
+                      value="Khatma"
+                      class="h-3 w-3 px-2"
+                      v-model="ramadanProgram.membership_type"
+                    />
+                    <label for="Asr" class="text-lg">RAMADAN KHATMA</label>
+                  </div>
+                  <div class="flex items-center gap-2 font-semibold">
+                    <input
+                      type="checkbox"
+                      id="Asr"
+                      name="Event_Time"
+                      value="Kahf"
+                      class="h-3 w-3 px-2"
+                      v-model="ramadanProgram.membership_type"
+                    />
+                    <label for="Asr" class="text-lg">Surat Al-Kahf</label>
+                  </div>
+                  <div class="flex items-center gap-2 font-semibold">
+                    <input
+                      type="checkbox"
+                      id="Asr"
+                      name="Event_Time"
+                      value="Hafiz"
+                      class="h-3 w-3 px-2"
+                      v-model="ramadanProgram.membership_type"
+                    />
+                    <label for="Asr" class="text-lg">Imam and Hafiz Program</label>
+                  </div>
+                  <div class="flex items-center gap-2 font-semibold">
+                    <input
+                      type="checkbox"
+                      id="Asr"
+                      name="Event_Time"
+                      value="Stories"
+                      class="h-3 w-3 px-2"
+                      v-model="ramadanProgram.membership_type"
+                    />
+                    <label for="Asr" class="text-lg">Best Stories</label>
+                  </div>
+                  <div class="flex items-center gap-2 font-semibold">
+                    <input
+                      type="checkbox"
+                      id="Asr"
+                      name="Event_Time"
+                      value="Fiqh"
+                      class="h-3 w-3 px-2"
+                      v-model="ramadanProgram.membership_type"
+                    />
+                    <label for="Asr" class="text-lg">Fiqh of Fasting</label>
+                  </div>
+                  <div class="flex items-center gap-2 font-semibold">
+                    <input
+                      type="checkbox"
+                      id="Asr"
+                      name="Event_Time"
+                      value="Azkar"
+                      class="h-3 w-3 px-2"
+                      v-model="ramadanProgram.membership_type"
+                    />
+                    <label for="Asr" class="text-lg">Azkar Program</label>
+                  </div>
                 </div>
               </div>
             </div>
-
+  
             <div class="bg-white rounded-xl p-5 w-full">
               <p class="text-xl font-bold pt-2 pb-2">
                 Membership Type<span class="text-red-600">*</span>
@@ -293,34 +341,64 @@
                   </SelectContent>
                 </Select>
                 <button
+                  type="submit"
                   class="w-[350px] h-[45px] rounded-2xl bg-emerald-800 text-white font-bold mx-auto"
                 >
                   Apply
                 </button>
+  
               </div>
             </div>
-          </div>
-          
+
+          </form>
+
         </div>
-      </DefaultLayout>
-    </div>
-  </template>
-  
-  <script setup>
-  import DefaultLayout from '/src/layouts/DefaultLayout.vue'
-  import Card from '/src/components/cardSection.vue'
-  import RegistrationMore from '/src/components/RgistrationMore.vue'
-  
-  import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue
-  } from '/components/ui/select'
-  </script>
-  
-  <style lang="scss" scoped></style>
-  
+      </div>
+    </DefaultLayout>
+  </div>
+</template>
+
+<script setup>
+import DefaultLayout from '/src/layouts/DefaultLayout.vue'
+import Card from '/src/components/cardSection.vue'
+import RegistrationMore from '/src/components/RgistrationMore.vue'
+import { ref } from 'vue'
+
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue
+} from '/components/ui/select'
+
+const ramadanProgram = ref({
+  membership_type: {},
+  first_name: '',
+  last_name: '',
+  email: '',
+  phone_number: '',
+  address: '',
+  city: '',
+  state: '',
+  dob: '',
+  due: '',
+  donation: '',
+  policy_type: '',
+  card_first_name: '',
+  card_last_name: '',
+  card_date: '',
+  cvc: '',
+  country: ''
+})
+
+const ramadanProgramSubmission = () => {
+
+}
+
+
+</script>
+
+<style lang="scss" scoped></style>
