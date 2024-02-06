@@ -181,7 +181,7 @@
                       <!-- <MenubarItem> -->
                         <MenubarSub>
                   <MenubarSubTrigger class="px-1 font-bold">
-                      <p href="" class=" w-full">Volunteer Services</p>
+                      <p class=" w-full">Volunteer Services</p>
                     </MenubarSubTrigger>
                     <MenubarSubContent>
                         <MenubarItem>
@@ -329,15 +329,34 @@
             <MenubarTrigger class="px-1 font-bold">Login
               <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
             </MenubarTrigger>
-            <MenubarContent>
-              <MenubarItem>
-
+              <MenubarContent>
+                <MenubarItem>
                   <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Member Login</router-link>
                 </MenubarItem>
                 <MenubarItem>
-                  <router-link to="/Signup" class=" w-full hover:pl-5 duration-300 font-semibold">Admin Login</router-link>
+                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Admin Login</router-link>
                 </MenubarItem>
-
+                <MenubarItem>
+                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Social Service Login</router-link>
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Youth Management Login</router-link>
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Finance Login</router-link>
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Education Login</router-link>
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Supply Chain Management Login</router-link>
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">HR Login</router-link>
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Operations Login</router-link>
+                </MenubarItem>
               </MenubarContent>
             </MenubarMenu>
           <div class="flex items-center justify-between gap-2 text-white font-bold text-sm">

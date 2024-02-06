@@ -1,6 +1,6 @@
 <template>
     <Default-Layout>
-        <div class="w-full h-screen flex justify-center flex-row-reverse gap-4 items-center bg-slate-50">
+        <div class="w-full pt-[120px] 2xl:h-screen py-[50px] 2xl:py-[0px] flex justify-center flex-row-reverse gap-4 items-center bg-slate-50">
             <form @submit.prevent="login(user)">
                 <div class="max-h-[750px] w-[600px] bg-[#ffffff] px-5 py-10 rounded-lg shadow-md">
                     <img src="/src/assets/image/common/n1.png" alt="" class="w-48 m-auto">
