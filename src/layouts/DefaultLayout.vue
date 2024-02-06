@@ -24,9 +24,10 @@ import {useStore} from '../stores/store.ts'
 import {useAuthStore} from '../stores/AuthStore.ts'
 const store = useStore()
 const authStore = useAuthStore()
+
 const gatprayerTime = async () => {
   const { data } = await api().get('get-prayer-time')
-    // console.log(data)
+    console.log(data)
     store.prayertime = data
 }
 // const getCategories =async() =>{
@@ -40,10 +41,10 @@ const gatprayerTime = async () => {
 //     store.category = categoryList
 // }
 
-const gatServiceList = async () => {
+const getServiceList = async () => {
   const { data } = await api().get('get-service-list')
   store.serviceList = data
-  console.log(store.serviceList[0])
+  // console.log(store.serviceList[0])
 }
 const getEvent=async()=>{
     const { data } = await api().get('get-event')
@@ -55,11 +56,17 @@ const getAnnouncement=async()=>{
     // console.log(data)
     store.announcement = data
 }
+const getDonationType=async()=>{
+    const { data } = await api().get('all-donation-types')
+    // console.log(data)
+    store.donationType = data
+}
 onMounted(async() => {
   gatprayerTime()
   getEvent()
   getAnnouncement()
-  gatServiceList()
+  getServiceList()
+  getDonationType()
 })
 
 </script>
