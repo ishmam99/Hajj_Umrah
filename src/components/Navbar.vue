@@ -157,8 +157,9 @@
                 <!-- <a href="/more/registration/memebship_registration" class=" w-full hover:pl-5 duration-300 font-semibold">Membership Registration</a> -->
               </MenubarItem>
               <MenubarItem>
-                <router-link to="/boardmemberlogin" class=" w-full hover:pl-5 duration-300 font-semibold">Board Member Login</router-link>
                 <!-- <router-link to="/boardmemberlogin" class=" w-full hover:pl-5 duration-300 font-semibold">Board Member Login</router-link> -->
+                <!-- <router-link to="/boardmemberlogin" class=" w-full hover:pl-5 duration-300 font-semibold">Board Member Login</router-link> -->
+                <a href="https://masjid.islamicdigitallane.com/login" target="_blank" class=" w-full hover:pl-5 duration-300 font-semibold">Board Member Login</a>
               </MenubarItem>
             </MenubarContent>
           </MenubarMenu>

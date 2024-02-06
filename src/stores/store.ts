@@ -6,6 +6,7 @@ export const useStore = defineStore( 'store',{
         event: [],  
         announcement: [],
         serviceList:[],
+        donationType:[],
     }),
     actions:{
         
