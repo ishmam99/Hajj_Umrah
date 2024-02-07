@@ -1,6 +1,8 @@
 <template>
     <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover  w-1/4 h-screen sticky top-[80px]">
         <div class="  bg-[#e1f2ff9a]  p-5 h-full flex flex-col gap-3 font-semibold text-lg">
+            <p class="text-2xl font-bold text-[#2e318a]">Member Dashboard</p>
+            <p class="text-xl font-bold">Welcome Mr. Rahim</p>
             <router-link to="/Membar_Dashboard" class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z"></path></svg>Profile</router-link>
 
             <router-link to="/Membar_Event_History" class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"></path></svg>Event</router-link>
@@ -28,8 +30,9 @@
 <script setup>
 import { watch,ref } from 'vue'
 import { useAuthStore } from '/src/stores/AuthStore'
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
+const route = useRoute()
 const router = useRouter();
 const store = useAuthStore()
 
@@ -44,6 +47,6 @@ watch(() => store.isAuthenticated, (newIsAuthenticated) => {
 </script>
 <style scoped>
 .router-link-active{
- color: rgb(20, 123, 99);
+ color: #2e318a;
 }
 </style>
