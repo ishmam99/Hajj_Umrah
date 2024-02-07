@@ -286,7 +286,7 @@ const router = createRouter({
     {
       path: '/Admin_Dashboard',
       name: 'Admin_Dashboard',
-      component: () => import('../views/Member/MembarDashbord.vue'),
+      component: () => import('../views/Admin/AdminDashboard.vue'),
     },
     {
       path: '/Social_Service_Login',
@@ -297,6 +297,16 @@ const router = createRouter({
       path: '/Social_Service_Dashboard',
       name: 'Social_Dashboard',
       component: () => import('../views/Social/SocialDashboard.vue'),
+    },
+    {
+      path: '/Social_Service_Event_List',
+      name: 'Social_Service_Event_List',
+      component: () => import('../views/Social/SocialManagementEventList.vue'),
+    },
+    {
+      path: '/Social_Service_Event_Create',
+      name: 'Social_Service_Event_Create',
+      component: () => import('../views/Social/SocialManegementEventCreate.vue'),
     },
     {
       path: '/Youth_Management_Login',
