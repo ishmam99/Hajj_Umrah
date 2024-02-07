@@ -300,8 +300,13 @@
                       </div>
                     </div>
                   </div>
+                  <button
+                    class="w-[350px] h-[45px] rounded-2xl bg-[#23646dc6] text-white font-bold flex items-center justify-center mx-auto"
+                  >
+                    Apply
+                  </button>
                 </div>
-                <div class="bg-white rounded-xl p-5 w-full">
+                <!-- <div class="bg-white rounded-xl p-5 w-full">
                   <div class="py-3 flex flex-col gap-5 items-c">
                     <p class="text-lg font-bold">Credit Card Details</p>
                     <div class="flex gap-10">
@@ -354,13 +359,9 @@
                         </SelectGroup>
                       </SelectContent>
                     </Select>
-                    <button
-                      class="w-[350px] h-[45px] rounded-2xl bg-[#23646dc6] text-white font-bold mx-auto"
-                    >
-                      Apply
-                    </button>
+                    
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
