@@ -1,6 +1,6 @@
 <template>
     <DefaultLayout>
-        <div class=" bg-slate-50">
+        <!-- <div class=" bg-slate-50">
             <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover">
                 <div class="bg-[#11295d9a]">
                   <div class="bg-[#00000057] rounded-none pt-20">
@@ -18,9 +18,9 @@
                   </div>
                 </div>
               </div>
-        </div>
-        <div class=" bg-slate-50">
-            <div class="pt-10 flex flex-row-reverse justify-between gap-5 px-8 pb-10">
+        </div> -->
+        <div class="">
+            <div class="pt-[80px] flex flex-row-reverse justify-between">
                 <MembarProfile />
                 <MembarSidebar/>
             </div>

@@ -1,7 +1,7 @@
 <template>
     <DefaultLayout>
         <div class=" bg-slate-50">
-            <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover">
+            <!-- <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover">
                 <div class="bg-[#3f1e0d9a]">
                   <div class="bg-[#00000057] rounded-none pt-20">
                     <div class=""></div>
@@ -17,8 +17,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            <div class="pt-10 flex justify-between gap-5 px-8 pb-10">
+              </div> -->
+            <div class="pt-20 flex justify-between">
                 <MembarSidebar/>
                 <div class="px-[20px] bg-white py-5 rounded-md shadow-md w-3/4">
                     <!-- <p  class="text-2xl text-yellow-600 text-center font-bold">Your Payment History</p> -->

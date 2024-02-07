@@ -2,7 +2,7 @@
     <DefaultLayout>
         
         <div class=" bg-slate-50">
-            <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover">
+            <!-- <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover">
                 <div class="bg-[#4025779a]">
                   <div class="bg-[#00000057] rounded-none pt-20">
                     <div class=""></div>
@@ -18,10 +18,10 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            <div class="pt-10 flex justify-between gap-5 px-8 pb-10">
+              </div> -->
+            <div class="pt-[80px] flex justify-between">
                 <MembarSidebar/>
-                <div class="px-[5%] bg-white py-5 rounded-md shadow-md w-3/4">
+                <div class="px-[5%] bg-white py-5  w-3/4">
                     <div class="flex justify-between items-center pb-4 border-b">
                         <p class="text-2xl text-yellow-600 font-semibold pb-2 ">See All Event</p>
                         <router-link to="" class="px-5 py-2 rounded-md bg-yellow-600 text-white">View All</router-link>

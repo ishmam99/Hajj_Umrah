@@ -1,7 +1,7 @@
 <template>
     <DefaultLayout>
         <div class=" bg-slate-50">
-            <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover">
+            <!-- <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover">
                 <div class="bg-[#11295d9a]">
                   <div class="bg-[#00000057] rounded-none pt-20">
                     <div class=""></div>
@@ -17,10 +17,10 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
         </div>
         <div class=" bg-slate-50">
-            <div class="pt-10 flex flex-row-reverse justify-between gap-5 px-8 pb-10">
+            <div class="pt-20 flex flex-row-reverse justify-between">
                 <div class="px-[5%] flex flex-col items-center justify-center gap-3 bg-white py-5 pb-5 rounded-md shadow-md w-3/4">
                     <p  class="text-2xl text-[#11295dc7] text-center font-bold pb-8">Change Password</p>
                     <input type="password" placeholder="Old Password" class="w-3/4 rounded-md px-2 py-1.5 text-sm border border-gray-500">
