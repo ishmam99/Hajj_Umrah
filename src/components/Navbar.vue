@@ -277,7 +277,7 @@
             </MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
-                <router-link to="/login" class=" w-full hover:pl-5 duration-300 font-semibold">Employee Login</router-link>
+                <router-link to="/Member_Login" class=" w-full hover:pl-5 duration-300 font-semibold">Employee Login</router-link>
               </MenubarItem>
               <MenubarItem>
                 <router-link to="/contact/contact_us" class=" w-full hover:pl-5 duration-300 font-semibold">HR Management</router-link>
@@ -317,7 +317,7 @@
             <MenubarContent>
               <MenubarItem>
 
-                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Login</router-link>
+                  <router-link to="/Member_Login" class=" w-full hover:pl-5 duration-300 font-semibold">Login</router-link>
                 </MenubarItem>
                 <MenubarItem>
                   <router-link to="/Signup" class=" w-full hover:pl-5 duration-300 font-semibold">Sign up</router-link>
@@ -331,31 +331,31 @@
             </MenubarTrigger>
               <MenubarContent>
                 <MenubarItem>
-                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Member Login</router-link>
+                  <router-link to="/Member_Login" class=" w-full hover:pl-5 duration-300 font-semibold">Member Login</router-link>
                 </MenubarItem>
                 <MenubarItem>
-                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Admin Login</router-link>
+                  <router-link to="/Admin_Login" class=" w-full hover:pl-5 duration-300 font-semibold">Admin Login</router-link>
                 </MenubarItem>
                 <MenubarItem>
-                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Social Service Login</router-link>
+                  <router-link to="/Social_Service_Login" class=" w-full hover:pl-5 duration-300 font-semibold">Social Service Login</router-link>
                 </MenubarItem>
                 <MenubarItem>
-                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Youth Management Login</router-link>
+                  <router-link to="/Youth_Management_Login" class=" w-full hover:pl-5 duration-300 font-semibold">Youth Management Login</router-link>
                 </MenubarItem>
                 <MenubarItem>
-                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Finance Login</router-link>
+                  <router-link to="/Finance_Login" class=" w-full hover:pl-5 duration-300 font-semibold">Finance Login</router-link>
                 </MenubarItem>
                 <MenubarItem>
-                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Education Login</router-link>
+                  <router-link to="/Education_Login" class=" w-full hover:pl-5 duration-300 font-semibold">Education Login</router-link>
                 </MenubarItem>
                 <MenubarItem>
-                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Supply Chain Management Login</router-link>
+                  <router-link to="/Supply_Chain_Management_Login" class=" w-full hover:pl-5 duration-300 font-semibold">Supply Chain Management Login</router-link>
                 </MenubarItem>
                 <MenubarItem>
-                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">HR Login</router-link>
+                  <router-link to="/HR_Login" class=" w-full hover:pl-5 duration-300 font-semibold">HR Login</router-link>
                 </MenubarItem>
                 <MenubarItem>
-                  <router-link to="/Login" class=" w-full hover:pl-5 duration-300 font-semibold">Operations Login</router-link>
+                  <router-link to="/Operation_Login" class=" w-full hover:pl-5 duration-300 font-semibold">Operations Login</router-link>
                 </MenubarItem>
               </MenubarContent>
             </MenubarMenu>

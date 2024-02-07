@@ -1,9 +1,10 @@
 <template>
     <Default-Layout>
         <div class="w-full pt-[120px] 2xl:h-screen py-[50px] 2xl:py-[0px] flex justify-center flex-row-reverse gap-4 items-center bg-slate-50">
-            <form @submit.prevent="login(user)">
-                <div class="max-h-[750px] w-[600px] bg-[#ffffff] px-5 py-10 rounded-lg shadow-md">
-                    <img src="/src/assets/image/common/n1.png" alt="" class="w-48 m-auto">
+            <form @submit.prevent="login(u)">
+                <div class="h-[550px] w-[500px] bg-[#ffffff] px-5 py-10 rounded-lg shadow-md">
+                    <img src="/src/assets/image/common/n1.png" alt="" class="w-20 m-auto">
+                    <p class="text-2xl font-bold text-center text-[#0b2036]">{{ route.name }}</p>
                     <p class="font-semibold py-1.5">Email</p>
                     <input @change="error=false" v-model="data.email" type="email" class="border border-gray-300 focus:outline-yellow-600 rounded-md w-full py-1.5 px-3">
                     <p class="font-semibold py-1.5">Password</p>
@@ -28,7 +29,7 @@
             </form>
 
             <div>
-                <img src="../../assets/image/common/n21.avif" alt="" class=" bg-white rounded-lg">
+                <img src="../../assets/image/common/n21.avif" alt="" class=" bg-white rounded-lg h-[550px] w-[500px]">
             </div>
         </div>
     </Default-Layout>
@@ -38,10 +39,11 @@
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import { useAuthStore } from '@/stores/AuthStore';
 import { ref,onMounted } from 'vue'
-import { useRouter } from 'vue-router';
+import { useRoute , useRouter } from 'vue-router'
 import Tilt from 'vanilla-tilt-vue';
 
-const router = useRouter();
+const route = useRoute();
+const router = useRouter()
 const error= ref(false)
 
 const data = ref({
@@ -55,12 +57,47 @@ const login = () => {
         alert('Email or password is missing')
     }
     else {
-        let check = authStore.userList.find((user) => 
-        user.email == data.value.email)
+        const user = authStore.userList.find((u) => 
+        u.email == data.value.email)
         // console.log(check , data.value)
-        if (check && check.password==data.value.password) {
+        if (user && user.password==data.value.password) {
             authStore.login(data.value);
-            router.push({ name: 'Membar_Dashboard' });
+            if (user.role == 'member') {
+                router.push({ name: 'Membar_Dashboard' });
+                store.authUser = user 
+            }
+            else if (user.role == 'admin') {
+                router.push({ name: 'Admin_Dashboard' });
+                store.authUser = user 
+            }
+            else if (user.role == 'social') {
+                router.push({ name: 'Social_Dashboard' });
+                store.authUser = user 
+            }
+            else if (user.role == 'youth') {
+                router.push({ name: 'Youth_Dashboard' });
+                store.authUser = user 
+            }
+            else if (user.role == 'finance') {
+                router.push({ name: 'Finance_Dashboard' });
+                store.authUser = user 
+            }
+            else if (user.role == 'education') {
+                router.push({ name: 'Education_Dashboard' });
+                store.authUser = user 
+            }
+            else if (user.role == 'supply') {
+                router.push({ name: 'Supply_Dashboard' });
+                store.authUser = user 
+            }
+            else if (user.role == 'hr') {
+                router.push({ name: 'HR_Dashboard' });
+                store.authUser = user 
+            }
+            else if (user.role == 'operation') {
+                router.push({ name: 'Operation_Dashboard' });
+                store.authUser = user 
+            }
         }
         else
         error.value=true
