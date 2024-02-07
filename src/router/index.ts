@@ -356,7 +356,7 @@ const router = createRouter({
     {
       path: '/Opration_Dashboard',
       name: 'Operation_Dashboard',
-      component: () => import('../views/Member/MembarDashbord.vue'),
+      component: () => import('../views/Operation/MembarDashbord.vue'),
     },
     {
       path: '/Signup',
