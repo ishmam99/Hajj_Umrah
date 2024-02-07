@@ -296,7 +296,7 @@ const router = createRouter({
     {
       path: '/Social_Service_Dashboard',
       name: 'Social_Dashboard',
-      component: () => import('../views/Member/MembarDashbord.vue'),
+      component: () => import('../views/Social/SocialDashboard.vue'),
     },
     {
       path: '/Youth_Management_Login',
@@ -306,7 +306,7 @@ const router = createRouter({
     {
       path: '/Youth_Management_Dashboard',
       name: 'Youth_Dashboard',
-      component: () => import('../views/Member/MembarDashbord.vue'),
+      component: () => import('../views/Youth/YouthDashborad.vue'),
     },
     {
       path: '/Finance_Login',
@@ -316,7 +316,7 @@ const router = createRouter({
     {
       path: '/Finance_Dashboard',
       name: 'Finance_Dashboard',
-      component: () => import('../views/Member/MembarDashbord.vue'),
+      component: () => import('../views/Finance/FinanceDashboard.vue'),
     },
     {
       path: '/Education_Login',
@@ -335,8 +335,8 @@ const router = createRouter({
     },
     {
       path: '/Supply_Chain_Management_Chain_Management_Dashboard',
-      name: 'Supply_Chain_Management_Dashboard',
-      component: () => import('../views/Member/MembarDashbord.vue'),
+      name: 'Supply_Dashboard',
+      component: () => import('../views/Supply/SupplyDashbord.vue'),
     },
     {
       path: '/HR_Login',
@@ -346,7 +346,7 @@ const router = createRouter({
     {
       path: '/HR_Dashboard',
       name: 'HR_Dashboard',
-      component: () => import('../views/Member/MembarDashbord.vue'),
+      component: () => import('../views/Hr/HrDashbord.vue'),
     },
     {
       path: '/Operation_Login',
@@ -356,7 +356,12 @@ const router = createRouter({
     {
       path: '/Opration_Dashboard',
       name: 'Operation_Dashboard',
-      component: () => import('../views/Operation/MembarDashbord.vue'),
+      component: () => import('../views/Operation/OprationDashbord.vue'),
+    },
+    {
+      path: '/Opration_Meeting_Create',
+      name: 'Opration_Meeting_Create',
+      component: () => import('../views/Operation/MeetingCreate.vue'),
     },
     {
       path: '/Signup',

@@ -21,15 +21,15 @@
         </div> -->
         <div class="">
             <div class="pt-[80px] flex flex-row-reverse justify-between">
-                <OperationProfile />
-                <OperationSidebar/>
+                <SupplyProfile />
+                <SupplySidebar/>
             </div>
         </div>
     </DefaultLayout>
 
 </template>
 <script setup>
-import OperationSidebar from '/src/views/Operation/OperationSidevar.vue'
+import SupplySidebar from '/src/views/Supply/SupplySidevar.vue'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import OperationProfile from '/src/views/Operation/Profile/OperationProfile.vue'
+import SupplyProfile from '/src/views/Supply/Profile/SupplyProfile.vue'
 </script>

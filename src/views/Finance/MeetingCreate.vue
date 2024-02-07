@@ -21,7 +21,8 @@
             <div class="pt-[80px] flex justify-between">
                 <MembarSidebar/>
                 <div class="px-5 bg-white py-5 w-3/4">
-                    <div class="grid grid-cols-1 gap-5">
+                  <p class="text-2xl font-bold py-3 border-b">Imam Application List</p>
+                    <div class="grid grid-cols-1 gap-5 mt-5">
                         <div class="flex justify-between bg-slate-100 p-5 rounded-md shadow-md">
                             <div class="flex gap-5">
                                 <img src="/src/assets/image/home/download.jpeg" alt="" class="h-[90px] w-[90px] rounded-full border">
