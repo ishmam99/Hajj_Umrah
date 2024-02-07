@@ -137,9 +137,15 @@ const router = createRouter({
     },
 
     {
-      path: '/activity/event',
-      name: 'activity/event',
-      component: () => import('../views/Activity/Event.vue')
+      path: '/employees/employeeLogin',
+      name: 'Employee Login',
+      component: () => import('../views/Employees/EmployeeLogin.vue')
+    },
+
+    {
+      path: '/HR_Login',
+      name: 'HR_Login',
+      component: () => import('../views/Employees/HR_Login.vue')
     },
     {
       path: '/activity/events',
@@ -474,6 +480,16 @@ const router = createRouter({
       path: '/Supply_Chain/customer',
       name: 'customer',
       component: () => import('../views/SupplyChain/Customer.vue')
+    },
+    {
+      path: '/Supply_Chain/customerLogin',
+      name: 'Customer Login',
+      component: () => import('../views/SupplyChain/CustomerLogin.vue')
+    },
+    {
+      path: '/Supply_Chain/supplierLogin',
+      name: 'Supplier Login',
+      component: () => import('../views/SupplyChain/SupplierLogin.vue')
     },
 
     
