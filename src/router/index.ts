@@ -408,6 +408,18 @@ const router = createRouter({
       meta: { layout: LcFrntPageLayout }
     },
     {
+      path: '/learning-center/programs',
+      name: 'LearningCenterPrograms',
+      component: () => import('../views/learning-center/modules/website/Programs.vue'),
+      meta: { layout: LcFrntPageLayout }
+    },
+    {
+      path: '/learning-center/all-courses',
+      name: 'LearningCenterCourses',
+      component: () => import('../views/learning-center/modules/website/AllCourses.vue'),
+      meta: { layout: LcFrntPageLayout }
+    },
+    {
       path: '/management-login',
       name: 'ManagementLoginPage',
       component: () => import('../auth/ManagementLoginPage.vue'),

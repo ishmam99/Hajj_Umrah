@@ -25,7 +25,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="display-center">
+  <div class="display-center m">
     <div class="teacher-verification">
       <div class="verification-content">
         <div class="verification-header text-center">

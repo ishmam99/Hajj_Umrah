@@ -51,8 +51,8 @@ async function registration() {
       formData,
       {
         headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+          'Content-Type': 'multipart/form-data'
+        }
       }
       // {
       //       name: name.value,
@@ -70,7 +70,7 @@ async function registration() {
           icon: 'success',
           title: response.data.message,
           showConfirmButton: false,
-          timer: 1500,
+          timer: 1500
         })
         localStorage.setItem('token', response.data.data.token)
         localStorage.setItem('user', JSON.stringify(response.data.data.user))
@@ -83,7 +83,7 @@ async function registration() {
           icon: 'error',
           title: 'Something went wrong',
           showConfirmButton: false,
-          timer: 1500,
+          timer: 1500
         })
       }
     })
@@ -96,23 +96,19 @@ async function registration() {
 </script>
 
 <template>
-  <div class="action-panel py-4">
+  <div class="action-panel py-4 mt-14">
     <h2 class="panel-title text-3xl">Signup as a Teacher</h2>
 
     <div class="form mt-4">
       <div class="input-group">
         <label for="">Name <span class="text-red-500">*</span></label>
         <input v-model="name" type="text" />
-        <span class="error-message" v-if="errorList.name">{{
-          errorList.name[0]
-        }}</span>
+        <span class="error-message" v-if="errorList.name">{{ errorList.name[0] }}</span>
       </div>
       <div class="input-group">
         <label for="">Email <span class="text-red-500">*</span></label>
         <input v-model="email" type="text" />
-        <span class="error-message" v-if="errorList.email">{{
-          errorList.email[0]
-        }}</span>
+        <span class="error-message" v-if="errorList.email">{{ errorList.email[0] }}</span>
       </div>
       <div class="input-group">
         <label for="gender">Gender</label>
@@ -122,9 +118,7 @@ async function registration() {
         </select>
       </div>
       <div class="input-group">
-        <label for="phone_no"
-          >Phone Number <span class="text-red-500">*</span></label
-        >
+        <label for="phone_no">Phone Number <span class="text-red-500">*</span></label>
         <input v-model="phone_no" type="text" id="phone_no" />
       </div>
 
@@ -140,29 +134,18 @@ async function registration() {
       <div class="input-group">
         <label for="">Password <span class="text-red-500">*</span></label>
         <input v-model="password" type="password" />
-        <span class="error-message" v-if="errorList.password">{{
-          errorList.password[0]
-        }}</span>
+        <span class="error-message" v-if="errorList.password">{{ errorList.password[0] }}</span>
       </div>
       <div class="input-group">
-        <label for=""
-          >Confirm password <span class="text-red-500">*</span></label
-        >
+        <label for="">Confirm password <span class="text-red-500">*</span></label>
         <input v-model="password_confirmation" type="password" />
         <span class="error-message" v-if="errorList.password_confirmation">{{
           errorList.password_confirmation[0]
         }}</span>
       </div>
       <div class="input-group">
-        <label for="resume"
-          >Upload Resume (PDF or DOC) <span class="text-red-500">*</span></label
-        >
-        <input
-          type="file"
-          id="resume"
-          ref="resumeInput"
-          @change="handleFileChange"
-        />
+        <label for="resume">Upload Resume (PDF or DOC) <span class="text-red-500">*</span></label>
+        <input type="file" id="resume" ref="resumeInput" @change="handleFileChange" />
       </div>
 
       <div class="input-group">

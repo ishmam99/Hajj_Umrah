@@ -38,25 +38,24 @@ onUnmounted(() => {
       <img src="@/assets/images/area/banner.jpg" alt="" srcset="" />
     </div>
 
-    <div class="top-areas">
+    <div class="category-section">
       <div class="title">
-        <p>Areas of Study</p>
+        <p class="title">New Released Programs</p>
         <!-- <router-link class="view-all" to="/">View All</router-link> -->
       </div>
-      <p class="text-lg">Islamic digital lane offering courses in the following area of studies:</p>
 
-      <div class="list mt-4">
+      <div v-if="courseStore.newReleasedProgramList" class="list">
         <router-link
-          v-for="area in getAreas"
-          :key="area"
-          :to="'/learning-center/areas/' + area.id"
+          :to="'/learning-center/programs/' + program.id"
+          v-for="program in courseStore.newReleasedProgramList"
+          :key="program"
           class="item"
-          >{{ area.title }}</router-link
         >
+          <img src="@/assets/images/category/cat-thumb.png" alt="" srcset="" />
+          <div class="cat-title">{{ program.name }}</div>
+        </router-link>
       </div>
     </div>
-
-   
   </div>
 </template>
 

@@ -1,10 +1,11 @@
 <script setup>
 import Header from '/src/views/learning-center/layouts/website/organs/HeaderLayout.vue'
+import DefaultLayout from '@/layouts/DefaultLayout.vue'
 </script>
 
 <template>
-    <Header />
-    <div class="auth-content">
+   <DefaultLayout>
+    <div class="auth-content mt-14">
       <div class="banner">
 
       </div>
@@ -12,6 +13,7 @@ import Header from '/src/views/learning-center/layouts/website/organs/HeaderLayo
         <slot />
       </div>
     </div>
+    </DefaultLayout>
 </template>
 
 <style scoped>

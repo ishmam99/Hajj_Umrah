@@ -38,24 +38,55 @@ onUnmounted(() => {
       <img src="@/assets/images/area/banner.jpg" alt="" srcset="" />
     </div>
 
-    <div class="top-areas">
+
+    <div class="top-courses">
       <div class="title">
-        <p>Areas of Study</p>
+        <p>Top selling courses</p>
         <!-- <router-link class="view-all" to="/">View All</router-link> -->
       </div>
-      <p class="text-lg">Islamic digital lane offering courses in the following area of studies:</p>
 
-      <div class="list mt-4">
-        <router-link
-          v-for="area in getAreas"
-          :key="area"
-          :to="'/learning-center/areas/' + area.id"
-          class="item"
-          >{{ area.title }}</router-link
-        >
+      <div class="slider">
+        <div v-if="courseStore.topSellingCourseList.success == true">
+          <CourseCard
+            :link="'/learning-center/course/'"
+            :dataArray="courseStore.topSellingCourseList.courses"
+          />
+        </div>
+        <div v-else>No Data found</div>
       </div>
     </div>
+    <div class="new-courses">
+      <div class="title">
+        <p class="title">Featured Courses</p>
+        <!-- <router-link class="view-all" to="/">View All</router-link> -->
+      </div>
 
+      <div class="slider">
+        <div v-if="courseStore.featuredCourseList != ''">
+          <CourseCard
+            :link="'/learning-center/course/'"
+            :dataArray="courseStore.featuredCourseList"
+          />
+        </div>
+        <div v-else>No Data found</div>
+      </div>
+    </div>
+    <div class="new-courses">
+      <div class="title">
+        <p class="title">New Released Course</p>
+        <!-- <router-link class="view-all" to="/">View All</router-link> -->
+      </div>
+
+      <div class="slider">
+        <div v-if="courseStore.newReleasedCourseList.success == true">
+          <CourseCard
+            :link="'/learning-center/course/'"
+            :dataArray="courseStore.newReleasedCourseList.courses"
+          />
+        </div>
+        <div v-else>No Data found</div>
+      </div>
+    </div>
    
   </div>
 </template>
