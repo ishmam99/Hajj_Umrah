@@ -148,8 +148,13 @@ const router = createRouter({
       component: () => import('../views/Employees/HR_Login.vue')
     },
     {
+      path: '/activity/event',
+      name: 'Event',
+      component: () => import('../views/Activity/Event.vue')
+    },
+    {
       path: '/activity/events',
-      name: 'events',
+      name: 'Events',
       component: () => import('../views/Activity/Events.vue')
     },
     {
@@ -313,6 +318,16 @@ const router = createRouter({
       path: '/Social_Service_Event_Create',
       name: 'Social_Service_Event_Create',
       component: () => import('../views/Social/SocialManegementEventCreate.vue'),
+    },
+    {
+      path: '/Social_Gallery',
+      name: 'Social Gallery',
+      component: () => import('../views/Social/SocialGallery.vue'),
+    },
+    {
+      path: '/Social_Change_Password',
+      name: 'Social_Change_Password',
+      component: () => import('../views/Social/Profile/SocialChangePassword.vue'),
     },
     {
       path: '/Youth_Management_Login',

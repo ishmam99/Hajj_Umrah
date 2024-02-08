@@ -7,7 +7,7 @@
         </div>
         <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
             <p class="text-sm text-gray-500 pt-2">Email Address</p>
-            <p class="text-xl font-semibold pb-2">user@idl.com</p>
+            <p class="text-xl font-semibold pb-2">social@idl.com</p>
         </div>
         <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
             <p class="text-sm text-gray-500 pt-2">Phone Number</p>
