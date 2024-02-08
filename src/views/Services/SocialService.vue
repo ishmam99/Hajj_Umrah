@@ -1,9 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 ml-10">
-        <div class="bg-white">
-          <div class="flex items-center gap-2">
+      <div class="px-20 pt-20 mt-5 py-5 bg-indigo-900 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+        <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+          <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -17,17 +17,18 @@
             </svg>
             <p>Home</p>
             <p>/ Services</p>
-            <p class="text-yellow-500">/ Social Services</p>
+            <!-- <p>/ Volunteers</p> -->
+            <p class="text-indigo-900">/ Social Service</p>
           </div>
-          <div class="bg-white rounded-lg relative py-3">
-            <h1 class="text-yellow-500 text-4xl font-semibold">Social Services</h1>
+          <div class="rounded-lg flex items-center justify-center relative py-3">
+            <h1 class="text-indigo-900 text-4xl font-bold"> Social Service </h1>
             <div>
               <p></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
+      <div class="bg-gray-100 h-full px-20 pl-28 py-5 flex justify-between gap-5">
         <div class="space-y-8 w-3/4">
           <div class="bg-white px-8 py-5 mt-5 gap-5 rounded-lg">
             <p>
@@ -54,15 +55,15 @@
             </div> -->
             <div class="mt-5">
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <button class="p-4 bg-lime-600 text-white rounded-xl">Medical Clinic</button>
-                <button class="p-4 bg-lime-600 text-white rounded-xl">
+                <button class="p-4 bg-indigo-900 text-white rounded-xl">Medical Clinic</button>
+                <button class="p-4 bg-indigo-900 text-white rounded-xl">
                   Visiting and helping refugees
                 </button>
-                <button class="p-4 bg-lime-600 text-white rounded-xl">Food Bank</button>
-                <button class="p-4 bg-lime-600 text-white rounded-xl">
+                <button class="p-4 bg-indigo-900 text-white rounded-xl">Food Bank</button>
+                <button class="p-4 bg-indigo-900 text-white rounded-xl">
                   Distribution of Zakat funds
                 </button>
-                <button class="p-4 bg-lime-600 text-white rounded-xl">
+                <button class="p-4 bg-indigo-900 text-white rounded-xl">
                   Ansaar (Helpers) Program for reverts and newcomers
                 </button>
               </div>
@@ -115,125 +116,142 @@
                 </li>
               </ul>
             </div>
-            <div class="py-5 space-y-7 mt-5">
-              <div class="flex w-full gap-5">
-                <div class="relative mb-3 w-full">
-                  <input
-                    type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                    id="exampleFormControlInput50"
-                    value=""
-                  />
-                  <label
-                    for="exampleFormControlInput50"
-                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                    >First Name <span class="text-red-500">*</span>
-                  </label>
+            <form @submit.prevent="socialServiceFormApply()">
+                <div class="py-5 space-y-7 mt-5">
+                    <div class="flex w-full gap-5">
+                      <div class="relative pt-1 mb-3 w-full">
+                        <input
+                          type="text"
+                          class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                          id="exampleFormControlInput50"
+                          value=""
+                          v-model="socialServiceForm.FirstName"
+                        />
+                        <label
+                          for="exampleFormControlInput50"
+                          class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                          >First Name <span class="text-red-500">*</span>
+                        </label>
+                      </div>
+                      <div class="relative pt-1 mb-3 w-full">
+                        <input
+                          type="text"
+                          class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                          id="exampleFormControlInput50"
+                          value=""
+                          v-model="socialServiceForm.LastName"
+                        />
+                        <label
+                          for="exampleFormControlInput50"
+                          class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                          >Last Name <span class="text-red-500">*</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="relative pt-1 mb-3 w-full">
+                      <input
+                        type="date"
+                        class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                        id="exampleFormControlInput50"
+                        value=""
+                        v-model="socialServiceForm.Age"
+                      />
+                      <label
+                        for="exampleFormControlInput50"
+                        class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                        >Age <span class="text-red-500">*</span>
+                      </label>
+                    </div>
+                    <div class="relative pt-1 mb-3 w-full">
+                      <input
+                        type="email"
+                        class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                        id="exampleFormControlInput50"
+                        value=""
+                        v-model="socialServiceForm.Email"
+                      />
+                      <label
+                        for="exampleFormControlInput50"
+                        class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                        >Email <span class="text-red-500">*</span>
+                      </label>
+                    </div>
+                    <div class="relative pt-1 mb-3 w-full">
+                      <input
+                        type="tel"
+                        class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                        id="exampleFormControlInput50"
+                        value=""
+                        v-model="socialServiceForm.Phone"
+                      />
+                      <label
+                        for="exampleFormControlInput50"
+                        class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                        >Phone Number <span class="text-red-500">*</span>
+                      </label>
+                    </div>
+                    <p class="text-xl font-bold pt-2 pb-2">
+                      Volunteering For?<span class="text-red-600">*</span>
+                    </p>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="flex items-center gap-2 font-semibold">
+                        <input 
+                          v-model="socialServiceForm.Volunteering.account"
+                          id="Asr" type="checkbox" name="Event_Time" value="Accounting_(Finances)" class="h-3 w-3" />
+                        <label for="Dhur">Accounting (Finances)</label>
+                      </div>
+                      <div class="flex items-center gap-2 font-semibold">
+                        <input
+                            v-model="socialServiceForm.Volunteering.facility"
+                            type="checkbox" id="Asr" name="Event_Time" value="Facilities_Management" class="h-3 w-3" />
+                        <label for="Asr">Facilities Management</label>
+                      </div>
+                      <div class="flex items-center gap-2 font-semibold">
+                        <input 
+                            v-model="socialServiceForm.Volunteering.clinic"
+                            type="checkbox" id="Asr" name="Event_Time" value="IDL-Masjid_Medical_Clinic" class="h-3 w-3" />
+                        <label for="Asr">IDL-Masjid Medical Clinic</label>
+                      </div>
+                      <div class="flex items-center gap-2 font-semibold">
+                        <input
+                          v-model="socialServiceForm.Volunteering.social"
+                          type="checkbox" id="Dhur" name="Event_Time" value="Social_Services" class="h-3 w-3" />
+                        <label for="Dhur">Social Services</label>
+                      </div>
+                    </div>
                 </div>
-                <div class="relative mb-3 w-full">
-                  <input
-                    type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                    id="exampleFormControlInput50"
-                    value=""
-                  />
-                  <label
-                    for="exampleFormControlInput50"
-                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                    >Last Name <span class="text-red-500">*</span>
-                  </label>
+                <div class="bg-white px-0 py-5 pt-2 gap-5 rounded-lg">
+                  <p><span class="text-xl font-bold">Accounting Team</span></p>
+                  <p class="mt-5 font-semibold">
+                    The accounting team comprises of one or more members of IDL-Masjid's Board of
+                    Directors with the IDL-Masjid BOD Treasurer as the Liaison. IDL-Masjid BOD may need
+                    help with accounting tools and/or during special events such as Fundraising or
+                    pledge collection drives. Please sign up if you have an accounting/financial
+                    background or expertise.
+                  </p>
+                  <div>
+                    <p class="text-xl font-bold py-5">Question or Comments</p>
+                    <textarea
+                      v-model="socialServiceForm.Question"
+                      name=""
+                      id=""
+                      cols=""
+                      rows="4"
+                      placeholder="Ex:23"
+                      class="w-full p-3 rounded-md shadow-lg border border-black"
+                    ></textarea>
+                  </div>
+                  <div class="flex justify-center py-3">
+                    <button type="submit"
+
+                      class="w-full h-[45px] rounded-2xl bg-indigo-900 text-white font-bold mx-auto"
+                    >
+                      Submit
+                    </button>
+
+                  </div>
                 </div>
-              </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Age <span class="text-red-500">*</span>
-                </label>
-              </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Email <span class="text-red-500">*</span>
-                </label>
-              </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Phone Number <span class="text-red-500">*</span>
-                </label>
-              </div>
-              <p class="text-xl font-bold pt-2 pb-2">
-                Volunteering For?<span class="text-red-600">*</span>
-              </p>
-              <div class="grid grid-cols-2 gap-2">
-                <div class="flex items-center gap-2 font-semibold">
-                  <input id="Asr" type="checkbox" name="Event_Time" value="Dhur" class="h-3 w-3" />
-                  <label for="Dhur">Accounting (Finances)</label>
-                </div>
-                <div class="flex items-center gap-2 font-semibold">
-                  <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3" />
-                  <label for="Asr">Facilities Management</label>
-                </div>
-                <div class="flex items-center gap-2 font-semibold">
-                  <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3" />
-                  <label for="Asr">IDL-Masjid Medical Clinic</label>
-                </div>
-                <div class="flex items-center gap-2 font-semibold">
-                  <input type="checkbox" id="Dhur" name="Event_Time" value="Dhur" class="h-3 w-3" />
-                  <label for="Dhur">Social Services</label>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white px-0 py-5 pt-2 gap-5 rounded-lg">
-              <p><span class="text-xl font-bold">Accounting Team</span></p>
-              <p class="mt-5 font-semibold">
-                The accounting team comprises of one or more members of IDL-Masjid's Board of
-                Directors with the IDL-Masjid BOD Treasurer as the Liaison. IDL-Masjid BOD may need
-                help with accounting tools and/or during special events such as Fundraising or
-                pledge collection drives. Please sign up if you have an accounting/financial
-                background or expertise.
-              </p>
-              <div>
-                <p class="text-xl font-bold py-5">Question or Comments</p>
-                <textarea
-                  name=""
-                  id=""
-                  cols=""
-                  rows="4"
-                  placeholder="Ex:23"
-                  class="w-full p-3 rounded-md shadow-lg border border-black"
-                ></textarea>
-              </div>
-              <div class="flex justify-center py-3">
-                <button
-                  class="w-full h-[45px] rounded-2xl bg-yellow-600 text-white font-bold mx-auto"
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
-            <div class="bg-white px-8 py-5 pt-5 gap-5 rounded-lg"></div>
+            </form>
           </div>
         </div>
         <FacilitiesMore />
@@ -246,6 +264,27 @@
 import DefaultLayout from '../../layouts/DefaultLayout.vue'
 import Card from '../../components/CardSection.vue'
 import FacilitiesMore from '../../components/FacilitiesMore.vue'
+import {ref} from 'vue'
+const socialServiceForm = ref({
+  FirstName: '',
+  LastName: '',
+  Age: '',
+  Email: '',
+  Phone: '',
+  Volunteering: {},
+  Question :'',
+})
+
+const socialServiceFormApply = () => {
+  if (socialServiceForm.value.FirstName == '' || socialServiceForm.value.LastName =='' || socialServiceForm.value.Age == '' || socialServiceForm.value.Email == '' || socialServiceForm.value.Phone == '' || socialServiceForm.value.Volunteering == '' ) {
+    alert('you have a empty field')
+  }
+  else {
+    console.log(socialServiceForm.value)
+  }
+  
+}
+
 </script>
 
 <style lang="scss" scoped></style>

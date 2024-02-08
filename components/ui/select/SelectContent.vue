@@ -7,12 +7,13 @@ import {
   SelectViewport,
   useForwardPropsEmits,
 } from 'radix-vue'
-import { cn } from '/src/lib/utils'
+import { cn } from '@/lib/utils'
 
 const props = withDefaults(
   defineProps<SelectContentProps & { class?: string }>(), {
     position: 'popper',
     sideOffset: 4,
+    avoidCollisions: true,
   },
 )
 const emits = defineEmits<SelectContentEmits>()

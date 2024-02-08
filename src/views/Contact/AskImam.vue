@@ -1,9 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 ml-10">
-        <div class="bg-white">
-          <div class="flex items-center gap-2">
+      <div class="px-20 pt-20 mt-5 py-5 bg-lime-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+        <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+          <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -17,17 +17,18 @@
             </svg>
             <p>Home</p>
             <p>/ Contact</p>
-            <p class="text-yellow-500">/ Ask Imam</p>
+            <!-- <p>/ Volunteers</p> -->
+            <p class="text-lime-800">/ Ask Imam</p>
           </div>
-          <div class="bg-white rounded-lg relative py-3">
-            <h1 class="text-yellow-500 text-4xl font-semibold">Ask Imam</h1>
+          <div class="rounded-lg flex items-center justify-center relative py-3">
+            <h1 class="text-lime-800 text-4xl font-bold"> Ask Imam</h1>
             <div>
               <p></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
+      <div class="bg-gray-100 h-full px-20 pl-28 py-5 flex justify-between gap-5">
         <div class="space-y-8 w-3/4">
           <div class="bg-white px-8 py-5 pt-5 gap-5 rounded-lg">
             <!-- <p>Assalaamu Alaikum (Peace be with you),</p> -->
@@ -115,7 +116,7 @@
               </div>
               <div class="flex justify-center pt-5 pb-3">
                 <button
-                  class="w-full h-[45px] rounded-2xl bg-yellow-600 text-white font-bold mx-auto"
+                  class="w-full h-[45px] rounded-2xl bg-lime-800 text-white font-bold mx-auto"
                 >
                   Submit
                 </button>

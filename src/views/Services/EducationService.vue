@@ -1,9 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 ml-10">
-        <div class="bg-white">
-          <div class="flex items-center gap-2">
+      <div class="px-20 pt-20 mt-5 py-5 bg-cyan-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+        <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+          <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -17,17 +17,18 @@
             </svg>
             <p>Home</p>
             <p>/ Services</p>
-            <p class="text-yellow-500">/ Education Services</p>
+            <!-- <p>/ Volunteers</p> -->
+            <p class="text-cyan-800">/ Education Service</p>
           </div>
-          <div class="bg-white rounded-lg relative py-3">
-            <h1 class="text-yellow-500 text-4xl font-semibold">Facilities Services</h1>
+          <div class="rounded-lg flex items-center justify-center relative py-3">
+            <h1 class="text-cyan-800 text-4xl font-bold"> Education Service </h1>
             <div>
               <p></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
+      <div class="bg-gray-100 h-full px-20 pl-28 py-5 flex justify-between gap-5">
         <div class="space-y-8">
           <Card
             :headline="'Nikah Policy and Procedure'"
@@ -103,11 +104,11 @@
               </ul>
             </div>
           </div>
-          <div class="bg-white rounded-xl p-5 w-[800px]">
-            <h1 class="text-3xl underline font-bold text-gray-700 py-3">Nikah Service Request</h1>
+          <div class="bg-white rounded-xl p-5 w-3/4">
+            <h1 class="text-3xl underline font-bold text-gray-700 py-3">Education Service Request</h1>
             <p>
-              Please fill out this form to request for Nikah Service at IDL. Please select a date
-              when you would like to have the Nikah Service Performed. The date is not final until
+              Please fill out this form to request for Education Service at IDL. Please select a date
+              when you would like to have the Education Service Performed. The date is not final until
               approved by IDL administration.
             </p>
             <div class="py-5 space-y-7 mt-5">

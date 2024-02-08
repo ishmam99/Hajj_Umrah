@@ -1,9 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 ml-10">
-        <div class="bg-white">
-          <div class="flex items-center gap-2">
+      <div class="px-20 pt-20 mt-5 py-5 bg-cyan-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl">
+        <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
+          <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -17,10 +17,11 @@
             </svg>
             <p>Home</p>
             <p>/ Contact</p>
-            <p class="text-yellow-500">/ Contact Us</p>
+            <!-- <p>/ Volunteers</p> -->
+            <p class="text-cyan-800">/ Contact Us</p>
           </div>
-          <div class="bg-white rounded-lg relative py-3">
-            <h1 class="text-yellow-500 text-4xl font-semibold">Contact Us</h1>
+          <div class="rounded-lg flex items-center justify-center relative py-3">
+            <h1 class="text-cyan-800 text-4xl font-bold"> Contact Us</h1>
             <div>
               <p></p>
             </div>
@@ -30,15 +31,15 @@
       <div class="bg-gray-100 h-full px-20 pl-28 py-5 mt-10 flex justify-between gap-5">
         <div class="space-y-8 w-3/4">
 
-          <div class="bg-white px-8 py-5 pt-5 gap-5 rounded-lg">
+          <div class="bg-white px-8 py-5 gap-5 rounded-lg">
             <!-- <p>Assalaamu Alaikum (Peace be with you),</p> -->
             
-            <p class="mt-5 text-3xl font-bold text-yellow-500">
+            <p class="mt-5 text-3xl font-bold text-cyan-800">
               View on map
             </p>
 
             <div class="py-5 space-y-7 mt-5">
-              <div class="w-100% border-2 border-yellow-300 shadow-lg">
+              <div class="w-100% border-2 border-cyan-800 shadow-lg">
                     <iframe
                       width="100%"
                       height="400"
@@ -57,7 +58,7 @@
             <!-- <p>Assalaamu Alaikum (Peace be with you),</p> -->
 
             <div class="mt-5">
-             <p class="text-2xl text-yellow-500">Please fill out this form to ask the IDL Imam a question.</p> 
+             <p class="text-2xl text-cyan-800">Please fill out this form to ask the IDL Imam a question.</p> 
              <p>THIS INFORMATION IS
               CONFIDENTIAL BETWEEN YOU AND THE IMAM</p>
             </div>
@@ -141,7 +142,7 @@
               </div>
               <div class="flex justify-center pt-5 pb-3">
                 <button
-                  class="w-full h-[45px] rounded-2xl bg-yellow-600 text-white font-bold mx-auto"
+                  class="w-full h-[45px] rounded-2xl bg-cyan-800 text-white font-bold mx-auto"
                 >
                   Submit
                 </button>
@@ -160,7 +161,7 @@ import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import Card from '/src/components/CardSection.vue'
 import ContactMore from '/src/components/ContactMore.vue'
 
-const googleMapsEmbedUrl = "https://maps.google.com/maps?q=YOUR_LATITUDE,YOUR_LONGITUDE&z=15&output=embed";
+const googleMapsEmbedUrl = "https://maps.google.com/maps?q=31.106,-97.6475&z=15&output=embed";
 </script>
 
 <style lang="scss" scoped>
