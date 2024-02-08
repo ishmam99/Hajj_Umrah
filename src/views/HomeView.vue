@@ -7,6 +7,7 @@ import UpcommingEvent from '../components/HomeFolder/UpcommingEvent.vue'
 import Services from '../components/HomeFolder/services.vue'
 import LearningCenter from '../components/HomeFolder/learningCenter.vue'
 import FundComponent from '../components/HomeFolder/FundComponent.vue'
+import YearlyPlanner from '../components/HomeFolder/YearlyPlanner.vue'
 </script>
 
 <template>
@@ -72,6 +73,11 @@ import FundComponent from '../components/HomeFolder/FundComponent.vue'
     <UpcommingEvent />
     <Services />
     <LearningCenter />
+    <!-- Yearly Planner -->
+    <YearlyPlanner>
+    </YearlyPlanner>
+    
+    <!-- Gallery -->
     <div class="py-[30px] px-[5%] bg-white gap-5">
       <h1 class="text-3xl font-bold uppercase pb-3">Gallery</h1>
       <div class="grid grid-cols-2 gap-5 rounded-xl">
