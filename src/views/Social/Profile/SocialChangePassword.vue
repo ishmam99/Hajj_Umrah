@@ -36,6 +36,6 @@
 </template>
 <script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
-import SocialSidebar from '/src/views/Social/SocialSidevar.vue'
+import SocialSidebar from '/src/views/Social/SocialSidevar.vue';
 
 </script>

@@ -143,8 +143,8 @@ const router = createRouter({
     },
 
     {
-      path: '/HR_Login',
-      name: 'HR_Login',
+      path: '/HR-Login',
+      name: 'HR-Login',
       component: () => import('../views/Employees/HR_Login.vue')
     },
     {
@@ -289,6 +289,7 @@ const router = createRouter({
       name: 'Membar_Dashboard',
       component: () => import('../views/Member/MembarDashbord.vue'),
     },
+
     {
       path: '/Admin_Login',
       name: 'Admin Login',
@@ -299,6 +300,7 @@ const router = createRouter({
       name: 'Admin_Dashboard',
       component: () => import('../views/Admin/AdminDashboard.vue'),
     },
+
     {
       path: '/Social_Service_Login',
       name: 'Social Service Login',
@@ -315,9 +317,19 @@ const router = createRouter({
       component: () => import('../views/Social/SocialManagementEventList.vue'),
     },
     {
+      path: '/Social_Service_Project_List',
+      name: 'Social_Service_Project_List',
+      component: () => import('../views/Social/SocialManagementProjectList.vue'),
+    },
+    {
       path: '/Social_Service_Event_Create',
       name: 'Social_Service_Event_Create',
       component: () => import('../views/Social/SocialManegementEventCreate.vue'),
+    },
+    {
+      path: '/Social_Service_Project_Create',
+      name: 'Social_Service_Project_Create',
+      component: () => import('../views/Social/SocialManagementProjectCreate.vue'),
     },
     {
       path: '/Social_Gallery',
@@ -329,6 +341,7 @@ const router = createRouter({
       name: 'Social_Change_Password',
       component: () => import('../views/Social/Profile/SocialChangePassword.vue'),
     },
+
     {
       path: '/Youth_Management_Login',
       name: 'Youth Management Login',
@@ -340,6 +353,17 @@ const router = createRouter({
       component: () => import('../views/Youth/YouthDashborad.vue'),
     },
     {
+      path: '/Youth_Program_Create',
+      name: 'Youth_Program_Create',
+      component: () => import('../views/Youth/YouthProgramCreate.vue'),
+    },
+    {
+      path: '/Youth_Program_List',
+      name: 'Youth_Program_List',
+      component: () => import('../views/Youth/YouthProgramList.vue'),
+    },
+
+    {
       path: '/Finance_Login',
       name: 'Finance Login',
       component: () => import('../views/Auth/LogIn.vue'),
@@ -349,6 +373,32 @@ const router = createRouter({
       name: 'Finance_Dashboard',
       component: () => import('../views/Finance/FinanceDashboard.vue'),
     },
+    {
+      path: '/Finance_Accounts',
+      name: 'Finance_Accounts',
+      component: () => import('../views/Finance/Accounts.vue'),
+    },
+    {
+      path: '/Finance_Operational_Expenses',
+      name: 'Finance_Operational_Expenses',
+      component: () => import('../views/Finance/OperationalExpenses.vue'),
+    },
+    {
+      path: '/Finance_Project_Expenses',
+      name: 'Finance_Project_Expenses',
+      component: () => import('../views/Finance/ProjectExpenses.vue'),
+    },
+    {
+      path: '/Finance_Deposits',
+      name: 'Finance_Deposits',
+      component: () => import('../views/Finance/FinanceDeposits.vue'),
+    },
+    {
+      path: '/Finance_Donations',
+      name: 'Finance_Donations',
+      component: () => import('../views/Finance/Donations.vue'),
+    },
+
     {
       path: '/Education_Login',
       name: 'Education Login',
