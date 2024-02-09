@@ -348,6 +348,11 @@ const router = createRouter({
       component: () => import('../views/Auth/LogIn.vue'),
     },
     {
+      path: '/year_planner/:id',
+      name: 'year_planner',
+      component: () => import('../components/HomeFolder/YearlyPlannerDetails.vue'),
+    },
+    {
       path: '/Youth_Management_Dashboard',
       name: 'Youth_Dashboard',
       component: () => import('../views/Youth/YouthDashborad.vue'),
