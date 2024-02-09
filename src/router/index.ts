@@ -465,6 +465,11 @@ const router = createRouter({
       name: 'HR_Employment_Scheduling',
       component: () => import('../views/Hr/EmploymentScheduling.vue'),
     },
+    {
+      path: '/HR_Create_Job_Description',
+      name: 'HR_Create_Job_Description',
+      component: () => import('../views/Hr/CreateJobDescription.vue'),
+    },
 
     {
       path: '/Operation_Login',

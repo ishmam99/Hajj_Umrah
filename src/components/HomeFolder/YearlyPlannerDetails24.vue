@@ -1,7 +1,7 @@
 <template>
   <DefaultLayout>
     <div
-      class="px-20 pt-20 mt-5 py-5 bg-cyan-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl"
+      class="px-20 pt-20 mt-5 py-5 bg-teal-800 bg-[url('../assets/image/home/bg123.png')] bg-repeat shadow-xl"
     >
       <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
         <div class="flex items-center justify-center gap-2 font-semibold">
@@ -16,15 +16,15 @@
               d="M19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20C20 20.5523 19.5523 21 19 21ZM6 19H18V9.15745L12 3.7029L6 9.15745V19ZM9 9.99998H15V16H9V9.99998ZM11 12V14H13V12H11Z"
             ></path>
           </svg>
-          <p class="mt-5 text-justify">Home</p>
-          <p class="mt-5 text-justify">/ More</p>
-          <!-- <p class="mt-5 text-justify">/ Volunteers</p> -->
-          <p class="text-cyan-800">/ Calender of Activities</p>
+          <p>Home</p>
+          <p>/ More</p>
+          <!-- <p>/ Volunteers</p> -->
+          <p class="text-cyan-800">/ Calender Of Activities</p>
         </div>
         <div class="rounded-lg flex items-center justify-center relative py-3">
-          <h1 class="text-cyan-800 text-4xl font-bold">Calender of Activities</h1>
+          <h1 class="text-cyan-800 text-4xl font-bold">Employee Login</h1>
           <div>
-            <p class="mt-5 text-justify"></p>
+            <p></p>
           </div>
         </div>
       </div>
@@ -72,10 +72,17 @@ On the day of the event, the venue is bustling with activity as volunteers set u
               <div class="flex gap-5 p-2 rounded-md shadow-md">
                 <img src="/src/assets/image/home/g4.jpg" alt="" class="w-1/2 rounded-lg" />
                 <div class="w-1/2">
-                  <h1 class="text-primaryGreen text-2xl font-bold py-1">Health and Wellness Initiatives Project</h1>
+                  <h1 class="text-primaryGreen text-2xl font-bold py-1">
+                    Health and Wellness Initiatives Project
+                  </h1>
                   <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
                   <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
-                  <p class="mt-5 text-justify">This project embodies our commitment to promoting physical and mental well-being within our community. Through informative workshops, fitness classes, and mental health seminars, we aim to empower individuals to lead healthier lifestyles and cultivate a sense of balance and vitality.</p>
+                  <p class="mt-5 text-justify">
+                    This project embodies our commitment to promoting physical and mental well-being
+                    within our community. Through informative workshops, fitness classes, and mental
+                    health seminars, we aim to empower individuals to lead healthier lifestyles and
+                    cultivate a sense of balance and vitality.
+                  </p>
                 </div>
               </div>
             </router-link>
@@ -83,11 +90,15 @@ On the day of the event, the venue is bustling with activity as volunteers set u
               <div class="flex gap-3 p-2 rounded-md shadow-md">
                 <img src="/src/assets/image/home/g2.jpg" alt="" class="w-1/2 rounded-lg" />
                 <div class="w-1/2">
-                  <h1 class="text-primaryGreen text-2xl font-bold py-1">
-                      Interfaith Dialogues
-                    </h1>
-                    <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
-                  <p class="mt-5 text-justify">In a world marked by diversity, understanding and mutual respect are essential. Through interfaith dialogues, we foster meaningful conversations that bridge religious divides and promote harmony and cooperation among people of different faiths. These dialogues serve as a platform for learning, mutual enrichment, and building lasting friendships based on shared values of compassion and tolerance.</p>
+                  <h1 class="text-primaryGreen text-2xl font-bold py-1">Interfaith Dialogues</h1>
+                  <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
+                  <p class="mt-5 text-justify">
+                    In a world marked by diversity, understanding and mutual respect are essential.
+                    Through interfaith dialogues, we foster meaningful conversations that bridge
+                    religious divides and promote harmony and cooperation among people of different
+                    faiths. These dialogues serve as a platform for learning, mutual enrichment, and
+                    building lasting friendships based on shared values of compassion and tolerance.
+                  </p>
                 </div>
               </div>
             </router-link>
@@ -97,7 +108,13 @@ On the day of the event, the venue is bustling with activity as volunteers set u
                 <div class="w-1/2">
                   <h1 class="text-primaryGreen text-2xl font-bold py-1">Humanitarian Projects</h1>
                   <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
-                  <p class="mt-5 text-justify">Our humanitarian projects are a testament to our commitment to serving humanity. From providing relief to disaster-stricken areas to offering support to refugees and displaced communities, we strive to alleviate suffering and promote dignity for all. Through our humanitarian efforts, we aim to embody the Islamic values of compassion, mercy, and solidarity.</p>
+                  <p class="mt-5 text-justify">
+                    Our humanitarian projects are a testament to our commitment to serving humanity.
+                    From providing relief to disaster-stricken areas to offering support to refugees
+                    and displaced communities, we strive to alleviate suffering and promote dignity
+                    for all. Through our humanitarian efforts, we aim to embody the Islamic values
+                    of compassion, mercy, and solidarity.
+                  </p>
                 </div>
               </div>
             </router-link>
@@ -108,7 +125,14 @@ On the day of the event, the venue is bustling with activity as volunteers set u
                 <div class="w-1/2">
                   <h1 class="text-primaryGreen text-2xl font-bold py-1">IFeed the Hungry</h1>
                   <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
-                  <p class="mt-5 text-justify">Inspired by the teachings of Islam, our "Feed the Hungry" initiative seeks to address the urgent issue of food insecurity. By organizing food drives, distributing meals to those in need, and supporting local food banks, we strive to ensure that no one in our community goes to bed hungry. Through acts of generosity and kindness, we aim to uphold the Islamic principle of caring for our neighbors and those less fortunate.</p>
+                  <p class="mt-5 text-justify">
+                    Inspired by the teachings of Islam, our "Feed the Hungry" initiative seeks to
+                    address the urgent issue of food insecurity. By organizing food drives,
+                    distributing meals to those in need, and supporting local food banks, we strive
+                    to ensure that no one in our community goes to bed hungry. Through acts of
+                    generosity and kindness, we aim to uphold the Islamic principle of caring for
+                    our neighbors and those less fortunate.
+                  </p>
                 </div>
               </div>
             </router-link>
@@ -119,9 +143,18 @@ On the day of the event, the venue is bustling with activity as volunteers set u
               <div class="flex gap-3 p-2 rounded-md shadow-md">
                 <img src="/src/assets/image/home/g4.jpg" alt="" class="w-1/2 rounded-lg" />
                 <div class="w-1/2">
-                  <h1 class="text-primaryGreen text-2xl font-bold py-1">Eco-Friendly and Sustainability Projects</h1>
+                  <h1 class="text-primaryGreen text-2xl font-bold py-1">
+                    Eco-Friendly and Sustainability Projects
+                  </h1>
                   <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
-                  <p class="mt-5 text-justify">Our commitment to social justice extends to supporting the most vulnerable members of society. Through initiatives aimed at assisting the elderly, disabled, and economically disadvantaged, we work to empower those in need and provide them with the resources and support they require to thrive. By standing in solidarity with the weak and marginalized, we honor the teachings of Islam to uphold justice and compassion for all.</p>
+                  <p class="mt-5 text-justify">
+                    Our commitment to social justice extends to supporting the most vulnerable
+                    members of society. Through initiatives aimed at assisting the elderly,
+                    disabled, and economically disadvantaged, we work to empower those in need and
+                    provide them with the resources and support they require to thrive. By standing
+                    in solidarity with the weak and marginalized, we honor the teachings of Islam to
+                    uphold justice and compassion for all.
+                  </p>
                 </div>
               </div>
             </router-link>
@@ -130,10 +163,18 @@ On the day of the event, the venue is bustling with activity as volunteers set u
                 <img src="/src/assets/image/home/g2.jpg" alt="" class="w-1/2 rounded-lg" />
                 <div class="w-1/2">
                   <h1 class="text-primaryGreen text-2xl font-bold py-1">
-                        Health and Wellness Initiatives Project
-                    </h1>
-                    <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
-                  <p class="mt-5 text-justify">Illness can be a source of immense hardship, both physically and emotionally. Through our "Comfort the Sick" initiative, we aim to provide solace and support to those battling illness. Whether through hospital visits, providing care packages, or offering emotional support, we seek to alleviate the suffering of the sick and offer them hope and encouragement during challenging times. In doing so, we embody the Islamic principle of compassion and caring for the sick as an act of worship and service to humanity.</p>
+                    Health and Wellness Initiatives Project
+                  </h1>
+                  <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
+                  <p class="mt-5 text-justify">
+                    Illness can be a source of immense hardship, both physically and emotionally.
+                    Through our "Comfort the Sick" initiative, we aim to provide solace and support
+                    to those battling illness. Whether through hospital visits, providing care
+                    packages, or offering emotional support, we seek to alleviate the suffering of
+                    the sick and offer them hope and encouragement during challenging times. In
+                    doing so, we embody the Islamic principle of compassion and caring for the sick
+                    as an act of worship and service to humanity.
+                  </p>
                 </div>
               </div>
             </router-link>
@@ -141,12 +182,17 @@ On the day of the event, the venue is bustling with activity as volunteers set u
               <div class="flex gap-3 p-2 rounded-md shadow-md">
                 <img src="/src/assets/image/home/social.jpg" alt="" class="w-1/2 rounded-lg" />
                 <div class="w-1/2">
-                  <h1 class="text-primaryGreen text-2xl font-bold py-1">Interfaith Dialogues
-</h1>
+                  <h1 class="text-primaryGreen text-2xl font-bold py-1">Interfaith Dialogues</h1>
                   <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
-                  <p class="mt-5 text-justify">Interfaith dialogues serve as pivotal platforms for fostering understanding, respect, and cooperation among individuals of diverse religious backgrounds. Through open and respectful conversations, we aim to build bridges of understanding, dismantle stereotypes, and promote harmony in our communities. By engaging in interfaith dialogues, we demonstrate our commitment to embracing the richness of religious diversity and working together towards shared goals of peace, justice, and mutual respect.
-
-</p>
+                  <p class="mt-5 text-justify">
+                    Interfaith dialogues serve as pivotal platforms for fostering understanding,
+                    respect, and cooperation among individuals of diverse religious backgrounds.
+                    Through open and respectful conversations, we aim to build bridges of
+                    understanding, dismantle stereotypes, and promote harmony in our communities. By
+                    engaging in interfaith dialogues, we demonstrate our commitment to embracing the
+                    richness of religious diversity and working together towards shared goals of
+                    peace, justice, and mutual respect.
+                  </p>
                 </div>
               </div>
             </router-link>
@@ -156,7 +202,16 @@ On the day of the event, the venue is bustling with activity as volunteers set u
                 <div class="w-1/2">
                   <h1 class="text-primaryGreen text-2xl font-bold py-1">Humanitarian Projects</h1>
                   <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
-                  <p class="mt-5 text-justify">Humanitarian projects embody our core values of compassion, empathy, and service to humanity. Through these initiatives, we strive to alleviate suffering, promote dignity, and empower vulnerable populations around the world. From providing emergency relief to disaster-affected areas to implementing sustainable development programs, our humanitarian projects aim to address the root causes of poverty, inequality, and injustice. By working tirelessly to uplift the lives of those in need, we embody the teachings of Islam to serve others selflessly and uphold the inherent dignity of every human being.</p>
+                  <p class="mt-5 text-justify">
+                    Humanitarian projects embody our core values of compassion, empathy, and service
+                    to humanity. Through these initiatives, we strive to alleviate suffering,
+                    promote dignity, and empower vulnerable populations around the world. From
+                    providing emergency relief to disaster-affected areas to implementing
+                    sustainable development programs, our humanitarian projects aim to address the
+                    root causes of poverty, inequality, and injustice. By working tirelessly to
+                    uplift the lives of those in need, we embody the teachings of Islam to serve
+                    others selflessly and uphold the inherent dignity of every human being.
+                  </p>
                 </div>
               </div>
             </router-link>

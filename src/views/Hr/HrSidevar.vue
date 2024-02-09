@@ -18,7 +18,7 @@
           ></path></svg
         >Profile</router-link
       >
-      <router-link to="" class="flex items-center gap-2"
+      <router-link to="/HR_Create_Job_Description" class="flex items-center gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
