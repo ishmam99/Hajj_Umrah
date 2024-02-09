@@ -133,6 +133,19 @@
                         </div>
                       </div>
                     </div> -->
+                <div class="relative">
+                  <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600">
+                    Supplier Description
+                  </p>
+                  <textarea
+                    name=""
+                    id=""
+                    cols=""
+                    rows="4"
+                    placeholder="Ex:23"
+                    class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
+                  ></textarea>
+                </div>
                 <div>
                   <p for="" class="mb-3">Product Type <span class="text-red-500">*</span></p>
                   <Select>

@@ -3,7 +3,7 @@
     <div class="bg-slate-50">
       <div class="pt-20 flex justify-between">
         <SupplySidebar />
-        <div class="px-[5%] bg-white py-5 w-3/4">
+        <div class="px-4 bg-white py-5 w-3/4">
           <div class="flex justify-between items-center pt-4">
             <p class="text-2xl text-teal-600 font-bold pb-2">Supplier List</p>
           </div>
@@ -26,18 +26,35 @@
                 <tbody>
                   <tr class="">
                     <td>
-                        <p>
-                            01
-                        </p>
+                      <p>01</p>
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
                       <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
                       <h3 class="font-bold">Dallas Sounds</h3>
                     </td>
-                    <td class="py-4 p-2">1 Jan 2024</td>
+                    <td class="py-4 p-2">Dallas</td>
                     <td class="py-4 p-2 font-semibold">Sounds</td>
                     <td class="py-4 p-2">
                       <p class="text-sm font-bold text-green-600">Completed</p>
+                    </td>
+                    <td class="py-4 p-2">
+                      <button class="px-3 py-2 rounded-md shadow-md bg-teal-600 text-white text-sm">
+                        Details
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="bg-white">
+                    <td>
+                      <p>02</p>
+                    </td>
+                    <td class="py-4 p-2 flex items-center gap-2">
+                      <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
+                      <h3 class="font-bold">Unique Furnitures</h3>
+                    </td>
+                    <td class="py-4 p-2">New York</td>
+                    <td class="py-4 p-2 font-semibold">Furniture</td>
+                    <td class="py-4 p-2">
+                      <p class="text-sm font-bold text-blue-600">Pending</p>
                     </td>
                     <td class="py-4 p-2">
                       <button class="px-3 py-2 rounded-md shadow-md bg-teal-600 text-white text-sm">
@@ -47,16 +64,14 @@
                   </tr>
                   <tr class="">
                     <td>
-                        <p>
-                            01
-                        </p>
+                      <p>03</p>
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
                       <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-                      <h3 class="font-bold">Dallas Sounds</h3>
+                      <h3 class="font-bold">Water Solutions inc.</h3>
                     </td>
-                    <td class="py-4 p-2">1 Jan 2024</td>
-                    <td class="py-4 p-2 font-semibold">Sounds</td>
+                    <td class="py-4 p-2">California</td>
+                    <td class="py-4 p-2 font-semibold">Food Items</td>
                     <td class="py-4 p-2">
                       <p class="text-sm font-bold text-green-600">Completed</p>
                     </td>
@@ -66,29 +81,6 @@
                       </button>
                     </td>
                   </tr>
-                  <tr class="">
-                    <td>
-                        <p>
-                            01
-                        </p>
-                    </td>
-                    <td class="py-4 p-2 flex items-center gap-2">
-                      <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-                      <h3 class="font-bold">Dallas Sounds</h3>
-                    </td>
-                    <td class="py-4 p-2">1 Jan 2024</td>
-                    <td class="py-4 p-2 font-semibold">Sounds</td>
-                    <td class="py-4 p-2">
-                      <p class="text-sm font-bold text-green-600">Completed</p>
-                    </td>
-                    <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-teal-600 text-white text-sm">
-                        Details
-                      </button>
-                    </td>
-                  </tr>
-
-
                 </tbody>
               </table>
             </div>

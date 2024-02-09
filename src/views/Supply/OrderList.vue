@@ -3,7 +3,7 @@
     <div class="bg-slate-50">
       <div class="pt-20 flex justify-between">
         <SupplySidebar />
-        <div class="px-[5%] bg-white py-5 w-3/4">
+        <div class="px-4 bg-white py-5 w-3/4">
           <div class="flex justify-between items-center pt-4">
             <p class="text-2xl text-cyan-600 font-bold pb-2">Order List</p>
           </div>
@@ -27,7 +27,7 @@
                 </thead>
                 <tbody>
                   <tr class="">
-                    <td class="py-4 p-2 flex items-center gap-2">
+                    <td class="py-4 p-2 gap-2">
                       <h3 class="font-bold">01</h3>
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
@@ -35,7 +35,7 @@
                       <h3 class="font-bold">Sound System</h3>
                     </td>
                     <td>
-                      <p class="text-lg">Karim</p>
+                      <p class="text-lg">Karim Sounds</p>
                     </td>
                     <td class="py-4 p-2">1 Jan 2024</td>
                     <td class="py-4 p-2">1 Feb 2024</td>
@@ -49,20 +49,20 @@
                       </button>
                     </td>
                   </tr>
-                  <tr class="">
-                    <td class="py-4 p-2 flex items-center gap-2">
-                      <h3 class="font-bold">01</h3>
+                  <tr class="bg-white">
+                    <td class="py-4 p-2 gap-2">
+                      <h3 class="font-bold">02</h3>
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
-                      <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-                      <h3 class="font-bold">Sound System</h3>
+                      <img src="/src/assets/image/home/l4.png" alt="" class="h-10" />
+                      <h3 class="font-bold">Computer, Printer, Camera</h3>
                     </td>
                     <td>
-                      <p class="text-lg">Karim</p>
+                      <p class="text-lg">Dallas Electronics</p>
                     </td>
                     <td class="py-4 p-2">1 Jan 2024</td>
-                    <td class="py-4 p-2">1 Feb 2024</td>
-                    <td class="py-4 p-2 font-semibold">$ 500</td>
+                    <td class="py-4 p-2">10 Feb 2024</td>
+                    <td class="py-4 p-2 font-semibold">$ 5000</td>
                     <td class="py-4 p-2">
                       <p class="text-sm font-bold text-green-600">Completed</p>
                     </td>
@@ -73,8 +73,8 @@
                     </td>
                   </tr>
                   <tr class="">
-                    <td class="py-4 p-2 flex items-center gap-2">
-                      <h3 class="font-bold">01</h3>
+                    <td class="py-4 p-2">
+                      <h3 class="font-bold">03</h3>
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
                       <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
