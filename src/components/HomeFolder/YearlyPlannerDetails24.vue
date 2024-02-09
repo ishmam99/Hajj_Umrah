@@ -23,7 +23,6 @@
         </div>
         <div class="rounded-lg flex items-center justify-center relative py-3">
           <h1 class="text-cyan-800 text-4xl font-bold">Calender of Activities</h1>
-          <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
           <div>
             <p class="mt-5 text-justify"></p>
           </div>
@@ -33,7 +32,6 @@
     <!-- <Separator/> -->
     <div class="w-full bg-[url('../assets/image/home/dua_banner.png')] bg-cyan-800">
       <h1 class="py-10 text-center bg-[#2d292938] text-4xl text-white font-bold">
-        <span class="text-sm font-semibold text-yellow-600 pb-9">20 jan 2024</span>
         Our yearly activities at a glance for 2024
       </h1>
     </div>
