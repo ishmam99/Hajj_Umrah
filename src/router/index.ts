@@ -430,6 +430,27 @@ const router = createRouter({
       component: () => import('../views/Supply/SupplyDashbord.vue'),
     },
     {
+      path: '/Supply_Create_Order',
+      name: 'Supply_Create_Order',
+      component: () => import('../views/Supply/OrderCreate.vue'),
+    },
+    {
+      path: '/Supply_Create_Supplier',
+      name: 'Supply_Create_Supplier',
+      component: () => import('../views/Supply/CreateSupplier.vue'),
+    },
+    {
+      path: '/Supply_Order_List',
+      name: 'Supply_Order_List',
+      component: () => import('../views/Supply/OrderList.vue'),
+    },
+    {
+      path: '/Supply_Supplier_List',
+      name: 'Supply_Supplier_List',
+      component: () => import('../views/Supply/SupplierList.vue'),
+    },
+
+    {
       path: '/HR_Login',
       name: 'HR Login',
       component: () => import('../views/Auth/LogIn.vue'),
@@ -439,6 +460,12 @@ const router = createRouter({
       name: 'HR_Dashboard',
       component: () => import('../views/Hr/HrDashbord.vue'),
     },
+    {
+      path: '/HR_Employment_Scheduling',
+      name: 'HR_Employment_Scheduling',
+      component: () => import('../views/Hr/EmploymentScheduling.vue'),
+    },
+
     {
       path: '/Operation_Login',
       name: 'Operation Login',
