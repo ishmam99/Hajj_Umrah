@@ -38,6 +38,7 @@ module.exports = {
       colors: {
         primaryGreen: '#00B09C',
         primaryGreen2: '#01796f',
+        primaryGreen3: '#004B49',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

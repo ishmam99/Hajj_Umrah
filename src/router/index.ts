@@ -353,6 +353,11 @@ const router = createRouter({
       component: () => import('../components/HomeFolder/YearlyPlannerDetails.vue'),
     },
     {
+      path: '/yearlyPlannerDetails',
+      name: 'yearlyPlannerDetails',
+      component: () => import('../components/HomeFolder/YearlyPlannerDetails24.vue'),
+    },
+    {
       path: '/Youth_Management_Dashboard',
       name: 'Youth_Dashboard',
       component: () => import('../views/Youth/YouthDashborad.vue'),
