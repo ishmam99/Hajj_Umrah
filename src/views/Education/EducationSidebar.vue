@@ -3,8 +3,8 @@
     class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover w-1/4 h-screen sticky top-[80px]"
   >
     <div class="bg-[#e1f2ff9a] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
-      <p class="text-2xl font-bold text-[#2e318a]">Social Service Management Dashboard</p>
-      <p class="text-xl font-bold">Welcome Mr. Hashim</p>
+      <p class="text-2xl font-bold text-[#2e318a]">Education Management Dashboard</p>
+      <p class="text-xl font-bold">Welcome Mr. Qadir</p>
       <router-link to="/Social_Service_Dashboard" class="flex items-center gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@
           <path
             d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
           ></path></svg
-        >Event Create</router-link
+        >Create Course</router-link
       >
 
       <router-link to="/Social_Service_Event_List" class="flex items-center gap-2"
@@ -44,7 +44,7 @@
           <path
             d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
           ></path></svg
-        >Event List</router-link
+        >Course List</router-link
       >
 
       <router-link to="/Social_Service_Project_Create" class="flex items-center gap-2"
@@ -58,7 +58,7 @@
           <path
             d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
           ></path></svg
-        >Create Project</router-link
+        >Manage Teachers</router-link
       >
 
       <router-link to="/Social_Service_Project_List" class="flex items-center gap-2"
@@ -72,7 +72,7 @@
           <path
             d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
           ></path></svg
-        >Project List</router-link
+        >Manage Students</router-link
       >
 
       <router-link to="/Social_Gallery" class="flex items-center gap-2"

@@ -407,7 +407,7 @@ const router = createRouter({
     {
       path: '/Education_Dashboard',
       name: 'Education_Dashboard',
-      component: () => import('../views/Member/MembarDashbord.vue'),
+      component: () => import('../views/Education/EducationDashboard.vue'),
     },
     {
       path: '/Supply_Chain_Management_Login',

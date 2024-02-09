@@ -41,7 +41,7 @@
       >
         <div class="space-y-8 w-3/4">
           <form @submit.prevent="ramadanProgramSubmission()">
-            <div class="bg-white rounded-xl p-5 w-full">
+            <div class="bg-white rounded-xl p-5 w-full mb-4">
               <p class="pt-5 text-lg font-semibold">Choose the program/s that you interested in:</p>
               <div class="pt-5 ml-10">
                 <div class="grid grid-cols-2 gap-4">
@@ -109,7 +109,7 @@
               </div>
             </div>
 
-            <div class="bg-white rounded-xl p-5 w-full">
+            <div class="bg-white rounded-xl p-5 w-full mb-4">
               <p class="text-xl font-bold pt-2 pb-2">
                 Membership Type<span class="text-red-600">*</span>
               </p>
@@ -261,7 +261,7 @@
                 </div>
               </div>
             </div>
-            <div class="bg-white rounded-xl p-5 w-full">
+            <div class="bg-white rounded-xl p-5 w-full mb-4">
               <div class="w-1/2">
                 <p class="text-sm font-semibold">
                   I have donated excess $100 (Family) or $50 (Individual) this year to Masjid
