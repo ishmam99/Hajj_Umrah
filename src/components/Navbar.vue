@@ -487,9 +487,23 @@
             </MenubarItem>
             <MenubarItem>
               <router-link
+                to="/Supply_Chain/supplierLogin"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >Supplier Login</router-link
+              >
+            </MenubarItem>
+            <!-- <MenubarItem>
+              <router-link
                 to="/Supply_Chain/customer"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Customer</router-link
+              >
+            </MenubarItem> -->
+            <MenubarItem>
+              <router-link
+                to="/Supply_Chain/customerLogin"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >Customer Login</router-link
               >
             </MenubarItem>
           </MenubarContent>
@@ -521,7 +535,7 @@
           </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
-              <router-link to="/Login" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link to="/Member_Login" class="w-full hover:pl-5 duration-300 font-semibold"
                 >Login</router-link
               >
             </MenubarItem>
@@ -539,50 +553,119 @@
           </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
-              <router-link to="/Login" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link to="/Member_Login" class="w-full hover:pl-5 duration-300 font-semibold"
                 >Member Login</router-link
               >
             </MenubarItem>
-            <MenubarItem>
-              <router-link to="/Login" class="w-full hover:pl-5 duration-300 font-semibold"
+            <MenubarSub>
+              <MenubarSubTrigger>
+                <p class="hover:pl-5 duration-300 font-bold">Admin Login</p>
+              </MenubarSubTrigger>
+              <MenubarSubContent>
+                <MenubarItem>
+                  <router-link
+                    to="/Admin_Login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Admin</router-link
+                  >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link
+                    to="/Social_Service_Login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Social Service Management</router-link
+                  >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link
+                    to="/Youth_Management_Login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Youth Management</router-link
+                  >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link
+                    to="/Finance_Login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Finance Management</router-link
+                  >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link to="/management-login" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Education Login</router-link
+              >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link
+                    to="/Supply_Chain_Management_Login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Supply Chain Management</router-link
+                  >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link to="/HR_Login" class="w-full hover:pl-5 duration-300 font-semibold"
+                    >HR Management</router-link
+                  >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link
+                    to="/Operation_Login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Operations Management</router-link
+                  >
+                </MenubarItem>
+              </MenubarSubContent>
+            </MenubarSub>
+            <!-- <MenubarItem>
+              <router-link to="/Admin_Login" class="w-full hover:pl-5 duration-300 font-semibold"
                 >Admin Login</router-link
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/Login" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link
+                to="/Social_Service_Login"
+                class="w-full hover:pl-5 duration-300 font-semibold"
                 >Social Service Login</router-link
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/Login" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link
+                to="/Youth_Management_Login"
+                class="w-full hover:pl-5 duration-300 font-semibold"
                 >Youth Management Login</router-link
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/Login" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link to="/Finance_Login" class="w-full hover:pl-5 duration-300 font-semibold"
                 >Finance Login</router-link
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/management-login" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link
+                to="/Education_Login"
+                class="w-full hover:pl-5 duration-300 font-semibold"
                 >Education Login</router-link
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/Login" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link
+                to="/Supply_Chain_Management_Login"
+                class="w-full hover:pl-5 duration-300 font-semibold"
                 >Supply Chain Management Login</router-link
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/Login" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link to="/HR_Login" class="w-full hover:pl-5 duration-300 font-semibold"
                 >HR Login</router-link
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/Login" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link
+                to="/Operation_Login"
+                class="w-full hover:pl-5 duration-300 font-semibold"
                 >Operations Login</router-link
               >
-            </MenubarItem>
+            </MenubarItem> -->
           </MenubarContent>
         </MenubarMenu>
         <div class="flex items-center justify-between gap-2 text-white font-bold text-sm">
@@ -620,9 +703,6 @@ import {
 
 import { ref } from 'vue'
 import { useAuthStore } from '../stores/AuthStore.js'
-import { useRoute } from 'vue-router'
-const router = useRoute()
-console.log(router)
 const MemberDropMenu = ref(false)
 const store = useAuthStore()
 </script>

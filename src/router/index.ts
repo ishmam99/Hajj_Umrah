@@ -152,13 +152,24 @@ const router = createRouter({
     },
 
     {
+      path: '/employees/employeeLogin',
+      name: 'Employee Login',
+      component: () => import('../views/Employees/EmployeeLogin.vue')
+    },
+
+    {
+      path: '/HR-Login',
+      name: 'HR-Login',
+      component: () => import('../views/Employees/HR_Login.vue')
+    },
+    {
       path: '/activity/event',
-      name: 'activity/event',
+      name: 'Event',
       component: () => import('../views/Activity/Event.vue')
     },
     {
       path: '/activity/events',
-      name: 'events',
+      name: 'Events',
       component: () => import('../views/Activity/Events.vue')
     },
     {
@@ -284,9 +295,169 @@ const router = createRouter({
       component: () => import('../views/More/Registration/ESLClassRegistration.vue')
     },
     {
-      path: '/Login',
-      name: 'Login',
-      component: () => import('../views/Auth/LogIn.vue')
+      path: '/Member_Login',
+      name: 'Member Login',
+      component: () => import('../views/Auth/LogIn.vue'),
+    },
+    {
+      path: '/Membar_Dashboard',
+      name: 'Membar_Dashboard',
+      component: () => import('../views/Member/MembarDashbord.vue'),
+    },
+
+    {
+      path: '/Admin_Login',
+      name: 'Admin Login',
+      component: () => import('../views/Auth/LogIn.vue'),
+    },
+    {
+      path: '/Admin_Dashboard',
+      name: 'Admin_Dashboard',
+      component: () => import('../views/Admin/AdminDashboard.vue'),
+    },
+
+    {
+      path: '/Social_Service_Login',
+      name: 'Social Service Login',
+      component: () => import('../views/Auth/LogIn.vue'),
+    },
+    {
+      path: '/Social_Service_Dashboard',
+      name: 'Social_Dashboard',
+      component: () => import('../views/Social/SocialDashboard.vue'),
+    },
+    {
+      path: '/Social_Service_Event_List',
+      name: 'Social_Service_Event_List',
+      component: () => import('../views/Social/SocialManagementEventList.vue'),
+    },
+    {
+      path: '/Social_Service_Project_List',
+      name: 'Social_Service_Project_List',
+      component: () => import('../views/Social/SocialManagementProjectList.vue'),
+    },
+    {
+      path: '/Social_Service_Event_Create',
+      name: 'Social_Service_Event_Create',
+      component: () => import('../views/Social/SocialManegementEventCreate.vue'),
+    },
+    {
+      path: '/Social_Service_Project_Create',
+      name: 'Social_Service_Project_Create',
+      component: () => import('../views/Social/SocialManagementProjectCreate.vue'),
+    },
+    {
+      path: '/Social_Gallery',
+      name: 'Social Gallery',
+      component: () => import('../views/Social/SocialGallery.vue'),
+    },
+    {
+      path: '/Social_Change_Password',
+      name: 'Social_Change_Password',
+      component: () => import('../views/Social/Profile/SocialChangePassword.vue'),
+    },
+
+    {
+      path: '/Youth_Management_Login',
+      name: 'Youth Management Login',
+      component: () => import('../views/Auth/LogIn.vue'),
+    },
+    {
+      path: '/Youth_Management_Dashboard',
+      name: 'Youth_Dashboard',
+      component: () => import('../views/Youth/YouthDashborad.vue'),
+    },
+    {
+      path: '/Youth_Program_Create',
+      name: 'Youth_Program_Create',
+      component: () => import('../views/Youth/YouthProgramCreate.vue'),
+    },
+    {
+      path: '/Youth_Program_List',
+      name: 'Youth_Program_List',
+      component: () => import('../views/Youth/YouthProgramList.vue'),
+    },
+
+    {
+      path: '/Finance_Login',
+      name: 'Finance Login',
+      component: () => import('../views/Auth/LogIn.vue'),
+    },
+    {
+      path: '/Finance_Dashboard',
+      name: 'Finance_Dashboard',
+      component: () => import('../views/Finance/FinanceDashboard.vue'),
+    },
+    {
+      path: '/Finance_Accounts',
+      name: 'Finance_Accounts',
+      component: () => import('../views/Finance/Accounts.vue'),
+    },
+    {
+      path: '/Finance_Operational_Expenses',
+      name: 'Finance_Operational_Expenses',
+      component: () => import('../views/Finance/OperationalExpenses.vue'),
+    },
+    {
+      path: '/Finance_Project_Expenses',
+      name: 'Finance_Project_Expenses',
+      component: () => import('../views/Finance/ProjectExpenses.vue'),
+    },
+    {
+      path: '/Finance_Deposits',
+      name: 'Finance_Deposits',
+      component: () => import('../views/Finance/FinanceDeposits.vue'),
+    },
+    {
+      path: '/Finance_Donations',
+      name: 'Finance_Donations',
+      component: () => import('../views/Finance/Donations.vue'),
+    },
+
+    {
+      path: '/Education_Login',
+      name: 'Education Login',
+      component: () => import('../views/Auth/LogIn.vue'),
+    },
+    {
+      path: '/Education_Dashboard',
+      name: 'Education_Dashboard',
+      component: () => import('../views/Member/MembarDashbord.vue'),
+    },
+    {
+      path: '/Supply_Chain_Management_Login',
+      name: 'Supply Chain Management Login',
+      component: () => import('../views/Auth/LogIn.vue'),
+    },
+    {
+      path: '/Supply_Chain_Management_Chain_Management_Dashboard',
+      name: 'Supply_Dashboard',
+      component: () => import('../views/Supply/SupplyDashbord.vue'),
+    },
+    {
+      path: '/HR_Login',
+      name: 'HR Login',
+      component: () => import('../views/Auth/LogIn.vue'),
+    },
+    {
+      path: '/HR_Dashboard',
+      name: 'HR_Dashboard',
+      component: () => import('../views/Hr/HrDashbord.vue'),
+    },
+    {
+      path: '/Operation_Login',
+      name: 'Operation Login',
+      component: () => import('../views/Auth/LogIn.vue'),
+    },
+    {
+      path: '/Opration_Dashboard',
+      name: 'Operation_Dashboard',
+      component: () => import('../views/Operation/OprationDashbord.vue'),
+    },
+    {
+      path: '/Opration_Meeting_Create',
+      name: 'Opration_Meeting_Create',
+      component: () => import('../views/Operation/MeetingCreate.vue'),
     },
     {
       path: '/Signup',
@@ -399,6 +570,16 @@ const router = createRouter({
       path: '/Supply_Chain/customer',
       name: 'customer',
       component: () => import('../views/SupplyChain/Customer.vue')
+    },
+    {
+      path: '/Supply_Chain/customerLogin',
+      name: 'Customer Login',
+      component: () => import('../views/SupplyChain/CustomerLogin.vue')
+    },
+    {
+      path: '/Supply_Chain/supplierLogin',
+      name: 'Supplier Login',
+      component: () => import('../views/SupplyChain/SupplierLogin.vue')
     },
 
     {

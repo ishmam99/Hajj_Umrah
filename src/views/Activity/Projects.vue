@@ -22,11 +22,6 @@
                     leaders who embody integrity, empathy, and a strong sense of social
                     responsibility.
                   </p>
-                  <router-link to="/signup" class="w-full hover:pl-5 duration-300">
-                    <button class="h-[50px] w-[250px] bg-cyan-800 text-white rounded-xl">
-                      Register
-                    </button>
-                  </router-link>
                 </div>
               </div>
             </div>
