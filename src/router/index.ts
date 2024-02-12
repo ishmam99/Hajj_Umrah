@@ -348,6 +348,16 @@ const router = createRouter({
       component: () => import('../views/Auth/LogIn.vue'),
     },
     {
+      path: '/year_planner/:id',
+      name: 'year_planner',
+      component: () => import('../components/HomeFolder/YearlyPlannerDetails.vue'),
+    },
+    {
+      path: '/yearlyPlannerDetails',
+      name: 'yearlyPlannerDetails',
+      component: () => import('../components/HomeFolder/YearlyPlannerDetails24.vue'),
+    },
+    {
       path: '/Youth_Management_Dashboard',
       name: 'Youth_Dashboard',
       component: () => import('../views/Youth/YouthDashborad.vue'),
@@ -407,7 +417,7 @@ const router = createRouter({
     {
       path: '/Education_Dashboard',
       name: 'Education_Dashboard',
-      component: () => import('../views/Member/MembarDashbord.vue'),
+      component: () => import('../views/Education/EducationDashboard.vue'),
     },
     {
       path: '/Supply_Chain_Management_Login',
@@ -420,6 +430,27 @@ const router = createRouter({
       component: () => import('../views/Supply/SupplyDashbord.vue'),
     },
     {
+      path: '/Supply_Create_Order',
+      name: 'Supply_Create_Order',
+      component: () => import('../views/Supply/OrderCreate.vue'),
+    },
+    {
+      path: '/Supply_Create_Supplier',
+      name: 'Supply_Create_Supplier',
+      component: () => import('../views/Supply/CreateSupplier.vue'),
+    },
+    {
+      path: '/Supply_Order_List',
+      name: 'Supply_Order_List',
+      component: () => import('../views/Supply/OrderList.vue'),
+    },
+    {
+      path: '/Supply_Supplier_List',
+      name: 'Supply_Supplier_List',
+      component: () => import('../views/Supply/SupplierList.vue'),
+    },
+
+    {
       path: '/HR_Login',
       name: 'HR Login',
       component: () => import('../views/Auth/LogIn.vue'),
@@ -429,6 +460,17 @@ const router = createRouter({
       name: 'HR_Dashboard',
       component: () => import('../views/Hr/HrDashbord.vue'),
     },
+    {
+      path: '/HR_Employment_Scheduling',
+      name: 'HR_Employment_Scheduling',
+      component: () => import('../views/Hr/EmploymentScheduling.vue'),
+    },
+    {
+      path: '/HR_Create_Job_Description',
+      name: 'HR_Create_Job_Description',
+      component: () => import('../views/Hr/CreateJobDescription.vue'),
+    },
+
     {
       path: '/Operation_Login',
       name: 'Operation Login',
