@@ -1,6 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+// import { createRouter, createWebHistory } from 'vue-router'
+
+import LcFrntPageLayout from '../views/learning-center/layouts/website/FrontPageLayout.vue'
+
+import AuthLayout from '../views/learning-center/layouts/website/AuthLayout.vue'
+import DashboardLayout from '../views/learning-center/layouts/dashboard/DashboardLayout.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior() {
@@ -13,9 +20,17 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/services/nikah',
-      name: 'services/nikah',
-      component: () => import('../views/Services/NikahService.vue')
+      path: '/services',
+      name: 'services',
+      
+      component: () => import('../views/Services/NikahService.vue'),
+      children:[
+        {
+        path: 'nikah',
+          name:'nikah',
+            component: () => import('../views/Services/NikahService.vue'),
+        }
+      ]
     },
     {
       path: '/services/facilities',
@@ -247,12 +262,12 @@ const router = createRouter({
     {
       path: '/Fund_Raising',
       name: 'Fund_Raising',
-      component: () => import('../views/GetInvolved/FundRaising/FundRaising.vue'),
+      component: () => import('../views/GetInvolved/FundRaising/FundRaising.vue')
     },
     {
       path: '/Fund_Raising_Form',
       name: 'Fund_Raising_Form',
-      component: () => import('../views/GetInvolved/FundRaising/FundRaisingForm.vue'),
+      component: () => import('../views/GetInvolved/FundRaising/FundRaisingForm.vue')
     },
     {
       path: '/learing-center/education-form',
@@ -465,6 +480,11 @@ const router = createRouter({
       name: 'HR_Employment_Scheduling',
       component: () => import('../views/Hr/EmploymentScheduling.vue'),
     },
+    {
+      path: '/HR_Create_Job_Description',
+      name: 'HR_Create_Job_Description',
+      component: () => import('../views/Hr/CreateJobDescription.vue'),
+    },
 
     {
       path: '/Operation_Login',
@@ -484,103 +504,103 @@ const router = createRouter({
     {
       path: '/Signup',
       name: 'Signup',
-      component:()=>import('../views/Auth/SingnUp.vue')
+      component: () => import('../views/Auth/SingnUp.vue')
     },
     {
       path: '/boardmemberlogin',
       name: 'boardmemberlogin',
-      component: () => import('../views/Activity/BoardMemberLogin.vue'),
+      component: () => import('../views/Activity/BoardMemberLogin.vue')
     },
     {
       path: '/Membar_Dashboard',
       name: 'Membar_Dashboard',
-      component: () => import('../views/Member/MembarDashbord.vue'),
+      component: () => import('../views/Member/MembarDashbord.vue')
     },
     {
       path: '/Membar_Event_History',
       name: 'Membar_Event_History',
-      component: () => import('../views/Member/MemberEventHistory.vue'),
+      component: () => import('../views/Member/MemberEventHistory.vue')
     },
     {
       path: '/Membar_Donation_History',
       name: 'Membar_Donation_History',
-      component: () => import('../views/Member/Profile/MemberDonationHistory.vue'),
+      component: () => import('../views/Member/Profile/MemberDonationHistory.vue')
     },
     {
       path: '/Membar_Payment_History',
       name: 'Membar_Payment_History',
-      component: () => import('../views/Member/Profile/MembarPaymentHistory.vue'),
+      component: () => import('../views/Member/Profile/MembarPaymentHistory.vue')
     },
     {
       path: '/Membar_Change_Password',
       name: 'Membar_Change_Password',
-      component: () => import('../views/Member/Profile/MemberPassChange.vue'),
+      component: () => import('../views/Member/Profile/MemberPassChange.vue')
     },
     {
       path: '/Select_Volunteer',
       name: 'Select Volunteer',
-      component: () => import('../views/Member/MemberVolunteerSelect.vue'),
+      component: () => import('../views/Member/MemberVolunteerSelect.vue')
     },
     {
       path: '/Select_Imam',
       name: 'Select Imam',
-      component: () => import('../views/Member/MemberImamSelect.vue'),
+      component: () => import('../views/Member/MemberImamSelect.vue')
     },
     {
       path: '/Prayer_Time',
       name: 'Prayer_Time',
-      component: () => import('../views/Services/PrayerService/PrayerTime.vue'),
+      component: () => import('../views/Services/PrayerService/PrayerTime.vue')
     },
     {
       path: '/Prayer_Announcement',
       name: 'Prayer_Announcement',
-      component: () => import('../views/Services/PrayerService/PrayerAnnouncement.vue'),
+      component: () => import('../views/Services/PrayerService/PrayerAnnouncement.vue')
     },
     {
       path: '/Next_Prayer_Service',
       name: 'Next_Prayer_Service',
-      component: () => import('../views/Services/PrayerService/NextPrayerService.vue'),
+      component: () => import('../views/Services/PrayerService/NextPrayerService.vue')
     },
     {
       path: '/Recent_Prayer_Service',
       name: 'Recent_Prayer_Service',
-      component: () => import('../views/Services/PrayerService/RecentPrayerService.vue'),
+      component: () => import('../views/Services/PrayerService/RecentPrayerService.vue')
     },
     {
       path: '/Makkah_Live',
       name: 'Makkah_Live',
-      component: () => import('../views/Services/PrayerService/MakkhaLive.vue'),
+      component: () => import('../views/Services/PrayerService/MakkhaLive.vue')
     },
     {
       path: '/Janaja_Announcement',
       name: 'Janaja_Announcement',
-      component: () => import('../views/Services/PrayerService/JanajaService.vue'),
+      component: () => import('../views/Services/PrayerService/JanajaService.vue')
     },
     {
       path: '/Ranadam_Payer_Time',
       name: 'Ranadam_Payer_Time',
-      component: () => import('../views/Services/PrayerService/RamadanPrayerTime.vue'),
+      component: () => import('../views/Services/PrayerService/RamadanPrayerTime.vue')
     },
 
     {
       path: '/Kabah',
       name: 'Kabah',
-      component: () => import('../views/Gallery/Kabah.vue'),
+      component: () => import('../views/Gallery/Kabah.vue')
     },
     {
       path: '/Mashjib',
       name: 'Mashjib',
-      component: () => import('../views/Gallery/Mashjid.vue'),
+      component: () => import('../views/Gallery/Mashjid.vue')
     },
     {
       path: '/Social_Gallery',
       name: 'Social_Gallery',
-      component: () => import('../views/Gallery/SocialGallery.vue'),
+      component: () => import('../views/Gallery/SocialGallery.vue')
     },
     {
       path: '/Event_Gallery',
       name: 'Event_Gallery',
-      component: () => import('../views/Gallery/EventGallery.vue'),
+      component: () => import('../views/Gallery/EventGallery.vue')
     },
 
     {
@@ -604,7 +624,469 @@ const router = createRouter({
       component: () => import('../views/SupplyChain/SupplierLogin.vue')
     },
 
-    
+    {
+      path: '/learning-center',
+      name: 'LearningCenter',
+      component: () => import('../views/learning-center/modules/website/LearningCenter.vue'),
+      meta: { layout: LcFrntPageLayout }
+    },
+    {
+      path: '/learning-center/programs',
+      name: 'LearningCenterPrograms',
+      component: () => import('../views/learning-center/modules/website/Programs.vue'),
+      meta: { layout: LcFrntPageLayout }
+    },
+    {
+      path: '/learning-center/all-courses',
+      name: 'LearningCenterCourses',
+      component: () => import('../views/learning-center/modules/website/AllCourses.vue'),
+      meta: { layout: LcFrntPageLayout }
+    },
+    {
+      path: '/management-login',
+      name: 'ManagementLoginPage',
+      component: () => import('../auth/ManagementLoginPage.vue'),
+      meta: { layout: AuthLayout, notAuthenticated: true }
+    },
+    {
+      path: '/student-login',
+      name: 'LoginPage',
+      component: () => import('../auth/LoginPage.vue'),
+      meta: { layout: AuthLayout, notAuthenticated: true }
+    },
+    {
+      path: '/teacher-login',
+      name: 'TeacherLoginPage',
+      component: () => import('../auth/TeacherLoginPage.vue'),
+      meta: { layout: AuthLayout, notAuthenticated: true }
+    },
+    {
+      path: '/forgot-pass',
+      name: 'forgotPasswordPage',
+      component: () => import('../auth/ForgotPasswordComponent.vue'),
+      meta: { layout: AuthLayout, notAuthenticated: true }
+    },
+
+    {
+      path: '/registration',
+      name: 'RegistrationPage',
+      component: () => import('../auth/RegistrationPage.vue'),
+      meta: { layout: AuthLayout, notAuthenticated: true }
+    },
+    {
+      path: '/reg-teacher',
+      name: 'TeacherRegistrationPage',
+      component: () => import('../auth/RegistrationPageTeacher.vue'),
+      meta: { layout: AuthLayout, notAuthenticated: true }
+    },
+    {
+      path: '/management-registration',
+      name: 'ManagementRegistrationPage',
+      component: () => import('../auth/ManagementRegistrationPage.vue'),
+      meta: { layout: AuthLayout, notAuthenticated: true }
+    },
+
+    // {
+    //     path: '/teacher-registration',
+    //     name: 'RegistrationPageTeacher',
+    //     component: () => import('../auth/RegistrationPageTeacher'),
+    //     meta: { layout: AuthLayout, notAuthenticated: true }
+    // },
+    {
+      path: '/my-registration',
+      name: 'StudentRegistrationPage',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/student/StudentRegistrationPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/my-admin',
+      name: 'MyAdminPage',
+      component: () => import('/src/views/learning-center/modules/dashboard/MyAdminPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/my-advisor',
+      name: 'MyAdvisor',
+      component: () => import('/src/views/learning-center/modules/dashboard/MyAdvisor.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/my-students',
+      name: 'MyStudentPage',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/teacher/MyStudentPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/my-teachers',
+      name: 'MyTeacherPage',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/student/MyTeacherPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/my-schedule',
+      name: 'MySchedulePage',
+      component: () => import('/src/views/learning-center/modules/dashboard/MySchedulePage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/help-center',
+      name: 'HelpCenter',
+      component: () => import('/src/views/learning-center/modules/dashboard/HelpCenter.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+
+    {
+      path: '/verify-teacher',
+      name: 'RegistrationPageTeacher',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/TeacherVerificationPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/learning-center/areas/:id',
+      name: 'AreaPage',
+      component: () => import('/src/views/learning-center/modules/website/AreaPage.vue'),
+      meta: { layout: LcFrntPageLayout }
+    },
+
+    {
+      path: '/learning-center/programs/:id',
+      name: 'ProgramPage',
+      component: () => import('/src/views/learning-center/modules/website/ProgramPage.vue'),
+      meta: { layout: LcFrntPageLayout }
+    },
+    {
+      path: '/learning-center/course/:id',
+      name: 'CourseDetailsPage',
+      component: () => import('/src/views/learning-center/modules/website/CourseDetailsPage.vue'),
+      meta: { layout: LcFrntPageLayout }
+    },
+    {
+      path: '/dashboard',
+      name: 'DashboardPage',
+      component: () => import('/src/views/learning-center/modules/dashboard/DashboardPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/profile',
+      name: 'ProfilePage',
+      component: () => import('/src/views/learning-center/modules/dashboard/ProfilePage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/join-class',
+      name: 'JoinClassPage',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/teacher/JoinClassPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/teacher/join-class',
+      name: 'JoinClassTeacher',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/teacher/JoinClassTeacher.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/teacher-verify',
+      name: 'JoinClassPage',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/teacher/JoinClassPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/my-classes/:id',
+      name: 'ClassListPage',
+      component: () => import('/src/views/learning-center/modules/dashboard/ClassListPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/my-courses',
+      name: 'CoursePage',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/student/CoursePage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+
+    {
+      path: '/dashboard/ongoing-courses',
+      name: 'OngoingCoursePage',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/teacher/OngoingCoursesPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/all-courses',
+      name: 'AllCoursePage',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/teacher/AllCoursesPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/my-courses/teacher-schedule/:courseId/:teacherId',
+      name: 'TeacherSchedulePage',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/TeacherSchedulePage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/my-courses/schedule/:id',
+      name: 'ClassSchedulePage',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/student/ClassSchedulePage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/advisors',
+      name: 'AdvisorListPage',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/management/AdvisorListPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/group',
+      name: 'GroupListPage',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/management/GroupCourseListPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/old-teachers',
+      name: 'OldTeacherListPage',
+      component: () =>
+        import(
+          '/src/views/learning-center/modules/dashboard/management/teacher/OldTeacherListPage.vue'
+        ),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/current-teachers',
+      name: 'CurrentTeacherListPage',
+      component: () =>
+        import(
+          '/src/views/learning-center/modules/dashboard/management/teacher/CurrentTeacherListPage.vue'
+        ),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/new-teachers',
+      name: 'NewTeacherListPage',
+      component: () =>
+        import(
+          '/src/views/learning-center/modules/dashboard/management/teacher/NewTeacherListPage.vue'
+        ),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/teacher-details/:id',
+      name: 'TeacherDetailsPage',
+      component: () =>
+        import(
+          '/src/views/learning-center/modules/dashboard/management/teacher/TeacherDetailsPage.vue'
+        ),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/old-students',
+      name: 'OldStudentListPage',
+      component: () =>
+        import(
+          '/src/views/learning-center/modules/dashboard/management/student/OldStudentListPage.vue'
+        ),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/current-students',
+      name: 'CurrentStudentListPage',
+      component: () =>
+        import(
+          '/src/views/learning-center/modules/dashboard/management/student/CurrentStudentListPage.vue'
+        ),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/new-students',
+      name: 'NewStudentListPage',
+      component: () =>
+        import(
+          '/src/views/learning-center/modules/dashboard/management/student/NewStudentListPage.vue'
+        ),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/student-details/:id',
+      name: 'StudentDetailsPage',
+      component: () =>
+        import(
+          '/src/views/learning-center/modules/dashboard/management/student/StudentDetailsPage.vue'
+        ),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/in-registration-process',
+      name: 'InRegistrationProcess',
+      component: () =>
+        import(
+          '/src/views/learning-center/modules/dashboard/management/student/InRegistrationProcess.vue'
+        ),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/student-group-course',
+      name: 'StudentGroupCourse',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/management/student/GroupCourse.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    // Advisor
+    {
+      path: '/advisor/dashboard/schedule/list',
+      name: 'ScheduleList',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/advisor/ScheduleList.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/advisor/dashboard/schedule/create',
+      name: 'createSchedule',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/advisor/createSchedule.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/enrollment-schedule/:id',
+      name: 'createScheduleFromEnrollment',
+      component: () =>
+        import(
+          '/src/views/learning-center/modules/dashboard/advisor/createScheduleFromEnrollment.vue'
+        ),
+      props: (route) => ({
+        teacher: route.query.teacher,
+        student: route.query.student,
+        course: route.query.course
+      }),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/enrollment-schedule/:id',
+      name: 'AdvisorCreateScheduleFromEnrollment',
+      component: () =>
+        import(
+          '/src/views/learning-center/modules/dashboard/advisor/AdvisorCreateScheduleFromEnrollment.vue'
+        ),
+      props: (route) => ({
+        teacher: route.query.teacher,
+        student: route.query.student,
+        course: route.query.course
+      }),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/advisor/dashboard/enrollment',
+      name: 'EnrollmentList',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/advisor/EnrollmentList.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/advisor/dashboard/students',
+      name: 'StudentList',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/advisor/StudentList.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/advisor/dashboard/teachers',
+      name: 'TeacherList',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/advisor/TeacherList.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/advisor/dashboard/group-list',
+      name: 'GroupList',
+      component: () => import('/src/views/learning-center/modules/dashboard/advisor/GroupList.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/advisor/dashboard/courses',
+      name: 'CourseList',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/advisor/CourseList.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    // dashboard settings
+    {
+      path: '/dashboard/settings/update-profile',
+      name: 'UpdateProfile',
+      component: () => import('/src/views/learning-center/modules/dashboard/UpdateProfile.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+
+    {
+      path: '/dashboard/settings/update-password',
+      name: 'UpdatePassword',
+      component: () =>
+        import('/src/views/learning-center/modules/dashboard/UpdatePasswordPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/course-modules/:id',
+      name: 'CourseModulesPage',
+      component: () => import('/src/views/learning-center/modules/dashboard/CourseModulesPage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+    {
+      path: '/dashboard/my-purchases',
+      name: 'PurchasePage',
+      component: () => import('/src/views/learning-center/modules/dashboard/PurchasePage.vue'),
+      meta: { layout: DashboardLayout, requiresAuth: true }
+    },
+
+    // Course Enrollment
+    {
+      path: '/learning-center/course/:id/enroll',
+      name: 'CourseEnrollment',
+      component: () =>
+        import('/src/views/learning-center/modules/website/enrollment/CourseEnrollmentPage.vue'),
+      meta: { layout: LcFrntPageLayout, requiresAuth: true }
+    },
+    {
+      path: '/learning-center/cart',
+      name: 'CartPage',
+      component: () => import('/src/views/learning-center/modules/website/enrollment/CartPage.vue'),
+      meta: { layout: LcFrntPageLayout, requiresAuth: true }
+    },
+    {
+      path: '/learning-center/checkout',
+      name: 'CheckoutPage',
+      component: () =>
+        import('/src/views/learning-center/modules/website/enrollment/CheckoutPage.vue'),
+      meta: { layout: LcFrntPageLayout, requiresAuth: true }
+    },
+    {
+      path: '/learning-center/success',
+      name: 'PaymentSuccess',
+      component: () =>
+        import('/src/views/learning-center/modules/website/enrollment/PaymentSuccess.vue'),
+      meta: { layout: DashboardLayout }
+    },
+    {
+      path: '/learning-center/failed',
+      name: 'PaymentFailed',
+      component: () =>
+        import('/src/views/learning-center/modules/website/enrollment/PaymentFailed.vue'),
+      meta: { layout: LcFrntPageLayout }
+    },
+    {
+      path: '/:catchAll(.*)*',
+      name: 'NotfoundPage',
+      component: () => import('/src/views/learning-center/modules/website/NotfoundPage.vue'),
+      meta: { layout: LcFrntPageLayout }
+    }
   ]
 })
 

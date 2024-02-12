@@ -136,32 +136,41 @@ const login = () => {
     const user = authStore.userList.find((u) => u.email == data.value.email)
     // console.log(check , data.value)
     if (user && user.password == data.value.password) {
-      authStore.login(data.value)
+      authStore.login(user)
       if (user.role == 'member') {
+        authStore.user.dashboard = { name: 'Membar_Dashboard' }
         router.push({ name: 'Membar_Dashboard' })
         store.authUser = user
       } else if (user.role == 'admin') {
+        authStore.user.dashboard = { name: 'Admin_Dashboard' }
         router.push({ name: 'Admin_Dashboard' })
         store.authUser = user
       } else if (user.role == 'social') {
+        authStore.user.dashboard = { name: 'Social_Dashboard' }
         router.push({ name: 'Social_Dashboard' })
         store.authUser = user
       } else if (user.role == 'youth') {
+        authStore.user.dashboard = { name: 'Youth_Dashboard' }
         router.push({ name: 'Youth_Dashboard' })
         store.authUser = user
       } else if (user.role == 'finance') {
+         authStore.user.dashboard = { name: 'Finance_Dashboard' }
         router.push({ name: 'Finance_Dashboard' })
         store.authUser = user
       } else if (user.role == 'education') {
+         authStore.user.dashboard = { name: 'Education_Dashboard' }
         router.push({ name: 'Education_Dashboard' })
         store.authUser = user
       } else if (user.role == 'supply') {
+         authStore.user.dashboard = { name: 'Supply_Dashboard' }
         router.push({ name: 'Supply_Dashboard' })
         store.authUser = user
       } else if (user.role == 'hr') {
+         authStore.user.dashboard = { name: 'HR_Dashboard' }
         router.push({ name: 'HR_Dashboard' })
         store.authUser = user
       } else if (user.role == 'operation') {
+         authStore.user.dashboard = { name: 'Operation_Dashboard' }
         router.push({ name: 'Operation_Dashboard' })
         store.authUser = user
       }
