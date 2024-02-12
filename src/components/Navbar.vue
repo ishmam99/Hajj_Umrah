@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-[80px] w-full flex justify-center bg-[url('../assets/image/home/pattern-1.png')] bg-repeat items-center text-black fixed top-0 z-40 bg-[#36897bfa] duration-300"
+    class="h-[80px] w-full flex justify-center bg-[url('src/assets/image/home/pattern-1.png')] bg-repeat items-center text-black fixed top-0 z-40 bg-[#36897bfa] duration-300"
   >
     <div
       class="flex items-center justify-center gap-5 bg-[#23646dc6] py-4 px-[3%] uppercase text-sm w-full font-semi"
@@ -192,24 +192,40 @@
 
         <MenubarMenu>
           <MenubarTrigger class="px-1 font-bold">
-            <a href="http://localhost:5175/"> Learning Center </a>
+            Learning Center 
           </MenubarTrigger>
-          <!-- <MenubarContent>
-              <MenubarItem>
-                <router-link to="/studentadmission" class=" w-full hover:pl-5 duration-300 text-sm">Student Admission  </router-link>
-                </MenubarItem>
-                  <MenubarItem>
-                <router-link to="/Login" class=" w-full hover:pl-5 duration-300 text-sm">Student Login
-                </router-link></MenubarItem>  <MenubarItem>
-                <router-link to="/onsitelearning" class=" w-full hover:pl-5 duration-300 text-sm">Onsite learning center
-                </router-link>
-              </MenubarItem>
-              <MenubarItem>
-                <a href="" class=" w-full hover:pl-5 duration-300 text-sm">Online learning center
-                </a>
-              </MenubarItem>
-             
-            </MenubarContent> -->
+          <MenubarContent>
+            <MenubarItem>
+               <router-link to="/learning-center">Areas Of Study </router-link>
+            </MenubarItem>
+            <MenubarItem>
+               <router-link to="/learning-center/all-courses">Our Courses</router-link>
+            </MenubarItem>
+            <MenubarItem>
+               <router-link to="/learning-center/programs">Our Programs</router-link>
+            </MenubarItem>
+            <MenubarItem>
+              <router-link to="/registration" class="w-full hover:pl-5 duration-300 text-sm"
+                >Student Admission
+              </router-link>
+            </MenubarItem>
+            <MenubarItem>
+              <router-link to="/reg-teacher" class="w-full hover:pl-5 duration-300 text-sm"
+                >Teacher Registration
+              </router-link>
+            </MenubarItem>
+            <MenubarItem>
+              <router-link to="/student-login" class="w-full hover:pl-5 duration-300 text-sm"
+                >Student Login
+              </router-link></MenubarItem
+            >
+            <MenubarItem>
+              <router-link to="/teacher-login" class="w-full hover:pl-5 duration-300 text-sm"
+                >Teacher Login
+              </router-link></MenubarItem
+            >
+          
+          </MenubarContent>
         </MenubarMenu>
 
         <MenubarMenu>
@@ -436,39 +452,39 @@
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
-        <MenubarMenu>
+        <!-- <MenubarMenu>
           <MenubarTrigger class="px-1 font-bold"
             >Employees
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
+           
           </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
-              <router-link
-                to="/employees/employeeLogin"
-                class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link to="/login" class="w-full hover:pl-5 duration-300 font-semibold"
                 >Employee Login</router-link
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/HR_Login" class="w-full hover:pl-5 duration-300 font-semibold"
-                >HR Login</router-link
+              <router-link
+                to="/contact/contact_us"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >HR Management</router-link
               >
             </MenubarItem>
           </MenubarContent>
-        </MenubarMenu>
+        </MenubarMenu> -->
         <MenubarMenu>
           <MenubarTrigger class="px-1 font-bold"
             >Supply Chain
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
           <MenubarContent>
-            <!-- <MenubarItem>
+            <MenubarItem>
               <router-link
                 to="/Supply_Chain/supplier"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Supplier</router-link
               >
-            </MenubarItem> -->
+            </MenubarItem>
             <MenubarItem>
               <router-link
                 to="/Supply_Chain/supplierLogin"
@@ -530,7 +546,20 @@
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
-        <MenubarMenu>
+        <MenubarMenu v-if="store?.user">
+          <MenubarTrigger class="px-1 font-bold" 
+            >
+            <router-link :to="store?.user?.dashboard">
+              Dashboard
+            </router-link>
+           
+            
+           
+          </MenubarTrigger>
+         
+        </MenubarMenu>
+        <MenubarMenu v-else>
+
           <MenubarTrigger class="px-1 font-bold"
             >Login
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
@@ -575,11 +604,9 @@
                   >
                 </MenubarItem>
                 <MenubarItem>
-                  <router-link
-                    to="/Education_Login"
-                    class="w-full hover:pl-5 duration-300 font-semibold"
-                    >Education Management</router-link
-                  >
+                  <router-link to="/management-login" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Education Login</router-link
+              >
                 </MenubarItem>
                 <MenubarItem>
                   <router-link
@@ -689,8 +716,13 @@ import {
 
 import { ref } from 'vue'
 import { useAuthStore } from '../stores/AuthStore.js'
+import { useRoute, useRouter } from 'vue-router'
 const MemberDropMenu = ref(false)
+const router = useRouter()
 const store = useAuthStore()
+const gotoDashboard = () => {
+  router.push(store?.user.dashboard)
+}
 </script>
 
 <style scoped>
