@@ -26,9 +26,7 @@ function tab(index) {
 function apply() {
   localStorage.setItem('applying', router.currentRoute.value.params.id)
   localStorage.setItem('course-section', JSON.stringify(sectionDetails.value))
-  router.push(
-    '/learning-center/course/' + router.currentRoute.value.params.id + '/enroll'
-  )
+  router.push('/learning-center/course/' + router.currentRoute.value.params.id + '/enroll')
 }
 
 // function slideDown(index) {
@@ -58,9 +56,7 @@ async function courseSectionDetails() {
 async function getModuleList() {
   await axios
     .get(
-      import.meta.env.VITE_ELEARNING_BASE_API +
-        moduleListApi +
-        router.currentRoute.value.params.id
+      import.meta.env.VITE_ELEARNING_BASE_API + moduleListApi + router.currentRoute.value.params.id
     )
     .then((response) => {
       moduleList.value = response.data
@@ -90,9 +86,7 @@ onUnmounted(() => {
               <font-awesome-icon :icon="['fas', 'fa-clock']" /> Class Duration:
               {{ Number(sectionDetails.class_duration) * 60 }} min
             </div>
-            <div class="language">
-              <font-awesome-icon :icon="['fas', 'fa-language']" /> English
-            </div>
+            <div class="language"><font-awesome-icon :icon="['fas', 'fa-language']" /> English</div>
           </div>
         </div>
         <div v-if="user && user.role_id == 4" class="apply">
@@ -127,16 +121,10 @@ onUnmounted(() => {
     <div class="course-details">
       <div class="tab">
         <div class="tab-buttons">
-          <button
-            @click="tab(1)"
-            :class="tabIndex == 1 ? 'tab-button active' : 'tab-button'"
-          >
+          <button @click="tab(1)" :class="tabIndex == 1 ? 'tab-button active' : 'tab-button'">
             Course Information
           </button>
-          <button
-            @click="tab(2)"
-            :class="tabIndex == 2 ? 'tab-button active' : 'tab-button'"
-          >
+          <button @click="tab(2)" :class="tabIndex == 2 ? 'tab-button active' : 'tab-button'">
             Course Description
           </button>
           <!-- <button @click="tab(3)" :class="(tabIndex == 3) ? 'tab-button active' : 'tab-button'">Study Plan </button> -->
@@ -161,9 +149,7 @@ onUnmounted(() => {
                 </div>
                 <div class="point">
                   <font-awesome-icon :icon="['fas', 'fa-hand-point-right']" />
-                  <p>
-                    <strong>Section Id:</strong> {{ sectionDetails.section_id }}
-                  </p>
+                  <p><strong>Section Id:</strong> {{ sectionDetails.section_id }}</p>
                 </div>
                 <div class="point">
                   <font-awesome-icon :icon="['fas', 'fa-hand-point-right']" />
@@ -197,16 +183,11 @@ onUnmounted(() => {
                 </div>
                 <div class="point">
                   <font-awesome-icon :icon="['fas', 'fa-hand-point-right']" />
-                  <p>
-                    <strong>Course Duration:</strong> As per individual need
-                  </p>
+                  <p><strong>Course Duration:</strong> As per individual need</p>
                 </div>
                 <div class="point">
                   <font-awesome-icon :icon="['fas', 'fa-hand-point-right']" />
-                  <p>
-                    <strong>Cost per Month:</strong
-                    >{{ sectionDetails.cost_per_month }}USD
-                  </p>
+                  <p><strong>Cost per Month:</strong>{{ sectionDetails.cost_per_month }}USD</p>
                 </div>
               </div>
             </div>
@@ -489,7 +470,7 @@ onUnmounted(() => {
 .apply {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   top: 20px;
 }
 
@@ -577,7 +558,7 @@ onUnmounted(() => {
 .tab-buttons {
   background-color: white;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   border-bottom: 1px solid gray;
 }
 
@@ -628,8 +609,8 @@ onUnmounted(() => {
 
 .module-list .module .headline .indicator {
   display: flex;
-  justify-content: end;
-  align-items: start;
+  justify-content: flex-end;
+  align-items: flex-start;
   padding-top: 10px;
   font-size: 20px;
 }
@@ -650,7 +631,7 @@ onUnmounted(() => {
 .review-count {
   margin-bottom: 10px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 20px;
 }
@@ -722,7 +703,7 @@ onUnmounted(() => {
 
 .review-card .review .rating {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   padding: 5px;
   font-weight: bold;
@@ -753,7 +734,7 @@ onUnmounted(() => {
 
 .certificate .text {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 

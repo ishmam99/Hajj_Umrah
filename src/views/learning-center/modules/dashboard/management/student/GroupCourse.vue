@@ -71,9 +71,7 @@ watch(selectedCourses, async (newValue) => {
 
 //get area
 async function getAreas() {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + areaListApi
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + areaListApi)
   areas.value = resp.data
 
   console.log('area list ', resp.data)
@@ -81,9 +79,7 @@ async function getAreas() {
 
 //get program
 async function getPrograms(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + programListApi + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + programListApi + id)
   programs.value = resp.data
 
   console.log('program list ', resp.data)
@@ -91,9 +87,7 @@ async function getPrograms(id) {
 
 //get course
 async function getCourses(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + courseListApi + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + courseListApi + id)
   courses.value = resp.data
 
   console.log('course list ', resp.data)
@@ -101,9 +95,7 @@ async function getCourses(id) {
 
 //get batch
 async function getBatch(id = 25) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + batchListApi + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + batchListApi + id)
   batches.value = resp.data
   //   isTableActive = true;
 
@@ -120,9 +112,7 @@ async function openAdviserDialog(batchId) {
   console.log('Opening adviser dialog for batchId:', batchId)
 
   try {
-    const adviserResponse = await axios.get(
-      import.meta.env.VITE_ELEARNING_BASE_API + 'get-advisor'
-    )
+    const adviserResponse = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + 'get-advisor')
     advisers.value = adviserResponse.data
 
     console.log('showAdviserDialog before:', showAdviserDialog.value)
@@ -232,19 +222,14 @@ const assignAdviser = async (selectedAdviser) => {
 
     const adviserId = selectedAdviser.id
 
-    const selectedBatch = batches.value.find(
-      (batch) => batch.data.id === selectBatchId.value
-    )
+    const selectedBatch = batches.value.find((batch) => batch.data.id === selectBatchId.value)
     console.log(
       'Select batchs',
       batches.value.find((batch) => batch.data.id === selectBatchId.value)
     )
 
     if (!selectedBatch || !selectedBatch.data) {
-      console.error(
-        'Incomplete data for assignment. Selected batch:',
-        selectedBatch
-      )
+      console.error('Incomplete data for assignment. Selected batch:', selectedBatch)
       return
     }
 
@@ -256,7 +241,7 @@ const assignAdviser = async (selectedAdviser) => {
 
     const postData = {
       adviser_id: adviserId,
-      batch_name: selectedBatch ? selectedBatch.data.batch : null,
+      batch_name: selectedBatch ? selectedBatch.data.batch : null
     }
 
     // Make the POST request
@@ -272,7 +257,7 @@ const assignAdviser = async (selectedAdviser) => {
       icon: 'success',
       title: 'Advisor Assigned!',
       text: 'The adviser has been successfully assigned to the batch.',
-      confirmButtonText: 'OK',
+      confirmButtonText: 'OK'
     })
 
     // Close the dialog after assignment
@@ -287,7 +272,7 @@ const assignAdviser = async (selectedAdviser) => {
       icon: 'error',
       title: 'Error Assigning Advisor!',
       text: 'An error occurred while assigning the adviser. Please try again.',
-      confirmButtonText: 'OK',
+      confirmButtonText: 'OK'
     })
 
     closeAdviserDialog()
@@ -303,7 +288,7 @@ const formatTime = (time) => {
   const formattedTime = bstTime.toLocaleTimeString('en-US', {
     hour: 'numeric',
     minute: 'numeric',
-    hour12: true,
+    hour12: true
   })
   return formattedTime
 }
@@ -365,11 +350,7 @@ onUnmounted(() => {
             id="grid-state"
           >
             <option>Select an Option</option>
-            <option
-              v-for="program in programs"
-              :key="program"
-              :value="program.id"
-            >
+            <option v-for="program in programs" :key="program" :value="program.id">
               {{ program.name }}
             </option>
           </select>
@@ -417,11 +398,7 @@ onUnmounted(() => {
             id="grid-state"
           >
             <option>Select an Option</option>
-            <option
-              v-for="(batch, index) in batches"
-              :key="index"
-              :value="batch.data.id"
-            >
+            <option v-for="(batch, index) in batches" :key="index" :value="batch.data.id">
               {{ batch.data.batch }}
             </option>
           </select>
@@ -472,9 +449,7 @@ onUnmounted(() => {
                   style="width: 32px"
                 />
                 <span class="pt-2">{{
-                  slotProps.data.teacher.length > 0
-                    ? slotProps.data.teacher[0].name
-                    : 'N/A '
+                  slotProps.data.teacher.length > 0 ? slotProps.data.teacher[0].name : 'N/A '
                 }}</span>
               </div>
             </template>
@@ -581,7 +556,7 @@ onUnmounted(() => {
 
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;

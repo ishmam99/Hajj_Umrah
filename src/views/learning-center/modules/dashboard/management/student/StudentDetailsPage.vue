@@ -12,18 +12,14 @@ let data = ref([])
 const swal = inject('$swal')
 
 async function getData(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + userEditDataApi + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + userEditDataApi + id)
   data.value = resp.data.data
 }
 
 async function updateUser() {
   try {
     await axios.post(
-      import.meta.env.VITE_ELEARNING_BASE_API +
-        userUpdateApi +
-        router.currentRoute.value.params.id,
+      import.meta.env.VITE_ELEARNING_BASE_API + userUpdateApi + router.currentRoute.value.params.id,
       data.value
     )
     swal.fire({
@@ -31,7 +27,7 @@ async function updateUser() {
       icon: 'success',
       title: 'Student updated successfully',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   } catch (e) {
     swal.fire({
@@ -39,7 +35,7 @@ async function updateUser() {
       icon: 'error',
       title: 'Something went wrong',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   }
 }
@@ -278,7 +274,7 @@ onUnmounted(() => {
 }
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;

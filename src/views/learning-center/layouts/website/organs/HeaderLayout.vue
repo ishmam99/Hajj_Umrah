@@ -150,7 +150,7 @@ const user = JSON.parse(localStorage.getItem('user'))
 
 .right-menu {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     gap: 20px;
 }

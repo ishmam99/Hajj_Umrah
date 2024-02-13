@@ -13,16 +13,14 @@ const dt = ref()
 const products = ref()
 const selectedProducts = ref()
 const filters = ref({
-  global: { value: null, matchMode: FilterMatchMode.CONTAINS },
+  global: { value: null, matchMode: FilterMatchMode.CONTAINS }
 })
 
 let advisorId = ref(JSON.parse(localStorage.getItem('user')).id)
 
 async function getData() {
   const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API +
-      'get-teacher-by-advisor/' +
-      advisorId.value
+    import.meta.env.VITE_ELEARNING_BASE_API + 'get-teacher-by-advisor/' + advisorId.value
   )
   products.value = resp.data.data
   console.log(products.value)
@@ -125,8 +123,7 @@ onUnmounted(() => {
         <template #header>
           <div class="display-center">
             <div class="dashboard-title">
-              <font-awesome-icon :icon="['fas', 'fa-money-check']" /> Teacher
-              List
+              <font-awesome-icon :icon="['fas', 'fa-money-check']" /> Teacher List
             </div>
             <span class="p-input-icon-left">
               <i class="pi pi-search" />
@@ -138,18 +135,8 @@ onUnmounted(() => {
             </span>
           </div>
         </template>
-        <Column
-          field="teacher_info.id"
-          header="id"
-          sortable
-          style="min-width: 12rem"
-        ></Column>
-        <Column
-          field="teacher_info.name"
-          header="Name"
-          sortable
-          style="min-width: 16rem"
-        ></Column>
+        <Column field="teacher_info.id" header="id" sortable style="min-width: 12rem"></Column>
+        <Column field="teacher_info.name" header="Name" sortable style="min-width: 16rem"></Column>
         <Column
           field="teacher_info.phone_no"
           header="Contact"
@@ -162,12 +149,7 @@ onUnmounted(() => {
           sortable
           style="min-width: 10rem"
         ></Column>
-        <Column
-          field="created_at"
-          header="Registration Started"
-          sortable
-          style="min-width: 10rem"
-        >
+        <Column field="created_at" header="Registration Started" sortable style="min-width: 10rem">
           <template #body="slotProps">
             {{ dateFormatter(slotProps.data.created_at) }}
           </template>
@@ -216,7 +198,7 @@ onUnmounted(() => {
 }
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;
