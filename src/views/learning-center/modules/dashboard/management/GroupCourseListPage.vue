@@ -95,9 +95,7 @@ watch(selectedTeachers, async (newValue) => {
 
 //get Area
 async function getAreas() {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + areaListApi
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + areaListApi)
   areas.value = resp.data
 
   console.log('area list ', resp.data)
@@ -105,9 +103,7 @@ async function getAreas() {
 
 //get Program
 async function getPrograms(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + programListApi + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + programListApi + id)
   programs.value = resp.data
 
   console.log('program list ', resp.data)
@@ -115,9 +111,7 @@ async function getPrograms(id) {
 
 //get Course
 async function getCourses(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + courseListApi + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + courseListApi + id)
   courses.value = resp.data
 
   console.log('course list ', resp.data)
@@ -125,9 +119,7 @@ async function getCourses(id) {
 
 //get section
 async function getSection(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + sectionListApi + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + sectionListApi + id)
   sections.value = resp.data.data
 
   console.log('course list ', resp.data.data)
@@ -142,9 +134,7 @@ async function getSection(id) {
 // }
 
 async function getTeachers(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + teacherListApi + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + teacherListApi + id)
 
   if (resp.data && resp.data.length > 0 && resp.data[0].teacher_details) {
     teachers.value = resp.data[0].teacher_details
@@ -157,9 +147,7 @@ async function getTeachers(id) {
 
 //get batch
 async function getBatch(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + 'get-batch/' + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + 'get-batch/' + id)
   batches.value = resp.data
   isTableActive.value = true
 
@@ -183,14 +171,14 @@ const changeStatus = async (id, index, currentStatus, udateStatus) => {
         icon: 'success',
         title: 'Status Change Successful!',
         showConfirmButton: false,
-        timer: 1500,
+        timer: 1500
       })
     } catch (error) {
       // Show sweet alert for failure
       Swal.fire({
         icon: 'error',
         title: 'Status Change Failed!',
-        text: 'Please try again.',
+        text: 'Please try again.'
       })
 
       console.error('Error changing status:', error.message)
@@ -254,11 +242,7 @@ onUnmounted(() => {
             id="grid-state"
           >
             <option>Select an Option</option>
-            <option
-              v-for="program in programs"
-              :key="program"
-              :value="program.id"
-            >
+            <option v-for="program in programs" :key="program" :value="program.id">
               {{ program.name }}
             </option>
           </select>
@@ -306,11 +290,7 @@ onUnmounted(() => {
             id="grid-state"
           >
             <option>Select an Option</option>
-            <option
-              v-for="section in sections"
-              :key="section"
-              :value="section.id"
-            >
+            <option v-for="section in sections" :key="section" :value="section.id">
               {{ section.teacher_grade }}
             </option>
           </select>
@@ -336,11 +316,7 @@ onUnmounted(() => {
               id="grid-state"
             >
               <option>Select an Option</option>
-              <option
-                v-for="teacher in teachers"
-                :key="teacher"
-                :value="teacher.id"
-              >
+              <option v-for="teacher in teachers" :key="teacher" :value="teacher.id">
                 {{ teacher.name }}
               </option>
               <!-- <option  v-for="teacher in teachers" :key="teacher.teacher_details[0]" :value="teacher.teacher_details[0].id">{{ teacher.teacher_details[0].name }}</option> -->
@@ -380,11 +356,7 @@ onUnmounted(() => {
           </Column>
 
           <!--Batch name of the column-->
-          <Column
-            field="batch"
-            header="Batch Name"
-            style="min-width: 10rem"
-          ></Column>
+          <Column field="batch" header="Batch Name" style="min-width: 10rem"></Column>
 
           <!--Days of the week of  the group batch-->
           <Column field="day" header="Day">
@@ -403,18 +375,10 @@ onUnmounted(() => {
             </button> -->
 
               <button
-                @click="
-                  () =>
-                    changeStatus(
-                      slotProps.batch,
-                      index,
-                      slotProps.status,
-                      'active'
-                    )
-                "
+                @click="() => changeStatus(slotProps.batch, index, slotProps.status, 'active')"
                 :class="{
                   'bg-green-500 disabled': slotProps.status === 'active',
-                  'bg-red-300': slotProps.status !== 'inctive',
+                  'bg-red-300': slotProps.status !== 'inctive'
                 }"
                 class="text-sm text-white px-4 py-2 rounded-md hover:bg-green-600"
               >
@@ -503,7 +467,7 @@ onUnmounted(() => {
 
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;

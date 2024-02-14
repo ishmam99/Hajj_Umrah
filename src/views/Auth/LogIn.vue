@@ -102,6 +102,11 @@
           src="../../assets/image/common/login-7.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
+        /><img
+          v-if="route.name == 'Volunteer Login'"
+          src="../../assets/image/common/login-7.png"
+          alt=""
+          class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
           v-if="route.name == 'Operation Login'"
@@ -158,19 +163,23 @@ const login = () => {
         router.push({ name: 'Finance_Dashboard_Profile' })
         store.authUser = user
       } else if (user.role == 'education') {
-         authStore.user.dashboard = { name: 'Education_Dashboard' }
+        authStore.user.dashboard = { name: 'Education_Dashboard' }
         router.push({ name: 'Education_Dashboard' })
         store.authUser = user
       } else if (user.role == 'supply') {
-         authStore.user.dashboard = { name: 'Supply_Dashboard' }
+        authStore.user.dashboard = { name: 'Supply_Dashboard' }
         router.push({ name: 'Supply_Dashboard' })
         store.authUser = user
       } else if (user.role == 'hr') {
-         authStore.user.dashboard = { name: 'HR_Dashboard' }
+        authStore.user.dashboard = { name: 'HR_Dashboard' }
         router.push({ name: 'HR_Dashboard' })
         store.authUser = user
+      } else if (user.role == 'volunteer') {
+        authStore.user.dashboard = { name: 'Volunteer_Dashboard' }
+        router.push({ name: 'Volunteer_Dashboard' })
+        store.authUser = user
       } else if (user.role == 'operation') {
-         authStore.user.dashboard = { name: 'Operation_Dashboard' }
+        authStore.user.dashboard = { name: 'Operation_Dashboard' }
         router.push({ name: 'Operation_Dashboard' })
         store.authUser = user
       }

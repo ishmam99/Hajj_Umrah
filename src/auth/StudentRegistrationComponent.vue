@@ -5,7 +5,7 @@ import axios from 'axios'
 
 defineProps({
   payment: Boolean,
-  approved: Boolean,
+  approved: Boolean
 })
 
 const user = JSON.parse(localStorage.getItem('user'))
@@ -13,9 +13,7 @@ const api = 'user/edit-profile/'
 let userData = ref([])
 
 async function getUser(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + api + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + api + id)
   userData.value = resp.data.data
 }
 
@@ -34,17 +32,13 @@ onMounted(() => {
         <div class="verification-steps mt-4">
           <div class="flex" id="ProgressStepper">
             <Stepper
-              :stepCompleted="
-                payment == 'true' || approved == 'true' ? true : false
-              "
+              :stepCompleted="payment == 'true' || approved == 'true' ? true : false"
               :stepNumber="payment == 'true' || approved == 'true' ? '' : '1'"
               :stepperTitle="'Enrollment'"
             />
 
             <Stepper
-              :stepCompleted="
-                payment == 'true' || approved == 'true' ? true : false
-              "
+              :stepCompleted="payment == 'true' || approved == 'true' ? true : false"
               :stepNumber="payment == 'true' || approved == 'true' ? '' : '2'"
               :stepperTitle="'Payment'"
             />
@@ -66,9 +60,7 @@ onMounted(() => {
                 </div>
               </div>
 
-              <div class="text-sm text-center 2xl:text-base font-bold">
-                Onboard
-              </div>
+              <div class="text-sm text-center 2xl:text-base font-bold">Onboard</div>
             </div>
 
             <div v-else class="w-1/2">
@@ -80,9 +72,7 @@ onMounted(() => {
                 </div>
               </div>
 
-              <div class="text-sm text-center 2xl:text-base font-bold">
-                On Boarding
-              </div>
+              <div class="text-sm text-center 2xl:text-base font-bold">On Boarding</div>
             </div>
 
             <!-- <Stepper 
@@ -114,7 +104,7 @@ onMounted(() => {
   overflow: auto;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .step-headline {

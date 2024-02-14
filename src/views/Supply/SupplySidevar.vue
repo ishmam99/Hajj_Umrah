@@ -5,7 +5,9 @@
     <div class="bg-[#e1f2ff9a] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
       <p class="text-2xl font-bold text-[#2e318a]">Supply Chain Management Dashboard</p>
       <p class="text-xl font-bold">Welcome Mr. Hashim</p>
-      <router-link to="/Supply_Chain_Management_Chain_Management_Dashboard" class="flex items-center gap-2"
+      <router-link
+        to="/Supply_Chain_Management_Chain_Management_Dashboard"
+        class="flex items-center gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -18,7 +20,72 @@
           ></path></svg
         >Profile</router-link
       >
-      <router-link to="/Supply_Create_Order" class="flex items-center gap-2"
+      <div class="accordion">
+        <button @click="toggleAccordion('bidManagement')" class="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+          >
+            <path
+              d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z"
+            />
+          </svg>
+          Bid Management
+        </button>
+        <div v-show="currentAccordions === 'bidManagement'" class="submenu mx-8">
+          <router-link to="/Supply_Create_Bid" class="flex items-center gap-2"
+            >- Create Bid</router-link
+          >
+          <router-link to="/Supply_Bid_List" class="flex items-center gap-2"
+            >- Bid List</router-link
+          >
+          <router-link to="/Supply_Post_Bid" class="flex items-center gap-2"
+            >- Post Bid</router-link
+          >
+          <router-link to="/Supply_Select_Bid" class="flex items-center gap-2"
+            >- Select Bid</router-link
+          >
+          <router-link to="/Supply_Completed_Bid" class="flex items-center gap-2"
+            >- Completed Bid</router-link
+          >
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button @click="toggleAccordion('vendorManagement')" class="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+          >
+            <path
+              d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z"
+            />
+          </svg>
+          Vendor Management
+        </button>
+        <div v-show="currentAccordions === 'vendorManagement'" class="submenu mx-8">
+          <router-link to="/Supply_Hire_Vendor" class="flex items-center gap-2"
+            >- View New Vendor Application</router-link
+          >
+          <router-link to="/Supply_Vendor_List" class="flex items-center gap-2"
+            >- Registered Vendor List</router-link
+          >
+          <router-link to="/Supply_Post_Bid" class="flex items-center gap-2"
+            >- Active Vendor List
+          </router-link>
+          <router-link to="/Supply_Prefered_Vendor_List" class="flex items-center gap-2"
+            >- Prefered Vendor List</router-link
+          >
+        </div>
+      </div>
+
+      <!-- <router-link to="/Supply_Create_Supplier" class="flex items-center gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -29,36 +96,10 @@
           <path
             d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z"
           ></path></svg
-        >Create Order</router-link
-      >
-      <router-link to="/Supply_Order_List" class="flex items-center gap-2"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
-          ></path></svg
-        >Order List</router-link
-      >
-      <router-link to="/Supply_Create_Supplier" class="flex items-center gap-2"
-      ><svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        width="24"
-        height="24"
-        fill="currentColor"
-      >
-        <path
-          d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z"
-        ></path></svg
-      >Create Supplier</router-link
-    >
+        >Create Supplier</router-link
+      > -->
 
-      <router-link to="/Supply_Supplier_List" class="flex items-center gap-2"
+      <!-- <router-link to="/Supply_Supplier_List" class="flex items-center gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -70,7 +111,7 @@
             d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
           ></path></svg
         >Supplier List</router-link
-      >
+      > -->
 
       <router-link to="" class="flex items-center gap-2"
         ><svg
@@ -106,6 +147,16 @@ const route = useRoute()
 const router = useRouter()
 const store = useAuthStore()
 
+const currentAccordions = ref('bidManagement')
+
+const toggleAccordion = (accordionName) => {
+  if (accordionName === currentAccordions.value) {
+    currentAccordions.value = ''
+  } else {
+    currentAccordions.value = accordionName
+  }
+}
+
 watch(
   () => store.isAuthenticated,
   (newIsAuthenticated) => {
@@ -117,6 +168,7 @@ watch(
   }
 )
 </script>
+
 <style scoped>
 .router-link-active {
   color: #2e318a;

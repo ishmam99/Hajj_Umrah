@@ -166,7 +166,7 @@ onUnmounted(() => {
 
 .cats {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 15px;
 }
 

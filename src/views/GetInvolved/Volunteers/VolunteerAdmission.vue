@@ -21,14 +21,19 @@
             <p class="text-teal-800">/ Apply For Volunteer</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-teal-800 text-4xl font-bold"> Apply For Volunteer</h1>
+            <h1 class="text-teal-800 text-4xl font-bold">Apply For Volunteer</h1>
             <div>
               <p></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="bg-[#1a504785] h-full py-5 pt-10 flex items-center justify-center gap-5 px-20 w-full">
+
+      <PostVolunteerJob :renderFrom="'applyVolunteer'" />
+
+      <!-- <div
+        class="bg-[#1a504785] h-full py-5 pt-10 flex items-center justify-center gap-5 px-20 w-full"
+      >
         <div class="space-y-8 w-3/4">
           <div class="bg-white rounded-xl p-5 w-full">
             <div class="pt-4">
@@ -171,7 +176,7 @@
                   </div>
                 </div>
                 <div>
-                  <p for="" class="mb-3">Preferred Program <span class="text-red-500">*</span> </p>
+                  <p for="" class="mb-3">Preferred Program <span class="text-red-500">*</span></p>
                   <Select v-model="volunteerAdmission.preferred_program">
                     <SelectTrigger class="w-full">
                       <SelectValue placeholder="Select a program" />
@@ -182,23 +187,26 @@
                         <SelectItem value="Educate The Children"> Educate The Children </SelectItem>
                         <SelectItem value="Shelter The Homeless"> Shelter The Homeless </SelectItem>
                         <SelectItem value="Comfort The Sick"> Comfort The Sick </SelectItem>
-                        <SelectItem value="Enhance Social Justice"> Enhance Social Justice </SelectItem>
+                        <SelectItem value="Enhance Social Justice">
+                          Enhance Social Justice
+                        </SelectItem>
                         <SelectItem value="Feed The Hungry"> Feed The Hungry </SelectItem>
                       </SelectGroup>
                     </SelectContent>
                   </Select>
                 </div>
 
-                <button type="submit" 
-                class="w-[350px] h-[45px] rounded-2xl bg-teal-800 text-white font-bold mx-auto flex items-center text-center justify-center"> Apply
+                <button
+                  type="submit"
+                  class="w-[350px] h-[45px] rounded-2xl bg-teal-800 text-white font-bold mx-auto flex items-center text-center justify-center"
+                >
+                  Apply
                 </button>
               </div>
             </form>
-            
           </div>
         </div>
-
-      </div>
+      </div> -->
     </DefaultLayout>
   </div>
 </template>
@@ -207,7 +215,8 @@
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import Card from '/src/components/cardSection.vue'
 import RegistrationMore from '/src/components/RgistrationMore.vue'
-import{ref} from 'vue'
+import PostVolunteerJob from '@/components/volunteer/PostVolunteerJob.vue'
+import { ref } from 'vue'
 import {
   Select,
   SelectContent,
@@ -229,39 +238,39 @@ const volunteerAdmission = ref({
   state: '',
   preferred_date: '',
   preferred_time: '',
-  preferred_program: '',
+  preferred_program: ''
 })
 
 const volunteerAdmissionSubmit = async () => {
   try {
     const data = api().post('volunteer-app-store', {
-    method: 'post',
-      body: volunteerAdmission,
+      method: 'post',
+      body: volunteerAdmission
     })
     console.log(data)
     toast({
-      title:"sucess",
-      description: 'Friday, February 10, 2023 at 5:57 PM',
-    });
+      title: 'sucess',
+      description: 'Friday, February 10, 2023 at 5:57 PM'
+    })
   } catch (error) {
     console.log(error)
     toast({
-      title:"error",
-      description: 'Friday, February 10, 2023 at 5:57 PM',
-    });
+      title: 'error',
+      description: 'Friday, February 10, 2023 at 5:57 PM'
+    })
   }
   volunteerAdmission.value = {
-  first_name: '',
-  last_name: '',
-  email: '',
-  phone_number: '',
-  address: '',
-  city: '',
-  state: '',
-  preferred_date: '',
-  preferred_time: '',
-  preferred_program: '',
-}
+    first_name: '',
+    last_name: '',
+    email: '',
+    phone_number: '',
+    address: '',
+    city: '',
+    state: '',
+    preferred_date: '',
+    preferred_time: '',
+    preferred_program: ''
+  }
 }
 </script>
 

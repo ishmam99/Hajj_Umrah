@@ -19,7 +19,7 @@ const courseListApi = 'course-list/'
 const teacherListApi = 'teachers-list/'
 
 const filters = ref({
-  global: { value: null, matchMode: FilterMatchMode.CONTAINS },
+  global: { value: null, matchMode: FilterMatchMode.CONTAINS }
 })
 
 let areas = ref([])
@@ -71,52 +71,40 @@ watch(selectedTeachers, async (newValue) => {
 })
 
 async function getData() {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + 'get-advisor'
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + 'get-advisor')
   products.value = resp.data
 }
 
 async function getAreas() {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + areaListApi
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + areaListApi)
   areas.value = resp.data
 
   console.log('area list ', resp.data)
 }
 
 async function getPrograms(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + programListApi + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + programListApi + id)
   programs.value = resp.data
 
   console.log('program list ', resp.data)
 }
 
 async function getCourses(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + courseListApi + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + courseListApi + id)
   courses.value = resp.data
 
   console.log('course list ', resp.data)
 }
 
 async function geTeachers(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + teacherListApi + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + teacherListApi + id)
   teachers.value = resp.data.data
 
   console.log('Teacher list ', resp.data)
 }
 
 async function getBatch(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + 'get-batch/' + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + 'get-batch/' + id)
   batch.value = resp.data
   isTableActive = true
 
@@ -136,10 +124,7 @@ onUnmounted(() => {
 
 <template>
   <div class="dashboard-content">
-    <img
-      src="@/assets/images/dashboard/student-management/banner-10.png"
-      alt=""
-    />
+    <img src="@/assets/images/dashboard/student-management/banner-10.png" alt="" />
     <div class="dashboard-wrapper">
       <div class="md:flex md:items-center mb-6 mt-6">
         <div class="md:w-1/3">
@@ -193,11 +178,7 @@ onUnmounted(() => {
             id="grid-state"
           >
             <option>Select an Option</option>
-            <option
-              v-for="program in programs"
-              :key="program"
-              :value="program.id"
-            >
+            <option v-for="program in programs" :key="program" :value="program.id">
               {{ program.name }}
             </option>
           </select>
@@ -269,11 +250,7 @@ onUnmounted(() => {
             id="grid-state"
           >
             <option>Select an Option</option>
-            <option
-              v-for="teacher in teachers"
-              :key="teacher"
-              :value="teacher.id"
-            >
+            <option v-for="teacher in teachers" :key="teacher" :value="teacher.id">
               {{ teacher.name }}
             </option>
           </select>
@@ -323,30 +300,10 @@ onUnmounted(() => {
             </span>
           </div>
         </template>
-        <Column
-          field="id"
-          header="id"
-          sortable
-          style="min-width: 12rem"
-        ></Column>
-        <Column
-          field="name"
-          header="Name"
-          sortable
-          style="min-width: 16rem"
-        ></Column>
-        <Column
-          field="phone_no"
-          header="Contact"
-          sortable
-          style="min-width: 10rem"
-        ></Column>
-        <Column
-          field="gender"
-          header="Gender"
-          sortable
-          style="min-width: 10rem"
-        ></Column>
+        <Column field="id" header="id" sortable style="min-width: 12rem"></Column>
+        <Column field="name" header="Name" sortable style="min-width: 16rem"></Column>
+        <Column field="phone_no" header="Contact" sortable style="min-width: 10rem"></Column>
+        <Column field="gender" header="Gender" sortable style="min-width: 10rem"></Column>
       </DataTable>
       <div v-else>
         <h2>Loading ...</h2>
@@ -384,7 +341,7 @@ onUnmounted(() => {
 
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;
