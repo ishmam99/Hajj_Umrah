@@ -250,20 +250,10 @@ const router = createRouter({
       component: () => import('../views/Auth/LogIn.vue')
     },
     {
-      path: '/volunteer/volunteer-dashboard',
+      path: '/volunteer',
       name: 'Volunteer_Dashboard',
       // component: () => import('../views/Hr/HrDashbord.vue')
       component: () => import('../views/GetInvolved/Volunteers/VolunteerDashboard.vue')
-    },
-    {
-      path: '/volunteer/create-volunteer-job',
-      name: 'Create_Volunteer_Job',
-      component: () => import('../views/GetInvolved/Volunteers/CreateVolunteerJob.vue')
-    },
-    {
-      path: '/volunteer/apply-volunteer-job',
-      name: 'Apply_Volunteer_Job',
-      component: () => import('../views/GetInvolved/Volunteers/ApplyVolunteer.vue')
     },
     {
       path: '/getinvolved/applyforspeaker',
