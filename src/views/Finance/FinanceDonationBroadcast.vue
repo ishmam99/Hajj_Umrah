@@ -1,7 +1,7 @@
 <template>
   <div class="px-4 bg-white py-5 w-3/4">
      <div class="flex justify-between items-center pt-4">
-       <p class="text-2xl text-yellow-600 font-bold pb-2">Program List</p>
+       <p class="text-2xl text-yellow-600 font-bold pb-2">Donation Event Broadcast</p>
      </div>
      <hr />
      <div
@@ -10,11 +10,11 @@
        <table class="table-auto w-full">
          <thead>
            <tr class="bg-white">
-             <th class="p-2 text-center w-1/8">No.</th>
-             <th class="p-2 text-center w-3/8">Program Name(s)</th>
+             <th class="p-2 text-center w-1/8">Donation ID</th>
+             <th class="p-2 text-center w-3/8">Donation Event Name(s)</th>
              <th class="p-2 text-center w-1/8">Starting Date</th>
              <th class="p-2 text-center w-1/8">Ending Date</th>
-             <th class="p-2 text-center w-1/8">Time</th>
+             <th class="p-2 text-center w-1/8">Amount</th>
              <th class="p-2 text-center w-1/8">Action</th>
            </tr>
          </thead>
@@ -27,7 +27,7 @@
              </td>
              <td class="py-4 p-2 text-center w-1/8">1 Jan 2024</td>
              <td class="py-4 p-2 text-center w-1/8">1 Feb 2024</td>
-             <td class="py-4 p-2 text-center w-1/8">10.00 AM</td>
+             <td class="py-4 p-2 text-center w-1/8">$ 1000000</td>
              <td class="py-4 p-2 text-center w-1/8">
               <Select class="">
                 <SelectTrigger class="w-full">
@@ -36,9 +36,9 @@
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select</SelectLabel>
-                    <SelectItem value="Comfort The Sick"> Active </SelectItem>
-                    <SelectItem value="Educate The Children"> Inactive </SelectItem>
-                    <SelectItem value="Shelter The Homeless"> Repeate </SelectItem>
+                    <SelectItem value="Comfort The Sick"> Post </SelectItem>
+                    <SelectItem value="Educate The Children"> Edit </SelectItem>
+                    <SelectItem value="Shelter The Homeless"> Delete </SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -52,7 +52,7 @@
              </td>
              <td class="py-4 p-2 text-center w-1/8 ">1 Jan 2024</td>
              <td class="py-4 p-2 text-center w-1/8">1 Feb 2024</td>
-             <td class="py-4 p-2 text-center w-1/8">4.00 PM </td>
+             <td class="py-4 p-2 text-center w-1/8">$ 500000</td>
              <td class="py-4 p-2 text-center w-1/8">
               <Select class="">
                 <SelectTrigger class="w-full">
@@ -61,9 +61,9 @@
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select</SelectLabel>
-                    <SelectItem value="Comfort The Sick"> Active </SelectItem>
-                    <SelectItem value="Educate The Children"> Inactive </SelectItem>
-                    <SelectItem value="Shelter The Homeless"> Repeate </SelectItem>
+                    <SelectItem value="Comfort The Sick"> Post </SelectItem>
+                    <SelectItem value="Educate The Children"> Edit </SelectItem>
+                    <SelectItem value="Shelter The Homeless"> Delete </SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -86,3 +86,4 @@
   SelectValue
 } from '/components/ui/select'
  </script>
+ 

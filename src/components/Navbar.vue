@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-[80px] w-full flex justify-center bg-[url('src/assets/image/home/pattern-1.png')] bg-repeat items-center text-black fixed top-0 z-40 bg-[#36897bfa] duration-300"
+    class="h-[80px] w-full flex justify-center bg-[url('/src/assets/image/home/pattern-1.png')] bg-repeat items-center text-black fixed top-0 z-40 bg-[#36897bfa] duration-300"
   >
     <div
       class="flex items-center justify-center gap-5 bg-[#23646dc6] py-4 px-[3%] uppercase text-sm w-full font-semi"

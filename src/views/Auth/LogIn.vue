@@ -151,11 +151,11 @@ const login = () => {
         store.authUser = user
       } else if (user.role == 'youth') {
         authStore.user.dashboard = { name: 'Youth_Dashboard' }
-        router.push({ name: 'Youth_Dashboard' })
+        router.push({ name: 'Youth_Dashboard_Profile' })
         store.authUser = user
       } else if (user.role == 'finance') {
          authStore.user.dashboard = { name: 'Finance_Dashboard' }
-        router.push({ name: 'Finance_Dashboard' })
+        router.push({ name: 'Finance_Dashboard_Profile' })
         store.authUser = user
       } else if (user.role == 'education') {
          authStore.user.dashboard = { name: 'Education_Dashboard' }

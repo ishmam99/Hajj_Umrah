@@ -376,16 +376,33 @@ const router = createRouter({
       path: '/Youth_Management_Dashboard',
       name: 'Youth_Dashboard',
       component: () => import('../views/Youth/YouthDashborad.vue'),
-    },
-    {
-      path: '/Youth_Program_Create',
-      name: 'Youth_Program_Create',
-      component: () => import('../views/Youth/YouthProgramCreate.vue'),
-    },
-    {
-      path: '/Youth_Program_List',
-      name: 'Youth_Program_List',
-      component: () => import('../views/Youth/YouthProgramList.vue'),
+      children:[
+        {
+        path: '/Youth_Dashboard/Proile',
+        name:'Youth_Dashboard_Profile',
+            component: () => import('../views/Youth/Profile/YouthProfile.vue'),
+        },
+        {
+          path: '/Youth_Dashboard/Year_Planer',
+          name:'Youth_Year_Planer',
+              component: () => import('../views/Youth/YouthYearPlaner.vue'),
+        },
+        {
+          path: '/Youth_Dashboard/Program_List',
+          name:'Youth_Program_List',
+              component: () => import('../views/Youth/YouthProgramList.vue'),
+        },
+        {
+          path: '/Youth_Dashboard/Program_Broadcast',
+          name:'Youth_Program_Broadcast',
+              component: () => import('../views/Youth/YouthProgramBroadcast.vue.vue'),
+        },
+        {
+          path: '/Youth_Dashboard/Youth_Program_Create',
+          name: 'Youth_Program_Create',
+          component: () => import('../views/Youth/YouthProgramCreate.vue'),
+        },
+      ]
     },
 
     {
@@ -397,33 +414,54 @@ const router = createRouter({
       path: '/Finance_Dashboard',
       name: 'Finance_Dashboard',
       component: () => import('../views/Finance/FinanceDashboard.vue'),
+      children:[
+        {
+        path: '/Finance_Dashboard/Proile',
+        name:'Finance_Dashboard_Profile',
+            component: () => import('../views/Finance/Profile/FinanceProfile.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Account_Ledger',
+          name:'Account_Ledger',
+              component: () => import('../views/Finance/FinanceAccountLedger.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Payroll',
+          name:'Payroll',
+              component: () => import('../views/Finance/FinancePayroll.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Project_Expense',
+          name:'Project_Expense',
+              component: () => import('../views/Finance/FinanceProjectExpense.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Operation_Expense',
+          name:'Operation_Expense',
+              component: () => import('../views/Finance/FinanceOperationExepense.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Donation_Create',
+          name:'Donation_Create',
+              component: () => import('../views/Finance/FinanceDonationCreate.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Donation_List',
+          name:'Donation_List',
+              component: () => import('../views/Finance/FinanceDonationList.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Donation_Broadcast',
+          name:'Donation_Broadcast',
+              component: () => import('../views/Finance/FinanceDonationBroadcast.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Donation_Status',
+          name:'Donation_Status',
+              component: () => import('../views/Finance/FinanceDonationStatus.vue'),
+        },
+      ]
     },
-    {
-      path: '/Finance_Accounts',
-      name: 'Finance_Accounts',
-      component: () => import('../views/Finance/Accounts.vue'),
-    },
-    {
-      path: '/Finance_Operational_Expenses',
-      name: 'Finance_Operational_Expenses',
-      component: () => import('../views/Finance/OperationalExpenses.vue'),
-    },
-    {
-      path: '/Finance_Project_Expenses',
-      name: 'Finance_Project_Expenses',
-      component: () => import('../views/Finance/ProjectExpenses.vue'),
-    },
-    {
-      path: '/Finance_Deposits',
-      name: 'Finance_Deposits',
-      component: () => import('../views/Finance/FinanceDeposits.vue'),
-    },
-    {
-      path: '/Finance_Donations',
-      name: 'Finance_Donations',
-      component: () => import('../views/Finance/Donations.vue'),
-    },
-
     {
       path: '/Education_Login',
       name: 'Education Login',

@@ -1,7 +1,7 @@
 <template>
   <div class="px-4 bg-white py-5 w-3/4">
      <div class="flex justify-between items-center pt-4">
-       <p class="text-2xl text-yellow-600 font-bold pb-2">Program List</p>
+       <p class="text-2xl text-yellow-600 font-bold pb-2">Program List Broadcast</p>
      </div>
      <hr />
      <div
@@ -36,9 +36,9 @@
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select</SelectLabel>
-                    <SelectItem value="Comfort The Sick"> Active </SelectItem>
-                    <SelectItem value="Educate The Children"> Inactive </SelectItem>
-                    <SelectItem value="Shelter The Homeless"> Repeate </SelectItem>
+                    <SelectItem value="Comfort The Sick"> Post </SelectItem>
+                    <SelectItem value="Educate The Children"> Edit </SelectItem>
+                    <SelectItem value="Shelter The Homeless"> Delete </SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -61,9 +61,9 @@
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select</SelectLabel>
-                    <SelectItem value="Comfort The Sick"> Active </SelectItem>
-                    <SelectItem value="Educate The Children"> Inactive </SelectItem>
-                    <SelectItem value="Shelter The Homeless"> Repeate </SelectItem>
+                    <SelectItem value="Comfort The Sick"> Post </SelectItem>
+                    <SelectItem value="Educate The Children"> Edit </SelectItem>
+                    <SelectItem value="Shelter The Homeless"> Delete </SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>

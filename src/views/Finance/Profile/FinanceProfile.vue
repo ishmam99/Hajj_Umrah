@@ -1,4 +1,5 @@
 <template>
+
    <div class="px-[5%] bg-white py-5 w-3/4 flex flex-col items-center">
         <img src="/src/assets/image/home/download.jpeg" alt="" class="h-[100px] w-[100px] rounded-full border shadow-md">
         <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
@@ -54,6 +55,7 @@
         </div>
 
    </div> 
+
 </template>
 <script setup>
 </script>

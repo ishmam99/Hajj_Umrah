@@ -14,7 +14,7 @@ import YearlyPlanner from '../components/HomeFolder/YearlyPlanner.vue'
   <DefaultLayout>
     <Hero />
     <div
-      class="py-[30px] px-[5%] bg-slate-50 bg-[url('../assets/image/home/pattern-1.png')] flex justify-center gap-5"
+      class="py-[30px] px-[5%] bg-slate-50 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
     >
       <div class="w-full px-5">
         <h1 class="text-3xl font-bold uppercase pb-3">Virtual Tour</h1>
