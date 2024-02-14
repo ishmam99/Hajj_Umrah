@@ -114,19 +114,17 @@ import {
                     <td class="py-4 p-2">3 March 2024</td>
                     <td class="py-4 p-2">30</td>
                     <td class="py-4 p-2">
-                      <button
-                        class="px-3 py-2 rounded-md shadow-md bg-green-700 text-white text-sm"
-                      >
+                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         001
                       </button>
                     </td>
                     <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-gray-600 text-white text-sm">
+                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         Check
                       </button>
                     </td>
                     <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-red-600 text-white text-sm">
+                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         Check
                       </button>
                     </td>
@@ -194,19 +192,17 @@ import {
                     <td class="py-4 p-2">3 March 2024</td>
                     <td class="py-4 p-2">30</td>
                     <td class="py-4 p-2">
-                      <button
-                        class="px-3 py-2 rounded-md shadow-md bg-green-700 text-white text-sm"
-                      >
+                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         001
                       </button>
                     </td>
                     <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-gray-600 text-white text-sm">
+                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         Check
                       </button>
                     </td>
                     <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-red-600 text-white text-sm">
+                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         Check
                       </button>
                     </td>
@@ -256,19 +252,17 @@ import {
                     <td class="py-4 p-2">3 March 2024</td>
                     <td class="py-4 p-2">30</td>
                     <td class="py-4 p-2">
-                      <button
-                        class="px-3 py-2 rounded-md shadow-md bg-green-700 text-white text-sm"
-                      >
+                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         001
                       </button>
                     </td>
                     <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-gray-600 text-white text-sm">
+                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         Check
                       </button>
                     </td>
                     <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-red-600 text-white text-sm">
+                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         Check
                       </button>
                     </td>
