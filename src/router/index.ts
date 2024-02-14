@@ -316,6 +316,7 @@ const router = createRouter({
       component: () => import('../views/Admin/AdminDashboard.vue'),
     },
 
+    //social service
     {
       path: '/Social_Service_Login',
       name: 'Social Service Login',
@@ -325,11 +326,18 @@ const router = createRouter({
       path: '/Social_Service_Dashboard',
       name: 'Social_Dashboard',
       component: () => import('../views/Social/SocialDashboard.vue'),
+      children:[
+        {
+        path: '/Social_Service_Dashboard/Profile',
+          name:'Social_Service_Dashboard_Profile',
+            component: () => import('../views/Social/Profile/SocialProfile.vue'),
+        }
+      ]
     },
     {
-      path: '/Social_Service_Event_List',
-      name: 'Social_Service_Event_List',
-      component: () => import('../views/Social/SocialManagementEventList.vue'),
+      path: '/Social_Service_Event_Post',
+      name: 'Social_Service_Event_Post',
+      component: () => import('../views/Social/SocialManagementEventPost.vue'),
     },
     {
       path: '/Social_Service_Project_List',
@@ -345,6 +353,16 @@ const router = createRouter({
       path: '/Social_Service_Project_Create',
       name: 'Social_Service_Project_Create',
       component: () => import('../views/Social/SocialManagementProjectCreate.vue'),
+    },
+    {
+      path: '/Social_Service_Event_List',
+      name: 'Social_Service_Event_List',
+      component: () => import('../views/Social/SocialManagementEventList.vue'),
+    },
+    {
+      path: '/Social_Service_Project_Post',
+      name: 'Social_Service_Project_Post',
+      component: () => import('../views/Social/SocialManagementProjectPost.vue'),
     },
     {
       path: '/Social_Gallery',
