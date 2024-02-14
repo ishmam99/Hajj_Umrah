@@ -14,13 +14,11 @@ const dt = ref()
 const products = ref()
 const selectedProducts = ref()
 const filters = ref({
-  global: { value: null, matchMode: FilterMatchMode.CONTAINS },
+  global: { value: null, matchMode: FilterMatchMode.CONTAINS }
 })
 
 async function getData() {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + 'in-registration-process'
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + 'in-registration-process')
   products.value = resp.data
 }
 
@@ -91,10 +89,7 @@ onUnmounted(() => {
 
 <template>
   <div class="dashboard-content">
-    <img
-      src="@/assets/images/dashboard/student-management/in-process.png"
-      alt=""
-    />
+    <img src="@/assets/images/dashboard/student-management/in-process.png" alt="" />
     <div class="dashboard-wrapper">
       <DataTable
         ref="dt"
@@ -112,8 +107,8 @@ onUnmounted(() => {
         <template #header>
           <div class="display-center">
             <div class="dashboard-title">
-              <font-awesome-icon :icon="['fas', 'fa-money-check']" /> Students
-              In Registration Process
+              <font-awesome-icon :icon="['fas', 'fa-money-check']" /> Students In Registration
+              Process
             </div>
             <span class="p-input-icon-left">
               <i class="pi pi-search" />
@@ -125,52 +120,17 @@ onUnmounted(() => {
             </span>
           </div>
         </template>
-        <Column
-          field="id"
-          header="id"
-          sortable
-          style="min-width: 12rem"
-        ></Column>
-        <Column
-          field="name"
-          header="Name"
-          sortable
-          style="min-width: 16rem"
-        ></Column>
-        <Column
-          field="phone_no"
-          header="Contact"
-          sortable
-          style="min-width: 10rem"
-        ></Column>
-        <Column
-          field="gender"
-          header="Gender"
-          sortable
-          style="min-width: 10rem"
-        ></Column>
-        <Column
-          field="user_status_id"
-          header="Gender"
-          sortable
-          style="min-width: 10rem"
-        ></Column>
-        <Column
-          field="created_at"
-          header="Registration Started"
-          sortable
-          style="min-width: 10rem"
-        >
+        <Column field="id" header="id" sortable style="min-width: 12rem"></Column>
+        <Column field="name" header="Name" sortable style="min-width: 16rem"></Column>
+        <Column field="phone_no" header="Contact" sortable style="min-width: 10rem"></Column>
+        <Column field="gender" header="Gender" sortable style="min-width: 10rem"></Column>
+        <Column field="user_status_id" header="Gender" sortable style="min-width: 10rem"></Column>
+        <Column field="created_at" header="Registration Started" sortable style="min-width: 10rem">
           <template #body="slotProps">
             {{ dateFormatter(slotProps.data.created_at) }}
           </template>
         </Column>
-        <Column
-          field="user_status_id"
-          header="Status"
-          sortable
-          style="min-width: 12rem"
-        >
+        <Column field="user_status_id" header="Status" sortable style="min-width: 12rem">
           <template #body="slotProps">
             <Tag
               :value="getStatusValue(slotProps.data.user_status_id)"
@@ -218,7 +178,7 @@ onUnmounted(() => {
 }
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;

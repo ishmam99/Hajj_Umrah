@@ -1,5 +1,5 @@
 <script setup>
-import { defineEmits, defineProps } from 'vue';
+import { defineEmits, defineProps } from 'vue'
 
 const emit = defineEmits(['modalClose'])
 
@@ -13,21 +13,21 @@ function close() {
 </script>
 
 <template>
-    <div class="modal" >
-        <div class="modal-content" :style="width">
-          <div @click="close" class="close"><font-awesome-icon :icon="['fas', 'fa-close']" /></div>
-          <div class="content-body">
-            <slot></slot>
-          </div>
-        </div>
+  <div class="modal">
+    <div class="modal-content" :style="width">
+      <div @click="close" class="close"><font-awesome-icon :icon="['fas', 'fa-close']" /></div>
+      <div class="content-body">
+        <slot></slot>
+      </div>
     </div>
+  </div>
 </template>
 
 <style scoped>
 .close {
   padding: 10px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   transition: 0.2s ease;
   cursor: pointer;
 }
@@ -43,27 +43,27 @@ function close() {
 }
 
 .modal {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 2;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    font-family: math !important;
-  }
+  font-family: math !important;
+}
 
-  .modal-content {
-    height: auto;
+.modal-content {
+  height: auto;
 
-    background: white;
-    border-radius: 5px;
-  }
+  background: white;
+  border-radius: 5px;
+}
 </style>

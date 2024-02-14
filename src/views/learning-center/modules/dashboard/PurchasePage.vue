@@ -6,11 +6,7 @@ import { useCommonStore } from '@/stores/common'
 
 const commonStore = useCommonStore()
 
-let user_id = ref(
-  localStorage.getItem('user')
-    ? JSON.parse(localStorage.getItem('user')).id
-    : null
-)
+let user_id = ref(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).id : null)
 let purchaseInfo = ref([])
 const tableData = ref([])
 
@@ -25,7 +21,7 @@ async function getPurchaseInfo() {
       tableData.value.push({
         Id: object.id,
         Transaction_date: object.transaction_date,
-        Amount: object.amount,
+        Amount: object.amount
       })
     })
   }
@@ -62,7 +58,7 @@ const fields = ref(['Id', 'Transaction_date', 'Amount'])
 }
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;

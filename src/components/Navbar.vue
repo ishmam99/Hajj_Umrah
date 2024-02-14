@@ -342,7 +342,7 @@
                 </MenubarItem>
                 <MenubarItem>
                   <router-link
-                    to="/volunteers/volunteerlogin"
+                    to="/volunteerLogin"
                     class="w-full hover:pl-5 duration-300 text-sm font-semibold"
                   >
                     Volunteer Login
@@ -616,6 +616,13 @@
                 <MenubarItem>
                   <router-link to="/HR_Login" class="w-full hover:pl-5 duration-300 font-semibold"
                     >HR Management</router-link
+                  >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link
+                    to="/volunteerLogin"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Volunteer Management</router-link
                   >
                 </MenubarItem>
                 <MenubarItem>

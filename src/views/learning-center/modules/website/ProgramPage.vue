@@ -317,7 +317,7 @@ onUnmounted(() => {
 <style scoped>
 .tab-flex-start {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 25px;
   margin: 20px 0;
@@ -391,7 +391,7 @@ onUnmounted(() => {
 
 .cats {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 15px;
 }
 

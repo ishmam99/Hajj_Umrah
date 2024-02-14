@@ -79,12 +79,7 @@ onUnmounted(() => {
                 courseStore.courseDetails.thumbnail_image
               "
             />
-            <img
-              v-else
-              src="@/assets/images/cat-thumb.png"
-              width="290"
-              height="120"
-            />
+            <img v-else src="@/assets/images/cat-thumb.png" width="290" height="120" />
           </div>
           <div class="item-details">
             <h3>{{ courseInfo['course_name'] }}</h3>
@@ -94,11 +89,7 @@ onUnmounted(() => {
           <div class="teacher-info">
             <div class="teacher">
               <div class="pro-pic">
-                <img
-                  src="@/assets/images/default/pro-pic.jpg"
-                  alt=""
-                  srcset=""
-                />
+                <img src="@/assets/images/default/pro-pic.jpg" alt="" srcset="" />
               </div>
               <div class="info">
                 <div>
@@ -110,14 +101,9 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <p class="billing-info-title">
-          Payment method (Credit card/Debit card)
-        </p>
+        <p class="billing-info-title">Payment method (Credit card/Debit card)</p>
         <div class="payment-method">
-          <span
-            ><i class="fa-solid fa-credit-card"></i> Credit card/Debit
-            card</span
-          >
+          <span><i class="fa-solid fa-credit-card"></i> Credit card/Debit card</span>
           <img src="@/assets/images/payment/cards.png" alt="" />
         </div>
       </div>
@@ -331,7 +317,7 @@ onUnmounted(() => {
 }
 .teacher > * {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 .teacher .pro-pic {

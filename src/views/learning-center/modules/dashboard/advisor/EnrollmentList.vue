@@ -15,7 +15,7 @@ const selectedProducts = ref()
 let user = ref({})
 
 const filters = ref({
-  global: { value: null, matchMode: FilterMatchMode.CONTAINS },
+  global: { value: null, matchMode: FilterMatchMode.CONTAINS }
 })
 
 async function userInfo() {
@@ -149,12 +149,7 @@ onUnmounted(() => {
         <!--        {{ products }}-->
         <!--                <Column field="id" header="id" sortable style="min-width:12rem"></Column>-->
 
-        <Column
-          field="data.enrollment_id"
-          header="Id"
-          sortable
-          style="min-width: 16rem"
-        >
+        <Column field="data.enrollment_id" header="Id" sortable style="min-width: 16rem">
           <template #body="slotProps">
             {{ slotProps.data.data.id }}
           </template>
@@ -162,59 +157,29 @@ onUnmounted(() => {
 
         <Column field="teacher" header="Teacher" style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.teacher.length > 0
-                ? slotProps.data.teacher[0].name
-                : 'N/A'
-            }}
+            {{ slotProps.data.teacher.length > 0 ? slotProps.data.teacher[0].name : 'N/A' }}
           </template>
         </Column>
         <Column field="course" header="Course " style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.course.length > 0
-                ? slotProps.data.course[0].title
-                : 'N/A'
-            }}
+            {{ slotProps.data.course.length > 0 ? slotProps.data.course[0].title : 'N/A' }}
           </template>
         </Column>
 
         <Column field="student" header="Student" style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.student.length > 0
-                ? slotProps.data.student[0].name
-                : 'N/A'
-            }}
+            {{ slotProps.data.student.length > 0 ? slotProps.data.student[0].name : 'N/A' }}
           </template>
         </Column>
-        <Column
-          field="data.meeting_date"
-          header="Meeting Date"
-          sortable
-          style="min-width: 10rem"
-        >
+        <Column field="data.meeting_date" header="Meeting Date" sortable style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.data.meeting_date
-                ? slotProps.data.data.meeting_date
-                : 'N/A'
-            }}
+            {{ slotProps.data.data.meeting_date ? slotProps.data.data.meeting_date : 'N/A' }}
           </template>
         </Column>
 
-        <Column
-          field="data.meeting_note"
-          header="Meeting Note"
-          sortable
-          style="min-width: 10rem"
-        >
+        <Column field="data.meeting_note" header="Meeting Note" sortable style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.data.meeting_note
-                ? slotProps.data.data.meeting_note
-                : 'N/A'
-            }}
+            {{ slotProps.data.data.meeting_note ? slotProps.data.data.meeting_note : 'N/A' }}
           </template>
         </Column>
 
@@ -240,20 +205,11 @@ onUnmounted(() => {
                 name: 'createScheduleFromEnrollment',
                 params: { id: slotProps.data.data.id },
                 query: {
-                  teacher:
-                    slotProps.data.teacher.length > 0
-                      ? slotProps.data.teacher[0].name
-                      : '',
-                  student:
-                    slotProps.data.student.length > 0
-                      ? slotProps.data.student[0].name
-                      : '',
+                  teacher: slotProps.data.teacher.length > 0 ? slotProps.data.teacher[0].name : '',
+                  student: slotProps.data.student.length > 0 ? slotProps.data.student[0].name : '',
                   // course:  slotProps.data.data.course_id,
-                  course:
-                    slotProps.data.course.length > 0
-                      ? slotProps.data.course[0].title
-                      : '', // Replace with your course ID field
-                },
+                  course: slotProps.data.course.length > 0 ? slotProps.data.course[0].title : '' // Replace with your course ID field
+                }
               }"
             >
               <i class="fa fa-calendar"></i>
@@ -294,7 +250,7 @@ onUnmounted(() => {
 
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;

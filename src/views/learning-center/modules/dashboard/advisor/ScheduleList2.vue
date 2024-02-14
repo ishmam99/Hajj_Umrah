@@ -50,13 +50,10 @@ async function getSlotsByEnrollment(course) {
   enrollmentInfo.value = course
   visible.value = true
   const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API +
-      getSlotsByEnrollmentApi +
-      course.id
+    import.meta.env.VITE_ELEARNING_BASE_API + getSlotsByEnrollmentApi + course.id
   )
   getSlots.value = resp.data[0].time_slot
-  numOfClass.value =
-    Number(resp.data[0].course_duration) * Number(getSlots.value.length) * 4
+  numOfClass.value = Number(resp.data[0].course_duration) * Number(getSlots.value.length) * 4
 }
 
 async function generateClasses() {
@@ -70,7 +67,7 @@ async function generateClasses() {
       icon: 'success',
       title: 'Class Generated Successfully !',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   } else {
     swal.fire({
@@ -78,7 +75,7 @@ async function generateClasses() {
       icon: 'error',
       title: 'Something went wrong',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   }
   visible.value = false
@@ -95,12 +92,12 @@ function scheduleDateTimeList(startDate) {
         const prefDayName = x.day_name
         const courseTimeSlotsId = x.course_time_slots_id
         const currentDayName = startDate.toLocaleDateString('en-US', {
-          weekday: 'long',
+          weekday: 'long'
         })
         if (prefDayName === currentDayName) {
           const year = startDate.toLocaleString('default', { year: 'numeric' })
           const month = startDate.toLocaleString('default', {
-            month: '2-digit',
+            month: '2-digit'
           })
           const day = startDate.toLocaleString('default', { day: '2-digit' })
 
@@ -113,7 +110,7 @@ function scheduleDateTimeList(startDate) {
             enrollment_id: enrollmentInfo.value.id,
             student_id: enrollmentInfo.value.student_id,
             teacher_id: enrollmentInfo.value.teacher_id,
-            Course_id: enrollmentInfo.value.course_id,
+            Course_id: enrollmentInfo.value.course_id
           }
 
           courseDates.push(formateDaySlot.value)
@@ -168,31 +165,19 @@ onUnmounted(() => {
 
         <Column field="teacher" header="Teacher" style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.teacher.length > 0
-                ? slotProps.data.teacher[0].name
-                : 'N/A '
-            }}
+            {{ slotProps.data.teacher.length > 0 ? slotProps.data.teacher[0].name : 'N/A ' }}
           </template>
         </Column>
 
         <Column field="course" header="Course " style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.course.length > 0
-                ? slotProps.data.course[0].title
-                : 'N/A'
-            }}
+            {{ slotProps.data.course.length > 0 ? slotProps.data.course[0].title : 'N/A' }}
           </template>
         </Column>
 
         <Column field="student" header="Student" style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.student.length > 0
-                ? slotProps.data.student[0].name
-                : 'N/A'
-            }}
+            {{ slotProps.data.student.length > 0 ? slotProps.data.student[0].name : 'N/A' }}
           </template>
         </Column>
 
@@ -272,7 +257,7 @@ onUnmounted(() => {
 
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;
