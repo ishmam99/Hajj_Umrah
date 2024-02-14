@@ -38,7 +38,7 @@
         <div class="flex justify-between items-center pt-4 pb-2">
           <p class="text-2xl text-yellow-600 font-bold">Year Planer List</p>
           <input type="date" placeholder="Search by date or name" class="py-1.5 px-2 rounded-md border text-sm">
-          <input type="text" placeholder="Search by date or name" class="py-1.5 px-2 rounded-md border text-sm">
+          <input type="text" placeholder="Search by name" class="py-1.5 px-2 rounded-md border text-sm">
           <div class="w-[200px]">
             <Select class="">
                 <SelectTrigger class="w-full">

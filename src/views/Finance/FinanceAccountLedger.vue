@@ -38,7 +38,21 @@
           </div>
           <div class="flex justify-between items-center pt-4 pb-2">
             <p class="text-2xl text-yellow-600 font-bold">Account Ledger List</p>
-            <!-- <button class="px-5 py-2 rounded-md shadow-md bg-yellow-600 text-white text-sm">Add</button> -->
+            <input type="date" placeholder="Search by date or name" class="py-1.5 px-2 rounded-md border text-sm">
+            <input type="text" placeholder="Search by name" class="py-1.5 px-2 rounded-md border text-sm">
+            <div class="w-[200px]">
+              <Select class="">
+                  <SelectTrigger class="w-full">
+                    <SelectValue placeholder="Sort By order" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectItem value="Comfort The Sick"> new to old </SelectItem>
+                      <SelectItem value="Educate The Children"> old to new </SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+            </div>
           </div>
           <hr />
           <div class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center">
@@ -92,4 +106,13 @@
 
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue
+} from '/components/ui/select'
 </script>

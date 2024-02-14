@@ -1,7 +1,22 @@
 <template>
   <div class="px-4 bg-white py-5 w-3/4">
-     <div class="flex justify-between items-center pt-4">
+     <div class="flex justify-between items-center py-4">
        <p class="text-2xl text-yellow-600 font-bold pb-2">Program List Broadcast</p>
+       <input type="date" placeholder="Search by date or name" class="py-1.5 px-2 rounded-md border text-sm">
+          <input type="text" placeholder="Search by name" class="py-1.5 px-2 rounded-md border text-sm">
+          <div class="w-[200px]">
+            <Select class="">
+                <SelectTrigger class="w-full">
+                  <SelectValue placeholder="Sort By order" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectItem value="Comfort The Sick"> new to old </SelectItem>
+                    <SelectItem value="Educate The Children"> old to new </SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+          </div>
      </div>
      <hr />
      <div

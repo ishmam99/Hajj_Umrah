@@ -4,18 +4,34 @@
       <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
         <form @submit.prevent="volunteerAdmissionSubmit()">
           <div class="py-5 space-y-7 mt-5">
-            <div class="relative mb-3 w-full">
-              <input
-                type="text"
-                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                id="exampleFormControlInput50"
-                value=""
-              />
-              <label
-                for="exampleFormControlInput50"
-                class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                >Program Name <span class="text-red-500">*</span>
-              </label>
+            
+            <div class="flex justify-between items-center gap-5">
+              <div class="relative w-full">
+                <input
+                  type="text"
+                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                  id="exampleFormControlInput50"
+                  value=""
+                />
+                <label
+                  for="exampleFormControlInput50"
+                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                  >Program Name <span class="text-red-500">*</span>
+                </label>
+              </div>
+              <div class="w-[250px]">
+                <Select class="">
+                    <SelectTrigger class="w-full">
+                      <SelectValue placeholder="Sort By order" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectItem value="Comfort The Sick">Education tour</SelectItem>
+                        <SelectItem value="Educate The Children"> Masjid visit </SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+              </div>
             </div>
             <div class="relative">
               <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600">
@@ -147,5 +163,14 @@
   <script setup>
   import DefaultLayout from '@/layouts/DefaultLayout.vue'
   import YouthSidebar from '/src/views/Youth/youthSidebar.vue'
+  import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue
+} from '/components/ui/select'
   </script>
   
