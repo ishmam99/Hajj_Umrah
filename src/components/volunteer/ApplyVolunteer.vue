@@ -294,7 +294,7 @@ const participants_yob = ref(2010)
           <div>
             <fieldset class="p-4">
               <legend class="font-bold text-white">Interest in other volunteer jobs</legend>
-              <div class="flex flex-wrap gap-x-8">
+              <div class="flex flex-wrap justify-between gap-x-8">
                 <div
                   v-for="volunteerInterestExpert in volunteerInterestExpertise"
                   :key="volunteerInterestExpert.id"
