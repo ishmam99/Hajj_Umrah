@@ -5,6 +5,8 @@
     <div class="bg-[#e1f2ff9a] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
       <p class="text-2xl font-bold text-[#2e318a]">HR Dashboard</p>
       <p class="text-xl font-bold">Welcome Mr. Hashim</p>
+
+
       <router-link to="/HR_Dashboard" class="flex items-center gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
@@ -18,100 +20,118 @@
           ></path></svg
         >Profile</router-link
       >
-      <router-link to="/HR_Create_Job_Description" class="flex items-center gap-2"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
-          ></path></svg
-        >Create Job Description</router-link
-      >
-      <router-link to="" class="flex items-center gap-2"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
-          ></path></svg
-        >Job Posting</router-link
-      >
-      <router-link to="" class="flex items-center gap-2"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
-          ></path></svg
-        >New Hire Applications</router-link
-      >
-      <router-link to="/HR_Employment_Scheduling" class="flex items-center gap-2"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
-          ></path></svg
-        >Employment Scheduling</router-link
-      >
 
-      <router-link to="" class="flex items-center gap-2"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
-          ></path></svg
-        >Time Card</router-link
-      >
+            <!--  -->
+            <div class="accordion">
+        <button @click="drop = 1"  class="flex items-center gap-2">
+          <span class="text-blue-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m9 13.5 3 3m0 0 3-3m-3 3v-6m1.06-4.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+          </svg>
+          </span>
+        
+          Manage Organogarm
+        </button>
+        <div v-show="drop == 1" class="submenu mx-8">
+          <router-link to="/HR_Define_Position" class="flex items-center gap-2"
+            >- Define Position </router-link
+          >
+          <router-link to="/HR_Position_List" class="flex items-center gap-2"
+            >- Position List</router-link
+          >
+          
+         
+        </div>
+      </div>
 
-      <router-link to="/Opration_Meeting_Create" class="flex items-center gap-2"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z"
-          ></path></svg
-        >Employee List</router-link
-      >
+      <!--Job Management  -->
+      <div class="accordion">
+        <button @click="drop = 2" class="flex items-center gap-2">
+          
+          <span class="text-blue-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
+          </svg>
 
-      <router-link to="/Opration_Meeting_Create" class="flex items-center gap-2"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z"
-          ></path></svg
-        >Leave Management</router-link
-      >
+          </span>
+
+          Job Management
+        </button>
+        <div v-show="drop == 2" class="submenu mx-8">
+          <router-link to="/HR_Create_Job_Description" class="flex items-center gap-2"
+            >- Create  Job Description </router-link
+          >
+          <router-link to="/HR_Job_list" class="flex items-center gap-2"
+            >- Job List</router-link
+          >
+          <router-link to="/HR_Post_List" class="flex items-center gap-2"
+            >- Post Job</router-link
+          >
+         
+        </div>
+      </div>
+
+     <!--Higiring management   -->
+     <div class="accordion">
+        <button @click="drop = 3" class="flex items-center gap-2">
+          <span class="text-blue-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+            </svg>
+
+          </span>
+          
+          Higiring management
+        </button>
+        <div v-show="drop == 3" class="submenu mx-8">
+          <router-link to="/HR_Higiring_Application" class="flex items-center gap-2"
+            >- Application steps</router-link
+          >
+          <router-link to="/HR_Higiring_Background_Check" class="flex items-center gap-2"
+            >- Background check </router-link
+          >
+          <router-link to="/HR_Higiring_Orientation" class="flex items-center gap-2"
+            >- Orientation  </router-link
+          >
+         
+        </div>
+      </div>
+
+    
+    <!--Employee management   -->
+    <div class="accordion">
+        <button @click="drop = 4" class="flex items-center gap-2">
+          <span class="text-blue-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+            </svg>
+
+          </span>
+          
+          Employee management
+        </button>
+        <div v-show="drop == 4" class="submenu mx-8">
+          <router-link to="/HR_Employee_list" class="flex items-center gap-2"
+            >- Employee list</router-link
+          >
+          <router-link to="/HR_Employment_Scheduling" class="flex items-center gap-2"
+            >- Employee Schedule </router-link
+          >
+          <router-link to="/HR_Time_Card" class="flex items-center gap-2"
+            >- Time card   </router-link
+          >
+          <router-link to="/HR_Leave_Management" class="flex items-center gap-2"
+            >- Leave management   </router-link
+          >
+          <router-link to="/HR_Performance_Management" class="flex items-center gap-2"
+            >- Performance management   </router-link
+          >
+          <router-link to="/HR_Career_Life_Cycle" class="flex items-center gap-2"
+            >- Career life cycle    </router-link
+          >
+         
+        </div>
+      </div>
 
       <router-link to="" class="flex items-center gap-2"
         ><svg
@@ -146,6 +166,9 @@ import { useRouter, useRoute } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 const store = useAuthStore()
+
+//accordion
+const drop = ref(0)
 
 watch(
   () => store.isAuthenticated,
