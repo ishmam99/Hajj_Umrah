@@ -6,12 +6,7 @@ import HrSidebar from '../HrSidevar.vue';
 </script>
 
 <template>
-    <DefaultLayout>
-        <div class="bg-slate-50">
-      <div class="pt-[80px] flex justify-between">
-         <HrSidebar />
-         
-         <div class="px-4 bg-white py-5 w-3/4">
+    <div class="px-4 bg-white py-5 w-3/4">
           <div class="flex justify-between items-center pt-4">
             <p class="text-2xl text-yellow-600 font-bold pb-2">Job Post</p>
           </div>
@@ -106,8 +101,4 @@ import HrSidebar from '../HrSidevar.vue';
             </table>
           </div>
         </div>
-
-      </div>
-    </div>
-    </DefaultLayout>
 </template>

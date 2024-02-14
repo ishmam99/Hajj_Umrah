@@ -59,12 +59,7 @@ const jobceateSubmission = async () => {
 </script>
 
 <template>
-    <DefaultLayout>
-        <div class="bg-slate-50">
-      <div class="pt-[80px] flex justify-between">
-         <HrSidebar />
-
-         <div class="px-5 bg-slate-50 py-5 w-3/4">
+    <div class="px-5 bg-slate-50 py-5 w-3/4">
           <p class="text-2xl font-bold py-3 border-b">Create Job Description</p>
           <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
             <form @submit.prevent="jobceateSubmission()">
@@ -266,8 +261,4 @@ const jobceateSubmission = async () => {
             </form>
           </div>
         </div>
-
-      </div>
-    </div>
-    </DefaultLayout>
 </template>

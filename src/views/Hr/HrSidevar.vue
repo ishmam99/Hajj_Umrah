@@ -7,7 +7,7 @@
       <p class="text-xl font-bold">Welcome Mr. Hashim</p>
 
 
-      <router-link to="/HR_Dashboard" class="flex items-center gap-2"
+      <router-link to="/Hr_Profile" class="flex items-center gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
