@@ -450,6 +450,46 @@ const router = createRouter({
       component: () => import('../views/Supply/OrderCreate.vue'),
     },
     {
+      path: '/Supply_Create_Bid',
+      name: 'Supply_Create_Bid',
+      component: () => import('../views/Supply/CreateBid.vue'),
+    },
+    {
+      path: '/Supply_Post_Bid',
+      name: 'Supply_Post_Bid',
+      component: () => import('../views/Supply/PostBid.vue')
+    },
+    {
+      path: '/Supply_Bid_List',
+      name: 'Supply_Bid_List',
+      component: () => import('../views/Supply/BidList.vue'),
+    },
+    {
+      path: '/Supply_Select_Bid',
+      name: 'Supply_Select_Bid',
+      component: () => import('../views/Supply/SelectBid.vue'),
+    },
+    {
+      path: '/Supply_Completed_Bid',
+      name: 'Supply_Completed_Bid',
+      component: () => import('../views/Supply/CompletedBid.vue'),
+    },
+    {
+      path: '/Supply_Hire_Vendor',
+      name: 'Supply_Hire_Vendor',
+      component: () => import('../views/Supply/HireVendor.vue'),
+    },
+    {
+      path: '/Supply_Vendor_List',
+      name: 'Supply_Vendor_List',
+      component: () => import('../views/Supply/VendorList.vue'),
+    },
+    {
+      path: '/Supply_Prefered_Vendor_List',
+      name: 'Supply_Prefered_Vendor_List',
+      component: () => import('../views/Supply/PreferedVendorList.vue'),
+    },
+    {
       path: '/Supply_Create_Supplier',
       name: 'Supply_Create_Supplier',
       component: () => import('../views/Supply/CreateSupplier.vue'),

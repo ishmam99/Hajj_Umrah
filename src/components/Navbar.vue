@@ -191,18 +191,16 @@
         </MenubarMenu>
 
         <MenubarMenu>
-          <MenubarTrigger class="px-1 font-bold">
-            Learning Center 
-          </MenubarTrigger>
+          <MenubarTrigger class="px-1 font-bold"> Learning Center </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
-               <router-link to="/learning-center">Areas Of Study </router-link>
+              <router-link to="/learning-center">Areas Of Study </router-link>
             </MenubarItem>
             <MenubarItem>
-               <router-link to="/learning-center/all-courses">Our Courses</router-link>
+              <router-link to="/learning-center/all-courses">Our Courses</router-link>
             </MenubarItem>
             <MenubarItem>
-               <router-link to="/learning-center/programs">Our Programs</router-link>
+              <router-link to="/learning-center/programs">Our Programs</router-link>
             </MenubarItem>
             <MenubarItem>
               <router-link to="/registration" class="w-full hover:pl-5 duration-300 text-sm"
@@ -224,7 +222,6 @@
                 >Teacher Login
               </router-link></MenubarItem
             >
-          
           </MenubarContent>
         </MenubarMenu>
 
@@ -482,14 +479,21 @@
               <router-link
                 to="/Supply_Chain/supplier"
                 class="w-full hover:pl-5 duration-300 font-semibold"
-                >Supplier</router-link
+                >Open Bids</router-link
               >
             </MenubarItem>
             <MenubarItem>
               <router-link
                 to="/Supply_Chain/supplierLogin"
                 class="w-full hover:pl-5 duration-300 font-semibold"
-                >Supplier Login</router-link
+                >Register As a New Vendor</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
+              <router-link
+                to="/Supply_Chain/supplierLogin"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >Vendor Login</router-link
               >
             </MenubarItem>
             <!-- <MenubarItem>
@@ -547,19 +551,11 @@
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu v-if="store?.user">
-          <MenubarTrigger class="px-1 font-bold" 
-            >
-            <router-link :to="store?.user?.dashboard">
-              Dashboard
-            </router-link>
-           
-            
-           
+          <MenubarTrigger class="px-1 font-bold">
+            <router-link :to="store?.user?.dashboard"> Dashboard </router-link>
           </MenubarTrigger>
-         
         </MenubarMenu>
         <MenubarMenu v-else>
-
           <MenubarTrigger class="px-1 font-bold"
             >Login
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
@@ -604,9 +600,11 @@
                   >
                 </MenubarItem>
                 <MenubarItem>
-                  <router-link to="/management-login" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Education Login</router-link
-              >
+                  <router-link
+                    to="/management-login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Education Login</router-link
+                  >
                 </MenubarItem>
                 <MenubarItem>
                   <router-link
