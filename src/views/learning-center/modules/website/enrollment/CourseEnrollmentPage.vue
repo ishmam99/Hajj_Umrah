@@ -19,13 +19,9 @@ let daySelected = ref(false)
 let selectedDay = ref({})
 let selectedSlots = ref([])
 let selectedDaySlots = ref([])
-let selectedTeacher = ref(
-  JSON.parse(localStorage.getItem('selected-teacher')) ?? {}
-)
+let selectedTeacher = ref(JSON.parse(localStorage.getItem('selected-teacher')) ?? {})
 
-let scheduleAdvisor = ref(
-  JSON.parse(localStorage.getItem('schedule-by-advisor')) ?? []
-)
+let scheduleAdvisor = ref(JSON.parse(localStorage.getItem('schedule-by-advisor')) ?? [])
 
 let course_id = ref(JSON.parse(localStorage.getItem('applying')))
 let student_id = ref(JSON.parse(localStorage.getItem('user')).id)
@@ -35,9 +31,7 @@ let teacher_id = ref(
     : null
 )
 let timeslot_id = ref(
-  scheduleAdvisor.value
-    .map((object) => object[0])
-    .map((object) => object['slots']) ?? []
+  scheduleAdvisor.value.map((object) => object[0]).map((object) => object['slots']) ?? []
 )
 
 let cartDaySlots = ref([])
@@ -80,7 +74,7 @@ function selectDay(day) {
   daySelected.value = true
   selectedDay.value = {
     id: day['schedule']['day_id'],
-    day_name: day['day'][0]['day_name'],
+    day_name: day['day'][0]['day_name']
   }
 
   availableDaySlots.value = day['time_slots']
@@ -139,10 +133,7 @@ function removeDay() {
     scheduleAdvisor.value.splice(index, 1)
     selectedDay.value = {}
     selectedSlots.value = []
-    localStorage.setItem(
-      'schedule-by-advisor',
-      JSON.stringify(scheduleAdvisor.value)
-    )
+    localStorage.setItem('schedule-by-advisor', JSON.stringify(scheduleAdvisor.value))
   } else {
     selectedDay.value = {}
     selectedSlots.value = []
@@ -164,23 +155,20 @@ function resetAdvisor() {
 }
 
 function confirmSlots() {
-  if (
-    selectedSlots.value != '' ||
-    cartDaySlots.value.map((object) => object) != ''
-  ) {
+  if (selectedSlots.value != '' || cartDaySlots.value.map((object) => object) != '') {
     let object = {
       days: [
         {
           day: {
             id: selectedDay.value.id,
-            day_name: selectedDay.value.day_name,
+            day_name: selectedDay.value.day_name
           },
           slots:
             selectedSlots.value != ''
               ? selectedSlots.value
-              : cartDaySlots.value.map((object) => object),
-        },
-      ],
+              : cartDaySlots.value.map((object) => object)
+        }
+      ]
     }
 
     // Saving time slot array
@@ -306,9 +294,7 @@ function closeModal(response) {
 
 function tConvert(time) {
   console.log(time)
-  time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [
-    time,
-  ]
+  time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time]
 
   if (time.length > 1) {
     // If time format correct
@@ -328,17 +314,14 @@ function enroll() {
     student_type: sectionDetails.value.course_type,
     no_of_payment: sectionDetails.value.course_duration,
     course_duration: sectionDetails.value.course_duration,
-    timeslot_id: timeslot_id.value.toString(),
+    timeslot_id: timeslot_id.value.toString()
   }
 
   console.log(data)
   try {
     courseStore.courseEnrollment(data).then((response) => {
       enrollmentInfo.value = response.data
-      localStorage.setItem(
-        'enrollment_info',
-        JSON.stringify(enrollmentInfo.value)
-      )
+      localStorage.setItem('enrollment_info', JSON.stringify(enrollmentInfo.value))
       // advisorEnrollmentStage.value = 4
       // localStorage.setItem('enroll-stage', 4)
       enroll_req_msg.value =
@@ -361,9 +344,7 @@ function back() {
 
 async function getTimeSlotById(slotId) {
   try {
-    const response = await axios.get(
-      import.meta.env.VITE_ELEARNING_BASE_API + slotApi + slotId
-    )
+    const response = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + slotApi + slotId)
     return response.data
   } catch (error) {
     return 'Error loading data'
@@ -381,10 +362,7 @@ onMounted(async () => {
 
   courseSectionDetails()
   courseStore.getTeacherList(router.currentRoute.value.params.id)
-  courseStore.getAvailableSlots(
-    router.currentRoute.value.params.id,
-    selectedTeacher.value.id
-  )
+  courseStore.getAvailableSlots(router.currentRoute.value.params.id, selectedTeacher.value.id)
   courseStore.courseInfo(sectionDetails.value.course_id)
   commonStore.loading = false
 })
@@ -396,9 +374,7 @@ onUnmounted(() => {
 
 <template>
   <div v-if="advisorEnrollmentStage != 4" class="page-details">
-    <h4 class="text-3xl">
-      {{ courseDetails['course_title'] }} ({{ sectionDetails.section_id }})
-    </h4>
+    <h4 class="text-3xl">{{ courseDetails['course_title'] }} ({{ sectionDetails.section_id }})</h4>
     <h2>Course Enrollment</h2>
     <!-- <div class="progress">
             <div class="progress-bar">
@@ -424,9 +400,7 @@ onUnmounted(() => {
             </div>
         </div> -->
     <div class="tab-headline mt-4">
-      <span v-if="advisorEnrollmentStage == 1"
-        >Your course registration preference</span
-      >
+      <span v-if="advisorEnrollmentStage == 1">Your course registration preference</span>
       <span v-if="advisorEnrollmentStage == 2">Schedule</span>
       <!--  <span v-if="advisorEnrollmentStage == 3">Schedule</span> -->
       <span v-if="advisorEnrollmentStage == 3">Confirm your submission</span>
@@ -449,21 +423,14 @@ onUnmounted(() => {
                     </div> -->
           <div v-if="advisorEnrollmentStage == 1" class="day-one">
             <div class="title">Available Teachers</div>
-            <div
-              v-if="courseStore.teacherListForCourse != 'List Empty'"
-              class="teachers"
-            >
+            <div v-if="courseStore.teacherListForCourse != 'List Empty'" class="teachers">
               <div
                 v-for="teacher in courseStore.teacherListForCourse"
                 :key="teacher"
                 class="teacher"
               >
                 <div class="pro-pic">
-                  <img
-                    src="@/assets/images/default/pro-pic.jpg"
-                    alt=""
-                    srcset=""
-                  />
+                  <img src="@/assets/images/default/pro-pic.jpg" alt="" srcset="" />
                 </div>
                 <div class="info">
                   <div>
@@ -518,25 +485,15 @@ onUnmounted(() => {
                                     </div>
                                 </div> -->
                 <div class="action">
-                  <button
-                    @click="proceedToNext(2, teacher)"
-                    class="not-available"
-                  >
-                    Select
-                  </button>
+                  <button @click="proceedToNext(2, teacher)" class="not-available">Select</button>
                 </div>
               </div>
             </div>
-            <div v-else class="list-empty">
-              No teacher available right now for this course.
-            </div>
+            <div v-else class="list-empty">No teacher available right now for this course.</div>
           </div>
           <div v-if="advisorEnrollmentStage == 2" class="day-one">
             <div class="title">Available Days</div>
-            <div
-              v-if="courseStore.availableDaySlots != 'List Empty'"
-              class="schedules"
-            >
+            <div v-if="courseStore.availableDaySlots != 'List Empty'" class="schedules">
               <span
                 v-for="(day, index) in courseStore.availableDaySlots"
                 :key="index"
@@ -547,9 +504,7 @@ onUnmounted(() => {
                       .map((object) => object[0])
                       .map((object) => object['day']['id'])
                       .includes(day['schedule']['day_id']) == true) &&
-                  scheduleAdvisor
-                    .map((object) => object[0])
-                    .map((object) => object['slots']) != ''
+                  scheduleAdvisor.map((object) => object[0]).map((object) => object['slots']) != ''
                     ? 'schedule schedule-active'
                     : 'schedule'
                 "
@@ -572,19 +527,13 @@ onUnmounted(() => {
                   <div class="course-details-title">
                     {{ sectionDetails.section_id }}
                   </div>
-                  <div class="price">
-                    Price: ${{ sectionDetails.cost_per_month }} per month
-                  </div>
+                  <div class="price">Price: ${{ sectionDetails.cost_per_month }} per month</div>
                 </div>
               </div>
               <div class="teacher-info">
                 <div v-if="teacher_id != null" class="teacher">
                   <div class="pro-pic">
-                    <img
-                      src="@/assets/images/default/pro-pic.jpg"
-                      alt=""
-                      srcset=""
-                    />
+                    <img src="@/assets/images/default/pro-pic.jpg" alt="" srcset="" />
                   </div>
                   <div class="info">
                     <div>
@@ -596,21 +545,13 @@ onUnmounted(() => {
                 <div v-else class="list-empty">No teacher was selected</div>
               </div>
               <div v-if="scheduleAdvisor != ''" class="daytime-info">
-                <div
-                  v-for="schedule in scheduleAdvisor"
-                  :key="schedule"
-                  class="shceduled-days"
-                >
+                <div v-for="schedule in scheduleAdvisor" :key="schedule" class="shceduled-days">
                   <div v-for="days in schedule" :key="days">
                     <div class="day-name">
                       <strong>{{ days.day['day_name'] }}</strong>
                     </div>
                     <div class="day-slots">
-                      <div
-                        v-for="slotId in days.slots"
-                        :key="slotId"
-                        class="day-slot"
-                      >
+                      <div v-for="slotId in days.slots" :key="slotId" class="day-slot">
                         <div v-if="slotData[slotId]">
                           {{ tConvert(slotData[slotId].data[0].start_time) }} -
                           {{ tConvert(slotData[slotId].data[0].end_time) }}
@@ -627,10 +568,7 @@ onUnmounted(() => {
             <button v-if="advisorEnrollmentStage != 1" @click="resetAdvisor">
               Reset <font-awesome-icon :icon="['fas', 'fa-refresh']" />
             </button>
-            <button
-              v-if="advisorEnrollmentStage == 2"
-              @click="proceedToNext(3, null)"
-            >
+            <button v-if="advisorEnrollmentStage == 2" @click="proceedToNext(3, null)">
               Next <font-awesome-icon :icon="['fas', 'fa-arrow-right']" />
             </button>
             <button v-if="advisorEnrollmentStage == 3" @click="enroll">
@@ -666,9 +604,7 @@ onUnmounted(() => {
         </div>
         <div v-else class="list-empty">No slot available</div>
         <div class="confirm-slots">
-          <button @click="removeDay">
-            <font-awesome-icon :icon="['fas', 'fa-trash']" /> Drop
-          </button>
+          <button @click="removeDay"><font-awesome-icon :icon="['fas', 'fa-trash']" /> Drop</button>
           <button @click="confirmSlots">Confirm</button>
         </div>
       </div>
@@ -687,15 +623,11 @@ onUnmounted(() => {
         </div>
       </div>
     </Modal>
-    <Modal
-      v-if="checkoutModal"
-      :width="'width: 550px'"
-      @modal-close="closeModal"
-    >
+    <Modal v-if="checkoutModal" :width="'width: 550px'" @modal-close="closeModal">
       <div class="slots">
         <div class="error-message">
-          An advisor will contact you and make a schedule on behalf of you.Thank
-          you for your Interest.
+          An advisor will contact you and make a schedule on behalf of you.Thank you for your
+          Interest.
         </div>
 
         <div class="slot-wrapper"></div>
@@ -712,16 +644,10 @@ onUnmounted(() => {
       <img
         v-if="sectionDetails.thumbnail_image"
         :src="
-          'https://learningcenter.islamicdigitallane.com/images/' +
-          sectionDetails.thumbnail_image
+          'https://learningcenter.islamicdigitallane.com/images/' + sectionDetails.thumbnail_image
         "
       />
-      <img
-        v-else
-        src="@/assets/images/course-thumb.png"
-        width="290"
-        height="120"
-      />
+      <img v-else src="@/assets/images/course-thumb.png" width="290" height="120" />
     </div>
     <h4>{{ sectionDetails.section_id }}</h4>
     <h2>Course Enrollment</h2>
@@ -824,7 +750,8 @@ h2 {
 .tab-buttons > * {
   padding: 20px;
   width: 300px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+  box-shadow:
+    0px 4px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   font-size: 17px;
@@ -890,7 +817,8 @@ h2 {
 .schedules .schedule {
   width: 180px;
   background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+  box-shadow:
+    0px 4px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 15px;
@@ -906,7 +834,8 @@ h2 {
 }
 .slots .slot-wrapper .slot {
   background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+  box-shadow:
+    0px 4px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 15px;
@@ -1049,7 +978,7 @@ h2 {
 }
 .teacher > * {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 .teacher .pro-pic {
@@ -1136,18 +1065,19 @@ h2 {
 
 .selected-teacher > .selected-teacher-info {
   display: grid;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .selected-teacher > .selected-teacher-info h2 {
   display: grid;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .selected-days .selected-day {
   width: 180px;
   background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+  box-shadow:
+    0px 4px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 15px;

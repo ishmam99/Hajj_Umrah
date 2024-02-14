@@ -28,10 +28,7 @@ function action(data, mode) {
     localStorage.setItem('course-info', JSON.stringify(data))
     router.push('/learning-center/checkout/' + data.id)
   } else if (mode == 'join-class') {
-    localStorage.setItem(
-      'schedule-for-course',
-      JSON.stringify(data.course_name)
-    )
+    localStorage.setItem('schedule-for-course', JSON.stringify(data.course_name))
     router.push('/dashboard/my-courses/schedule/' + data.id)
   } else {
     router.push('/dashboard/my-classes/' + data.id)
@@ -109,7 +106,7 @@ onUnmounted(() => {
 
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;

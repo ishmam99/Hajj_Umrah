@@ -43,9 +43,7 @@ async function userInfo() {
 
 async function getData() {
   console.log(theUser.value)
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + userEditDataApi + 85
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + userEditDataApi + 85)
   data.value = resp.data.data
 }
 
@@ -71,21 +69,18 @@ async function createAdvisorSchedule() {
   const postData = {
     meeting_date: data.value.name, // Assuming data.value.name holds the meeting date
     enrollment_id: router.currentRoute.value.params.id, // Extracting enrollment ID from route parameter
-    meeting_note: note.value, // Using the note value directly from the reactive property
+    meeting_note: note.value // Using the note value directly from the reactive property
   }
 
   try {
-    await axios.post(
-      import.meta.env.VITE_ELEARNING_BASE_API + 'create-advisor-schedule',
-      postData
-    )
+    await axios.post(import.meta.env.VITE_ELEARNING_BASE_API + 'create-advisor-schedule', postData)
     swal
       .fire({
         position: 'top-end',
         icon: 'success',
         title: 'Schedule created successfully',
         showConfirmButton: false,
-        timer: 1500,
+        timer: 1500
       })
       .then(() => {
         // Redirect to the specified route after the success message is closed
@@ -97,7 +92,7 @@ async function createAdvisorSchedule() {
       icon: 'error',
       title: 'Something went wrong',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   }
 }
@@ -279,7 +274,7 @@ onUnmounted(() => {
 
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;

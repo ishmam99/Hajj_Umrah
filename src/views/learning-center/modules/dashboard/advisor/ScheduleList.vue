@@ -29,7 +29,7 @@ const getSlotsByEnrollmentApi = 'get-slots-by-enrollment/'
 // const generateClassApi = '/store-enrollment-schedules/'
 
 const filters = ref({
-  global: { value: null, matchMode: FilterMatchMode.CONTAINS },
+  global: { value: null, matchMode: FilterMatchMode.CONTAINS }
 })
 
 const visible = ref(false)
@@ -58,7 +58,7 @@ async function generateClasses() {
       icon: 'success',
       title: 'Class Generated Successfully !',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   } else {
     swal.fire({
@@ -66,7 +66,7 @@ async function generateClasses() {
       icon: 'error',
       title: 'Something went wrong',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   }
   visible.value = false
@@ -76,13 +76,10 @@ async function getSlotsByEnrollment(course) {
   enrollmentInfo.value = course
   visible.value = true
   const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API +
-      getSlotsByEnrollmentApi +
-      course.id
+    import.meta.env.VITE_ELEARNING_BASE_API + getSlotsByEnrollmentApi + course.id
   )
   getSlots.value = resp.data[0].time_slot
-  numOfClass.value =
-    Number(resp.data[0].course_duration) * Number(getSlots.value.length) * 4
+  numOfClass.value = Number(resp.data[0].course_duration) * Number(getSlots.value.length) * 4
 }
 
 function addMinutes(date, minutes) {
@@ -96,12 +93,12 @@ function scheduleDateTimeList(startDate) {
         const prefDayName = x.day_name
         const courseTimeSlotsId = x.course_time_slots_id
         const currentDayName = startDate.toLocaleDateString('en-US', {
-          weekday: 'long',
+          weekday: 'long'
         })
         if (prefDayName === currentDayName) {
           const year = startDate.toLocaleString('default', { year: 'numeric' })
           const month = startDate.toLocaleString('default', {
-            month: '2-digit',
+            month: '2-digit'
           })
           const day = startDate.toLocaleString('default', { day: '2-digit' })
 
@@ -114,7 +111,7 @@ function scheduleDateTimeList(startDate) {
             enrollment_id: enrollmentInfo.value.id,
             student_id: enrollmentInfo.value.student_id,
             teacher_id: enrollmentInfo.value.teacher_id,
-            Course_id: enrollmentInfo.value.course_id,
+            Course_id: enrollmentInfo.value.course_id
           }
 
           courseDates.push(formateDaySlot.value)
@@ -173,12 +170,7 @@ onUnmounted(() => {
         <!--        {{ products }}-->
         <!--                <Column field="id" header="id" sortable style="min-width:12rem"></Column>-->
 
-        <Column
-          field="data.enrollment_id"
-          header="Id"
-          sortable
-          style="min-width: 16rem"
-        >
+        <Column field="data.enrollment_id" header="Id" sortable style="min-width: 16rem">
           <template #body="slotProps">
             {{ slotProps.data.data.id }}
           </template>
@@ -186,58 +178,28 @@ onUnmounted(() => {
 
         <Column field="teacher" header="Teacher" style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.teacher.length > 0
-                ? slotProps.data.teacher[0].name
-                : 'N/A'
-            }}
+            {{ slotProps.data.teacher.length > 0 ? slotProps.data.teacher[0].name : 'N/A' }}
           </template>
         </Column>
         <Column field="course" header="Course " style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.course.length > 0
-                ? slotProps.data.course[0].title
-                : 'N/A'
-            }}
+            {{ slotProps.data.course.length > 0 ? slotProps.data.course[0].title : 'N/A' }}
           </template>
         </Column>
         <Column field="student" header="Student" style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.student.length > 0
-                ? slotProps.data.student[0].name
-                : 'N/A'
-            }}
+            {{ slotProps.data.student.length > 0 ? slotProps.data.student[0].name : 'N/A' }}
           </template>
         </Column>
-        <Column
-          field="data.meeting_date"
-          header="Meeting Date"
-          sortable
-          style="min-width: 10rem"
-        >
+        <Column field="data.meeting_date" header="Meeting Date" sortable style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.data.meeting_date
-                ? slotProps.data.data.meeting_date
-                : 'N/A'
-            }}
+            {{ slotProps.data.data.meeting_date ? slotProps.data.data.meeting_date : 'N/A' }}
           </template>
         </Column>
 
-        <Column
-          field="data.meeting_note"
-          header="Meeting Note"
-          sortable
-          style="min-width: 10rem"
-        >
+        <Column field="data.meeting_note" header="Meeting Note" sortable style="min-width: 10rem">
           <template #body="slotProps">
-            {{
-              slotProps.data.data.meeting_note
-                ? slotProps.data.data.meeting_note
-                : 'N/A'
-            }}
+            {{ slotProps.data.data.meeting_note ? slotProps.data.data.meeting_note : 'N/A' }}
           </template>
         </Column>
 
@@ -264,20 +226,11 @@ onUnmounted(() => {
                 name: 'createScheduleFromEnrollment',
                 params: { id: slotProps.data.data.id },
                 query: {
-                  teacher:
-                    slotProps.data.teacher.length > 0
-                      ? slotProps.data.teacher[0].name
-                      : '',
-                  student:
-                    slotProps.data.student.length > 0
-                      ? slotProps.data.student[0].name
-                      : '',
+                  teacher: slotProps.data.teacher.length > 0 ? slotProps.data.teacher[0].name : '',
+                  student: slotProps.data.student.length > 0 ? slotProps.data.student[0].name : '',
                   // course:  slotProps.data.data.course_id,
-                  course:
-                    slotProps.data.course.length > 0
-                      ? slotProps.data.course[0].title
-                      : '', // Replace with your course ID field
-                },
+                  course: slotProps.data.course.length > 0 ? slotProps.data.course[0].title : '' // Replace with your course ID field
+                }
               }"
             >
               <i class="fa fa-calendar"></i>
@@ -352,7 +305,7 @@ onUnmounted(() => {
 
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;

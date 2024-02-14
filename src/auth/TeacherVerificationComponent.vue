@@ -57,9 +57,7 @@ watch(selectedCourse, async (newValue, oldValue) => {
   }
 })
 async function getUser(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + api + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + api + id)
   userData.value = resp.data.data
 }
 
@@ -82,9 +80,7 @@ async function fetchCourseData() {
 async function generateCourseSchedule() {
   const startTimeInMinutes = ref(convertH2M(startTime.value))
   const endTimeInMinutes = ref(convertH2M(endTime.value))
-  const timeIntervalInMinutes = ref(
-    Number(selectedCourse.value.class_duration) * 60
-  )
+  const timeIntervalInMinutes = ref(Number(selectedCourse.value.class_duration) * 60)
   const formattedStartTime = ref()
   const formattedEndTime = ref()
   timeSlot.value = []
@@ -94,32 +90,24 @@ async function generateCourseSchedule() {
   while (Number(startTimeInMinutes.value) < Number(endTimeInMinutes.value)) {
     formattedStartTime.value = {
       hour: Math.floor(startTimeInMinutes.value / 60),
-      minute: startTimeInMinutes.value % 60,
+      minute: startTimeInMinutes.value % 60
     }
 
     formattedEndTime.value = {
-      hour: Math.floor(
-        (startTimeInMinutes.value + timeIntervalInMinutes.value) / 60
-      ),
-      minute: (startTimeInMinutes.value + timeIntervalInMinutes.value) % 60,
+      hour: Math.floor((startTimeInMinutes.value + timeIntervalInMinutes.value) / 60),
+      minute: (startTimeInMinutes.value + timeIntervalInMinutes.value) % 60
     }
 
     timeSlot.value.push({
       day_id: selectedDay.value,
-      start_time:
-        formattedStartTime.value.hour + ':' + formattedStartTime.value.minute,
-      end_time:
-        formattedEndTime.value.hour + ':' + formattedEndTime.value.minute,
+      start_time: formattedStartTime.value.hour + ':' + formattedStartTime.value.minute,
+      end_time: formattedEndTime.value.hour + ':' + formattedEndTime.value.minute
     })
 
     startTimeInMinutes.value += timeIntervalInMinutes.value
   }
 
-  submitCourseSchedule(
-    timeSlot.value,
-    formattedStartTime.value,
-    formattedEndTime.value
-  )
+  submitCourseSchedule(timeSlot.value, formattedStartTime.value, formattedEndTime.value)
 }
 
 // async function generateGroupSchedule(){
@@ -139,7 +127,7 @@ async function submitGroupSchedule() {
       '_' +
       selectedCourse.value.course_unique_id +
       '_' +
-      new Date().toISOString(),
+      new Date().toISOString()
     // slots: JSON.stringify(slot)
   }
 
@@ -157,7 +145,7 @@ async function submitGroupSchedule() {
         icon: 'success',
         title: resp.data.message,
         showConfirmButton: false,
-        timer: 1500,
+        timer: 1500
       })
 
       groupTab.value = false
@@ -167,7 +155,7 @@ async function submitGroupSchedule() {
         icon: 'error',
         title: 'Could not save',
         showConfirmButton: false,
-        timer: 1500,
+        timer: 1500
       })
     }
   } catch (e) {
@@ -177,7 +165,7 @@ async function submitGroupSchedule() {
       icon: 'error',
       title: 'Something went wrong',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   }
 }
@@ -190,7 +178,7 @@ async function submitCourseSchedule(slot, startTime, endTime) {
     start_time: startTime.hour + ':' + startTime.minute,
     end_time: endTime.hour + ':' + endTime.minute,
     course_details_id: selectedCourse.value.id,
-    slots: JSON.stringify(slot),
+    slots: JSON.stringify(slot)
   }
 
   console.log(data)
@@ -207,7 +195,7 @@ async function submitCourseSchedule(slot, startTime, endTime) {
         icon: 'success',
         title: resp.data.message,
         showConfirmButton: false,
-        timer: 1500,
+        timer: 1500
       })
 
       modal.value = false
@@ -217,7 +205,7 @@ async function submitCourseSchedule(slot, startTime, endTime) {
         icon: 'error',
         title: 'Could not save',
         showConfirmButton: false,
-        timer: 1500,
+        timer: 1500
       })
     }
   } catch (e) {
@@ -227,7 +215,7 @@ async function submitCourseSchedule(slot, startTime, endTime) {
       icon: 'error',
       title: 'Something went wrong',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   }
 }
@@ -238,9 +226,7 @@ function convertH2M(timeInHour) {
 }
 
 async function getDays() {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + dayListApi
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + dayListApi)
   days.value = resp.data.data
 
   console.log(days.value)
@@ -361,14 +347,10 @@ onUnmounted(() => {})
 
           <Stepper
             :stepCompleted="
-              userData.user_status_id == '8' || userData.user_status_id == '9'
-                ? true
-                : false
+              userData.user_status_id == '8' || userData.user_status_id == '9' ? true : false
             "
             :stepNumber="
-              userData.user_status_id == '8' || userData.user_status_id == '9'
-                ? ''
-                : '5'
+              userData.user_status_id == '8' || userData.user_status_id == '9' ? '' : '5'
             "
             :stepperTitle="'Hired'"
           />
@@ -384,9 +366,7 @@ onUnmounted(() => {})
               </div>
             </div>
 
-            <div class="text-sm text-center 2xl:text-base font-bold">
-              On Boarding
-            </div>
+            <div class="text-sm text-center 2xl:text-base font-bold">On Boarding</div>
           </div>
 
           <div v-else class="w-1/2">
@@ -398,34 +378,29 @@ onUnmounted(() => {})
               </div>
             </div>
 
-            <div class="text-sm text-center 2xl:text-base font-bold">
-              On Boarding
-            </div>
+            <div class="text-sm text-center 2xl:text-base font-bold">On Boarding</div>
           </div>
         </div>
 
         <div class="verification-step-description mt-4">
           <div v-if="userData.user_status_id == '1'" class="mt-4 text-center">
-            Your application is submitted successfully. We will review the CV
-            and get back to you very soon.
+            Your application is submitted successfully. We will review the CV and get back to you
+            very soon.
           </div>
           <div v-if="userData.user_status_id == '2'" class="mt-4 text-center">
-            Your application is in review. We will conteact you for scheduling
-            an interview once the review is completed.
+            Your application is in review. We will conteact you for scheduling an interview once the
+            review is completed.
           </div>
           <div v-if="userData.user_status_id == '3'" class="mt-4 text-center">
-            Your interview time is scheduled as per our last conversation.
-            Please check your email for interview time slot.
+            Your interview time is scheduled as per our last conversation. Please check your email
+            for interview time slot.
           </div>
           <div v-if="userData.user_status_id == '4'" class="mt-4 text-center">
             <p>
-              Congratulations, We are pleased to extend an offer of employment
-              to you for the 'Teacher' at our platform.
+              Congratulations, We are pleased to extend an offer of employment to you for the
+              'Teacher' at our platform.
             </p>
-            <p>
-              Please check your mail for the offer letter. Send it back to us as
-              you accept.
-            </p>
+            <p>Please check your mail for the offer letter. Send it back to us as you accept.</p>
             <!-- <button class="offerletter-btn">Download Offer Letter</button> -->
           </div>
           <!-- <div v-if="userData.user_status_id == '20'" class="mt-4 tex8-center">
@@ -433,13 +408,10 @@ onUnmounted(() => {})
               <p>Please check your mail for the offer letter. Send it back to us as you accept.</p>
           </div> -->
 
-          <div
-            v-if="userData.user_status_id == '8'"
-            class="mt-4 text-center overflow-y-scroll"
-          >
+          <div v-if="userData.user_status_id == '8'" class="mt-4 text-center overflow-y-scroll">
             <p>
-              congratulations! we have hired you as a teacher in our platform.
-              Please check your email for onboarding instructions.
+              congratulations! we have hired you as a teacher in our platform. Please check your
+              email for onboarding instructions.
             </p>
             <p>
               Please set your schedule based on assigned courses :
@@ -465,11 +437,7 @@ onUnmounted(() => {})
                   id="grid-state"
                 >
                   <option>Select an Option</option>
-                  <option
-                    v-for="course in courseList"
-                    :key="course"
-                    :value="course"
-                  >
+                  <option v-for="course in courseList" :key="course" :value="course">
                     {{ course.title }} -{{ course.section_id }}
                   </option>
                 </select>
@@ -493,9 +461,7 @@ onUnmounted(() => {})
               <!-- Card for scheduling -->
               <div class="w-full bg-gray-100 p-4 rounded-lg">
                 <div v-if="individualTab" class="border m-2 p-2">
-                  <div class="text-1xl font-bold mb-4">
-                    Make schedule for a Individual Course
-                  </div>
+                  <div class="text-1xl font-bold mb-4">Make schedule for a Individual Course</div>
                   <div class="schedules my-4">
                     <div class="next-step">
                       <form class="w-full">
@@ -515,11 +481,7 @@ onUnmounted(() => {})
                               id="grid-state"
                             >
                               <option>Select an Option</option>
-                              <option
-                                v-for="day in days"
-                                :key="day"
-                                :value="day.id"
-                              >
+                              <option v-for="day in days" :key="day" :value="day.id">
                                 {{ day.name }}
                               </option>
                             </select>
@@ -588,9 +550,7 @@ onUnmounted(() => {})
               <div class="w-full bg-gray-100 p-4 rounded-lg">
                 <!-- Content for the other half of the row -->
                 <div v-if="groupTab" class="border m-2 p-2">
-                  <div class="text-1xl font-bold mb-4">
-                    Make schedule for a Group Course
-                  </div>
+                  <div class="text-1xl font-bold mb-4">Make schedule for a Group Course</div>
                   <div class="schedules my-4">
                     <div class="next-step">
                       <form class="w-full">
@@ -619,7 +579,7 @@ onUnmounted(() => {})
                                   :style="{
                                     backgroundColor: '#f2f2f2',
                                     border: '1px solid #ccc',
-                                    padding: '8px',
+                                    padding: '8px'
                                   }"
                                 >
                                   <div>{{ slotProps.option.name }}</div>
@@ -628,14 +588,8 @@ onUnmounted(() => {})
 
                               <template #footer>
                                 <div class="py-2 px-3">
-                                  <b>{{
-                                    selectedDays ? selectedDays.length : 0
-                                  }}</b>
-                                  item{{
-                                    (selectedDays ? selectedDays.length : 0) > 1
-                                      ? 's'
-                                      : ''
-                                  }}
+                                  <b>{{ selectedDays ? selectedDays.length : 0 }}</b>
+                                  item{{ (selectedDays ? selectedDays.length : 0) > 1 ? 's' : '' }}
                                   selected .
                                 </div>
                               </template>
@@ -696,11 +650,7 @@ onUnmounted(() => {})
               </div>
             </div>
 
-            <Modal
-              v-if="modal"
-              :width="'width: 550px'"
-              @modal-close="closeModal"
-            >
+            <Modal v-if="modal" :width="'width: 550px'" @modal-close="closeModal">
               <div class="text-1xl font-bold">Make schedule for a Course</div>
 
               <div class="schedules my-4">
@@ -741,11 +691,7 @@ onUnmounted(() => {})
                           id="grid-state"
                         >
                           <option>Select an Option</option>
-                          <option
-                            v-for="day in days"
-                            :key="day"
-                            :value="day.id"
-                          >
+                          <option v-for="day in days" :key="day" :value="day.id">
                             {{ day.name }}
                           </option>
                         </select>
@@ -869,7 +815,7 @@ tr:nth-child(even) {
   overflow: auto;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .verification-content {
@@ -935,7 +881,7 @@ import { useRouter } from 'vue-router'
 
 export default {
   props: {
-    user: Object,
+    user: Object
   },
   setup() {
     const router = useRouter()
@@ -945,8 +891,8 @@ export default {
     }
 
     return {
-      verifyTeacher,
+      verifyTeacher
     }
-  },
+  }
 }
 </script>
