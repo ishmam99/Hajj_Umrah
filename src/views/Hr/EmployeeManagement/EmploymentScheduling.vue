@@ -5,12 +5,7 @@ import HrSidebar from '../HrSidevar.vue';
 </script>
 
 <template>
-    <DefaultLayout>
-        <div class="bg-slate-50">
-      <div class="pt-[80px] flex justify-between">
-         <HrSidebar />
-        
-      </div>
+    <div class=" bg-red-700 h-100">
+      hello
     </div>
-    </DefaultLayout>
 </template>

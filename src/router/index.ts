@@ -570,98 +570,106 @@ const router = createRouter({
     {
       path: '/HR_Login',
       name: 'HR Login',
-      component: () => import('../views/Auth/LogIn.vue')
+      component: () => import('../views/Auth/LogIn.vue'),
+      
     },
-    //Hr Manage Organogarn
     {
-      path: '/HR_Define_Position',
+      path: '/HR_Dashboard',
+      name: 'HR_Dashboard',
+      component: () => import('../views/Hr/HrDashbord.vue'),
+      children: [
+
+        {
+          path: '/HR_Dashboard/Proile',
+          name:'HR_Dashboard_Proil',
+              component: () => import('../views/Hr/Profile/HRProfile.vue'),
+          },
+        //Hr Manage Organogarn
+    {
+      path: '/HR_Dashboard/HR_Define_Position',
       name: 'HR_Define_Position',
       component: () => import('../views/Hr/ManageOrganogram/DefinePosition.vue'),
     },
     {
-      path: '/HR_Position_List',
+      path: '/HR_Dashboard/HR_Position_List',
       name: 'HR_Position_List',
       component: () => import('../views/Hr/ManageOrganogram/PositionList.vue'),
     },
     {
-      path: '/HR_Position_List/1',
+      path: '/HR_Dashboard/HR_Position_List/1',
       name: 'HR_Position_List-edit',
       component: () => import('../views/Hr/ManageOrganogram/EditDefinePosition.vue'),
     },
     
     //Hr managemant 
+    
     {
-      path: '/HR_Dashboard',
-      name: 'HR_Dashboard',
-      component: () => import('../views/Hr/HrDashbord.vue')
-    },
-    {
-      path: '/HR_Employment_Scheduling',
+      path: '/HR_Dashboard/HR_Employment_Scheduling',
       name: 'HR_Employment_Scheduling',
       component: () => import('../views/Hr/EmploymentScheduling.vue')
     },
     //Hr Job Creation 
     {
-      path: '/HR_Create_Job_Description',
+      path: '/HR_Dashboard/HR_Create_Job_Description',
       name: 'HR_Create_Job_Description',
       component: () => import('../views/Hr/JobManagement/CreateJob.vue'),
     },
     {
-      path: '/HR_Edit_Job_Description/1',
+      path: '/HR_Dashboard/HR_Edit_Job_Description/1',
       name: 'HR_Edit_Job_Description',
       component: () => import('../views/Hr/JobManagement/EditJob.vue'),
     },
     {
-      path: '/HR_Job_list',
+      path: '/HR_Dashboard/HR_Job_list',
       name: 'HR_Job_list',
       component: () => import('../views/Hr/JobManagement/JobList.vue'),
     },
 
     {
-      path: '/HR_Post_List',
+      path: '/HR_Dashboard/HR_Post_List',
       name: 'HR_Post_List',
       component: () => import('../views/Hr/JobManagement/PostJob.vue'),
     },
     //Hr higiring management
     {
-      path: '/HR_Higiring_Application',
+      path: '/HR_Dashboard/HR_Higiring_Application',
       name: '/HR_Higiring_Application',
       component: () => import('../views/Hr/HigiringManagement/ApplicationSteps.vue'),
     },
     {
-      path: '/HR_Higiring_Background_Check',
+      path: '/HR_Dashboard/HR_Higiring_Background_Check',
       name: '/HR_Higiring_Background_Check',
       component: () => import('../views/Hr/HigiringManagement/BackgroundCheck.vue'),
     },
 
     {
-      path: '/HR_Higiring_Orientation',
+      path: '/HR_Dashboard/HR_Higiring_Orientation',
       name: '/HR_Higiring_Orientation',
       component: () => import('../views/Hr/HigiringManagement/Orientation.vue'),
     },
 
     //Hr Employee Management 
     {
-      path: '/HR_Employee_list',
+      path: '/HR_Dashboard/HR_Employee_list',
       name: '/HR_Employee_list',
       component: () => import('../views/Hr/EmployeeManagement/EmployeeList.vue'),
     },
     
-    {
-      path: '/HR_Employment_Scheduling',
-      name: '/HR_Employment_Scheduling',
-      component: () => import('../views/Hr/EmployeeManagement/EmploymentScheduling.vue'),
-    },
+    // {
+    //   path: '/HR_Dashboard/HR_Employment_Scheduling',
+    //   name: '/HR_Employment_Scheduling',
+    //   component: () => import('../views/Hr/EmployeeManagement/EmploymentScheduling.vue'),
+    // },
     
     {
-      path: '/HR_Leave_Management',
-      name: '/HR_Leave_Management',
+      path: '/HR_Dashboard/HR_Leave_Management',
+      name: '/HR_Dashboard/HR_Leave_Management',
       component: () => import('../views/Hr/EmployeeManagement/LeaveManagement.vue'),
     },
     
     {
-      path: '/HR_Performance_Management',
-      name: '/HR_Performance_Management',
+      path: '/HR_Dashboard/HR_Performance_Management',
+      name: '/HR_Dashboard/HR_Performance_Management',
       component: () => import('../views/Hr/EmployeeManagement/PerformanceManagement.vue'),
     },
 
@@ -672,11 +680,14 @@ const router = createRouter({
     // },
 
     {
-      path: '/HR_Career_Life_Cycle',
-      name: '/HR_Career_Life_Cycle',
+      path: '/HR_Dashboard/HR_Career_Life_Cycle',
+      name: '/HR_Dashboard/HR_Career_Life_Cycle',
       component: () => import('../views/Hr/EmployeeManagement/CareerLifeCycle.vue'),
     },
 
+      ]
+    },
+    
     {
       path: '/Operation_Login',
       name: 'Operation Login',

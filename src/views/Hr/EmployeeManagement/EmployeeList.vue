@@ -5,11 +5,7 @@ import HrSidebar from '../HrSidevar.vue';
 </script>
 
 <template>
-    <DefaultLayout>
-        <div class="bg-slate-50">
-      <div class="pt-[80px] flex justify-between">
-         <HrSidebar />
-         <div class="px-4 bg-white py-5 w-3/4">
+<div class="px-4 bg-white py-5 w-3/4">
           <div class="flex justify-between items-center pt-4">
             <p class="text-2xl text-yellow-600 font-bold pb-2">Employee List</p>
           </div>
@@ -23,11 +19,11 @@ import HrSidebar from '../HrSidevar.vue';
                   <th class="p-2 text-left">Employee ID</th>
                   <th class="p-2 text-left">Employee Name(s)</th>
                   <th class="text-left">Address</th>
-                  <th class="p-2 text-left">Starting Date</th>
-                  <th class="p-2 text-left">Ending Date</th>
-                  <th class="p-2 text-left">Time</th>
+                  <th class="p-2 text-left">Joining Date</th>
+                  <!-- <th class="p-2 text-left">Ending Date</th> -->
+                  <!-- <th class="p-2 text-left">Time</th> -->
                   <th class="p-2 text-left">Status</th>
-                  <th class="p-2 text-left">Action</th>
+                  <th class="p-2 text-left">Details</th>
                 </tr>
               </thead>
               <tbody>
@@ -36,75 +32,33 @@ import HrSidebar from '../HrSidevar.vue';
                     <h3 class="font-bold">01</h3>
                   </td>
                   <td class="py-4 p-2 flex items-center gap-2">
-                    <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-                    <h3 class="font-bold">Save The Children</h3>
+                    <img src="/src/assets/image/home/l4.jpg" alt="" class="w-14 h-14 rounded-full ring-4 ring-gray-500" />
+                    <h3 class="px-3 font-bold">Dr. Imran</h3>
                   </td>
                   <td>
-                    <p class="text-lg">Masjid Premises</p>
+                    <p class="text-lg">
+                      Street: 3716 Andrews Hwy <br/>
+                      City/Town: Odessa <br/>
+                      State/Province/Region:Texas
+                    </p>
                   </td>
                   <td class="py-4 p-2">1 Jan 2024</td>
-                  <td class="py-4 p-2">1 Feb 2024</td>
-                  <td class="py-4 p-2 font-semibold">4 PM</td>
+                  
                   <td class="py-4 p-2">
                     <p class="text-sm font-bold text-blue-600">Pending</p>
                   </td>
                   <td class="py-4 p-2">
-                    <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                      Details
-                    </button>
+                    <span class="text-gray-500 px-2 cursor-pointer">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+                      </svg>
+
+                      </span>
                   </td>
                 </tr>
-                <tr class="bg-white">
-                  <td class="py-4 p-2 gap-2">
-                    <h3 class="font-bold">02</h3>
-                  </td>
-                  <td class="py-4 p-2 flex items-center gap-2">
-                    <img src="/src/assets/image/home/l4.png" alt="" class="h-10" />
-                    <h3 class="font-bold">Enhance Social Justice</h3>
-                  </td>
-                  <td>
-                    <p class="text-lg">Masjid Premises</p>
-                  </td>
-                  <td class="py-4 p-2">1 Jan 2024</td>
-                  <td class="py-4 p-2">10 Feb 2024</td>
-                  <td class="py-4 p-2 font-semibold">9 AM</td>
-                  <td class="py-4 p-2">
-                    <p class="text-sm font-bold text-green-600">Completed</p>
-                  </td>
-                  <td class="py-4 p-2">
-                    <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                      Details
-                    </button>
-                  </td>
-                </tr>
-                <tr class="">
-                  <td class="py-4 p-2">
-                    <h3 class="font-bold">03</h3>
-                  </td>
-                  <td class="py-4 p-2 flex items-center gap-2">
-                    <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-                    <h3 class="font-bold">Help the weak</h3>
-                  </td>
-                  <td>
-                    <p class="text-lg">Masjid Premises</p>
-                  </td>
-                  <td class="py-4 p-2">1 Jan 2024</td>
-                  <td class="py-4 p-2">1 Feb 2024</td>
-                  <td class="py-4 p-2 font-semibold">2 PM</td>
-                  <td class="py-4 p-2">
-                    <p class="text-sm font-bold text-blue-600">Pending</p>
-                  </td>
-                  <td class="py-4 p-2">
-                    <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                      Details
-                    </button>
-                  </td>
-                </tr>
+              
               </tbody>
             </table>
           </div>
         </div>
-      </div>
-    </div>
-    </DefaultLayout>
 </template>

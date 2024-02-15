@@ -7,7 +7,7 @@
       <p class="text-xl font-bold">Welcome Mr. Hashim</p>
 
 
-      <router-link to="/HR_Dashboard" class="flex items-center gap-2"
+      <router-link to="/HR_Dashboard/Proile" class="flex items-center gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -33,10 +33,10 @@
           Manage Organogarm
         </button>
         <div v-show="drop == 1" class="submenu mx-8">
-          <router-link to="/HR_Define_Position" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Define_Position" class="flex items-center gap-2"
             >- Define Position </router-link
           >
-          <router-link to="/HR_Position_List" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Position_List" class="flex items-center gap-2"
             >- Position List</router-link
           >
           
@@ -58,13 +58,13 @@
           Job Management
         </button>
         <div v-show="drop == 2" class="submenu mx-8">
-          <router-link to="/HR_Create_Job_Description" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Create_Job_Description" class="flex items-center gap-2"
             >- Create  Job Description </router-link
           >
-          <router-link to="/HR_Job_list" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Job_list" class="flex items-center gap-2"
             >- Job List</router-link
           >
-          <router-link to="/HR_Post_List" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Post_List" class="flex items-center gap-2"
             >- Post Job</router-link
           >
          
@@ -84,13 +84,13 @@
           Higiring management
         </button>
         <div v-show="drop == 3" class="submenu mx-8">
-          <router-link to="/HR_Higiring_Application" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Higiring_Application" class="flex items-center gap-2"
             >- Application steps</router-link
           >
-          <router-link to="/HR_Higiring_Background_Check" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Higiring_Background_Check" class="flex items-center gap-2"
             >- Background check </router-link
           >
-          <router-link to="/HR_Higiring_Orientation" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Higiring_Orientation" class="flex items-center gap-2"
             >- Orientation  </router-link
           >
          
@@ -111,22 +111,22 @@
           Employee management
         </button>
         <div v-show="drop == 4" class="submenu mx-8">
-          <router-link to="/HR_Employee_list" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Employee_list" class="flex items-center gap-2"
             >- Employee list</router-link
           >
-          <router-link to="/HR_Employment_Scheduling" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Employment_Scheduling" class="flex items-center gap-2"
             >- Employee Schedule </router-link
           >
-          <router-link to="/HR_Time_Card" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Time_Card" class="flex items-center gap-2"
             >- Time card   </router-link
           >
-          <router-link to="/HR_Leave_Management" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Leave_Management" class="flex items-center gap-2"
             >- Leave management   </router-link
           >
-          <router-link to="/HR_Performance_Management" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Performance_Management" class="flex items-center gap-2"
             >- Performance management   </router-link
           >
-          <router-link to="/HR_Career_Life_Cycle" class="flex items-center gap-2"
+          <router-link to="/HR_Dashboard/HR_Career_Life_Cycle" class="flex items-center gap-2"
             >- Career life cycle    </router-link
           >
          
