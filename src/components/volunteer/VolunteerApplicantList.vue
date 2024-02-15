@@ -19,7 +19,7 @@ import {
   DialogTrigger
 } from '/components/ui/dialog'
 
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useVolunteerDataStore } from '@/stores/volunteerStore.ts'
 
@@ -29,12 +29,29 @@ const {
   setVolunteerApplicantList,
   setSearchByJobText,
   setSearchByInterestText,
-  setSearchByExpertiseRef
+  setSearchByExpertiseRef,
+  setSearchByDay,
+  setSearchByRepeatedDay,
+  setSearchByStartEnd
 } = useVolunteerDataStore()
 
 const searchByJobText = ref('')
 const searchByInterestText = ref('')
 const searchByExpertise = ref('All')
+const searchByDateTime = ref(null)
+const occurrenceType = ref('Weeks')
+const searchByDay = ref('Any')
+const searchByRepeatedDay = ref('1')
+const searchByStartTime = ref('Any')
+const searchByEndTime = ref('Any')
+const hours = ref([])
+// Function to generate hours
+const generateHours = () => {
+  for (let i = 0; i < 24; i++) {
+    const hour = `${i < 10 ? '0' : ''}${i}:00` // Format hour with leading zero if needed
+    hours.value.push(hour)
+  }
+}
 
 watch(
   () => searchByJobText.value,
@@ -61,10 +78,41 @@ watch(
 watch(
   () => searchByExpertise.value,
   () => {
-    setSearchByExpertiseRef(searchByExpertise.value)
     console.log(searchByExpertise.value, 'searchByExpertise.value')
   }
 )
+
+watch(
+  () => searchByDay.value,
+  () => {
+    setSearchByDay(searchByDay.value)
+    searchByRepeatedDay.value = '1'
+    console.log(searchByDay.value, 'searchByDay.value')
+  }
+)
+
+watch(
+  () => searchByRepeatedDay.value,
+  () => {
+    setSearchByRepeatedDay({ day: searchByDay.value, repeatedTime: searchByRepeatedDay.value })
+    console.log(searchByDay.value, searchByRepeatedDay.value, 'searchByDay.value')
+  }
+)
+
+// array of multiple sources
+watch(
+  [() => searchByStartTime.value, () => searchByEndTime.value],
+  ([newStartTime, newEndTime]) => {
+    // if (newStartTime !== 'Any' || newEndTime !== 'Any') {
+    // }
+    setSearchByStartEnd({ startTime: newStartTime, endTime: newEndTime })
+    console.log(`StartTime is ${newStartTime} and EndTime is ${newEndTime}`)
+  }
+)
+
+onMounted(() => {
+  generateHours()
+})
 </script>
 
 <template>
@@ -73,32 +121,83 @@ watch(
     <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
       <div class="flex justify-between items-center pt-4 pb-2">
         <p class="text-2xl text-yellow-600 font-bold">All Volunteer Application</p>
+      </div>
 
-        <input
-          v-model="searchByJobText"
-          type="text"
-          placeholder="Search by job name"
-          class="py-1.5 px-2 rounded-md border text-sm"
-        />
-        <input
-          v-model="searchByInterestText"
-          type="text"
-          placeholder="Search by interest area"
-          class="py-1.5 px-2 rounded-md border text-sm"
-        />
+      <div class="flex flex-wrap justify-between items-end pb-2">
+        <div>
+          <div>By job name:</div>
+          <input
+            v-model="searchByJobText"
+            type="text"
+            placeholder="Search by job name"
+            class="py-1.5 px-2 rounded-md border text-sm"
+          />
+        </div>
+
+        <div>
+          <div>Search by interested area:</div>
+          <input
+            v-model="searchByInterestText"
+            type="text"
+            placeholder="Search by interest area"
+            class="py-1.5 px-2 rounded-md border text-sm"
+          />
+        </div>
 
         <div class="w-[200px]">
-          <select
-            v-model="searchByExpertise"
-            class="bg-white border border-gray-500 p-2 rounded-lg hidden"
-          >
-            <option>All</option>
-            <option>Waiting</option>
-            <option>Approved</option>
-            <option>Reject</option>
+          <select v-model="searchByDay" class="bg-white border border-gray-500 p-2 rounded-lg">
+            <option>Any</option>
+            <option>Daily</option>
+            <option>Weekly</option>
+            <option>Biweekly</option>
+            <option>Monthly</option>
           </select>
         </div>
+
+        <div
+          class="w-[200px] flex space-x-1 items-center"
+          v-if="searchByDay !== 'Daily' && searchByDay !== 'All'"
+        >
+          <span>Min </span>
+          <select
+            v-model="searchByRepeatedDay"
+            class="bg-white border border-gray-500 p-2 rounded-lg"
+          >
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <span class="whitespace-nowrap"
+            >times in {{ searchByDay }} {{ searchByDay === 'Biweekly' ? '(15 Days)' : '' }}</span
+          >
+        </div>
+
+        <div class="w-fit flex flex-col">
+          <div>Available Time:</div>
+          <div>
+            <select
+              v-model="searchByStartTime"
+              class="bg-white border border-gray-500 p-2 rounded-lg"
+            >
+              <option>Any</option>
+              <option v-for="hour in hours" :key="hour">{{ hour }}</option>
+            </select>
+
+            <span class="mx-2">To</span>
+
+            <select
+              v-model="searchByEndTime"
+              class="bg-white border border-gray-500 p-2 rounded-lg"
+            >
+              <option>Any</option>
+              <option v-for="hour in hours" :key="hour">{{ hour }}</option>
+            </select>
+          </div>
+        </div>
       </div>
+
       <hr />
       <div
         class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center"
