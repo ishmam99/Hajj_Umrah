@@ -38,13 +38,14 @@ import {
             >
               <table class="table-auto w-full">
                 <thead>
-                  <tr class="bg-white text-xl">
+                  <tr class="bg-white text-sm">
                     <th class="p-2 text-left">Bid Id</th>
                     <th class="p-2 text-left">Project Name</th>
                     <th class="p-2 text-left">Vendor Id</th>
                     <th class="p-2 text-left">Budget</th>
-                    <th class="p-2 text-left">Bid Details</th>
+                    <th class="p-2 text-left">Vendor Details</th>
                     <th class="p-2 text-left">Action</th>
+                    <th class="p-2 text-left">Reason for (Selection/Rejection)</th>
                   </tr>
                 </thead>
                 <tbody>

@@ -71,16 +71,16 @@
         </button>
         <div v-show="currentAccordions === 'vendorManagement'" class="submenu mx-8">
           <router-link to="/Supply_Hire_Vendor" class="flex items-center gap-2"
-            >- View New Vendor Application</router-link
+            >- New Vendor Application</router-link
           >
           <router-link to="/Supply_Vendor_List" class="flex items-center gap-2"
             >- Registered Vendor List</router-link
           >
-          <router-link to="/Supply_Post_Bid" class="flex items-center gap-2"
+          <router-link to="/Supply_Active_Vendor" class="flex items-center gap-2"
             >- Active Vendor List
           </router-link>
           <router-link to="/Supply_Prefered_Vendor_List" class="flex items-center gap-2"
-            >- Prefered Vendor List</router-link
+            >- Preferred Vendor List</router-link
           >
         </div>
       </div>
@@ -150,12 +150,16 @@ const store = useAuthStore()
 const currentAccordions = ref('bidManagement')
 
 const toggleAccordion = (accordionName) => {
-  if (accordionName === currentAccordions.value) {
+  if (currentAccordions.value === accordionName) {
     currentAccordions.value = ''
   } else {
     currentAccordions.value = accordionName
   }
 }
+
+watch(route, () => {
+  console.log(route)
+})
 
 watch(
   () => store.isAuthenticated,

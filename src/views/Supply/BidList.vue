@@ -31,7 +31,7 @@ import {
                   <tr class="bg-white text-xl">
                     <th class="p-2 text-left">Bid Id</th>
                     <th class="p-2 text-left">Project Name</th>
-                    <th class="p-2 text-left">Require Completion Timeframe</th>
+                    <th class="p-2 text-left">Project Completion Timeframe</th>
                     <th class="p-2 text-left">Budget</th>
                     <th class="p-2 text-left">Details</th>
                   </tr>

@@ -13,11 +13,13 @@
           >
             <table class="table-auto w-full">
               <thead>
-                <tr class="bg-white text-xl">
+                <tr class="bg-white text-sm">
                   <th class="p-2 text-left">Bid Id</th>
                   <th class="p-2 text-left">Bid Title</th>
                   <th class="p-2 text-left">Post Date From</th>
                   <th class="p-2 text-left">Post Date To</th>
+                  <th class="p-2 text-left">Bid Submission Deadline</th>
+                  <th class="p-2 text-left">Bid Submission Link</th>
                   <th class="p-2 text-left">Details</th>
                   <th class="p-2 text-left">Action</th>
                 </tr>
@@ -27,12 +29,29 @@
                   <td class="py-4 p-2 gap-2">
                     <h3 class="font-bold">01</h3>
                   </td>
-                  <td class="py-4 p-2 flex items-center gap-2">
-                    <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
+                  <td class="py-6 p-2 flex items-center gap-2">
+                    <!-- <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" /> -->
                     <h3 class="font-bold">Sound System</h3>
                   </td>
                   <td class="py-4 p-2">1 Jan 2024</td>
                   <td class="py-4 p-2">1 Feb 2024</td>
+                  <td class="py-4 p-2">
+                    <input
+                      type="date"
+                      class="peer block min-h-[auto] rounded-lg border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      id="exampleFormControlInput50"
+                      value=""
+                    />
+                  </td>
+                  <td class="py-4 p-2">
+                    <input
+                      type="text"
+                      class="peer block min-h-[auto] rounded-lg border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      id="exampleFormControlInput50"
+                      placeholder="A Link"
+                    />
+                  </td>
+
                   <td class="py-4 p-2">
                     <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                       <Dialog>
@@ -103,12 +122,28 @@
                   <td class="py-4 p-2 gap-2">
                     <h3 class="font-bold">02</h3>
                   </td>
-                  <td class="py-4 p-2 flex items-center gap-2">
-                    <img src="/src/assets/image/home/l4.png" alt="" class="h-10" />
+                  <td class="py-6 p-2 flex items-center gap-2">
+                    <!-- <img src="/src/assets/image/home/l4.png" alt="" class="h-10" /> -->
                     <h3 class="font-bold">Computer, Printer, Camera</h3>
                   </td>
                   <td class="py-4 p-2">1 Jan 2024</td>
                   <td class="py-4 p-2">10 Feb 2024</td>
+                  <td class="py-4 p-2">
+                    <input
+                      type="date"
+                      class="peer block min-h-[auto] rounded-lg border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      id="exampleFormControlInput50"
+                      value=""
+                    />
+                  </td>
+                  <td class="py-4 p-2">
+                    <input
+                      type="text"
+                      class="peer block min-h-[auto] rounded-lg border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      id="exampleFormControlInput50"
+                      placeholder="A Link"
+                    />
+                  </td>
                   <td class="py-4 p-2">
                     <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                       <Dialog>
@@ -179,12 +214,28 @@
                   <td class="py-4 p-2">
                     <h3 class="font-bold">03</h3>
                   </td>
-                  <td class="py-4 p-2 flex items-center gap-2">
-                    <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
+                  <td class="py-6 p-2 flex items-center gap-2">
+                    <!-- <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" /> -->
                     <h3 class="font-bold">Sound System</h3>
                   </td>
                   <td class="py-4 p-2">1 Jan 2024</td>
                   <td class="py-4 p-2">1 Feb 2024</td>
+                  <td class="py-4 p-2">
+                    <input
+                      type="date"
+                      class="peer block min-h-[auto] rounded-lg border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      id="exampleFormControlInput50"
+                      value=""
+                    />
+                  </td>
+                  <td class="py-4 p-2">
+                    <input
+                      type="text"
+                      class="peer block min-h-[auto] rounded-lg border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      id="exampleFormControlInput50"
+                      placeholder="A Link"
+                    />
+                  </td>
                   <td class="py-4 p-2">
                     <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                       <Dialog>

@@ -1,188 +1,282 @@
-<script setup>
-import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import SupplySidebar from '/src/views/Supply/SupplySidevar.vue'
-</script>
-
 <template>
   <DefaultLayout>
     <div class="bg-slate-50">
-      <div class="pt-[80px] flex justify-between">
+      <div class="pt-20 flex justify-between">
         <SupplySidebar />
-        <div class="px-5 bg-slate-50 py-5 w-3/4">
-          <p class="text-2xl font-bold py-3 border-b">New Vendor Application</p>
-          <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
-            <form @submit.prevent="volunteerAdmissionSubmit()">
-              <div class="py-5 space-y-7 mt-5">
-                <div class="flex gap-4">
-                  <div class="relative mb-3 w-1/2">
-                    <input
-                      type="text"
-                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-2 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                      id="exampleFormControlInput50"
-                      value=""
-                    />
-                    <label
-                      for="exampleFormControlInput50"
-                      class="absolute left-3 top-0 mb-0 font-semibold z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                      >Project/Job Name <span class="text-red-500">*</span>
-                    </label>
-                  </div>
-                  <div class="relative mb-3 w-1/2">
-                    <input
-                      type="number"
-                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-2 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                      id="exampleFormControlInput50"
-                      value=""
-                    />
-                    <label
-                      for="exampleFormControlInput50"
-                      class="absolute left-3 font-semibold top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                      >Project/ Job Budget <span class="text-red-500">*</span>
-                    </label>
-                  </div>
-                </div>
-                <div class="relative">
-                  <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-800 font-semibold">
-                    Project/Job scope of work/Summary <span class="text-red-500">*</span>
-                  </p>
-                  <textarea
-                    name=""
-                    id=""
-                    cols=""
-                    rows="4"
-                    placeholder="Ex:23"
-                    class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
-                  ></textarea>
-                </div>
-                <div class="relative">
-                  <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-800 font-semibold">
-                    Required completion timeframe <span class="text-red-500">*</span>
-                  </p>
-                  <textarea
-                    name=""
-                    id=""
-                    cols=""
-                    rows="4"
-                    placeholder="Ex:23"
-                    class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
-                  ></textarea>
-                </div>
-                <!-- <div class="flex gap-5">
-                  <div class="flex items-center gap-2 py-2 px-2">
-                    <input type="checkbox" name="" id="" />
-                    <label for="" class=""
-                      >I agree to <span class="text-blue-600">terms & conditions.</span
-                      ><span class="text-red-600">*</span></label
-                    >
-                  </div>
-                </div> -->
-                <div class="flex flex-col gap-5">
-                  <div class="flex items-center gap-2">
-                    <h1 class="text-gray-800 font-semibold text-xl px-2">
-                      Required Bidder Information <span class="text-red-600">*</span>
-                    </h1>
-                  </div>
-                  <div class="relative">
-                    <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-800 font-semibold">
-                      Introduction
-                      <span class="text-red-500">*</span>
-                    </p>
-                    <textarea
-                      name=""
-                      id=""
-                      cols=""
-                      rows="4"
-                      placeholder="An overview of the bidder and their qualifications"
-                      class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
-                    ></textarea>
-                  </div>
-                  <div class="relative">
-                    <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-800 font-semibold">
-                      Scope of Work
-                      <span class="text-red-500">*</span>
-                    </p>
-                    <textarea
-                      name=""
-                      id=""
-                      cols=""
-                      rows="4"
-                      placeholder="A detailed description of the services or products being offered"
-                      class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
-                    ></textarea>
-                  </div>
-                  <div class="relative mb-3 w-full">
-                    <input
-                      type="number"
-                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-2 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                      id="exampleFormControlInput50"
-                      value=""
-                    />
-                    <label
-                      for="exampleFormControlInput50"
-                      class="absolute left-3 top-0 mb-0 font-semibold z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                      >Pricing <span class="text-red-500">*</span>
-                    </label>
-                  </div>
+        <div class="px-4 bg-white py-5 w-3/4">
+          <div class="flex justify-between items-center pt-4">
+            <p class="text-2xl text-teal-700 font-bold pb-2">All Vendor Applications</p>
+          </div>
+          <hr />
+          <div
+            class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center"
+          >
+            <table class="table-auto w-full">
+              <thead>
+                <tr class="bg-white text-xl">
+                  <th class="p-2 text-left">No.</th>
+                  <th class="p-2 text-left">Vendor Image</th>
+                  <th class="p-2 text-left">Vendor Name</th>
+                  <th class="p-2 text-left">Vendor Type</th>
+                  <th class="p-2 text-left">Details</th>
+                  <th class="p-2 text-left">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="">
+                  <td class="py-4 p-2 gap-2">
+                    <h3 class="font-bold">01</h3>
+                  </td>
+                  <td class="py-4 p-2 flex items-center gap-2">
+                    <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
+                  </td>
 
-                  <div class="flex flex-col py-2">
-                    <h1 class="px-2 font-semibold pb-4 text-gray-900">
-                      Timeline <span class="text-red-500">*</span>
-                    </h1>
-                    <div class="flex gap-4">
-                      <div class="pt-1 mb-3 w-1/2 relative">
-                        <input
-                          type="date"
-                          class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                          id="exampleFormControlInput50"
-                          value=""
-                        />
-                        <label
-                          for="exampleFormControlInput50"
-                          class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                          >Start Date
-                        </label>
-                      </div>
-                      <div class="pt-1 mb-3 w-1/2 relative">
-                        <input
-                          type="date"
-                          class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                          id="exampleFormControlInput50"
-                          value=""
-                        />
-                        <label
-                          for="exampleFormControlInput50"
-                          class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                          >End Date
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="relative">
-                    <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-800 font-semibold">
-                      Credentials
-                      <span class="text-red-500">*</span>
-                    </p>
-                    <textarea
-                      name=""
-                      id=""
-                      cols=""
-                      rows="4"
-                      placeholder="References, certifications, and past relevant experience."
-                      class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
-                    ></textarea>
-                  </div>
-                </div>
-                <button
-                  type="submit"
-                  class="w-full h-[45px] rounded-2xl bg-teal-800 text-white font-bold mx-auto flex items-center text-center justify-center"
-                >
-                  Create bid
-                </button>
-              </div>
-            </form>
+                  <td class="py-4 p-2">Humble Cup Coffee</td>
+                  <td class="py-4 p-2">Beverage</td>
+                  <td class="py-4 p-2">
+                    <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                      <Dialog>
+                        <DialogTrigger> Details </DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>
+                              <div class="font-bold text-xl mb-2">Sound System</div>
+                            </DialogTitle>
+                            <DialogDescription>
+                              <img src="/src/assets/image/home/l4.jpg" alt="" />
+                              <div>
+                                <h1 class="font-semibold mt-2 text-lg text-black">Description</h1>
+                                In our noble mission, we strive to alleviate hunger and nourish the
+                                vulnerable in our community. Committed to the values of compassion
+                                and social responsibility, we dedicate ourselves to feeding those in
+                                need. Every day, we work tirelessly to provide nutritious meals,
+                                ensuring that no one goes to bed hungry. Our initiative goes beyond
+                                immediate relief, aiming to empower individuals and build
+                                sustainable solutions for long-term food security. With the support
+                                of our dedicated team and generous community, we envision a future
+                                where hunger is eradicated, fostering a world where every person has
+                                access to the fundamental right of wholesome sustenance and the hope
+                                for a brighter tomorrow
+                              </div>
+                              <div class="flex gap-5 items-center justify-between">
+                                <div class="flex gap-2">
+                                  <h1 class="text-black font-semibold">Project Budget:</h1>
+                                  $ 5000
+                                </div>
+                                <div class="flex gap-2">
+                                  <h1 class="text-black font-semibold">Completion Timeframe:</h1>
+                                  6 months
+                                </div>
+                              </div>
+                              <div class="flex gap-5 items-center justify-between mt-2">
+                                <div>
+                                  <span class="text-black font-semibold">Starting Date:</span> 1 Jan
+                                  2024
+                                </div>
+                                <div>
+                                  <span class="text-black font-semibold">Ending Date:</span> 10 Feb
+                                  2024
+                                </div>
+                              </div>
+                            </DialogDescription>
+                          </DialogHeader>
+                        </DialogContent>
+                      </Dialog>
+                    </button>
+                  </td>
+                  <td class="py-4 p-2">
+                    <Select>
+                      <SelectTrigger class="w-full">
+                        <SelectValue placeholder="Select one" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          <SelectLabel>Select</SelectLabel>
+                          <SelectItem value="Comfort The Sick"> Accept </SelectItem>
+                          <SelectItem value="Educate The Children"> Reject </SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="py-4 p-2 gap-2">
+                    <h3 class="font-bold">02</h3>
+                  </td>
+                  <td class="py-4 p-2 flex items-center gap-2">
+                    <img src="/src/assets/image/home/l4.png" alt="" class="h-10" />
+                  </td>
+                  <td class="py-4 p-2">Just For You</td>
+                  <td class="py-4 p-2">Woodwork</td>
+                  <td class="py-4 p-2">
+                    <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                      <Dialog>
+                        <DialogTrigger> Details </DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>
+                              <div class="font-bold text-xl mb-2">Sound System</div>
+                            </DialogTitle>
+                            <DialogDescription>
+                              <img src="/src/assets/image/home/l4.jpg" alt="" />
+                              <div>
+                                <h1 class="font-semibold mt-2 text-lg text-black">Description</h1>
+                                In our noble mission, we strive to alleviate hunger and nourish the
+                                vulnerable in our community. Committed to the values of compassion
+                                and social responsibility, we dedicate ourselves to feeding those in
+                                need. Every day, we work tirelessly to provide nutritious meals,
+                                ensuring that no one goes to bed hungry. Our initiative goes beyond
+                                immediate relief, aiming to empower individuals and build
+                                sustainable solutions for long-term food security. With the support
+                                of our dedicated team and generous community, we envision a future
+                                where hunger is eradicated, fostering a world where every person has
+                                access to the fundamental right of wholesome sustenance and the hope
+                                for a brighter tomorrow
+                              </div>
+                              <div class="flex gap-5 items-center justify-between">
+                                <div class="flex gap-2">
+                                  <h1 class="text-black font-semibold">Project Budget:</h1>
+                                  $ 5000
+                                </div>
+                                <div class="flex gap-2">
+                                  <h1 class="text-black font-semibold">Completion Timeframe:</h1>
+                                  6 months
+                                </div>
+                              </div>
+                              <div class="flex gap-5 items-center justify-between mt-2">
+                                <div>
+                                  <span class="text-black font-semibold">Starting Date:</span> 1 Jan
+                                  2024
+                                </div>
+                                <div>
+                                  <span class="text-black font-semibold">Ending Date:</span> 10 Feb
+                                  2024
+                                </div>
+                              </div>
+                            </DialogDescription>
+                          </DialogHeader>
+                        </DialogContent>
+                      </Dialog>
+                    </button>
+                  </td>
+                  <td class="py-4 p-2">
+                    <Select>
+                      <SelectTrigger class="w-full">
+                        <SelectValue placeholder="Select one" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          <SelectLabel>Select</SelectLabel>
+                          <SelectItem value="Comfort The Sick"> Accept </SelectItem>
+                          <SelectItem value="Educate The Children"> Reject </SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td class="py-4 p-2">
+                    <h3 class="font-bold">03</h3>
+                  </td>
+                  <td class="py-4 p-2 flex items-center gap-2">
+                    <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
+                  </td>
+                  <td class="py-4 p-2">Alex Pietersen</td>
+                  <td class="py-4 p-2">Photography</td>
+                  <td class="py-4 p-2">
+                    <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                      <Dialog>
+                        <DialogTrigger> Details </DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>
+                              <div class="font-bold text-xl mb-2">Sound System</div>
+                            </DialogTitle>
+                            <DialogDescription>
+                              <img src="/src/assets/image/home/l4.jpg" alt="" />
+                              <div>
+                                <h1 class="font-semibold mt-2 text-lg text-black">Description</h1>
+                                In our noble mission, we strive to alleviate hunger and nourish the
+                                vulnerable in our community. Committed to the values of compassion
+                                and social responsibility, we dedicate ourselves to feeding those in
+                                need. Every day, we work tirelessly to provide nutritious meals,
+                                ensuring that no one goes to bed hungry. Our initiative goes beyond
+                                immediate relief, aiming to empower individuals and build
+                                sustainable solutions for long-term food security. With the support
+                                of our dedicated team and generous community, we envision a future
+                                where hunger is eradicated, fostering a world where every person has
+                                access to the fundamental right of wholesome sustenance and the hope
+                                for a brighter tomorrow
+                              </div>
+                              <div class="flex gap-5 items-center justify-between">
+                                <div class="flex gap-2">
+                                  <h1 class="text-black font-semibold">Project Budget:</h1>
+                                  $ 5000
+                                </div>
+                                <div class="flex gap-2">
+                                  <h1 class="text-black font-semibold">Completion Timeframe:</h1>
+                                  6 months
+                                </div>
+                              </div>
+                              <div class="flex gap-5 items-center justify-between mt-2">
+                                <div>
+                                  <span class="text-black font-semibold">Starting Date:</span> 1 Jan
+                                  2024
+                                </div>
+                                <div>
+                                  <span class="text-black font-semibold">Ending Date:</span> 10 Feb
+                                  2024
+                                </div>
+                              </div>
+                            </DialogDescription>
+                          </DialogHeader>
+                        </DialogContent>
+                      </Dialog>
+                    </button>
+                  </td>
+                  <td class="py-4 p-2">
+                    <Select>
+                      <SelectTrigger class="w-full">
+                        <SelectValue placeholder="Select one" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          <SelectLabel>Select</SelectLabel>
+                          <SelectItem value="Comfort The Sick"> Accept </SelectItem>
+                          <SelectItem value="Educate The Children"> Reject </SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
   </DefaultLayout>
 </template>
+<script setup>
+import DefaultLayout from '@/layouts/DefaultLayout.vue'
+import SupplySidebar from '/src/views/Supply/SupplySidevar.vue'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '/components/ui/dialog'
+
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue
+} from '/components/ui/select'
+</script>

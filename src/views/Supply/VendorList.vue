@@ -5,7 +5,7 @@
         <SupplySidebar />
         <div class="px-4 bg-white py-5 w-3/4">
           <div class="flex justify-between items-center pt-4">
-            <p class="text-2xl text-teal-700 font-bold pb-2">Vendor List</p>
+            <p class="text-2xl text-teal-700 font-bold pb-2">Registered Vendor List</p>
           </div>
           <hr />
           <div
@@ -14,12 +14,10 @@
             <table class="table-auto w-full">
               <thead>
                 <tr class="bg-white text-xl">
-                  <th class="p-2 text-left">Id</th>
+                  <th class="p-2 text-left">Vendor Id</th>
+                  <th class="p-2 text-left">Vendor Image</th>
                   <th class="p-2 text-left">Vendor Name</th>
-                  <!-- <th class="text-left">Address</th> -->
-                  <th class="p-2 text-left">Starting Date</th>
-                  <th class="p-2 text-left">Ending Date</th>
-                  <!-- <th class="p-2 text-left">Status</th> -->
+                  <th class="p-2 text-left">Vendor Type</th>
                   <th class="p-2 text-left">Action</th>
                 </tr>
               </thead>
@@ -30,13 +28,12 @@
                   </td>
                   <td class="py-4 p-2 flex items-center gap-2">
                     <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-                    <h3 class="font-bold">Sound System</h3>
                   </td>
                   <!-- <td>
                     <p class="text-lg">Masjid Premises</p>
                   </td> -->
-                  <td class="py-4 p-2">1 Jan 2024</td>
-                  <td class="py-4 p-2">1 Feb 2024</td>
+                  <td class="py-4 p-2">Dreaming Double</td>
+                  <td class="py-4 p-2">Woodwork</td>
                   <!-- <td class="py-4 p-2 font-semibold">4 PM</td> -->
                   <!-- <td class="py-4 p-2">
                       <p class="text-sm font-bold text-blue-600">Pending</p>
@@ -52,9 +49,10 @@
                       <SelectContent>
                         <SelectGroup>
                           <SelectLabel>Select</SelectLabel>
-                          <SelectItem value="Comfort The Sick"> Post </SelectItem>
-                          <SelectItem value="Educate The Children"> Edit </SelectItem>
-                          <SelectItem value="Shelter The Homeless"> Delete </SelectItem>
+                          <SelectItem value="Comfort The Sick"> Add to Preferred </SelectItem>
+                          <SelectItem value="Educate The Children">
+                            Remove from Prefered
+                          </SelectItem>
                         </SelectGroup>
                       </SelectContent>
                     </Select>
@@ -66,13 +64,9 @@
                   </td>
                   <td class="py-4 p-2 flex items-center gap-2">
                     <img src="/src/assets/image/home/l4.png" alt="" class="h-10" />
-                    <h3 class="font-bold">Computer, Printer, Camera</h3>
                   </td>
-                  <!-- <td>
-                    <p class="text-lg">Masjid Premises</p>
-                  </td> -->
-                  <td class="py-4 p-2">1 Jan 2024</td>
-                  <td class="py-4 p-2">10 Feb 2024</td>
+                  <td class="py-4 p-2">Sweet Talk Spices</td>
+                  <td class="py-4 p-2">Food</td>
                   <!-- <td class="py-4 p-2 font-semibold">9 AM</td> -->
                   <!-- <td class="py-4 p-2">
                       <p class="text-sm font-bold text-green-600">Completed</p>
@@ -85,9 +79,10 @@
                       <SelectContent>
                         <SelectGroup>
                           <SelectLabel>Select</SelectLabel>
-                          <SelectItem value="Comfort The Sick"> Post </SelectItem>
-                          <SelectItem value="Educate The Children"> Edit </SelectItem>
-                          <SelectItem value="Shelter The Homeless"> Delete </SelectItem>
+                          <SelectItem value="Comfort The Sick"> Add to Preferred </SelectItem>
+                          <SelectItem value="Educate The Children">
+                            Remove from Prefered
+                          </SelectItem>
                         </SelectGroup>
                       </SelectContent>
                     </Select>
@@ -99,17 +94,9 @@
                   </td>
                   <td class="py-4 p-2 flex items-center gap-2">
                     <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-                    <h3 class="font-bold">Sound System</h3>
                   </td>
-                  <!-- <td>
-                    <p class="text-lg">Masjid Premises</p>
-                  </td> -->
-                  <td class="py-4 p-2">1 Jan 2024</td>
-                  <td class="py-4 p-2">1 Feb 2024</td>
-                  <!-- <td class="py-4 p-2 font-semibold">2 PM</td> -->
-                  <!-- <td class="py-4 p-2">
-                      <p class="text-sm font-bold text-blue-600">Pending</p>
-                    </td> -->
+                  <td class="py-4 p-2">Kate's T&T</td>
+                  <td class="py-4 p-2">Crafts</td>
                   <td class="py-4 p-2">
                     <Select>
                       <SelectTrigger class="w-full">
