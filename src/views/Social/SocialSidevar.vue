@@ -7,7 +7,7 @@ const currentAccordions = ref('bidManagement')
 const currentAccordions2 = ref('projectManagement')
 
 const toggleAccordion = (accordionName) => {
-  console.log(accordionName)
+  
   if (accordionName === currentAccordions.value) {
     currentAccordions.value = ''
   } else {
@@ -26,7 +26,20 @@ const toggleAccordion2 = (accordionName2) => {
 const route = useRoute()
 const router = useRouter()
 const store = useAuthStore()
-
+watch(() => route, () => {
+  console.log(route.name)
+  if (route.name.includes('Social_Service_Event'))
+  {
+  currentAccordions.value='bidManagement'
+  }
+  else if(route.name.includes('Social_Service_Project'))
+  {
+   currentAccordions.value='projectManagement'
+ }
+}, {
+  deep: true,
+  immediate: true 
+})
 watch(
   () => store.isAuthenticated,
   (newIsAuthenticated) => {
@@ -172,7 +185,7 @@ watch(
         </div>
       </div>
       <div class="accordion">
-        <button @click.stop="toggleAccordion2('projectManagement')" class="flex items-center gap-2">
+        <button @click.stop="toggleAccordion('projectManagement')" class="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -186,7 +199,7 @@ watch(
           </svg>
           Project Management
         </button>
-        <div v-if="currentAccordions2 === 'projectManagement'" class="submenu mx-8">
+        <div v-if="currentAccordions === 'projectManagement'" class="submenu mx-8">
           <router-link
             to="/Social_Service_Project_Create"
             class="flex items-center gap-2 hover:px-2"
