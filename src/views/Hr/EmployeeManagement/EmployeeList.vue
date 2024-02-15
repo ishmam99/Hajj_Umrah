@@ -19,10 +19,10 @@ import HrSidebar from '../HrSidevar.vue';
                   <th class="p-2 text-left">Employee ID</th>
                   <th class="p-2 text-left">Employee Name(s)</th>
                   <th class="text-left">Address</th>
-                  <th class="p-2 text-left">Joining Date</th>
+                  <th class="p-2 text-left">Contact</th>
                   <!-- <th class="p-2 text-left">Ending Date</th> -->
                   <!-- <th class="p-2 text-left">Time</th> -->
-                  <th class="p-2 text-left">Status</th>
+                  <th class="p-2 text-left">Email</th>
                   <th class="p-2 text-left">Details</th>
                 </tr>
               </thead>
@@ -42,17 +42,16 @@ import HrSidebar from '../HrSidevar.vue';
                       State/Province/Region:Texas
                     </p>
                   </td>
-                  <td class="py-4 p-2">1 Jan 2024</td>
+                  <td class="py-4 p-2">+8801784366219</td>
                   
                   <td class="py-4 p-2">
-                    <p class="text-sm font-bold text-blue-600">Pending</p>
+                    <p class="text-sm font-bold text-blue-600">exampe@gmail.com</p>
                   </td>
                   <td class="py-4 p-2">
                     <span class="text-gray-500 px-2 cursor-pointer">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
                       </svg>
-
                       </span>
                   </td>
                 </tr>

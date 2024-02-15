@@ -633,8 +633,13 @@ const router = createRouter({
     //Hr higiring management
     {
       path: '/HR_Dashboard/HR_Higiring_Application',
-      name: '/HR_Higiring_Application',
+      name: 'HR_Higiring_Application',
       component: () => import('../views/Hr/HigiringManagement/ApplicationSteps.vue'),
+    },
+    {
+      path: '/HR_Dashboard/HR_Change_Application_Steps/1',
+      name: 'HR_Change_Application_Steps',
+      component: () => import('../views/Hr/HigiringManagement/ChangeApplicationSteps.vue'),
     },
     {
       path: '/HR_Dashboard/HR_Higiring_Background_Check',

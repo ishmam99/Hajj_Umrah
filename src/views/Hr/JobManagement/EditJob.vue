@@ -255,7 +255,7 @@ const jobceateSubmission = async () => {
                   type="submit"
                   class="w-full h-[45px] rounded-2xl bg-teal-800 text-white font-bold mx-auto flex items-center text-center justify-center"
                 >
-                  Create
+                  Update
                 </button>
               </div>
             </form>

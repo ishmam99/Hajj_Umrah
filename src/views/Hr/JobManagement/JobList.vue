@@ -45,7 +45,7 @@ import HrSidebar from '../HrSidevar.vue'
                   <td class="py-4 p-2 font-semibold">2</td>
                   <td class="py-4 p-2 font-semibold">2</td>
                   <td class="py-4 p-2">
-                    <p class="text-sm font-bold text-blue-600">Pending</p>
+                    <p class="text-sm font-bold text-blue-600">Inactive</p>
                   </td>
                   <td class="py-4 p-2">
                     <router-link to="/HR_Dashboard/HR_Edit_Job_Description/1">
