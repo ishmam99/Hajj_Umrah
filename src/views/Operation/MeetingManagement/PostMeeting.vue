@@ -2,9 +2,9 @@
   <DefaultLayout>
     <div class="bg-slate-50">
       <div class="pt-[80px] flex justify-between">
-        <hrSidebar />
+        <OperationSidebar />
         <div class="px-5 bg-slate-50 py-5 w-3/4">
-          <p class="text-2xl font-bold py-3 border-b">Create Job Description Form</p>
+          <p class="text-2xl font-bold py-3 border-b">Post a Meeting</p>
           <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
             <form @submit.prevent="volunteerAdmissionSubmit()">
               <div class="py-5 space-y-7 mt-5">
@@ -19,7 +19,7 @@
                     <label
                       for="exampleFormControlInput50"
                       class="absolute left-3 top-0 mb-0 font-semibold z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                      >Job Name <span class="text-red-500">*</span>
+                      >Employee Name <span class="text-red-500">*</span>
                     </label>
                   </div>
                   <div class="relative mb-3 w-1/2">
@@ -39,7 +39,7 @@
                 <div class="flex gap-4">
                   <div class="w-1/2">
                     <label for="exampleFormControlInput50 mb-2"
-                      >Employment Type <span class="text-red-500">*</span>
+                      >Meeting Type <span class="text-red-500">*</span>
                     </label>
                     <Select>
                       <SelectTrigger class="w-full">
@@ -47,10 +47,10 @@
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>
-                          <SelectLabel>Product</SelectLabel>
+                          <!-- <SelectLabel>Product</SelectLabel> -->
                           <SelectItem value="Educate The Children"> On Site </SelectItem>
                           <SelectItem value="Shelter The Homeless"> Remote </SelectItem>
-                          <SelectItem value="Comfort The Sick"> Hybrid </SelectItem>
+                          <!-- <SelectItem value="Comfort The Sick"> Hybrid </SelectItem> -->
                           <!-- <SelectItem value="Enhance Social Justice"> Furniture </SelectItem> -->
                           <!-- <SelectItem value="Feed The Hungry"> Feed The Hungry </SelectItem> -->
                         </SelectGroup>
@@ -59,7 +59,7 @@
                   </div>
                   <div class="w-1/2">
                     <label for="exampleFormControlInput50 mb-2"
-                      >Job Type <span class="text-red-500">*</span>
+                      >Meeting place <span class="text-red-500">*</span>
                     </label>
                     <Select>
                       <SelectTrigger class="w-full">
@@ -67,9 +67,9 @@
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>
-                          <SelectLabel>Product</SelectLabel>
-                          <SelectItem value="Educate The Children"> Full Time </SelectItem>
-                          <SelectItem value="Shelter The Homeless"> Part Time </SelectItem>
+                          <!-- <SelectLabel>Product</SelectLabel> -->
+                          <SelectItem value="Educate The Children"> Onside </SelectItem>
+                          <SelectItem value="Shelter The Homeless"> Remote </SelectItem>
                           <!-- <SelectItem value="Comfort The Sick"> Hybrid </SelectItem> -->
                           <!-- <SelectItem value="Enhance Social Justice"> Furniture </SelectItem> -->
                           <!-- <SelectItem value="Feed The Hungry"> Feed The Hungry </SelectItem> -->
@@ -78,75 +78,23 @@
                     </Select>
                   </div>
                 </div>
-                <div class="flex items-center gap-5">
-                  <div>
-                    <p class="font-semibold mb-2">
-                      Employment Type <span class="text-red-500">*</span>
-                    </p>
-                    <Select>
-                      <SelectTrigger class="w-full">
-                        <SelectValue placeholder="Select an option" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <SelectLabel>Product</SelectLabel>
-                          <SelectItem value="Educate The Children"> Sounds </SelectItem>
-                          <SelectItem value="Shelter The Homeless"> Electronics </SelectItem>
-                          <SelectItem value="Comfort The Sick"> Food Items </SelectItem>
-                          <SelectItem value="Enhance Social Justice"> Furniture </SelectItem>
-                          <!-- <SelectItem value="Feed The Hungry"> Feed The Hungry </SelectItem> -->
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <p class="font-semibold mb-2">
-                      Employment Type <span class="text-red-500">*</span>
-                    </p>
-                    <Select>
-                      <SelectTrigger class="w-full">
-                        <SelectValue placeholder="Select an option" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <SelectLabel>Product</SelectLabel>
-                          <SelectItem value="Educate The Children"> Sounds </SelectItem>
-                          <SelectItem value="Shelter The Homeless"> Electronics </SelectItem>
-                          <SelectItem value="Comfort The Sick"> Food Items </SelectItem>
-                          <SelectItem value="Enhance Social Justice"> Furniture </SelectItem>
-                          <!-- <SelectItem value="Feed The Hungry"> Feed The Hungry </SelectItem> -->
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
+                
                 <div class="relative">
                   <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600">
-                    Job Description
+                    Meeting Description
                   </p>
                   <textarea
                     name=""
                     id=""
                     cols=""
                     rows="4"
-                    placeholder="Ex:23"
-                    class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
-                  ></textarea>
-                </div>
-                <div class="relative">
-                  <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600">About Role</p>
-                  <textarea
-                    name=""
-                    id=""
-                    cols=""
-                    rows="4"
-                    placeholder="Ex:23"
+                    placeholder="This meeting deals with"
                     class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
                   ></textarea>
                 </div>
                 <div class="relative">
                   <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600">
-                    Job Responsibilities
+                     
                   </p>
                   <textarea
                     name=""
@@ -161,7 +109,7 @@
                 <div class="flex gap-5">
                   <div class="relative w-1/2">
                     <div class="gap-5">
-                      <label for="">Delivery Date <span class="text-red-500">*</span> </label>
+                      <label for="">Meeting Date <span class="text-red-500">*</span> </label>
                       <div class="pt-2">
                         <input
                           type="date"
@@ -172,7 +120,7 @@
                   </div>
                   <div class="relative w-1/2">
                     <div class="gap-5">
-                      <label for="">Delivery Time <span class="text-red-500">*</span> </label>
+                      <label for="">Meeting Time <span class="text-red-500">*</span> </label>
                       <div class="pt-2">
                         <input
                           type="time"
@@ -198,7 +146,7 @@
 </template>
 <script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import hrSidebar from '/src/views/Hr/HrSidevar.vue'
+import OperationSidebar from '/src/views/Operation/OperationSidevar.vue'
 import {
   Select,
   SelectContent,
