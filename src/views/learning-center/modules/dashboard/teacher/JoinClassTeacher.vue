@@ -15,9 +15,7 @@
           />
         </div>
       </template>
-      <template v-else>
-        No Data available, please contact with an admin for instruction.
-      </template>
+      <template v-else> No Data available, please contact with an admin for instruction. </template>
     </div>
   </div>
 </template>
@@ -32,9 +30,7 @@ import axios from 'axios'
 const commonStore = useCommonStore()
 const baseUrl = import.meta.env.VITE_ELEARNING_BASE_API
 // const router = useRouter()
-const user_id = localStorage.getItem('user')
-  ? JSON.parse(localStorage.getItem('user')).id
-  : null
+const user_id = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).id : null
 
 const studentData = ref(null)
 // Get the current date in the 'YYYY-MM-DD' format
@@ -42,7 +38,7 @@ const studentData = ref(null)
 const currentDate = new Date()
 const year = currentDate.toLocaleString('default', { year: 'numeric' })
 const month = currentDate.toLocaleString('default', {
-  month: '2-digit',
+  month: '2-digit'
 })
 const day = currentDate.toLocaleString('default', { day: '2-digit' })
 const date = ref([year, month, day].join('-'))
@@ -51,9 +47,7 @@ console.log(date)
 const fetchData = async () => {
   try {
     console.log(user_id, date.value)
-    const response = await axios.get(
-      `${baseUrl}get-todays-class/${user_id}/${date.value}`
-    )
+    const response = await axios.get(`${baseUrl}get-todays-class/${user_id}/${date.value}`)
     studentData.value = response.data
     commonStore.loading = false
     console.log(' join class data teacher', response.data)
@@ -183,7 +177,7 @@ onUnmounted(() => {
 
 <!--.date-time {-->
 <!--    display: flex;-->
-<!--    justify-content: end;-->
+<!--    justify-content: flex-end;-->
 <!--    gap: 20px;-->
 <!--}-->
 

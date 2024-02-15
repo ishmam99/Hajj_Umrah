@@ -51,7 +51,7 @@
     "vue-multiselect": "^3.0.0-beta.3",
     "vue-router": "^4.2.5",
     "vue-select": "^4.0.0-beta.6",
-    "vue-stepper": "^1.4.2",
+    "vue-stepper": "^1.0.11",
     "vue-sweetalert2": "^5.0.5",
     "vue3-select2-component": "^0.1.7",
     "vueperslides": "^3.5.1"

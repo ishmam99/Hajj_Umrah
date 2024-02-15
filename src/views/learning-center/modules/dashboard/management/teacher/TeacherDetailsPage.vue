@@ -28,39 +28,30 @@ let courseByTeacher = ref([])
 // let getTeacherCourses = ref([])
 
 async function getData(id) {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + userEditDataApi + id
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + userEditDataApi + id)
   // const response = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API+'get-teacher-schedule/'+id)
   data.value = resp.data.data
 }
 
 async function getTeacherGrade() {
   const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API +
-      getCourseDetailsApi +
-      courseId.value
+    import.meta.env.VITE_ELEARNING_BASE_API + getCourseDetailsApi + courseId.value
   )
   teacherGrade.value = resp.data
   console.log(teacherGrade.value)
 }
 
 async function getAllCourse() {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + getAllCourseApi
-  )
+  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + getAllCourseApi)
   allCourse.value = resp.data
 }
 
 async function assignCourse() {
-  const resp = await axios.post(
-    import.meta.env.VITE_ELEARNING_BASE_API + assignCourseApi,
-    {
-      teacher_id: router.currentRoute.value.params.id,
-      course_id: courseId.value,
-      course_details_id: selectedGrade.value.id,
-    }
-  )
+  const resp = await axios.post(import.meta.env.VITE_ELEARNING_BASE_API + assignCourseApi, {
+    teacher_id: router.currentRoute.value.params.id,
+    course_id: courseId.value,
+    course_details_id: selectedGrade.value.id
+  })
 
   modal.value = false
   if (resp.data.success == true) {
@@ -69,7 +60,7 @@ async function assignCourse() {
       icon: 'success',
       title: resp.data.message,
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
     getCourseByTeacher()
   } else {
@@ -78,7 +69,7 @@ async function assignCourse() {
       icon: 'error',
       title: 'Something went wrong',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   }
 }
@@ -100,9 +91,7 @@ async function getCourseByTeacher() {
 async function updateUser() {
   try {
     await axios.post(
-      import.meta.env.VITE_ELEARNING_BASE_API +
-        userUpdateApi +
-        router.currentRoute.value.params.id,
+      import.meta.env.VITE_ELEARNING_BASE_API + userUpdateApi + router.currentRoute.value.params.id,
       data.value
     )
     swal.fire({
@@ -110,7 +99,7 @@ async function updateUser() {
       icon: 'success',
       title: 'Teacher updated successfully',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   } catch (e) {
     swal.fire({
@@ -118,7 +107,7 @@ async function updateUser() {
       icon: 'error',
       title: 'Something went wrong',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   }
 }
@@ -263,8 +252,7 @@ onUnmounted(() => {
               </label>
               <a
                 :href="
-                  'https://learningcenter.islamicdigitallane.com/documents/resume/' +
-                  data.resume
+                  'https://learningcenter.islamicdigitallane.com/documents/resume/' + data.resume
                 "
                 :download="data.name"
                 class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800 ml-2"
@@ -401,11 +389,7 @@ onUnmounted(() => {
                   class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 >
-                  <option
-                    v-for="course in allCourse"
-                    :key="course"
-                    :value="course.id"
-                  >
+                  <option v-for="course in allCourse" :key="course" :value="course.id">
                     {{ course.title }}
                   </option>
                 </select>
@@ -437,11 +421,7 @@ onUnmounted(() => {
                   class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 >
-                  <option
-                    v-for="grade in teacherGrade"
-                    :key="grade"
-                    :value="grade"
-                  >
+                  <option v-for="grade in teacherGrade" :key="grade" :value="grade">
                     {{ grade.section_id }}
                   </option>
                 </select>
@@ -474,11 +454,7 @@ onUnmounted(() => {
                   class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 >
-                  <option
-                    v-for="grade in teacherGrade"
-                    :key="grade"
-                    :value="grade"
-                  >
+                  <option v-for="grade in teacherGrade" :key="grade" :value="grade">
                     {{ grade.teacher_grade }}
                   </option>
                 </select>
@@ -564,7 +540,7 @@ tr:nth-child(even) {
 }
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;

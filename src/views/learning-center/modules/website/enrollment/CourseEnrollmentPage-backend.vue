@@ -22,9 +22,7 @@ let selectedSlots = ref([])
 let selectedDaySlots = ref([])
 
 let schedule = ref(JSON.parse(localStorage.getItem('schedule')) ?? [])
-let scheduleAdvisor = ref(
-  JSON.parse(localStorage.getItem('schedule-by-advisor')) ?? []
-)
+let scheduleAdvisor = ref(JSON.parse(localStorage.getItem('schedule-by-advisor')) ?? [])
 
 let cartDaySlots = ref([])
 let dayArray = ref([])
@@ -36,9 +34,7 @@ let availableDaySlots = ref([])
 let tabIndex = ref(1)
 
 let enrollmentStage = ref(localStorage.getItem('enroll-stage') ?? 1)
-let advisorEnrollmentStage = ref(
-  localStorage.getItem('enroll-stage-advisor') ?? 1
-)
+let advisorEnrollmentStage = ref(localStorage.getItem('enroll-stage-advisor') ?? 1)
 
 function tab(index) {
   tabIndex.value = index
@@ -113,9 +109,7 @@ function selectSlots(scheduleOption, slots) {
     let index = cartDaySlots.value.indexOf(modifiedSlot)
     cartDaySlots.value.splice(index, 1)
   } else if (selectedSlots.value.includes(modifiedSlot)) {
-    let index = selectedSlots.value
-      .map((object) => object)
-      .indexOf(modifiedSlot)
+    let index = selectedSlots.value.map((object) => object).indexOf(modifiedSlot)
     selectedSlots.value.splice(index, 1)
   } else {
     selectedSlots.value = cartDaySlots.value
@@ -152,10 +146,7 @@ function confirmSlots() {
   var getSchedule
   var localStorageItem
 
-  if (
-    selectedSlots.value != '' ||
-    cartDaySlots.value.map((object) => object) != ''
-  ) {
+  if (selectedSlots.value != '' || cartDaySlots.value.map((object) => object) != '') {
     let object = {
       days: [
         {
@@ -163,9 +154,9 @@ function confirmSlots() {
           slots:
             selectedSlots.value != ''
               ? selectedSlots.value
-              : cartDaySlots.value.map((object) => object),
-        },
-      ],
+              : cartDaySlots.value.map((object) => object)
+        }
+      ]
     }
 
     if (scheduleOption.value != 'advisor') {
@@ -221,9 +212,7 @@ function selectTeacher(slotId) {
 // Schedule by advisor
 
 function checkEnrollmentStageAdvisor(stage) {
-  let actualStageAdvisor = JSON.parse(
-    localStorage.getItem('enroll-stage-advisor')
-  )
+  let actualStageAdvisor = JSON.parse(localStorage.getItem('enroll-stage-advisor'))
   if (actualStageAdvisor >= stage) {
     advisorEnrollmentStage.value = stage
   } else {
@@ -259,26 +248,20 @@ function closeModal(response) {
 }
 
 function getDayList() {
-  axios
-    .get(import.meta.env.VITE_ELEARNING_BASE_API + dayApi)
-    .then((response) => {
-      availableDays.value = response.data.data
-    })
+  axios.get(import.meta.env.VITE_ELEARNING_BASE_API + dayApi).then((response) => {
+    availableDays.value = response.data.data
+  })
 }
 
 function getDaySlots(id) {
-  axios
-    .get(import.meta.env.VITE_ELEARNING_BASE_API + daySlotApi + id)
-    .then((response) => {
-      console.log(response.data)
-      availableDaySlots.value = response.data
-    })
+  axios.get(import.meta.env.VITE_ELEARNING_BASE_API + daySlotApi + id).then((response) => {
+    console.log(response.data)
+    availableDaySlots.value = response.data
+  })
 }
 
 function tConvert(time) {
-  time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [
-    time,
-  ]
+  time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time]
 
   if (time.length > 1) {
     // If time format correct
@@ -306,16 +289,10 @@ onUnmounted(() => {
     <h2>Course Enrollment</h2>
     <div class="tab">
       <div class="tab-buttons">
-        <button
-          @click="tab(1)"
-          :class="tabIndex == 1 ? 'tab-button active' : 'tab-button'"
-        >
+        <button @click="tab(1)" :class="tabIndex == 1 ? 'tab-button active' : 'tab-button'">
           Schedule by Yourself
         </button>
-        <button
-          @click="tab(2)"
-          :class="tabIndex == 2 ? 'tab-button active' : 'tab-button'"
-        >
+        <button @click="tab(2)" :class="tabIndex == 2 ? 'tab-button active' : 'tab-button'">
           Take Help from Advisor
         </button>
       </div>
@@ -327,11 +304,7 @@ onUnmounted(() => {
                 <div @click="checkEnrollmentStage(1)" class="step-circle"></div>
                 <div class="step-text">Schedule</div>
               </div>
-              <div
-                :class="
-                  enrollmentStage == 2 ? 'step-bar completed' : 'step-bar'
-                "
-              ></div>
+              <div :class="enrollmentStage == 2 ? 'step-bar completed' : 'step-bar'"></div>
               <div class="steps">
                 <div @click="checkEnrollmentStage(2)" class="step-circle"></div>
                 <div class="step-text">Teacher</div>
@@ -355,9 +328,7 @@ onUnmounted(() => {
                       .map((object) => object[0])
                       .map((object) => object['day'])
                       .includes(day.day_name) == true) &&
-                  schedule
-                    .map((object) => object[0])
-                    .map((object) => object['slots']) != ''
+                  schedule.map((object) => object[0]).map((object) => object['slots']) != ''
                     ? 'schedule schedule-active'
                     : 'schedule'
                 "
@@ -378,11 +349,7 @@ onUnmounted(() => {
                 </span>
               </div>
               <div class="selected-slots">
-                <div
-                  v-for="slot in daySlot.slots"
-                  :key="slot"
-                  class="selected-slot"
-                >
+                <div v-for="slot in daySlot.slots" :key="slot" class="selected-slot">
                   <span>{{ slot }}</span>
                   <button @click="selectTeacher(1)" class="select-teacher-btn">
                     Select teacher
@@ -407,32 +374,18 @@ onUnmounted(() => {
           <div class="progress">
             <div class="progress-bar">
               <div class="steps">
-                <div
-                  @click="checkEnrollmentStageAdvisor(1)"
-                  class="step-circle"
-                ></div>
+                <div @click="checkEnrollmentStageAdvisor(1)" class="step-circle"></div>
                 <div class="step-text">Optionss</div>
               </div>
-              <div
-                :class="
-                  advisorEnrollmentStage == 2
-                    ? 'step-bar completed'
-                    : 'step-bar'
-                "
-              ></div>
+              <div :class="advisorEnrollmentStage == 2 ? 'step-bar completed' : 'step-bar'"></div>
               <div class="steps">
-                <div
-                  @click="checkEnrollmentStageAdvisor(2)"
-                  class="step-circle"
-                ></div>
+                <div @click="checkEnrollmentStageAdvisor(2)" class="step-circle"></div>
                 <div class="step-text">Schedule</div>
               </div>
             </div>
           </div>
           <div class="tab-headline">
-            <span v-if="advisorEnrollmentStage == 1"
-              >Do you have any preferable day ?</span
-            >
+            <span v-if="advisorEnrollmentStage == 1">Do you have any preferable day ?</span>
             <span v-if="advisorEnrollmentStage == 2">Schedule</span>
           </div>
           <div v-if="advisorEnrollmentStage == 1" class="day-one">
@@ -441,10 +394,7 @@ onUnmounted(() => {
                 <button @click="proceedToScheduling">
                   Yes <font-awesome-icon :icon="['fas', 'fa-refresh']" />
                 </button>
-                <button
-                  v-if="advisorEnrollmentStage != 2"
-                  @click="scheduleByAdvisor"
-                >
+                <button v-if="advisorEnrollmentStage != 2" @click="scheduleByAdvisor">
                   No <font-awesome-icon :icon="['fas', 'fa-arrow-right']" />
                 </button>
               </div>
@@ -463,9 +413,7 @@ onUnmounted(() => {
                       .map((object) => object[0])
                       .map((object) => object['day'])
                       .includes(day.day_name) == true) &&
-                  scheduleAdvisor
-                    .map((object) => object[0])
-                    .map((object) => object['slots']) != ''
+                  scheduleAdvisor.map((object) => object[0]).map((object) => object['slots']) != ''
                     ? 'schedule schedule-active'
                     : 'schedule'
                 "
@@ -501,12 +449,8 @@ onUnmounted(() => {
             :key="slot"
             @click="selectSlots(scheduleOption, slot)"
             :class="
-              selectedSlots.includes(
-                tConvert(slot.start_time) + '-' + tConvert(slot.end_time)
-              ) ||
-              cartDaySlots.includes(
-                tConvert(slot.start_time) + '-' + tConvert(slot.end_time)
-              )
+              selectedSlots.includes(tConvert(slot.start_time) + '-' + tConvert(slot.end_time)) ||
+              cartDaySlots.includes(tConvert(slot.start_time) + '-' + tConvert(slot.end_time))
                 ? 'slot slot-active'
                 : 'slot'
             "
@@ -521,15 +465,11 @@ onUnmounted(() => {
       </div>
     </Modal>
 
-    <Modal
-      v-if="checkoutModal"
-      :width="'width: 550px'"
-      @modal-close="closeModal"
-    >
+    <Modal v-if="checkoutModal" :width="'width: 550px'" @modal-close="closeModal">
       <div class="slots">
         <div class="error-message">
-          An advisor will contact you and make a schedule on behalf of you.Thank
-          you for your Interest.
+          An advisor will contact you and make a schedule on behalf of you.Thank you for your
+          Interest.
         </div>
 
         <div class="slot-wrapper"></div>
@@ -540,11 +480,7 @@ onUnmounted(() => {
       </div>
     </Modal>
 
-    <Modal
-      v-if="teacherListModal"
-      :width="'width: 700px'"
-      @modal-close="closeModal"
-    >
+    <Modal v-if="teacherListModal" :width="'width: 700px'" @modal-close="closeModal">
       <div class="teachers">
         <div class="title">Teacher List</div>
         <div class="teacher">
@@ -556,15 +492,9 @@ onUnmounted(() => {
               <h3>Rafik Nesr</h3>
               <p>Arabic Language Teacher</p>
               <div>
-                <p>
-                  - Professional Arabic teacher and multilingual translator.
-                </p>
-                <p>
-                  - Professional Arabic teacher and multilingual translator.
-                </p>
-                <p>
-                  - Professional Arabic teacher and multilingual translator.
-                </p>
+                <p>- Professional Arabic teacher and multilingual translator.</p>
+                <p>- Professional Arabic teacher and multilingual translator.</p>
+                <p>- Professional Arabic teacher and multilingual translator.</p>
               </div>
             </div>
           </div>
@@ -611,15 +541,9 @@ onUnmounted(() => {
               <h3>Rafik Nesr</h3>
               <p>Arabic Language Teacher</p>
               <div>
-                <p>
-                  - Professional Arabic teacher and multilingual translator.
-                </p>
-                <p>
-                  - Professional Arabic teacher and multilingual translator.
-                </p>
-                <p>
-                  - Professional Arabic teacher and multilingual translator.
-                </p>
+                <p>- Professional Arabic teacher and multilingual translator.</p>
+                <p>- Professional Arabic teacher and multilingual translator.</p>
+                <p>- Professional Arabic teacher and multilingual translator.</p>
               </div>
             </div>
           </div>
@@ -666,15 +590,9 @@ onUnmounted(() => {
               <h3>Rafik Nesr</h3>
               <p>Arabic Language Teacher</p>
               <div>
-                <p>
-                  - Professional Arabic teacher and multilingual translator.
-                </p>
-                <p>
-                  - Professional Arabic teacher and multilingual translator.
-                </p>
-                <p>
-                  - Professional Arabic teacher and multilingual translator.
-                </p>
+                <p>- Professional Arabic teacher and multilingual translator.</p>
+                <p>- Professional Arabic teacher and multilingual translator.</p>
+                <p>- Professional Arabic teacher and multilingual translator.</p>
               </div>
             </div>
           </div>
@@ -753,7 +671,8 @@ h2 {
 .tab-buttons > * {
   padding: 20px;
   width: 300px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+  box-shadow:
+    0px 4px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   font-size: 17px;
@@ -819,7 +738,8 @@ h2 {
 .schedules .schedule {
   width: 180px;
   background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+  box-shadow:
+    0px 4px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 15px;
@@ -835,7 +755,8 @@ h2 {
 }
 .slots .slot-wrapper .slot {
   background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+  box-shadow:
+    0px 4px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 15px;
@@ -978,7 +899,7 @@ h2 {
 }
 .teacher > * {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 .teacher .pro-pic {
@@ -1065,18 +986,19 @@ h2 {
 
 .selected-teacher > .selected-teacher-info {
   display: grid;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .selected-teacher > .selected-teacher-info h2 {
   display: grid;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .selected-days .selected-day {
   width: 180px;
   background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+  box-shadow:
+    0px 4px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 15px;

@@ -43,8 +43,7 @@ const filteredCourses = computed(() => {
 
 async function getStudentsByAdvisor(advisorId) {
   const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API +
-      `get-student-by-advisor/${advisorId}`
+    import.meta.env.VITE_ELEARNING_BASE_API + `get-student-by-advisor/${advisorId}`
   )
   // Assuming the response format is an array of student objects, modify this according to your API response structure
   studentData.value = resp.data.data // Update studentData with the fetched student list
@@ -52,16 +51,14 @@ async function getStudentsByAdvisor(advisorId) {
 }
 async function getTeachersByAdvisor(advisorId) {
   const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API +
-      `get-teacher-by-advisor/${advisorId}`
+    import.meta.env.VITE_ELEARNING_BASE_API + `get-teacher-by-advisor/${advisorId}`
   )
   teacherData.value = resp.data.data
 }
 
 async function getCoursesByAdvisor(advisorId) {
   const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API +
-      `get-course-by-advisor/${advisorId}`
+    import.meta.env.VITE_ELEARNING_BASE_API + `get-course-by-advisor/${advisorId}`
   )
   courseData.value = resp.data.data
   console.log('course data', courseData.value)
@@ -72,20 +69,17 @@ async function createAdvisorSchedule() {
     meeting_date: data.value.name, // Assuming data.value.name holds the meeting date
     enrollment_id: selectedStudentId.value, // Assuming selectedStudentId holds the selected student's ID
     // enrollment_id: selectedStudentId.value, // Assuming selectedStudentId holds the selected student's ID
-    meeting_note: note.value, // Using the note value directly from the reactive property
+    meeting_note: note.value // Using the note value directly from the reactive property
   }
   console.log(selectedStudentId.value, 'selected value')
   try {
-    await axios.post(
-      import.meta.env.VITE_ELEARNING_BASE_API + 'create-advisor-schedule',
-      postData
-    )
+    await axios.post(import.meta.env.VITE_ELEARNING_BASE_API + 'create-advisor-schedule', postData)
     swal.fire({
       position: 'top-end',
       icon: 'success',
       title: 'Schedule created successfully',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   } catch (e) {
     swal.fire({
@@ -93,7 +87,7 @@ async function createAdvisorSchedule() {
       icon: 'error',
       title: 'Something went wrong',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     })
   }
 }
@@ -367,7 +361,7 @@ onUnmounted(() => {
 
 .dashboard-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 20px;
   font-weight: bold;
