@@ -19,34 +19,178 @@
                     />
                     <label
                       for="exampleFormControlInput50"
-                      class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                      class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-1 leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
                       >Event Name <span class="text-red-500">*</span>
                     </label>
                   </div>
                   <div class="w-1/4">
                     <div class="relative mb-3">
-                      <!-- <label
-                        for="exampleFormControlInput50"
-                        class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                        >Event Type <span class="text-red-500">*</span>
-                      </label> -->
-                      <Select v-model="EventList.event_type">
-                        <SelectTrigger class="w-full">
-                          <SelectValue placeholder="Event Type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectGroup>
-                            <SelectLabel>Select Event Type</SelectLabel>
-                            <SelectItem value="Comfort The Sick"> Sports Event </SelectItem>
-                            <SelectItem value="Educate The Children"> Religious Event </SelectItem>
-                            <SelectItem value="Shelter The Homeless">
-                              Social Outreach Event
-                            </SelectItem>
-                            <SelectItem value="Shelter"> Humanitarian Assistance Event </SelectItem>
-                            <SelectItem value="Homeless"> Donation Collection Event </SelectItem>
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
+                      <div class="">
+                        <p class="text-xl font-bold py-1">
+                          Occurrence Type <span class="text-red-600">*</span>
+                        </p>
+                        <div class="flex gap-2 items-center">
+                          <div>
+                            <input
+                              type="radio"
+                              name=""
+                              id=""
+                              value="single"
+                              v-model="occurrence.type"
+                            />
+                            <label for="" class="font-semibold mx-2">Single</label>
+                          </div>
+                          <div>
+                            <!-- <input
+                              type="radio"
+                              value="recurrence"
+                              v-model="occurrence.type"
+                              id="toggleModal"
+                              @update="modalOpen = !modalOpen"
+                            />
+                            <label for="toggleModal" class="font-semibold mx-2">Recurrence</label> -->
+
+                            <Dialog>
+                              <DialogTrigger class="">
+                                <input
+                                  type="radio"
+                                  value="recurrence"
+                                  v-model="occurrence.type"
+                                  id="toggleModal"
+                                />
+                                <label for="toggleModal" class="font-semibold mx-2"
+                                  >Recurrence</label
+                                >
+                              </DialogTrigger>
+                              <DialogContent class="h-3/5">
+                                <DialogHeader>
+                                  <DialogTitle>
+                                    <div class="font-bold text-2xl mb-6 text-center">
+                                      Recurrence Form
+                                    </div>
+                                  </DialogTitle>
+                                  <DialogDescription>
+                                    <!-- <img :src="event.img" alt="" /> -->
+                                    <div class="flex gap-2">
+                                      <div class="font-semibold my-2 text-xl text-black">
+                                        Recurrence Pattern:
+                                      </div>
+                                      <div>
+                                        <Select v-model="occurrenceType">
+                                          <SelectTrigger class="w-full">
+                                            <SelectValue placeholder="Recurrence Pattern" />
+                                          </SelectTrigger>
+                                          <SelectContent>
+                                            <SelectGroup>
+                                              <SelectLabel>Recurrence Pattern</SelectLabel>
+                                              <SelectItem value="Days"> Daily </SelectItem>
+                                              <SelectItem value="Weeks"> Weekly </SelectItem>
+                                              <SelectItem value="Months"> Monthly </SelectItem>
+                                              <!-- <SelectItem value="Shelter">
+                                                Humanitarian Assistance Event
+                                              </SelectItem>
+                                              <SelectItem value="Homeless">
+                                                Donation Collection Event
+                                              </SelectItem> -->
+                                            </SelectGroup>
+                                          </SelectContent>
+                                        </Select>
+                                      </div>
+
+                                      <!-- {{ event.description }} -->
+                                    </div>
+                                    <div
+                                      class="mt-2 flex items-center font-semibold gap-2 text-black"
+                                    >
+                                      <p>Repeat Every</p>
+                                      <Input
+                                        type="number"
+                                        placeholder="number"
+                                        class="w-[100px] focus:border-0"
+                                      />
+                                      <label for="" class="">{{ occurrenceType }} On</label>
+                                    </div>
+                                    <div
+                                      class="flex items-center gap-2 mt-2 text-black font-semibold"
+                                    >
+                                      <div>
+                                        <input type="checkbox" name="" id="" />
+                                        <label for="" class="font-semibold mx-2">Sun</label>
+                                      </div>
+                                      <div>
+                                        <input type="checkbox" name="" id="" />
+                                        <label for="" class="font-semibold mx-2">Mon</label>
+                                      </div>
+                                      <div>
+                                        <input type="checkbox" name="" id="" />
+                                        <label for="" class="font-semibold mx-2">Tue</label>
+                                      </div>
+                                      <div>
+                                        <input type="checkbox" name="" id="" />
+                                        <label for="" class="font-semibold mx-2">Wed</label>
+                                      </div>
+                                      <div>
+                                        <input type="checkbox" name="" id="" />
+                                        <label for="" class="font-semibold mx-2">Thu</label>
+                                      </div>
+                                      <div>
+                                        <input type="checkbox" name="" id="" />
+                                        <label for="" class="font-semibold mx-2">Fri</label>
+                                      </div>
+                                      <div>
+                                        <input type="checkbox" name="" id="" />
+                                        <label for="" class="font-semibold mx-2">Sat</label>
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <h1 class="text-xl font-semibold text-black mt-4 mb-2">
+                                        Ends
+                                      </h1>
+                                      <RadioGroup default-value="comfortable" class="">
+                                        <div class="flex items-center space-x-2">
+                                          <RadioGroupItem id="r1" value="default" />
+                                          <Label for="r1">Never</Label>
+                                        </div>
+                                        <div class="flex items-center space-x-2">
+                                          <RadioGroupItem id="r2" value="comfortable" />
+                                          <Label for="r2">
+                                            <div class="mt-2 flex items-center gap-2 text-black">
+                                              <p>On</p>
+                                              <Input type="date" placeholder="date" />
+                                            </div>
+                                          </Label>
+                                        </div>
+                                        <div class="flex items-center space-x-2">
+                                          <RadioGroupItem id="r3" value="compact" />
+                                          <Label for="r3">
+                                            <div class="mt-2 flex items-center gap-2 text-black">
+                                              <p>After</p>
+                                              <Input
+                                                type="number"
+                                                placeholder="number"
+                                                class="w-[100px]"
+                                              />
+                                              <label for="" class="">{{ occurrenceType }}</label>
+                                            </div>
+                                          </Label>
+                                        </div>
+                                      </RadioGroup>
+                                    </div>
+                                  </DialogDescription>
+                                </DialogHeader>
+                                <DialogFooter>
+                                  <button
+                                    type="submit"
+                                    class="w-1/2 h-[45px] rounded-2xl bg-cyan-800 text-white font-bold mx-auto flex items-center text-center justify-center"
+                                  >
+                                    Save
+                                  </button>
+                                </DialogFooter>
+                              </DialogContent>
+                            </Dialog>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -211,17 +355,26 @@
                       </div>
                     </div>
                     <div>
-                      <label for="">Occurrence Type <span class="text-red-500">*</span> </label>
+                      <label for="">Event Type <span class="text-red-500">*</span> </label>
                       <div class="pt-2">
-                        <Select class="" v-model="EventList.occurrence_type">
+                        <Select v-model="EventList.event_type">
                           <SelectTrigger class="w-full">
-                            <SelectValue placeholder="Occurrence Type" />
+                            <SelectValue placeholder="Event Type" />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectGroup>
-                              <SelectLabel>Select Occurrence Type</SelectLabel>
-                              <SelectItem value="Single"> Single Event </SelectItem>
-                              <SelectItem value="Recurring"> Recurring Event </SelectItem>
+                              <SelectLabel>Select Event Type</SelectLabel>
+                              <SelectItem value="Comfort The Sick"> Sports Event </SelectItem>
+                              <SelectItem value="Educate The Children">
+                                Religious Event
+                              </SelectItem>
+                              <SelectItem value="Shelter The Homeless">
+                                Social Outreach Event
+                              </SelectItem>
+                              <SelectItem value="Shelter">
+                                Humanitarian Assistance Event
+                              </SelectItem>
+                              <SelectItem value="Homeless"> Donation Collection Event </SelectItem>
                             </SelectGroup>
                           </SelectContent>
                         </Select>
@@ -250,6 +403,9 @@ import SocialSidebar from '/src/views/Social/SocialSidevar.vue'
 import { useSocialStore } from '@/stores/SocialDashboard.ts'
 import { ref } from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
+import { Input } from '/components/ui/input'
+import { Label } from '/components/ui/label'
+import { RadioGroup, RadioGroupItem } from '/components/ui/radio-group'
 import {
   Select,
   SelectContent,
@@ -259,6 +415,15 @@ import {
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '/components/ui/dialog'
 const store = useSocialStore()
 const EventList = ref({
   event_name: '',
@@ -276,6 +441,18 @@ const EventList = ref({
   ending_time: '',
   occurrence_type: ''
 })
+
+const occurrenceType = ref('Weeks')
+
+const occurrence = ref({
+  type: null
+})
+
+const modalOpen = ref(false)
+
+function toggleModal() {
+  modalOpen.value = !modalOpen.value
+}
 
 const loading = ref(false)
 const { toast } = useToast()
