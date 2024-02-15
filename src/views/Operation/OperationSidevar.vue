@@ -95,13 +95,13 @@
           Event Management
         </button>
         <div v-show="currentAccordions === 'eventManagement'" class="submenu mx-8">
-          <router-link to="/" class="flex items-center gap-2"
+          <router-link to="/operation_event_create_event" class="flex items-center gap-2"
             >- Create Event</router-link
           >
-          <router-link to="/" class="flex items-center gap-2"
+          <router-link to="/operation_event_eventList" class="flex items-center gap-2"
             >- Event List</router-link
           >
-          <router-link to="/" class="flex items-center gap-2"
+          <router-link to="/operation_event_postEvent" class="flex items-center gap-2"
             >- Post Event</router-link
           >
         </div>
@@ -112,13 +112,13 @@
           Announcement Management
         </button>
         <div v-show="currentAccordions === 'announcementManagement'" class="submenu mx-8">
-          <router-link to="/" class="flex items-center gap-2"
+          <router-link to="/operation_announcement_create_announcement" class="flex items-center gap-2"
             >- Create Announcement</router-link
           >
-          <router-link to="/" class="flex items-center gap-2"
+          <router-link to="/operation_announcement_announcement_list" class="flex items-center gap-2"
             >- Announcement List</router-link
           >
-          <router-link to="/" class="flex items-center gap-2"
+          <router-link to="/operation_announcement_broadcast_announcement" class="flex items-center gap-2"
             >- Broadcast Announcement</router-link
           >
         </div>

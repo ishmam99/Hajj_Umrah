@@ -1,159 +1,107 @@
 <template>
-  <DefaultLayout>
-    <div class="bg-slate-50">
-      <div class="pt-[80px] flex justify-between">
-        <OperationSidebar />
-        <div class="px-5 bg-slate-50 py-5 w-3/4">
-          <p class="text-2xl font-bold py-3 border-b">Post a Meeting</p>
-          <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
-            <form @submit.prevent="volunteerAdmissionSubmit()">
-              <div class="py-5 space-y-7 mt-5">
-                <div class="flex gap-4">
-                  <div class="relative mb-3 w-1/2">
-                    <input
-                      type="text"
-                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                      id="exampleFormControlInput50"
-                      value=""
-                    />
-                    <label
-                      for="exampleFormControlInput50"
-                      class="absolute left-3 top-0 mb-0 font-semibold z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                      >Employee Name <span class="text-red-500">*</span>
-                    </label>
-                  </div>
-                  <div class="relative mb-3 w-1/2">
-                    <input
-                      type="number"
-                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                      id="exampleFormControlInput50"
-                      value=""
-                    />
-                    <label
-                      for="exampleFormControlInput50"
-                      class="absolute left-3 font-semibold top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                      >Role Name <span class="text-red-500">*</span>
-                    </label>
-                  </div>
-                </div>
-                <div class="flex gap-4">
-                  <div class="w-1/2">
-                    <label for="exampleFormControlInput50 mb-2"
-                      >Meeting Type <span class="text-red-500">*</span>
-                    </label>
-                    <Select>
-                      <SelectTrigger class="w-full">
-                        <SelectValue placeholder="Select an option" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <!-- <SelectLabel>Product</SelectLabel> -->
-                          <SelectItem value="Educate The Children"> On Site </SelectItem>
-                          <SelectItem value="Shelter The Homeless"> Remote </SelectItem>
-                          <!-- <SelectItem value="Comfort The Sick"> Hybrid </SelectItem> -->
-                          <!-- <SelectItem value="Enhance Social Justice"> Furniture </SelectItem> -->
-                          <!-- <SelectItem value="Feed The Hungry"> Feed The Hungry </SelectItem> -->
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div class="w-1/2">
-                    <label for="exampleFormControlInput50 mb-2"
-                      >Meeting place <span class="text-red-500">*</span>
-                    </label>
-                    <Select>
-                      <SelectTrigger class="w-full">
-                        <SelectValue placeholder="Select an option" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <!-- <SelectLabel>Product</SelectLabel> -->
-                          <SelectItem value="Educate The Children"> Onside </SelectItem>
-                          <SelectItem value="Shelter The Homeless"> Remote </SelectItem>
-                          <!-- <SelectItem value="Comfort The Sick"> Hybrid </SelectItem> -->
-                          <!-- <SelectItem value="Enhance Social Justice"> Furniture </SelectItem> -->
-                          <!-- <SelectItem value="Feed The Hungry"> Feed The Hungry </SelectItem> -->
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-                
-                <div class="relative">
-                  <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600">
-                    Meeting Description
-                  </p>
-                  <textarea
-                    name=""
-                    id=""
-                    cols=""
-                    rows="4"
-                    placeholder="This meeting deals with"
-                    class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
-                  ></textarea>
-                </div>
-                <div class="relative">
-                  <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600">
-                     
-                  </p>
-                  <textarea
-                    name=""
-                    id=""
-                    cols=""
-                    rows="4"
-                    placeholder="Ex:23"
-                    class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
-                  ></textarea>
-                </div>
-
-                <div class="flex gap-5">
-                  <div class="relative w-1/2">
-                    <div class="gap-5">
-                      <label for="">Meeting Date <span class="text-red-500">*</span> </label>
-                      <div class="pt-2">
-                        <input
-                          type="date"
-                          class="py-2 px-6 rounded-2xl w-full border-2 border-grau-400"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="relative w-1/2">
-                    <div class="gap-5">
-                      <label for="">Meeting Time <span class="text-red-500">*</span> </label>
-                      <div class="pt-2">
-                        <input
-                          type="time"
-                          class="py-2 px-6 rounded-2xl w-full border-2 border-grau-400"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button
-                  type="submit"
-                  class="w-full h-[45px] rounded-2xl bg-teal-800 text-white font-bold mx-auto flex items-center text-center justify-center"
-                >
-                  Create
-                </button>
+    <DefaultLayout>
+      <div class="bg-slate-50">
+        <div class="pt-20 flex justify-between">
+          <OperationSidebar />
+          <div class="px-4 bg-white py-5 w-3/4">
+            <div class="flex justify-between items-center pt-4">
+              <p class="text-2xl text-cyan-600 font-bold pb-2">Meeting List</p>
+            </div>
+            <hr />
+            <div class="grid grid-cols-1 gap-5 my-5">
+              <div
+                class="rounded-md px-2 py-3 flex gap-5 justify-between bg-gray-100 shadow-md items-center"
+              >
+                <table class="table-auto w-full">
+                  <thead>
+                    <tr class="bg-white text-xl">
+                      <th class="p-2 text-left">Meeting Topic</th>
+                      <th class="p-2 text-left">Meeting Time</th>
+                      <th class="p-2 text-left">Issue Date</th>
+                      <th class="p-2 text-left">Meeting Date</th>
+                      <th class="p-2 text-left">Meeting Place</th>
+                      <th class="p-2 text-left">Action</th>
+                      <th class="p-2 text-left"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="">
+                      <td class="py-4 p-2 gap-2">
+                        <h3 class="font-bold">Meeting on Mosjid</h3>
+                      </td>
+                      <td>
+                        <p class="text-lg">12:00 AM</p>
+                      </td>
+                      <td class="py-4 p-2">1 Jan 2024</td>
+                      <td class="py-4 p-2">1 Feb 2024</td>
+                      <td class="py-4 p-2 font-semibold">New York</td>
+                      <td class="py-4 p-2">
+                        <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                          Details
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="py-4 p-2 gap-2">
+                        <h3 class="font-bold">Meeting on Mosjid</h3>
+                      </td>
+                      <td>
+                        <p class="text-lg">12:00 AM</p>
+                      </td>
+                      <td class="py-4 p-2">1 Jan 2024</td>
+                      <td class="py-4 p-2">10 Feb 2024</td>
+                      <td class="py-4 p-2 font-semibold">New York</td>
+                      <td class="py-4 p-2">
+                        <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                          Details
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td class="py-4 p-2">
+                        <h3 class="font-bold">Meeting on Mosjid</h3>
+                      </td>
+                      <td>
+                        <p class="text-lg">12:00 AM</p>
+                      </td>
+                      <td class="py-4 p-2">1 Jan 2024</td>
+                      <td class="py-4 p-2">1 Feb 2024</td>
+                      <td class="py-4 p-2 font-semibold">New York</td>
+                      <td class="py-4 p-2">
+                        <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                          Details
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            </form>
+              <!-- <div
+                class="rounded-md px-2 py-3 flex gap-5 justify-between bg-gray-100 shadow-md items-center"
+              >
+                <div class="flex gap-5 items-center">
+                  <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
+                  <h3 class="font-bold">Technology and Media Outreach</h3>
+                  <p class="font-semibold text-cyan-600">
+                    1 Jan 2024<span class="text-black font thin px-2">to</span>20 Jan 2024
+                  </p>
+                  <p class="font-semibold text-cyan-600">
+                    Location : <span class="text-black">Masjid Premises</span>
+                  </p>
+                  <p class="text-sm font-bold text-green-600">Complete</p>
+                </div>
+                <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                  Details
+                </button>
+              </div> -->
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </DefaultLayout>
-</template>
-<script setup>
-import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import OperationSidebar from '/src/views/Operation/OperationSidevar.vue'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue
-} from '/components/ui/select'
-</script>
+    </DefaultLayout>
+  </template>
+  <script setup>
+  import DefaultLayout from '@/layouts/DefaultLayout.vue'
+  import OperationSidebar from '/src/views/Operation/OperationSidevar.vue'
+  </script>
+  

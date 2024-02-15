@@ -32,42 +32,15 @@
                       <label
                         for="exampleFormControlInput50"
                         class="absolute left-3 font-semibold top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                        > Subject <span class="text-red-500">*</span>
+                        > Meeting Subject <span class="text-red-500">*</span>
                       </label>
                     </div>
                   </div>
-                  <div class="flex gap-4">
-                    <div class="relative mb-3 w-1/2">
-                      <input
-                        type="text"
-                        class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                        id="exampleFormControlInput50"
-                        value=""
-                      />
-                      <label
-                        for="exampleFormControlInput50"
-                        class="absolute left-3 top-0 mb-0 font-semibold z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                        >Name <span class="text-red-500">*</span>
-                      </label>
-                    </div>
-                    <div class="relative mb-3 w-1/2">
-                      <input
-                        type="number"
-                        class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                        id="exampleFormControlInput50"
-                        value=""
-                      />
-                      <label
-                        for="exampleFormControlInput50"
-                        class="absolute left-3 font-semibold top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                        >Topics <span class="text-red-500">*</span>
-                      </label>
-                    </div>
-                  </div>
+               
                   <div class="flex gap-4">
                     <div class="w-1/2">
                       <label for="exampleFormControlInput50 mb-2"
-                        >Meeting Type <span class="text-red-500">*</span>
+                        >Meeting Location <span class="text-red-500">*</span>
                       </label>
                       <Select>
                         <SelectTrigger class="w-full">
@@ -75,7 +48,7 @@
                         </SelectTrigger>
                         <SelectContent>
                           <SelectGroup>
-                            <SelectLabel>Product</SelectLabel>
+                            <!-- <SelectLabel>Product</SelectLabel> -->
                             <SelectItem value="Educate The Children"> On Site </SelectItem>
                             <SelectItem value="Shelter The Homeless"> Remote </SelectItem>
                           </SelectGroup>
@@ -84,70 +57,44 @@
                     </div>
                     <div class="w-1/2">
                       <label for="exampleFormControlInput50 mb-2"
-                        >Select People <span class="text-red-500">*</span>
+                        >Select Responsibility <span class="text-red-500">*</span>
                       </label>
-                      <Select>
-                        <SelectTrigger class="w-full">
-                          <SelectValue placeholder="Select an option" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectGroup>
-                            <!-- <SelectLabel>Product</SelectLabel> -->
-                            <SelectItem value="Educate The Children"> Single </SelectItem>
-                            <SelectItem value="Shelter The Homeless"> Group </SelectItem>
-                            <!-- <SelectItem value="Comfort The Sick"> Hybrid </SelectItem> -->
-                            <!-- <SelectItem value="Enhance Social Justice"> Furniture </SelectItem> -->
-                            <!-- <SelectItem value="Feed The Hungry"> Feed The Hungry </SelectItem> -->
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
+                      <input
+                        type="text"
+                        class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                        id="exampleFormControlInput50"
+                        value=""
+                      />
                     </div>
                   </div>
                   <div class="flex gap-4">
                     <div class="w-1/2">
                       <label for="exampleFormControlInput50 mb-2"
-                        >Meeting category <span class="text-red-500">*</span>
+                        >Meeting President <span class="text-red-500">*</span>
                       </label>
-                      <Select>
-                        <SelectTrigger class="w-full">
-                          <SelectValue placeholder="Select an option" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectGroup>
-                            <!-- <SelectLabel>Product</SelectLabel> -->
-                            <SelectItem value="Educate The Children"> Weekly meeting </SelectItem>
-                            <SelectItem value="Shelter The Homeless"> HR Meeting </SelectItem>
-                            <!-- <SelectItem value="Enhance Social Justice"> Furniture </SelectItem> -->
-                            <!-- <SelectItem value="Feed The Hungry"> Feed The Hungry </SelectItem> -->
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
+                      <input
+                        type="text"
+                        class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                        id="exampleFormControlInput50"
+                        value=""
+                      />
                     </div>
                     <div class="w-1/2">
                       <label for="exampleFormControlInput50 mb-2"
-                        >Meeting Subject <span class="text-red-500">*</span>
+                        >Meeting Secretary <span class="text-red-500">*</span>
                       </label>
-                      <Select>
-                        <SelectTrigger class="w-full">
-                          <SelectValue placeholder="Select an option" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectGroup>
-                            <!-- <SelectLabel>Product</SelectLabel> -->
-                            <SelectItem value="Educate The Children"> Single </SelectItem>
-                            <SelectItem value="Shelter The Homeless"> Group </SelectItem>
-                            <!-- <SelectItem value="Comfort The Sick"> Hybrid </SelectItem> -->
-                            <!-- <SelectItem value="Enhance Social Justice"> Furniture </SelectItem> -->
-                            <!-- <SelectItem value="Feed The Hungry"> Feed The Hungry </SelectItem> -->
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
+                      <input
+                        type="text"
+                        class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                        id="exampleFormControlInput50"
+                        value=""
+                      />
                     </div>
                   </div>
                   
                  
                   <div class="relative">
-                    <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600">About Meeting</p>
+                    <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600"> Meeting Agenda</p>
                     <textarea
                       name=""
                       id=""

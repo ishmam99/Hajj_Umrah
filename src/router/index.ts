@@ -689,6 +689,36 @@ const router = createRouter({
       component: () => import('../views/Operation/PrayerManagement/Azan/PostAzansSchedule.vue'),
     },
     {
+      path: '/operation_event_create_event',
+      name: 'operation_event_create_event',
+      component: () => import('../views/Operation/EventManagement/CreateEvent.vue'),
+    },
+    {
+      path: '/operation_event_eventList',
+      name: 'operation_event_eventList',
+      component: () => import('../views/Operation/EventManagement/EventList.vue'),
+    },
+    {
+      path: '/operation_event_postEvent',
+      name: 'operation_event_postEvent',
+      component: () => import('../views/Operation/EventManagement/PostEvent.vue'),
+    },
+    {
+      path: '/operation_announcement_create_announcement',
+      name: 'operation_announcement_create_announcement',
+      component: () => import('../views/Operation/AnnouncementManagement/CreateAnnouncement.vue'),
+    },
+    {
+      path: '/operation_announcement_announcement_list',
+      name: 'operation_announcement_announcement_list',
+      component: () => import('../views/Operation/AnnouncementManagement/AnnouncementList.vue'),
+    },
+    {
+      path: '/operation_announcement_broadcast_announcement',
+      name: 'operation_announcement_broadcast_announcement',
+      component: () => import('../views/Operation/AnnouncementManagement/BroadcastAnnouncement.vue'),
+    },
+    {
       path: '/Signup',
       name: 'Signup',
       component: () => import('../views/Auth/SingnUp.vue')

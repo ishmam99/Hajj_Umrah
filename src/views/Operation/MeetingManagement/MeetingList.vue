@@ -27,7 +27,7 @@
                   <tbody>
                     <tr class="">
                       <td class="py-4 p-2 gap-2">
-                        <h3 class="font-bold">Save The Children</h3>
+                        <h3 class="font-bold">Meeting on Mosjid</h3>
                       </td>
                       <td>
                         <p class="text-lg">12:00 AM</p>
@@ -43,7 +43,7 @@
                     </tr>
                     <tr class="bg-white">
                       <td class="py-4 p-2 gap-2">
-                        <h3 class="font-bold">Save The Children</h3>
+                        <h3 class="font-bold">Meeting on Mosjid</h3>
                       </td>
                       <td>
                         <p class="text-lg">12:00 AM</p>
@@ -59,7 +59,7 @@
                     </tr>
                     <tr class="">
                       <td class="py-4 p-2">
-                        <h3 class="font-bold">Save The Children</h3>
+                        <h3 class="font-bold">Meeting on Mosjid</h3>
                       </td>
                       <td>
                         <p class="text-lg">12:00 AM</p>
