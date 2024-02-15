@@ -1,7 +1,22 @@
 <template>
- <div class="px-4 bg-white py-5 w-3/4">
-    <div class="flex justify-between items-center pt-4">
+ <div class="px-4 bg-white py-5 w-[calc(100vw-255px)]">
+    <div class="flex justify-between items-center py-4">
       <p class="text-2xl text-yellow-600 font-bold pb-2">Donation Event List</p>
+      <input type="date" placeholder="Search by date or name" class="py-1.5 px-2 rounded-md border text-sm">
+      <input type="text" placeholder="Search by name" class="py-1.5 px-2 rounded-md border text-sm">
+      <div class="w-[200px]">
+        <Select class="">
+            <SelectTrigger class="w-full">
+              <SelectValue placeholder="Sort By order" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectItem value="Comfort The Sick"> new to old </SelectItem>
+                <SelectItem value="Educate The Children"> old to new </SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+      </div>
     </div>
     <hr />
     <div
@@ -29,19 +44,17 @@
             <td class="py-4 p-2 text-center w-1/8">1 Feb 2024</td>
             <td class="py-4 p-2 text-center w-1/8">$ 1000000</td>
             <td class="py-4 p-2 text-center w-1/8">
-              <Select class="">
-                <SelectTrigger class="">
-                  <SelectValue placeholder="Select one" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select</SelectLabel>
-                    <SelectItem value="Comfort The Sick">Active</SelectItem>
-                    <SelectItem value="Educate The Children">Inactive</SelectItem>
-                    <SelectItem value="Shelter The Homeless">Repeat</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+              <div class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2">
+                <DropdownMenu class="w-full">
+                  <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuItem class="text-yellow-600">Edit</DropdownMenuItem>
+                      <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
+                      <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 16L6 10H18L12 16Z"></path></svg>
+              </div>
             </td>
           </tr>
           <tr class="bg-white">
@@ -54,19 +67,17 @@
             <td class="py-4 p-2 text-center w-1/8">1 Feb 2024</td>
             <td class="py-4 p-2 text-center w-1/8">$ 500000</td>
             <td class="py-4 p-2 text-center w-1/8">
-              <Select class="">
-                <SelectTrigger class="">
-                  <SelectValue placeholder="Select one" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select</SelectLabel>
-                    <SelectItem value="Comfort The Sick">Active</SelectItem>
-                    <SelectItem value="Educate The Children">Inactive</SelectItem>
-                    <SelectItem value="Shelter The Homeless">Repeat</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+              <div class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2">
+                <DropdownMenu class="w-full">
+                  <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuItem class="text-yellow-600">Edit</DropdownMenuItem>
+                      <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
+                      <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 16L6 10H18L12 16Z"></path></svg>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -85,4 +96,12 @@ import {
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '/components/ui/dropdown-menu'
 </script>

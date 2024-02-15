@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-slate-50 w-3/4">
+    <div class="bg-slate-50 w-[calc(100vw-255px)]">
       <div class="px-4 bg-white py-5">
           <div class="flex justify-between items-center pt-4 pb-2">
             <p class="text-2xl text-yellow-600 font-bold">Account Ledger Create</p>
@@ -21,8 +21,6 @@
               </thead>
               <tbody>
                 <tr class="">
-                  <!-- <td class="py-4 px-2 text-center w-[12%]"><input type="text" class="w-full p-2"></td> -->
-                  <!-- <td class="py-4 px-2 text-center text-sm w-[12%]"><input type="date" class="w-full p-2"></td> -->
                   <td class="py-4 px-2 text-center w-1/4"><input type="text" class="w-full p-2"></td>
                   <td class="py-4 px-2 text-center w-1/4"><input type="text" class="w-full p-2"></td>
                   <td class="py-4 px-2 text-center w-1/4"><input type="text" class="w-full p-2"></td>
@@ -77,9 +75,17 @@
                   <td class="py-4 p-2 text-center w-1/8">-</td>
                   <td class="py-4 p-2 text-center w-1/8">$ 2500</td>
                   <td class="py-4 p-2 flex justify-center">
-                    <button class="px-3 py-2 w-full rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                      Edit
-                    </button>
+                    <div class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2">
+                      <DropdownMenu class="w-full">
+                        <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
+                          <DropdownMenuContent>
+                            <DropdownMenuItem class="text-yellow-600">Edit</DropdownMenuItem>
+                            <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
+                            <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 16L6 10H18L12 16Z"></path></svg>
+                    </div>
                   </td>
                 </tr>
                 <tr class="bg-white">
@@ -90,9 +96,17 @@
                   <td class="py-4 p-2 text-center w-1/8">500</td>
                   <td class="py-4 p-2 text-center w-1/8">$ 2000</td>
                   <td class="py-4 p-2 flex justify-center">
-                    <button class="px-3 py-2 w-full rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                      Edit
-                    </button>
+                    <div class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2">
+                      <DropdownMenu class="w-full">
+                        <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
+                          <DropdownMenuContent>
+                            <DropdownMenuItem class="text-yellow-600">Edit</DropdownMenuItem>
+                            <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
+                            <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 16L6 10H18L12 16Z"></path></svg>
+                    </div>
                   </td>
                 </tr>
               </tbody>
@@ -115,4 +129,12 @@ import {
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '/components/ui/dropdown-menu'
 </script>
