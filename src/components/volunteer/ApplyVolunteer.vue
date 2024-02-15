@@ -294,29 +294,64 @@ const participants_yob = ref(2010)
           <div>
             <fieldset class="p-4">
               <legend class="font-bold text-white">Interest in other volunteer jobs</legend>
-              <div class="flex flex-wrap justify-between gap-x-8">
+              <div class="columns-3">
                 <div
                   v-for="volunteerInterestExpert in volunteerInterestExpertise"
                   :key="volunteerInterestExpert.id"
-                  class="flex space-x-2 my-2"
+                  class="my-2"
                 >
-                  <label class="flex space-x-2">
-                    <input
-                      v-model="volunteerInterestExpert.isChecked"
-                      :id="volunteerInterestExpert.id"
-                      type="checkbox"
-                      :value="volunteerInterestExpert.isChecked"
-                      name="interest"
-                    />
-                    <div class="w-[200px]">
-                      {{ volunteerInterestExpert.interestField }}
+                  <div class="flex space-x-2">
+                    <label class="flex space-x-2">
+                      <input
+                        v-model="volunteerInterestExpert.isChecked"
+                        :id="volunteerInterestExpert.id"
+                        type="checkbox"
+                        :value="volunteerInterestExpert.isChecked"
+                        name="interest"
+                      />
+                      <div class="w-[200px]">
+                        {{ volunteerInterestExpert.interestField }}
+                      </div>
+                    </label>
+                    <select v-model="volunteerInterestExpert.expertise">
+                      <option>Expert</option>
+                      <option>Intermediate</option>
+                      <option>Beginner</option>
+                    </select>
+                  </div>
+                  <div
+                    v-if="
+                      volunteerInterestExpert.volunteerSubSection &&
+                      volunteerInterestExpert.volunteerSubSection.length > 0
+                    "
+                    class="mb-4"
+                  >
+                    <div
+                      v-for="volunteerInterestSub in volunteerInterestExpert.volunteerSubSection"
+                      :key="volunteerInterestSub.id"
+                      class="ml-3 my-2"
+                    >
+                      <div class="flex space-x-2">
+                        <label class="flex space-x-2">
+                          <input
+                            v-model="volunteerInterestSub.isChecked"
+                            :id="volunteerInterestSub.id"
+                            type="checkbox"
+                            :value="volunteerInterestSub.isChecked"
+                            name="interest"
+                          />
+                          <div class="w-[200px]">
+                            {{ volunteerInterestSub.interestField }}
+                          </div>
+                        </label>
+                        <select v-model="volunteerInterestSub.expertise">
+                          <option>Expert</option>
+                          <option>Intermediate</option>
+                          <option>Beginner</option>
+                        </select>
+                      </div>
                     </div>
-                  </label>
-                  <select v-model="volunteerInterestExpert.expertise">
-                    <option>Expert</option>
-                    <option>Intermediate</option>
-                    <option>Beginner</option>
-                  </select>
+                  </div>
                 </div>
               </div>
             </fieldset>

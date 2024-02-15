@@ -25,54 +25,24 @@ import { useVolunteerDataStore } from '@/stores/volunteerStore.ts'
 
 // pinia
 const { volunteerApplicantList } = storeToRefs(useVolunteerDataStore())
-const {
-  setVolunteerApplicantList,
-  setSearchByJobText,
-  setSearchByInterestText,
-  setSearchByExpertiseRef
-} = useVolunteerDataStore()
+const { setVolunteerApplicantList } = useVolunteerDataStore()
 
 const searchByJobText = ref('')
-const searchByInterestText = ref('')
-const searchByExpertise = ref('All')
 
 watch(
   () => searchByJobText.value,
   () => {
-    setSearchByJobText(searchByJobText.value)
-
-    if (searchByJobText.value === '') {
-      setSearchByInterestText(searchByInterestText.value)
-    }
-  }
-)
-
-watch(
-  () => searchByInterestText.value,
-  () => {
-    setSearchByInterestText(searchByInterestText.value)
-
-    if (searchByInterestText.value === '') {
-      setSearchByJobText(searchByJobText.value)
-    }
-  }
-)
-
-watch(
-  () => searchByExpertise.value,
-  () => {
-    setSearchByExpertiseRef(searchByExpertise.value)
-    console.log(searchByExpertise.value, 'searchByExpertise.value')
+    console.log(searchByJobText.value, 'searchByJobText.value')
   }
 )
 </script>
 
 <template>
   <div class="px-5 bg-slate-50 py-5 w-3/4">
-    <p class="text-2xl font-bold py-3 border-b">Volunteer Applicant List</p>
+    <p class="text-2xl font-bold py-3 border-b">Approved Volunteer List</p>
     <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
       <div class="flex justify-between items-center pt-4 pb-2">
-        <p class="text-2xl text-yellow-600 font-bold">All Volunteer Application</p>
+        <p class="text-2xl text-yellow-600 font-bold">All Approved Volunteer List</p>
 
         <input
           v-model="searchByJobText"
@@ -81,22 +51,24 @@ watch(
           class="py-1.5 px-2 rounded-md border text-sm"
         />
         <input
-          v-model="searchByInterestText"
           type="text"
           placeholder="Search by interest area"
           class="py-1.5 px-2 rounded-md border text-sm"
         />
 
         <div class="w-[200px]">
-          <select
-            v-model="searchByExpertise"
-            class="bg-white border border-gray-500 p-2 rounded-lg hidden"
-          >
-            <option>All</option>
-            <option>Waiting</option>
-            <option>Approved</option>
-            <option>Reject</option>
-          </select>
+          <Select class="">
+            <SelectTrigger class="w-full">
+              <SelectValue placeholder="Search by expertise" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectItem value="Expert"> Expert </SelectItem>
+                <SelectItem value="Intermediate"> Intermediate </SelectItem>
+                <SelectItem value="Beginner"> Beginner </SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
       </div>
       <hr />
@@ -121,7 +93,7 @@ watch(
               :key="volunteerApplicant.id"
             >
               <tr
-                v-if="volunteerApplicant.applicationStatus === 'Waiting'"
+                v-if="volunteerApplicant.applicationStatus === 'Approved'"
                 :class="[`${volunteerApplicant.id % 2 === 0 ? 'bg-white' : ''}`]"
               >
                 <td class="py-4 p-2 text-center">{{ volunteerApplicant.id }}</td>
@@ -153,15 +125,8 @@ watch(
                   </button>
                 </td>
 
-                <td class="py-4 p-2 text-center">
-                  <select
-                    v-model="volunteerApplicant.applicationStatus"
-                    class="bg-white border border-gray-500 p-2 rounded-lg"
-                  >
-                    <option>Waiting</option>
-                    <option>Approved</option>
-                    <option>Reject</option>
-                  </select>
+                <td class="py-4 p-2 text-center text-green-600 font-bold">
+                  {{ volunteerApplicant.applicationStatus }}
                 </td>
               </tr>
             </template>

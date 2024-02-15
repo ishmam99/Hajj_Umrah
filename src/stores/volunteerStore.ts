@@ -2,13 +2,76 @@ import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
 export const useVolunteerDataStore = defineStore('volunteerData', () => {
+  // Define types for your state
+  interface Volunteer {
+    id: number
+    interestField: string
+    expertise: string
+    isChecked: boolean
+    volunteerSubSection?: Volunteer[]
+  }
+
+  interface VolunteeringPost {
+    id: number
+    postTitle: string
+    volunteeringType?: string
+    image: string
+    description: string
+    venue: string
+    date?: string
+    time: string
+    totalWorkingTime?: string
+    responsibilities: string | string[]
+    gender: string
+    benefits: string | string[]
+    ageRange: string
+    qualification: string
+    isPosted: boolean
+  }
+
+  interface VolunteerApplicant {
+    id: number
+    name: string
+    volunteerJob: string
+    expertiseArea: string
+    additionalInterestArea: string
+    moreInfo: string
+    applicationStatus: string
+  }
+
   // state
   const volunteerInterestExpertiseRef = ref<any>([
     {
       id: 1,
       interestField: 'Coding',
       expertise: 'Expert',
-      isChecked: true
+      isChecked: true,
+      volunteerSubSection: [
+        {
+          id: 21,
+          interestField: 'C',
+          expertise: 'Expert',
+          isChecked: true
+        },
+        {
+          id: 22,
+          interestField: 'C++',
+          expertise: 'Expert',
+          isChecked: false
+        },
+        {
+          id: 23,
+          interestField: 'Python',
+          expertise: 'Expert',
+          isChecked: true
+        },
+        {
+          id: 24,
+          interestField: 'Java',
+          expertise: 'Expert',
+          isChecked: true
+        }
+      ]
     },
     {
       id: 2,
@@ -44,7 +107,33 @@ export const useVolunteerDataStore = defineStore('volunteerData', () => {
       id: 7,
       interestField: 'Tutoring',
       expertise: 'Expert',
-      isChecked: false
+      isChecked: false,
+      volunteerSubSection: [
+        {
+          id: 21,
+          interestField: 'Physics',
+          expertise: 'Expert',
+          isChecked: true
+        },
+        {
+          id: 22,
+          interestField: 'Math',
+          expertise: 'Expert',
+          isChecked: false
+        },
+        {
+          id: 23,
+          interestField: 'Chemistry',
+          expertise: 'Intermediate',
+          isChecked: false
+        },
+        {
+          id: 24,
+          interestField: 'Programming',
+          expertise: 'Expert',
+          isChecked: false
+        }
+      ]
     },
     {
       id: 8,
@@ -300,10 +389,48 @@ export const useVolunteerDataStore = defineStore('volunteerData', () => {
       qualification: 'Strong interpersonal and communication skills'
     }
   ])
+  const volunteerApplicantListRef = ref<any>([
+    {
+      id: 1,
+      name: 'Mr. Rocky',
+      volunteerJob: 'Environmental Cleanup Volunteer',
+      expertiseArea: 'Software Engineer',
+      additionalInterestArea: 'Coding(Expert), Graphic Design(Intermediate), Gardening(Beginner)',
+      moreInfo: 'I love programming, i love coding, i love python etc...',
+      applicationStatus: 'Waiting'
+    },
+    {
+      id: 2,
+      name: 'Mr. Mick',
+      volunteerJob: 'Tutoring Volunteer',
+      expertiseArea: 'Graphics Designer',
+      additionalInterestArea: 'Coding(Expert), Gardening(Beginner)',
+      moreInfo:
+        'In our noble mission, we strive to alleviate hunger and nourish the vulnerable in our community. Committed to the values of compassion and social responsibility, we dedicate ourselves to feeding those in need.',
+      applicationStatus: 'Waiting'
+    },
+    {
+      id: 3,
+      name: 'Mr. Micheal',
+      volunteerJob: 'Teaching',
+      expertiseArea: 'English, Math',
+      additionalInterestArea: 'Gardening(Beginner)',
+      moreInfo:
+        'In our noble mission, we strive to alleviate hunger and nourish the vulnerable in our community. Committed to the values of compassion and social responsibility, we dedicate ourselves to feeding those in need.',
+      applicationStatus: 'Waiting'
+    }
+  ])
+  const searchByJobTextRef = ref<string>('')
+  const searchByInterestTextRef = ref<string>('')
+  const searchByExpertiseRef = ref<string>('')
 
   // computed
   const volunteerInterestExpertise = computed(() => volunteerInterestExpertiseRef.value)
   const volunteeringPosts = computed(() => volunteeringPostsRef.value)
+  const volunteerApplicantList = computed(() => volunteerApplicantListRef.value)
+  const searchByJobText = computed(() => searchByJobTextRef.value)
+  const searchByInterestText = computed(() => searchByInterestTextRef.value)
+  const searchByExpertise = computed(() => searchByExpertiseRef.value)
 
   // actions
   const setVolunteerInterestExpertise = (payload: []) => {
@@ -312,12 +439,177 @@ export const useVolunteerDataStore = defineStore('volunteerData', () => {
   const setVolunteeringPosts = (payload: []) => {
     volunteeringPostsRef.value = payload
   }
+  const setVolunteerApplicantList = (payload: []) => {
+    volunteerApplicantListRef.value = payload
+  }
+  const setSearchByJobText = (payload: string) => {
+    searchByJobTextRef.value = payload
+    const searchText = payload.toLowerCase()
+    const matchedVolunteerJob = []
+
+    if (payload !== '') {
+      volunteerApplicantListRef.value.forEach((volunteerApplicant) => {
+        const volunteerJobName = volunteerApplicant.volunteerJob.toLowerCase()
+        if (volunteerJobName.includes(searchText)) {
+          matchedVolunteerJob.push(volunteerApplicant)
+          console.log(volunteerApplicant, 'Found')
+        }
+      })
+
+      setVolunteerApplicantList(matchedVolunteerJob)
+    } else {
+      setVolunteerApplicantList([
+        {
+          id: 1,
+          name: 'Mr. Rocky',
+          volunteerJob: 'Environmental Cleanup Volunteer',
+          expertiseArea: 'Software Engineer',
+          additionalInterestArea:
+            'Coding(Expert), Graphic Design(Intermediate), Gardening(Beginner)',
+          moreInfo: 'I love programming, i love coding, i love python etc...',
+          applicationStatus: 'Waiting'
+        },
+        {
+          id: 2,
+          name: 'Mr. Mick',
+          volunteerJob: 'Tutoring Volunteer',
+          expertiseArea: 'Graphics Designer',
+          additionalInterestArea: 'Coding(Expert), Gardening(Beginner)',
+          moreInfo:
+            'In our noble mission, we strive to alleviate hunger and nourish the vulnerable in our community. Committed to the values of compassion and social responsibility, we dedicate ourselves to feeding those in need.',
+          applicationStatus: 'Waiting'
+        },
+        {
+          id: 3,
+          name: 'Mr. Micheal',
+          volunteerJob: 'Teaching',
+          expertiseArea: 'English, Math',
+          additionalInterestArea: 'Gardening(Beginner)',
+          moreInfo:
+            'In our noble mission, we strive to alleviate hunger and nourish the vulnerable in our community. Committed to the values of compassion and social responsibility, we dedicate ourselves to feeding those in need.',
+          applicationStatus: 'Waiting'
+        }
+      ])
+    }
+  }
+  const setSearchByInterestText = (payload: string) => {
+    searchByJobTextRef.value = payload
+    const searchText = payload.toLowerCase()
+    const matchedVolunteerJob = []
+
+    if (payload !== '') {
+      volunteerApplicantListRef.value.forEach((volunteerApplicant) => {
+        const volunteerAdditionalInterest = volunteerApplicant.additionalInterestArea.toLowerCase()
+        if (volunteerAdditionalInterest.includes(searchText)) {
+          matchedVolunteerJob.push(volunteerApplicant)
+          console.log(volunteerApplicant, 'Found')
+        }
+      })
+
+      setVolunteerApplicantList(matchedVolunteerJob)
+    } else {
+      setVolunteerApplicantList([
+        {
+          id: 1,
+          name: 'Mr. Rocky',
+          volunteerJob: 'Environmental Cleanup Volunteer',
+          expertiseArea: 'Software Engineer',
+          additionalInterestArea:
+            'Coding(Expert), Graphic Design(Intermediate), Gardening(Beginner)',
+          moreInfo: 'I love programming, i love coding, i love python etc...',
+          applicationStatus: 'Waiting'
+        },
+        {
+          id: 2,
+          name: 'Mr. Mick',
+          volunteerJob: 'Tutoring Volunteer',
+          expertiseArea: 'Graphics Designer',
+          additionalInterestArea: 'Coding(Expert), Gardening(Beginner)',
+          moreInfo:
+            'In our noble mission, we strive to alleviate hunger and nourish the vulnerable in our community. Committed to the values of compassion and social responsibility, we dedicate ourselves to feeding those in need.',
+          applicationStatus: 'Waiting'
+        },
+        {
+          id: 3,
+          name: 'Mr. Micheal',
+          volunteerJob: 'Teaching',
+          expertiseArea: 'English, Math',
+          additionalInterestArea: 'Gardening(Beginner)',
+          moreInfo:
+            'In our noble mission, we strive to alleviate hunger and nourish the vulnerable in our community. Committed to the values of compassion and social responsibility, we dedicate ourselves to feeding those in need.',
+          applicationStatus: 'Waiting'
+        }
+      ])
+    }
+  }
+  const setSearchByExpertiseRef = (payload: string) => {
+    searchByJobTextRef.value = payload
+    const searchText = payload.toLowerCase()
+    const matchedVolunteerJob = []
+
+    if (payload !== '') {
+      volunteerApplicantListRef.value.forEach((volunteerApplicant) => {
+        const volunteerApplicationStatus = volunteerApplicant.applicationStatus.toLowerCase()
+        if (volunteerApplicationStatus.includes(searchText)) {
+          matchedVolunteerJob.push(volunteerApplicant)
+          console.log(volunteerApplicant, 'Found')
+        }
+      })
+
+      setVolunteerApplicantList(matchedVolunteerJob)
+    } else {
+      setVolunteerApplicantList([
+        {
+          id: 1,
+          name: 'Mr. Rocky',
+          volunteerJob: 'Environmental Cleanup Volunteer',
+          expertiseArea: 'Software Engineer',
+          additionalInterestArea:
+            'Coding(Expert), Graphic Design(Intermediate), Gardening(Beginner)',
+          moreInfo: 'I love programming, i love coding, i love python etc...',
+          applicationStatus: 'Waiting'
+        },
+        {
+          id: 2,
+          name: 'Mr. Mick',
+          volunteerJob: 'Tutoring Volunteer',
+          expertiseArea: 'Graphics Designer',
+          additionalInterestArea: 'Coding(Expert), Gardening(Beginner)',
+          moreInfo:
+            'In our noble mission, we strive to alleviate hunger and nourish the vulnerable in our community. Committed to the values of compassion and social responsibility, we dedicate ourselves to feeding those in need.',
+          applicationStatus: 'Waiting'
+        },
+        {
+          id: 3,
+          name: 'Mr. Micheal',
+          volunteerJob: 'Teaching',
+          expertiseArea: 'English, Math',
+          additionalInterestArea: 'Gardening(Beginner)',
+          moreInfo:
+            'In our noble mission, we strive to alleviate hunger and nourish the vulnerable in our community. Committed to the values of compassion and social responsibility, we dedicate ourselves to feeding those in need.',
+          applicationStatus: 'Waiting'
+        }
+      ])
+    }
+  }
 
   return {
     volunteerInterestExpertise,
     setVolunteerInterestExpertise,
 
     volunteeringPosts,
-    setVolunteeringPosts
+    setVolunteeringPosts,
+
+    volunteerApplicantList,
+    setVolunteerApplicantList,
+
+    searchByJobText,
+    setSearchByJobText,
+
+    searchByInterestText,
+    setSearchByInterestText,
+
+    searchByExpertise,
+    setSearchByExpertiseRef
   }
 })
