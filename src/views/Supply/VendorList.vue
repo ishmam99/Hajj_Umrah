@@ -48,7 +48,6 @@
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>
-                          <SelectLabel>Select</SelectLabel>
                           <SelectItem value="Comfort The Sick"> Add to Preferred </SelectItem>
                           <SelectItem value="Educate The Children">
                             Remove from Prefered
@@ -78,10 +77,9 @@
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>
-                          <SelectLabel>Select</SelectLabel>
-                          <SelectItem value="Comfort The Sick"> Add to Preferred </SelectItem>
+                          <SelectItem value="Comfort The Sick"> Add to Preferred List </SelectItem>
                           <SelectItem value="Educate The Children">
-                            Remove from Prefered
+                            Remove from Prefered List
                           </SelectItem>
                         </SelectGroup>
                       </SelectContent>
@@ -104,10 +102,10 @@
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>
-                          <SelectLabel>Select</SelectLabel>
-                          <SelectItem value="Comfort The Sick"> Post </SelectItem>
-                          <SelectItem value="Educate The Children"> Edit </SelectItem>
-                          <SelectItem value="Shelter The Homeless"> Delete </SelectItem>
+                          <SelectItem value="Comfort The Sick"> Add to Preferred List </SelectItem>
+                          <SelectItem value="Educate The Children">
+                            Remove from Prefered List
+                          </SelectItem>
                         </SelectGroup>
                       </SelectContent>
                     </Select>

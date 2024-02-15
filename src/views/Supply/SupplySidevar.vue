@@ -157,9 +157,21 @@ const toggleAccordion = (accordionName) => {
   }
 }
 
-watch(route, () => {
-  console.log(route)
-})
+watch(
+  () => route,
+  () => {
+    console.log(route.name)
+    if (route.name.includes('Bid')) {
+      currentAccordions.value = 'bidManagement'
+    } else {
+      currentAccordions.value = 'vendorManagement'
+    }
+  },
+  {
+    deep: true,
+    immediate: true
+  }
+)
 
 watch(
   () => store.isAuthenticated,
