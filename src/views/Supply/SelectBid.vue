@@ -70,7 +70,7 @@ import {
                                 <div class="font-bold text-xl mb-2">Vendor Details</div>
                               </DialogTitle>
                               <DialogDescription>
-                                <h1>Vendor Logo</h1>
+                                <h1 class="text-black text-l">Vendor Logo</h1>
                                 <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
                                 <div class="flex gap-5 items-center justify-between mt-2">
                                   <div>
