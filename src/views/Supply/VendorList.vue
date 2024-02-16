@@ -48,9 +48,9 @@
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>
-                          <SelectItem value="Comfort The Sick"> Add to Preferred </SelectItem>
+                          <SelectItem value="Comfort The Sick"> Add to Preferred List </SelectItem>
                           <SelectItem value="Educate The Children">
-                            Remove from Prefered
+                            Remove from Prefered List
                           </SelectItem>
                         </SelectGroup>
                       </SelectContent>
