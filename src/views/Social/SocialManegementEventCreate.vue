@@ -26,7 +26,7 @@
                   <div class="w-1/4">
                     <div class="relative mb-3">
                       <div class="">
-                        <p class="text-xl font-bold py-1">
+                        <p class="text-lg font-semibold py-1">
                           Occurrence Type <span class="text-red-600">*</span>
                         </p>
                         <div class="flex gap-2 items-center">
