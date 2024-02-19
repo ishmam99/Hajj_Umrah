@@ -7,7 +7,6 @@ const currentAccordions = ref('bidManagement')
 const currentAccordions2 = ref('projectManagement')
 
 const toggleAccordion = (accordionName) => {
-  
   if (accordionName === currentAccordions.value) {
     currentAccordions.value = ''
   } else {
@@ -26,20 +25,21 @@ const toggleAccordion2 = (accordionName2) => {
 const route = useRoute()
 const router = useRouter()
 const store = useAuthStore()
-watch(() => route, () => {
-  console.log(route.name)
-  if (route.name.includes('Social_Service_Event'))
+watch(
+  () => route,
+  () => {
+    console.log(route.name)
+    if (route.name.includes('Social_Service_Event')) {
+      currentAccordions.value = 'bidManagement'
+    } else if (route.name.includes('Social_Service_Project')) {
+      currentAccordions.value = 'projectManagement'
+    }
+  },
   {
-  currentAccordions.value='bidManagement'
+    deep: true,
+    immediate: true
   }
-  else if(route.name.includes('Social_Service_Project'))
-  {
-   currentAccordions.value='projectManagement'
- }
-}, {
-  deep: true,
-  immediate: true 
-})
+)
 watch(
   () => store.isAuthenticated,
   (newIsAuthenticated) => {
@@ -50,7 +50,6 @@ watch(
     }
   }
 )
-
 </script>
 
 <template>
@@ -213,7 +212,7 @@ watch(
           >
         </div>
       </div>
-      <router-link to="" class="flex items-center gap-2"
+      <router-link to="/volunteer" class="flex items-center gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
