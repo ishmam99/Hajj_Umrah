@@ -21,7 +21,7 @@
         </div> -->
         <div class="">
             <div class="pt-[80px] flex flex-row-reverse justify-between">
-                <OperationProfile />
+                <router-view/>
                 <OperationSidebar/>
             </div>
         </div>

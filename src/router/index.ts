@@ -20,6 +20,17 @@ const router = createRouter({
       component: HomeView
     },
     {
+      path: '/year_planner/:id',
+      name: 'year_planner',
+      component: () => import('../components/HomeFolder/YearlyPlannerDetails.vue')
+    },
+    {
+      path: '/yearlyPlannerDetails',
+      name: 'yearlyPlannerDetails',
+      component: () => import('../components/HomeFolder/YearlyPlannerDetails24.vue')
+    },
+
+    {
       path: '/services',
       name: 'services',
 
@@ -337,64 +348,54 @@ const router = createRouter({
         path: '/Social_Service_Dashboard/Profile',
           name:'Social_Service_Dashboard_Profile',
             component: () => import('../views/Social/Profile/SocialProfile.vue'),
-        }
+        },
+        {
+          path: '/Social_Service_Event_Post',
+          name: 'Social_Service_Event_Post',
+          component: () => import('../views/Social/SocialManagementEventPost.vue'),
+        },
+        {
+          path: '/Social_Service_Project_List',
+          name: 'Social_Service_Project_List',
+          component: () => import('../views/Social/SocialManagementProjectList.vue')
+        },
+        {
+          path: '/Social_Service_Event_Create',
+          name: 'Social_Service_Event_Create',
+          component: () => import('../views/Social/SocialManegementEventCreate.vue')
+        },
+        {
+          path: '/Social_Service_Project_Create',
+          name: 'Social_Service_Project_Create',
+          component: () => import('../views/Social/SocialManagementProjectCreate.vue')
+        },
+        {
+          path: '/Social_Service_Event_List',
+          name: 'Social_Service_Event_List',
+          component: () => import('../views/Social/SocialManagementEventList.vue'),
+        },
+        {
+          path: '/Social_Service_Project_Post',
+          name: 'Social_Service_Project_Post',
+          component: () => import('../views/Social/SocialManagementProjectPost.vue'),
+        },
+        {
+          path: '/Social_Gallery',
+          name: 'Social Gallery',
+          component: () => import('../views/Social/SocialGallery.vue')
+        },
+        {
+          path: '/Social_Change_Password',
+          name: 'Social_Change_Password',
+          component: () => import('../views/Social/Profile/SocialChangePassword.vue')
+        },
       ]
-    },
-    {
-      path: '/Social_Service_Event_Post',
-      name: 'Social_Service_Event_Post',
-      component: () => import('../views/Social/SocialManagementEventPost.vue'),
-    },
-    {
-      path: '/Social_Service_Project_List',
-      name: 'Social_Service_Project_List',
-      component: () => import('../views/Social/SocialManagementProjectList.vue')
-    },
-    {
-      path: '/Social_Service_Event_Create',
-      name: 'Social_Service_Event_Create',
-      component: () => import('../views/Social/SocialManegementEventCreate.vue')
-    },
-    {
-      path: '/Social_Service_Project_Create',
-      name: 'Social_Service_Project_Create',
-      component: () => import('../views/Social/SocialManagementProjectCreate.vue')
-    },
-    {
-      path: '/Social_Service_Event_List',
-      name: 'Social_Service_Event_List',
-      component: () => import('../views/Social/SocialManagementEventList.vue'),
-    },
-    {
-      path: '/Social_Service_Project_Post',
-      name: 'Social_Service_Project_Post',
-      component: () => import('../views/Social/SocialManagementProjectPost.vue'),
-    },
-    {
-      path: '/Social_Gallery',
-      name: 'Social Gallery',
-      component: () => import('../views/Social/SocialGallery.vue')
-    },
-    {
-      path: '/Social_Change_Password',
-      name: 'Social_Change_Password',
-      component: () => import('../views/Social/Profile/SocialChangePassword.vue')
     },
 
     {
       path: '/Youth_Management_Login',
       name: 'Youth Management Login',
       component: () => import('../views/Auth/LogIn.vue')
-    },
-    {
-      path: '/year_planner/:id',
-      name: 'year_planner',
-      component: () => import('../components/HomeFolder/YearlyPlannerDetails.vue')
-    },
-    {
-      path: '/yearlyPlannerDetails',
-      name: 'yearlyPlannerDetails',
-      component: () => import('../components/HomeFolder/YearlyPlannerDetails24.vue')
     },
     {
       path: '/Youth_Management_Dashboard',
@@ -494,7 +495,7 @@ const router = createRouter({
     {
       path: '/Education_Dashboard',
       name: 'Education_Dashboard',
-      component: () => import('../views/Education/EducationDashboard.vue')
+      component: () => import('../views/Education/EducationDashboard.vue'),
     },
     {
       path: '/Supply_Chain_Management_Login',
@@ -504,73 +505,81 @@ const router = createRouter({
     {
       path: '/Supply_Chain_Management_Chain_Management_Dashboard',
       name: 'Supply_Dashboard',
-      component: () => import('../views/Supply/SupplyDashbord.vue')
+      component: () => import('../views/Supply/SupplyDashbord.vue'),
+      children: [
+        {
+          path: '/Supply_Admin_Profile',
+          name: 'Supply_Admin_Profile',
+          component: () => import('../views/Supply/Profile/SupplyProfile.vue')
+        },
+        {
+          path: '/Supply_Create_Order',
+          name: 'Supply_Create_Order',
+          component: () => import('../views/Supply/OrderCreate.vue')
+        },
+        {
+          path: '/Supply_Create_Bid',
+          name: 'Supply_Create_Bid',
+          component: () => import('../views/Supply/CreateBid.vue'),
+        },
+        {
+          path: '/Supply_Post_Bid',
+          name: 'Supply_Post_Bid',
+          component: () => import('../views/Supply/PostBid.vue')
+        },
+        {
+          path: '/Supply_Bid_List',
+          name: 'Supply_Bid_List',
+          component: () => import('../views/Supply/BidList.vue'),
+        },
+        {
+          path: '/Supply_Select_Bid',
+          name: 'Supply_Select_Bid',
+          component: () => import('../views/Supply/SelectBid.vue'),
+        },
+        {
+          path: '/Supply_Completed_Bid',
+          name: 'Supply_Completed_Bid',
+          component: () => import('../views/Supply/CompletedBid.vue'),
+        },
+        {
+          path: '/Supply_Hire_Vendor',
+          name: 'Supply_Hire_Vendor',
+          component: () => import('../views/Supply/HireVendor.vue'),
+        },
+        {
+          path: '/Supply_Active_Vendor',
+          name: 'Supply_Active_Vendor',
+          component: () => import('../views/Supply/ActiveVendor.vue'),
+        },
+        {
+          path: '/Supply_Vendor_List',
+          name: 'Supply_Vendor_List',
+          component: () => import('../views/Supply/VendorList.vue'),
+        },
+        {
+          path: '/Supply_Prefered_Vendor_List',
+          name: 'Supply_Prefered_Vendor_List',
+          component: () => import('../views/Supply/PreferedVendorList.vue'),
+        },
+        {
+          path: '/Supply_Create_Supplier',
+          name: 'Supply_Create_Supplier',
+          component: () => import('../views/Supply/CreateSupplier.vue')
+        },
+        {
+          path: '/Supply_Order_List',
+          name: 'Supply_Order_List',
+          component: () => import('../views/Supply/OrderList.vue')
+        },
+        {
+          path: '/Supply_Supplier_List',
+          name: 'Supply_Supplier_List',
+          component: () => import('../views/Supply/SupplierList.vue')
+        },
+      ],
     },
-    {
-      path: '/Supply_Create_Order',
-      name: 'Supply_Create_Order',
-      component: () => import('../views/Supply/OrderCreate.vue')
-    },
-    {
-      path: '/Supply_Create_Bid',
-      name: 'Supply_Create_Bid',
-      component: () => import('../views/Supply/CreateBid.vue'),
-    },
-    {
-      path: '/Supply_Post_Bid',
-      name: 'Supply_Post_Bid',
-      component: () => import('../views/Supply/PostBid.vue')
-    },
-    {
-      path: '/Supply_Bid_List',
-      name: 'Supply_Bid_List',
-      component: () => import('../views/Supply/BidList.vue'),
-    },
-    {
-      path: '/Supply_Select_Bid',
-      name: 'Supply_Select_Bid',
-      component: () => import('../views/Supply/SelectBid.vue'),
-    },
-    {
-      path: '/Supply_Completed_Bid',
-      name: 'Supply_Completed_Bid',
-      component: () => import('../views/Supply/CompletedBid.vue'),
-    },
-    {
-      path: '/Supply_Hire_Vendor',
-      name: 'Supply_Hire_Vendor',
-      component: () => import('../views/Supply/HireVendor.vue'),
-    },
-    {
-      path: '/Supply_Active_Vendor',
-      name: 'Supply_Active_Vendor',
-      component: () => import('../views/Supply/ActiveVendor.vue'),
-    },
-    {
-      path: '/Supply_Vendor_List',
-      name: 'Supply_Vendor_List',
-      component: () => import('../views/Supply/VendorList.vue'),
-    },
-    {
-      path: '/Supply_Prefered_Vendor_List',
-      name: 'Supply_Prefered_Vendor_List',
-      component: () => import('../views/Supply/PreferedVendorList.vue'),
-    },
-    {
-      path: '/Supply_Create_Supplier',
-      name: 'Supply_Create_Supplier',
-      component: () => import('../views/Supply/CreateSupplier.vue')
-    },
-    {
-      path: '/Supply_Order_List',
-      name: 'Supply_Order_List',
-      component: () => import('../views/Supply/OrderList.vue')
-    },
-    {
-      path: '/Supply_Supplier_List',
-      name: 'Supply_Supplier_List',
-      component: () => import('../views/Supply/SupplierList.vue')
-    },
+    
 
     {
       path: '/HR_Login',
@@ -695,127 +704,135 @@ const router = createRouter({
       path: '/Opration_Dashboard',
       name: 'Operation_Dashboard',
       component: () => import('../views/Operation/OprationDashbord.vue'),
+      children: [
+        {
+          path: '/Opration_Management_profile',
+          name: 'Opration_Management_profile',
+          component: () => import('../views/Operation/Profile/OperationProfile.vue'),
+        },
+        {
+          path: '/Opration_Meeting_Create',
+          name: 'Opration_Meeting_Create',
+          component: () => import('../views/Operation/MeetingManagement/CreateMeeting.vue'),
+        },
+        {
+          path: '/Opration_Meeting_Create_meeting',
+          name: 'Opration_Meeting_Create_meeting',
+          component: () => import('../views/Operation/MeetingManagement/CreateMeeting.vue'),
+        },
+        {
+          path: '/Opration_Meeting_meeting_list',
+          name: 'Opration_Meeting_meeting_list',
+          component: () => import('../views/Operation/MeetingManagement/MeetingList.vue'),
+        },
+        {
+          path: '/Opration_Meeting_meeting_list',
+          name: 'Opration_Meeting_meeting_list',
+          component: () => import('../views/Operation/MeetingManagement/MeetingList.vue'),
+        },
+        {
+          path: '/Opration_Meeting_postMeeting',
+          name: 'Opration_Meeting_postMeeting',
+          component: () => import('../views/Operation/MeetingManagement/PostMeeting.vue'),
+        },
+        {
+          path: '/Opration_prayer_create_prayer',
+          name: 'Opration_Meeting_postMeeting',
+          component: () => import('../views/Operation/PrayerManagement/Prayer/CreatePrayerTimes.vue'),
+        },
+        {
+          path: '/Opration_prayer_post_prayer_times',
+          name: 'Opration_prayer_post_prayer_times',
+          component: () => import('../views/Operation/PrayerManagement/Prayer/PostPrayerTimes.vue'),
+        },
+        {
+          path: '/Opration_prayer_schedule_imam',
+          name: 'Opration_prayer_schedule_imam',
+          component: () => import('../views/Operation/PrayerManagement/Prayer/SceduleImam.vue'),
+        },
+        {
+          path: '/Opration_prayer_post_schedule_imam',
+          name: 'Opration_prayer_post_schedule_imam',
+          component: () => import('../views/Operation/PrayerManagement/Prayer/PostImamSchedule.vue'),
+        },
+        {
+          path: '/Opration_prayer_create_khatira_topic',
+          name: 'Opration_prayer_create_khatira_topic',
+          component: () => import('../views/Operation/PrayerManagement/Khatira/CreateKhatiraTopic.vue'),
+        },
+        {
+          path: '/Opration_khatira_create_khatira_list',
+          name: 'Opration_khatira_create_khatira_list',
+          component: () => import('../views/Operation/PrayerManagement/Khatira/KhatiraList.vue'),
+        },
+        {
+          path: '/Opration_khatira_broadcast_khatira_schedule',
+          name: 'Opration_khatira_broadcast_khatira_schedule',
+          component: () => import('../views/Operation/PrayerManagement/Khatira/BroadCastKhatiraSchedule.vue'),
+        },
+        {
+          path: '/Opration_khutbah_create_khutbah_topic',
+          name: 'Opration_khutbah_create_khutbah_topic',
+          component: () => import('../views/Operation/PrayerManagement/Khutbah/CreateKhutbahTopic.vue'),
+        },
+        {
+          path: '/Opration_khutbah_khutbah_list',
+          name: 'Opration_khutbah_khutbah_list',
+          component: () => import('../views/Operation/PrayerManagement/Khutbah/KhutbahList.vue'),
+        },
+        {
+          path: '/Opration_khutbah_broadcast_schedule',
+          name: 'Opration_khutbah_broadcast_schedule',
+          component: () => import('../views/Operation/PrayerManagement/Khutbah/BroadCastKhutbahSchedule.vue'),
+        },
+        {
+          path: '/operation_azan_create_muajjin_list',
+          name: 'operation_azan_create_muajjin_list',
+          component: () => import('../views/Operation/PrayerManagement/Azan/CreateMuajjinList.vue'),
+        },
+        {
+          path: '/operation_create_muajjin_schedule',
+          name: 'operation_create_muajjin_schedule',
+          component: () => import('../views/Operation/PrayerManagement/Azan/CreateMuajjinSchedule.vue'),
+        },
+        {
+          path: '/operation_post_azans_schedule',
+          name: 'operation_post_azans_schedule',
+          component: () => import('../views/Operation/PrayerManagement/Azan/PostAzansSchedule.vue'),
+        },
+        {
+          path: '/operation_event_create_event',
+          name: 'operation_event_create_event',
+          component: () => import('../views/Operation/EventManagement/CreateEvent.vue'),
+        },
+        {
+          path: '/operation_event_eventList',
+          name: 'operation_event_eventList',
+          component: () => import('../views/Operation/EventManagement/EventList.vue'),
+        },
+        {
+          path: '/operation_event_postEvent',
+          name: 'operation_event_postEvent',
+          component: () => import('../views/Operation/EventManagement/PostEvent.vue'),
+        },
+        {
+          path: '/operation_announcement_create_announcement',
+          name: 'operation_announcement_create_announcement',
+          component: () => import('../views/Operation/AnnouncementManagement/CreateAnnouncement.vue'),
+        },
+        {
+          path: '/operation_announcement_announcement_list',
+          name: 'operation_announcement_announcement_list',
+          component: () => import('../views/Operation/AnnouncementManagement/AnnouncementList.vue'),
+        },
+        {
+          path: '/operation_announcement_broadcast_announcement',
+          name: 'operation_announcement_broadcast_announcement',
+          component: () => import('../views/Operation/AnnouncementManagement/BroadcastAnnouncement.vue'),
+        },
+      ],
     },
-    {
-      path: '/Opration_Meeting_Create',
-      name: 'Opration_Meeting_Create',
-      component: () => import('../views/Operation/MeetingManagement/CreateMeeting.vue'),
-    },
-    {
-      path: '/Opration_Meeting_Create_meeting',
-      name: 'Opration_Meeting_Create_meeting',
-      component: () => import('../views/Operation/MeetingManagement/CreateMeeting.vue'),
-    },
-    {
-      path: '/Opration_Meeting_meeting_list',
-      name: 'Opration_Meeting_meeting_list',
-      component: () => import('../views/Operation/MeetingManagement/MeetingList.vue'),
-    },
-    {
-      path: '/Opration_Meeting_meeting_list',
-      name: 'Opration_Meeting_meeting_list',
-      component: () => import('../views/Operation/MeetingManagement/MeetingList.vue'),
-    },
-    {
-      path: '/Opration_Meeting_postMeeting',
-      name: 'Opration_Meeting_postMeeting',
-      component: () => import('../views/Operation/MeetingManagement/PostMeeting.vue'),
-    },
-    {
-      path: '/Opration_prayer_create_prayer',
-      name: 'Opration_Meeting_postMeeting',
-      component: () => import('../views/Operation/PrayerManagement/Prayer/CreatePrayerTimes.vue'),
-    },
-    {
-      path: '/Opration_prayer_post_prayer_times',
-      name: 'Opration_prayer_post_prayer_times',
-      component: () => import('../views/Operation/PrayerManagement/Prayer/PostPrayerTimes.vue'),
-    },
-    {
-      path: '/Opration_prayer_schedule_imam',
-      name: 'Opration_prayer_schedule_imam',
-      component: () => import('../views/Operation/PrayerManagement/Prayer/SceduleImam.vue'),
-    },
-    {
-      path: '/Opration_prayer_post_schedule_imam',
-      name: 'Opration_prayer_post_schedule_imam',
-      component: () => import('../views/Operation/PrayerManagement/Prayer/PostImamSchedule.vue'),
-    },
-    {
-      path: '/Opration_prayer_create_khatira_topic',
-      name: 'Opration_prayer_create_khatira_topic',
-      component: () => import('../views/Operation/PrayerManagement/Khatira/CreateKhatiraTopic.vue'),
-    },
-    {
-      path: '/Opration_khatira_create_khatira_list',
-      name: 'Opration_khatira_create_khatira_list',
-      component: () => import('../views/Operation/PrayerManagement/Khatira/KhatiraList.vue'),
-    },
-    {
-      path: '/Opration_khatira_broadcast_khatira_schedule',
-      name: 'Opration_khatira_broadcast_khatira_schedule',
-      component: () => import('../views/Operation/PrayerManagement/Khatira/BroadCastKhatiraSchedule.vue'),
-    },
-    {
-      path: '/Opration_khutbah_create_khutbah_topic',
-      name: 'Opration_khutbah_create_khutbah_topic',
-      component: () => import('../views/Operation/PrayerManagement/Khutbah/CreateKhutbahTopic.vue'),
-    },
-    {
-      path: '/Opration_khutbah_khutbah_list',
-      name: 'Opration_khutbah_khutbah_list',
-      component: () => import('../views/Operation/PrayerManagement/Khutbah/KhutbahList.vue'),
-    },
-    {
-      path: '/Opration_khutbah_broadcast_schedule',
-      name: 'Opration_khutbah_broadcast_schedule',
-      component: () => import('../views/Operation/PrayerManagement/Khutbah/BroadCastKhutbahSchedule.vue'),
-    },
-    {
-      path: '/operation_azan_create_muajjin_list',
-      name: 'operation_azan_create_muajjin_list',
-      component: () => import('../views/Operation/PrayerManagement/Azan/CreateMuajjinList.vue'),
-    },
-    {
-      path: '/operation_create_muajjin_schedule',
-      name: 'operation_create_muajjin_schedule',
-      component: () => import('../views/Operation/PrayerManagement/Azan/CreateMuajjinSchedule.vue'),
-    },
-    {
-      path: '/operation_post_azans_schedule',
-      name: 'operation_post_azans_schedule',
-      component: () => import('../views/Operation/PrayerManagement/Azan/PostAzansSchedule.vue'),
-    },
-    {
-      path: '/operation_event_create_event',
-      name: 'operation_event_create_event',
-      component: () => import('../views/Operation/EventManagement/CreateEvent.vue'),
-    },
-    {
-      path: '/operation_event_eventList',
-      name: 'operation_event_eventList',
-      component: () => import('../views/Operation/EventManagement/EventList.vue'),
-    },
-    {
-      path: '/operation_event_postEvent',
-      name: 'operation_event_postEvent',
-      component: () => import('../views/Operation/EventManagement/PostEvent.vue'),
-    },
-    {
-      path: '/operation_announcement_create_announcement',
-      name: 'operation_announcement_create_announcement',
-      component: () => import('../views/Operation/AnnouncementManagement/CreateAnnouncement.vue'),
-    },
-    {
-      path: '/operation_announcement_announcement_list',
-      name: 'operation_announcement_announcement_list',
-      component: () => import('../views/Operation/AnnouncementManagement/AnnouncementList.vue'),
-    },
-    {
-      path: '/operation_announcement_broadcast_announcement',
-      name: 'operation_announcement_broadcast_announcement',
-      component: () => import('../views/Operation/AnnouncementManagement/BroadcastAnnouncement.vue'),
-    },
+   
     {
       path: '/Signup',
       name: 'Signup',
@@ -829,28 +846,31 @@ const router = createRouter({
     {
       path: '/Membar_Dashboard',
       name: 'Membar_Dashboard',
-      component: () => import('../views/Member/MembarDashbord.vue')
+      component: () => import('../views/Member/MembarDashbord.vue'),
+      children: [
+        {
+          path: '/Membar_Event_History',
+          name: 'Membar_Event_History',
+          component: () => import('../views/Member/MemberEventHistory.vue')
+        },
+        {
+          path: '/Membar_Donation_History',
+          name: 'Membar_Donation_History',
+          component: () => import('../views/Member/Profile/MemberDonationHistory.vue')
+        },
+        {
+          path: '/Membar_Payment_History',
+          name: 'Membar_Payment_History',
+          component: () => import('../views/Member/Profile/MembarPaymentHistory.vue')
+        },
+        {
+          path: '/Membar_Change_Password',
+          name: 'Membar_Change_Password',
+          component: () => import('../views/Member/Profile/MemberPassChange.vue')
+        },
+      ],
     },
-    {
-      path: '/Membar_Event_History',
-      name: 'Membar_Event_History',
-      component: () => import('../views/Member/MemberEventHistory.vue')
-    },
-    {
-      path: '/Membar_Donation_History',
-      name: 'Membar_Donation_History',
-      component: () => import('../views/Member/Profile/MemberDonationHistory.vue')
-    },
-    {
-      path: '/Membar_Payment_History',
-      name: 'Membar_Payment_History',
-      component: () => import('../views/Member/Profile/MembarPaymentHistory.vue')
-    },
-    {
-      path: '/Membar_Change_Password',
-      name: 'Membar_Change_Password',
-      component: () => import('../views/Member/Profile/MemberPassChange.vue')
-    },
+    
     {
       path: '/Select_Volunteer',
       name: 'Select Volunteer',
