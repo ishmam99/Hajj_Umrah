@@ -6,7 +6,7 @@
       <p class="text-2xl font-bold text-[#2e318a]">Operation Dashboard</p>
       <p class="text-xl font-bold">Welcome Mr. Hashim</p>
       <router-link
-        to="/"
+        to="/Opration_Management_profile"
         class="flex items-center gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"

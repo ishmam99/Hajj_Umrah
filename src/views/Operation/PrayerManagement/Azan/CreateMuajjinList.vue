@@ -1,9 +1,5 @@
 <template>
-    <DefaultLayout>
-      <div class="bg-slate-50">
-        <div class="pt-20 flex justify-between">
-          <OperationSidebar />
-          <div class="px-4 bg-white py-5 w-3/4">
+    <div class="px-4 bg-white py-5 w-3/4">
             <p class="font-semibold">Prayer Management > Khatira > Create Muajjin List</p>
             <div class="flex justify-between items-center pt-4">
               <p class="text-2xl text-yellow-600 font-bold pb-2">Create Muajjin List</p>
@@ -167,9 +163,6 @@
               </table>
             </div>
           </div>
-        </div>
-      </div>
-    </DefaultLayout>
   </template>
   <script setup>
   import DefaultLayout from '@/layouts/DefaultLayout.vue'

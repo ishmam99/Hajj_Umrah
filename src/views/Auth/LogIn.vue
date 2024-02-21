@@ -151,15 +151,15 @@ const login = () => {
         router.push({ name: 'Admin_Dashboard' })
         store.authUser = user
       } else if (user.role == 'social') {
-        authStore.user.dashboard = { name: 'Social_Dashboard' }
-        router.push({ name: 'Social_Dashboard' })
+        authStore.user.dashboard = { name: 'Social_Service_Dashboard_Profile' }
+        router.push({ name: 'Social_Service_Dashboard_Profile' })
         store.authUser = user
       } else if (user.role == 'youth') {
-        authStore.user.dashboard = { name: 'Youth_Dashboard' }
+        authStore.user.dashboard = { name: 'Youth_Dashboard_Profile' }
         router.push({ name: 'Youth_Dashboard_Profile' })
         store.authUser = user
       } else if (user.role == 'finance') {
-         authStore.user.dashboard = { name: 'Finance_Dashboard' }
+         authStore.user.dashboard = { name: 'Finance_Dashboard_Profile' }
         router.push({ name: 'Finance_Dashboard_Profile' })
         store.authUser = user
       } else if (user.role == 'education') {
@@ -167,11 +167,11 @@ const login = () => {
         router.push({ name: 'Education_Dashboard' })
         store.authUser = user
       } else if (user.role == 'supply') {
-        authStore.user.dashboard = { name: 'Supply_Dashboard' }
-        router.push({ name: 'Supply_Dashboard' })
+        authStore.user.dashboard = { name: 'Supply_Admin_Profile' }
+        router.push({ name: 'Supply_Admin_Profile' })
         store.authUser = user
       } else if (user.role == 'hr') {
-        authStore.user.dashboard = { name: 'HR_Dashboard' }
+        authStore.user.dashboard = { name: 'HR_Dashboard_Proile' }
         router.push({ name: 'HR_Dashboard_Proile' })
         store.authUser = user
       } else if (user.role == 'volunteer') {
@@ -179,8 +179,8 @@ const login = () => {
         router.push({ name: 'Volunteer_Dashboard' })
         store.authUser = user
       } else if (user.role == 'operation') {
-        authStore.user.dashboard = { name: 'Operation_Dashboard' }
-        router.push({ name: 'Operation_Dashboard' })
+        authStore.user.dashboard = { name: 'Opration_Management_profile' }
+        router.push({ name: 'Opration_Management_profile' })
         store.authUser = user
       }
     } else error.value = true

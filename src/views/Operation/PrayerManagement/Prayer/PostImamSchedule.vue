@@ -1,9 +1,5 @@
 <template>
-    <DefaultLayout>
-      <div class="bg-slate-50">
-        <div class="pt-[80px] flex justify-between">
-          <operationSidebar />
-          <div class="px-5 bg-slate-50 py-5 w-3/4">
+     <div class="px-5 bg-slate-50 py-5 w-3/4">
             <p class="font-semibold">Prayer Management > Prayer > Post Imam Schedule</p>
             <div class="flex items-center justify-between border-b pb-2 gap-5">
                 <p class="text-2xl font-bold py-3">Post Imam Schedule</p>
@@ -82,9 +78,6 @@
             </div>
             
           </div>
-        </div>
-      </div>
-    </DefaultLayout>
   </template>
   <script setup>
   import DefaultLayout from '@/layouts/DefaultLayout.vue'
