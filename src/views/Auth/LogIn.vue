@@ -172,7 +172,7 @@ const login = () => {
         store.authUser = user
       } else if (user.role == 'hr') {
         authStore.user.dashboard = { name: 'HR_Dashboard' }
-        router.push({ name: 'Hr_Profile' })
+        router.push({ name: 'HR_Dashboard_Proile' })
         store.authUser = user
       } else if (user.role == 'volunteer') {
         authStore.user.dashboard = { name: 'Volunteer_Dashboard' }
