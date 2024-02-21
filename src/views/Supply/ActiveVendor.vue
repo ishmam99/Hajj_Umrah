@@ -54,42 +54,42 @@ import {
                           <DialogContent>
                             <DialogHeader>
                               <DialogTitle>
-                                <div class="font-bold text-xl mb-2">Sound System</div>
+                                <div class="font-bold text-xl mb-2">Vendor Details</div>
                               </DialogTitle>
                               <DialogDescription>
+                                <h1 class="font-bold text-xl mb-2">Vendor Logo</h1>
                                 <img src="/src/assets/image/home/l4.jpg" alt="" />
-                                <div>
-                                  <h1 class="font-semibold mt-2 text-lg text-black">Description</h1>
-                                  In our noble mission, we strive to alleviate hunger and nourish
-                                  the vulnerable in our community. Committed to the values of
-                                  compassion and social responsibility, we dedicate ourselves to
-                                  feeding those in need. Every day, we work tirelessly to provide
-                                  nutritious meals, ensuring that no one goes to bed hungry. Our
-                                  initiative goes beyond immediate relief, aiming to empower
-                                  individuals and build sustainable solutions for long-term food
-                                  security. With the support of our dedicated team and generous
-                                  community, we envision a future where hunger is eradicated,
-                                  fostering a world where every person has access to the fundamental
-                                  right of wholesome sustenance and the hope for a brighter tomorrow
-                                </div>
-                                <div class="flex gap-5 items-center justify-between">
+                                <div class="flex mt-2 gap-5 items-center justify-between">
                                   <div class="flex gap-2">
-                                    <h1 class="text-black font-semibold">Project Budget:</h1>
-                                    $ 5000
+                                    <h1 class="text-black font-semibold">Vendor Name:</h1>
+                                    Humble Cup Coffee
                                   </div>
                                   <div class="flex gap-2">
-                                    <h1 class="text-black font-semibold">Completion Timeframe:</h1>
-                                    6 months
+                                    <h1 class="text-black font-semibold">Vendor Type:</h1>
+                                    Beverage
                                   </div>
                                 </div>
                                 <div class="flex gap-5 items-center justify-between mt-2">
                                   <div>
-                                    <span class="text-black font-semibold">Starting Date:</span> 1
-                                    Jan 2024
+                                    <span class="text-black font-semibold">Address:</span> Texas
                                   </div>
                                   <div>
-                                    <span class="text-black font-semibold">Ending Date:</span> 10
-                                    Feb 2024
+                                    <span class="text-black font-semibold">Running Project:</span>
+                                    Food System
+                                  </div>
+                                </div>
+                                <div class="flex gap-5 items-center justify-between mt-2">
+                                  <div>
+                                    <span class="text-black font-semibold"
+                                      >Project Started Date:</span
+                                    >
+                                    1 Feb 2024
+                                  </div>
+                                  <div>
+                                    <span class="text-black font-semibold"
+                                      >Project Ending Date:</span
+                                    >
+                                    1 Mar 2024
                                   </div>
                                 </div>
                               </DialogDescription>
@@ -115,103 +115,44 @@ import {
                           <DialogContent>
                             <DialogHeader>
                               <DialogTitle>
-                                <div class="font-bold text-xl mb-2">Computer, Printer, Camera</div>
+                                <div class="font-semibold text-xl mb-2">Vendor Details</div>
                               </DialogTitle>
                               <DialogDescription>
+                                <h1 class="font-semibold text-xl mb-2">Vendor Logo</h1>
                                 <img src="/src/assets/image/home/l4.png" alt="" />
-                                <div>
-                                  <h1 class="font-semibold mt-2 text-lg text-black">Description</h1>
-                                  In our noble mission, we strive to alleviate hunger and nourish
-                                  the vulnerable in our community. Committed to the values of
-                                  compassion and social responsibility, we dedicate ourselves to
-                                  feeding those in need. Every day, we work tirelessly to provide
-                                  nutritious meals, ensuring that no one goes to bed hungry. Our
-                                  initiative goes beyond immediate relief, aiming to empower
-                                  individuals and build sustainable solutions for long-term food
-                                  security. With the support of our dedicated team and generous
-                                  community, we envision a future where hunger is eradicated,
-                                  fostering a world where every person has access to the fundamental
-                                  right of wholesome sustenance and the hope for a brighter tomorrow
-                                </div>
-                                <div class="flex gap-5 items-center justify-between">
+
+                                <div class="flex mt-2 gap-5 items-center justify-between">
                                   <div class="flex gap-2">
-                                    <h1 class="text-black font-semibold">Budget:</h1>
+                                    <h1 class="text-black font-semibold">Vendor Name:</h1>
                                     $ 5000
                                   </div>
                                   <div class="flex gap-2">
-                                    <h1 class="text-black font-semibold">Completion Timeframe:</h1>
+                                    <h1 class="text-black font-semibold">Vendor Type:</h1>
                                     6 months
                                   </div>
                                 </div>
                                 <div class="flex gap-5 items-center justify-between mt-2">
                                   <div>
-                                    <span class="text-black font-semibold">Starting Date:</span> 1
-                                    Jan 2024
+                                    <span class="text-black font-semibold">Address:</span>
+                                    Just For You
                                   </div>
                                   <div>
-                                    <span class="text-black font-semibold">Ending Date:</span> 10
-                                    Feb 2024
+                                    <span class="text-black font-semibold">Running Project:</span>
+                                    Building Shelf
                                   </div>
-                                </div>
-                              </DialogDescription>
-                            </DialogHeader>
-                          </DialogContent>
-                        </Dialog>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr class="">
-                    <td class="py-4 p-2">
-                      <h3 class="font-bold">03</h3>
-                    </td>
-                    <td class="py-4 p-2 flex items-center gap-2">
-                      <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-                    </td>
-                    <td class="py-4 p-2">Alex Pietersen</td>
-                    <td class="py-4 p-2">Photography</td>
-                    <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                        <Dialog>
-                          <DialogTrigger> Details </DialogTrigger>
-                          <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>
-                                <div class="font-bold text-xl mb-2">Save The Children</div>
-                              </DialogTitle>
-                              <DialogDescription>
-                                <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
-                                <div>
-                                  <h1 class="font-semibold mt-2 text-lg text-black">Description</h1>
-                                  In our noble mission, we strive to alleviate hunger and nourish
-                                  the vulnerable in our community. Committed to the values of
-                                  compassion and social responsibility, we dedicate ourselves to
-                                  feeding those in need. Every day, we work tirelessly to provide
-                                  nutritious meals, ensuring that no one goes to bed hungry. Our
-                                  initiative goes beyond immediate relief, aiming to empower
-                                  individuals and build sustainable solutions for long-term food
-                                  security. With the support of our dedicated team and generous
-                                  community, we envision a future where hunger is eradicated,
-                                  fostering a world where every person has access to the fundamental
-                                  right of wholesome sustenance and the hope for a brighter tomorrow
                                 </div>
                                 <div class="flex gap-5 items-center justify-between mt-2">
                                   <div>
-                                    <span class="text-black font-semibold">Starting Date:</span> 1
-                                    Jan 2024
+                                    <span class="text-black font-semibold"
+                                      >Project Started Date:</span
+                                    >
+                                    1 Feb 2024
                                   </div>
                                   <div>
-                                    <span class="text-black font-semibold">Ending Date:</span> 10
-                                    Feb 2024
-                                  </div>
-                                </div>
-                                <div class="flex gap-5 items-center justify-between">
-                                  <div class="flex gap-2">
-                                    <h1 class="text-black font-semibold">Location:</h1>
-                                    Masjid Premises
-                                  </div>
-                                  <div class="flex gap-2">
-                                    <h1 class="text-black font-semibold">Time:</h1>
-                                    4 PM
+                                    <span class="text-black font-semibold"
+                                      >Project Ending Date:</span
+                                    >
+                                    1 Mar 2024
                                   </div>
                                 </div>
                               </DialogDescription>

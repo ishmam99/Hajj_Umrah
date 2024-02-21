@@ -43,7 +43,7 @@ import {
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
                       <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-                      <h3 class="font-bold">Sound System</h3>
+                      <h3 class="font-semibold">Sound System</h3>
                     </td>
                     <!-- <td>
                       <p class="text-lg">Karim Sounds</p>
@@ -108,7 +108,7 @@ import {
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
                       <img src="/src/assets/image/home/l4.png" alt="" class="h-10" />
-                      <h3 class="font-bold">Computer, Printer, Camera</h3>
+                      <h3 class="font-semibold">Computer, Printer, Camera</h3>
                     </td>
                     <!-- <td>
                       <p class="text-lg">Dallas Electronics</p>
@@ -172,7 +172,7 @@ import {
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
                       <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-                      <h3 class="font-bold">Sound System</h3>
+                      <h3 class="font-semibold">Sound System</h3>
                     </td>
                     <!-- <td>
                       <p class="text-lg">Karim</p>

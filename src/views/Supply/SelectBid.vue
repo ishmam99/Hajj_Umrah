@@ -46,7 +46,7 @@ import {
                     <th class="p-2 text-left">Vendor Details</th>
                     <th class="p-2 text-left">Action</th>
                     <th class="p-2 text-left">Reason for (Selection/Rejection)</th>
-                    <th class="p-2 text-left">Save</th>
+                    <th class="p-2 text-left">Apply</th>
                   </tr>
                 </thead>
                 <tbody>
