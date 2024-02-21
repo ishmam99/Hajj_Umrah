@@ -542,6 +542,11 @@ const router = createRouter({
       component: () => import('../views/Supply/HireVendor.vue'),
     },
     {
+      path: '/Supply_Active_Vendor',
+      name: 'Supply_Active_Vendor',
+      component: () => import('../views/Supply/ActiveVendor.vue'),
+    },
+    {
       path: '/Supply_Vendor_List',
       name: 'Supply_Vendor_List',
       component: () => import('../views/Supply/VendorList.vue'),

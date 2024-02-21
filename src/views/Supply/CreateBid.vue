@@ -22,6 +22,10 @@ const bidderInputs = ref([
   }
 ])
 
+const removeInput = (index) => {
+  bidderInputs.value.splice(index, 1)
+}
+
 const inputType = ref('text')
 const inputFiledName = ref('')
 
@@ -109,7 +113,7 @@ const showCreateNewField = ref(false)
                 </div>
                 <div class="relative">
                   <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-800 font-semibold">
-                    Required completion timeframe <span class="text-red-500">*</span>
+                    Required Project Completion Timeframe <span class="text-red-500">*</span>
                   </p>
                   <textarea
                     name=""
@@ -197,7 +201,21 @@ const showCreateNewField = ref(false)
                       >Vendor Id <span class="text-red-500">*</span>
                     </label>
                   </div>
-                  <div v-for="input in bidderInputs" class="relative">
+
+                  <div v-for="(input, index) in bidderInputs" class="relative">
+                    <button @click="removeInput(index)" class="absolute z-50 right-0 pt-4 pr-4">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="red"
+                        height="20"
+                        width="20"
+                      >
+                        <path
+                          d="M17 6H22V8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8H2V6H7V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V6ZM18 8H6V20H18V8ZM9 11H11V17H9V11ZM13 11H15V17H13V11ZM9 4V6H15V4H9Z"
+                        ></path>
+                      </svg>
+                    </button>
                     <p
                       class="p-3 absolute top-[-25px] left-2 bg-transparent text-gray-800 font-semibold"
                     >
@@ -230,7 +248,7 @@ const showCreateNewField = ref(false)
                     <input
                       v-else-if="input.type === 'datetime'"
                       type="date"
-                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      class="peer block min-h-[auto] w-3/4 rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                       id="exampleFormControlInput50"
                       value=""
                     />

@@ -38,13 +38,15 @@ import {
             >
               <table class="table-auto w-full">
                 <thead>
-                  <tr class="bg-white text-xl">
+                  <tr class="bg-white text-sm">
                     <th class="p-2 text-left">Bid Id</th>
                     <th class="p-2 text-left">Project Name</th>
                     <th class="p-2 text-left">Vendor Id</th>
                     <th class="p-2 text-left">Budget</th>
-                    <th class="p-2 text-left">Bid Details</th>
+                    <th class="p-2 text-left">Vendor Details</th>
                     <th class="p-2 text-left">Action</th>
+                    <th class="p-2 text-left">Reason for (Selection/Rejection)</th>
+                    <th class="p-2 text-left">Apply</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -56,14 +58,8 @@ import {
                       <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
                       <h3 class="font-bold">Sound System</h3>
                     </td>
-                    <!-- <td>
-                      <p class="text-lg">Karim Sounds</p>
-                    </td> -->
                     <td class="py-4 p-2">001</td>
                     <td class="py-4 p-2 font-semibold">$ 500</td>
-                    <!-- <td class="py-4 p-2">
-                      <p class="text-sm font-bold text-blue-600">Pending</p>
-                    </td> -->
                     <td class="py-4 p-2">
                       <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         <Dialog>
@@ -71,42 +67,29 @@ import {
                           <DialogContent>
                             <DialogHeader>
                               <DialogTitle>
-                                <div class="font-bold text-xl mb-2">Save The Children</div>
+                                <div class="font-bold text-xl mb-2">Vendor Details</div>
                               </DialogTitle>
                               <DialogDescription>
+                                <h1 class="text-black text-l">Vendor Logo</h1>
                                 <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
-                                <div>
-                                  <h1 class="font-semibold mt-2 text-lg text-black">Description</h1>
-                                  In our noble mission, we strive to alleviate hunger and nourish
-                                  the vulnerable in our community. Committed to the values of
-                                  compassion and social responsibility, we dedicate ourselves to
-                                  feeding those in need. Every day, we work tirelessly to provide
-                                  nutritious meals, ensuring that no one goes to bed hungry. Our
-                                  initiative goes beyond immediate relief, aiming to empower
-                                  individuals and build sustainable solutions for long-term food
-                                  security. With the support of our dedicated team and generous
-                                  community, we envision a future where hunger is eradicated,
-                                  fostering a world where every person has access to the fundamental
-                                  right of wholesome sustenance and the hope for a brighter tomorrow
-                                </div>
                                 <div class="flex gap-5 items-center justify-between mt-2">
                                   <div>
-                                    <span class="text-black font-semibold">Starting Date:</span> 1
-                                    Jan 2024
+                                    <span class="text-black font-semibold">Vendor Id:</span>
+                                    001
                                   </div>
                                   <div>
-                                    <span class="text-black font-semibold">Ending Date:</span> 10
-                                    Feb 2024
+                                    <span class="text-black font-semibold">Vendor Name:</span>
+                                    Dreaming Double
                                   </div>
                                 </div>
                                 <div class="flex gap-5 items-center justify-between">
+                                  <div>
+                                    <span class="text-black font-semibold">Vendor Type:</span>
+                                    Woodwork
+                                  </div>
                                   <div class="flex gap-2">
                                     <h1 class="text-black font-semibold">Location:</h1>
                                     Masjid Premises
-                                  </div>
-                                  <div class="flex gap-2">
-                                    <h1 class="text-black font-semibold">Time:</h1>
-                                    4 PM
                                   </div>
                                 </div>
                               </DialogDescription>
@@ -130,6 +113,35 @@ import {
                           </SelectGroup>
                         </SelectContent>
                       </Select>
+                    </td>
+                    <td class="py-4 p-2">
+                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                        <Dialog>
+                          <DialogTrigger> Insert </DialogTrigger>
+                          <DialogContent>
+                            <input
+                              type="text"
+                              class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 pt-5 py-2 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                              id="exampleFormControlInput50"
+                              placeholder="reason"
+                              value=""
+                            />
+                            <button
+                              class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm items-center"
+                            >
+                              Save
+                            </button>
+                          </DialogContent>
+                        </Dialog>
+                      </button>
+                    </td>
+
+                    <td class="py-4 p-2">
+                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                        <Dialog>
+                          <DialogTrigger> Save </DialogTrigger>
+                        </Dialog>
+                      </button>
                     </td>
                   </tr>
                   <tr class="bg-white">
@@ -156,42 +168,29 @@ import {
                           <DialogContent>
                             <DialogHeader>
                               <DialogTitle>
-                                <div class="font-bold text-xl mb-2">Save The Children</div>
+                                <div class="font-bold text-xl mb-2">Vendor Details</div>
                               </DialogTitle>
                               <DialogDescription>
+                                <h1>Vendor Logo</h1>
                                 <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
-                                <div>
-                                  <h1 class="font-semibold mt-2 text-lg text-black">Description</h1>
-                                  In our noble mission, we strive to alleviate hunger and nourish
-                                  the vulnerable in our community. Committed to the values of
-                                  compassion and social responsibility, we dedicate ourselves to
-                                  feeding those in need. Every day, we work tirelessly to provide
-                                  nutritious meals, ensuring that no one goes to bed hungry. Our
-                                  initiative goes beyond immediate relief, aiming to empower
-                                  individuals and build sustainable solutions for long-term food
-                                  security. With the support of our dedicated team and generous
-                                  community, we envision a future where hunger is eradicated,
-                                  fostering a world where every person has access to the fundamental
-                                  right of wholesome sustenance and the hope for a brighter tomorrow
-                                </div>
                                 <div class="flex gap-5 items-center justify-between mt-2">
                                   <div>
-                                    <span class="text-black font-semibold">Starting Date:</span> 1
-                                    Jan 2024
+                                    <span class="text-black font-semibold">Vendor Id:</span>
+                                    001
                                   </div>
                                   <div>
-                                    <span class="text-black font-semibold">Ending Date:</span> 10
-                                    Feb 2024
+                                    <span class="text-black font-semibold">Vendor Name:</span>
+                                    Dreaming Double
                                   </div>
                                 </div>
                                 <div class="flex gap-5 items-center justify-between">
+                                  <div>
+                                    <span class="text-black font-semibold">Vendor Type:</span>
+                                    Woodwork
+                                  </div>
                                   <div class="flex gap-2">
                                     <h1 class="text-black font-semibold">Location:</h1>
                                     Masjid Premises
-                                  </div>
-                                  <div class="flex gap-2">
-                                    <h1 class="text-black font-semibold">Time:</h1>
-                                    4 PM
                                   </div>
                                 </div>
                               </DialogDescription>
@@ -216,90 +215,34 @@ import {
                         </SelectContent>
                       </Select>
                     </td>
-                  </tr>
-                  <tr class="">
-                    <td class="py-4 p-2">
-                      <h3 class="font-bold">03</h3>
-                    </td>
-                    <td class="py-4 p-2 flex items-center gap-2">
-                      <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-                      <h3 class="font-bold">Sound System</h3>
-                    </td>
-                    <!-- <td>
-                      <p class="text-lg">Karim</p>
-                    </td> -->
-                    <td class="py-4 p-2">003</td>
-                    <!-- <td class="py-4 p-2">1 Feb 2024</td> -->
-                    <td class="py-4 p-2 font-semibold">$ 500</td>
-                    <!-- <td class="py-4 p-2">
-                      <p class="text-sm font-bold text-blue-600">Pending</p>
-                    </td> -->
                     <td class="py-4 p-2">
                       <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         <Dialog>
-                          <DialogTrigger> Details </DialogTrigger>
+                          <DialogTrigger> Insert </DialogTrigger>
                           <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>
-                                <div class="font-bold text-xl mb-2">Save The Children</div>
-                              </DialogTitle>
-                              <DialogDescription>
-                                <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
-                                <div>
-                                  <h1 class="font-semibold mt-2 text-lg text-black">Description</h1>
-                                  In our noble mission, we strive to alleviate hunger and nourish
-                                  the vulnerable in our community. Committed to the values of
-                                  compassion and social responsibility, we dedicate ourselves to
-                                  feeding those in need. Every day, we work tirelessly to provide
-                                  nutritious meals, ensuring that no one goes to bed hungry. Our
-                                  initiative goes beyond immediate relief, aiming to empower
-                                  individuals and build sustainable solutions for long-term food
-                                  security. With the support of our dedicated team and generous
-                                  community, we envision a future where hunger is eradicated,
-                                  fostering a world where every person has access to the fundamental
-                                  right of wholesome sustenance and the hope for a brighter tomorrow
-                                </div>
-                                <div class="flex gap-5 items-center justify-between mt-2">
-                                  <div>
-                                    <span class="text-black font-semibold">Starting Date:</span> 1
-                                    Jan 2024
-                                  </div>
-                                  <div>
-                                    <span class="text-black font-semibold">Ending Date:</span> 10
-                                    Feb 2024
-                                  </div>
-                                </div>
-                                <div class="flex gap-5 items-center justify-between">
-                                  <div class="flex gap-2">
-                                    <h1 class="text-black font-semibold">Location:</h1>
-                                    Masjid Premises
-                                  </div>
-                                  <div class="flex gap-2">
-                                    <h1 class="text-black font-semibold">Time:</h1>
-                                    4 PM
-                                  </div>
-                                </div>
-                              </DialogDescription>
-                            </DialogHeader>
+                            <input
+                              type="text"
+                              class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 pt-5 py-2 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                              id="exampleFormControlInput50"
+                              placeholder="reason"
+                              value=""
+                            />
+                            <button
+                              class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm items-center"
+                            >
+                              Save
+                            </button>
                           </DialogContent>
                         </Dialog>
                       </button>
                     </td>
+
                     <td class="py-4 p-2">
-                      <Select>
-                        <SelectTrigger class="w-full">
-                          <SelectValue placeholder="Select one" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectGroup>
-                            <!-- <SelectLabel>Options</SelectLabel> -->
-                            <SelectItem value="accept"> Select </SelectItem>
-                            <SelectItem value="reject"> Reject </SelectItem>
-                            <SelectItem value="option 1"> Substitute 1 </SelectItem>
-                            <SelectItem value="option 2"> Substitute 2 </SelectItem>
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
+                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                        <Dialog>
+                          <DialogTrigger> Save </DialogTrigger>
+                        </Dialog>
+                      </button>
                     </td>
                   </tr>
                 </tbody>

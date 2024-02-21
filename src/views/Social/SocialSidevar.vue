@@ -7,6 +7,7 @@ const currentAccordions = ref('bidManagement')
 const currentAccordions2 = ref('projectManagement')
 
 const toggleAccordion = (accordionName) => {
+  
   if (accordionName === currentAccordions.value) {
     currentAccordions.value = ''
   } else {
@@ -25,21 +26,20 @@ const toggleAccordion2 = (accordionName2) => {
 const route = useRoute()
 const router = useRouter()
 const store = useAuthStore()
-watch(
-  () => route,
-  () => {
-    console.log(route.name)
-    if (route.name.includes('Social_Service_Event')) {
-      currentAccordions.value = 'bidManagement'
-    } else if (route.name.includes('Social_Service_Project')) {
-      currentAccordions.value = 'projectManagement'
-    }
-  },
+watch(() => route, () => {
+  console.log(route.name)
+  if (route.name.includes('Social_Service_Event'))
   {
-    deep: true,
-    immediate: true
+  currentAccordions.value='bidManagement'
   }
-)
+  else if(route.name.includes('Social_Service_Project'))
+  {
+   currentAccordions.value='projectManagement'
+ }
+}, {
+  deep: true,
+  immediate: true 
+})
 watch(
   () => store.isAuthenticated,
   (newIsAuthenticated) => {
