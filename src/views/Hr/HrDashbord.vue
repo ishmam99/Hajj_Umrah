@@ -2,8 +2,9 @@
     <DefaultLayout>
         <div class="">
             <div class="pt-[80px] flex flex-row-reverse justify-between">
-                <router-view/>
+              <router-view/>
                 <hrSidebar/>
+                
             </div>
         </div>
     </DefaultLayout>

@@ -5,5 +5,7 @@ import HrSidebar from '../HrSidevar.vue';
 </script>
 
 <template>
-    <div></div>
+    <div>
+
+    </div>
 </template>
