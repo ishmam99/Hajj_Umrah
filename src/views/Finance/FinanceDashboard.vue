@@ -14,4 +14,8 @@
 import FinanceSidebar from '/src/views/Finance/FinanceSidevar.vue'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import FinanceProfile from '/src/views/Finance/Profile/FinanceProfile.vue'
+
+
+
+
 </script>

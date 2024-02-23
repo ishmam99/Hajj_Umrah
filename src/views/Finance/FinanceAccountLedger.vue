@@ -7,32 +7,49 @@
           </div>
           <hr />
           <div class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center">
-            <table class="table-auto w-full">
-              <thead>
-                <tr class="bg-white">
-                  <!-- <th class="p-2 text-center w-[12%]">ID</th> -->
-                  <!-- <th class="p-2 text-center w-[12%]">Date</th> -->
-                  <th class="p-2 text-center w-1/4">Description</th>
-                  <th class="p-2 text-center w-1/4">Debit</th>
-                  <th class="p-2 text-center w-1/4">Credit</th>
-                  <!-- <th class="p-2 text-center w-[12%]">Balance</th> -->
-                  <th class="p-2 text-center w-1/4">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="">
-                  <td class="py-4 px-2 text-center w-1/4"><input type="text" class="w-full p-2"></td>
-                  <td class="py-4 px-2 text-center w-1/4"><input type="text" class="w-full p-2"></td>
-                  <td class="py-4 px-2 text-center w-1/4"><input type="text" class="w-full p-2"></td>
-                  <!-- <td class="py-4 px-2 text-center w-[12%]">$ 2500</td> -->
-                  <td class="py-4 px-2 flex justify-center">
-                    <button class="px-3 py-2 w-full rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                      Save
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+             <form @submit.prevent="accountLedgerCreat()" class="w-full">
+              <table class="table-auto w-full">
+                <thead>
+                  <tr class="bg-white">
+                    <!-- <th class="p-2 text-center w-[12%]">ID</th> -->
+                    <!-- <th class="p-2 text-center w-[12%]">Date</th> -->
+                    <th class="p-2 text-center w-1/4">Description</th>
+                    <th class="p-2 text-center w-1/4">Debit</th>
+                    <th class="p-2 text-center w-1/4">Credit</th>
+                    <!-- <th class="p-2 text-center w-[12%]">Balance</th> -->
+                    <th class="p-2 text-center w-1/4">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                    <tr class="">
+                      <td class="py-4 px-2 text-center w-1/4">
+                        <input 
+                        v-model="accountLedger.description"
+                        type="text" class="w-full p-2">
+                      </td>
+                      <td class="py-4 px-2 text-center w-1/4">
+                        <input 
+                        v-model="accountLedger.debit"
+                        type="number" class="w-full p-2">
+                      </td>
+                      <td class="py-4 px-2 text-center w-1/4">
+                        <input 
+                        v-model="accountLedger.credit"
+                        type="number" class="w-full p-2">
+                      </td>
+                      <!-- <td class="py-4 px-2 text-center w-[12%]">$ 2500</td> -->
+                      <td class="py-4 px-2 flex justify-center">
+                        <button type="submit" class="px-3 py-2 w-full rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                          Save
+                        </button>
+                      </td>
+                    </tr>
+                  
+                  
+                </tbody>
+              </table>
+            </form>
           </div>
           <div class="flex justify-between items-center pt-4 pb-2">
             <p class="text-2xl text-yellow-600 font-bold">Account Ledger List</p>
@@ -118,8 +135,9 @@
 </template>
 <script setup>
 
-import { ref } from 'vue'
+import { ref , onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { useToast } from '/components/ui/toast/use-toast'
 import {
   Select,
   SelectContent,
@@ -137,4 +155,39 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '/components/ui/dropdown-menu'
+
+const currentDate = new Date();
+console.log(currentDate);
+const currentDateWithFormat = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+console.log(currentDateWithFormat);
+
+const accountLedger = ref({
+  description: '',
+  credit: '',
+  debit: '',
+  date:'currentDateWithFormat',
+})
+
+const { toast } = useToast()
+const accountLedgerCreat = async () => {
+  try {
+    const data = await api().post('account-ledger-store', {
+      method: 'post',
+      body: accountLedger,
+    })
+    console.log(data)
+    toast({
+        title: 'Account Ledger Created ',
+      });
+  }
+  catch (error) {
+    console.log(error)
+  }
+}
+
+onMounted(async () => {
+  currentDate()
+})
+
+console.log(accountLedger.value)
 </script>
