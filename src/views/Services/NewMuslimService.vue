@@ -1,7 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 pt-20 mt-5 py-5 bg-blue-800 bg-[url('/src/assets/image/home/bg123.png')] bg-repeat shadow-xl">
+      <div
+        class="px-20 pt-20 mt-5 py-5 bg-cyan-800 bg-[url('/src/assets/image/home/bg123.png')] bg-repeat shadow-xl"
+      >
         <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
           <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
@@ -21,7 +23,7 @@
             <p class="text-blue-800">/ New Muslim Service</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-blue-800 text-4xl font-bold"> New Muslim Service </h1>
+            <h1 class="text-blue-800 text-4xl font-bold">New Muslim Service</h1>
             <div>
               <p></p>
             </div>
@@ -32,31 +34,39 @@
         <div class="space-y-8 w-3/4">
           <div class="bg-white rounded-xl p-5 w-full">
             <h1 class="text-3xl underline py-3">Shahada Service</h1>
-            <p>"There is no God but Allah, and Muhammad is his messenger. <br>"The Arabic transliteration of the English phrase above is: "Ashhadu Alla Ilaha Illa Allah Wa Ashhadu Anna Muhammad Ar-Rasulu Allah <br>"This is the basic statement of the Islamic faith. Reciting this statement wholeheartedly and with sincerity in front of witnesses is all that anyone needs to do to become a Muslim. The Shahadah is the first of the Five Pillars of Islam.</p>
+            <p>
+              "There is no God but Allah, and Muhammad is his messenger. <br />"The Arabic
+              transliteration of the English phrase above is: "Ashhadu Alla Ilaha Illa Allah Wa
+              Ashhadu Anna Muhammad Ar-Rasulu Allah <br />"This is the basic statement of the
+              Islamic faith. Reciting this statement wholeheartedly and with sincerity in front of
+              witnesses is all that anyone needs to do to become a Muslim. The Shahadah is the first
+              of the Five Pillars of Islam.
+            </p>
             <p class="py-3">When a Muslim recites this they proclaim:-</p>
             <ul class="px-10">
-                <li class="list-disc">
-                  That Allah is the only God, and that Muhammad is his prophet-
-                </li>
-                <li class="list-disc">
-                  That they personally accept this as true
-                </li>
-                <li class="list-disc">
-                  That they will obey all the commitments of Islam in their life.
-                </li>
+              <li class="list-disc">
+                That Allah is the only God, and that Muhammad is his prophet-
+              </li>
+              <li class="list-disc">That they personally accept this as true</li>
+              <li class="list-disc">
+                That they will obey all the commitments of Islam in their life.
+              </li>
             </ul>
-            <p class="py-3">If you are ready to take the Shahada, please fill out this form and the Imam will schedule an appropriate time for you to take the Shahada.</p>
+            <p class="py-3">
+              If you are ready to take the Shahada, please fill out this form and the Imam will
+              schedule an appropriate time for you to take the Shahada.
+            </p>
           </div>
-          
+
           <div class="bg-white rounded-xl p-5 w-full">
             <p class="text-xl font-bold py-5">Are you?<span class="text-red-600">*</span></p>
             <div class="flex gap-5">
               <div class="flex items-center gap-2 font-semibold py-2">
-                <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4">
+                <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4" />
                 <label for="Dhur">Interested in Islam</label>
               </div>
               <div class="flex items-center gap-2 font-semibold py-2">
-                <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4">
+                <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4" />
                 <label for="Asr">Recent revert needing information</label>
               </div>
             </div>
@@ -128,48 +138,60 @@
                   >Phone Number <span class="text-red-500">*</span>
                 </label>
               </div>
-
             </div>
             <p class="text-xl font-bold pt-5 pb-2">Gender<span class="text-red-600">*</span></p>
             <div class="flex gap-5">
               <div class="flex items-center gap-2 font-semibold py-2">
-                <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4">
+                <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4" />
                 <label for="Dhur">Male</label>
               </div>
               <div class="flex items-center gap-2 font-semibold py-2">
-                <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4">
+                <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4" />
                 <label for="Asr">Female</label>
               </div>
             </div>
-            <p class="text-xl font-bold pt-5 pb-2">Marital Status<span class="text-red-600">*</span></p>
+            <p class="text-xl font-bold pt-5 pb-2">
+              Marital Status<span class="text-red-600">*</span>
+            </p>
             <div class="grid grid-cols-2 gap-2">
-                <div class="flex items-center gap-2 font-semibold">
-                  <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4">
-                  <label for="Dhur">Married</label>
-                </div>
-                <div class="flex items-center gap-2 font-semibold">
-                  <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4">
-                  <label for="Asr">Engaged</label>
-                </div>
-                <div class="flex items-center gap-2 font-semibold">
-                  <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4">
-                  <label for="Dhur">Single</label>
-                </div>
-                <div class="flex items-center gap-2 font-semibold">
-                  <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4">
-                  <label for="Asr">Divorced</label>
-                </div>
+              <div class="flex items-center gap-2 font-semibold">
+                <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4" />
+                <label for="Dhur">Married</label>
+              </div>
+              <div class="flex items-center gap-2 font-semibold">
+                <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4" />
+                <label for="Asr">Engaged</label>
+              </div>
+              <div class="flex items-center gap-2 font-semibold">
+                <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4" />
+                <label for="Dhur">Single</label>
+              </div>
+              <div class="flex items-center gap-2 font-semibold">
+                <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4" />
+                <label for="Asr">Divorced</label>
+              </div>
             </div>
             <div>
               <p class="text-xl font-bold py-5">Any Question or Comments</p>
-              <textarea name="" id="" cols="" rows="4" placeholder="Ex:23" class="w-full p-3 rounded-md shadow-lg border border-black"></textarea>
+              <textarea
+                name=""
+                id=""
+                cols=""
+                rows="4"
+                placeholder="Ex:23"
+                class="w-full p-3 rounded-md shadow-lg border border-black"
+              ></textarea>
             </div>
-            <div class="flex justify-center py-3 ">
-              <button class="w-[350px] h-[45px] rounded-2xl bg-blue-800 text-white font-bold mx-auto">Apply</button>
+            <div class="flex justify-center py-3">
+              <button
+                class="w-[350px] h-[45px] rounded-2xl bg-blue-800 text-white font-bold mx-auto"
+              >
+                Apply
+              </button>
             </div>
           </div>
         </div>
-       <FacilitiesMore />
+        <FacilitiesMore />
       </div>
     </DefaultLayout>
   </div>
@@ -177,7 +199,7 @@
 
 <script setup>
 import DefaultLayout from '../../layouts/DefaultLayout.vue'
-import Card from '../../components/CardSection.vue'
+// import Card from '../../components/CardSection.vue'
 import FacilitiesMore from '../../components/FacilitiesMore.vue'
 </script>
 

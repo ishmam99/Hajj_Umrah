@@ -44,7 +44,7 @@
 </template>
 
 <script setup>
-import Card from '../../components/CardSection.vue'
+
 import FacilitesMore from '../../components/FacilitiesMore.vue'
 import DefaultLayout from '../../layouts/DefaultLayout.vue'
 import NikahForm from '../../views/Services/NikahForm.vue'

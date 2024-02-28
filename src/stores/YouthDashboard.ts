@@ -3,11 +3,11 @@ import { defineStore } from 'pinia';
 
 // const pinia = createPinia();
 
-export const useSocialStore = defineStore('socialStore',{
+export const useYouthStore = defineStore('youthStore',{
   state: () => ({
         event: [],
-        projectList: [],
-        eventList: [],
+        yearPlannerList: [],
+        programList: [],
     authUser : '',
   }),
   actions: {
