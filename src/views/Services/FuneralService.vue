@@ -79,7 +79,7 @@
 
 <script setup>
 import DefaultLayout from '../../layouts/DefaultLayout.vue'
-import Card from '../../components/CardSection.vue'
+import Card from '/src/components/cardSection.vue'
 import FacilitiesMore from '../../components/FacilitiesMore.vue'
 </script>
 

@@ -7,7 +7,7 @@
       <!-- Loop through service items to generate cards -->
       <router-link to="/services/education">
         <div
-          class="bg-white rounded-2xl bg-[url('../assets/image/commitees/8.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
+          class="bg-white rounded-2xl bg-[url('/src/assets/image/commitees/8.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
         >
           <div
             class="h-full rounded-2xl flex flex-col items-center bg-[#0000007c] w-full px-5 py-14"
@@ -44,7 +44,7 @@
 
       <router-link to="/services/social">
         <div
-          class="bg-white rounded-2xl bg-[url('../assets/image/commitees/0.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
+          class="bg-white rounded-2xl bg-[url('/src/assets/image/commitees/0.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
         >
           <div
             class="h-full rounded-2xl flex flex-col items-center bg-[#0000007c] w-full px-5 py-14"
@@ -61,7 +61,7 @@
 
       <router-link to="/services/new_muslim">
         <div
-          class="bg-white rounded-2xl bg-[url('../assets/image/home/e3.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
+          class="bg-white rounded-2xl bg-[url('/src/assets/image/home/e3.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
         >
           <div
             class="h-full rounded-2xl flex flex-col items-center bg-[#0000007c] w-full px-5 py-14"
@@ -78,7 +78,7 @@
 
       <router-link to="/services/special_needs">
         <div
-          class="bg-white rounded-2xl bg-[url('../assets/image/home/l5.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
+          class="bg-white rounded-2xl bg-[url('/src/assets/image/home/l5.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
         >
           <div
             class="h-full rounded-2xl flex flex-col items-center bg-[#0000007c] w-full px-5 py-14"
@@ -95,7 +95,7 @@
 
       <router-link class="view-all" to="/services/nikah">
         <div
-          class="bg-white rounded-2xl bg-[url('../assets/image/home/w.jpg')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
+          class="bg-white rounded-2xl bg-[url('/src/assets/image/home/w.jpg')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
         >
           <div
             class="h-full rounded-2xl flex flex-col items-center bg-[#0000007c] w-full px-5 py-14"
@@ -112,7 +112,7 @@
 
       <router-link to="/services/funeral">
         <div
-          class="bg-white rounded-2xl bg-[url('../assets/image/home/f.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
+          class="bg-white rounded-2xl bg-[url('/src/assets/image/home/f.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
         >
           <div
             class="h-full rounded-2xl flex flex-col items-center bg-[#0000007c] w-full px-5 py-14"
@@ -129,7 +129,7 @@
 
       <router-link to="/services/matrimony">
         <div
-          class="bg-white rounded-2xl bg-[url('../assets/image/donation/d3.jpg')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
+          class="bg-white rounded-2xl bg-[url('/src/assets/image/donation/d3.jpg')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
         >
           <div
             class="h-full rounded-2xl flex flex-col items-center bg-[#0000007c] w-full px-5 py-14"
@@ -146,7 +146,7 @@
 
       <router-link to="/services/facilities">
         <div
-          class="bg-white rounded-2xl bg-[url('../assets/image/commitees/6.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
+          class="bg-white rounded-2xl bg-[url('/src/assets/image/commitees/6.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
         >
           <div
             class="h-full rounded-2xl flex flex-col items-center bg-[#0000004f] w-full px-5 py-14"

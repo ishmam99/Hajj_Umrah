@@ -74,7 +74,8 @@
      </div>
    </template>
    <script setup>
-   import { ref } from 'vue'
+   import { ref, onMounted } from 'vue'
+   import { useRoute, useRouter } from 'vue-router'
    import {
     Select,
     SelectContent,
@@ -83,6 +84,7 @@
     SelectLabel,
     SelectTrigger,
     SelectValue
-  } from '/components/ui/select'
+   } from '/components/ui/select'
+ 
    </script>
    

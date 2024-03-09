@@ -20,18 +20,19 @@ import YearlyPlanner from '../components/HomeFolder/YearlyPlanner.vue'
         <h1 class="text-3xl font-bold uppercase pb-3">Virtual Tour</h1>
         <div>
           <div class="flex gap-5 rounded-xl">
-            <div class="w-full shadow-xl p-5 bg-white rounded-xl">
+            <div class="w-1/2 2xl:w-2/3 shadow-xl p-5 bg-white rounded-xl">
               <iframe
-                width="760"
+                
                 height="415"
                 src="https://www.youtube.com/embed/IrBh3UM6J9M?si=cmKWZsNIS8HW0SVJ&amp;controls=0"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
+                class="w-full"
               ></iframe>
             </div>
-            <div class="px-4 py-5 bg-white rounded-lg">
+            <div class="px-4 py-5 bg-white rounded-lg w-1/2 2xl:w-1/3">
               <div class="px-4 py-5 bg-sky-200 rounded-lg">
                 <!-- <p class="text-3xl uppercase text-yellow-800 font-bold">Intro</p> -->
                 <p

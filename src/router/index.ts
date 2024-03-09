@@ -451,6 +451,16 @@ const router = createRouter({
               component: () => import('../views/Finance/FinanceAccountLedger.vue'),
         },
         {
+          path: '/Finance_Dashboard/Account_Ledger/accountLedger/Details/:id',
+          name:'Details',
+              component: () => import('../views/Finance/FinanceAccountLedgerDetails.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Account_Ledger/accountLedger/Edit/:id',
+          name:'Edit',
+              component: () => import('../views/Finance/FinanceAccountLedgerDetails.vue'),
+        },
+        {
           path: '/Finance_Dashboard/Payroll',
           name:'Payroll',
               component: () => import('../views/Finance/FinancePayroll.vue'),
@@ -485,6 +495,11 @@ const router = createRouter({
           name:'Donation_Status',
               component: () => import('../views/Finance/FinanceDonationStatus.vue'),
         },
+        // {
+        //   path: '/Finance_Dashboard/Donation_Status',
+        //   name:'Donation_Status',
+        //       component: () => import('../views/Finance/FinanceDonationStatus.vue'),
+        // },
       ]
     },
     {

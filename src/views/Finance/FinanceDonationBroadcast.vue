@@ -48,8 +48,8 @@
                 <DropdownMenu class="w-full">
                   <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
                     <DropdownMenuContent>
-                      <DropdownMenuItem class="text-yellow-600">Edit</DropdownMenuItem>
-                      <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
+                      <DropdownMenuItem class="text-yellow-600" @click="goToEditPage(1)">Edit</DropdownMenuItem>
+                      <DropdownMenuItem class="text-blue-600" @click="goToDetailPage(1)">Details</DropdownMenuItem>
                       <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -71,8 +71,8 @@
                 <DropdownMenu class="w-full">
                   <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
                     <DropdownMenuContent>
-                      <DropdownMenuItem class="text-yellow-600">Edit</DropdownMenuItem>
-                      <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
+                      <DropdownMenuItem class="text-yellow-600" @click="goToEditPage(1)">Edit</DropdownMenuItem>
+                      <DropdownMenuItem class="text-blue-600" @click="goToDetailPage(1)">Details</DropdownMenuItem>
                       <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -86,7 +86,8 @@
    </div>
  </template>
  <script setup>
- import { ref } from 'vue'
+ import { ref, onMounted } from 'vue'
+   import { useRoute, useRouter } from 'vue-router'
  import {
   Select,
   SelectContent,
@@ -104,5 +105,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '/components/ui/dropdown-menu'
- </script>
+
+const router = useRouter()
+const goToEditPage = (id) => {
+  router.push({ name: 'Edit', params: { id } })
+}
+
+const goToDetailPage = (id) => {
+  router.push({ name: 'Details', params: { id } })
+}
+  </script>
  

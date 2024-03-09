@@ -130,8 +130,8 @@
               >
             </MenubarItem>
             <MenubarItem>
-              <a href="http://localhost:5173/" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Education Service</a
+              <router-link to="/learning-center" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Education Service</router-link
               >
             </MenubarItem>
             <!-- <MenubarItem >

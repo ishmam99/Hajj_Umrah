@@ -37,7 +37,7 @@ const getServiceList = async () => {
   try {
     const { data } = await api().get('get-service-list')
     store.serviceList = data
-  // console.log(store.serviceList[0])
+  console.log(store.serviceList)
   } catch (error) {
     console.log(error)
   }
