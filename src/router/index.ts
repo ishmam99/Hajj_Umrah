@@ -193,6 +193,11 @@ const router = createRouter({
       name: 'projects',
       component: () => import('../views/Activity/Projects.vue')
     },
+    {
+      path: '/career',
+      name: 'Career',
+      component: () => import('../views/Activity/Career.vue')
+    },
 
     {
       path: '/volunteer/educate_the_children',
@@ -972,6 +977,11 @@ const router = createRouter({
       path: '/Supply_Chain/supplierLogin',
       name: 'Supplier Login',
       component: () => import('../views/SupplyChain/SupplierLogin.vue')
+    },
+    {
+      path: '/Supply_Chain/vendor_registration',
+      name: 'Vendor Registration',
+      component: () => import('../views/SupplyChain/VendorRegister.vue')
     },
 
     {

@@ -22,6 +22,7 @@
               </thead>
               <tbody>
                 <tr class="" v-for="(project, index) in projects" :key="index">
+                <!-- <tr class="" v-for="(project, index) in store.projectList" :key="index"> -->
                   <td class="py-4 p-2 gap-2">
                     <h3 class="font-bold">{{ project.id }}</h3>
                   </td>
@@ -90,6 +91,8 @@
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import SocialSidebar from '/src/views/Social/SocialSidevar.vue'
 import { ref } from 'vue'
+import { useSocialStore } from '@/stores/SocialDashboard';
+
 import {
   Dialog,
   DialogContent,
@@ -99,6 +102,7 @@ import {
   DialogTitle,
   DialogTrigger
 } from '/components/ui/dialog'
+
 const projects = ref([
   {
     id: 1,
@@ -134,4 +138,11 @@ const projects = ref([
     time: '6 PM'
   }
 ])
+
+const store = useSocialStore()
+
+
+
+
+
 </script>

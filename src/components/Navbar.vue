@@ -244,6 +244,11 @@
               >
             </MenubarItem>
             <MenubarItem>
+              <router-link to="/career" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Career</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
               <router-link
                 to="/more/ramadan_special"
                 class="w-full hover:pl-5 duration-300 font-semibold"
@@ -484,7 +489,7 @@
             </MenubarItem>
             <MenubarItem>
               <router-link
-                to="/Supply_Chain/supplierLogin"
+                to="/Supply_Chain/vendor_registration"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Register As a New Vendor</router-link
               >

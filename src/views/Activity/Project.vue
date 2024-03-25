@@ -101,7 +101,7 @@
 
 <script setup>
 import DefaultLayout from '../../layouts/DefaultLayout.vue'
-import Card from '../../components/CardSection.vue'
+
 import ActivityMore from '../../components/ActivityMore.vue'
 
 import { ref } from 'vue'

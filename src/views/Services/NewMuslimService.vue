@@ -2,7 +2,7 @@
   <div>
     <DefaultLayout>
       <div
-        class="px-20 pt-20 mt-5 py-5 bg-blue-800 bg-[url('/src/assets/image/home/bg123.png')] bg-repeat shadow-xl"
+        class="px-20 pt-20 mt-5 py-5 bg-cyan-800 bg-[url('/src/assets/image/home/bg123.png')] bg-repeat shadow-xl"
       >
         <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
           <div class="flex items-center justify-center gap-2 font-semibold">
