@@ -75,8 +75,7 @@ import YearlyPlanner from '../components/HomeFolder/YearlyPlanner.vue'
     <Services />
     <LearningCenter />
     <!-- Yearly Planner -->
-    <YearlyPlanner>
-    </YearlyPlanner>
+    <YearlyPlanner/>
     
     <!-- Gallery -->
     <div class="py-[30px] px-[5%] bg-white gap-5">

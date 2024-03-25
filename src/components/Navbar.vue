@@ -632,6 +632,13 @@
                     >Operations Management</router-link
                   >
                 </MenubarItem>
+                <MenubarItem>
+                  <router-link
+                    to="/Library_Login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Media and Communication Management</router-link
+                  >
+                </MenubarItem>
               </MenubarSubContent>
             </MenubarSub>
             <!-- <MenubarItem>

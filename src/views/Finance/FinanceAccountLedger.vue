@@ -25,7 +25,7 @@
             <tbody>
               <tr class="">
                 <td class="py-4 px-2 text-center w-1/5">
-                  <Select class="w-full">
+                  <Select class="w-full" v-model="accountLedger.type">
                     <SelectTrigger class="w-full">
                       <SelectValue placeholder="Revenue / Expense Type" />
                     </SelectTrigger>
@@ -228,10 +228,7 @@ const accountLedger = ref({
 const { toast } = useToast()
 const accountLedgerCreat = async () => {
   try {
-    const data = await api().post('account-ledger-store', {
-      method: 'post',
-      body: accountLedger
-    })
+    const data = await api().post('account-ledger-store',accountLedger.value)
     console.log(data)
     toast({
       title: 'Account Ledger Created '
