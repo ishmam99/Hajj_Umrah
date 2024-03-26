@@ -2,7 +2,7 @@
     <div class="pt-[80px]">
 
     </div>
-    <div class="h-[80vh] relative">
+    <div class="h-[80vh] 2xl:h-[60vh] relative">
         <div class="h-full">
             <swiper
                 :slidesPerView="'1'"
