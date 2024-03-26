@@ -8,6 +8,7 @@ import Services from '../components/HomeFolder/services.vue'
 import LearningCenter from '../components/HomeFolder/learningCenter.vue'
 import FundComponent from '../components/HomeFolder/FundComponent.vue'
 import YearlyPlanner from '../components/HomeFolder/YearlyPlanner.vue'
+import KhutbaKhatira from '../components/HomeFolder/KhutbaKhatira.vue'
 </script>
 
 <template>
@@ -22,7 +23,6 @@ import YearlyPlanner from '../components/HomeFolder/YearlyPlanner.vue'
           <div class="flex gap-5 rounded-xl">
             <div class="w-1/2 2xl:w-2/3 shadow-xl p-5 bg-white rounded-xl">
               <iframe
-                
                 height="415"
                 src="https://www.youtube.com/embed/IrBh3UM6J9M?si=cmKWZsNIS8HW0SVJ&amp;controls=0"
                 title="YouTube video player"
@@ -75,8 +75,9 @@ import YearlyPlanner from '../components/HomeFolder/YearlyPlanner.vue'
     <Services />
     <LearningCenter />
     <!-- Yearly Planner -->
-    <YearlyPlanner/>
-    
+
+    <YearlyPlanner />
+    <KhutbaKhatira class="mt-10" />
     <!-- Gallery -->
     <div class="py-[30px] px-[5%] bg-white gap-5">
       <h1 class="text-3xl font-bold uppercase pb-3">Gallery</h1>
