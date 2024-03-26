@@ -9,7 +9,12 @@ export const useAccountStore = defineStore('accountStore', {
         donationList: [],
     }),
     actions:{
-        
+        DonationListCreate(donation) {
+            console.log(donation , this.donationList)
+            // const currentDonationList = this.donationList
+            // currentDonationList
+            this.donationList.push(donation)
+        },
     },
     persist:true
 })

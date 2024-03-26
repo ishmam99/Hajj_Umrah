@@ -124,6 +124,8 @@ import { useAuthStore } from '@/stores/AuthStore'
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import Tilt from 'vanilla-tilt-vue'
+import { useToast } from "/components/ui/toast/use-toast";
+const { toast } = useToast();
 
 const route = useRoute()
 const router = useRouter()
@@ -134,7 +136,7 @@ const data = ref({
   password: ''
 })
 const authStore = useAuthStore()
-const login = () => {
+const login =async () => {
   if (data.value.email == '' || data.value.password == '') {
     alert('Email or password is missing')
   } else {
@@ -189,6 +191,23 @@ const login = () => {
         store.authUser = user
       }
     } else error.value = true
+
+
+
+
+
+
+    // try {
+    //   const data = await api().post("user/login", loginData.value);
+    //   console.log(data, "logdata");
+      
+    // } catch (error) {
+    //   console.log(error);
+    // }
+
+
+
+
   }
 }
 </script>

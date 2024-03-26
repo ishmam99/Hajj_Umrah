@@ -142,7 +142,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
+import { useAccountStore } from '/src/stores/accountStore.ts'
 
+
+const store = useAccountStore()
 const selectedFile = ref(null);
 
 const donationCreateForm = ref({
@@ -154,7 +157,8 @@ const donationCreateForm = ref({
   end_date: '',
   end_time: '',
   amount: '',
-  image:'',
+  image: '',
+  status:'0'
 })
 
 function onFileChange(event) {
@@ -181,7 +185,18 @@ const { toast } = useToast()
 //   }
 // }
 
-const donationCreateFormCreate = () =>{
-  console.log(donationCreateForm ,'test-1')
+
+
+const donationCreateFormCreate = () => {
+  store.DonationListCreate(donationCreateForm.value)
+  donationCreateForm.value.name = '',
+    donationCreateForm.value.event_id = '',
+    donationCreateForm.value.description = '',
+    donationCreateForm.value.start_date = '',
+    donationCreateForm.value.start_time = '',
+    donationCreateForm.value.end_date = '',
+    donationCreateForm.value.end_time = '',
+    donationCreateForm.value.image = ''
 }
+
 </script>

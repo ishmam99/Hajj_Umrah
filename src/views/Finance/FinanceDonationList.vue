@@ -34,15 +34,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="">
-            <td class="py-4 p-2 w-1/8 text-center">01</td>
+          <tr class="" v-for="item in store.donationList.data">
+            <td class="py-4 p-2 w-1/8 text-center">{{ item.event_id }}</td>
             <td class="py-4 p-2 flex justify-center items-center gap-2 w-3/8">
-              <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-              <h3 class="font-bold">Save The Children</h3>
+              <img :src=item.image alt="" class="h-10" />
+              <h3 class="font-bold">{{ item.name }}</h3>
             </td>
-            <td class="py-4 p-2 text-center w-1/8">1 Jan 2024</td>
-            <td class="py-4 p-2 text-center w-1/8">1 Feb 2024</td>
-            <td class="py-4 p-2 text-center w-1/8">$ 1000000</td>
+            <td class="py-4 p-2 text-center w-1/8">{{ item.start_date }}</td>
+            <td class="py-4 p-2 text-center w-1/8">{{ item.end_date }}</td>
+            <td class="py-4 p-2 text-center w-1/8">$ {{ item.amount }}</td>
             <td class="py-4 p-2 text-center w-1/8">
               <div class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2">
                 <DropdownMenu class="w-full">
@@ -90,6 +90,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useAccountStore } from '/src/stores/accountStore.ts'
 import {
   Select,
   SelectContent,
@@ -107,6 +108,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '/components/ui/dropdown-menu'
+
+const store = useAccountStore() 
 
 
 const router = useRouter()
