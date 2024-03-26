@@ -90,7 +90,6 @@
                 Banner List</router-link>
               <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
                 Banner Broadcast</router-link>
-           
           </ul>
       </div>
 
