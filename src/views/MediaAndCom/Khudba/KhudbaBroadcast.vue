@@ -1,7 +1,7 @@
 <template>
     <div class="px-4 bg-white py-5 w-3/4">
             <div class="flex justify-between items-center pt-4">
-              <p class="text-2xl text-yellow-600 font-bold pb-2">Khutbah List</p>
+              <p class="text-2xl text-yellow-600 font-bold pb-2">Broadcast Khutbah</p>
             </div>
             <hr />
             <div
@@ -36,8 +36,8 @@
                       <p class="text-sm font-bold text-blue-600">Pending</p>
                     </td>
                     <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                        Post
+                      <button class="px-3 py-2 rounded-md shadow-md bg-red-600 text-white text-sm">
+                        Delete
                       </button>
                     </td>
                   </tr>
@@ -57,8 +57,8 @@
                       <p class="text-sm font-bold text-green-600">Completed</p>
                     </td>
                     <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                        Post
+                      <button class="px-3 py-2 rounded-md shadow-md bg-red-600 text-white text-sm">
+                        Delete
                       </button>
                     </td>
                   </tr>
@@ -78,8 +78,8 @@
                       <p class="text-sm font-bold text-blue-600">Pending</p>
                     </td>
                     <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                        Post
+                      <button class="px-3 py-2 rounded-md shadow-md bg-red-600 text-white text-sm">
+                        Delete
                       </button>
                     </td>
                   </tr>

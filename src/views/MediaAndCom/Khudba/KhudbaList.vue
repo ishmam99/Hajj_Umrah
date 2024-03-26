@@ -25,7 +25,7 @@
                       <h3 class="font-bold">01</h3>
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
-                      <h3 class="font-bold">Save The Children</h3>
+                      <h3 class="font-bold">The Virtue of Charity in Ramadan</h3>
                     </td>
                     <td>
                       <p class="text-lg">12:00 AM</p>
@@ -46,7 +46,7 @@
                       <h3 class="font-bold">02</h3>
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
-                      <h3 class="font-bold">Enhance Social Justice</h3>
+                      <h3 class="font-bold">Embracing Ramadan</h3>
                     </td>
                     <td>
                       <p class="text-lg">12:00 AM</p>
@@ -67,7 +67,7 @@
                       <h3 class="font-bold">03</h3>
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
-                      <h3 class="font-bold">Help the weak</h3>
+                      <h3 class="font-bold">When Laws are Held Hostage</h3>
                     </td>
                     <td>
                       <p class="text-lg">12:00 AM</p>
