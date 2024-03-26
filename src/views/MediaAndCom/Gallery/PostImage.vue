@@ -21,7 +21,17 @@
                         >Title <span class="text-red-500">*</span>
                       </label>
                     </div>
-                    <div class="relative mb-3 w-1/2">
+
+                    <!--  -->
+                    <input type="file" class="h-full w-full opacity-0 absolute top-16" />
+                    <label for="" class="text-gray-600"
+                          > Thumbnail <span class="text-red-500">*</span></label
+                        >
+                    <!--  -->
+
+
+
+                    <!-- <div class="relative mb-3 w-1/2">
                         <label for="" class="text-gray-600"
                           > Thumbnail <span class="text-red-500">*</span></label
                         >
@@ -31,7 +41,7 @@
                           <input type="file" class="h-full w-full opacity-0 absolute top-0" />
                           Choose File
                         </div>
-                      </div>
+                    </div> -->
                   </div>
                  
                   
