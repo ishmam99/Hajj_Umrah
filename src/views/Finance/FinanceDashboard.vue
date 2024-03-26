@@ -22,68 +22,68 @@ const store = useAccountStore()
 
 // Account ledger list
 
-const getAccountLedger = async () => {
-  try {
-    const { data } = await api().get('account-ledger-list')
-    console.log(data , 'acoount ledger get')
-    store.accountLedger = data
-  }catch (error) {
-    console.log(error , 'acoount ledger get')
-  }
-}
+// const getAccountLedger = async () => {
+//   try {
+//     const { data } = await api().get('account-ledger-list')
+//     console.log(data , 'acoount ledger get')
+//     store.accountLedger = data
+//   }catch (error) {
+//     console.log(error , 'acoount ledger get')
+//   }
+// }
 
-// Payroll list
+// // Payroll list
 
-const getPayroll = async () => {
-  try {
-    const { data } = await api().get('payroll-list')
-    console.log(data , 'payroll get')
-    store.payroll = data
-  }catch (error) {
-    console.log(error , 'payroll get')
-  }
-}
+// const getPayroll = async () => {
+//   try {
+//     const { data } = await api().get('payroll-list')
+//     console.log(data , 'payroll get')
+//     store.payroll = data
+//   }catch (error) {
+//     console.log(error , 'payroll get')
+//   }
+// }
 
-// project expense list
-const getProjectExpenseList = async () => {
-  try {
-    const { data } = await api().get('project-expense-list')
-    console.log(data , 'preject expense get')
-    store.projectExpenseList = data
-  }catch (error) {
-    console.log(error , 'preject expense get')
-  }
-}
-
-
-
-// operation expense list
-const getOpeationExpenseList = async () => {
-  try {
-    const { data } = await api().get('operation-expense-list')
-    console.log(data , 'operation expense get')
-    store.opeationExpenseList = data
-  }catch (error) {
-    console.log(error , 'operation expense get')
-  }
-}
-
-const getDonationList = async () => {
-  try {
-    const { data } = await api().get('donation-method-list')
-    console.log(data , 'donation list get')
-    store.donationList = data
-  }catch (error) {
-    console.log(error , 'donation list get')
-  }
-}
+// // project expense list
+// const getProjectExpenseList = async () => {
+//   try {
+//     const { data } = await api().get('project-expense-list')
+//     console.log(data , 'preject expense get')
+//     store.projectExpenseList = data
+//   }catch (error) {
+//     console.log(error , 'preject expense get')
+//   }
+// }
 
 
-onMounted(async () => {
-    getAccountLedger()
-    getPayroll()
-    getProjectExpenseList()
-    getOpeationExpenseList()
-    getDonationList()
-})
+
+// // operation expense list
+// const getOpeationExpenseList = async () => {
+//   try {
+//     const { data } = await api().get('operation-expense-list')
+//     console.log(data , 'operation expense get')
+//     store.opeationExpenseList = data
+//   }catch (error) {
+//     console.log(error , 'operation expense get')
+//   }
+// }
+
+// const getDonationList = async () => {
+//   try {
+//     const { data } = await api().get('donation-method-list')
+//     console.log(data , 'donation list get')
+//     store.donationList = data
+//   }catch (error) {
+//     console.log(error , 'donation list get')
+//   }
+// }
+
+
+// onMounted(async () => {
+//     getAccountLedger()
+//     getPayroll()
+//     getProjectExpenseList()
+//     getOpeationExpenseList()
+//     getDonationList()
+// })
 </script>
