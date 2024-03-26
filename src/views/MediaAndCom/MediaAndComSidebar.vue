@@ -22,15 +22,15 @@
       <div>
           <ul @click="drop=1" class="flex items-center gap-2 cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M2 20H22V22H2V20ZM4 12H6V19H4V12ZM9 12H11V19H9V12ZM13 12H15V19H13V12ZM18 12H20V19H18V12ZM2 7L12 2L22 7V11H2V7ZM4 8.23607V9H20V8.23607L12 4.23607L4 8.23607ZM12 8C11.4477 8 11 7.55228 11 7C11 6.44772 11.4477 6 12 6C12.5523 6 13 6.44772 13 7C13 7.55228 12.5523 8 12 8Z"></path></svg>
-            Kudba</ul>
+            Khudbah</ul>
           <ul class="pl-8 flex flex-col gap-1 overflow-hidden" :class="drop==1 ? 'h-fit'
           :'h-0'">
-            <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+            <router-link to="/media_and_com_khudba_create_khudba" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
               Create Khudba</router-link>
-              <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
-              Khudba List</router-link>
-              <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
-              Khudba Broadcast</router-link>
+              <router-link to="/media_and_com_khudba_khudba_list" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+              Khudbah List</router-link>
+              <router-link to="/media_and_com_khudba_khudba_broadcast" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+              Khudbah Broadcast</router-link>
            
           </ul>
       </div>
@@ -41,24 +41,24 @@
           Khatira</ul>
           <ul class="pl-8 flex flex-col gap-1 overflow-hidden" :class="drop==2 ? 'h-fit'
           :'h-0'"> 
-            <router-link to="/Finance_Dashboard/Donation_Broadcast" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>Create Khatira</router-link>
+            <router-link to="/media_and_com_khatira_create" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>Create Khatira</router-link>
 
-            <router-link to="/Finance_Dashboard/Donation_List" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>Khatira List</router-link>
+            <router-link to="/media_and_com_khatira_list" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>Khatira List</router-link>
             
-            <router-link to="/Finance_Dashboard/Donation_Status" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>Broadcast Khatira</router-link>
+            <router-link to="/media_and_com_khatira_broadcast_khatira" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>Broadcast Khatira</router-link>
           </ul>
       </div>
       <div>
           <ul @click="drop=3" class="flex items-center gap-2 cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21 21H13V6C13 4.34315 14.3431 3 16 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21ZM11 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H8C9.65685 3 11 4.34315 11 6V21ZM11 21H13V23H11V21Z"></path></svg>
-            Publication</ul>
+            Publications</ul>
           <ul class="pl-8 flex flex-col gap-1 overflow-hidden" :class="drop==3 ? 'h-fit'
           :'h-0'">
-            <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+            <router-link to="/media_and_com_post_publications" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
               Post Publication</router-link>
-              <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
-                Publication List</router-link>
-              <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+              <router-link to="/media_and_com_publications_list" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+                Publications List</router-link>
+              <router-link to="/media_and_com_publications_broadcast" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
                 Publication Broadcast</router-link>
            
           </ul>
@@ -69,11 +69,11 @@
             Gallery</ul>
           <ul class="pl-8 flex flex-col gap-1 overflow-hidden" :class="drop==4 ? 'h-fit'
           :'h-0'">
-            <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+            <router-link to="/media_and_com_pons_post_image" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
               Post Image</router-link>
-              <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+              <router-link to="/media_and_com_pons_image_list" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
                 Image List</router-link>
-              <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+              <router-link to="/media_and_com_pons_image_broadcast" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
                 Image Broadcast</router-link>
            
           </ul>
@@ -84,11 +84,11 @@
             Banner</ul>
           <ul class="pl-8 flex flex-col gap-1 overflow-hidden" :class="drop==5 ? 'h-fit'
           :'h-0'">
-            <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+            <router-link to="/media_and_com_pons_post_banner" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
               Post Banner</router-link>
-              <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+              <router-link to="/media_and_com_pons_banner_list" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
                 Banner List</router-link>
-              <router-link to="/Finance_Dashboard/Payroll" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+              <router-link to="/media_and_com_pons_banner_broadcast" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
                 Banner Broadcast</router-link>
           </ul>
       </div>

@@ -852,6 +852,8 @@ const router = createRouter({
         },
       ],
     },
+
+    // media and communication dashboard
     {
       path: '/Media_Login',
       name: 'Media Login',
@@ -867,13 +869,81 @@ const router = createRouter({
           name: 'Media_And_Com_Profile',
           component: () => import('../views/MediaAndCom/Profile/MediaAndComProfile.vue'),
         },
-        // {
-        //   path: '/Opration_Meeting_Create',
-        //   name: 'Opration_Meeting_Create',
-        //   component: () => import('../views/Operation/MeetingManagement/CreateMeeting.vue'),
-        // },
-        
-        
+        {
+          path: '/media_and_com_khudba_create_khudba',
+          name: 'Media_And_Com_Khudba_Create_Khudba',
+          component: () => import('@/views/MediaAndCom/Khudba/CreateKhudba.vue'),
+        },
+        {
+          path: '/media_and_com_khudba_khudba_list',
+          name: 'Media_And_Com_Khudba_Khudba_List',
+          component: () => import('@/views/MediaAndCom/Khudba/KhudbaList.vue'),
+        },
+        {
+          path: '/media_and_com_khudba_khudba_broadcast',
+          name: 'Media_And_Com_Khudba_Khudba_Broadcast',
+          component: () => import('@/views/MediaAndCom/Khudba/KhudbaBroadcast.vue'),
+        },
+        {
+          path: '/media_and_com_khatira_create',
+          name: 'Media_And_Com_Khatira_Create',
+          component: () => import('@/views/MediaAndCom/Khatira/CreateKhatira.vue'),
+        },
+        {
+          path: '/media_and_com_khatira_list',
+          name: 'Media_And_Com_Khatira_List',
+          component: () => import('@/views/MediaAndCom/Khatira/KhatiraList.vue'),
+        },
+        {
+          path: '/media_and_com_khatira_broadcast_khatira',
+          name: 'Media_And_Com_Khatira_Broadcast_Khatira',
+          component: () => import('@/views/MediaAndCom/Khatira/BroadcastKhatira.vue'),
+        },
+        {
+          path: '/media_and_com_post_publications',
+          name: 'Media_And_Com_Post_Publications',
+          component: () => import('@/views/MediaAndCom/Publications/PostPublication.vue'),
+        },
+        {
+          path: '/media_and_com_publications_list',
+          name: 'Media_And_Com_Publications_List',
+          component: () => import('@/views/MediaAndCom/Publications/PublicationList.vue'),
+        },
+        {
+          path: '/media_and_com_publications_broadcast',
+          name: 'Media_And_Com_Publications_Broadcast',
+          component: () => import('@/views/MediaAndCom/Publications/PublicationBroadcast.vue'),
+        },
+        {
+          path: '/media_and_com_pons_post_image',
+          name: 'Media_And_Com_Pons_Post_Image',
+          component: () => import('@/views/MediaAndCom/Gallery/PostImage.vue'),
+        },
+        {
+          path: '/media_and_com_pons_image_list',
+          name: 'Media_And_Com_Pons_Image_List',
+          component: () => import('@/views/MediaAndCom/Gallery/ImageList.vue'),
+        },
+        {
+          path: '/media_and_com_pons_image_broadcast',
+          name: 'Media_And_Com_Pons_Image_Broadcast',
+          component: () => import('@/views/MediaAndCom/Gallery/ImageBroadcast.vue'),
+        },
+        {
+          path: '/media_and_com_pons_post_banner',
+          name: 'Media_And_Com_Pons_Post_Banner',
+          component: () => import('@/views/MediaAndCom/Banner/PostBanner.vue'),
+        },
+        {
+          path: '/media_and_com_pons_banner_list',
+          name: 'Media_And_Com_Pons_Banner_List',
+          component: () => import('@/views/MediaAndCom/Banner/BannerList.vue'),
+        },
+        {
+          path: '/media_and_com_pons_banner_broadcast',
+          name: 'Media_And_Com_Pons_Banner_Broadcast',
+          component: () => import('@/views/MediaAndCom/Banner/BannerBroadcast.vue'),
+        },        
         
       ],
     },

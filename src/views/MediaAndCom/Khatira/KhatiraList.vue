@@ -1,7 +1,7 @@
 <template>
     <div class="px-4 bg-white py-5 w-3/4">
             <div class="flex justify-between items-center pt-4">
-              <p class="text-2xl text-yellow-600 font-bold pb-2">Khutbah List</p>
+              <p class="text-2xl text-yellow-600 font-bold pb-2">Khatira List</p>
             </div>
             <hr />
             <div
@@ -11,7 +11,7 @@
                 <thead>
                   <tr class="bg-white text-xl">
                     <th class="p-2 text-left">Number</th>
-                    <th class="p-2 text-left">Khutbah Topic</th>
+                    <th class="p-2 text-left">Khatira Topic</th>
                     <th class="p-2 text-left">Time</th>
                     <th class="p-2 text-left">Speaker</th>
                     <th class="p-2 text-left">Action</th>
