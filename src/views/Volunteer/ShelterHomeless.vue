@@ -226,8 +226,8 @@
 </template>
 
 <script setup>
-import DefaultLayout from '../../layouts/DefaultLayout.vue'
-import VolunteerMore from '../../components/VolunteerMore.vue'
+import DefaultLayout from '/src//layouts/DefaultLayout.vue'
+import VolunteerMore from '/src/components/VolunteerMore.vue'
 </script>
 
 <style lang="scss" scoped></style>

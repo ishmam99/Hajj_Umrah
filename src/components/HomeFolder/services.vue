@@ -5,7 +5,7 @@
     <!-- Responsive Card Layout -->
     <div class="grid grid-cols-4 gap-x-5 gap-y-16">
       <!-- Loop through service items to generate cards -->
-      <router-link to="/services/education">
+      <router-link to="/management-login">
         <div
           class="bg-white rounded-2xl bg-[url('/src/assets/image/commitees/8.png')] w-full bg-top bg-cover bg-origin-contentshadow-2xl border border-white h-full flex flex-col items-center uppercase text-center relative"
         >

@@ -372,9 +372,9 @@
 </template>
 
 <script setup>
-import DefaultLayout from '../../layouts/DefaultLayout.vue'
-import Card from '../../components/CardSection.vue'
-import FacilitesMore from '../../components/FacilitiesMore.vue'
+import DefaultLayout from '/src/layouts/DefaultLayout.vue'
+import Card from '/src/components/cardSection.vue'
+import FacilitesMore from '/src/components/FacilitiesMore.vue'
 
 import { ref } from 'vue'
 import { Calendar } from '/components/ui/calendar'

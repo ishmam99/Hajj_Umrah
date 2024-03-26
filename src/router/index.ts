@@ -852,6 +852,31 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: '/Media_Login',
+      name: 'Media Login',
+      component: () => import('../views/Auth/LogIn.vue')
+    },
+    {
+      path: '/Media_And_Com_Dashboard',
+      name: 'Media_And_Com_Dashboard',
+      component: () => import('../views/MediaAndCom/MediaAndComDashboard.vue'),
+      children: [
+        {
+          path: '/Media_And_Com_Profile',
+          name: 'Media_And_Com_Profile',
+          component: () => import('../views/MediaAndCom/Profile/MediaAndComProfile.vue'),
+        },
+        // {
+        //   path: '/Opration_Meeting_Create',
+        //   name: 'Opration_Meeting_Create',
+        //   component: () => import('../views/Operation/MeetingManagement/CreateMeeting.vue'),
+        // },
+        
+        
+        
+      ],
+    },
    
     {
       path: '/Signup',

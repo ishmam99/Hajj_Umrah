@@ -83,7 +83,7 @@
 </template>
 
 <script setup>
-import DefaultLayout from '@/layouts/DefaultLayout.vue'
+import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import { useAuthStore } from '/src/stores/AuthStore.ts'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'

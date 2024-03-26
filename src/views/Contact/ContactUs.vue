@@ -158,7 +158,7 @@
 
 <script setup>
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
-import Card from '/src/components/CardSection.vue'
+import Card from '/src/components/cardSection.vue'
 import ContactMore from '/src/components/ContactMore.vue'
 
 const googleMapsEmbedUrl = "https://maps.google.com/maps?q=31.106,-97.6475&z=15&output=embed";

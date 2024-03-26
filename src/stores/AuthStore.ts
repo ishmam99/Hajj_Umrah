@@ -56,7 +56,12 @@ export const useAuthStore = defineStore('authStore', {
         email: 'operation@idl.com',
         password: '123456',
         role: 'operation'
-      }
+      },
+      {
+        email: 'media@idl.com',
+        password: '123456',
+        role: 'media'
+      },
     ],
     authUser: ''
   }),

@@ -194,31 +194,31 @@
           <MenubarTrigger class="px-1 font-bold"> Learning Center </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
-              <router-link to="/learning-center">Areas Of Study </router-link>
+              <router-link to="/learning-center" class=" hover:pl-5 duration-300 font-semibold text-sm">Areas Of Study </router-link>
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/learning-center/all-courses">Our Courses</router-link>
+              <router-link to="/learning-center/all-courses" class=" hover:pl-5 duration-300 font-semibold text-sm">Our Courses</router-link>
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/learning-center/programs">Our Programs</router-link>
+              <router-link to="/learning-center/programs" class=" hover:pl-5 duration-300 font-semibold text-sm">Our Programs</router-link>
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/registration" class="w-full hover:pl-5 duration-300 text-sm"
+              <router-link to="/registration" class="w-full hover:pl-5 duration-300 text-sm font-semibold"
                 >Student Admission
               </router-link>
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/reg-teacher" class="w-full hover:pl-5 duration-300 text-sm"
+              <router-link to="/reg-teacher" class="w-full hover:pl-5 duration-300 text-sm font-semibold"
                 >Teacher Registration
               </router-link>
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/student-login" class="w-full hover:pl-5 duration-300 text-sm"
+              <router-link to="/student-login" class="w-full hover:pl-5 duration-300 text-sm font-semibold"
                 >Student Login
               </router-link></MenubarItem
             >
             <MenubarItem>
-              <router-link to="/teacher-login" class="w-full hover:pl-5 duration-300 text-sm"
+              <router-link to="/teacher-login" class="w-full hover:pl-5 duration-300 text-sm font-semibold"
                 >Teacher Login
               </router-link></MenubarItem
             >
@@ -273,14 +273,13 @@
               <!-- <a href="/more/registration/memebship_registration" class=" w-full hover:pl-5 duration-300 font-semibold">Membership Registration</a> -->
             </MenubarItem>
             <MenubarItem>
-              <!-- <router-link to="/boardmemberlogin" class=" w-full hover:pl-5 duration-300 font-semibold">Board Member Login</router-link> -->
-              <!-- <router-link to="/boardmemberlogin" class=" w-full hover:pl-5 duration-300 font-semibold">Board Member Login</router-link> -->
-              <a
+              <router-link to="/boardmemberlogin" class=" w-full hover:pl-5 duration-300 font-semibold">Board Member Login</router-link>
+              <!-- <a
                 href="https://masjid.islamicdigitallane.com/login"
                 target="_blank"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Board Member Login</a
-              >
+              > -->
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
@@ -557,7 +556,7 @@
         </MenubarMenu>
         <MenubarMenu v-if="store?.user">
           <MenubarTrigger class="px-1 font-bold">
-            <router-link :to="store?.user?.dashboard"> Dashboard </router-link>
+            <router-link :to="store?.user?.dashboard" class="p-1 rounded-md"> Dashboard </router-link>
           </MenubarTrigger>
         </MenubarMenu>
         <MenubarMenu v-else>
@@ -639,7 +638,7 @@
                 </MenubarItem>
                 <MenubarItem>
                   <router-link
-                    to="/Library_Login"
+                    to="/Media_Login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
                     >Media and Communication Management</router-link
                   >

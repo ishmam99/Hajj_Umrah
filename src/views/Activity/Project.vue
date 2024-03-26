@@ -100,9 +100,9 @@
 </template>
 
 <script setup>
-import DefaultLayout from '../../layouts/DefaultLayout.vue'
+import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 
-import ActivityMore from '../../components/ActivityMore.vue'
+import ActivityMore from '/src/components/ActivityMore.vue'
 
 import { ref } from 'vue'
 

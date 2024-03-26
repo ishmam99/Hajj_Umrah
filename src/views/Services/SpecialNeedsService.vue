@@ -48,9 +48,9 @@
 </template>
 
 <script setup>
-import DefaultLayout from '../../layouts/DefaultLayout.vue'
+import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import Card from '/src/components/cardSection.vue'
-import FacilitesMore from '../../components/FacilitiesMore.vue'
+import FacilitesMore from '@/components/FacilitiesMore.vue'
 
 </script>
 
