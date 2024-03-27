@@ -129,17 +129,17 @@
           Maintainance Management
         </button>
         <div v-show="currentAccordions === 'maintainanceManagement'" class="submenu mx-8">
-          <router-link to="/" class="flex items-center gap-2"
-            >- Create Maintainance Work</router-link
+          <router-link to="/operation_maintenance_create_maintenance" class="flex items-center gap-2"
+            >- Create Maintenance Work</router-link
           >
-          <router-link to="/" class="flex items-center gap-2"
-            >- Maintainance Works List</router-link
+          <router-link to="/operation_maintenance_work_list" class="flex items-center gap-2"
+            >- Maintenance Work List</router-link
           >
-          <router-link to="/" class="flex items-center gap-2"
-            >- Post Maintainance Work</router-link
+          <router-link to="/operation_maintenance_post_work" class="flex items-center gap-2"
+            >- Post Maintenance Work</router-link
           >
-          <router-link to="/" class="flex items-center gap-2"
-            >- Maintainance Work Status</router-link
+          <router-link to="/operation_maintenance_work_status" class="flex items-center gap-2"
+            >- Maintenance Work Status</router-link
           >
         </div>
       </div>
