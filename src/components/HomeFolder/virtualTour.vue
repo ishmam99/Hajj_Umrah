@@ -2,10 +2,10 @@
   <div class="w-full px-5">
     <h1 class="text-3xl font-bold uppercase pb-3">Virtual Tour</h1>
     <div>
-      <div class="flex gap-5 rounded-xl">
-        <div class="w-1/2 2xl:w-2/3 shadow-xl p-5 bg-white rounded-xl">
+      <div class="lg:flex gap-5 rounded-xl">
+        <div class="w-1/2 shadow-xl p-5 bg-white rounded-xl h-4/6">
           <iframe
-            height="415"
+            height="420"
             src="https://www.youtube.com/embed/IrBh3UM6J9M?si=cmKWZsNIS8HW0SVJ&amp;controls=0"
             title="YouTube video player"
             frameborder="0"
@@ -14,8 +14,8 @@
             class="w-full"
           ></iframe>
         </div>
-        <div class="px-4 py-5 bg-white rounded-lg w-1/2 2xl:w-1/3">
-          <div class="h-full rounded-lg">
+        <div class="rounded-lg lg:w-1/2">
+          <div class="h-5/6 bg-white px-4 py-5 rounded-lg">
             <swiper
               :slidesPerView="'1'"
               :centeredSlides="true"
@@ -33,35 +33,37 @@
               class="mySwiper rounded-lg"
             >
               <swiper-slide>
-                <img src="/src/assets/image/hero/h1.jpg" alt="" class="" />
+                <img src="@/assets/image/commitees/12.jpg" alt="" class="" />
                 <div class="head">
-                  <p>Welcome To</p>
-                  <h1>Islamic Digital Lane</h1>
+                  <p class="text-xl pt-1">Friday Khutba</p>
+                  <p class="py-2">Imam Ali</p>
+                  <h1>March 27, 2024</h1>
                 </div>
               </swiper-slide>
               <swiper-slide>
-                <img src="/src/assets/image/hero/h2.jpg" alt="" class="" />
+                <img src="@/assets/image/commitees/10.jpg" alt="" class="" />
                 <div class="head">
-                  <p>Islamic Digital Lane</p>
-                  <h1>Learning Center</h1>
+                  <p class="text-xl pt-2">Khatira</p>
+                  <p class="py-2">Yasir Qadhi</p>
+                  <h1>March 19, 2024</h1>
                 </div>
               </swiper-slide>
               <swiper-slide>
-                <img src="/src/assets/image/hero/h5.jpg" alt="" class="" />
+                <img src="@/assets/image/commitees/14.jpg" alt="" class="" />
                 <div class="head">
-                  <p>Islamic Digital Lane</p>
-                  <h1>Prayer Service</h1>
+                  <p class="text-xl pt-1">Friday Khutba</p>
+                  <p class="py-2">Omar Sulaiman</p>
+                  <h1>March 27, 2024</h1>
                 </div>
               </swiper-slide>
-              <swiper-slide>
+              <!-- <swiper-slide>
                 <img src="/src/assets/image/hero/h6.jpg" alt="" class="" />
                 <div class="head">
                   <p>Islamic Digital Lane</p>
                   <h1>New Muslim Service</h1>
-                  <button class="">
-                  </button>
+                  <button class=""></button>
                 </div>
-              </swiper-slide>
+              </swiper-slide> -->
             </swiper>
           </div>
         </div>
@@ -103,9 +105,9 @@ const modules = [Pagination, Navigation, Autoplay]
   position: relative;
 }
 .head {
-background: rgba(0, 0, 0, 0.452);
+  background: rgba(0, 0, 0, 0.452);
   text-shadow: 2px 2px 3px black;
-  font-size: 54px;
+  font-size: 36px;
   font-weight: 700;
   color: white;
   position: absolute;

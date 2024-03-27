@@ -18,22 +18,37 @@ import VirtualTour from '/src/components/HomeFolder/virtualTour.vue'
     <div
       class="py-[30px] px-[5%] bg-slate-50 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
     >
-      <VirtualTour/>
+      <VirtualTour />
     </div>
     <div
-      class="py-[30px] px-[5%] bg-slate-100 bg-[url('../assets/image/home/pattern-1.png')] flex justify-center gap-5 mt-10"
+      class="py-[30px] px-[5%] bg-slate-100 bg-[url('../assets/image/home/pattern-1.png')] flex justify-center gap-5"
     >
       <!-- <Prayer/> -->
       <Announcement />
     </div>
-    <FundComponent />
+    <div
+      class="py-[30px] rounded-lg bg-slate-50 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
+    >
+      <FundComponent />
+    </div>
     <UpcommingEvent />
-    <Services />
+    <div
+      class="py-[30px] rounded-lg bg-slate-50 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
+    >
+      <Services />
+    </div>
+    <div
+      class="py-[30px] rounded-lg bg-slate-50 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
+    >
+      <FundComponent />
+    </div>
     <LearningCenter />
-    <!-- Yearly Planner -->
-
-    <YearlyPlanner />
-    <KhutbaKhatira class="mt-10" />
+    <div
+      class="py-[30px] rounded-lg bg-slate-50 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
+    >
+      <YearlyPlanner />
+    </div>
+    <KhutbaKhatira class="" />
     <!-- Gallery -->
     <div class="py-[30px] px-[5%] bg-white gap-5">
       <h1 class="text-3xl font-bold uppercase pb-3">Gallery</h1>
