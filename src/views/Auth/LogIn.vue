@@ -3,20 +3,20 @@
     <div
       class="w-full pt-[120px] 2xl:h-screen py-[50px] 2xl:py-[0px] flex justify-center flex-row-reverse gap-4 items-center bg-slate-50"
     >
-      <form @submit.prevent="login(u)">
+      <form @submit.prevent="login()">
         <div class="h-[550px] w-[500px] bg-[#ffffff] px-5 py-10 rounded-lg shadow-md">
           <img src="/src/assets/image/common/n1.png" alt="" class="w-20 m-auto" />
           <p class="text-2xl font-bold text-center text-[#0b2036]">{{ route.name }}</p>
           <p class="font-semibold py-1.5">Email</p>
           <input
             @change="error = false"
-            v-model="data.email"
+            v-model="loginData.email"
             type="email"
             class="border border-gray-300 focus:outline-yellow-600 rounded-md w-full py-1.5 px-3"
           />
           <p class="font-semibold py-1.5">Password</p>
           <input
-            v-model="data.password"
+            v-model="loginData.password"
             type="password"
             class="border border-gray-300 focus:outline-yellow-600 rounded-md w-full py-1.5 px-3"
           />
@@ -131,79 +131,85 @@ const route = useRoute()
 const router = useRouter()
 const error = ref(false)
 
-const data = ref({
+const loginData = ref({
   email: '',
   password: ''
 })
 const authStore = useAuthStore()
 const login =async () => {
-  if (data.value.email == '' || data.value.password == '') {
+  if (loginData.value.email == '' || loginData.value.password == '') {
     alert('Email or password is missing')
   } else {
-    const user = authStore.userList.find((u) => u.email == data.value.email)
-    // console.log(check , data.value)
-    if (user && user.password == data.value.password) {
-      authStore.login(user)
-      if (user.role == 'member') {
-        authStore.user.dashboard = { name: 'Membar_Dashboard' }
-        router.push({ name: 'Membar_Dashboard' })
-        store.authUser = user
-      } else if (user.role == 'admin') {
-        authStore.user.dashboard = { name: 'Admin_Dashboard' }
-        router.push({ name: 'Admin_Dashboard' })
-        store.authUser = user
-      } else if (user.role == 'social') {
-        authStore.user.dashboard = { name: 'Social_Service_Dashboard_Profile' }
-        router.push({ name: 'Social_Service_Dashboard_Profile' })
-        store.authUser = user
-      } else if (user.role == 'youth') {
-        authStore.user.dashboard = { name: 'Youth_Dashboard_Profile' }
-        router.push({ name: 'Youth_Dashboard_Profile' })
-        store.authUser = user
-      } else if (user.role == 'finance') {
-         authStore.user.dashboard = { name: 'Finance_Dashboard_Profile' }
-        router.push({ name: 'Finance_Dashboard_Profile' })
-        store.authUser = user
-      } else if (user.role == 'education') {
-        authStore.user.dashboard = { name: 'Education_Dashboard' }
-        router.push({ name: 'Education_Dashboard' })
-        store.authUser = user
-      } else if (user.role == 'supply') {
-        authStore.user.dashboard = { name: 'Supply_Admin_Profile' }
-        router.push({ name: 'Supply_Admin_Profile' })
-        store.authUser = user
-      } else if (user.role == 'hr') {
-        authStore.user.dashboard = { name: 'HR_Dashboard_Proile' }
-        router.push({ name: 'HR_Dashboard_Proile' })
-        store.authUser = user
-      } else if (user.role == 'volunteer') {
-        authStore.user.dashboard = { name: 'Volunteer_Dashboard' }
-        router.push({ name: 'Volunteer_Dashboard' })
-        store.authUser = user
-      } else if (user.role == 'operation') {
-        authStore.user.dashboard = { name: 'Opration_Management_profile' }
-        router.push({ name: 'Opration_Management_profile' })
-        store.authUser = user
-      }
-      else if (user.role == 'media') {
-        authStore.user.dashboard = { name: 'Media_And_Com_Profile' }
-        router.push({ name: 'Media_And_Com_Profile' })
-        store.authUser = user
-      }
-    } else error.value = true
+    // const user = authStore.userList.find((u) => u.email == data.value.email)
+    // // console.log(check , data.value)
+    // if (user && user.password == data.value.password) {
+    //   authStore.login(user)
+    //   if (user.role == 'member') {
+    //     authStore.user.dashboard = { name: 'Membar_Dashboard' }
+    //     router.push({ name: 'Membar_Dashboard' })
+    //     store.authUser = user
+    //   } else if (user.role == 'admin') {
+    //     authStore.user.dashboard = { name: 'Admin_Dashboard' }
+    //     router.push({ name: 'Admin_Dashboard' })
+    //     store.authUser = user
+    //   } else if (user.role == 'social') {
+    //     authStore.user.dashboard = { name: 'Social_Service_Dashboard_Profile' }
+    //     router.push({ name: 'Social_Service_Dashboard_Profile' })
+    //     store.authUser = user
+    //   } else if (user.role == 'youth') {
+    //     authStore.user.dashboard = { name: 'Youth_Dashboard_Profile' }
+    //     router.push({ name: 'Youth_Dashboard_Profile' })
+    //     store.authUser = user
+    //   } else if (user.role == 'finance') {
+    //      authStore.user.dashboard = { name: 'Finance_Dashboard_Profile' }
+    //     router.push({ name: 'Finance_Dashboard_Profile' })
+    //     store.authUser = user
+    //   } else if (user.role == 'education') {
+    //     authStore.user.dashboard = { name: 'Education_Dashboard' }
+    //     router.push({ name: 'Education_Dashboard' })
+    //     store.authUser = user
+    //   } else if (user.role == 'supply') {
+    //     authStore.user.dashboard = { name: 'Supply_Admin_Profile' }
+    //     router.push({ name: 'Supply_Admin_Profile' })
+    //     store.authUser = user
+    //   } else if (user.role == 'hr') {
+    //     authStore.user.dashboard = { name: 'HR_Dashboard_Proile' }
+    //     router.push({ name: 'HR_Dashboard_Proile' })
+    //     store.authUser = user
+    //   } else if (user.role == 'volunteer') {
+    //     authStore.user.dashboard = { name: 'Volunteer_Dashboard' }
+    //     router.push({ name: 'Volunteer_Dashboard' })
+    //     store.authUser = user
+    //   } else if (user.role == 'operation') {
+    //     authStore.user.dashboard = { name: 'Opration_Management_profile' }
+    //     router.push({ name: 'Opration_Management_profile' })
+    //     store.authUser = user
+    //   }
+    //   else if (user.role == 'media') {
+    //     authStore.user.dashboard = { name: 'Media_And_Com_Profile' }
+    //     router.push({ name: 'Media_And_Com_Profile' })
+    //     store.authUser = user
+    //   }
+    // } else error.value = true
 
 
 
 
 
 
-    // try {
-    //   const data = await api().post("user/login", loginData.value);
-    //   console.log(data, "logdata");
+    try {
+      const data = await api().post("user/login", loginData.value);
+      console.log(data.data, "logdata");
+      console.log(data.data.user, data.data.token, data.data.role[0].name)
+      authStore.login(data.data.user, data.data.token, data.data.role[0].name)
+      // if (authStore.role == 'Admin') {
+      //   router.push({ name: 'Admin_Dashboard' })
+      // }
       
-    // } catch (error) {
-    //   console.log(error);
-    // }
+      
+    } catch (error) {
+      console.log(error);
+    }
 
 
 

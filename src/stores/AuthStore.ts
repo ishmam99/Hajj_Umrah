@@ -6,6 +6,8 @@ export const useAuthStore = defineStore('authStore', {
   state: () => ({
     isAuthenticated: false,
     user: null,
+    token: null,
+    role : null,
     userList: [
       {
         email: 'member@idl.com',
@@ -66,10 +68,14 @@ export const useAuthStore = defineStore('authStore', {
     authUser: ''
   }),
   actions: {
-    login(user) {
+    login(user,token,role) {
       this.isAuthenticated = true
       this.user = user
+      this.token = token
+      this.role = role
+      console.log(user, token,role )
     },
+
     logout() {
       this.isAuthenticated = false
       this.user = null
