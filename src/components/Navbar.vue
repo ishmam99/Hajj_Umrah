@@ -3,12 +3,12 @@
     class="h-[80px] w-full flex justify-center bg-[url('/src/assets/image/home/pattern-1.png')] bg-repeat items-center text-black fixed top-0 z-40 bg-[#36897bfa] duration-300"
   >
     <div
-      class="flex items-center justify-center gap-5 2xl:justify-between bg-[#23646dc6] py-4 px-[3%] uppercase text-sm w-full font-semibold"
+      class="flex items-center justify-center gap-5 bg-[#23646dc6] py-4 px-[3%] uppercase text-sm w-full font-semibold"
     >
       <div>
         <img src="/src/assets/image/common/n1.png" alt="" class="h-[50px] bg-white rounded-xl" />
       </div>
-      <Menubar class="rounded-none font-bold border-0 text-white gap-2">
+      <Menubar class="rounded-none font-bold border-0 text-white flex gap-5">
         <MenubarMenu>
           <MenubarTrigger class="px-1 font-bold">
             <router-link to="/" class="font-bold rounded-lg p-1">Home</router-link>
