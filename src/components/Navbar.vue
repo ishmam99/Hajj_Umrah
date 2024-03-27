@@ -11,12 +11,12 @@
       <Menubar class="rounded-none font-bold border-0 text-white flex lg:gap-3">
         <MenubarMenu>
           <MenubarTrigger class="px-1 font-bold">
-            <router-link to="/" class="font-bold rounded-lg p-1 lg:text-lg">Home</router-link>
+            <router-link to="/" class="font-bold rounded-lg p-1 2xl:text-lg">Home</router-link>
           </MenubarTrigger>
         </MenubarMenu>
 
         <MenubarMenu>
-          <MenubarTrigger class="font-bold lg:text-lg"
+          <MenubarTrigger class="font-bold 2xl:text-lg"
             >Services
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
@@ -146,7 +146,7 @@
         </MenubarMenu>
 
         <MenubarMenu>
-          <MenubarTrigger class="font-bold lg:text-lg"
+          <MenubarTrigger class="font-bold 2xl:text-lg"
             >Digital Library
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
@@ -193,7 +193,7 @@
         </MenubarMenu>
 
         <MenubarMenu>
-          <MenubarTrigger class="font-bold lg:text-lg"> Learning Center </MenubarTrigger>
+          <MenubarTrigger class="font-bold 2xl:text-lg"> Learning Center </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
               <router-link
@@ -248,7 +248,7 @@
         </MenubarMenu>
 
         <MenubarMenu>
-          <MenubarTrigger class="font-bold lg:text-lg"
+          <MenubarTrigger class="font-bold 2xl:text-lg"
             >Activities
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
@@ -311,7 +311,7 @@
         </MenubarMenu>
 
         <MenubarMenu>
-          <MenubarTrigger class="font-bold lg:text-lg"
+          <MenubarTrigger class="font-bold 2xl:text-lg"
             >Get Involved
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
@@ -408,7 +408,7 @@
         </MenubarMenu>
 
         <MenubarMenu>
-          <MenubarTrigger class="font-bold lg:text-lg"
+          <MenubarTrigger class="font-bold 2xl:text-lg"
             >About Us
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
@@ -444,7 +444,7 @@
         </MenubarMenu>
 
         <MenubarMenu>
-          <MenubarTrigger class="font-bold lg:text-lg"
+          <MenubarTrigger class="font-bold 2xl:text-lg"
             >Contact
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
@@ -500,7 +500,7 @@
           </MenubarContent>
         </MenubarMenu> -->
         <MenubarMenu>
-          <MenubarTrigger class="font-bold lg:text-lg"
+          <MenubarTrigger class="font-bold 2xl:text-lg"
             >Supply Chain
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
@@ -543,7 +543,7 @@
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
-          <MenubarTrigger class="font-bold lg:text-lg"
+          <MenubarTrigger class="font-bold 2xl:text-lg"
             >Donate
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
@@ -563,7 +563,7 @@
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
-          <MenubarTrigger class="font-bold lg:text-lg"
+          <MenubarTrigger class="font-bold 2xl:text-lg"
             >Member
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
@@ -588,7 +588,7 @@
           </MenubarTrigger>
         </MenubarMenu>
         <MenubarMenu v-else>
-          <MenubarTrigger class="lg:text-lg font-bold"
+          <MenubarTrigger class="2xl:text-lg font-bold"
             >Login
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>

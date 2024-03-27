@@ -3,9 +3,9 @@
     <h1 class="text-3xl font-bold uppercase pb-3">Virtual Tour</h1>
     <div>
       <div class="lg:flex gap-5 rounded-xl">
-        <div class="w-1/2 shadow-xl p-5 bg-white rounded-xl h-4/6">
+        <div class="w-2/3 shadow-xl p-5 bg-white rounded-xl">
           <iframe
-            height="420"
+            height="100%"
             src="https://www.youtube.com/embed/IrBh3UM6J9M?si=cmKWZsNIS8HW0SVJ&amp;controls=0"
             title="YouTube video player"
             frameborder="0"
@@ -14,8 +14,8 @@
             class="w-full"
           ></iframe>
         </div>
-        <div class="rounded-lg lg:w-1/2">
-          <div class="h-5/6 bg-white px-4 py-5 rounded-lg">
+        <div class="rounded-lg w-1/3">
+          <div class="h-full bg-white px-4 py-5 rounded-lg">
             <swiper
               :slidesPerView="'1'"
               :centeredSlides="true"
