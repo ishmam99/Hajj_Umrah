@@ -201,10 +201,15 @@ const login =async () => {
       const data = await api().post("user/login", loginData.value);
       console.log(data.data, "logdata");
       console.log(data.data.user, data.data.token, data.data.role[0].name)
-      authStore.login(data.data.user, data.data.token, data.data.role[0].name)
-      // if (authStore.role == 'Admin') {
-      //   router.push({ name: 'Admin_Dashboard' })
-      // }
+      authStore.login(data.data.user, data.data.token, data.data.role[0].name,)
+      if (authStore.role == 'Admin') {
+        authStore.currentDashboard = "Admin_Dashboard"
+        router.push({ name: 'Admin_Dashboard' })
+      }
+      else if (authStore.role == 'Service') {
+        authStore.currentDashboard = "Social_Service_Dashboard_Profile"
+        router.push({ name: 'Social_Service_Dashboard_Profile' })
+      }
       
       
     } catch (error) {

@@ -370,8 +370,7 @@
   </div>
 </template>
 <script setup>
-import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import SocialSidebar from '/src/views/Social/SocialSidevar.vue'
+import { useAuthStore } from '@/stores/AuthStore'
 import { useSocialStore } from '@/stores/SocialDashboard.ts'
 import { ref } from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
@@ -397,23 +396,8 @@ import {
   DialogTrigger
 } from '/components/ui/dialog'
 
+const authStore = useAuthStore()
 const store = useSocialStore()
-// const EventList = ref({
-//   event_name: '',
-//   event_type: '',
-//   event_description: '',
-//   human_resource: '',
-//   material_resource: '',
-//   event_location: '',
-//   city: '',
-//   state: '',
-//   starting_date: '',
-//   ending_date: '',
-//   event_thumbnail: '',
-//   starting_time: '',
-//   ending_time: '',
-//   occurrence_type: ''
-// })
 
 const occurrenceType = ref('Weeks')
 
@@ -459,9 +443,10 @@ const EventFormApply = async () => {
   console.log(EventForm);
   loading.value = true
   try {
-    const data = await api().post('event-store', {
-      method: 'post',
-      body: EventForm
+    const data = await api().post('event-store',EventForm.value, {
+      headers: {
+        Authorization: `Bearer ${authStore.token,authStore.user.id}`,
+      },
     })
     toast({
       title: 'Success',

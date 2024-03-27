@@ -2,7 +2,7 @@
   <div class="w-full px-5">
     <h1 class="text-3xl font-bold uppercase pb-3">Virtual Tour</h1>
     <div>
-      <div class="lg:flex gap-5 rounded-xl h-[350px]">
+      <div class="lg:flex gap-5 rounded-xl h-[350px] 2xl:h-[500px]">
         <div class="w-2/3 shadow-xl p-5 bg-white rounded-xl">
           <iframe
             height="100%"

@@ -582,9 +582,9 @@
         </MenubarMenu>
         <MenubarMenu v-if="store?.user">
           <MenubarTrigger class="px-1 font-bold">
-            <!-- <router-link :to="store?.user?.dashboard" class="p-1 rounded-md">
+            <router-link :to="store?.currentDashboard" class="p-1 rounded-md">
               Dashboard
-            </router-link> -->
+            </router-link>
           </MenubarTrigger>
         </MenubarMenu>
         <MenubarMenu v-else>
