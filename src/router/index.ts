@@ -860,6 +860,30 @@ const router = createRouter({
           name: 'operation_announcement_broadcast_announcement',
           component: () => import('../views/Operation/AnnouncementManagement/BroadcastAnnouncement.vue'),
         },
+        {
+          path: '/operation_maintenance_create_maintenance',
+          name: 'Operation_Maintenance_Create_Maintenance',
+          component: () =>
+            import('../views/Operation/MaintenanceManagement/CreateMaintenanceWork.vue'),
+        },
+        {
+          path: '/operation_maintenance_work_list',
+          name: 'Operation_Maintenance_Work_List',
+          component: () =>
+            import('../views/Operation/MaintenanceManagement/MaintenanceWorkList.vue'),
+        },
+        {
+          path: '/operation_maintenance_post_work',
+          name: 'Operation_Maintenance_Post_Work',
+          component: () =>
+            import('../views/Operation/MaintenanceManagement/PostMaintenanceWork.vue'),
+        },
+        {
+          path: '/operation_maintenance_work_status',
+          name: 'Operation_Maintenance_Work_Status',
+          component: () =>
+            import('../views/Operation/MaintenanceManagement/MaintenanceWorkStatus.vue'),
+        },
       ],
     },
 
