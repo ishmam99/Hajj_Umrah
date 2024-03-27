@@ -189,14 +189,14 @@ const { toast } = useToast()
 
 const donationCreateFormCreate = () => {
   store.DonationListCreate(donationCreateForm.value)
-  donationCreateForm.value.name = '',
-    donationCreateForm.value.event_id = '',
-    donationCreateForm.value.description = '',
-    donationCreateForm.value.start_date = '',
-    donationCreateForm.value.start_time = '',
-    donationCreateForm.value.end_date = '',
-    donationCreateForm.value.end_time = '',
-    donationCreateForm.value.image = ''
+  // donationCreateForm.value.name = '',
+  //   donationCreateForm.value.event_id = '',
+  //   donationCreateForm.value.description = '',
+  //   donationCreateForm.value.start_date = '',
+  //   donationCreateForm.value.start_time = '',
+  //   donationCreateForm.value.end_date = '',
+  //   donationCreateForm.value.end_time = '',
+  //   donationCreateForm.value.image = ''
 }
 
 </script>

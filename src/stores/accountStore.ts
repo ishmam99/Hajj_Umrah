@@ -15,6 +15,18 @@ export const useAccountStore = defineStore('accountStore', {
             // currentDonationList
             this.donationList.push(donation)
         },
+        AccountLedgerListCreate(ledger) {
+            
+            // const currentDonationList = this.donationList
+            // currentDonationList
+            this.accountLedger.push(ledger)
+            console.log( ledger, this.accountLedger)
+        },
+        PayrollListCreate(payroll) {
+      
+            this.payroll.push(payroll)
+            console.log( payroll, this.payroll)
+        },
     },
     persist:true
 })
