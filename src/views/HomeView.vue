@@ -9,6 +9,7 @@ import LearningCenter from '../components/HomeFolder/learningCenter.vue'
 import FundComponent from '../components/HomeFolder/FundComponent.vue'
 import YearlyPlanner from '../components/HomeFolder/YearlyPlanner.vue'
 import KhutbaKhatira from '../components/HomeFolder/KhutbaKhatira.vue'
+import VirtualTour from '/src/components/HomeFolder/virtualTour.vue'
 </script>
 
 <template>
@@ -17,52 +18,7 @@ import KhutbaKhatira from '../components/HomeFolder/KhutbaKhatira.vue'
     <div
       class="py-[30px] px-[5%] bg-slate-50 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
     >
-      <div class="w-full px-5">
-        <h1 class="text-3xl font-bold uppercase pb-3">Virtual Tour</h1>
-        <div>
-          <div class="flex gap-5 rounded-xl">
-            <div class="w-1/2 2xl:w-2/3 shadow-xl p-5 bg-white rounded-xl">
-              <iframe
-                height="415"
-                src="https://www.youtube.com/embed/IrBh3UM6J9M?si=cmKWZsNIS8HW0SVJ&amp;controls=0"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-                class="w-full"
-              ></iframe>
-            </div>
-            <div class="px-4 py-5 bg-white rounded-lg w-1/2 2xl:w-1/3">
-              <div class="px-4 py-5 bg-sky-200 rounded-lg">
-                <!-- <p class="text-3xl uppercase text-yellow-800 font-bold">Intro</p> -->
-                <p
-                  class="text-base font-semibold text-teal-800 flex flex-col justify-end items-center text-start"
-                >
-                  <span>
-                    Welcome to IDL Islamic Center. We serve the need of the Muslim Community living
-                    in and around the City of Dallas. Our goal is to grow a Masjid-centric community
-                    which puts all its resources, hard work and hopes into the obedience of Allah,
-                    the Creator, the Provider, the Most Beneficent, the Most Merciful. with a focus
-                    on:
-                  </span>
-                  <br />
-                  <span>
-                    Nurturing Muslim generations involves embracing the teachings of the Qur'an and
-                    Sunnah, exemplified by Prophet Muhammad (pbuh) and his companions. Creating a
-                    home and extended family environment that welcomes all ages, including both
-                    Muslims and interested non-Muslims, is essential. This inclusive setting
-                    encourages a profound understanding of Islamic principles, fostering learning,
-                    dialogue, and the embodiment of values like unity, compassion, and spiritual
-                    growth. This intentional approach ensures the transmission of Islamic values
-                    across generations, fostering a sense of belonging for both Muslims and
-                    non-Muslims within the family unit.
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <VirtualTour/>
     </div>
     <div
       class="py-[30px] px-[5%] bg-slate-100 bg-[url('../assets/image/home/pattern-1.png')] flex justify-center gap-5 mt-10"

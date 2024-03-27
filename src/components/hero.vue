@@ -186,16 +186,5 @@
   /* animation: 5s banimg linear; */
 }
 
-@keyframes banimg {
-    0%{
-        scale: 1;
-    }
-    50%{
-        scale: 1.1;
-    }
-    100%{
-        scale: 1;
-    }
-}
 </style>
   
