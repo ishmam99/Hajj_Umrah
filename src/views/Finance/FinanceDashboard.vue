@@ -3,7 +3,7 @@
         <div class="">
             <div class="pt-[80px] flex flex-row-reverse justify-between">
                 <!-- <FinanceProfile/> -->
-                <router-view/>
+                <router-view class="w-[calc(100%-350px)]"/>
                 <FinanceSidebar/>
             </div>
         </div>

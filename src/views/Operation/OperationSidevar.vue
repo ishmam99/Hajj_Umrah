@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover w-1/4 h-screen sticky top-[80px]"
+    class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover w-1/4 h-fit sticky top-[80px]"
   >
     <div class="bg-[#e1f2ff9a] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
       <p class="text-2xl font-bold text-[#2e318a]">Operation Dashboard</p>
@@ -21,12 +21,12 @@
         >Profile</router-link
       >
       <div class="accordion">
-        <button @click="dropdown=1" class="flex items-center gap-2">
+        <button @click="toggleAccordion('prayerManagement')" class="flex items-center gap-2">
           <i class="fa-solid fa-hands-holding"></i>
           Prayer Management
 
         </button>
-        <div v-show="dropdown == 1 || dropdown==2 || dropdown==3 || dropdown==4 || dropdown==5" class="submenu mx-8">
+        <div v-show="currentAccordions === 'prayerManagement'" class="submenu mx-8">
           <div class="accordion">
             <button @click="dropdown=2" class="flex items-center justify-center gap-2"><i class="fa-solid fa-hands-praying"></i> Prayer</button>
 
@@ -57,10 +57,10 @@
             </div>
           </div>
           <div class="accordion">
-            <button @click="dropdown=5" class="flex items-center justify-center gap-2">
+            <button @click="dropdown=6" class="flex items-center justify-center gap-2">
               <i class="fa-solid fa-mosque"></i> Azan</button>
 
-            <div v-show="dropdown==5" class="submenu mx-8">
+            <div v-show="dropdown==6" class="submenu mx-8">
               <router-link to="/operation_azan_create_muajjin_list" class="flex items-center gap-2">- Create Muajjin List</router-link>
               <router-link to="/operation_create_muajjin_schedule" class="flex items-center gap-2">- Create Muajjin Schedule</router-link>
               <router-link to="/operation_post_azans_schedule" class="flex items-center gap-2">- Post Azans Schedule</router-link>

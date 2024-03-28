@@ -1,13 +1,13 @@
 <template>
     <div 
         v-if="route.name == 'Details'" 
-        class="px-5 bg-slate-50 py-5 w-[calc(100vw-255px)]">
+        class="px-5 bg-slate-50 py-5">
         yo bro
         <button @click="selecteditem()">call selected</button>
     </div>
     <div 
         v-else 
-        class="px-5 bg-slate-50 py-5 w-[calc(100vw-255px)]">
+        class="px-5 bg-slate-50 py-5">
         yo bro2
     </div>
 </template>

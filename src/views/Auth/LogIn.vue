@@ -214,6 +214,18 @@ const login =async () => {
         authStore.currentDashboard = "Media_And_Com_Profile"
         router.push({ name: 'Media_And_Com_Profile' })
       }
+      else if (authStore.role == 'Operation') {
+        authStore.currentDashboard = "Opration_Management_profile"
+        router.push({ name: 'Opration_Management_profile' })
+      }
+      else if (authStore.role == 'Youth') {
+        authStore.currentDashboard = "Youth_Dashboard_Profile"
+        router.push({ name: 'Youth_Dashboard_Profile' })
+      }
+      else if (authStore.role == 'Finance') {
+        authStore.currentDashboard = "Finance_Dashboard_Profile"
+        router.push({ name: 'Finance_Dashboard_Profile' })
+      }
       
       
     } catch (error) {

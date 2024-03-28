@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 bg-white py-5 w-[calc(100vw-255px)]">
+  <div class="px-4 bg-white py-5">
      <div class="flex justify-between items-center py-4">
        <p class="text-2xl text-yellow-600 font-bold pb-2">Donation Event Broadcast</p>
        <input type="date" placeholder="Search by date or name" class="py-1.5 px-2 rounded-md border text-sm">
