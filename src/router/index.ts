@@ -977,7 +977,22 @@ const router = createRouter({
           path: '/media_and_com_pons_banner_broadcast',
           name: 'Media_And_Com_Pons_Banner_Broadcast',
           component: () => import('@/views/MediaAndCom/Banner/BannerBroadcast.vue'),
-        },        
+        }, 
+        {
+          path: '/media_and_com_pons_post_promotion',
+          name: 'Media_And_Com_Pons_Post_promotion',
+          component: () => import('@/views/MediaAndCom/Promotion/PostPromotion.vue'),
+        },
+        {
+          path: '/media_and_com_pons_promotion_list',
+          name: 'Media_And_Com_Pons_promotion_List',
+          component: () => import('@/views/MediaAndCom/Promotion/PromotionList.vue'),
+        },
+        {
+          path: '/media_and_com_pons_promotion_broadcast',
+          name: 'Media_And_Com_Pons_promotion_Broadcast',
+          component: () => import('@/views/MediaAndCom/Promotion/PromotionBroadcast.vue'),
+        }, 
         
       ],
     },

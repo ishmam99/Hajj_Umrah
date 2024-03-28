@@ -1,5 +1,5 @@
 <template>
-    <div class="px-4 bg-white py-5 w-[calc(100%-300px)]">
+    <div class="px-4 bg-white py-5 w-3/4">
             <div class="flex justify-between items-center pt-4">
               <p class="text-2xl text-yellow-600 font-bold pb-2">Banner List</p>
             </div>
@@ -10,26 +10,28 @@
               <table class="table-auto w-full">
                 <thead>
                   <tr class="bg-white text-xl">
+                    <th class="p-2 text-left">Order</th>
                     <th class="p-2 text-left">Image</th>
                     <th class="p-2 text-left">Title</th>
-                    <th class="p-2 text-left">Status</th>
                     <th class="p-2 text-left">Action</th>
+                    <!-- <th class="p-2 text-left">Status</th> -->
+                    <th class="p-2 text-left"></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="tableRowColor" v-for="banner in store.bannerList">
+                    <td class="py-4 p-2 gap-2">
+                      <h3 class="font-bold">{{ banner.order }}</h3>
+                    </td>
                     <td class="py-4 p-2 flex items-center gap-2">
                       <img :src="banner.image" alt="" class="h-14" />
                     </td>
                     <td>
                       <p class="text-lg">{{ banner.title }}</p>
                     </td>
-                    <td v-if="banner.status=='1'" class="py-4 p-2">
-                      <p class="text-sm font-bold text-green-600">Uploaded</p>
-                    </td>
-                    <td v-else class="py-4 p-2">
+                    <!-- <td class="py-4 p-2">
                       <p class="text-sm font-bold text-blue-600">Pending</p>
-                    </td>
+                    </td> -->
                     <td class="py-4 p-2">
                       <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         Post
@@ -67,10 +69,10 @@
   const { toast } = useToast()
   
   const bannerList = async () => {
-  
+    console.log(bannerList);
     loading.value = true
     try {
-      const {data} = await api().get('web-banner-lists')
+      const data = await api().get('web-banner-lists')
       
       store.bannerList = data.data
       console.log(store.bannerList)

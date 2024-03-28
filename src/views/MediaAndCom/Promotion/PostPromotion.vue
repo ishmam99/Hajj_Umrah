@@ -48,12 +48,12 @@
                         </div>
                       </div>
                     </div>
-                    <!-- <div class="w-1/2">
+                    <div class="w-1/2">
                       <p class="text-gray-600 pb-2">Choose banner order <span class="text-red-500">*</span></p>
                       <input 
                       v-model="bannerList.order"
                       type="number" class="w-full border-2 py-1.5 px-2 rounded-xl">
-                    </div> -->
+                    </div>
                   </div>
 
                   
@@ -88,7 +88,7 @@
 
   const bannerList = ref({
     title: '',
-    order:'1',
+    order:'',
     url: '',
     image: '',
   })

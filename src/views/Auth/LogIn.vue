@@ -210,6 +210,10 @@ const login =async () => {
         authStore.currentDashboard = "Social_Service_Dashboard_Profile"
         router.push({ name: 'Social_Service_Dashboard_Profile' })
       }
+      else if (authStore.role == 'Media') {
+        authStore.currentDashboard = "Media_And_Com_Profile"
+        router.push({ name: 'Media_And_Com_Profile' })
+      }
       
       
     } catch (error) {
