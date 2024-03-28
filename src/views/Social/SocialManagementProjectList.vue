@@ -21,21 +21,21 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="" v-for="(project, index) in projects" :key="index">
+                <tr class="" v-for="(project, index) in  store.projectList" :key="index">
                 <!-- <tr class="" v-for="(project, index) in store.projectList" :key="index"> -->
                   <td class="py-4 p-2 gap-2">
                     <h3 class="font-bold">{{ project.id }}</h3>
                   </td>
                   <td class="py-4 p-2 flex items-center gap-2">
                     <img :src="project.img" alt="" class="h-10" />
-                    <h3 class="font-bold">{{ project.projectName }}</h3>
+                    <h3 class="font-bold">{{ project.name }}</h3>
                   </td>
                   <td>
-                    <p class="text-lg">{{ project.location }}</p>
+                    <p class="text-lg">{{ project.address }}</p>
                   </td>
-                  <td class="py-4 p-2">{{ project.startingDate }}</td>
-                  <td class="py-4 p-2">{{ project.endingDate }}</td>
-                  <td class="py-4 p-2 font-semibold">{{ project.time }}</td>
+                  <td class="py-4 p-2">{{ project.start_date }}</td>
+                  <td class="py-4 p-2">{{ project.end_date }}</td>
+                  <td class="py-4 p-2 font-semibold">{{ project.start_time }} - {{ project.end_time }}</td>
                   <td class="py-4 p-2">
                     <button
                       class="px-3 py-2 rounded-md shadow-md bg-emerald-600 text-white hover:bg-black text-sm"
@@ -88,10 +88,10 @@
         </div>
 </template>
 <script setup>
-import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import SocialSidebar from '/src/views/Social/SocialSidevar.vue'
-import { ref } from 'vue'
+
+import { ref,onMounted } from 'vue'
 import { useSocialStore } from '@/stores/SocialDashboard';
+import { useAuthStore } from '@/stores/AuthStore'
 
 import {
   Dialog,
@@ -140,9 +140,22 @@ const projects = ref([
 ])
 
 const store = useSocialStore()
+const authStore = useAuthStore()
 
+const getProjectList = async () => {
+  try {
+    const { data } = await api().get('project-list')
+    store.projectList = data.data
+  // console.log(store.serviceList[0])
+  } catch (error) {
+    console.log(error)
+  }
+}
 
+onMounted(async () => {
+    getProjectList()
 
+})
 
 
 </script>

@@ -244,13 +244,13 @@
   </div>
 </template>
 <script setup>
-import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import SocialSidebar from '/src/views/Social/SocialSidevar.vue'
+import { useAuthStore } from '@/stores/AuthStore'
 import { Input } from '/components/ui/input'
 import { ref } from 'vue'
 import { useStore } from '/src/stores/store'
 import api from '@/config/api'
 import { useToast } from '/components/ui/toast/use-toast'
+import { useRoute, useRouter } from 'vue-router'
 import {
   Select,
   SelectContent,
@@ -261,10 +261,12 @@ import {
   SelectValue
 } from '/components/ui/select'
 
+const authStore = useAuthStore()
 const store = useStore()
 const loading = ref(false)
 const { toast } = useToast()
-
+const route = useRoute()
+const router = useRouter()
 const ProjectForm = ref({
   name: '',
   event_type: '',
@@ -295,15 +297,18 @@ const ProjectFormApply = async () => {
   console.log(ProjectForm)
   loading.value = true
   try {
-    const data = await api().post('project-store', {
-      method: 'post',
-      body: ProjectForm
+    const data = await api().post('project-store', ProjectForm.value,
+    {
+      headers: {
+        Authorization: `Bearer ${authStore.token}`,
+      },
     })
     toast({
       title: 'Success',
       description: data.data.message
     })
     console.log(data)
+    router.push({ name: 'Social_Service_Project_List' })
   } catch (error) {
     console.log(error)
     toast({

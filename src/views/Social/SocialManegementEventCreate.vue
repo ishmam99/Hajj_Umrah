@@ -6,7 +6,7 @@
         <div class="py-5 space-y-7 mt-5">
           <div class="flex items-center justify-center gap-5">
             <div class="relative mb-3 w-3/4">
-              <Input
+              <input
                 type="text"
                 class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                 id="exampleFormControlInput50"
@@ -288,7 +288,7 @@
                     <input
                       type="time"
                       class="py-2 px-6 rounded-2xl w-full border-2"
-                      v-model="EventForm.start_time"
+                      v-model="EventForm.state_time"
                     />
                   </div>
                 </div>
@@ -426,7 +426,7 @@ const EventForm = ref({
   state: '',
   start_date: '',
   end_date: '',
-  start_time: '',
+  state_time: '',
   end_time: '',
   image: ''
 });
@@ -445,7 +445,7 @@ const EventFormApply = async () => {
   try {
     const data = await api().post('event-store',EventForm.value, {
       headers: {
-        Authorization: `Bearer ${authStore.token,authStore.user.id}`,
+        Authorization: `Bearer ${authStore.token}`,
       },
     })
     toast({
@@ -463,7 +463,7 @@ const EventFormApply = async () => {
   loading.value = false
 }
 
-// const socialEventSubmit = () => {
+// const EventFormApply = () => {
 //   store.event.push = EventList.value
 
 //   console.log(store.event)
