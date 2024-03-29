@@ -74,6 +74,7 @@
   import { ref } from 'vue'
   import { useToast } from '/components/ui/toast/use-toast'
   import { useRoute, useRouter } from 'vue-router'
+  import {useAuthStore} from '@/stores/AuthStore'
   import {
     Select,
     SelectContent,
@@ -85,6 +86,7 @@
   } from '/components/ui/select'
   const route = useRoute()
   const router = useRouter()
+  const authStore = useAuthStore();
 
   const postPromotion = ref({
     title: '',
@@ -107,7 +109,13 @@ function onFileChange(event) {
     // console.log(postPromotionStore);
     loading.value = true
     try {
-      const data = await api().post('promotion-store',postPromotion.value)
+      const data = await api().post('promotion-store',postPromotion.value,{
+        headers: {
+        Authorization: `Bearer ${authStore.token}`
+      
+      }
+      })
+
       toast({
         title: 'Success',
         description: 'Banner Added '
