@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-slate-50 w-[calc(100vw-255px)]">
+  <div class="bg-slate-50">
     <div class="px-4 bg-white py-5">
         <div class="flex justify-between items-center pb-2">
           <p class="text-2xl text-yellow-600 font-bold">Operation Expense Create</p>

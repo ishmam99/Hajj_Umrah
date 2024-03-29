@@ -10,45 +10,21 @@
               <table class="table-auto w-full">
                 <thead>
                   <tr class="bg-white text-lg">
-                    <th class="p-2 text-left">Announcement ID</th>
-                    <th class="p-2 text-left">Announcement Name(s)</th>
-                    <th class="p-2 text-left">Announcement Type</th>
-                    <th class="p-2 text-left">Occurrence Type</th>
-                    <th class="p-2 text-left">Location</th>
-                    <th class="p-2 text-left">Starting Date</th>
-                    <th class="p-2 text-left">Ending Date</th>
-                    <th class="p-2 text-left">Time</th>
-                    <!-- <th class="p-2 text-left">Status</th> -->
-                    <th class="p-2 text-left">Action</th>
+                    <th class="p-2 text-center w-1/3">Announcement Name(s)</th>
+                    <th class="p-2 text-center w-1/3">Announcement Description</th>
+                    <th class="p-2 text-center w-1/3">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(Announcement, index) in Announcements" :key="index">
-                    <td class="py-4 p-2 gap-2">
-                      <h3 class="font-bold">{{ Announcement.id }}</h3>
-                    </td>
+                  <tr v-for="(Announcement, index) in store.announcementList" :key="index" class="tableRowColor">
                     <td class="py-4 p-2 flex items-center gap-2">
-                      <img :src="Announcement.img" alt="" class="h-10" />
-                      <h3 class="font-semibold">{{ Announcement.AnnouncementName }}</h3>
+                      <img :src="Announcement.image" alt="" class="h-10" />
+                      <h3 class="font-semibold">{{ Announcement.title }}</h3>
                     </td>
                     <td class="py-4 p-2 items-center gap-2">
-                      <h3 class="font-semibold">{{ Announcement.AnnouncementType }}</h3>
+                      <h3 class="font-semibold text-center">{{ Announcement.description }}</h3>
                     </td>
-                    <td class="py-4 p-2 items-center gap-2">
-                      <h3 v-if="Announcement.occurrenceType == 'Single'" class="font-semibold text-cyan-600">
-                        {{ Announcement.occurrenceType }}
-                      </h3>
-                      <h3 v-else class="font-semibold text-green-600">
-                        {{ Announcement.occurrenceType }}
-                      </h3>
-                    </td>
-                    <td>
-                      <p class="font-semibold text-sm">{{ Announcement.location }}</p>
-                    </td>
-                    <td class="py-4 p-2 font-semibold">{{ Announcement.startingDate }}</td>
-                    <td class="py-4 p-2 font-semibold">{{ Announcement.endingDate }}</td>
-                    <td class="py-4 p-2 font-semibold">{{ Announcement.time }}</td>
-                    <td class="py-4 p-2">
+                    <td class="py-4 p-2 flex justify-center">
                       <button
                         class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white hover:bg-black text-sm"
                       >
@@ -100,9 +76,7 @@
           </div>
   </template>
   <script setup>
-  import DefaultLayout from '@/layouts/DefaultLayout.vue'
-  import SocialSidebar from '/src/views/Operation/OperationSidevar.vue'
-  import { ref } from 'vue'
+    import { ref,onMounted } from 'vue'
   import {
     Dialog,
     DialogContent,
@@ -112,46 +86,32 @@
     DialogTitle,
     DialogTrigger
   } from '/components/ui/dialog'
-  const Announcements = ref([
-    {
-      id: 1,
-      AnnouncementName: 'Educate the children',
-      img: '/src/assets/image/hero/h2.jpg',
-      AnnouncementType: 'Social Outreach Announcement',
-      occurrenceType: 'Recurring',
-      description:
-        'It is a transformative program aimed at providing quality education to underserved youth, empowering them with the knowledge and skills necessary for a brighter future. Through innovative teaching methods, mentorship, and community engagement, we strive to unlock each childs potential and create pathways to success.',
-      location: 'Masjid Premises',
-      startingDate: '2024-01-01',
-      endingDate: '2024-01-05',
-      time: '1:45'
-    },
-    {
-      id: 2,
-      AnnouncementName: 'Comfort the sick',
-      img: '/src/assets/image/common/v4.jpg',
-      AnnouncementType: 'Humanitarian Announcement',
-      occurrenceType: 'Single',
-      description:
-        'It is a compassionate initiative dedicated to providing solace and support to those battling illness. Through personalized care, emotional assistance, and practical aid, we strive to alleviate suffering and bring moments of peace to individuals and families facing health challenges.',
-      location: 'Masjid Premises',
-      startingDate: '2024-02-05',
-      endingDate: '202402-10',
-      time: '2:30'
-    },
-    {
-      id: 3,
-      AnnouncementName: 'Feed The Hungry',
-      img: '/src/assets/image/hungry/hungry-5.jpg',
-      AnnouncementType: 'Donation Collection Announcement',
-      occurrenceType: 'Recurring',
-      description:
-        'vulnerable in our community. Committed to the values of compassion and social responsibility, we dedicate ourselves to feeding those in need. Every day, we work tirelessly to provide nutritious meals, ensuring that no one goes to bed hungry. Our initiative goes beyond immediate relief, aiming to empower individuals and build sustainable solutions for long-term food security. With the support of our dedicated team and generous community, we envision a future where hunger is eradicated, fostering a world where every person has access to the fundamental right of wholesome sustenance and the hope for a brighter tomorrow',
-      location: 'Masjid Premises',
-      startingDate: '2024-01-10',
-      endingDate: '2024-01-15',
-      time: '6:00'
-    }
-  ])
+
+import { useOperationStore } from '@/stores/operationDashboard.ts';
+import { useAuthStore } from '@/stores/AuthStore'
+
+const store = useOperationStore()
+const authStore = useAuthStore()
+
+const getProjectList = async () => {
+  try {
+    const { data } = await api().get('announcement-list')
+    store.announcementList = data.data
+  // console.log(store.serviceList[0])
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+onMounted(async () => {
+    getProjectList()
+
+})
+  
   </script>
   
+  <style>
+  .tableRowColor:nth-child(even){
+    background: white;
+  }
+</style>
