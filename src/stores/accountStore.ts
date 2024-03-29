@@ -7,6 +7,7 @@ export const useAccountStore = defineStore('accountStore', {
         projectExpenseList: [],
         opeationExpenseList: [],
         donationList: [],
+        fundList:[],
     }),
     actions:{
         DonationListCreate(donation) {

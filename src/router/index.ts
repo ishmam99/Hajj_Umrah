@@ -510,11 +510,31 @@ const router = createRouter({
           name:'Donation_Status',
               component: () => import('../views/Finance/FinanceDonationStatus.vue'),
         },
-        // {
-        //   path: '/Finance_Dashboard/Donation_Status',
-        //   name:'Donation_Status',
-        //       component: () => import('../views/Finance/FinanceDonationStatus.vue'),
-        // },
+        {
+          path: '/Finance_Dashboard/Fund_Create',
+          name:'Fund_Create',
+              component: () => import('../views/Finance/FinanceFundCreate.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Fund_List',
+          name:'Fund_List',
+              component: () => import('../views/Finance/FinanceFundList.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Fund_Broadcast',
+          name:'Fund_Broadcast',
+              component: () => import('../views/Finance/FinanceFundBroadcast.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Fund_Status',
+          name:'Fund_Status',
+              component: () => import('../views/Finance/FinanceFundStatus.vue'),
+        },
+        {
+          path: '/Finance_Dashboard/Fund_Appllied_List',
+          name:'Fund_Applied',
+              component: () => import('../views/Finance/FinanceFundAppliedList.vue'),
+        },
       ]
     },
     {

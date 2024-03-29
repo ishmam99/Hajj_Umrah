@@ -107,7 +107,12 @@ function onFileChange(event) {
     console.log(bannerListStore);
     loading.value = true
     try {
-      const data = await api().post('web-banner-store',bannerList.value)
+      const data = await api().post('web-banner-store', bannerList.value, {
+        headers: {
+        Authorization: `Bearer ${authStore.token}`
+      
+      }
+        })
       toast({
         title: 'Success',
         description: 'Banner Added '
