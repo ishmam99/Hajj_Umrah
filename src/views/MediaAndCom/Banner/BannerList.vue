@@ -48,6 +48,7 @@
   import { ref , onMounted } from 'vue'
   import { useToast } from '/components/ui/toast/use-toast'
   import { useRoute, useRouter } from 'vue-router'
+  import {useAuthStore} from '@/stores/AuthStore.ts'
   import {
     Select,
     SelectContent,
@@ -59,6 +60,7 @@
   } from '/components/ui/select'
 
   const store = useMediaStore()
+  const authStore = useAuthStore()
 
   const route = useRoute()
   const router = useRouter()
@@ -70,7 +72,11 @@
   
     loading.value = true
     try {
-      const {data} = await api().get('web-banner-lists')
+      const { data } = await api().get('web-banner-lists', {
+        headers: {
+          Authorization: `Bearer ${authStore.token}`
+        }
+      })
       
       store.bannerList = data.data
       console.log(store.bannerList)
