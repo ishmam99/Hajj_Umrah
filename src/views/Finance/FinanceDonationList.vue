@@ -58,30 +58,6 @@
               </div>
             </td>
           </tr>
-          <tr class="bg-white">
-            <td class="py-4 p-2 w-1/8 text-center">02</td>
-            <td class="py-4 p-2 flex justify-center items-center gap-2 w-3/8">
-              <img src="/src/assets/image/home/l2.jpg" alt="" class="h-10" />
-              <h3 class="font-bold">Comfort The Sick</h3>
-            </td>
-            <td class="py-4 p-2 text-center w-1/8 ">1 Jan 2024</td>
-            <td class="py-4 p-2 text-center w-1/8">1 Feb 2024</td>
-            <td class="py-4 p-2 text-center w-1/8">$ 500000</td>
-            <td class="py-4 p-2 text-center w-1/8">
-              <div class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2">
-                <DropdownMenu class="w-full">
-                  <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                      <DropdownMenuItem class="text-blue-600" @click="goToDetailPage(1)">Details</DropdownMenuItem>
-                      <DropdownMenuItem class="text-yellow-600" @click="goToEditPage(1)">Edit</DropdownMenuItem>
-                      <DropdownMenuItem class="text-green-600">Post</DropdownMenuItem>
-                      <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 16L6 10H18L12 16Z"></path></svg>
-              </div>
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
@@ -91,6 +67,8 @@
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAccountStore } from '/src/stores/accountStore.ts'
+import { useAuthStore } from '@/stores/AuthStore'
+import { useToast } from '/components/ui/toast/use-toast'
 import {
   Select,
   SelectContent,
@@ -111,8 +89,14 @@ import {
 
 const store = useAccountStore() 
 
+  const authStore = useAuthStore()
 
-const router = useRouter()
+  const route = useRoute()
+  const router = useRouter()
+  
+  const loading = ref(false)
+  const { toast } = useToast()
+
 const goToEditPage = (id) => {
   router.push({ name: 'Edit', params: { id } })
 }
@@ -120,4 +104,34 @@ const goToEditPage = (id) => {
 const goToDetailPage = (id) => {
   router.push({ name: 'Details', params: { id } })
 }
+
+
+
+const donnationList = async () => {
+  
+  loading.value = true
+  try {
+    const { data } = await api().get('donation-method-list', {
+      headers: {
+        Authorization: `Bearer ${authStore.token}`
+      }
+    })
+    store.donationList = data.data
+    console.log(store.donationList)
+  } catch (error) {
+    console.log(error)
+  }
+  loading.value = false
+}
+
+onMounted(async () => {
+  donnationList()
+
+})
 </script>
+
+<style>
+.tableRowColor:nth-child(even){
+  background: white;
+}
+</style>

@@ -143,8 +143,9 @@
 import { ref, onMounted } from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
 import { useAccountStore } from '/src/stores/accountStore.ts'
+import {useAuthStore} from '@/stores/AuthStore.ts'
 
-
+const authStore = useAuthStore()
 const store = useAccountStore()
 const selectedFile = ref(null);
 
@@ -158,7 +159,6 @@ const donationCreateForm = ref({
   end_time: '',
   amount: '',
   image: '',
-  status:'0'
 })
 
 function onFileChange(event) {
@@ -169,34 +169,27 @@ function onFileChange(event) {
 
 const { toast } = useToast()
 
-// const donationCreateFormCreate = async () => {
-//   try {
-//     const data = await api().post('account-ledger-store', {
-//       method: 'post',
-//       body: accountLedger,
-//     })
-//     console.log(data)
-//     toast({
-//         title: 'Account Ledger Created ',
-//       });
-//   }
-//   catch (error) {
-//     console.log(error)
-//   }
-// }
-
-
-
-const donationCreateFormCreate = () => {
-  store.DonationListCreate(donationCreateForm.value)
-  // donationCreateForm.value.name = '',
-  //   donationCreateForm.value.event_id = '',
-  //   donationCreateForm.value.description = '',
-  //   donationCreateForm.value.start_date = '',
-  //   donationCreateForm.value.start_time = '',
-  //   donationCreateForm.value.end_date = '',
-  //   donationCreateForm.value.end_time = '',
-  //   donationCreateForm.value.image = ''
+const donationCreateFormCreate = async () => {
+  try {
+    const data = await api().post('donation-method-store',donationCreateForm.value, {
+      headers: {
+          Authorization: `Bearer ${authStore.token}`
+        }
+    })
+    console.log(data)
+    toast({
+        title: 'Donation Event Created ',
+      });
+  }
+  catch (error) {
+    console.log(error)
+  }
 }
+
+
+
+// const donationCreateFormCreate = () => {
+//   store.DonationListCreate(donationCreateForm.value)
+// }
 
 </script>
