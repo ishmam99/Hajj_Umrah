@@ -226,6 +226,15 @@ const login =async () => {
         authStore.currentDashboard = "Finance_Dashboard_Profile"
         router.push({ name: 'Finance_Dashboard_Profile' })
       }
+      else if (authStore.role == 'Supply') {
+        authStore.currentDashboard = "Supply_Admin_Profile"
+        router.push({ name: 'Supply_Admin_Profile' })
+      }
+      // else if (authStore.role == 'Finance') {
+      //   authStore.currentDashboard = "Finance_Dashboard_Profile"
+      //   router.push({ name: 'Finance_Dashboard_Profile' })
+      // }
+      
       
       
     } catch (error) {

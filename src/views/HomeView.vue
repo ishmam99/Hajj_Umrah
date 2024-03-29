@@ -37,11 +37,6 @@ import VirtualTour from '/src/components/HomeFolder/virtualTour.vue'
     >
       <Services />
     </div>
-    <div
-      class="py-[30px] rounded-lg bg-slate-50 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
-    >
-      <FundComponent />
-    </div>
     <LearningCenter />
     <div
       class="py-[30px] rounded-lg bg-slate-50 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
