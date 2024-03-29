@@ -1,16 +1,16 @@
 <template>
     <div class="px-5  py-5 w-3/4">
-            <p class="text-2xl text-yellow-600 font-bold py-3 border-b">Post Banner </p>
+            <p class="text-2xl text-yellow-600 font-bold py-3 border-b">Post Promotion </p>
             <hr />
             <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
-              <form @submit.prevent="bannerListStore()">
+              <form @submit.prevent="postPromotionStore()">
                 <div class="py-5 space-y-7 mt-5">
                   <div class="flex items-center justify-center gap-5">
                     <div class="relative mb-3 w-3/4">
                       <input
                         type="text"
                         class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                        v-model="bannerList.title"
+                        v-model="postPromotion.title"
                       />
                       <label
                     
@@ -22,7 +22,7 @@
                       <input
                         type="url"
                         class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                        v-model="bannerList.url"
+                        v-model="postPromotion.url"
                       />
                       <label
                         
@@ -51,7 +51,7 @@
                     <div class="w-1/2">
                       <p class="text-gray-600 pb-2">Choose banner order <span class="text-red-500">*</span></p>
                       <input 
-                      v-model="bannerList.order"
+                      v-model="postPromotion.order"
                       type="number" class="w-full border-2 py-1.5 px-2 rounded-xl">
                     </div>
                   </div>
@@ -86,7 +86,7 @@
   const route = useRoute()
   const router = useRouter()
 
-  const bannerList = ref({
+  const postPromotion = ref({
     title: '',
     order:'',
     url: '',
@@ -96,18 +96,18 @@
 
 function onFileChange(event) {
   selectedFile.value = event.target.files[0]
-  bannerList.value.image = event.target.files[0]
+  postPromotion.value.image = event.target.files[0]
   console.log('selected image', selectedFile.value)
 }
   
   const loading = ref(false)
   const { toast } = useToast()
   
-  const bannerListStore = async () => {
-    console.log(bannerListStore);
+  const postPromotionStore = async () => {
+    // console.log(postPromotionStore);
     loading.value = true
     try {
-      const data = await api().post('web-banner-store',bannerList.value)
+      const data = await api().post('promotion-store',postPromotion.value)
       toast({
         title: 'Success',
         description: 'Banner Added '

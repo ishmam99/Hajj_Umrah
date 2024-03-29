@@ -14,20 +14,19 @@
                     <th class="p-2 text-left">Image</th>
                     <th class="p-2 text-left">Title</th>
                     <th class="p-2 text-left">Action</th>
-                    <!-- <th class="p-2 text-left">Status</th> -->
                     <th class="p-2 text-left"></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="tableRowColor" v-for="banner in store.bannerList">
+                  <tr class="tableRowColor" v-for="promotion in store.promotionList" :key="promotion.id">
                     <td class="py-4 p-2 gap-2">
-                      <h3 class="font-bold">{{ banner.order }}</h3>
+                      <h3 class="font-bold">{{ promotion.order }}</h3>
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
-                      <img :src="banner.image" alt="" class="h-14" />
+                      <img :src="promotion.image" alt="" class="h-14" />
                     </td>
                     <td>
-                      <p class="text-lg">{{ banner.title }}</p>
+                      <p class="text-lg">{{ promotion.title }}</p>
                     </td>
                     <!-- <td class="py-4 p-2">
                       <p class="text-sm font-bold text-blue-600">Pending</p>
@@ -46,7 +45,7 @@
   <script setup>
 
 
-  import { useMediaStore } from '/src/stores/mediaDashboard.ts'
+  import { usePromotionMediaStore } from '@/stores/PromotionMediaStore'
   import { ref , onMounted } from 'vue'
   import { useToast } from '/components/ui/toast/use-toast'
   import { useRoute, useRouter } from 'vue-router'
@@ -60,7 +59,7 @@
     SelectValue
   } from '/components/ui/select'
 
-  const store = useMediaStore()
+  const store = usePromotionMediaStore()
 
   const route = useRoute()
   const router = useRouter()
@@ -68,14 +67,14 @@
   const loading = ref(false)
   const { toast } = useToast()
   
-  const bannerList = async () => {
-    console.log(bannerList);
+  const promotionList = async () => {
+    console.log(promotionList);
     loading.value = true
     try {
-      const data = await api().get('web-banner-lists')
+      const data = await api().get('event-list')
       
-      store.bannerList = data.data
-      console.log(store.bannerList)
+      store.promotionList = data.data
+      console.log(store.promotionList)
     } catch (error) {
       console.log(error)
     }
@@ -83,7 +82,7 @@
   }
 
   onMounted(async () => {
-    bannerList()
+    promotionList()
 
 })
 
