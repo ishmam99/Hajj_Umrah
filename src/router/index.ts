@@ -413,6 +413,11 @@ const router = createRouter({
             component: () => import('../views/Youth/Profile/YouthProfile.vue'),
         },
         {
+          path: '/Youth_Dashboard/Year_Planer_Create',
+          name:'Youth_Year_Planer_Create',
+              component: () => import('../views/Youth/YouthYearPlannerCreate.vue'),
+        },
+        {
           path: '/Youth_Dashboard/Year_Planer',
           name:'Youth_Year_Planer',
               component: () => import('../views/Youth/YouthYearPlaner.vue'),
