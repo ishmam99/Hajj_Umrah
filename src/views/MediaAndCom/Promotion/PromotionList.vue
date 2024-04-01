@@ -1,7 +1,7 @@
 <template>
     <div class="px-4 bg-white py-5 w-3/4">
             <div class="flex justify-between items-center pt-4">
-              <p class="text-2xl text-yellow-600 font-bold pb-2">Banner List</p>
+              <p class="text-2xl text-yellow-600 font-bold pb-2">Promotion List</p>
             </div>
             <hr />
             <div
@@ -18,7 +18,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="tableRowColor" v-for="promotion in store.promotionList" :key="promotion.id">
+                  <tr class="tableRowColor" v-for="promotion in store.promotionList" :key="promotion.id" :class="tableRowColor">
                     <td class="py-4 p-2 gap-2">
                       <h3 class="font-bold">{{ promotion.order }}</h3>
                     </td>
@@ -45,7 +45,7 @@
   <script setup>
 
 
-  import { usePromotionMediaStore } from '@/stores/PromotionMediaStore'
+  import { useMediaStore } from '@/stores/mediaDashboard'
   import { ref , onMounted } from 'vue'
   import { useToast } from '/components/ui/toast/use-toast'
   import { useRoute, useRouter } from 'vue-router'
@@ -59,7 +59,7 @@
     SelectValue
   } from '/components/ui/select'
 
-  const store = usePromotionMediaStore()
+  const store = useMediaStore()
 
   const route = useRoute()
   const router = useRouter()
@@ -71,7 +71,7 @@
     console.log(promotionList);
     loading.value = true
     try {
-      const data = await api().get('event-list')
+      const {data} = await api().get('event-list')
       
       store.promotionList = data.data
       console.log(store.promotionList)
@@ -88,3 +88,8 @@
 
   </script>
   
+  <style>
+  .tableRowColor:nth-child(even){
+    background: white;
+  }
+</style>

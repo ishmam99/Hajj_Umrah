@@ -19,16 +19,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="">
+                <tr class="tableRowColor" v-for="publication in store.publicationList">
                   <td class="py-4 p-2 gap-2">
                     <h3 class="font-bold">01</h3>
                   </td>
                   <td class="py-4 p-2 flex items-center gap-2">
-                    <img src="/src/assets/image/home/l2.jpg" alt="" class="h-10" />
-                    <h3 class="font-bold">Divine Speech</h3>
+                    <!-- <img src="/src/assets/image/home/l2.jpg" alt="" class="h-10" /> -->
+                    <img :src="publication.image" alt="publication image" class="h-10" />
+                    <h3 class="font-bold">{{ publication.title }}</h3>
                   </td>
                   <td>
-                    <p class="text-lg">Noman Ali Khan</p>
+                    <p class="text-lg">{{ publication.authors_name }}</p>
                   </td>
                   <td class="py-4 p-2">
                     <p class="text-sm font-bold text-blue-600">Pending</p>
@@ -41,97 +42,16 @@
                             <DialogHeader>
                               <DialogTitle>
                                 <div class="text-xl mb-2">
-                                  <span class="font-bold">Book Name:</span> Noman Ali Khan
+                                  <span class="font-bold">Book Name:</span> {{ publication.authors_name }}
                                 </div>
                               </DialogTitle>
                               <DialogDescription>
-                                <img src="/src/assets/image/home/l4.png" alt="" />
+                                <img :src="publication.image" alt="" />
                                 <div>
                                   <h1 class="font-semibold mt-2 text text-black">
                                     Book Description:
                                   </h1>
-                                  The Quran, the sacred scripture of Islam, is revered as the spoken word of God by approximately one-fifth of the world's population. Since its inception, the power of the Quran has derived not only from its message, but also from the inimitable literary style and rhetorical impact that the Arabic scripture has on its audiences. Divine Speech: Exploring the Quran as Literature attempts to make some of the most recent Arabic and European-language scholarship on its literary features accessible to a wider, English-speaking audience. These features include its language and word choice, its use of figures of speech and other rhetorical devices, its manner of narrating parables and stories, and the structure, coherence, and the order of its "chapters"-aspects that typically remain mysterious to readers of English translations of the text. Divine Speech furnishes its readers with a better appreciation of the Quran from a literary perspective, and in the process stimulates interest in, and provides tools and resources for, further study of the scripture.
-                                </div>
-                              </DialogDescription>
-                            </DialogHeader>
-                          </DialogContent>
-                        </Dialog>
-                      </button>
-                    </td>
-                </tr>
-                <tr class="bg-white">
-                  <td class="py-4 p-2 gap-2">
-                    <h3 class="font-bold">02</h3>
-                  </td>
-                  <td class="py-4 p-2 flex items-center gap-2">
-                    <img src="/src/assets/image/home/l2.jpg" alt="" class="h-10" />
-                    <h3 class="font-bold">Enhance Social Justice</h3>
-                  </td>
-                  <td>
-                    <p class="text-lg">Khutbah Image</p>
-                  </td>
-                  <td class="py-4 p-2">
-                    <p class="text-sm font-bold text-green-600">Completed</p>
-                  </td>
-                  <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                        <Dialog>
-                          <DialogTrigger> Details </DialogTrigger>
-                          <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>
-                                <div class="text-xl mb-2">
-                                  <span class="font-bold">Book Name:</span> Enhance Social Justice
-                                </div>
-                              </DialogTitle>
-                              <DialogDescription>
-                                <img src="../../../assets/image/hungry/hungry-2.jpg" alt="" />
-                                <div>
-                                  <h1 class="font-semibold mt-2 text text-black">
-                                    Book Description:
-                                  </h1>
-                                  The Quran, the sacred scripture of Islam, is revered as the spoken word of God by approximately one-fifth of the world's population. Since its inception, the power of the Quran has derived not only from its message, but also from the inimitable literary style and rhetorical impact that the Arabic scripture has on its audiences. Divine Speech: Exploring the Quran as Literature attempts to make some of the most recent Arabic and European-language scholarship on its literary features accessible to a wider, English-speaking audience. These features include its language and word choice, its use of figures of speech and other rhetorical devices, its manner of narrating parables and stories, and the structure, coherence, and the order of its "chapters"-aspects that typically remain mysterious to readers of English translations of the text. Divine Speech furnishes its readers with a better appreciation of the Quran from a literary perspective, and in the process stimulates interest in, and provides tools and resources for, further study of the scripture.
-                                </div>
-                              </DialogDescription>
-                            </DialogHeader>
-                          </DialogContent>
-                        </Dialog>
-                      </button>
-                    </td>
-                </tr>
-                <tr class="">
-                  <td class="py-4 p-2">
-                    <h3 class="font-bold">03</h3>
-                  </td>
-                  <td class="py-4 p-2 flex items-center gap-2">
-                    <img src="/src/assets/image/home/l2.jpg" alt="" class="h-10" />
-                    <h3 class="font-bold">Help the weak</h3>
-                  </td>
-                  <td>
-                    <p class="text-lg">Khutbah Image</p>
-                  </td>
-                  <td class="py-4 p-2">
-                    <p class="text-sm font-bold text-blue-600">Pending</p>
-                  </td>
-                  <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                        <Dialog>
-                          <DialogTrigger> Details </DialogTrigger>
-                          <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>
-                                <div class="text-xl mb-2">
-                                  <span class="font-bold">Book Name:</span> 
-Help the weak
-                                </div>
-                              </DialogTitle>
-                              <DialogDescription>
-                                <img src="/src/assets/image/home/l4.png" alt="" />
-                                <div>
-                                  <h1 class="font-semibold mt-2 text-l text-black">
-                                    Book Description:
-                                  </h1>
-                                  The Quran, the sacred scripture of Islam, is revered as the spoken word of God by approximately one-fifth of the world's population. Since its inception, the power of the Quran has derived not only from its message, but also from the inimitable literary style and rhetorical impact that the Arabic scripture has on its audiences. Divine Speech: Exploring the Quran as Literature attempts to make some of the most recent Arabic and European-language scholarship on its literary features accessible to a wider, English-speaking audience. These features include its language and word choice, its use of figures of speech and other rhetorical devices, its manner of narrating parables and stories, and the structure, coherence, and the order of its "chapters"-aspects that typically remain mysterious to readers of English translations of the text. Divine Speech furnishes its readers with a better appreciation of the Quran from a literary perspective, and in the process stimulates interest in, and provides tools and resources for, further study of the scripture.
+                                  {{ publication.description}}
                                 </div>
                               </DialogDescription>
                             </DialogHeader>
@@ -155,4 +75,58 @@ import {
   DialogTitle,
   DialogTrigger
 } from '/components/ui/dialog'
+
+  import { useMediaStore } from '@/stores/SocialDashboard'
+  import { ref , onMounted } from 'vue'
+  import { useToast } from '/components/ui/toast/use-toast'
+  import { useRoute, useRouter } from 'vue-router'
+  import {useAuthStore} from '@/stores/AuthStore.ts'
+  import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue
+  } from '/components/ui/select'
+
+  const store = useMediaStore()
+  const authStore = useAuthStore()
+
+  const route = useRoute()
+  const router = useRouter()
+  
+  const loading = ref(false)
+  const { toast } = useToast()
+  
+  const publicationList = async () => {
+  
+    loading.value = true
+    try {
+      const { data } = await api().get('post-publication-list', {
+        headers: {
+          Authorization: `Bearer ${authStore.token}`
+        }
+      })
+      
+      store.publicationList = data.data
+      console.log(store.publicationList)
+    } catch (error) {
+      console.log(error)
+    }
+    loading.value = false
+  }
+
+  onMounted(async () => {
+    publicationList()
+
+})
+
 </script>
+
+<style>
+.tableRowColor:nth-child(even){
+  background: white;
+}
+</style>
