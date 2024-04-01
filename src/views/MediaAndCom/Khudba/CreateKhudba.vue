@@ -54,26 +54,38 @@
                   </div>
   
                   <div class="flex gap-5">
-                    <div class="relative w-1/2">
+                    <div class="w-1/3 flex flex-col gap-5">
+                      <div class="">
+                        <label for="" class="text-gray-600"
+                          >Select Video <span class="text-red-500">*</span></label
+                        >
+                        <div
+                          class="flex justify-center items-center h-[45px] rounded-2xl bg-white px-4 py-2 text-sm text-gray-500 text-center relative border-2 mt-2"
+                        >
+                          <input @change="onFileChange"
+                          type="file" class="h-full w-full opacity-0 absolute top-0" />
+                          Choose File
+                        </div>
+                      </div>
+                    </div>
+                    <div class="relative w-1/3">
                       <div class="gap-5">
                         <label for="">Date <span class="text-red-500">*</span> </label>
                         <div class="pt-2">
                           <input
                             type="date"
                             class="py-2 px-6 rounded-2xl w-full border-2 border-grau-400"
-                            v-model="khutbahList.date"
                           />
                         </div>
                       </div>
                     </div>
-                    <div class="relative w-1/2">
+                    <div class="relative w-1/3">
                       <div class="gap-5">
                         <label for="">Time <span class="text-red-500">*</span> </label>
                         <div class="pt-2">
                           <input
                             type="time"
                             class="py-2 px-6 rounded-2xl w-full border-2 border-grau-400"
-                            v-model="khutbahList.time"
                           />
                         </div>
                       </div>
@@ -104,16 +116,26 @@ import {
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
+import { useAuthStore } from '@/stores/AuthStore'
 const route = useRoute()
-const router = useRouter()
+const router = useRouter();
+const authStore = useAuthStore;
 
 const khutbahList = ref({
   topic: '',
   speaker:'',
   description: '',
-  date: '',
-  time: '',
+  video: ''
+  // date: '',
+  // time: '',
 })
+  const selectedFile = ref(null)
+
+function onFileChange(event) {
+  selectedFile.value = event.target.files[0]
+  khutbahList.value.video = event.target.files[0]
+  console.log('selected video', selectedFile.value)
+}
 
 
 
