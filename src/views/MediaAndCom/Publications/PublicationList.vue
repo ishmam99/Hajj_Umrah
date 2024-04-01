@@ -76,7 +76,7 @@ import {
   DialogTrigger
 } from '/components/ui/dialog'
 
-  import { useMediaStore } from '@/stores/SocialDashboard'
+  import { useMediaStore } from '@/stores/mediaDashboard'
   import { ref , onMounted } from 'vue'
   import { useToast } from '/components/ui/toast/use-toast'
   import { useRoute, useRouter } from 'vue-router'
