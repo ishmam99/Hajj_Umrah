@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="flex justify-between px-[5%] bg-[#23646dcb] py-5">
-            <p class="text-sm text-white font-bold">© 2022, All rights reserved</p>
+            <p class="text-sm text-white font-bold">© 2024, All rights reserved</p>
             <div>
                 <img src="../assets/image/common/ft5.png" alt="">
             </div>

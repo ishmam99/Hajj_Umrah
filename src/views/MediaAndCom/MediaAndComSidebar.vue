@@ -22,15 +22,15 @@
       <div>
           <ul @click="drop=1" class="flex items-center gap-2 cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M2 20H22V22H2V20ZM4 12H6V19H4V12ZM9 12H11V19H9V12ZM13 12H15V19H13V12ZM18 12H20V19H18V12ZM2 7L12 2L22 7V11H2V7ZM4 8.23607V9H20V8.23607L12 4.23607L4 8.23607ZM12 8C11.4477 8 11 7.55228 11 7C11 6.44772 11.4477 6 12 6C12.5523 6 13 6.44772 13 7C13 7.55228 12.5523 8 12 8Z"></path></svg>
-            Khudbah</ul>
+            Khutbah</ul>
           <ul class="pl-8 flex flex-col gap-1 overflow-hidden" :class="drop==1 ? 'h-fit'
           :'h-0'">
             <router-link to="/media_and_com_khudba_create_khudba" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
-              Create Khudba</router-link>
+              Create Khutbah</router-link>
               <router-link to="/media_and_com_khudba_khudba_list" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
-              Khudbah List</router-link>
+              Khutbah List</router-link>
               <router-link to="/media_and_com_khudba_khudba_broadcast" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
-              Khudbah Broadcast</router-link>
+              Khutbah Broadcast</router-link>
            
           </ul>
       </div>
