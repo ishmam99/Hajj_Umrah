@@ -6,6 +6,8 @@ import { defineStore } from 'pinia';
 export const useMediaStore = defineStore('mediaStore',{
   state: () => ({
         bannerList: [],
+        promotionList: [],
+        publicationList: [],
     authUser : '',
   }),
   actions: {

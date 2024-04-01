@@ -118,10 +118,10 @@ function onFileChange(event) {
 
       toast({
         title: 'Success',
-        description: 'Banner Added '
+        description: 'Promotion Added'
       })
       console.log(data)
-      router.push({ name: 'Media_And_Com_Pons_Banner_List' })
+      router.push({ name: 'Media_And_Com_Pons_promotion_List' })
     } catch (error) {
       console.log(error)
       toast({
@@ -133,4 +133,9 @@ function onFileChange(event) {
   }
   
   </script>
+  
+
+
+
+
   
