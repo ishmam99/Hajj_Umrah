@@ -24,7 +24,7 @@
                     </div>
                     <div class="relative mb-3 w-1/2">
                       <input
-                        type="number"
+                        type="text"
                         class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                         id="exampleFormControlInput50"
                         value=""
@@ -61,6 +61,7 @@
                           <input
                             type="date"
                             class="py-2 px-6 rounded-2xl w-full border-2 border-grau-400"
+                            v-model="khutbahList.date"
                           />
                         </div>
                       </div>
@@ -72,6 +73,7 @@
                           <input
                             type="time"
                             class="py-2 px-6 rounded-2xl w-full border-2 border-grau-400"
+                            v-model="khutbahList.time"
                           />
                         </div>
                       </div>
@@ -89,7 +91,7 @@
           </div>
   </template>
 <script setup>
-import { useSocialStore } from '@/stores/mediaDashboard'
+import { useSocialStore } from '@/stores/SocialDashboard.ts'
 import { ref } from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
 import { useRoute, useRouter } from 'vue-router'
@@ -107,17 +109,13 @@ const router = useRouter()
 
 const khutbahList = ref({
   topic: '',
-  speaker:'1',
+  speaker:'',
   description: '',
-  image: '',
+  date: '',
+  time: '',
 })
-const selectedFile = ref(null)
 
-function onFileChange(event) {
-selectedFile.value = event.target.files[0]
-khutbahList.value.image = event.target.files[0]
-console.log('selected image', selectedFile.value)
-}
+
 
 const loading = ref(false)
 const { toast } = useToast()
@@ -126,7 +124,7 @@ const khutbahListStore = async () => {
   console.log(khutbahListStore);
   loading.value = true
   try {
-    const data = await api().post('web-banner-store', khutbahList.value, {
+    const data = await api().post('khutba-store', khutbahList.value, {
       headers: {
       Authorization: `Bearer ${authStore.token}`
     

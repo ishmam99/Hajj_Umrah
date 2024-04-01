@@ -5,7 +5,7 @@
             </div>
             <hr />
             <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
-              <form @submit.prevent="volunteerAdmissionSubmit()">
+              <form @submit.prevent="khatiraListStore()">
                 <div class="py-5 space-y-7 mt-5">
                   <div class="flex gap-4">
                     <div class="relative mb-3 w-1/2">
@@ -14,6 +14,7 @@
                         class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                         id="exampleFormControlInput50"
                         value=""
+                        v-model="khatiraList.topic"
                       />
                       <label
                         for="exampleFormControlInput50"
@@ -27,6 +28,7 @@
                         class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                         id="exampleFormControlInput50"
                         value=""
+                        v-model="khatiraList.speaker"
                       />
                       <label
                         for="exampleFormControlInput50"
@@ -47,6 +49,7 @@
                       rows="4"
                       placeholder="This khatira about "
                       class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
+                      v-model="khatiraList.description"
                     ></textarea>
                   </div>
   
@@ -58,6 +61,7 @@
                           <input
                             type="date"
                             class="py-2 px-6 rounded-2xl w-full border-2 border-grau-400"
+                            v-model="khatiraList.date"
                           />
                         </div>
                       </div>
@@ -69,6 +73,7 @@
                           <input
                             type="time"
                             class="py-2 px-6 rounded-2xl w-full border-2 border-grau-400"
+                            v-model="khatiraList.time"
                           />
                         </div>
                       </div>
@@ -85,6 +90,62 @@
             </div>
           </div>
   </template>
-  <script setup>
-  </script>
+<script setup>
+import { useSocialStore } from '@/stores/SocialDashboard.ts'
+import { ref } from 'vue'
+import { useToast } from '/components/ui/toast/use-toast'
+import { useRoute, useRouter } from 'vue-router'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue
+} from '/components/ui/select'
+import KhudbaList from '../Khudba/KhudbaList.vue'
+const route = useRoute()
+const router = useRouter()
+
+const khatiraList = ref({
+  topic: '',
+  speaker:'',
+  description: '',
+  date: '',
+  time: '',
+})
+
+
+
+const loading = ref(false)
+const { toast } = useToast()
+
+const khatiraListStore = async () => {
+  console.log(khatiraListStore);
+  loading.value = true
+  try {
+    const data = await api().post('khatira-store', khatiraList.value, {
+      headers: {
+      Authorization: `Bearer ${authStore.token}`
+    
+    }
+      })
+    toast({
+      title: 'Success',
+      description: 'Khatira Added'
+    })
+    console.log(data)
+    router.push({ name: 'Media_And_Com_Khatira_List' })
+  } catch (error) {
+    console.log(error)
+    toast({
+      title: 'Error',
+      description: 'Please Try Again'
+    })
+  }
+  loading.value = false
+}
+
+</script>
   
