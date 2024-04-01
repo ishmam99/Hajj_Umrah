@@ -172,8 +172,7 @@
   </div>
 </template>
 <script setup>
-import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import YouthSidebar from '/src/views/Youth/youthSidebar.vue'
+import { useAuthStore } from '@/stores/AuthStore.ts'
 import { Input } from '/components/ui/input'
 import { ref } from 'vue'
 import { useStore } from '/src/stores/store'
@@ -190,6 +189,7 @@ import {
 } from '/components/ui/select'
 
 const store = useStore()
+const authStore = useAuthStore()
 const loading = ref(false)
 const { toast } = useToast()
 
@@ -218,13 +218,14 @@ const ProgramFormApply = async () => {
   console.log(ProgramForm)
   loading.value = true
   try {
-    const data = await api().post('program-store', {
-      method: 'post',
-      body: ProgramForm
+    const data = await api().post('program-store',ProgramForm.value, {
+      headers: {
+          Authorization: `Bearer ${authStore.token}`
+        }
     })
     toast({
       title: 'Success',
-      description: data.data.message
+      description: 'Program created '
     })
     console.log(data)
   } catch (error) {

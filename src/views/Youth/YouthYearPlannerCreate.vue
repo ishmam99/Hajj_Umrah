@@ -61,11 +61,10 @@
   </div>
 </template>
 <script setup>
-import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import YouthSidebar from '/src/views/Youth/youthSidebar.vue'
+
 import { Input } from '/components/ui/input'
 import { ref } from 'vue'
-import { useStore } from '/src/stores/store'
+import { useAuthStore } from '@/stores/AuthStore.ts'
 import api from '@/config/api'
 import { useToast } from '/components/ui/toast/use-toast'
 import {
@@ -78,7 +77,7 @@ import {
   SelectValue
 } from '/components/ui/select'
 
-const store = useStore()
+const authStore = useAuthStore()
 const loading = ref(false)
 const { toast } = useToast()
 
@@ -93,7 +92,9 @@ const yearPlannerFormApply = async () => {
   loading.value = true
   try {
     const data = await api().post('year-planner-store',yearPlannerForm.value, {
-      
+      headers: {
+        Authorization: `Bearer ${authStore.token}`
+      }
     })
     toast({
       title: 'Success',

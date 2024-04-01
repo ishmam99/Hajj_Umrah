@@ -24,51 +24,25 @@
      >
        <table class="table-auto w-full">
          <thead>
-           <tr class="bg-white">
-             <th class="p-2 text-center w-1/8">No.</th>
-             <th class="p-2 text-center w-3/8">Program Name(s)</th>
-             <th class="p-2 text-center w-1/8">Starting Date</th>
-             <th class="p-2 text-center w-1/8">Ending Date</th>
-             <th class="p-2 text-center w-1/8">Time</th>
-             <th class="p-2 text-center w-1/8">Action</th>
+           <tr class="bg-white" >
+             <th class="p-2 text-center w-1/6">No.</th>
+             <th class="p-2 text-center w-1/6">Program Name(s)</th>
+             <th class="p-2 text-center w-1/6">Starting Date</th>
+             <th class="p-2 text-center w-1/6">Ending Date</th>
+             <th class="p-2 text-center w-1/6">Time</th>
+             <th class="p-2 text-center w-1/6">Action</th>
            </tr>
          </thead>
          <tbody>
-           <tr class="">
-             <td class="py-4 p-2 w-1/8 text-center">01</td>
-             <td class="py-4 p-2 flex justify-center items-center gap-2 w-3/8">
-               <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
-               <h3 class="font-bold">Save The Children</h3>
+           <tr class="" v-for="(item,index) in store.programList">
+             <td class="py-4 p-2 w-1/6 text-center">{{ index+1 }}</td>
+             <td class="py-4 p-2 flex justify-center items-center gap-2 w-1/6">
+               <h3 class="font-bold">{{ item.name }}</h3>
              </td>
-             <td class="py-4 p-2 text-center w-1/8">1 Jan 2024</td>
-             <td class="py-4 p-2 text-center w-1/8">1 Feb 2024</td>
-             <td class="py-4 p-2 text-center w-1/8">10.00 AM</td>
-             <td class="py-4 p-2 text-center w-1/8">
-              <Select class="">
-                <SelectTrigger class="w-full">
-                  <SelectValue placeholder="Select one" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select</SelectLabel>
-                    <SelectItem value="Comfort The Sick"> Active </SelectItem>
-                    <SelectItem value="Educate The Children"> Inactive </SelectItem>
-                    <SelectItem value="Shelter The Homeless"> Repeate </SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-             </td>
-           </tr>
-           <tr class="bg-white">
-             <td class="py-4 p-2 w-1/8 text-center">02</td>
-             <td class="py-4 p-2 flex justify-center items-center gap-2 w-3/8">
-               <img src="/src/assets/image/home/l2.jpg" alt="" class="h-10" />
-               <h3 class="font-bold">Comfort The Sick</h3>
-             </td>
-             <td class="py-4 p-2 text-center w-1/8 ">1 Jan 2024</td>
-             <td class="py-4 p-2 text-center w-1/8">1 Feb 2024</td>
-             <td class="py-4 p-2 text-center w-1/8">4.00 PM </td>
-             <td class="py-4 p-2 text-center w-1/8">
+             <td class="py-4 p-2 text-center w-1/6">{{item.start_date}}</td>
+             <td class="py-4 p-2 text-center w-1/6">{{ item.end_date }}</td>
+             <td class="py-4 p-2 text-center w-1/6">{{ item.state_time }} - {{item.end_time  }}</td>
+             <td class="py-4 p-2 text-center w-1/6">
               <Select class="">
                 <SelectTrigger class="w-full">
                   <SelectValue placeholder="Select one" />
@@ -90,7 +64,12 @@
    </div>
  </template>
  <script setup>
- import { ref } from 'vue'
+
+  import { ref , onMounted } from 'vue'
+  import { useToast } from '/components/ui/toast/use-toast'
+  import { useRoute, useRouter } from 'vue-router'
+  import { useAuthStore } from '@/stores/AuthStore.ts'
+  import {useYouthStore} from '@/stores/YouthDashboard.ts'
  import {
   Select,
   SelectContent,
@@ -100,4 +79,38 @@
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
+
+const authStore = useAuthStore()
+const store = useYouthStore()
+
+  const route = useRoute()
+  const router = useRouter()
+  
+  const loading = ref(false)
+  const { toast } = useToast()
+  
+  const programList = async () => {
+  
+    loading.value = true
+    try {
+      const { data } = await api().get('program-list', {
+        headers: {
+          Authorization: `Bearer ${authStore.token}`
+        }
+      })
+      
+      store.programList = data.data
+      console.log(store.programList)
+    } catch (error) {
+      console.log(error)
+    }
+    loading.value = false
+  }
+
+  onMounted(async () => {
+    programList()
+
+})
+
+
  </script>
