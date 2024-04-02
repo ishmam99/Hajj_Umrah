@@ -230,10 +230,10 @@ const login =async () => {
         authStore.currentDashboard = "Supply_Admin_Profile"
         router.push({ name: 'Supply_Admin_Profile' })
       }
-      // else if (authStore.role == 'Finance') {
-      //   authStore.currentDashboard = "Finance_Dashboard_Profile"
-      //   router.push({ name: 'Finance_Dashboard_Profile' })
-      // }
+      else if (authStore.role == 'Hr') {
+        authStore.currentDashboard = "HR_Dashboard_Proile"
+        router.push({ name: 'HR_Dashboard_Proile' })
+      }
       
       
       

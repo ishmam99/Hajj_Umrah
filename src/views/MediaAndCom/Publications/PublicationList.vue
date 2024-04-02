@@ -19,9 +19,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="tableRowColor" v-for="publication in store.publicationList">
+                <tr class="tableRowColor" v-for="(publication,index) in store.publicationList">
                   <td class="py-4 p-2 gap-2">
-                    <h3 class="font-bold">01</h3>
+                    <h3 class="font-bold">{{ index+1 }}</h3>
                   </td>
                   <td class="py-4 p-2 flex items-center gap-2">
                     <!-- <img src="/src/assets/image/home/l2.jpg" alt="" class="h-10" /> -->

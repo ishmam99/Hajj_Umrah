@@ -42,48 +42,7 @@
                       </button>
                     </td>
                   </tr>
-                  <tr class="bg-white">
-                    <td class="py-4 p-2 gap-2">
-                      <h3 class="font-bold">02</h3>
-                    </td>
-                    <td class="py-4 p-2 flex items-center gap-2">
-                      <h3 class="font-bold">Embracing Ramadan</h3>
-                    </td>
-                    <td>
-                      <p class="text-lg">12:00 AM</p>
-                    </td>
-                    <td class="py-4 p-2">Abdullah</td>
-                    <td class="py-4 p-2">10 Feb 2024</td>
-                    <td class="py-4 p-2">
-                      <p class="text-sm font-bold text-green-600">Completed</p>
-                    </td>
-                    <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                        Post
-                      </button>
-                    </td>
-                  </tr>
-                  <tr class="">
-                    <td class="py-4 p-2">
-                      <h3 class="font-bold">03</h3>
-                    </td>
-                    <td class="py-4 p-2 flex items-center gap-2">
-                      <h3 class="font-bold">When Laws are Held Hostage</h3>
-                    </td>
-                    <td>
-                      <p class="text-lg">12:00 AM</p>
-                    </td>
-                    <td class="py-4 p-2">Abdullah</td>
-                    <td class="py-4 p-2">1 Feb 2024</td>
-                    <td class="py-4 p-2">
-                      <p class="text-sm font-bold text-blue-600">Pending</p>
-                    </td>
-                    <td class="py-4 p-2">
-                      <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                        Post
-                      </button>
-                    </td>
-                  </tr>
+                  
                 </tbody>
               </table>
             </div>

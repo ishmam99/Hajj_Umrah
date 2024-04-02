@@ -54,7 +54,7 @@
                   </div>
   
                   <div class="flex gap-5">
-                    <div class="w-1/3 flex flex-col gap-5">
+                    <div class="w-full flex flex-col gap-5">
                       <div class="">
                         <label for="" class="text-gray-600"
                           >Select Video <span class="text-red-500">*</span></label
@@ -68,28 +68,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="relative w-1/3">
-                      <div class="gap-5">
-                        <label for="">Date <span class="text-red-500">*</span> </label>
-                        <div class="pt-2">
-                          <input
-                            type="date"
-                            class="py-2 px-6 rounded-2xl w-full border-2 border-grau-400"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="relative w-1/3">
-                      <div class="gap-5">
-                        <label for="">Time <span class="text-red-500">*</span> </label>
-                        <div class="pt-2">
-                          <input
-                            type="time"
-                            class="py-2 px-6 rounded-2xl w-full border-2 border-grau-400"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    
                   </div>
                   <button
                     type="submit"
@@ -107,6 +86,7 @@ import { useSocialStore } from '@/stores/SocialDashboard.ts'
 import { ref } from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
 import { useRoute, useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/AuthStore'
 import {
   Select,
   SelectContent,
@@ -116,18 +96,16 @@ import {
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
-import { useAuthStore } from '@/stores/AuthStore'
+
 const route = useRoute()
 const router = useRouter();
-const authStore = useAuthStore;
+const authStore = useAuthStore();
 
 const khutbahList = ref({
   topic: '',
   speaker:'',
   description: '',
   video: ''
-  // date: '',
-  // time: '',
 })
   const selectedFile = ref(null)
 

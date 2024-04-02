@@ -974,6 +974,16 @@ const router = createRouter({
           component: () => import('@/views/MediaAndCom/Publications/PublicationBroadcast.vue'),
         },
         {
+          path: '/media_and_com_pons_post_category',
+          name: 'media_and_com_pons_post_category',
+          component: () => import('@/views/MediaAndCom/Gallery/PostCategory.vue'),
+        },
+        {
+          path: '/media_and_com_pons_category_list',
+          name: 'media_and_com_pons_category_list',
+          component: () => import('@/views/MediaAndCom/Gallery/CategoryList.vue'),
+        },
+        {
           path: '/media_and_com_pons_post_image',
           name: 'Media_And_Com_Pons_Post_Image',
           component: () => import('@/views/MediaAndCom/Gallery/PostImage.vue'),

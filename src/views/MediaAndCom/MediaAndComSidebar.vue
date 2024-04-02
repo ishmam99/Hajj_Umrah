@@ -71,11 +71,15 @@
             Gallery</ul>
           <ul class="pl-8 flex flex-col gap-1 overflow-hidden" :class="drop==4 ? 'h-fit'
           :'h-0'">
+            <router-link to="/media_and_com_pons_post_category" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+              Create Category</router-link>
+            <router-link to="/media_and_com_pons_category_list" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+              Post Category</router-link>
             <router-link to="/media_and_com_pons_post_image" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
               Post Image</router-link>
-              <router-link to="/media_and_com_pons_image_list" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+            <router-link to="/media_and_com_pons_image_list" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
                 Image List</router-link>
-              <router-link to="/media_and_com_pons_image_broadcast" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
+            <router-link to="/media_and_com_pons_image_broadcast" class="flex items-center gap-2 group hover:text-[#2e318a] duration-150"><p class="h-[2px] w-3 bg-black group-hover:w-5 group-hover:bg-[#2e318a] duration-150"></p>
                 Image Broadcast</router-link>
            
           </ul>

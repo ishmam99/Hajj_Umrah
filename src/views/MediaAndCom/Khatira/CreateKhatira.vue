@@ -95,6 +95,7 @@ import { useSocialStore } from '@/stores/SocialDashboard.ts'
 import { ref } from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
 import { useRoute, useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/AuthStore'
 import {
   Select,
   SelectContent,
@@ -107,7 +108,7 @@ import {
 import KhudbaList from '../Khudba/KhudbaList.vue'
 const route = useRoute()
 const router = useRouter()
-
+const authStore = useAuthStore();
 const khatiraList = ref({
   topic: '',
   speaker:'',
@@ -122,7 +123,6 @@ const loading = ref(false)
 const { toast } = useToast()
 
 const khatiraListStore = async () => {
-  console.log(khatiraListStore);
   loading.value = true
   try {
     const data = await api().post('khatira-store', khatiraList.value, {
