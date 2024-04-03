@@ -15,19 +15,19 @@
                       <label
                     
                         class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                        >Text <span class="text-red-500">*</span>
+                        >Title <span class="text-red-500">*</span>
                       </label>
                     </div>
                     <div class="relative mb-3 w-3/4">
                       <input
-                        type="url"
+                        type="text"
                         class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                        v-model="postPromotion.url"
+                        v-model="postPromotion.name"
                       />
                       <label
                         
                         class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                        >Link <span class="text-red-500">*</span>
+                        >Name <span class="text-red-500">*</span>
                       </label>
                     </div>
                   </div>
@@ -55,6 +55,21 @@
                       type="number" class="w-full border-2 py-1.5 px-2 rounded-xl">
                     </div>
                   </div>
+
+                  <div class="relative">
+                  <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600">
+                     Description <span class="text-red-500">*</span>
+                  </p>
+                  <textarea
+                    name=""
+                    id=""
+                    cols=""
+                    rows="4"
+                    placeholder="Ex:23"
+                    class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
+                    v-model="postPromotion.description"
+                  ></textarea>
+                </div>
 
                   
   
@@ -90,6 +105,9 @@
 
   const postPromotion = ref({
     title: '',
+    name: '',
+    description: '',
+    image: '',
     order:'',
     url: '',
     image: '',
@@ -106,7 +124,7 @@ function onFileChange(event) {
   const { toast } = useToast()
   
   const postPromotionStore = async () => {
-    // console.log(postPromotionStore);
+    console.log(postPromotionStore);
     loading.value = true
     try {
       const data = await api().post('promotion-store',postPromotion.value,{
