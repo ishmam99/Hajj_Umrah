@@ -291,7 +291,7 @@ const participants_yob = ref(2010)
             </div>
           </div>
 
-          <div>
+          <!-- <div>
             <fieldset class="p-4">
               <legend class="font-bold text-white">Interest in other volunteer jobs</legend>
               <div class="columns-3">
@@ -355,7 +355,7 @@ const participants_yob = ref(2010)
                 </div>
               </div>
             </fieldset>
-          </div>
+          </div> -->
 
           <button
             type="submit"
