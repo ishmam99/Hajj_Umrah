@@ -24,7 +24,7 @@
                     </div>
                     <div class="relative mb-3 w-1/2">
                       <input
-                        type="number"
+                        type="text"
                         class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                         id="exampleFormControlInput50"
                         value=""

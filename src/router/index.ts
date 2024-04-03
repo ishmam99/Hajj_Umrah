@@ -728,9 +728,14 @@ const router = createRouter({
           name: '/HR_Employee_list',
           component: () => import('../views/Hr/EmployeeManagement/EmployeeList.vue'),
         },
+        {
+          path: '/HR_dashboard/HR_time_card',
+          name: '/HR_Dashboard/HR_Time_Card',
+          component: () => import('../views/Hr/EmployeeManagement/TimeCard .vue'),
+        },
       
         {
-          path: '/HR_Dashboard/HR_Leave_Management',
+          path: '/HR_dashboard/HR_leave_management',
           name: '/HR_Dashboard/HR_Leave_Management',
           component: () => import('../views/Hr/EmployeeManagement/LeaveManagement.vue'),
         },
