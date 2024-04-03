@@ -84,7 +84,29 @@ import 'swiper/css/navigation'
 
 // import required modules
 import { Pagination, Navigation, Autoplay } from 'swiper/modules'
+import { ref , onMounted } from 'vue'
+import { useMediaStore } from '@/stores/mediaDashboard'
 const modules = [Pagination, Navigation, Autoplay]
+
+const store = useMediaStore()
+
+const loading = ref(false)
+
+const promotionList = async () => {
+  loading.value = true
+  try {
+    const { data } = await api().get('event-list')
+    store.promotionList = data.data
+    console.log('Promotion Get api',store.promotionList)
+  } catch (error) {
+    console.log(error)
+  }
+  loading.value = false
+}
+
+onMounted(async () => {
+  promotionList()
+})
 </script>
 
 <style scoped>

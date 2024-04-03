@@ -19,6 +19,7 @@
                 </thead>
                 <tbody>
                   <tr class="tableRowColor" v-for="promotion in store.promotionList" :key="promotion.id" :class="tableRowColor">
+                    <!-- {{ promotion }} -->
                     <td class="py-4 p-2 gap-2">
                       <h3 class="font-bold">{{ promotion.title }}</h3>
                     </td>
@@ -68,7 +69,7 @@
   const { toast } = useToast()
   
   const promotionList = async () => {
-    console.log(promotionList);
+    // console.log(promotionList);
     loading.value = true
     try {
       const {data} = await api().get('event-list')
