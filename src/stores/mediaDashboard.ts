@@ -10,7 +10,9 @@ export const useMediaStore = defineStore('mediaStore',{
         publicationList: [],
         khutbahList: [],
         khatiraList: [],
-    authUser : '',
+    categoryLit: [],
+    imageList:[],
+        authUser : '',
   }),
   actions: {
     

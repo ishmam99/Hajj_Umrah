@@ -234,6 +234,10 @@ const login =async () => {
         authStore.currentDashboard = "HR_Dashboard_Proile"
         router.push({ name: 'HR_Dashboard_Proile' })
       }
+      else if (authStore.role == 'Volunteer') {
+        authStore.currentDashboard = "Volunteer_Dashboard"
+        router.push({ name: 'Volunteer_Dashboard' })
+      }
       
       
       
