@@ -117,18 +117,18 @@
           <router-link to="/HR_Dashboard/HR_Employment_Scheduling" class="flex items-center gap-2"
             >- Employee Schedule </router-link
           >
-          <router-link to="/HR_Dashboard/HR_Time_Card" class="flex items-center gap-2"
+          <router-link to="/HR_dashboard/HR_time_card" class="flex items-center gap-2"
             >- Time card   </router-link
           >
-          <router-link to="/HR_Dashboard/HR_Leave_Management" class="flex items-center gap-2"
+          <router-link to="/HR_dashboard/HR_leave_management" class="flex items-center gap-2"
             >- Leave management   </router-link
           >
-          <router-link to="/HR_Dashboard/HR_Performance_Management" class="flex items-center gap-2"
+          <!-- <router-link to="/HR_Dashboard/HR_Performance_Management" class="flex items-center gap-2"
             >- Performance management   </router-link
           >
           <router-link to="/HR_Dashboard/HR_Career_Life_Cycle" class="flex items-center gap-2"
             >- Career life cycle    </router-link
-          >
+          > -->
          
         </div>
       </div>
