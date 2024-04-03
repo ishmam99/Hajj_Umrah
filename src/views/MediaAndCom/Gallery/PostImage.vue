@@ -63,7 +63,7 @@
                   class="flex justify-center items-center h-[45px] rounded-2xl bg-white px-4 py-2 text-sm text-gray-500 text-center relative border-2 mt-2"
                 >
                   <input
-                    @change="onFileChange()"
+                    @change="onFileChange"
                     type="file"
                     class="h-full w-full opacity-0 absolute top-0"
                   />
