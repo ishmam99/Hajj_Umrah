@@ -17,16 +17,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in store.categoryLit" class="tableRowColor">
+          <tr v-for="(item, index) in store.categoryLit" :key="index" class="tableRowColor">
             <td class="py-4 p-2 gap-2">
               <h3 class="font-bold">{{ index + 1 }}</h3>
             </td>
             <td class="py-4 p-2 flex items-center gap-2">
               <img :src="item.image" alt="" class="h-10" />
-              <h3 class="font-bold">{{ item.title }}</h3>
+              <h3 class="font-bold">{{ item.category_title }}</h3>
             </td>
             <td>
-              <p class="text-lg">{{ item.description }}</p>
+              <p class="text-lg">{{ item.category_description }}</p>
             </td>
             <td class="py-4 p-2">
               <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
