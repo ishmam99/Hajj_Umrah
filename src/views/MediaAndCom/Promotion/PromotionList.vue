@@ -10,7 +10,7 @@
               <table class="table-auto w-full">
                 <thead>
                   <tr class="bg-white text-xl">
-                    <th class="p-2 text-left">Order</th>
+                    <th class="p-2 text-left">Title</th>
                     <th class="p-2 text-left">Image</th>
                     <th class="p-2 text-left">Title</th>
                     <th class="p-2 text-left">Action</th>
@@ -20,13 +20,13 @@
                 <tbody>
                   <tr class="tableRowColor" v-for="promotion in store.promotionList" :key="promotion.id" :class="tableRowColor">
                     <td class="py-4 p-2 gap-2">
-                      <h3 class="font-bold">{{ promotion.order }}</h3>
+                      <h3 class="font-bold">{{ promotion.title }}</h3>
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
                       <img :src="promotion.image" alt="" class="h-14" />
                     </td>
                     <td>
-                      <p class="text-lg">{{ promotion.title }}</p>
+                      <p class="text-lg">{{ promotion.description }}</p>
                     </td>
                     <!-- <td class="py-4 p-2">
                       <p class="text-sm font-bold text-blue-600">Pending</p>
