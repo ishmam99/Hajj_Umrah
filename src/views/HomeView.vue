@@ -57,7 +57,7 @@ import VirtualTour from '/src/components/HomeFolder/virtualTour.vue'
             </div>
           </div>
         </router-link>
-        <router-link to="/Mashjib">
+        <!-- <router-link to="/Mashjib">
           <div class="flex gap-3 p-2 rounded-md shadow-md">
             <img src="/src/assets/image/home/g2.jpg" alt="" class="w-1/2 rounded-lg" />
             <div class="w-1/2">
@@ -83,7 +83,7 @@ import VirtualTour from '/src/components/HomeFolder/virtualTour.vue'
               <p>Collections of some wounder full pictures of our Events</p>
             </div>
           </div>
-        </router-link>
+        </router-link> -->
       </div>
     </div>
   </DefaultLayout>
