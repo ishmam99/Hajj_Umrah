@@ -30,7 +30,7 @@
                     <SelectGroup>
                       <SelectLabel>Select Category</SelectLabel>
                       <SelectItem :value="item.id" v-for="item in store.categoryLit">{{
-                        item.title
+                        item.category_title
                       }}</SelectItem>
                     </SelectGroup>
                   </SelectContent>
@@ -146,4 +146,3 @@ const galleryImagePost = async () => {
   loading.value = false
 }
 </script>
-
