@@ -9,8 +9,8 @@ import LearningCenter from '../components/HomeFolder/learningCenter.vue'
 import FundComponent from '../components/HomeFolder/FundComponent.vue'
 import YearlyPlanner from '../components/HomeFolder/YearlyPlanner.vue'
 import KhutbaKhatira from '../components/HomeFolder/KhutbaKhatira.vue'
-import Gallery from '@/components/HomeFolder/Gallery.vue'
-import VirtualTour from '/src/components/HomeFolder/virtualTour.vue'
+import VirtualTour from '/src/components/HomeFolder/virtualTour.vue';
+
 </script>
 
 <template>
