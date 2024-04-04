@@ -17,11 +17,11 @@
             </svg>
             <p>Home</p>
             <p>/ Gallery</p>
-            <p class="text-[#1a5047]">/ {{ selectedTask.category_title }}</p>
+            <p class="text-[#1a5047]">/ {{ selectedTask?.category_title }}</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
             <h1 class="text-[#1a5047] text-4xl font-semibold">
-              {{ selectedTask.category_title }}
+              {{ selectedTask?.category_title }}
             </h1>
             <div>
               <p></p>
@@ -32,13 +32,7 @@
       <div class="bg-[#d1d1d185] h-full py-5 pt-10 flex gap-5 px-20 w-full">
         <div class="space-y-8 w-3/4">
           <div class="grid grid-cols-3 gap-5 justify-center items-center">
-            {{ selectedTask.image }}
-            <img
-              v-for="(image, index) in selectedTask.images.image"
-              :key="index"
-              :src="image"
-              alt=""
-            />
+            <img :src="img.image" alt="" v-for="img in selectedTask?.images">
           </div>
         </div>
         <GalleyMore />
@@ -51,7 +45,7 @@ import { useMediaStore } from '/src/stores/mediaDashboard.ts'
 import GalleyMore from './GalleyMore.vue'
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import { useRoute } from 'vue-router'
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
 const store = useMediaStore()
 
@@ -63,4 +57,5 @@ const selectedTask = computed(() => {
   return store.categoryWiseImage.find((item) => item.id === Number(route.params.id))
 })
 console.log('budu jahid', selectedTask.value)
+
 </script>

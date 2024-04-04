@@ -18,4 +18,5 @@ export const useMediaStore = defineStore('mediaStore',{
   actions: {
     
   },
+  persist:true
 });
