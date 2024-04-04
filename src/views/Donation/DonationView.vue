@@ -62,6 +62,14 @@
               <Label for="number">Card number</Label>
               <Input id="number"  v-model="donation.card_number" placeholder="" />
             </div>
+            <stripe-checkout
+            ref="checkoutRef"
+            mode="payment"
+            :pk="publishableKey"
+            :line-items="lineItems"
+            :success-url="successURL"
+            :cancel-url="cancelURL"
+          />
             <div class="grid grid-cols-3 gap-4">
               <div class="grid gap-2">
                 <Label for="month">Expires</Label>
@@ -139,10 +147,11 @@
         </form>
         
       </Card>
+      
     </div>
   </DefaultLayout>
 </template>
-<script setup lang="ts">
+<script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import { Button } from '/components/ui/button'
 import { Separator } from '/components/ui/separator'
@@ -160,6 +169,20 @@ import { Label } from '/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '/components/ui/radio-group'
 import { StripeCheckout } from '@vue-stripe/vue-stripe';
 import { StripeElementCard } from '@vue-stripe/vue-stripe';
+
+const publishableKey = import.meta.env.VITE_PUBLISHABLE_KEY
+const lineItems = [
+  {
+      price: 'price_1NvoTBKW3DXJSnrBkZfxJDVO',
+    // price: ,
+    quantity: 1,
+  },
+]
+
+const successURL = 'http://localhost:8080/learning-center/success'
+const cancelURL = 'http://localhost:8080/learning-center/checkout'
+
+const checkoutRef = ref()
 
 import {
   Select,

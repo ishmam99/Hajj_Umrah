@@ -4,6 +4,11 @@ import { ref, onMounted, defineProps } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useVolunteerDataStore } from '@/stores/volunteerStore.ts'
 
+import { useMediaStore } from '/src/stores/mediaDashboard.ts'
+import { useToast } from '/components/ui/toast/use-toast'
+import { useRoute, useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/AuthStore.ts'
+
 import {
   Select,
   SelectContent,
@@ -13,6 +18,32 @@ import {
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
+
+const store = useMediaStore()
+const authStore = useAuthStore()
+
+const route = useRoute()
+const router = useRouter()
+
+const loading = ref(false)
+const { toast } = useToast()
+
+const volunteerJobList = async () => {
+  loading.value = true
+  try {
+    const { data } = await api().get('volunteer-job-list', {
+      headers: {
+        Authorization: `Bearer ${authStore.token}`
+      }
+    })
+
+    store.volunteerJobList = data.data
+    console.log(store.volunteerJobList)
+  } catch (error) {
+    console.log(error)
+  }
+  loading.value = false
+}
 
 // pinia
 const { volunteeringPosts } = storeToRefs(useVolunteerDataStore())
@@ -38,6 +69,7 @@ const handleApproveVolunteerPost = (id) => {
 
 onMounted(() => {
   console.log('here check', props)
+  volunteerJobList()
 })
 </script>
 
@@ -47,7 +79,7 @@ onMounted(() => {
       <p class="text-2xl font-bold py-3 border-b">Open Volunteer Jobs</p>
       <div class="flex flex-wrap w-full">
         <div
-          v-for="(volunteerPost, index) in volunteeringPosts"
+          v-for="(volunteerPost, index) in store.volunteerJobList"
           :key="index"
           class="mt-5"
           :class="
@@ -65,9 +97,9 @@ onMounted(() => {
                 <img :src="volunteerPost.image" alt="" class="w-full h-[206px]" />
                 <p class="text-xs font-semibold text-gray-600">{{ volunteerPost.time }}</p>
                 <p class="text-xs font-semibold italic text-gray-600">{{ volunteerPost.venue }}</p>
-                <p class="text-lg font-bold">{{ volunteerPost.postTitle }}</p>
+                <p class="text-lg font-bold">{{ volunteerPost.title }}</p>
                 <p class="">{{ volunteerPost.description }}</p>
-                <div class="absolute w-8 h-8 top-0 right-0">
+                <!-- <div class="absolute w-8 h-8 top-0 right-0">
                   <svg
                     v-if="volunteerPost.isPosted"
                     xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +110,7 @@ onMounted(() => {
                       d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
                     />
                   </svg>
-                </div>
+                </div> -->
               </div>
               <div class="flex flex-col space-y-1">
                 <p class=""><span class="font-bold">Gender:</span> {{ volunteerPost.gender }}</p>
