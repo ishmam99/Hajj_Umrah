@@ -32,7 +32,7 @@
       <div class="bg-[#d1d1d185] h-full py-5 pt-10 flex gap-5 px-20 w-full">
         <div class="space-y-8 w-3/4">
           <div class="grid grid-cols-3 gap-5 justify-center items-center">
-            <img :src="img.image" alt="" v-for="img in selectedTask?.images">
+            <img :src="img.image" alt="" v-for="img in selectedTask?.images" />
           </div>
         </div>
         <GalleyMore />
@@ -45,17 +45,14 @@ import { useMediaStore } from '/src/stores/mediaDashboard.ts'
 import GalleyMore from './GalleyMore.vue'
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import { useRoute } from 'vue-router'
-import { computed, onMounted, ref } from 'vue'
+import { computed } from 'vue'
 
 const store = useMediaStore()
-
-// const categoryWiseImage = ref()
 
 const route = useRoute()
 
 const selectedTask = computed(() => {
   return store.categoryWiseImage.find((item) => item.id === Number(route.params.id))
 })
-console.log('budu jahid', selectedTask.value)
-
+console.log(selectedTask.value)
 </script>
