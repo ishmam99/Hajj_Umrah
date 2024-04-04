@@ -6,8 +6,10 @@ import { defineStore } from 'pinia';
 export const useOperationStore = defineStore('operationStore',{
   state: () => ({
         announcementList: [],
+
   }),
   actions: {
     
   },
+  persist:true
 });

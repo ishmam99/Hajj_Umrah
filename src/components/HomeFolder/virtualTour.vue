@@ -31,21 +31,22 @@
               :navigation="false"
               :modules="modules"
               class="mySwiper rounded-lg"
+              ref="swiper" 
             >
-              <swiper-slide>
-                <img src="@/assets/image/commitees/12.jpg" alt="" class="" />
+              <swiper-slide v-for="promotion in store.promotionList" :key="promotion.id">
+                <img :src="promotion.image" alt="" class="" />
                 <div class="head">
-                  <p class="text-xl pt-1">Friday Khutba</p>
-                  <p class="py-2">Imam Ali</p>
-                  <h1>March 27, 2024</h1>
+                  <p class="text-xl pt-1">{{ promotion.title }}</p>
+                  <p class="py-2">{{ promotion.description }}</p>
+                  <h1>{{ promotion.created_at }}</h1>
                 </div>
               </swiper-slide>
-              <swiper-slide>
-                <img src="@/assets/image/commitees/10.jpg" alt="" class="" />
+              <!-- <swiper-slide>
+                <img :src="promotion.image" alt="" class="" />
                 <div class="head">
                   <p class="text-xl pt-2">Khatira</p>
-                  <p class="py-2">Yasir Qadhi</p>
-                  <h1>March 19, 2024</h1>
+                  <p class="py-2">{{ promotion.description }}</p>
+                  <h1>{{ promotion.created_at }}</h1>
                 </div>
               </swiper-slide>
               <swiper-slide>
@@ -55,7 +56,7 @@
                   <p class="py-2">Omar Sulaiman</p>
                   <h1>March 27, 2024</h1>
                 </div>
-              </swiper-slide>
+              </swiper-slide> -->
               <!-- <swiper-slide>
                 <img src="/src/assets/image/hero/h6.jpg" alt="" class="" />
                 <div class="head">
@@ -97,7 +98,6 @@ const promotionList = async () => {
   try {
     const { data } = await api().get('event-list')
     store.promotionList = data.data
-    console.log('Promotion Get api',store.promotionList)
   } catch (error) {
     console.log(error)
   }
