@@ -1122,10 +1122,11 @@ const router = createRouter({
     },
 
     {
-      path: '/Kabah',
-      name: 'Kabah',
+      path: '/Kabah/:id',
+      name: 'Kabah_Id',
       component: () => import('../views/Gallery/Kabah.vue')
     },
+ 
     {
       path: '/Mashjib',
       name: 'Mashjib',
