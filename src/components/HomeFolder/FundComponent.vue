@@ -1,5 +1,5 @@
 <template>
-  <div class="flex px-[5%] py-10 gap-10 bg-slate-200 my-10">
+  <div class="flex px-[5%] py-10 gap-10 bg-slate-200 my-10 w-full">
     <div class="w-2/3">
       <h1 class="text-4xl font-bold pb-3 uppercase">Fund Raising</h1>
       <div class="bg-[url('/src/assets/image/common/v5.jpg')] bg-cover h-[93%] rounded-lg">
@@ -28,20 +28,11 @@
     <div class="w-1/3">
       <h1 class="text-2xl font-bold pb-3 uppercase text-green-600">Our Campaigns</h1>
       <div class="grid grid-cols-2 gap-5">
-        <div class="flex flex-col gap-1 rounded-md p-2 bg-white">
-          <img src="/src/assets/image/common/v3.jpg" alt="" />
-          <p class="text-xs font-semibold text-gray-600">6th Dec 2021</p>
-          <p class="text-lg font-bold">Build A Mosque In Bangadesh</p>
-        </div>
-        <div class="flex flex-col gap-1 rounded-md p-2 bg-white">
-          <img src="/src/assets/image/common/v2.jpg" alt="" class="" />
-          <p class="text-xs font-semibold text-gray-600">12th March 2021</p>
-          <p class="text-lg font-bold">Fund Raising Event GAZA</p>
-        </div>
-        <div class="flex flex-col gap-1 rounded-md p-2 bg-white">
-          <img src="/src/assets/image/common/v4.jpg" alt="" class="" />
-          <p class="text-xs font-semibold text-gray-600">9th jan 2021</p>
-          <p class="text-lg font-bold">Winter Emergency Fundraser</p>
+        <div class="flex flex-col gap-1 rounded-md p-2 bg-white" v-for="lastFund in lastFunds" :key="lastFund.id">
+          <img :src="lastFund?.image" alt="" class="w-full" />
+          <p class="text-xs font-semibold text-gray-600"><span class="font-bold">Start Date:</span> {{ lastFund.start_date }}</p>
+          <p class="text-xs font-semibold text-gray-600"><span class="font-bold">End Date:</span> {{ lastFund.end_date }}</p>
+          <p class="text-lg font-bold">Build A Mosque In Bangladesh</p>
         </div>
         <div class="flex items-center justify-center">
           <button class="px-3 py-3 bg-green-600 text-white text-sm rounded-md">See More</button>
@@ -50,3 +41,32 @@
     </div>
   </div>
 </template>
+
+
+<script setup>
+import { ref , onMounted } from 'vue'
+import {useAccountStore} from '@/stores/accountStore';
+
+const store = useAccountStore()
+const loading = ref(false)
+const lastFunds = ref([]);
+
+const fundraisers = async () => {
+  loading.value = true
+  try {
+    const { data } = await api().get('fundraise-event-list')
+    store.fundList = data.data
+    const myData = store.fundList;
+    lastFunds.value = myData.slice(myData.length - 3, myData.length - 0);
+    console.log('lastFunds Get api',lastFunds);
+  } catch (error) {
+    console.log(error)
+  }
+  loading.value = false
+}
+
+
+onMounted(async () => {
+  fundraisers()
+})
+</script>

@@ -6,12 +6,12 @@
                 <div class="flex gap-5 ">
                     <div class="w-1/3 relative rounded-lg">
                         <img :src="lastAnnouncement?.image" alt="" class="w-full">  
-                        <p class="bg-[#00000036] absolute top-0 h-full w-full rounded-lg"></p>  
+                        <p class="absolute top-0 h-full w-full rounded-lg"></p>  
                     </div>
                     <div class="w-2/3 grid grid-cols-3 gap-5">
-                        <div class="text-xl font-bold pb-3 relative rounded-lg" v-for="item in otherAnnouncement">
+                        <div class="text-xl font-bold pb-3 relative rounded-lg" v-for="item in otherAnnouncement" :key="item.id">
                             <img :src="item?.image" alt="" class="w-full">
-                            <p class="bg-[#00000036] absolute top-0 h-full w-full rounded-lg"></p>
+                            <p class="absolute top-0 h-full w-full rounded-lg"></p>
                         </div>
                         <div class="flex items-center justify-center py-14">
                             <button  class="px-5 py-2 bg-gray-300 text-sm text-gray-600 font-bold rounded-3xl">See More</button> 

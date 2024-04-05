@@ -32,4 +32,32 @@
     </div>
   </div>
 </template>
-<script setup></script>
+
+
+<script setup>
+import { ref , onMounted } from 'vue'
+import {useAccountStore} from '@/stores/accountStore';
+
+const store = useAccountStore()
+const loading = ref(false)
+const lastFunds = ref([]);
+
+const fundraisers = async () => {
+  loading.value = true
+  try {
+    const { data } = await api().get('fundraise-event-list')
+    store.fundList = data.data
+    const myData = store.fundList;
+    lastFunds.value = myData.slice(myData.length - 3, myData.length - 0);
+    console.log('lastFunds Get api',lastFunds);
+  } catch (error) {
+    console.log(error)
+  }
+  loading.value = false
+}
+
+
+onMounted(async () => {
+  fundraisers()
+})
+</script>
