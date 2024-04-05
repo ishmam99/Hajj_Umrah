@@ -238,6 +238,10 @@ const login =async () => {
         authStore.currentDashboard = "Volunteer_Dashboard"
         router.push({ name: 'Volunteer_Dashboard' })
       }
+      else if (authStore.role == 'Member') {
+        authStore.currentDashboard = "Membar_Dashboard"
+        router.push({ name: 'Membar_Dashboard' })
+      }
       
       
       

@@ -178,7 +178,7 @@ const { toast } = useToast()
 
 const fundCreateFormCreate = async () => {
   try {
-    const data = await api().post('fundraise-event-store', FundCreateForm, {
+    const data = await api().post('fundraise-event-store', FundCreateForm.value, {
       headers: {
         Authorization: `Bearer ${authStore.token}`
       }

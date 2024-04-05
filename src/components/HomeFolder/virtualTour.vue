@@ -36,35 +36,12 @@
               <swiper-slide v-for="promotion in store.promotionList" :key="promotion.id">
                 <img :src="promotion.image" alt="" class="" />
                 <div class="head">
-                  <p class="text-xl pt-1">{{ promotion.title }}</p>
+                  <p class="pt-1">{{ promotion.title }}</p>
                   <p class="py-2">{{ promotion.description }}</p>
-                  <h1>{{ promotion.created_at }}</h1>
+                  <p class="py-2">{{ promotion.date }}</p>
+                  <p class="py-2">{{ promotion.time }}</p>
                 </div>
               </swiper-slide>
-              <!-- <swiper-slide>
-                <img :src="promotion.image" alt="" class="" />
-                <div class="head">
-                  <p class="text-xl pt-2">Khatira</p>
-                  <p class="py-2">{{ promotion.description }}</p>
-                  <h1>{{ promotion.created_at }}</h1>
-                </div>
-              </swiper-slide>
-              <swiper-slide>
-                <img src="@/assets/image/commitees/14.jpg" alt="" class="" />
-                <div class="head">
-                  <p class="text-xl pt-1">Friday Khutba</p>
-                  <p class="py-2">Omar Sulaiman</p>
-                  <h1>March 27, 2024</h1>
-                </div>
-              </swiper-slide> -->
-              <!-- <swiper-slide>
-                <img src="/src/assets/image/hero/h6.jpg" alt="" class="" />
-                <div class="head">
-                  <p>Islamic Digital Lane</p>
-                  <h1>New Muslim Service</h1>
-                  <button class=""></button>
-                </div>
-              </swiper-slide> -->
             </swiper>
           </div>
         </div>
@@ -96,8 +73,9 @@ const loading = ref(false)
 const promotionList = async () => {
   loading.value = true
   try {
-    const { data } = await api().get('event-list')
+    const { data } = await api().get('promotion-list')
     store.promotionList = data.data
+    console.log(data)
   } catch (error) {
     console.log(error)
   }
@@ -117,19 +95,14 @@ onMounted(async () => {
 
 .swiper-slide {
   text-align: center;
-  font-size: 18px;
-
-  /* Center slide text vertically */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
   position: relative;
 }
 .head {
   background: rgba(0, 0, 0, 0.452);
   text-shadow: 2px 2px 3px black;
-  font-size: 36px;
   font-weight: 700;
   color: white;
   position: absolute;
@@ -147,7 +120,6 @@ onMounted(async () => {
 }
 .head p {
   text-shadow: 2px 2px 3px black;
-  font-size: 34px;
   color: rgb(255, 255, 255);
 }
 

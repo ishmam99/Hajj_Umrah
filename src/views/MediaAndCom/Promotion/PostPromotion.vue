@@ -34,7 +34,7 @@
                   
   
                   <div class="flex justify-between gap-5 items-center">
-                    <div class="w-1/2 flex flex-col gap-5">
+                    <div class="w-1/3 flex flex-col gap-5">
                       <div class="">
                         <label for="" class="text-gray-600"
                           >Select Image <span class="text-red-500">*</span></label
@@ -48,11 +48,25 @@
                         </div>
                       </div>
                     </div>
-                    <div class="w-1/2">
-                      <p class="text-gray-600 pb-2">Choose banner order <span class="text-red-500">*</span></p>
+                    <div class="w-1/3 flex flex-col gap-2">
+                      <div class="">
+                        <label for="" class="text-gray-600"
+                          >Select Date <span class="text-red-500">*</span></label
+                        >
+                      </div>
                       <input 
-                      v-model="postPromotion.order"
-                      type="number" class="w-full border-2 py-1.5 px-2 rounded-xl">
+                        v-model="postPromotion.date"
+                          type="date" placeholder="date" class="h-full w-full border-2 border-gray-200 px-3 py-1.5 rounded-2xl" />
+                    </div>
+                    <div class="w-1/3 flex flex-col gap-2">
+                      <div class="">
+                        <label for="" class="text-gray-600"
+                          >Select Time <span class="text-red-500">*</span></label
+                        >
+                      </div>
+                      <input 
+                        v-model="postPromotion.time"
+                          type="time" placeholder="" class="h-full w-full border-2 border-gray-200 px-3 py-1.5 rounded-2xl" />
                     </div>
                   </div>
 
@@ -105,12 +119,10 @@
 
   const postPromotion = ref({
     title: '',
-    name: '',
     description: '',
     image: '',
-    order:'',
-    url: '',
-    image: '',
+    date: '',
+    time:'',
   })
   const selectedFile = ref(null)
 

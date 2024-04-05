@@ -28,7 +28,7 @@
           />
           <p class="font-semibold py-1.5">Confirm Password</p>
           <input
-            v-model="signupData.confirmpassword"
+            v-model="signupData.password_confirmation"
             type="password"
             class="border border-gray-300 focus:outline-yellow-600 rounded-md w-full py-1.5 px-3"
           />
@@ -70,7 +70,8 @@ const signupData = ref({
     password_confirmation:''
 });
 const authStore = useAuthStore();
-const signup = async() => {
+const signup = async () => {
+  console.log(signupData.value)
     try {
     const data = await api().post('member/register',signupData.value, {
      

@@ -10,29 +10,33 @@
               <table class="table-auto w-full">
                 <thead>
                   <tr class="bg-white text-xl">
-                    <th class="p-2 text-left">Title</th>
-                    <th class="p-2 text-left">Image</th>
-                    <th class="p-2 text-left">Title</th>
-                    <th class="p-2 text-left">Action</th>
-                    <th class="p-2 text-left"></th>
+                    <th class="p-2 text-left w-1/6">Title</th>
+                    <th class="p-2 text-left w-1/6">Image</th>
+                    <th class="p-2 text-left w-1/6">Description</th>
+                    <th class="p-2 text-left w-1/6">Date</th>
+                    <th class="p-2 text-left w-1/6">Time</th>
+                    <th class="p-2 text-left w-1/6">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="tableRowColor" v-for="promotion in store.promotionList" :key="promotion.id" :class="tableRowColor">
                     <!-- {{ promotion }} -->
-                    <td class="py-4 p-2 gap-2">
+                    <td class="py-4 p-2 gap-2 w-1/6">
                       <h3 class="font-bold">{{ promotion.title }}</h3>
                     </td>
-                    <td class="py-4 p-2 flex items-center gap-2">
-                      <img :src="promotion.image" alt="" class="h-14" />
+                    <td class="py-4 p-2 gap-2 w-1/6">
+                      <img :src="promotion.image" alt="" class="h-full" />
                     </td>
-                    <td>
+                    <td class="w-1/6">
                       <p class="text-lg">{{ promotion.description }}</p>
                     </td>
-                    <!-- <td class="py-4 p-2">
-                      <p class="text-sm font-bold text-blue-600">Pending</p>
-                    </td> -->
-                    <td class="py-4 p-2">
+                    <td class="w-1/6">
+                      <p class="text-lg">{{ promotion.date }}</p>
+                    </td>
+                    <td class="w-1/6">
+                      <p class="text-lg">{{ promotion.time }}</p>
+                    </td>
+                    <td class="py-4 p-2 w-1/6">
                       <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         Post
                       </button>
@@ -72,7 +76,7 @@
     // console.log(promotionList);
     loading.value = true
     try {
-      const {data} = await api().get('event-list')
+      const {data} = await api().get('promotion-list')
       
       store.promotionList = data.data
       console.log(store.promotionList)
