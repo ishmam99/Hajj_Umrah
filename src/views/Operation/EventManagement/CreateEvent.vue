@@ -2,7 +2,7 @@
     <div class="px-5 bg-slate-50 py-5 w-3/4">
             <p class="text-2xl font-bold py-3 border-b">Create Event </p>
             <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
-              <form @submit.prevent="socialEventSubmit()">
+              <form @submit.prevent="upcomingEvent()">
                 <div class="py-5 space-y-7 mt-5">
                   <div class="flex items-center justify-center gap-5">
                     <div class="relative mb-3 w-3/4">
@@ -223,7 +223,8 @@
   
                   <button
                     type="submit"
-                    class="w-full h-[45px] rounded-2xl bg-teal-800 text-white font-bold mx-auto flex items-center text-center justify-center"
+                    class="w-full h-[45px] 
+                    rounded-2xl bg-teal-800 text-white font-bold mx-auto flex items-center text-center justify-center"
                   >
                     Create
                   </button>
@@ -233,11 +234,6 @@
           </div>
   </template>
   <script setup>
-  import DefaultLayout from '@/layouts/DefaultLayout.vue'
-  import SocialSidebar from '/src/views/Operation/OperationSidevar.vue'
-  import { useSocialStore } from '@/stores/SocialDashboard.ts'
-  import { ref } from 'vue'
-  import { useToast } from '/components/ui/toast/use-toast'
   import {
     Select,
     SelectContent,
@@ -247,7 +243,25 @@
     SelectTrigger,
     SelectValue
   } from '/components/ui/select'
-  const store = useSocialStore()
+  import DefaultLayout from '@/layouts/DefaultLayout.vue'
+  import SocialSidebar from '/src/views/Operation/OperationSidevar.vue'
+
+  import { useOperationStore } from '@/stores/operationDashboard'
+  import { useAuthStore } from '/src/stores/AuthStore.ts'
+  import { ref } from 'vue'
+  import { useToast } from '/components/ui/toast/use-toast'
+  import { useRoute, useRouter } from 'vue-router'
+
+
+const store = useOperationStore()
+const authStore = useAuthStore()
+const route = useRoute()
+const router = useRouter()
+
+const selectedFile = ref(null);
+
+  
+
   const EventList = ref({
     event_name: '',
     event_type: '',
@@ -264,32 +278,33 @@
     ending_time: '',
     occurrence_type: ''
   })
+
+  function onFileChange(event) {
+  selectedFile.value = event.target.files[0];
+  EventList.value.image = event.target.files[0];
+  console.log('Selected File:', selectedFile.value);
+}
   
   const loading = ref(false)
   const { toast } = useToast()
-  
-  // const socialEventSubmit = async () => {
-  //   console.log(socialEventSubmit);
-  //   loading.value = true
-  //   try {
-  //     const data = await api().post('ramadan-program-request', {
-  //       method: 'post',
-  //       body: ramadanProgram
-  //     })
-  //     toast({
-  //       title: 'Success',
-  //       description: data.data.message
-  //     })
-  //     console.log(data)
-  //   } catch (error) {
-  //     console.log(error)
-  //     toast({
-  //       title: 'Error',
-  //       description: 'Please Try Again'
-  //     })
-  //   }
-  //   loading.value = false
-  // }
+
+  const upcomingEvent = async () => {
+  try {
+    const data = await api().post('', EventList.value, {
+      headers: {
+        Authorization: `Bearer ${authStore.token}`
+      }
+    })
+    console.log(data)
+    toast({
+        title: 'Fund Raise Event Created ',
+    });
+    router.push({ name: 'Fund_List' })
+  }
+  catch (error) {
+    console.log(error)
+  }
+}
   
   const socialEventSubmit = () => {
     store.event.push = EventList.value

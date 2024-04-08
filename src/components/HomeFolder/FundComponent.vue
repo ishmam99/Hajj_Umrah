@@ -29,10 +29,11 @@
       <h1 class="text-2xl font-bold pb-3 uppercase text-green-600">Our Campaigns</h1>
       <div class="grid grid-cols-2 gap-5">
         <div class="flex flex-col gap-1 rounded-md p-2 bg-white" v-for="lastFund in lastFunds" :key="lastFund.id">
+          
           <img :src="lastFund?.image" alt="" class="w-full" />
+          <p class="text-lg font-bold mb-1">{{ lastFund.title }}</p>
           <p class="text-xs font-semibold text-gray-600"><span class="font-bold">Start Date:</span> {{ lastFund.start_date }}</p>
           <p class="text-xs font-semibold text-gray-600"><span class="font-bold">End Date:</span> {{ lastFund.end_date }}</p>
-          <p class="text-lg font-bold">Build A Mosque In Bangladesh</p>
         </div>
         <div class="flex items-center justify-center">
           <button class="px-3 py-3 bg-green-600 text-white text-sm rounded-md">See More</button>
