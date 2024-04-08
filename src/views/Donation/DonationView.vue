@@ -1,6 +1,8 @@
 <template>
   <DefaultLayout>
-    <div class="px-20 pt-20 mt-5 py-5 bg-lime-800 bg-[url('/src/assets/image/home/bg123.png')] bg-repeat shadow-xl">
+    <div
+      class="px-20 pt-20 mt-5 py-5 bg-lime-800 bg-[url('/src/assets/image/home/bg123.png')] bg-repeat shadow-xl"
+    >
       <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
         <div class="flex items-center justify-center gap-2 font-semibold">
           <svg
@@ -20,36 +22,34 @@
           <p class="text-lime-800">/ {{ route.name }}</p>
         </div>
         <div class="rounded-lg flex items-center justify-center relative py-3">
-          <h1 class="text-lime-800 text-4xl font-bold"> {{ route.name }}</h1>
+          <h1 class="text-lime-800 text-4xl font-bold">{{ route.name }}</h1>
           <div>
             <p></p>
           </div>
         </div>
       </div>
     </div>
-      <!-- <Separator /> -->
+    <!-- <Separator /> -->
     <div class="flex item-center bg-teal-50 bg-cover justify-center py-10 px-[5%]">
       <Card>
         <CardHeader>
           <CardTitle>Donation Method</CardTitle>
-          <CardDescription>
-            Please Select the donation type
-          </CardDescription>
+          <CardDescription> Please Select the donation type </CardDescription>
         </CardHeader>
-        <form  @submit.prevent="submit()">
+        <form @submit.prevent="submit()">
           <CardContent class="grid gap-6">
-           
-            <RadioGroup default-value="card" v-model="donation.donation_method_id"  class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <RadioGroup
+              default-value="card"
+              v-model="donation.donation_method_id"
+              class="grid grid-cols-1 lg:grid-cols-3 gap-4"
+            >
               <div v-for="item in store.donationList">
-                <RadioGroupItem 
-                id="card" 
-                :value="item.name" 
-                class="peer sr-only" />
+                <RadioGroupItem id="card" :value="item.name" class="peer sr-only" />
                 <Label
                   for="card"
                   class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                 >
-                <img :src="item.image" alt="" class="pb-2">
+                  <img :src="item.image" alt="" class="pb-2" />
                   {{ item.name }}
                 </Label>
               </div>
@@ -60,66 +60,43 @@
             </div>
             <div class="grid gap-2">
               <Label for="number">Card number</Label>
-              <Input id="number"  v-model="donation.card_number" placeholder="" />
+              <Input id="number" v-model="donation.card_number" placeholder="" />
             </div>
-            <stripe-checkout
-            ref="checkoutRef"
-            mode="payment"
-            :pk="publishableKey"
-            :line-items="lineItems"
-            :success-url="successURL"
-            :cancel-url="cancelURL"
-          />
+            <div>
+              <stripe-element-payment
+                ref="paymentRef"
+                :pk="pk_test_51P2ICU07jAgkHlirQXu3rSbc825znsgPsEDVGq04VTj9r0WZCP3Ub247LUSwKlmRmCcvLsZNdFoRvbDaAGBybDNM002NWuqILI"
+                :elements-options="elementsOptions"
+                :confirm-params="confirmParams"
+              />
+              <button @click="pay">Pay Now</button>
+            </div>
             <div class="grid grid-cols-3 gap-4">
               <div class="grid gap-2">
                 <Label for="month">Expires</Label>
-                <Select  v-model="donation.expire_month">
+                <Select v-model="donation.expire_month">
                   <SelectTrigger id="month">
                     <SelectValue placeholder="Month" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="1">
-                      January
-                    </SelectItem>
-                    <SelectItem value="2">
-                      February
-                    </SelectItem>
-                    <SelectItem value="3">
-                      March
-                    </SelectItem>
-                    <SelectItem value="4">
-                      April
-                    </SelectItem>
-                    <SelectItem value="5">
-                      May
-                    </SelectItem>
-                    <SelectItem value="6">
-                      June
-                    </SelectItem>
-                    <SelectItem value="7">
-                      July
-                    </SelectItem>
-                    <SelectItem value="8">
-                      August
-                    </SelectItem>
-                    <SelectItem value="9">
-                      September
-                    </SelectItem>
-                    <SelectItem value="10">
-                      October
-                    </SelectItem>
-                    <SelectItem value="11">
-                      November
-                    </SelectItem>
-                    <SelectItem value="12">
-                      December
-                    </SelectItem>
+                    <SelectItem value="1"> January </SelectItem>
+                    <SelectItem value="2"> February </SelectItem>
+                    <SelectItem value="3"> March </SelectItem>
+                    <SelectItem value="4"> April </SelectItem>
+                    <SelectItem value="5"> May </SelectItem>
+                    <SelectItem value="6"> June </SelectItem>
+                    <SelectItem value="7"> July </SelectItem>
+                    <SelectItem value="8"> August </SelectItem>
+                    <SelectItem value="9"> September </SelectItem>
+                    <SelectItem value="10"> October </SelectItem>
+                    <SelectItem value="11"> November </SelectItem>
+                    <SelectItem value="12"> December </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               <div class="grid gap-2">
                 <Label for="year">Year</Label>
-                <Select  v-model="donation.expire_year">
+                <Select v-model="donation.expire_year">
                   <SelectTrigger id="year">
                     <SelectValue placeholder="Year" />
                   </SelectTrigger>
@@ -132,71 +109,50 @@
               </div>
               <div class="grid gap-2">
                 <Label for="cvc">CVC</Label>
-                <Input id="cvc"  v-model="donation.cvc" placeholder="CVC" />
+                <Input id="cvc" v-model="donation.cvc" placeholder="CVC" />
               </div>
             </div>
-
-  
-
           </CardContent>
           <CardFooter>
-            <Button type="submit" class="w-full">
-              Continue
-            </Button>
+            <Button type="submit" class="w-full"> Continue </Button>
           </CardFooter>
         </form>
-        
       </Card>
-      
     </div>
   </DefaultLayout>
 </template>
 <script setup>
-import DefaultLayout from '@/layouts/DefaultLayout.vue';
+import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import { Button } from '/components/ui/button'
 import { Separator } from '/components/ui/separator'
-import {useAccountStore} from '/src/stores/accountStore'
+import { useAccountStore } from '/src/stores/accountStore'
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from '/components/ui/card'
 import { Input } from '/components/ui/input'
 import { Label } from '/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '/components/ui/radio-group'
-import { StripeCheckout } from '@vue-stripe/vue-stripe';
-import { StripeElementCard } from '@vue-stripe/vue-stripe';
-
-const publishableKey = import.meta.env.VITE_PUBLISHABLE_KEY
-const lineItems = [
-  {
-      price: 'price_1NvoTBKW3DXJSnrBkZfxJDVO',
-    // price: ,
-    quantity: 1,
-  },
-]
-
-const successURL = 'http://localhost:8080/learning-center/success'
-const cancelURL = 'http://localhost:8080/learning-center/checkout'
-
-const checkoutRef = ref()
+import { StripeCheckout } from '@vue-stripe/vue-stripe'
+import { StripeElementCard } from '@vue-stripe/vue-stripe'
 
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from '/components/ui/select'
 
-import {ref , onMounted} from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useToast } from '/components/ui/toast/use-toast'
 const { toast } = useToast()
-const route = useRoute();
+const route = useRoute()
 const store = useAccountStore()
 
 const donation = ref({
@@ -205,15 +161,12 @@ const donation = ref({
   card_number: '',
   expire_month: '',
   expire_year: '',
-  cvc:'',
+  cvc: ''
 })
 
-
 const donnationList = async () => {
-
   try {
-    const { data } = await api().get('donation-method-list', {
-    })
+    const { data } = await api().get('donation-method-list', {})
     store.donationList = data.data
     console.log(store.donationList)
   } catch (error) {
@@ -221,8 +174,28 @@ const donnationList = async () => {
   }
 }
 
+// onMounted(async () => {
+  
+// })
+
+import { StripeElementPayment } from '@vue-stripe/vue-stripe';
+// import { ref, onMounted } from 'vue';
+
+// Using ref for reactive references
+const paymentRef = ref(null);
+const pk = ref('pk_test_51P2ICU07jAgkHlirQXu3rSbc825znsgPsEDVGq04VTj9r0WZCP3Ub247LUSwKlmRmCcvLsZNdFoRvbDaAGBybDNM002NWuqILI');
+const elementsOptions = ref({
+  appearance: {}, // appearance options
+  clientSecret: '', // Moved initialization here
+});
+const confirmParams = ref({
+  return_url: 'http://localhost:8080/success', // success url
+});
+
+// Converts to using the Composition API's onMounted
 onMounted(async () => {
   donnationList()
-
+  const paymentIntent = await apiCallToGeneratePaymentIntent(); // Ensure you have this function defined or imported
+  elementsOptions.value.clientSecret = paymentIntent.client_secret;
 })
 </script>
