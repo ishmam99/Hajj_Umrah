@@ -1053,6 +1053,11 @@ const router = createRouter({
       component: () => import('../views/Member/MembarDashbord.vue'),
       children: [
         {
+          path: '/Membar_Profile',
+          name: 'Membar_Profile',
+          component: () => import('../views/Member/Profile/MembarProfile.vue')
+        },
+        {
           path: '/Membar_Event_History',
           name: 'Membar_Event_History',
           component: () => import('../views/Member/MemberEventHistory.vue')
@@ -1072,19 +1077,29 @@ const router = createRouter({
           name: 'Membar_Change_Password',
           component: () => import('../views/Member/Profile/MemberPassChange.vue')
         },
+        {
+          path: '/Select_Volunteer',
+          name: 'Select Volunteer',
+          component: () => import('../views/Member/MemberVolunteerSelect.vue')
+        },
+        {
+          path: '/Select_Imam',
+          name: 'Select Imam',
+          component: () => import('../views/Member/MemberImamSelect.vue')
+        },
+        {
+          path: '/Imam_Appointment',
+          name: 'Imam_Appointment',
+          component: () => import('../views/Member/MemberAppointmentImam.vue')
+        },
+        {
+          path: '/Scholar_Appointment',
+          name: 'Scholar_Appointment',
+          component: () => import('../views/Member/MemberAppointmentScholar.vue')
+        },
       ],
     },
     
-    {
-      path: '/Select_Volunteer',
-      name: 'Select Volunteer',
-      component: () => import('../views/Member/MemberVolunteerSelect.vue')
-    },
-    {
-      path: '/Select_Imam',
-      name: 'Select Imam',
-      component: () => import('../views/Member/MemberImamSelect.vue')
-    },
     {
       path: '/Prayer_Time',
       name: 'Prayer_Time',

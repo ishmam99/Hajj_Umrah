@@ -239,9 +239,14 @@ const login =async () => {
         router.push({ name: 'Volunteer_Dashboard' })
       }
       else if (authStore.role == 'Member') {
-        authStore.currentDashboard = "Membar_Dashboard"
-        router.push({ name: 'Membar_Dashboard' })
+        authStore.currentDashboard = "Membar_Profile"
+        router.push({ name: 'Membar_Profile' })
       }
+       else if (authStore.role == 'Imam') {
+      authStore.currentDashboard = "Membar_Profile"
+      router.push({ name: 'Membar_Profile' })
+      }
+    
       
       
       

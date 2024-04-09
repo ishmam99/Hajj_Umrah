@@ -1,6 +1,6 @@
 <template>
-    <div class="px-5 bg-white py-5 w-3/4">
-                  <p class="text-2xl font-bold py-3 border-b">Imam Application List</p>
+   <div class="px-5 bg-white py-5 w-3/4">
+                  <p class="text-2xl font-bold py-3 border-b">Scholar Appointment List</p>
                     <div class="grid grid-cols-1 gap-5 mt-5">
                         <div class="flex justify-between bg-slate-100 p-5 rounded-md shadow-md">
                             <div class="flex gap-5">
@@ -30,4 +30,6 @@
     
 </template>
 <script setup>
+import DefaultLayout from '@/layouts/DefaultLayout.vue';
+import MembarSidebar from '/src/views/Member/MembarSidevar.vue'
 </script>

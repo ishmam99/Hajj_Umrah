@@ -65,7 +65,7 @@
             <div>
               <stripe-element-payment
                 ref="paymentRef"
-                :pk="pk_test_51P2ICU07jAgkHlirQXu3rSbc825znsgPsEDVGq04VTj9r0WZCP3Ub247LUSwKlmRmCcvLsZNdFoRvbDaAGBybDNM002NWuqILI"
+                :pk="pk"
                 :elements-options="elementsOptions"
                 :confirm-params="confirmParams"
               />
