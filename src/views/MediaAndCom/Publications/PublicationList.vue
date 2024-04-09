@@ -20,6 +20,7 @@
               </thead>
               <tbody>
                 <tr class="tableRowColor" v-for="(publication,index) in store.publicationList">
+                  {{ publication }}
                   <td class="py-4 p-2 gap-2">
                     <h3 class="font-bold">{{ index+1 }}</h3>
                   </td>

@@ -3,7 +3,9 @@
     <h1 class="text-3xl font-bold uppercase pb-3">Upcoming Event</h1>
     <div class="flex gap-36">
       <div class="w-1/3">
-        <img src="/src/assets/image/home/h6.png" alt="" class="w-full" />
+        <p>test</p>
+        {{ lastEvent }}
+        <img :src="lastEvent?.image" alt="" class="w-full" />
       </div>
       <div class="w-2/3 grid grid-cols-3">
         <div>
@@ -36,20 +38,23 @@
 
 <script setup>
 import { ref , onMounted } from 'vue'
-import {useAccountStore} from '@/stores/accountStore';
+import {useSocialStore} from '@/stores/SocialDashboard';
 
-const store = useAccountStore()
+const store = useSocialStore()
 const loading = ref(false)
-const lastFunds = ref([]);
+const lastEvent = ref();
+const otherEvents = ref([]);
 
-const fundraisers = async () => {
+const upcomingEvent = async () => {
   loading.value = true
   try {
-    const { data } = await api().get('fundraise-event-list')
-    store.fundList = data.data
-    const myData = store.fundList;
-    lastFunds.value = myData.slice(myData.length - 3, myData.length - 0);
-    console.log('lastFunds Get api',lastFunds);
+    const { data } = await api().get('event-list')
+    store.eventList = data.data
+    const myData = store.eventList;
+    lastEvent.value = myData[myData.length - 1];
+    otherEvents.value = myData.slice(myData.length - 6, myData.length - 1);
+    console.log('lastEvent Get api',lastEvent);
+    console.log('otherEvents Get api',otherEvents);
   } catch (error) {
     console.log(error)
   }
@@ -58,6 +63,6 @@ const fundraisers = async () => {
 
 
 onMounted(async () => {
-  fundraisers()
+  upcomingEvent()
 })
 </script>
