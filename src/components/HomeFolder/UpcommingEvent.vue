@@ -3,7 +3,6 @@
     <h1 class="text-3xl font-bold uppercase pb-3">Upcoming Event</h1>
     <div class="flex gap-36">
       <div class="w-1/3">
-        <p>test</p>
         {{ lastEvent }}
         <img :src="lastEvent?.image" alt="" class="w-full" />
       </div>
