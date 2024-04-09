@@ -3,8 +3,6 @@
     <h1 class="text-3xl font-bold uppercase pb-3">Upcoming Event</h1>
     <div class="flex gap-36">
       <div class="w-1/3">
-        <p>test</p>
-        {{ lastEvent }}
         <img :src="lastEvent?.image" alt="" class="w-full" />
       </div>
       <div class="w-2/3 grid grid-cols-3">
@@ -43,7 +41,7 @@ import {useSocialStore} from '@/stores/SocialDashboard';
 const store = useSocialStore()
 const loading = ref(false)
 const lastEvent = ref();
-const otherEvents = ref([]);
+const otherEvents = ref();
 
 const upcomingEvent = async () => {
   loading.value = true
@@ -51,6 +49,7 @@ const upcomingEvent = async () => {
     const { data } = await api().get('event-list')
     store.eventList = data.data
     const myData = store.eventList;
+    console.log(myData)
     lastEvent.value = myData[myData.length - 1];
     otherEvents.value = myData.slice(myData.length - 6, myData.length - 1);
     console.log('lastEvent Get api',lastEvent);
@@ -60,7 +59,6 @@ const upcomingEvent = async () => {
   }
   loading.value = false
 }
-
 
 onMounted(async () => {
   upcomingEvent()

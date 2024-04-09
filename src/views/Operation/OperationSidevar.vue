@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover w-1/4 h-fit sticky top-[80px]"
+    class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover w-1/4 min-h-screen sticky top-[80px]"
   >
     <div class="bg-[#e1f2ff9a] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
       <p class="text-2xl font-bold text-[#2e318a]">Operation Dashboard</p>

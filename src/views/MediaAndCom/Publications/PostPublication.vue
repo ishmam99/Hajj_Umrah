@@ -26,7 +26,7 @@
                       class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                       id="exampleFormControlInput50"
                       value=""
-                      v-model="postPublicationList.authors_name"
+                      v-model="postPublicationList.author"
                     />
                     <label
                       for="exampleFormControlInput50"
@@ -97,7 +97,7 @@ const authStore = useAuthStore();
 
 const postPublicationList = ref({
     title: '',
-    authors_name: '',
+    author: '',
     description:'',
     url: '',
     image: '',

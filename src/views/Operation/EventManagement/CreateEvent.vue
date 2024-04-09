@@ -197,7 +197,7 @@
                         <div
                           class="flex justify-center items-center h-[45px] rounded-2xl bg-white px-4 py-2 text-sm text-gray-500 text-center relative border-2 mt-2"
                         >
-                          <input type="file" class="h-full w-full opacity-0 absolute top-0" />
+                          <input @change="onFileChange" type="file" class="h-full w-full opacity-0 absolute top-0" />
                           Choose File
                         </div>
                       </div>
@@ -263,20 +263,20 @@ const selectedFile = ref(null);
   
 
   const EventList = ref({
-    event_name: '',
+    name: '',
     event_type: '',
-    event_description: '',
+    occurrence_type: '',
     human_resource: '',
     material_resource: '',
-    event_location: '',
+    description: '',
+    address: '',
     city: '',
     state: '',
-    starting_date: '',
-    ending_date: '',
-    event_thumbnail: '',
-    starting_time: '',
-    ending_time: '',
-    occurrence_type: ''
+    start_date: '',
+    state_time: '',
+    end_date: '',
+    end_time: '',
+    image: '',
   })
 
   function onFileChange(event) {
@@ -290,7 +290,7 @@ const selectedFile = ref(null);
 
   const upcomingEvent = async () => {
   try {
-    const data = await api().post('', EventList.value, {
+    const data = await api().post('event-store', EventList.value, {
       headers: {
         Authorization: `Bearer ${authStore.token}`
       }

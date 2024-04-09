@@ -10,32 +10,30 @@
             <table class="table-auto w-full">
               <thead>
                 <tr class="bg-white text-xl">
-                  <th class="p-2 text-left">Number</th>
-                  <th class="p-2 text-left">Title</th>
-                  <th class="p-2 text-left">Writers name</th>
-                  <th class="p-2 text-left">Action</th>
-                  <th class="p-2 text-left">Status</th>
-                  <th class="p-2 text-left"></th>
+                  <th class="p-2 text-start w-1/5">Number</th>
+                  <th class="p-2 text-start w-1/5">Title</th>
+                  <th class="p-2 text-start w-1/5">Writers name</th>
+                  <th class="p-2 text-start w-1/5">Action</th>
+                  <th class="p-2 text-start w-1/5">Status</th>
                 </tr>
               </thead>
               <tbody>
+               
                 <tr class="tableRowColor" v-for="(publication,index) in store.publicationList">
-                  {{ publication }}
-                  <td class="py-4 p-2 gap-2">
+                  <td class="py-4 p-2 flex items-center gap-2 w-1/5">
                     <h3 class="font-bold">{{ index+1 }}</h3>
+                    <img :src="publication.image" alt="image" class="h-10"/>
                   </td>
-                  <td class="py-4 p-2 flex items-center gap-2">
-                    <!-- <img src="/src/assets/image/home/l2.jpg" alt="" class="h-10" /> -->
-                    <img :src="publication.image" alt="publication image" class="h-10" />
-                    <h3 class="font-bold">{{ publication.title }}</h3>
+                  <td class="py-4 p-2 w-1/5">
+                    <h3 class="">{{ publication.title }}</h3>
                   </td>
-                  <td>
-                    <p class="text-lg">{{ publication.authors_name }}</p>
+                  <td class="w-1/5">
+                    <p class="">{{ publication.author }}</p>
                   </td>
-                  <td class="py-4 p-2">
+                  <td class="py-4 p-2 w-1/5">
                     <p class="text-sm font-bold text-blue-600">Pending</p>
                   </td>
-                  <td class="py-4 p-2">
+                  <td class="py-4 p-2 w-1/5">
                       <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         <Dialog>
                           <DialogTrigger> Details </DialogTrigger>
