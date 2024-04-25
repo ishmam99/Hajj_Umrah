@@ -40,7 +40,7 @@ import {useSocialStore} from '@/stores/SocialDashboard';
 
 const store = useSocialStore()
 const loading = ref(false)
-const lastEvent = ref();
+const lastEvent = ref([]);
 const otherEvents = ref();
 
 const upcomingEvent = async () => {
@@ -51,6 +51,7 @@ const upcomingEvent = async () => {
     const myData = store.eventList;
     console.log(myData)
     lastEvent.value = myData[myData.length - 1];
+    // lastEvent.value = myData.slice(myData - 2, myData - 0);
     otherEvents.value = myData.slice(myData.length - 6, myData.length - 1);
     console.log('lastEvent Get api',lastEvent);
     console.log('otherEvents Get api',otherEvents);

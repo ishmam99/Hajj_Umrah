@@ -36,10 +36,12 @@
               <swiper-slide v-for="promotion in store.promotionList" :key="promotion.id">
                 <img :src="promotion.image" alt="" class="" />
                 <div class="head">
-                  <p class="pt-1">{{ promotion.title }}</p>
-                  <p class="py-2">{{ promotion.description }}</p>
-                  <p class="py-2">{{ promotion.date }}</p>
-                  <p class="py-2">{{ promotion.time }}</p>
+                  <div class="ps-2 bg-gradient-to-r from-black to-transparent">
+                    <p class="pt-1 text-xl md:text-3xl font-bold">{{ promotion.title }}</p>
+                    <p class="py-2">{{ promotion.description }}</p>
+                    <p><span class="text-lg font-bold">Date: </span>{{ promotion.date }}</p>
+                    <p><span class="text-lg font-bold">Time: </span>{{ promotion.time }}</p>
+                  </div>
                 </div>
               </swiper-slide>
             </swiper>
@@ -101,26 +103,28 @@ onMounted(async () => {
   position: relative;
 }
 .head {
-  background: rgba(0, 0, 0, 0.452);
+  /* background: rgba(0, 0, 0, 0.452); */
+  /* background-color: cadetblue; */
   text-shadow: 2px 2px 3px black;
-  font-weight: 700;
+  /* font-weight: 700; */
   color: white;
   position: absolute;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   left: 0;
   text-align: left;
-  height: 100%;
+  height: 0%;
   width: 100%;
-  padding: 5%;
+  /* padding: 5%; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center;
   justify-items: center;
-  text-align: center;
+  text-align: center; */
 }
 .head p {
   text-shadow: 2px 2px 3px black;
   color: rgb(255, 255, 255);
+
 }
 
 .swiper-slide img {

@@ -22,7 +22,7 @@
           <p class="text-cyan-800">/ Calender Of Activities</p>
         </div>
         <div class="rounded-lg flex items-center justify-center relative py-3">
-          <h1 class="text-cyan-800 text-4xl font-bold">Employee Login</h1>
+          <h1 class="text-cyan-800 text-4xl font-bold">Annual Activities</h1>
           <div>
             <p></p>
           </div>
