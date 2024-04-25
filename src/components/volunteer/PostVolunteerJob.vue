@@ -21,7 +21,6 @@ import {
 
 const store = useMediaStore()
 const authStore = useAuthStore()
-
 const route = useRoute()
 const router = useRouter()
 
@@ -44,6 +43,21 @@ const volunteerJobList = async () => {
   }
   loading.value = false
 }
+const volunteerJobPost = async (id) => {
+  loading.value = true
+  selectedVolunteerPost.value.job_status = "Approved"
+  console.log( store.volunteerJobList, 'yo')
+  try {
+    const { data } = await api().post(`volunteer-update-job-status/${id}`, 
+    selectedVolunteerPost.value,
+    )
+    volunteerJobList()
+  } catch (error) {
+    console.log(error)
+  }
+  loading.value = false
+}
+
 
 // pinia
 const { volunteeringPosts } = storeToRefs(useVolunteerDataStore())
@@ -83,7 +97,7 @@ onMounted(() => {
           :key="index"
           class="mt-5"
           :class="
-            renderFrom === 'dashboard' ? 'w-full lg:w-1/2 xl:w-1/3' : 'w-1/2 lg:w-1/3 xl:w-1/4'
+            renderFrom === 'dashboard' ? 'w-full lg:w-1/2' : 'w-1/2 lg:w-1/3'
           "
         >
           <div
@@ -99,9 +113,8 @@ onMounted(() => {
                 <p class="text-xs font-semibold italic text-gray-600">{{ volunteerPost.venue }}</p>
                 <p class="text-lg font-bold">{{ volunteerPost.title }}</p>
                 <p class="">{{ volunteerPost.description }}</p>
-                <!-- <div class="absolute w-8 h-8 top-0 right-0">
+                <div class="absolute w-8 h-8 top-0 right-0 z-30"  v-if="volunteerPost.job_status == 'Approved'">
                   <svg
-                    v-if="volunteerPost.isPosted"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
                   >
@@ -110,7 +123,7 @@ onMounted(() => {
                       d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
                     />
                   </svg>
-                </div> -->
+                </div>
               </div>
               <div class="flex flex-col space-y-1">
                 <p class=""><span class="font-bold">Gender:</span> {{ volunteerPost.gender }}</p>
@@ -141,7 +154,7 @@ onMounted(() => {
         <p>See all jobs</p>
       </div>
       <div class="bg-white rounded-xl p-5 shadow-md mx-2 h-full">
-        {{ selectedVolunteerPost }}
+        <!-- {{ selectedVolunteerPost }} -->
         <div class="flex flex-col space-y-2 justify-between gap-1 rounded-md p-2 h-full">
           <div class="grow">
             <img :src="selectedVolunteerPost.image" alt="" class="w-full" />
@@ -153,7 +166,7 @@ onMounted(() => {
             <p class="">{{ selectedVolunteerPost.description }}</p>
           </div>
           <div class="flex flex-col space-y-1">
-            <div class="flex space-x-2">
+            <div class="">
               <h4 class="font-bold">Responsibilities:</h4>
               <p>{{ selectedVolunteerPost.responsibilities }}</p>
             </div>
@@ -168,12 +181,11 @@ onMounted(() => {
             <p class="">
               <span class="font-bold">Gender:</span> {{ selectedVolunteerPost.gender }}
             </p>
-            <button
+            <button v-if="selectedVolunteerPost.job_status=='Aproved'"
               class="btn-round-cyan self-center"
               :class="selectedVolunteerPost.isPosted ? '!bg-[#359913]' : ''"
-              @click="handleApproveVolunteerPost(selectedVolunteerPost.id)"
-            >
-              {{ selectedVolunteerPost.isPosted ? 'Posted' : 'Post' }}
+              @click="volunteerJobPost(selectedVolunteerPost.id)"
+            >Post
             </button>
           </div>
         </div>
