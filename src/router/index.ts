@@ -266,6 +266,11 @@ const router = createRouter({
       component: () => import('../views/Auth/LogIn.vue')
     },
     {
+      path: '/volunteerRegister',
+      name: 'Volunteer Register',
+      component: () => import('@/components/volunteer/ApplyVolunteer.vue')
+    },
+    {
       path: '/volunteer',
       name: 'Volunteer_Dashboard',
       // component: () => import('../views/Hr/HrDashbord.vue')

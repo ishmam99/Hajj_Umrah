@@ -141,10 +141,11 @@ onMounted(() => {
         <p>See all jobs</p>
       </div>
       <div class="bg-white rounded-xl p-5 shadow-md mx-2 h-full">
+        {{ selectedVolunteerPost }}
         <div class="flex flex-col space-y-2 justify-between gap-1 rounded-md p-2 h-full">
           <div class="grow">
             <img :src="selectedVolunteerPost.image" alt="" class="w-full" />
-            <p class="text-xs font-semibold text-gray-600">{{ selectedVolunteerPost.time }}</p>
+            <p class="text-xs font-semibold text-gray-600">{{ selectedVolunteerPost.date }} {{ selectedVolunteerPost.time }}</p>
             <p class="text-xs font-semibold italic text-gray-600">
               {{ selectedVolunteerPost.venue }}
             </p>

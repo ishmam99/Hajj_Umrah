@@ -365,7 +365,7 @@
                 </MenubarSub>
                 <MenubarItem>
                   <router-link
-                    to="/volunteers/volunteeradmission"
+                    to="/volunteerRegister"
                     class="w-full hover:pl-5 duration-300 font-semibold"
                     >Apply for the volunteer</router-link
                   >

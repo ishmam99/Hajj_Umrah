@@ -1,10 +1,13 @@
 import axios from 'axios'
+import {useAuthStore} from '@/stores/AuthStore.ts'
 export default () =>
   axios.create({
     baseURL: 'https://masjid.islamicdigitallane.com/api/v1',
     headers: {
       'Content-Type': 'application/json',
       "Content-Type": "multipart/form-data",
-      Accept: 'application/json'
+      'Accept': 'application/json',
+      Authorization: `Bearer ${useAuthStore().token}`
+
     }
   })
