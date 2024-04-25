@@ -19,7 +19,7 @@ import {
   DialogTrigger
 } from '/components/ui/dialog'
 
-import { ref, watch } from 'vue'
+import { ref, watch,onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useVolunteerDataStore } from '@/stores/volunteerStore.ts'
 
@@ -29,17 +29,29 @@ const { setVolunteerApplicantList } = useVolunteerDataStore()
 
 const searchByJobText = ref('')
 
-watch(
-  () => searchByJobText.value,
-  () => {
-    console.log(searchByJobText.value, 'searchByJobText.value')
+
+const approveList = ref()
+
+const approvedVolunteerList = async () => {
+  try {
+    const {data} = await api().get('volunteer-approved-job-list')
+    console.log(data.data)
+    approveList.value = data.data
+    console.log(approveList.value)
+  } catch (error) {
+    console.log(error)
   }
-)
+}
+
+onMounted(async () => {
+  approvedVolunteerList()
+
+})
+  
 </script>
 
 <template>
   <div class="px-5 bg-slate-50 py-5 w-3/4">
-    <p class="text-2xl font-bold py-3 border-b">Approved Volunteer List</p>
     <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
       <div class="flex justify-between items-center pt-4 pb-2">
         <p class="text-2xl text-yellow-600 font-bold">All Approved Volunteer List</p>
@@ -56,7 +68,7 @@ watch(
           class="py-1.5 px-2 rounded-md border text-sm"
         />
 
-        <div class="w-[200px]">
+        <!-- <div class="w-[200px]">
           <Select class="">
             <SelectTrigger class="w-full">
               <SelectValue placeholder="Search by expertise" />
@@ -69,7 +81,7 @@ watch(
               </SelectGroup>
             </SelectContent>
           </Select>
-        </div>
+        </div> -->
       </div>
       <hr />
       <div

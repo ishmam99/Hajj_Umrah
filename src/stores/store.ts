@@ -7,6 +7,7 @@ export const useStore = defineStore( 'store',{
         announcement: [],
         serviceList:[],
         donationType:[],
+        volunteerJobList:[],
     }),
     actions:{
         
