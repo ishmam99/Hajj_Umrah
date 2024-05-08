@@ -29,6 +29,9 @@ const khatiraList = async () => {
   loading.value = false
 }
 
+const playKhatira = ref()
+const playKhutba = ref()
+
 onMounted(async () => {
   khutbahList()
   khatiraList()
@@ -44,10 +47,14 @@ onMounted(async () => {
           class="bg-white shadow-lg rounded-lg overflow-hidden"
           v-for="(khutbah, index) in store.khutbahList"
           :key="index"
+          @click="playKhutba = khutbah.id"
         >
-          <video class="w-full h-64 object-cover object-center rounded-md" controls>
-            <source :src="khutbah.video" type="video/mp4" autoplay="false" />
+          <video v-if="playKhutba == khutbah.id" class="w-full h-64 object-cover object-center rounded-md" controls autoplay>
+            <source :src="khutbah.video" type="video/mp4"/>
           </video>
+          <div v-else class="h-[200px] w-full overflow-hidden flex items-center">
+            <img src="/src/assets/image/videoThumb.jpeg" alt="" class="" />
+          </div>
           <div class="p-4">
             <h3 class="text-xl font-semibold mb-2">{{ khutbah.topic }}</h3>
             <p class="text-gray-600 mb-2">{{ khutbah.speaker }}</p>
@@ -64,10 +71,18 @@ onMounted(async () => {
           class="bg-white shadow-lg rounded-lg overflow-hidden"
           v-for="(khatira, index) in store.khatiraList"
           :key="index"
+          @click="playKhatira = khatira.id"
         >
-          <video class="w-full h-64 object-cover object-center rounded-md" controls>
-            <source :src="khatira.video" type="video/mp4" autoplay="false" />
+          <video
+            v-if="playKhatira == khatira.id"
+            class="w-full h-64 object-cover object-center rounded-md"
+            controls autoplay
+          >
+            <source :src="khatira.video" type="video/mp4" />
           </video>
+          <div v-else class="h-[200px] w-full overflow-hidden flex items-center">
+            <img src="/src/assets/image/videoThumb.jpeg" alt="" class="" />
+          </div>
           <div class="p-4">
             <h3 class="text-xl font-semibold mb-2">{{ khatira.topic }}</h3>
             <p class="text-gray-600 mb-2">{{ khatira.speaker }}</p>
@@ -75,6 +90,9 @@ onMounted(async () => {
             <p class="text-gray-700">{{ khatira.description }}</p>
           </div>
         </div>
+      </div>
+      <div class="pt-8 flex justify-center">
+        <button class="px-8 py-2 rounded-md bg-blue-500 text-white font-semibold">See All</button>
       </div>
     </div>
   </section>
