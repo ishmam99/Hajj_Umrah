@@ -150,7 +150,7 @@
           <div class="flex gap-5">
             <div class="relative w-1/2">
               <div class="gap-5">
-                <label for="">Delivery Date <span class="text-red-500">*</span> </label>
+                <label for="">Volunteer Event Date <span class="text-red-500">*</span> </label>
                 <div class="pt-2">
                   <input
                   v-model="volunteerPostForm.date"
@@ -162,7 +162,7 @@
             </div>
             <div class="relative w-1/2">
               <div class="gap-5">
-                <label for="">Delivery Time <span class="text-red-500">*</span> </label>
+                <label for="">Volunteer Event Time <span class="text-red-500">*</span> </label>
                 <div class="pt-2">
                   <input
                   v-model="volunteerPostForm.time"

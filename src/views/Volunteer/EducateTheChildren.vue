@@ -1,7 +1,9 @@
 <template>
   <div>
     <DefaultLayout>
-      <div class="px-20 pt-20 mt-5 py-5 bg-sky-800 bg-[url('/src/assets/image/home/bg123.png')] bg-repeat shadow-xl">
+      <div
+        class="px-20 pt-20 mt-5 py-5 bg-sky-800 bg-[url('/src/assets/image/home/bg123.png')] bg-repeat shadow-xl"
+      >
         <div class="pt-3 mx-36 pb rounded-xl bg-[#ffffff] border-blue-50 shadow-xl border-[3px]">
           <div class="flex items-center justify-center gap-2 font-semibold">
             <svg
@@ -21,72 +23,48 @@
             <p class="text-sky-800">/ Volunteer Services</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-sky-800 text-4xl font-bold"> Educate The Children</h1>
-            <div>
-              <p></p>
-            </div>
+            <h1 class="text-sky-800 text-4xl font-bold">{{ selectedVolunteer.title }}</h1>
           </div>
         </div>
+       
       </div>
       <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
-        <div class="space-y-8 w-3/4">
-          <div class="bg-white rounded-xl p-5 w-full">
-            <h1 class="text-3xl underline py-3">Introduction</h1>
-            <p>
-              Many children in our community suffer from homelessness, poverty, neglect and
-              disabilities. These children have less or no educational services. Education is the
-              key to success and this pillar helps to alleviate their situation.
-            </p>
+        <div class="w-3/4">
+          <div class="bg-white p-5 rounded-lg shadow-lg mb-5">
+            <div class="flex flex-col gap-2 rounded-md p-2 h-full">
+              <div class="">
+                <img :src="selectedVolunteer.image" alt="" class="w-full" />
+                <p class="font-semibold">
+                  Time : 
+                  {{ selectedVolunteer.date }} {{ selectedVolunteer.time }}
+                </p>
+                <p class="font-semibold ">
+                  Venue : 
+                  {{ selectedVolunteer.venue }}
+                </p>
+                <p class="">{{ selectedVolunteer.description }}</p>
+              </div>
+              <div class="flex flex-col">
+                <div class="">
+                  <h4 class="font-bold">Responsibilities:</h4>
+                  <p>{{ selectedVolunteer.responsibilities }}</p>
+                </div>
+                <div class="flex space-x-2">
+                  <h4 class="font-bold">Benefits:</h4>
+                  <p>{{ selectedVolunteer.benefits }}</p>
+                </div>
+                <div class="flex space-x-2">
+                  <h4 class="font-bold">Qualification:</h4>
+                  <p>{{ selectedVolunteer.qualification }}</p>
+                </div>
+                <p class="">
+                  <span class="font-bold">Gender:</span> {{ selectedVolunteer.gender }}
+                </p>
+              </div>
+            </div>
+             <button class="px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold">Register</button>
           </div>
-          <div class="bg-white rounded-xl p-5 w-full">
-            <h1 class="text-3xl underline py-3">What do we aim to accomplish?</h1>
-            <ul class="pl-10">
-              <li class="list-disc">
-                Create the conditions that make the children engaged and motivated to learn and
-                apply their creative thinking skills
-              </li>
-              <li class="list-disc">Collaborate and apply skills to real world</li>
-              <li class="list-disc">Promoting parent and family engagement</li>
-            </ul>
-          </div>
-          <div class="bg-white rounded-xl p-5 w-full">
-            <h1 class="text-3xl underline py-3">What are the needs in the community?</h1>
-            <ul class="pl-10">
-              <li class="list-disc">
-                1 in 4 children in America grow up without learning how to read
-              </li>
-              <li class="list-disc">
-                Students who don’t read proficiently by 3rd grade are 4 times likely to drop out of
-                school
-              </li>
-              <li class="list-disc">
-                80% of preschool and after school programs serving low income groups have no age
-                appropriate books
-              </li>
-            </ul>
-          </div>
-          <div class="bg-white rounded-xl p-5 w-full">
-            <h1 class="text-3xl underline py-3">Why do we need to focus on this issue?</h1>
-            <ul class="pl-10">
-              <li class="list-disc">Better future for the kids and families and society</li>
-              <li class="list-disc">Increase in income and quality of living</li>
-              <li class="list-disc">Improves their self confidence and higher self esteem</li>
-              <li class="list-disc">
-                Builds a bridge between us (IDL community) and different faiths.
-              </li>
-            </ul>
-          </div>
-          <div class="bg-white rounded-xl p-5 w-full">
-            <h1 class="text-3xl underline py-3">What are we going to do?</h1>
-            <ul class="pl-10">
-              <li class="list-disc">Teach and tutor kids after school</li>
-              <li class="list-disc">Collect books and donate to them</li>
-              <li class="list-disc">Introduce them to arts- drawing, painting, drama and more</li>
-              <li class="list-disc">Teaching self-help skills and crafts to special need kids.</li>
-              <li class="list-disc">Physical education</li>
-            </ul>
-          </div>
-          <div class="bg-white rounded-xl p-5 w-full">
+          <!-- <div class="bg-white rounded-xl p-5 w-full">
             <h1 class="text-3xl underline py-3">Apply for Volunteering</h1>
             <div class="py-5 space-y-7 mt-5">
               <div class="flex w-full gap-5">
@@ -186,7 +164,7 @@
                 Apply
               </button>
             </div>
-          </div>
+          </div> -->
         </div>
         <VolunteerMore />
       </div>
@@ -198,6 +176,30 @@
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import Card from '/src/components/cardSection.vue'
 import VolunteerMore from '/src/components/VolunteerMore.vue'
+import { ref, onMounted, computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+const route = useRoute()
+
+const selectedVolunteerPost = ref('')
+
+const selectedId = computed(() => {
+  return route.params.id
+})
+const selectedVolunteer = computed(() => {
+  return selectedVolunteerPost.value
+})
+const volunteerJobDetails = async (id) => {
+  try {
+    const { data } = await api().get(`volunteer-job-details/${id}`, {})
+    selectedVolunteerPost.value = data.data
+    console.log(selectedVolunteerPost)
+  } catch (error) {
+    console.log(error)
+  }
+}
+onMounted(async () => {
+  volunteerJobDetails(selectedId.value)
+})
 </script>
 
 <style lang="scss" scoped></style>

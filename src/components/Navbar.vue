@@ -326,39 +326,17 @@
                     <p class="w-full">Volunteer Services</p>
                   </MenubarSubTrigger>
                   <MenubarSubContent>
-                    <MenubarItem>
+                    <MenubarItem v-for="job in store.volunteerJobList">
                       <router-link
-                        to="/volunteer/educate_the_children"
+                        v-if="job?.job_status == 'Approved'"
+                        :to="{
+                          name: 'volunteer/service',
+                          params: {
+                            id: job.id
+                          }
+                        }"
                         class="w-full hover:pl-5 duration-300 font-semibold"
-                        >Educate The Children</router-link
-                      >
-                    </MenubarItem>
-                    <MenubarItem>
-                      <router-link
-                        to="/volunteer/shelter_the_homeless"
-                        class="w-full hover:pl-5 duration-300 font-semibold"
-                        >Shetler The Homeless</router-link
-                      >
-                    </MenubarItem>
-                    <MenubarItem>
-                      <router-link
-                        to="/volunteer/comfort_the_sick"
-                        class="w-full hover:pl-5 duration-300 font-semibold"
-                        >Comfort The Sick</router-link
-                      >
-                    </MenubarItem>
-                    <MenubarItem>
-                      <router-link
-                        to="/volunteer/enhance_social_jsustice"
-                        class="w-full hover:pl-5 duration-300 font-semibold"
-                        >Enhance Social Justice</router-link
-                      >
-                    </MenubarItem>
-                    <MenubarItem>
-                      <router-link
-                        to="/volunteer/feed_the_hungry"
-                        class="w-full hover:pl-5 duration-300 font-semibold"
-                        >Feed The Hungry</router-link
+                        >{{ job?.title }}</router-link
                       >
                     </MenubarItem>
                   </MenubarSubContent>
@@ -761,12 +739,14 @@ import {
 import { ref } from 'vue'
 import { useAuthStore } from '../stores/AuthStore.js'
 import { useRoute, useRouter } from 'vue-router'
+import { useStore } from '../stores/store.ts'
 const MemberDropMenu = ref(false)
 const router = useRouter()
-const store = useAuthStore()
+const authStore = useAuthStore()
 const gotoDashboard = () => {
-  router.push(store?.user.dashboard)
+  router.push(authStore?.user.dashboard)
 }
+const store = useStore()
 </script>
 
 <style scoped>

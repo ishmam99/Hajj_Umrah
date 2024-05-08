@@ -69,14 +69,24 @@ const getDonationType = async () => {
     console.log(error)
   }  
 }
-const getVolunteerJoList = async () => {
+const getJobList = async () => {
   try {
     const { data } = await api().get('job-apply-list')
-    store.volunteerJobList = data.data
-    console.log(store.volunteerJobList , 'volunteer job list')
+    // store.volunteerJobList = data.data
   }catch (error) {
     console.log(error)
   }  
+}
+const volunteerJobList = async () => {
+  try {
+    const { data } = await api().get('volunteer-job-list', {
+    })
+
+    store.volunteerJobList = data.data
+    console.log(store.volunteerJobList)
+  } catch (error) {
+    console.log(error)
+  }
 }
 onMounted(async () => {
   gatprayerTime()
@@ -84,6 +94,7 @@ onMounted(async () => {
   getAnnouncement()
   getServiceList()
   getDonationType()
-  getVolunteerJoList()
+  getJobList()
+  volunteerJobList()
 })
 </script>
