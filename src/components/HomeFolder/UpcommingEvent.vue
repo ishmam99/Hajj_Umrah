@@ -17,7 +17,7 @@
       <div class="w-4/6 grid grid-cols-3 gap-5">
          <div v-for="otherEvent in otherEvents" :key="otherEvent.id" class="card bg-gray-200">
             <div class="card-image">
-              <img :src="otherEvent?.image" class="w-full h-44" alt="" />
+              <img :src="otherEvent?.image" class="w-full h-44 rounded-md" alt="" />
             </div>
             <p class="card-title">{{ otherEvent?.name }}</p>
             <p class="card-body">
