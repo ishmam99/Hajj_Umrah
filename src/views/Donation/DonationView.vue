@@ -192,11 +192,7 @@ const donnationList = async () => {
 
   loading.value = true
   try {
-    const { data } = await api().get('donation-method-list', {
-      headers: {
-        Authorization: `Bearer ${authStore.token}`
-      }
-    })
+    const { data } = await api().get('donation-method-list')
     store.donationList = data.data
     console.log(store.donationList)
   } catch (error) {
@@ -206,12 +202,8 @@ const donnationList = async () => {
 }
 
 onMounted(async () => {
-
-
-})
-onMounted(async () => {
-  donnationList()
   donnationList()
 
 })
+
 </script>
