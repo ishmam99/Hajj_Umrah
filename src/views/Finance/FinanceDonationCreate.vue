@@ -161,6 +161,20 @@ const donationCreateForm = ref({
   image: '',
 })
 
+const reset = () => {
+  donationCreateForm .value = ref({
+  name:'',
+  event_id: '',
+  description:'',
+  start_date: '',
+  start_time: '',
+  end_date: '',
+  end_time: '',
+  amount: '',
+  image: '',
+})
+}
+
 function onFileChange(event) {
   selectedFile.value = event.target.files[0];
   donationCreateForm.value.image = event.target.files[0];
@@ -179,7 +193,8 @@ const donationCreateFormCreate = async () => {
     console.log(data)
     toast({
         title: 'Donation Event Created ',
-      });
+    });
+    reset()
   }
   catch (error) {
     console.log(error)
