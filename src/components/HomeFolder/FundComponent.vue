@@ -25,20 +25,19 @@
         </div>
       </div>
     </div>
-    <div class="w-1/3">
+    <div class="w-2/3">
       <h1 class="text-2xl font-bold pb-3 uppercase text-green-600">Our Campaigns</h1>
-      <div class="grid grid-cols-2 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div class="flex flex-col gap-1 rounded-md p-2 bg-white" v-for="lastFund in lastFunds" :key="lastFund.id">
-          
-          <img :src="lastFund?.image" alt="" class="w-full" />
+          <img :src="lastFund?.image" alt="" class="w-full h-3/4" />
           <p class="text-lg font-bold mb-1">{{ lastFund.title }}</p>
           <p class="text-xs font-semibold text-gray-600"><span class="font-bold">Start Date:</span> {{ lastFund.start_date }}</p>
           <p class="text-xs font-semibold text-gray-600"><span class="font-bold">End Date:</span> {{ lastFund.end_date }}</p>
         </div>
-        <div class="flex items-center justify-center">
+      </div>
+        <div class="flex items-center justify-center mt-14 w-full">
           <button class="px-3 py-3 bg-green-600 text-white text-sm rounded-md">See More</button>
         </div>
-      </div>
     </div>
   </div>
 </template>
@@ -59,6 +58,7 @@ const fundraisers = async () => {
     store.fundList = data.data
     const myData = store.fundList;
     lastFunds.value = myData.slice(myData.length - 3, myData.length - 0);
+    // lastFunds.value = myData;
     console.log('lastFunds Get api',lastFunds);
   } catch (error) {
     console.log(error)
