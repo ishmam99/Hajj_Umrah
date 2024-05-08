@@ -88,5 +88,6 @@ export const useAuthStore = defineStore('authStore', {
       this.isAuthenticated = true
       this.user = user
     }
-  }
+  },
+  persist:true
 })
