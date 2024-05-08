@@ -167,7 +167,7 @@ const getSession = async () => {
   })
   console.log(data)
   if (data.clientSecret) {
-    window.open(data.clientSecret.url)
+    window.open(data.clientSecret.url,"_self")
   }
 }
 
