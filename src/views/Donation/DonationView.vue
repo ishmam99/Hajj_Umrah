@@ -36,7 +36,7 @@
           <CardTitle>Donation Method</CardTitle>
           <CardDescription> Please Select the donation type </CardDescription>
         </CardHeader>
-        <form @submit.prevent="submit()">
+        <form @submit.prevent="getSession()">
           <CardContent class="grid gap-6">
             <RadioGroup
               default-value="card"
@@ -62,15 +62,7 @@
               <Label for="number">Card number</Label>
               <Input id="number" v-model="donation.card_number" placeholder="" />
             </div>
-            <div>
-              <stripe-element-payment
-                ref="paymentRef"
-                :pk="pk"
-                :elements-options="elementsOptions"
-                :confirm-params="confirmParams"
-              />
-              <button @click="pay">Pay Now</button>
-            </div>
+        
             <div class="grid grid-cols-3 gap-4">
               <div class="grid gap-2">
                 <Label for="month">Expires</Label>
@@ -117,6 +109,14 @@
             <Button type="submit" class="w-full"> Continue </Button>
           </CardFooter>
         </form>
+        <div>
+
+  </div>
+  <stripe-buy-button
+  buy-button-id="buy_btn_1P3MwRKGnxnRW2Flao7BSnuC"
+  publishable-key="pk_test_51O1nZWKGnxnRW2FleKUVO7ehputq4YhMzBXIgBk9qaku5gzZGAvTQmjhN18YSHIXSjXhVgndcos35WIVhDPxmim000RQoO42wT"
+>
+</stripe-buy-button>
       </Card>
     </div>
   </DefaultLayout>
@@ -166,7 +166,7 @@ const donation = ref({
 
 const donnationList = async () => {
   try {
-    const { data } = await api().get('donation-method-list', {})
+    const { data } = await api().get('all-donation-types', {})
     store.donationList = data.data
     console.log(store.donationList)
   } catch (error) {
@@ -174,14 +174,31 @@ const donnationList = async () => {
   }
 }
 
-// onMounted(async () => {
-  
-// })
 
-import { StripeElementPayment } from '@vue-stripe/vue-stripe';
-// import { ref, onMounted } from 'vue';
+const loading = ref(false);
 
-// Using ref for reactive references
+const successURL = 'http://localhost:5173/Member_Donation';
+const cancelURL = 'http://localhost:5173/Member_Donation';
+
+const checkoutRef = ref(null);
+const getSession = async() => {
+    const {data} = await api().post('getStripe', {
+      amount: 100,
+      email: 'ishmamazim2@gmail.com',
+      success_url: successURL,
+      cancel_url: cancelURL,
+    })
+  console.log(data)
+    if(data.clientSecret)
+    {
+      window.open(data.clientSecret.url)
+    }
+}
+
+const submit = () => {
+  // You will be redirected to Stripe's secure checkout page
+  checkoutRef.value.redirectToCheckout();
+};
 const paymentRef = ref(null);
 const pk = ref('pk_test_51P2ICU07jAgkHlirQXu3rSbc825znsgPsEDVGq04VTj9r0WZCP3Ub247LUSwKlmRmCcvLsZNdFoRvbDaAGBybDNM002NWuqILI');
 const elementsOptions = ref({
@@ -195,7 +212,6 @@ const confirmParams = ref({
 // Converts to using the Composition API's onMounted
 onMounted(async () => {
   donnationList()
-  const paymentIntent = await apiCallToGeneratePaymentIntent(); // Ensure you have this function defined or imported
-  elementsOptions.value.clientSecret = paymentIntent.client_secret;
+
 })
 </script>
