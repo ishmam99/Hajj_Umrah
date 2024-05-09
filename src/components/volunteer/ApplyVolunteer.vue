@@ -62,7 +62,7 @@ const volunteerAdmissionSubmit = async () => {
       description: 'sign up Completed'
     })
     console.log(data)
-    router.push({ name: 'Volunteer Login' })
+    // router.push({ name: 'Volunteer Login' })
   } catch (error) {
     console.log(error)
     toast({
@@ -132,7 +132,7 @@ const volunteerAdmissionSubmit = async () => {
             <div class="relative mb-3 w-1/2">
               <input
                 v-model="volunteerForm.yob"
-                type="number"
+                type="date"
                 class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                 id="exampleFormControlInput50"
                 value=""
@@ -225,7 +225,7 @@ const volunteerAdmissionSubmit = async () => {
             ></textarea>
           </div>
 
-          <div class="relative" v-if="new Date().getFullYear() - participants_yob > 18">
+          <div class="relative" >
             <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600">Address</p>
             <input
               name=""
@@ -237,7 +237,7 @@ const volunteerAdmissionSubmit = async () => {
             />
           </div>
 
-          <div>
+          <div v-if="new Date().getFullYear() - volunteerForm.yob > 18">
             <div>
               <p class="p-3 left-2 bg-white text-gray-600">Parent Information</p>
             </div>

@@ -34,7 +34,7 @@
             <div class="flex flex-col gap-2 rounded-md p-2 h-full">
               <div class="">
                 <img :src="selectedVolunteer.image" alt="" class="w-full" />
-                <p class="font-semibold">
+                <p class="font-semibold pt-2">
                   Time : 
                   {{ selectedVolunteer.date }} {{ selectedVolunteer.time }}
                 </p>
@@ -57,114 +57,14 @@
                   <h4 class="font-bold">Qualification:</h4>
                   <p>{{ selectedVolunteer.qualification }}</p>
                 </div>
-                <p class="">
+                <p class="pb-3">
                   <span class="font-bold">Gender:</span> {{ selectedVolunteer.gender }}
                 </p>
               </div>
             </div>
-             <button class="px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold">Register</button>
+              <router-link to="/volunteerRegister" class="px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold " v-if="store.registerVolunteerChk == false">register</router-link>
+              <button class="px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold" v-else>Apply</button>
           </div>
-          <!-- <div class="bg-white rounded-xl p-5 w-full">
-            <h1 class="text-3xl underline py-3">Apply for Volunteering</h1>
-            <div class="py-5 space-y-7 mt-5">
-              <div class="flex w-full gap-5">
-                <div class="relative mb-3 w-full">
-                  <input
-                    type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                    id="exampleFormControlInput50"
-                    value=""
-                  />
-                  <label
-                    for="exampleFormControlInput50"
-                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                    >First Name <span class="text-red-500">*</span>
-                  </label>
-                </div>
-                <div class="relative mb-3 w-full">
-                  <input
-                    type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                    id="exampleFormControlInput50"
-                    value=""
-                  />
-                  <label
-                    for="exampleFormControlInput50"
-                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                    >Last Name <span class="text-red-500">*</span>
-                  </label>
-                </div>
-              </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Age <span class="text-red-500">*</span>
-                </label>
-              </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Email <span class="text-red-500">*</span>
-                </label>
-              </div>
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >Phone Number <span class="text-red-500">*</span>
-                </label>
-              </div>
-            </div>
-            <p class="text-xl font-bold pt-5 pb-2">Gender<span class="text-red-600">*</span></p>
-            <div class="flex gap-5">
-              <div class="flex items-center gap-2 font-semibold py-2">
-                <input type="radio" id="Dhur" name="Event_Time" value="Dhur" class="h-4 w-4" />
-                <label for="Dhur">Male</label>
-              </div>
-              <div class="flex items-center gap-2 font-semibold py-2">
-                <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-4 w-4" />
-                <label for="Asr">Female</label>
-              </div>
-            </div>
-            <div>
-              <p class="text-xl font-bold py-5">Any Question or Comments</p>
-              <textarea
-                name=""
-                id=""
-                cols=""
-                rows="4"
-                placeholder="Ex:23"
-                class="w-full p-3 rounded-md shadow-lg border border-black"
-              ></textarea>
-            </div>
-            <div class="flex justify-center py-3">
-              <button
-                class="w-[350px] h-[45px] rounded-2xl bg-sky-800 text-white font-bold mx-auto"
-              >
-                Apply
-              </button>
-            </div>
-          </div> -->
         </div>
         <VolunteerMore />
       </div>
@@ -178,6 +78,9 @@ import Card from '/src/components/cardSection.vue'
 import VolunteerMore from '/src/components/VolunteerMore.vue'
 import { ref, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useStore } from '/src/stores/store.ts'
+
+const store = useStore()
 const route = useRoute()
 
 const selectedVolunteerPost = ref('')
@@ -190,15 +93,26 @@ const selectedVolunteer = computed(() => {
 })
 const volunteerJobDetails = async (id) => {
   try {
-    const { data } = await api().get(`volunteer-job-details/${id}`, {})
+    const { data } = await api().get(`volunteer-job-details/${id}`)
     selectedVolunteerPost.value = data.data
     console.log(selectedVolunteerPost)
   } catch (error) {
     console.log(error)
   }
 }
+
+const registerVolunteerChk = async () => {
+  try {
+    const { data } = await api().get('volunteer-form-check')
+    console.log(data.exists)
+    store.registerVolunteerChk = data.exists
+  } catch (error) {
+    console.log(error)
+  }
+}
 onMounted(async () => {
   volunteerJobDetails(selectedId.value)
+  registerVolunteerChk()
 })
 </script>
 

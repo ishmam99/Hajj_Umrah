@@ -8,6 +8,8 @@ export const useStore = defineStore( 'store',{
         serviceList:[],
         donationType:[],
         volunteerJobList:[],
+        donationForm: [],
+        registerVolunteerChk : null
     }),
     actions:{
         
