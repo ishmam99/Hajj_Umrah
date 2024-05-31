@@ -27,12 +27,7 @@
             <td class="py-4 p-2">
               <h3 class="font-bold">{{ index + 1 }}</h3>
             </td>
-            <td class="py-4 p-2 flex items-center gap-2 relative group">
-              <img
-                :src="event.image"
-                alt=""
-                class="h-20 absolute hidden group-hover:block z-10 top-[-110%]"
-              />
+            <td class="py-4 p-2 flex items-center gap-2">
               <h3 class="font-bold">{{ event.name }}</h3>
             </td>
             <td class="py-4 p-2 items-center gap-2">

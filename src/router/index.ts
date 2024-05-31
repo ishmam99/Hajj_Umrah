@@ -232,12 +232,12 @@ const router = createRouter({
     {
       path: '/Member_Donation',
       name: 'Member Donation',
-      component: () => import('../views/Donation/DonationView.vue')
+      component: () => import('../views/website/Donation/DonationView.vue')
     },
     {
       path: '/Guest_Donation',
       name: 'Guest Donation',
-      component: () => import('../views/Donation/DonationView.vue')
+      component: () => import('../views/website/Donation/DonationView.vue')
     },
     {
       path: '/studentadmission',
