@@ -15,8 +15,8 @@
 </template>
 
 <script setup lang="ts">
-import Navbar from '../components/Navbar.vue'
-import foot from '../components/footer.vue'
+import Navbar from '@/components/Navbar.vue'
+import foot from '@/components/footer.vue'
 import Toaster from '/components/ui/toast/Toaster.vue'
 import { ref, onMounted } from 'vue'
 import { useStore } from '../stores/store.ts'

@@ -1,5 +1,5 @@
 <script setup>
-import RatingComponent from '@/components/RatingComponent'
+import RatingComponent from '@/components/RatingComponent.vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()

@@ -105,6 +105,7 @@ onUnmounted(() => {
 </script>
 
 <template>
+
   <div class="dashboard-content">
     <img src="@/assets/images/dashboard/student-management/banner-09.png" alt="" />
     <div class="dashboard-wrapper">

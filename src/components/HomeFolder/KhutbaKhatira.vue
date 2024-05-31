@@ -63,6 +63,9 @@ onMounted(async () => {
           </div>
         </div>
       </div>
+      <div class="pt-8 flex justify-center">
+        <button class="px-8 py-2 rounded-md bg-blue-500 text-white font-semibold">See All</button>
+      </div>
     </div>
     <div>
       <h2 class="text-3xl font-bold pb-6 pt-10 uppercase">Khatira</h2>

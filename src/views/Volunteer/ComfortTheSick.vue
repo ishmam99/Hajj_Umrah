@@ -40,7 +40,7 @@
               they are collectively engaged in activities that demonstrate our mutual societal
               responsibilities. Our participation in the social sphere is a direct manifestation of
               our Islamic faith and shows the world who we are and what we stand for. Additionally
-              when we invest in our society’s interests, we create unbreakable bonds with our
+              when we invest in our societys interests, we create unbreakable bonds with our
               surrounding neighbors.
             </p>
           </div>
@@ -48,8 +48,8 @@
             <h1 class="text-3xl underline py-3">Volunteer Opportunities</h1>
             <ul class="pl-10">
               <li class="list-disc">
-                Collaborate and work with other organizations currently working with ‘Comforting the
-                sick’
+                Collaborate and work with other organizations currently working with Comforting the
+                sick
               </li>
               <li class="list-disc">
                 Reach out to sick individuals through street outreach and mobile outreach services

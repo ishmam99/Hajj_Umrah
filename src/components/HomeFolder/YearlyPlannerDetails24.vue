@@ -51,16 +51,16 @@ On the day of the event, the venue is bustling with activity as volunteers set u
               <div class="bg-white rounded-xl p-5 w-full">
                 <div class="grid grid-cols-2 gap-2">
                   <div>
-                      <img class="h-auto max-w-full rounded-lg" src="../../assets/image/hungry/hungry-1.jpg" alt="">
+                      <img class="h-auto max-w-full rounded-lg" src="@/assets/image/hungry/hungry-1.jpg" alt="">
                   </div>
                   <div>
-                      <img class="h-auto max-w-full rounded-lg" src="../../assets/image/hungry/hungry-7.jpg" alt="">
+                      <img class="h-auto max-w-full rounded-lg" src="@/assets/image/hungry/hungry-7.jpg" alt="">
                   </div>
                   <div>
-                      <img class="h-auto max-w-full rounded-lg" src="../../assets/image/hungry/hungry-3.jpg" alt="">
+                      <img class="h-auto max-w-full rounded-lg" src="@/assets/image/hungry/hungry-3.jpg" alt="">
                   </div>
                   <div>
-                      <img class="h-auto max-w-full rounded-lg" src="../../assets/image/hungry/hungry-4.jpg" alt="">
+                      <img class="h-auto max-w-full rounded-lg" src="@/assets/image/hungry/hungry-4.jpg" alt="">
                   </div>
                 </div>
               </div>

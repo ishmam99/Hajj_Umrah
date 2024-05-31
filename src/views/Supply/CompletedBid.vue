@@ -124,7 +124,7 @@ import {
                                 <span class="font-bold">Vendor Id: </span>001
                               </div>
                               <h1 class="text-l mb-2">Vendor Logo</h1>
-                              <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
+                              <img src="@/assets/image/hungry/hungry-2.jpg" alt="" />
                             </DialogTitle>
                             <DialogDescription>
                               <div class="flex gap-5 items-center justify-between mt-2">
@@ -178,7 +178,7 @@ import {
                                 <span class="font-bold">Vendor Id: </span>002
                               </div>
                               <h1 class="text-l mb-2">Vendor Logo</h1>
-                              <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
+                              <img src="@/assets/image/hungry/hungry-2.jpg" alt="" />
                             </DialogTitle>
                             <DialogDescription>
                               <div class="flex gap-5 items-center justify-between mt-2">
@@ -220,7 +220,7 @@ import {
                                 <span class="font-bold">Vendor Id: </span>003
                               </div>
                               <h1 class="text-l mb-2">Vendor Logo</h1>
-                              <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
+                              <img src="@/assets/image/hungry/hungry-2.jpg" alt="" />
                             </DialogTitle>
                             <DialogDescription>
                               <div class="flex gap-5 items-center justify-between mt-2">
@@ -335,7 +335,7 @@ import {
                                 </div>
                               </DialogTitle>
                               <DialogDescription>
-                                <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
+                                <img src="@/assets/image/hungry/hungry-2.jpg" alt="" />
                                 <div>
                                   <h1 class="font-semibold mt-2 text-lg text-black">
                                     Project Description:
@@ -394,7 +394,7 @@ import {
                                 <span class="font-bold">Vendor Id: </span>001
                               </div>
                               <h1 class="text-l mb-2">Vendor Logo</h1>
-                              <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
+                              <img src="@/assets/image/hungry/hungry-2.jpg" alt="" />
                             </DialogTitle>
                             <DialogDescription>
                               <div class="flex gap-5 items-center justify-between mt-2">
@@ -448,7 +448,7 @@ import {
                                 <span class="font-bold">Vendor Id: </span>002
                               </div>
                               <h1 class="text-l mb-2">Vendor Logo</h1>
-                              <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
+                              <img src="@/assets/image/hungry/hungry-2.jpg" alt="" />
                             </DialogTitle>
                             <DialogDescription>
                               <div class="flex gap-5 items-center justify-between mt-2">
@@ -490,7 +490,7 @@ import {
                                 <span class="font-bold">Vendor Id: </span>003
                               </div>
                               <h1 class="text-l mb-2">Vendor Logo</h1>
-                              <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
+                              <img src="@/assets/image/hungry/hungry-2.jpg" alt="" />
                             </DialogTitle>
                             <DialogDescription>
                               <div class="flex gap-5 items-center justify-between mt-2">

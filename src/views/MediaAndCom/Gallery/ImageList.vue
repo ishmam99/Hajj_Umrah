@@ -17,7 +17,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item,index) in store.imageList" class="tableRowColor">
+          <tr v-for="(item,index) in store.imageList" class="tableRowColor" :key="item.id">
             <td class="py-4 p-2 gap-2">
               <h3 class="font-bold">{{ index+1 }}</h3>
             </td>

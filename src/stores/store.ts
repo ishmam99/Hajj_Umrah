@@ -9,7 +9,20 @@ export const useStore = defineStore( 'store',{
         donationType:[],
         volunteerJobList:[],
         donationForm: [],
-        registerVolunteerChk : null
+        active_event_list: [],
+        past_event_list: [],
+        upcomming_event_list: [],
+        active_project_list: [],
+        past_project_list: [],
+        upcomming_project_list:[],
+        registerVolunteerChk : null,
+        donation: {
+            donation_method_id: '',
+            name: '',
+            email: '',
+            session_token: '',
+            success_token: '',
+        }
     }),
     actions:{
         

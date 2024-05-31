@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import Hero from '../components/hero.vue'
 import Announcement from '../components/HomeFolder/announcement.vue'
@@ -9,8 +9,7 @@ import LearningCenter from '../components/HomeFolder/learningCenter.vue'
 import FundComponent from '../components/HomeFolder/FundComponent.vue'
 import YearlyPlanner from '../components/HomeFolder/YearlyPlanner.vue'
 import KhutbaKhatira from '../components/HomeFolder/KhutbaKhatira.vue'
-import VirtualTour from '/src/components/HomeFolder/virtualTour.vue';
-
+import VirtualTour from '/src/components/HomeFolder/virtualTour.vue'
 </script>
 
 <template>
@@ -49,19 +48,5 @@ import VirtualTour from '/src/components/HomeFolder/virtualTour.vue';
     <div>
       <Gallery />
     </div>
-    <!-- <div class="py-[30px] px-[5%] bg-white gap-5">
-      <h1 class="text-3xl font-bold uppercase pb-3">Gallery</h1>
-      <div class="grid grid-cols-2 gap-5 rounded-xl">
-        <router-link to="/Kabah">
-          <div class="flex gap-3 p-2 rounded-md shadow-md">
-            <img src="/src/assets/image/home/g4.jpg" alt="" class="w-1/2 rounded-lg" />
-            <div class="w-1/2">
-              <h1 class="text-blue-600 text-2xl font-bold py-1">Images of Kabah</h1>
-              <p>Collections of some wounderfull pictures of Kabah</p>
-            </div>
-          </div>
-        </router-link>
-      </div>
-    </div> -->
   </DefaultLayout>
 </template>

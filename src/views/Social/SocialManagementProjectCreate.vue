@@ -46,7 +46,7 @@
               rows="4"
               placeholder="Ex:23"
               class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
-              v-model="ProjectForm.human_resource"
+              v-model="ProjectForm.description"
             ></textarea>
           </div>
           <div class="flex gap-5">
@@ -61,7 +61,7 @@
                 rows="4"
                 placeholder="Ex:23"
                 class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
-                v-model="ProjectForm.material_resource"
+                v-model="ProjectForm.human_resource"
               ></textarea>
             </div>
             <div class="relative w-1/2">
@@ -75,6 +75,7 @@
                 rows="4"
                 placeholder="Ex:23"
                 class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
+                v-model="ProjectForm.material_resource"
               ></textarea>
             </div>
           </div>
@@ -123,35 +124,31 @@
                 >Project Location <span class="text-red-500">*</span>
               </label>
             </div>
-            <div class="flex w-full gap-5">
-              <div class="relative mb-3 w-full">
-                <input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                  v-model="ProjectForm.city"
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >City <span class="text-red-500">*</span>
-                </label>
-              </div>
-              <div class="relative mb-3 w-full">
-                <Input
-                  type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="exampleFormControlInput50"
-                  value=""
-                  v-model="ProjectForm.state"
-                />
-                <label
-                  for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                  >State <span class="text-red-500">*</span>
-                </label>
-              </div>
+            <div class="relative mb-3 w-full">
+              <input
+                type="text"
+                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                id="exampleFormControlInput50"
+                value=""
+                v-model="ProjectForm.city"
+              />
+              <label
+                for="exampleFormControlInput50"
+                class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                >City <span class="text-red-500">*</span>
+              </label>
+            </div>
+            <div class="relative mb-3 w-full">
+              <Input
+                type="text"
+                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                v-model="ProjectForm.state"
+              />
+              <label
+                for="exampleFormControlInput50"
+                class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                >State <span class="text-red-500">*</span>
+              </label>
             </div>
           </div>
           <div class="flex justify-between gap-5">
@@ -297,11 +294,10 @@ const ProjectFormApply = async () => {
   console.log(ProjectForm)
   loading.value = true
   try {
-    const data = await api().post('project-store', ProjectForm.value,
-    {
+    const data = await api().post('project-store', ProjectForm.value, {
       headers: {
-        Authorization: `Bearer ${authStore.token}`,
-      },
+        Authorization: `Bearer ${authStore.token}`
+      }
     })
     toast({
       title: 'Success',
@@ -318,8 +314,4 @@ const ProjectFormApply = async () => {
   }
   loading.value = false
 }
-
-// const ProjectFormApply = () => {
-//   console.log(ProjectForm);
-// }
 </script>

@@ -457,26 +457,7 @@
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
-        <!-- <MenubarMenu>
-          <MenubarTrigger class="px-1 font-bold"
-            >Employees
-           
-          </MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
-              <router-link to="/login" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Employee Login</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link
-                to="/contact/contact_us"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >HR Management</router-link
-              >
-            </MenubarItem>
-          </MenubarContent>
-        </MenubarMenu> -->
+      
         <MenubarMenu>
           <MenubarTrigger class="font-bold 2xl:text-lg"
             >Supply Chain
@@ -651,72 +632,11 @@
                 </MenubarItem>
               </MenubarSubContent>
             </MenubarSub>
-            <!-- <MenubarItem>
-              <router-link to="/Admin_Login" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Admin Login</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link
-                to="/Social_Service_Login"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Social Service Login</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link
-                to="/Youth_Management_Login"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Youth Management Login</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link to="/Finance_Login" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Finance Login</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link
-                to="/Education_Login"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Education Login</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link
-                to="/Supply_Chain_Management_Login"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Supply Chain Management Login</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link to="/HR_Login" class="w-full hover:pl-5 duration-300 font-semibold"
-                >HR Login</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link
-                to="/Operation_Login"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Operations Login</router-link
-              >
-            </MenubarItem> -->
+          
           </MenubarContent>
         </MenubarMenu>
         <div class="flex items-center justify-between gap-2 text-white font-bold text-sm">
-          <!-- <router-link to="/donation" class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500 border-2 border-yellow-500">
-            Donate
-          </router-link> -->
-          <!-- <div v-if="store.isAuthenticated==false" class="relative group">
-            <button @click="MemberDropMenu=!MemberDropMenu" class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500 ">Member</button>
-            <div v-show="MemberDropMenu==true"  class="flex flex-col absolute top-[110%] w-[150px] right-0 z-50 p-3 rounded-md shadow-md text-black bg-white">
-                <router-link to="/Login" class="py-1.5">Sign in</router-link>
-                <router-link to="/Signup" class="py-1.5">Sign up</router-link>
-            </div>
-          </div>
-          <router-link v-else to="/Membar_Dashboard" class="bg-yellow-600 px-6 py-1 rounded-full hover:bg-yellow-500 border-2 border-yellow-500">
-            Member
-          </router-link> -->
+       
         </div>
       </Menubar>
     </div>

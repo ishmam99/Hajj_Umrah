@@ -67,7 +67,7 @@ import {
                               </DialogTitle>
                               <DialogDescription>
                                 <h1 class="text-black text-l">Vendor Logo</h1>
-                                <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
+                                <img src="@/assets/image/hungry/hungry-2.jpg" alt="" />
                                 <div class="flex gap-5 items-center justify-between mt-2">
                                   <div>
                                     <span class="text-black font-semibold">Vendor Id:</span>
@@ -168,7 +168,7 @@ import {
                               </DialogTitle>
                               <DialogDescription>
                                 <h1>Vendor Logo</h1>
-                                <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
+                                <img src="@/assets/image/hungry/hungry-2.jpg" alt="" />
                                 <div class="flex gap-5 items-center justify-between mt-2">
                                   <div>
                                     <span class="text-black font-semibold">Vendor Id:</span>

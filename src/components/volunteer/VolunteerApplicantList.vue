@@ -1,201 +1,9 @@
-<script setup>
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue
-} from '/components/ui/select'
-
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger
-} from '/components/ui/dialog'
-
-import { ref, watch, onMounted } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useVolunteerDataStore } from '@/stores/volunteerStore.ts'
-
-// pinia
-const { volunteerApplicantList } = storeToRefs(useVolunteerDataStore())
-const {
-  setVolunteerApplicantList,
-  setSearchByJobText,
-  setSearchByInterestText,
-  setSearchByExpertiseRef,
-  setSearchByDay,
-  setSearchByRepeatedDay,
-  setSearchByStartEnd
-} = useVolunteerDataStore()
-
-const searchByJobText = ref('')
-const searchByInterestText = ref('')
-const searchByExpertise = ref('All')
-const searchByDateTime = ref(null)
-const occurrenceType = ref('Weeks')
-const searchByDay = ref('Any')
-const searchByRepeatedDay = ref('1')
-const searchByStartTime = ref('Any')
-const searchByEndTime = ref('Any')
-const hours = ref([])
-// Function to generate hours
-const generateHours = () => {
-  for (let i = 0; i < 24; i++) {
-    const hour = `${i < 10 ? '0' : ''}${i}:00` // Format hour with leading zero if needed
-    hours.value.push(hour)
-  }
-}
-
-watch(
-  () => searchByJobText.value,
-  () => {
-    setSearchByJobText(searchByJobText.value)
-
-    if (searchByJobText.value === '') {
-      setSearchByInterestText(searchByInterestText.value)
-    }
-  }
-)
-
-watch(
-  () => searchByInterestText.value,
-  () => {
-    setSearchByInterestText(searchByInterestText.value)
-
-    if (searchByInterestText.value === '') {
-      setSearchByJobText(searchByJobText.value)
-    }
-  }
-)
-
-watch(
-  () => searchByExpertise.value,
-  () => {
-    console.log(searchByExpertise.value, 'searchByExpertise.value')
-  }
-)
-
-watch(
-  () => searchByDay.value,
-  () => {
-    setSearchByDay(searchByDay.value)
-    searchByRepeatedDay.value = '1'
-    console.log(searchByDay.value, 'searchByDay.value')
-  }
-)
-
-watch(
-  () => searchByRepeatedDay.value,
-  () => {
-    setSearchByRepeatedDay({ day: searchByDay.value, repeatedTime: searchByRepeatedDay.value })
-    console.log(searchByDay.value, searchByRepeatedDay.value, 'searchByDay.value')
-  }
-)
-
-// array of multiple sources
-watch(
-  [() => searchByStartTime.value, () => searchByEndTime.value],
-  ([newStartTime, newEndTime]) => {
-    // if (newStartTime !== 'Any' || newEndTime !== 'Any') {
-    // }
-    setSearchByStartEnd({ startTime: newStartTime, endTime: newEndTime })
-    console.log(`StartTime is ${newStartTime} and EndTime is ${newEndTime}`)
-  }
-)
-
-onMounted(() => {
-  generateHours()
-})
-</script>
-
 <template>
   <div class="px-5 bg-slate-50 py-5 w-3/4">
     <p class="text-2xl font-bold py-3 border-b">Volunteer Applicant List</p>
     <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
       <div class="flex justify-between items-center pt-4 pb-2">
         <p class="text-2xl text-yellow-600 font-bold">All Volunteer Application</p>
-      </div>
-
-      <div class="flex flex-wrap justify-between items-end pb-2">
-        <div>
-          <div>By job name:</div>
-          <input
-            v-model="searchByJobText"
-            type="text"
-            placeholder="Search by job name"
-            class="py-1.5 px-2 rounded-md border text-sm"
-          />
-        </div>
-
-        <div>
-          <div>Search by interested area:</div>
-          <input
-            v-model="searchByInterestText"
-            type="text"
-            placeholder="Search by interest area"
-            class="py-1.5 px-2 rounded-md border text-sm"
-          />
-        </div>
-
-        <div class="w-[200px]">
-          <select v-model="searchByDay" class="bg-white border border-gray-500 p-2 rounded-lg">
-            <option>Any</option>
-            <option>Daily</option>
-            <option>Weekly</option>
-            <option>Biweekly</option>
-            <option>Monthly</option>
-          </select>
-        </div>
-
-        <div
-          class="w-[200px] flex space-x-1 items-center"
-          v-if="searchByDay !== 'Daily' && searchByDay !== 'All'"
-        >
-          <span>Min </span>
-          <select
-            v-model="searchByRepeatedDay"
-            class="bg-white border border-gray-500 p-2 rounded-lg"
-          >
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-          <span class="whitespace-nowrap"
-            >times in {{ searchByDay }} {{ searchByDay === 'Biweekly' ? '(15 Days)' : '' }}</span
-          >
-        </div>
-
-        <div class="w-fit flex flex-col">
-          <div>Available Time:</div>
-          <div>
-            <select
-              v-model="searchByStartTime"
-              class="bg-white border border-gray-500 p-2 rounded-lg"
-            >
-              <option>Any</option>
-              <option v-for="hour in hours" :key="hour">{{ hour }}</option>
-            </select>
-
-            <span class="mx-2">To</span>
-
-            <select
-              v-model="searchByEndTime"
-              class="bg-white border border-gray-500 p-2 rounded-lg"
-            >
-              <option>Any</option>
-              <option v-for="hour in hours" :key="hour">{{ hour }}</option>
-            </select>
-          </div>
-        </div>
       </div>
 
       <hr />
@@ -209,27 +17,26 @@ onMounted(() => {
               <th class="p-2 text-center">Name</th>
               <th class="">Volunteer Job</th>
               <th class="">Expertise Area</th>
-              <th class="p-2 text-center">Additional Interest Area</th>
+              <!-- <th class="p-2 text-center">Additional Interest Area</th> -->
               <th class="p-2 text-center">More Info</th>
               <th class="p-2 text-center">Action</th>
             </tr>
           </thead>
           <tbody>
             <template
-              v-for="volunteerApplicant in volunteerApplicantList"
+              v-for="(volunteerApplicant , index) in allVolunteerList"
               :key="volunteerApplicant.id"
             >
-              <tr
-                v-if="volunteerApplicant.applicationStatus === 'Waiting'"
-                :class="[`${volunteerApplicant.id % 2 === 0 ? 'bg-white' : ''}`]"
-              >
-                <td class="py-4 p-2 text-center">{{ volunteerApplicant.id }}</td>
-                <td class="py-4 p-2 text-center">{{ volunteerApplicant.name }}</td>
-                <td class="py-4 p-2 text-center">{{ volunteerApplicant.volunteerJob }}</td>
-                <td class="py-4 p-2 text-center">{{ volunteerApplicant.expertiseArea }}</td>
-                <td class="py-4 p-2 text-center">
+              <tr class="table-row">
+        
+                <td class="py-4 p-2 text-center">{{ index+1 }}</td>
+                <td class="py-4 p-2 text-center">{{ volunteerApplicant.user.name }}</td>
+                <td class="py-4 p-2 text-center">{{ volunteerApplicant.volunteer_jobs.title }}</td>
+                <td class="py-4 p-2 text-center">N/A</td>
+                <!-- <td class="py-4 p-2 text-center">
                   {{ volunteerApplicant.additionalInterestArea }}
-                </td>
+                </td> -->
+
                 <td class="py-4 p-2 text-center">
                   <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                     <Dialog>
@@ -243,7 +50,11 @@ onMounted(() => {
                             <!-- <img src="/src/assets/image/home/l4.jpg" alt="" /> -->
                             <div>
                               <h1 class="font-semibold mt-2 text-lg text-black">Description</h1>
-                              {{ volunteerApplicant.moreInfo }}
+                              <!-- {{ volunteerApplicant.user }} -->
+                              <p>Name: {{ volunteerApplicant.user.name }}</p>
+                              <p>Email: {{ volunteerApplicant.user.email }}</p>
+                              <p>Phone No: {{ volunteerApplicant.user.phone_no }}</p>
+                              <P>Expertise :</P>
                             </div>
                           </DialogDescription>
                         </DialogHeader>
@@ -253,14 +64,34 @@ onMounted(() => {
                 </td>
 
                 <td class="py-4 p-2 text-center">
-                  <select
-                    v-model="volunteerApplicant.applicationStatus"
-                    class="bg-white border border-gray-500 p-2 rounded-lg"
+                  <div
+                  class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2"
+                >
+                  <DropdownMenu class="w-full">
+                    <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuItem
+                        class="text-yellow-600"
+                        @click="volunteerConfirm(volunteerApplicant.id)"
+                        >Confirm</DropdownMenuItem
+                      >
+                      <DropdownMenuItem 
+                        class="text-blue-600"
+                       
+                        >Reject</DropdownMenuItem
+                        >
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
                   >
-                    <option>Waiting</option>
-                    <option>Approved</option>
-                    <option>Reject</option>
-                  </select>
+                    <path d="M12 16L6 10H18L12 16Z"></path>
+                  </svg>
+                </div>
                 </td>
               </tr>
             </template>
@@ -270,3 +101,68 @@ onMounted(() => {
     </div>
   </div>
 </template>
+
+<script setup>
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '/components/ui/dialog'
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger
+} from '/components/ui/dropdown-menu'
+
+import { ref, watch, onMounted, computed } from 'vue'
+import { useVolunteerDashboardStore } from '@/stores/volunteerStore2.ts'
+
+const store = useVolunteerDashboardStore()
+
+const registerVolunteerAppliedList = async () => {
+  try {
+    const { data } = await api().get('volunteer-job-apply-list')
+    console.log(data)
+    store.registerVolunteerAppliedList = data.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const allVolunteerList = computed(() => {
+  return store.registerVolunteerAppliedList.filter((item)=>item.status == 0)
+})
+
+const volunteerConfirm = async (id) => {
+  try {
+    const { data } = await api().post(`volunteer-job-apply-update-status/${id}`, {
+      status:1
+    })
+    console.log(data)
+    registerVolunteerAppliedList()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
+onMounted(() => {
+  registerVolunteerAppliedList()
+})
+</script>
+
+<style>
+.table-row:nth-child(even){
+  background: white;
+}
+</style>

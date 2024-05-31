@@ -31,15 +31,6 @@
                       <label for="" class="font-semibold mx-2">Single</label>
                     </div>
                     <div>
-                      <!-- <input
-                              type="radio"
-                              value="recurrence"
-                              v-model="occurrence.type"
-                              id="toggleModal"
-                              @update="modalOpen = !modalOpen"
-                            />
-                            <label for="toggleModal" class="font-semibold mx-2">Recurrence</label> -->
-
                       <Dialog>
                         <DialogTrigger class="">
                           <input
@@ -429,24 +420,24 @@ const EventForm = ref({
   state_time: '',
   end_time: '',
   image: ''
-});
+})
 
-const selectedFile = ref(null);
+const selectedFile = ref(null)
 
 function onFileChange(event) {
-  selectedFile.value = event.target.files[0];
-  EventForm.value.image = event.target.files[0];
-  console.log('Selected image', selectedFile.value);
+  selectedFile.value = event.target.files[0]
+  EventForm.value.image = event.target.files[0]
+  console.log('Selected image', selectedFile.value)
 }
 
 const EventFormApply = async () => {
-  console.log(EventForm);
+  console.log(EventForm)
   loading.value = true
   try {
-    const data = await api().post('event-store',EventForm.value, {
+    const data = await api().post('event-store', EventForm.value, {
       headers: {
-        Authorization: `Bearer ${authStore.token}`,
-      },
+        Authorization: `Bearer ${authStore.token}`
+      }
     })
     toast({
       title: 'Success',
@@ -463,9 +454,4 @@ const EventFormApply = async () => {
   loading.value = false
 }
 
-// const EventFormApply = () => {
-//   store.event.push = EventList.value
-
-//   console.log(store.event)
-// }
 </script>

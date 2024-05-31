@@ -62,7 +62,6 @@
           </table>
         </form>
       </div>
-      
     </div>
   </div>
 </template>
@@ -90,7 +89,7 @@ import {
   DropdownMenuTrigger
 } from '/components/ui/dropdown-menu'
 
-const store =useAccountStore()
+const store = useAccountStore()
 const currentDate = new Date()
 console.log(currentDate)
 const currentDateWithFormat = new Date().toJSON().slice(0, 10).replace(/-/g, '/')
@@ -100,7 +99,7 @@ const accountLedger = ref({
   type: '',
   description: '',
   credit: '',
-  debit: '',
+  debit: ''
   // date: 'currentDateWithFormat'
 })
 
@@ -117,10 +116,9 @@ const { toast } = useToast()
 //   }
 // }
 
-
 const accountLedgerCreat = () => {
   store.AccountLedgerListCreate(accountLedger.value)
-  router.push({ name:'Account_Ledger_List'})
+  router.push({ name: 'Account_Ledger_List' })
 }
 
 const router = useRouter()

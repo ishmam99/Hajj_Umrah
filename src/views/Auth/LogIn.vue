@@ -57,60 +57,60 @@
       <div>
         <img
           v-if="route.name == 'Member Login'"
-          src="../../assets/image/common/n21.avif"
+          src="@/assets/image/common/n21.avif"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
           v-if="route.name == 'Admin Login'"
-          src="../../assets/image/common/login.png"
+          src="@/assets/image/common/login.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
           v-if="route.name == 'Social Service Login'"
-          src="../../assets/image/common/login-2.png"
+          src="@/assets/image/common/login-2.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
           v-if="route.name == 'Youth Management Login'"
-          src="../../assets/image/common/login-9.png"
+          src="@/assets/image/common/login-9.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
           v-if="route.name == 'Finance Login'"
-          src="../../assets/image/common/login-4.png"
+          src="@/assets/image/common/login-4.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
           v-if="route.name == 'Education Login'"
-          src="../../assets/image/common/login-5.png"
+          src="@/assets/image/common/login-5.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
           v-if="route.name == 'Supply Chain Management Login'"
-          src="../../assets/image/common/login-6.png"
+          src="@/assets/image/common/login-6.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
           v-if="route.name == 'HR Login'"
-          src="../../assets/image/common/login-7.png"
+          src="@/assets/image/common/login-7.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
         /><img
           v-if="route.name == 'Volunteer Login'"
-          src="../../assets/image/common/login-7.png"
+          src="@/assets/image/common/login-7.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
           v-if="route.name == 'Operation Login'"
-          src="../../assets/image/common/login-8.png"
+          src="@/assets/image/common/login-8.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
@@ -140,63 +140,7 @@ const login =async () => {
   if (loginData.value.email == '' || loginData.value.password == '') {
     alert('Email or password is missing')
   } else {
-    // const user = authStore.userList.find((u) => u.email == data.value.email)
-    // // console.log(check , data.value)
-    // if (user && user.password == data.value.password) {
-    //   authStore.login(user)
-    //   if (user.role == 'member') {
-    //     authStore.user.dashboard = { name: 'Membar_Dashboard' }
-    //     router.push({ name: 'Membar_Dashboard' })
-    //     store.authUser = user
-    //   } else if (user.role == 'admin') {
-    //     authStore.user.dashboard = { name: 'Admin_Dashboard' }
-    //     router.push({ name: 'Admin_Dashboard' })
-    //     store.authUser = user
-    //   } else if (user.role == 'social') {
-    //     authStore.user.dashboard = { name: 'Social_Service_Dashboard_Profile' }
-    //     router.push({ name: 'Social_Service_Dashboard_Profile' })
-    //     store.authUser = user
-    //   } else if (user.role == 'youth') {
-    //     authStore.user.dashboard = { name: 'Youth_Dashboard_Profile' }
-    //     router.push({ name: 'Youth_Dashboard_Profile' })
-    //     store.authUser = user
-    //   } else if (user.role == 'finance') {
-    //      authStore.user.dashboard = { name: 'Finance_Dashboard_Profile' }
-    //     router.push({ name: 'Finance_Dashboard_Profile' })
-    //     store.authUser = user
-    //   } else if (user.role == 'education') {
-    //     authStore.user.dashboard = { name: 'Education_Dashboard' }
-    //     router.push({ name: 'Education_Dashboard' })
-    //     store.authUser = user
-    //   } else if (user.role == 'supply') {
-    //     authStore.user.dashboard = { name: 'Supply_Admin_Profile' }
-    //     router.push({ name: 'Supply_Admin_Profile' })
-    //     store.authUser = user
-    //   } else if (user.role == 'hr') {
-    //     authStore.user.dashboard = { name: 'HR_Dashboard_Proile' }
-    //     router.push({ name: 'HR_Dashboard_Proile' })
-    //     store.authUser = user
-    //   } else if (user.role == 'volunteer') {
-    //     authStore.user.dashboard = { name: 'Volunteer_Dashboard' }
-    //     router.push({ name: 'Volunteer_Dashboard' })
-    //     store.authUser = user
-    //   } else if (user.role == 'operation') {
-    //     authStore.user.dashboard = { name: 'Opration_Management_profile' }
-    //     router.push({ name: 'Opration_Management_profile' })
-    //     store.authUser = user
-    //   }
-    //   else if (user.role == 'media') {
-    //     authStore.user.dashboard = { name: 'Media_And_Com_Profile' }
-    //     router.push({ name: 'Media_And_Com_Profile' })
-    //     store.authUser = user
-    //   }
-    // } else error.value = true
-
-
-
-
-
-
+    
     try {
       const data = await api().post("user/login", loginData.value);
       console.log(data.data, "logdata");
@@ -223,7 +167,7 @@ const login =async () => {
         router.push({ name: 'Youth_Dashboard_Profile' })
       }
       else if (authStore.role == 'Finance') {
-        authStore.currentDashboard = "Finance_Dashboard_Profile"
+        authStore.currentDashboard = "Finance_Dashboard/Finance_Dashboard_Profile"
         router.push({ name: 'Finance_Dashboard_Profile' })
       }
       else if (authStore.role == 'Supply') {
@@ -235,7 +179,7 @@ const login =async () => {
         router.push({ name: 'HR_Dashboard_Proile' })
       }
       else if (authStore.role == 'Volunteer') {
-        authStore.currentDashboard = "Volunteer_Dashboard"
+        authStore.currentDashboard = "volunteer"
         router.push({ name: 'Volunteer_Dashboard' })
       }
       else if (authStore.role == 'Member') {

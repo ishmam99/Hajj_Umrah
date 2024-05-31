@@ -34,7 +34,7 @@
            </tr>
          </thead>
          <tbody>
-           <tr class="" v-for="(item,index) in store.programList">
+           <tr class="" v-for="(item,index) in store.programList" :key="item.id">
              <td class="py-4 p-2 w-1/6 text-center">{{ index+1 }}</td>
              <td class="py-4 p-2 flex justify-center items-center gap-2 w-1/6">
                <h3 class="font-bold">{{ item.name }}</h3>

@@ -189,7 +189,7 @@ import {
                                 <div class="font-bold text-xl mb-2">Save The Children</div>
                               </DialogTitle>
                               <DialogDescription>
-                                <img src="../../assets/image/hungry/hungry-2.jpg" alt="" />
+                                <img src="@/assets/image/hungry/hungry-2.jpg" alt="" />
                                 <div>
                                   <h1 class="font-semibold mt-2 text-lg text-black">Description</h1>
                                   In our noble mission, we strive to alleviate hunger and nourish

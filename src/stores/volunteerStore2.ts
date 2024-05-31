@@ -4,7 +4,8 @@ import { defineStore } from 'pinia';
 
 export const useVolunteerDashboardStore = defineStore('volunteerDashboardStore',{
   state: () => ({
-        volunteerJobList: [],
+    volunteerJobList: [],
+    registerVolunteerAppliedList:[]
         
     
   }),

@@ -37,7 +37,7 @@
               loss, low wages, disability, substance abuse, family conflict, domestic violence and
               other factors contribute to the problem. While most people experiencing or facing
               homelessness are adults, particularly veterans, many of the homeless are families with
-              children. Even though we can’t reach to all or part, the idea is to help little of
+              children. Even though we cant reach to all or part, the idea is to help little of
               those in need.
             </p>
           </div>
@@ -45,8 +45,8 @@
             <h1 class="text-3xl underline py-3">Strategy</h1>
             <ul class="pl-10">
               <li class="list-disc">
-                Collaborate and work with other organizations currently working with ‘Sheltering the
-                homeless’
+                Collaborate and work with other organizations currently working with Sheltering the
+                homeless
               </li>
               <li class="list-disc">
                 Reach out to homeless individuals through street outreach and mobile outreach
@@ -69,7 +69,7 @@
           <div class="bg-white rounded-xl p-5 w-full">
             <h1 class="text-3xl underline py-3">Facts</h1>
             <p>
-              Homelessness is one of our nation’s most misunderstood and vexing social problems.
+              Homelessness is one of our nations most misunderstood and vexing social problems.
               Homelessness does not discriminate. Families with children, single adults, teenagers
               and older individuals of all races struggle with the devastating effects of
               homelessness. <br />
@@ -106,7 +106,7 @@
               homeless persons begin to trust our volunteering work, they agree to leave the streets
               and enter transitional or permanent housing.<br />
               We can work with the group they already working and familiar with this type of
-              volunteering work and handling it’s legality etc.,
+              volunteering work and handling its legality etc.,
               <br />
               For a significant number of homeless Americans with mental or physical impairments,
               often coupled with drug and/or alcohol use issues, long-term homelessness can only be

@@ -44,7 +44,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="tableRowColor" v-for=" item in store.accountLedger">
+            <tr class="tableRowColor" v-for=" item in store.accountLedger" :key="item.id">
               
               <td class="py-4 p-2 text-center w-1/8">01</td>
               <td class="py-4 p-2 text-center text-sm w-1/8">{{ item.date }}</td>
@@ -128,17 +128,7 @@ const accountLedger = ref({
 })
 
 const { toast } = useToast()
-// const accountLedgerCreat = async () => {
-//   try {
-//     const data = await api().post('account-ledger-store',accountLedger.value)
-//     console.log(data)
-//     toast({
-//       title: 'Account Ledger Created '
-//     })
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
+
 
 const router = useRouter()
 const goToEditPage = (id) => {

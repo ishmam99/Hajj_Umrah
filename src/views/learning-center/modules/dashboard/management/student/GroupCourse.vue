@@ -482,10 +482,7 @@ onUnmounted(() => {
           <Column header="Advisor">
             <template #body="slotProps">
               <button
-                @click="
-                  console.log('SlotProps:', slotProps.data.data.id)
-                  openAdviserDialog(slotProps.data.data.id)
-                "
+                @click="openAdviserDialog(slotProps.data.data.id)"
                 class="flex items-center shadow-md ml-4 border-2 bg-gray-400 p-2 text-white rounded-full text-lg hover:shadow-lg"
               >
                 <font-awesome-icon :icon="['fas', 'user-tie']" />

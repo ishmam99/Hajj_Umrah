@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import EmailForOtpComponent from './EmailForOtpComponent.vue';
-import OtpVerificationComponent from './OtpVerificationComponent.vue';
+import EmailForOtpComponent from '@/components/auth/EmailForOtpComponent.vue';
+import OtpVerificationComponent from '@/components/auth/OtpVerificationComponent.vue';
 import ResetPasswordComponent from "@/components/auth/ResetPasswordComponent.vue";
 export default {
   components: {

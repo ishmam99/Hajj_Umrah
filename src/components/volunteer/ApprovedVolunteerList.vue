@@ -1,88 +1,11 @@
-<script setup>
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue
-} from '/components/ui/select'
-
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger
-} from '/components/ui/dialog'
-
-import { ref, watch,onMounted } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useVolunteerDataStore } from '@/stores/volunteerStore.ts'
-
-// pinia
-const { volunteerApplicantList } = storeToRefs(useVolunteerDataStore())
-const { setVolunteerApplicantList } = useVolunteerDataStore()
-
-const searchByJobText = ref('')
-
-
-const approveList = ref()
-
-const approvedVolunteerList = async () => {
-  try {
-    const {data} = await api().get('volunteer-approved-job-list')
-    console.log(data.data)
-    approveList.value = data.data
-    console.log(approveList.value)
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-onMounted(async () => {
-  approvedVolunteerList()
-
-})
-  
-</script>
-
 <template>
   <div class="px-5 bg-slate-50 py-5 w-3/4">
+    <p class="text-2xl font-bold py-3 border-b">Volunteer Applicant List</p>
     <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
       <div class="flex justify-between items-center pt-4 pb-2">
-        <p class="text-2xl text-yellow-600 font-bold">All Approved Volunteer List</p>
-
-        <input
-          v-model="searchByJobText"
-          type="text"
-          placeholder="Search by job name"
-          class="py-1.5 px-2 rounded-md border text-sm"
-        />
-        <input
-          type="text"
-          placeholder="Search by interest area"
-          class="py-1.5 px-2 rounded-md border text-sm"
-        />
-
-        <!-- <div class="w-[200px]">
-          <Select class="">
-            <SelectTrigger class="w-full">
-              <SelectValue placeholder="Search by expertise" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectItem value="Expert"> Expert </SelectItem>
-                <SelectItem value="Intermediate"> Intermediate </SelectItem>
-                <SelectItem value="Beginner"> Beginner </SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-        </div> -->
+        <p class="text-2xl text-yellow-600 font-bold">All Volunteer Application</p>
       </div>
+
       <hr />
       <div
         class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center"
@@ -94,27 +17,26 @@ onMounted(async () => {
               <th class="p-2 text-center">Name</th>
               <th class="">Volunteer Job</th>
               <th class="">Expertise Area</th>
-              <th class="p-2 text-center">Additional Interest Area</th>
+              <!-- <th class="p-2 text-center">Additional Interest Area</th> -->
               <th class="p-2 text-center">More Info</th>
               <th class="p-2 text-center">Action</th>
             </tr>
           </thead>
           <tbody>
             <template
-              v-for="volunteerApplicant in volunteerApplicantList"
+              v-for="(volunteerApplicant , index) in allVolunteerList"
               :key="volunteerApplicant.id"
             >
-              <tr
-                v-if="volunteerApplicant.applicationStatus === 'Approved'"
-                :class="[`${volunteerApplicant.id % 2 === 0 ? 'bg-white' : ''}`]"
-              >
-                <td class="py-4 p-2 text-center">{{ volunteerApplicant.id }}</td>
-                <td class="py-4 p-2 text-center">{{ volunteerApplicant.name }}</td>
-                <td class="py-4 p-2 text-center">{{ volunteerApplicant.volunteerJob }}</td>
-                <td class="py-4 p-2 text-center">{{ volunteerApplicant.expertiseArea }}</td>
-                <td class="py-4 p-2 text-center">
+              <tr class="table-row">
+        
+                <td class="py-4 p-2 text-center">{{ index+1 }}</td>
+                <td class="py-4 p-2 text-center">{{ volunteerApplicant.user.name }}</td>
+                <td class="py-4 p-2 text-center">{{ volunteerApplicant.volunteer_jobs.title }}</td>
+                <td class="py-4 p-2 text-center">N/A</td>
+                <!-- <td class="py-4 p-2 text-center">
                   {{ volunteerApplicant.additionalInterestArea }}
-                </td>
+                </td> -->
+
                 <td class="py-4 p-2 text-center">
                   <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                     <Dialog>
@@ -128,7 +50,11 @@ onMounted(async () => {
                             <!-- <img src="/src/assets/image/home/l4.jpg" alt="" /> -->
                             <div>
                               <h1 class="font-semibold mt-2 text-lg text-black">Description</h1>
-                              {{ volunteerApplicant.moreInfo }}
+                              <!-- {{ volunteerApplicant.user }} -->
+                              <p>Name: {{ volunteerApplicant.user.name }}</p>
+                              <p>Email: {{ volunteerApplicant.user.email }}</p>
+                              <p>Phone No: {{ volunteerApplicant.user.phone_no }}</p>
+                              <P>Expertise :</P>
                             </div>
                           </DialogDescription>
                         </DialogHeader>
@@ -137,8 +63,35 @@ onMounted(async () => {
                   </button>
                 </td>
 
-                <td class="py-4 p-2 text-center text-green-600 font-bold">
-                  {{ volunteerApplicant.applicationStatus }}
+                <td class="py-4 p-2 text-center">
+                  <div
+                  class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2"
+                >
+                  <DropdownMenu class="w-full">
+                    <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuItem
+                        class="text-yellow-600"
+                        @click="volunteerConfirm(volunteerApplicant.id)"
+                        >Confirm</DropdownMenuItem
+                      >
+                      <DropdownMenuItem 
+                        class="text-blue-600"
+                       
+                        >Reject</DropdownMenuItem
+                        >
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                  >
+                    <path d="M12 16L6 10H18L12 16Z"></path>
+                  </svg>
+                </div>
                 </td>
               </tr>
             </template>
@@ -148,3 +101,68 @@ onMounted(async () => {
     </div>
   </div>
 </template>
+
+<script setup>
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '/components/ui/dialog'
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger
+} from '/components/ui/dropdown-menu'
+
+import { ref, watch, onMounted, computed } from 'vue'
+import { useVolunteerDashboardStore } from '@/stores/volunteerStore2.ts'
+
+const store = useVolunteerDashboardStore()
+
+const registerVolunteerAppliedList = async () => {
+  try {
+    const { data } = await api().get('volunteer-job-apply-list')
+    console.log(data)
+    store.registerVolunteerAppliedList = data.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const allVolunteerList = computed(() => {
+  return store.registerVolunteerAppliedList.filter((item)=>item.status == 1)
+})
+
+const volunteerConfirm = async (id) => {
+  try {
+    const { data } = await api().post(`volunteer-job-apply-update-status/${id}`, {
+      status:1
+    })
+    console.log(data)
+    registerVolunteerAppliedList()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
+onMounted(() => {
+  registerVolunteerAppliedList()
+})
+</script>
+
+<style>
+.table-row:nth-child(even){
+  background: white;
+}
+</style>

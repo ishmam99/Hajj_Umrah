@@ -376,29 +376,7 @@ onUnmounted(() => {
   <div v-if="advisorEnrollmentStage != 4" class="page-details">
     <h4 class="text-3xl">{{ courseDetails['course_title'] }} ({{ sectionDetails.section_id }})</h4>
     <h2>Course Enrollment</h2>
-    <!-- <div class="progress">
-            <div class="progress-bar">
-                <div class="steps">
-                    <div @click="checkEnrollmentStageAdvisor(1)" class="step-circle"></div>
-                    <div class="step-text">Options</div>
-                </div>
-                <div :class="(advisorEnrollmentStage == 2 || advisorEnrollmentStage == 3 || advisorEnrollmentStage == 4) ? 'step-bar completed' : 'step-bar'"></div>
-                <div class="steps">
-                    <div @click="checkEnrollmentStageAdvisor(2)" class="step-circle"></div>
-                    <div class="step-text">Teacher</div>
-                </div>
-                <div :class="(advisorEnrollmentStage == 3 || advisorEnrollmentStage == 4) ? 'step-bar completed' : 'step-bar'"></div>
-                <div class="steps">
-                    <div @click="checkEnrollmentStageAdvisor(3)" class="step-circle"></div>
-                    <div class="step-text">Schedule</div>
-                </div>
-                <div :class="(advisorEnrollmentStage == 4) ? 'step-bar completed' : 'step-bar'"></div>
-                <div class="steps">
-                    <div @click="checkEnrollmentStageAdvisor(4)" class="step-circle"></div>
-                    <div class="step-text">Confirm</div>
-                </div>
-            </div>
-        </div> -->
+
     <div class="tab-headline mt-4">
       <span v-if="advisorEnrollmentStage == 1">Your course registration preference</span>
       <span v-if="advisorEnrollmentStage == 2">Schedule</span>
@@ -408,19 +386,6 @@ onUnmounted(() => {
     <div class="tab">
       <div class="tabs">
         <div>
-          <!-- <div v-if="advisorEnrollmentStage == 1" class="day-one">
-                        <div class="schedules">
-                            <div class="next-step"> -->
-          <!-- <button @click="proceedToNext(3, null)">Schedule by student's schedule </button> -->
-          <!-- <button @click="proceedToNext(2, null)">Schedule by teacher's schedule </button> -->
-          <!-- <button @click="proceedToNext(2, null)">Enroll by course schedule <font-awesome-icon :icon="['fas', 'fa-refresh']" /></button> -->
-          <!-- <button @click="proceedToNext(2, null)">Yes <font-awesome-icon :icon="['fas', 'fa-refresh']" /></button> -->
-          <!-- <button @click="proceedToNext(2)">Yes <font-awesome-icon :icon="['fas', 'fa-refresh']" /></button> -->
-          <!-- <button v-if="advisorEnrollmentStage != 2" @click="openModal('dialogModal', null)">No <font-awesome-icon :icon="['fas', 'fa-arrow-right']" /></button> -->
-          <!-- <button @click="proceedToNext(4, null)">Schedule with help of advisor</button> -->
-          <!-- </div>
-                        </div>
-                    </div> -->
           <div v-if="advisorEnrollmentStage == 1" class="day-one">
             <div class="title">Available Teachers</div>
             <div v-if="courseStore.teacherListForCourse != 'List Empty'" class="teachers">
@@ -438,52 +403,7 @@ onUnmounted(() => {
                     <p>From {{ teacher.country }}</p>
                   </div>
                 </div>
-                <!-- <div class="professional-info">
-                                    <div>
-                                        <div class="icon">
-                                            <font-awesome-icon :icon="['fas', 'fa-star']" />
-                                        </div>
-                                        <div class="count">
-                                            4.8
-                                        </div>
-                                        <div class="info-title">
-                                            Instructor Ratiing
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="icon">
-                                            <font-awesome-icon :icon="['fas', 'fa-award']" />
-                                        </div>
-                                        <div class="count">
-                                            250
-                                        </div>
-                                        <div class="info-title">
-                                            Reviews
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="icon">
-                                            <font-awesome-icon :icon="['fas', 'fa-user-group']" />
-                                        </div>
-                                        <div class="count">
-                                            300
-                                        </div>
-                                        <div class="info-title">
-                                            Students
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="icon">
-                                            <font-awesome-icon :icon="['fas', 'fa-layer-group']" />
-                                        </div>
-                                        <div class="count">
-                                            4
-                                        </div>
-                                        <div class="info-title">
-                                            Courses
-                                        </div>
-                                    </div>
-                                </div> -->
+
                 <div class="action">
                   <button @click="proceedToNext(2, teacher)" class="not-available">Select</button>
                 </div>

@@ -29,7 +29,7 @@
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>Select Category</SelectLabel>
-                      <SelectItem :value="item.id" v-for="item in store.categoryLit">{{
+                      <SelectItem :value="item.id" v-for="item in store.categoryLit" :key="item.id">{{
                         item.category_title
                       }}</SelectItem>
                     </SelectGroup>

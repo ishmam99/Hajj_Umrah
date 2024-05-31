@@ -47,7 +47,7 @@
         </button>
       </div>
       <div>
-        <img src="../../assets/image/common/n21.avif" alt="" class="bg-white rounded-lg" />
+        <img src="@/assets/image/common/n21.avif" alt="" class="bg-white rounded-lg" />
       </div>
     </div>
   </DefaultLayout>

@@ -8,42 +8,7 @@ import {
 } from './volunteerDummyData.js'
 
 export const useVolunteerDataStore = defineStore('volunteerData', () => {
-  // Define types for your state
-  // interface Volunteer {
-  //   id: number
-  //   interestField: string
-  //   expertise: string
-  //   isChecked: boolean
-  //   volunteerSubSection?: Volunteer[]
-  // }
-
-  // interface VolunteeringPost {
-  //   id: number
-  //   postTitle: string
-  //   volunteeringType?: string
-  //   image: string
-  //   description: string
-  //   venue: string
-  //   date?: string
-  //   time: string
-  //   totalWorkingTime?: string
-  //   responsibilities: string | string[]
-  //   gender: string
-  //   benefits: string | string[]
-  //   ageRange: string
-  //   qualification: string
-  //   isPosted: boolean
-  // }
-
-  // interface VolunteerApplicant {
-  //   id: number
-  //   name: string
-  //   volunteerJob: string
-  //   expertiseArea: string
-  //   additionalInterestArea: string
-  //   moreInfo: string
-  //   applicationStatus: string
-  // }
+ 
 
   // state
   const volunteerInterestExpertiseRef = ref<any>(volunteerInterestExpertiseData)

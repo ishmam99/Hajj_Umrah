@@ -41,34 +41,6 @@
               />
               <h3 v-else class="font-bold">{{ event.projectName }}</h3>
             </td>
-            <!-- <td class="py-4 p-2 items-center gap-2">
-                    <h3 class="font-semibold">{{ event.eventType }}</h3>
-                  </td> -->
-            <!-- <td class="py-4 p-2 items-center gap-2">
-                    <Select class="" v-if="editEventId === event.id" v-model="event.occurrenceType">
-                      <SelectTrigger class="w-full">
-                        <SelectValue placeholder="Occurrence Type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <SelectLabel>Select Type</SelectLabel>
-                          <SelectItem value="Single"> Single Event </SelectItem>
-                          <SelectItem value="Recurring"> Recurring Event </SelectItem>
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
-                    <div v-else>
-                      <h3
-                        v-if="event.occurrenceType == 'Single'"
-                        class="font-semibold text-cyan-600"
-                      >
-                        {{ event.occurrenceType }}
-                      </h3>
-                      <h3 v-else class="font-semibold text-green-600">
-                        {{ event.occurrenceType }}
-                      </h3>
-                    </div>
-                  </td> -->
             <td>
               <input
                 v-if="editEventId === event.id"

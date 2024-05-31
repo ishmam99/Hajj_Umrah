@@ -51,16 +51,16 @@
             <div class="bg-white rounded-xl p-5 w-full">
               <div class="grid grid-cols-2 gap-2">
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="../../assets/image/hajj/hajj-1.jpg" alt="">
+                    <img class="h-auto max-w-full rounded-lg" src="@/assets/image/hajj/hajj-1.jpg" alt="">
                 </div>
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="../../assets/image/hajj/hajj-2.jpg" alt="">
+                    <img class="h-auto max-w-full rounded-lg" src="@/assets/image/hajj/hajj-2.jpg" alt="">
                 </div>
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="../../assets/image/hajj/hajj-3.webp" alt="">
+                    <img class="h-auto max-w-full rounded-lg" src="@/assets/image/hajj/hajj-3.webp" alt="">
                 </div>
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="../../assets/image/hajj/hajj-5.jpg" alt="">
+                    <img class="h-auto max-w-full rounded-lg" src="@/assets/image/hajj/hajj-5.jpg" alt="">
                 </div>
               </div>
             </div>

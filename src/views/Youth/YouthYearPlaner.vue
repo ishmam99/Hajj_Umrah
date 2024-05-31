@@ -44,7 +44,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="" v-for="(item , index) in store.yearPlannerList">
+            <tr class="" v-for="(item , index) in store.yearPlannerList" :key="item.id">
               <td class="py-4 p-2 text-center w-1/5">{{ index+1 }}</td>
               <td class="py-4 p-2 text-center w-1/5">{{ item.name }}</td>
               <td class="py-4 p-2 text-center text-sm w-1/5">{{ item.date }}</td>

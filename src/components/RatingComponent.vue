@@ -1,13 +1,13 @@
 <template>
   <div class="ratings">
     <span class="count">5.00</span>
-    <span class="graph">
+    <!-- <span class="graph">
       <font-awesome-icon :icon="['fas', 'fa-star']" />
       <font-awesome-icon :icon="['fas', 'fa-star']" />
       <font-awesome-icon :icon="['fas', 'fa-star']" />
       <font-awesome-icon :icon="['fas', 'fa-star']" />
       <font-awesome-icon :icon="['fas', 'fa-star']" />
-    </span>
+    </span> -->
   </div>
 </template>
 

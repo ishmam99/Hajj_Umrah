@@ -10,19 +10,4 @@ export const useYouthStore = defineStore('youthStore',{
         programList: [],
     authUser : '',
   }),
-  actions: {
-    login (user) {
- 
-      this.isAuthenticated = true;
-      this.user = user;
-    },
-    logout () {
-      this.isAuthenticated = false;
-      this.user = null;
-      },
-      signup (user) {
-        this.isAuthenticated = true;
-        this.user = user;
-      },
-  },
 });

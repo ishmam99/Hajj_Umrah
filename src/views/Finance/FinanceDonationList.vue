@@ -34,7 +34,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="" v-for="item in store.donationList">
+          <tr class="" v-for="item in store.donationList" :key="item.id">
             <td class="py-4 p-2 w-1/8 text-center">{{ item.event_id }}</td>
             <td class="py-4 p-2 flex justify-center items-center gap-2 w-3/8">
               <img :src=item.image alt="" class="h-10" />
