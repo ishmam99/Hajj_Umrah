@@ -349,6 +349,7 @@
             </div>
             <div class="flex justify-center items-center gap-5">
               <button
+              @click="editSubmit"
                 type="submit"
                 class="w-[200px] h-[40px] rounded-2xl bg-teal-800 text-white font-bold flex items-center text-center justify-center"
               >

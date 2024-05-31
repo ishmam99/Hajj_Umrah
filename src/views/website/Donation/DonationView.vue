@@ -169,7 +169,7 @@ watch(
       store.donation.success_token = route.query.session_id
       console.log(store.donation, 'chk store')
     }
-    store.donation.donation_method_id = '',
+      store.donation.donation_method_id = '',
       store.donation.name = '',
       store.donation.email = '',
       store.donation.session_token = '',

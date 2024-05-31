@@ -92,7 +92,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useSocialStore } from '@/stores/SocialDashboard'
-import { useAuthStore } from '@/stores/AuthStore'
 
 import {
   Dialog,
@@ -104,44 +103,7 @@ import {
   DialogTrigger
 } from '/components/ui/dialog'
 
-const projects = ref([
-  {
-    id: 1,
-    projectName: 'Youth Development Project',
-    img: '/src/assets/image/home/l4.png',
-    description:
-      'It focuses on nurturing the potential of young individuals by providing them with opportunities for personal growth, skill development, and leadership training. Through mentorship, education, and community engagement, we aim to equip youth with the tools and resources they need to thrive and become active contributors to society.',
-    location: 'Masjid Premises',
-    startingDate: '1 Jan 2024',
-    endingDate: '5 Jan 2024',
-    time: '1 PM'
-  },
-  {
-    id: 2,
-    projectName: 'Health and Wellness Initiatives Project',
-    img: '/src/assets/image/gallery/e5.jpg',
-    description:
-      'It is dedicated to promoting holistic well-being and vitality within communities. Through education, access to resources, and community engagement, we strive to empower individuals to take control of their health and lead balanced lifestyles. From fitness programs to mental health awareness campaigns, our initiatives aim to foster a culture of wellness and resilience.',
-    location: 'Masjid Premises',
-    startingDate: '5 Feb 2024',
-    endingDate: '10 Feb 2024',
-    time: '8 PM'
-  },
-  {
-    id: 3,
-    projectName: 'Islamic Education Initiatives',
-    img: '/src/assets/image/home/l4.jpg',
-    description:
-      'It is a comprehensive program designed to promote knowledge and understanding of Islamic principles, values, and practices. Through a variety of educational resources, including courses, workshops, and events, we aim to empower individuals with the teachings of Islam, fostering spiritual growth, cultural appreciation, and community cohesion. Our initiatives strive to create an inclusive and enriching environment where learners can explore and deepen their connection to the Islamic faith.',
-    location: 'Masjid Premises',
-    startingDate: '10 Jan 2024',
-    endingDate: '15 Jan 2024',
-    time: '6 PM'
-  }
-])
-
 const store = useSocialStore()
-const authStore = useAuthStore()
 
 const getProjectList = async () => {
   try {
@@ -152,6 +114,7 @@ const getProjectList = async () => {
     console.log(error)
   }
 }
+
 
 onMounted(async () => {
   getProjectList()

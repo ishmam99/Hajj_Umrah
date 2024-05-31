@@ -13,9 +13,7 @@
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select</SelectLabel>
-                    <SelectItem value="Comfort The Sick"> Save The Children </SelectItem>
-                    <SelectItem value="Educate The Children"> Enhance Social Justice </SelectItem>
-                    <SelectItem value="Shelter The Homeless"> Help the weak </SelectItem>
+                    <SelectItem :value="event.name" v-for="event in store.eventList" :key="event">{{ event.name }}</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -217,16 +215,6 @@
                   </div>
                 </div>
               </div>
-              <!-- <div
-                class="flex justify-center items-center h-[45px] rounded-2xl bg-white px-4 py-2 text-sm text-gray-500 text-center relative border-2 mt-2"
-              >
-                <Input
-                  type="file"
-                  @change="onFileChange"
-                  class="h-full w-full opacity-0 absolute top-0"
-                />
-                Choose File
-              </div> -->
             </div>
           </div>
           <button
@@ -241,13 +229,11 @@
   </div>
 </template>
 <script setup>
-import { useAuthStore } from '@/stores/AuthStore'
 import { Input } from '/components/ui/input'
-import { ref } from 'vue'
-import { useStore } from '/src/stores/store'
+import { ref, onMounted } from 'vue'
 import api from '@/config/api'
 import { useToast } from '/components/ui/toast/use-toast'
-import { useRoute, useRouter } from 'vue-router'
+import { useSocialStore } from '@/stores/SocialDashboard'
 import {
   Select,
   SelectContent,
@@ -258,12 +244,9 @@ import {
   SelectValue
 } from '/components/ui/select'
 
-const authStore = useAuthStore()
-const store = useStore()
+const store = useSocialStore()
 const loading = ref(false)
 const { toast } = useToast()
-const route = useRoute()
-const router = useRouter()
 const ProjectForm = ref({
   name: '',
   event_type: '',
@@ -294,11 +277,7 @@ const ProjectFormApply = async () => {
   console.log(ProjectForm)
   loading.value = true
   try {
-    const data = await api().post('project-store', ProjectForm.value, {
-      headers: {
-        Authorization: `Bearer ${authStore.token}`
-      }
-    })
+    const data = await api().post('project-store', ProjectForm.value)
     toast({
       title: 'Success',
       description: data.data.message
@@ -314,4 +293,18 @@ const ProjectFormApply = async () => {
   }
   loading.value = false
 }
+
+const getEventList = async () => {
+  try {
+    const { data } = await api().get('event-list')
+    store.eventList = data.data
+    console.log(store.eventList)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+onMounted(async () => {
+  getEventList()
+})
 </script>
