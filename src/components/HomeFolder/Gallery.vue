@@ -16,8 +16,8 @@
           <div class="flex gap-3 p-2 rounded-md shadow-md">
             <img :src="item.image" alt="" class="w-1/2 rounded-lg" />
             <div class="w-1/2">
-              <h1 class="text-blue-600 text-2xl font-bold py-1">{{ item.category_title }}</h1>
-              <p>{{ item.category_description }}</p>
+              <h1 class="text-blue-600 text-2xl font-bold py-1">{{ item?.category_title }}</h1>
+              <p>{{ item?.category_description }}</p>
             </div>
           </div>
         </router-link>

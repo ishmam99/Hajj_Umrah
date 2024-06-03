@@ -104,17 +104,7 @@ const accountLedger = ref({
 })
 
 const { toast } = useToast()
-// const accountLedgerCreat = async () => {
-//   try {
-//     const data = await api().post('account-ledger-store',accountLedger.value)
-//     console.log(data)
-//     toast({
-//       title: 'Account Ledger Created '
-//     })
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
+
 
 const accountLedgerCreat = () => {
   store.AccountLedgerListCreate(accountLedger.value)
