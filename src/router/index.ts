@@ -213,6 +213,54 @@ const router = createRouter({
     },
 
     {
+      path: '/Kabah/:id',
+      name: 'Kabah_Id',
+      component: () => import('../views/website/Gallery/Kabah.vue')
+    },
+ 
+    {
+      path: '/Mashjib',
+      name: 'Mashjib',
+      component: () => import('../views/website/Gallery/Mashjid.vue')
+    },
+    {
+      path: '/Social_Gallery',
+      name: 'Social_Gallery',
+      component: () => import('../views/website/Gallery/SocialGallery.vue')
+    },
+    {
+      path: '/Event_Gallery',
+      name: 'Event_Gallery',
+      component: () => import('../views/website/Gallery/EventGallery.vue')
+    },
+
+    {
+      path: '/Supply_Chain/supplier',
+      name: 'supplier',
+      component: () => import('../views/website/SupplyChain/Supplier.vue')
+    },
+    {
+      path: '/Supply_Chain/customer',
+      name: 'customer',
+      component: () => import('../views/website/SupplyChain/Customer.vue')
+    },
+    {
+      path: '/Supply_Chain/customerLogin',
+      name: 'Customer Login',
+      component: () => import('../views/website/SupplyChain/CustomerLogin.vue')
+    },
+    {
+      path: '/Supply_Chain/supplierLogin',
+      name: 'Supplier Login',
+      component: () => import('../views/website/SupplyChain/SupplierLogin.vue')
+    },
+    {
+      path: '/Supply_Chain/vendor_registration',
+      name: 'Vendor Registration',
+      component: () => import('../views/website/SupplyChain/VendorRegister.vue')
+    },
+
+    {
       path: '/volunteer/service/:id',
       name: 'volunteer/service',
       component: () => import('../views/Volunteer/EducateTheChildren.vue')
@@ -331,7 +379,7 @@ const router = createRouter({
       component: () => import('../views/Admin/AdminDashboard.vue')
     },
 
-    //social service
+    //social service dashboard start
     {
       path: '/Social_Service_Login',
       name: 'Social Service Login',
@@ -389,6 +437,8 @@ const router = createRouter({
         },
       ]
     },
+// social service dashboard end 
+
 
     {
       path: '/Youth_Management_Login',
@@ -433,6 +483,8 @@ const router = createRouter({
       ]
     },
 
+
+// finance dashboard start
     {
       path: '/Finance_Login',
       name: 'Finance Login',
@@ -515,6 +567,8 @@ const router = createRouter({
         },
       ]
     },
+// finance dashboard end 
+
     {
       path: '/Education_Login',
       name: 'Education Login',
@@ -1066,53 +1120,7 @@ const router = createRouter({
       ],
     },
     
-    {
-      path: '/Kabah/:id',
-      name: 'Kabah_Id',
-      component: () => import('../views/website/Gallery/Kabah.vue')
-    },
- 
-    {
-      path: '/Mashjib',
-      name: 'Mashjib',
-      component: () => import('../views/website/Gallery/Mashjid.vue')
-    },
-    {
-      path: '/Social_Gallery',
-      name: 'Social_Gallery',
-      component: () => import('../views/website/Gallery/SocialGallery.vue')
-    },
-    {
-      path: '/Event_Gallery',
-      name: 'Event_Gallery',
-      component: () => import('../views/website/Gallery/EventGallery.vue')
-    },
-
-    {
-      path: '/Supply_Chain/supplier',
-      name: 'supplier',
-      component: () => import('../views/website/SupplyChain/Supplier.vue')
-    },
-    {
-      path: '/Supply_Chain/customer',
-      name: 'customer',
-      component: () => import('../views/website/SupplyChain/Customer.vue')
-    },
-    {
-      path: '/Supply_Chain/customerLogin',
-      name: 'Customer Login',
-      component: () => import('../views/website/SupplyChain/CustomerLogin.vue')
-    },
-    {
-      path: '/Supply_Chain/supplierLogin',
-      name: 'Supplier Login',
-      component: () => import('../views/website/SupplyChain/SupplierLogin.vue')
-    },
-    {
-      path: '/Supply_Chain/vendor_registration',
-      name: 'Vendor Registration',
-      component: () => import('../views/website/SupplyChain/VendorRegister.vue')
-    },
+   
 
     {
       path: '/learning-center',
