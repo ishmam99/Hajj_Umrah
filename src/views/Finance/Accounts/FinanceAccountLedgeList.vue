@@ -201,11 +201,15 @@
                     <DropdownMenu class="w-full">
                       <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        <DropdownMenuItem class="text-yellow-600" @click="goToEditPage(1)"
+                        
+                        <DropdownMenuItem class="text-blue-600" @click="detailsShow(item)"
+                          >Details</DropdownMenuItem
+                        >
+                        <DropdownMenuItem class="text-yellow-600" @click="editShow(item)"
                           >Edit</DropdownMenuItem
                         >
-                        <DropdownMenuItem class="text-blue-600" @click="goToDetailPage(1)"
-                          >Details</DropdownMenuItem
+                        <DropdownMenuItem class="text-red-600" @click="deleteSubmit(item)"
+                          >Delete</DropdownMenuItem
                         >
                       </DropdownMenuContent>
                     </DropdownMenu>
@@ -279,6 +283,10 @@ const accountLedgerCreat = async () => {
   } catch (error) {
     console.log(error)
   }
+}
+
+const editShow = (item) => {
+  ledgerUpdate.value = true
 }
 
 const { toast } = useToast()

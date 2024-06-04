@@ -159,9 +159,16 @@
                     <DropdownMenu class="w-full">
                       <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        <DropdownMenuItem class="text-yellow-600">Edit</DropdownMenuItem>
-                        <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
-                        <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
+                        
+                        <DropdownMenuItem class="text-blue-600" @click="detailsShow(item)"
+                          >Details</DropdownMenuItem
+                        >
+                        <DropdownMenuItem class="text-yellow-600" @click="editShow(item)"
+                          >Edit</DropdownMenuItem
+                        >
+                        <DropdownMenuItem class="text-red-600" @click="deleteSubmit(item)"
+                          >Delete</DropdownMenuItem
+                        >
                       </DropdownMenuContent>
                     </DropdownMenu>
                     <svg
@@ -186,12 +193,19 @@
                   <div
                     class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2"
                   >
-                    <DropdownMenu class="w-full">
+                  <DropdownMenu class="w-full">
                       <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        <DropdownMenuItem class="text-yellow-600">Edit</DropdownMenuItem>
-                        <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
-                        <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
+                        
+                        <DropdownMenuItem class="text-blue-600" @click="detailsShow(item)"
+                          >Details</DropdownMenuItem
+                        >
+                        <DropdownMenuItem class="text-yellow-600" @click="editShow(item)"
+                          >Edit</DropdownMenuItem
+                        >
+                        <DropdownMenuItem class="text-red-600" @click="deleteSubmit(item)"
+                          >Delete</DropdownMenuItem
+                        >
                       </DropdownMenuContent>
                     </DropdownMenu>
                     <svg
@@ -262,4 +276,9 @@ const projectExpenseCreate = async () => {
     console.log(error)
   }
 }
+
+const editShow = (item) => {
+  expenseUpdate.value = true
+}
+
 </script>

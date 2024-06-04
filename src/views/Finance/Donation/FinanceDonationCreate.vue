@@ -140,13 +140,9 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref} from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
-import { useAccountStore } from '/src/stores/accountStore.ts'
-import {useAuthStore} from '@/stores/AuthStore.ts'
 
-const authStore = useAuthStore()
-const store = useAccountStore()
 const selectedFile = ref(null);
 
 const donationCreateForm = ref({
@@ -185,11 +181,7 @@ const { toast } = useToast()
 
 const donationCreateFormCreate = async () => {
   try {
-    const data = await api().post('donation-method-store',donationCreateForm.value, {
-      headers: {
-          Authorization: `Bearer ${authStore.token}`
-        }
-    })
+    const data = await api().post('donation-method-store',donationCreateForm.value,)
     console.log(data)
     toast({
         title: 'Donation Event Created ',
@@ -201,10 +193,5 @@ const donationCreateFormCreate = async () => {
   }
 }
 
-
-
-// const donationCreateFormCreate = () => {
-//   store.DonationListCreate(donationCreateForm.value)
-// }
 
 </script>

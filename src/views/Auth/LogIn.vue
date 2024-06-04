@@ -167,7 +167,7 @@ const login =async () => {
         router.push({ name: 'Youth_Dashboard_Profile' })
       }
       else if (authStore.role == 'Finance') {
-        authStore.currentDashboard = "Finance_Dashboard/Finance_Dashboard_Profile"
+        authStore.currentDashboard = "/Finance_Dashboard/Profile"
         router.push({ name: 'Finance_Dashboard_Profile' })
       }
       else if (authStore.role == 'Supply') {

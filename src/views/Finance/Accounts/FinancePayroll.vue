@@ -89,7 +89,7 @@
     <div v-if="payrollUpdate == true" class="px-4 bg-white py-5">
       <div class="flex justify-between items-center pb-2">
         <p class="text-2xl text-yellow-600 font-bold">Payroll Update</p>
-        <!-- <button class="px-5 py-2 rounded-md shadow-md bg-yellow-600 text-white text-sm">Add</button> -->
+        <button @click="payrollUpdate = false" class="w-[150px] py-2 rounded-md shadow-md bg-red-600 text-white text-sm">Cancle</button>
       </div>
       <hr />
       <div
@@ -243,9 +243,16 @@
                     <DropdownMenu class="w-full">
                       <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        <DropdownMenuItem class="text-yellow-600">Edit</DropdownMenuItem>
-                        <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
-                        <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
+                        
+                        <DropdownMenuItem class="text-blue-600" @click="detailsShow(item)"
+                          >Details</DropdownMenuItem
+                        >
+                        <DropdownMenuItem class="text-yellow-600" @click="editShow(item)"
+                          >Edit</DropdownMenuItem
+                        >
+                        <DropdownMenuItem class="text-red-600" @click="deleteSubmit(item)"
+                          >Delete</DropdownMenuItem
+                        >
                       </DropdownMenuContent>
                     </DropdownMenu>
                     <svg
@@ -327,4 +334,9 @@ const payrollStore = async () => {
     console.log(error)
   }
 }
+
+const editShow = (item) => {
+  payrollUpdate.value = true
+}
+
 </script>

@@ -496,7 +496,7 @@ const router = createRouter({
       component: () => import('../views/Finance/FinanceDashboard.vue'),
       children:[
         {
-        path: '/Finance_Dashboard/Proile',
+        path: '/Finance_Dashboard/Profile',
         name:'Finance_Dashboard_Profile',
             component: () => import('../views/Finance/Profile/FinanceProfile.vue'),
         },

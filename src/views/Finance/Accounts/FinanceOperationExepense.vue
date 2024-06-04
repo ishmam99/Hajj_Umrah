@@ -71,7 +71,7 @@
       <div v-if="expenseUpdate ==  true">
         <div class="flex justify-between items-center py-2 pt-5">
           <p class="text-2xl text-yellow-600 font-bold">Operation Expense Update</p>
-          <button class="w-[150px] py-2 rounded-md shadow-md bg-red-600 text-white text-sm">Cancle</button>
+          <button @click="expenseUpdate = false" class="w-[150px] py-2 rounded-md shadow-md bg-red-600 text-white text-sm">Cancle</button>
         </div>
         <hr />
         <div
@@ -171,12 +171,19 @@
                   <div
                     class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2"
                   >
-                    <DropdownMenu class="w-full">
+                  <DropdownMenu class="w-full">
                       <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        <DropdownMenuItem class="text-yellow-600">Edit</DropdownMenuItem>
-                        <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
-                        <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
+                        
+                        <DropdownMenuItem class="text-blue-600" @click="detailsShow(item)"
+                          >Details</DropdownMenuItem
+                        >
+                        <DropdownMenuItem class="text-yellow-600" @click="editShow(item)"
+                          >Edit</DropdownMenuItem
+                        >
+                        <DropdownMenuItem class="text-red-600" @click="deleteSubmit(item)"
+                          >Delete</DropdownMenuItem
+                        >
                       </DropdownMenuContent>
                     </DropdownMenu>
                     <svg
@@ -204,9 +211,16 @@
                     <DropdownMenu class="w-full">
                       <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        <DropdownMenuItem class="text-yellow-600">Edit</DropdownMenuItem>
-                        <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
-                        <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
+                        
+                        <DropdownMenuItem class="text-blue-600" @click="detailsShow(item)"
+                          >Details</DropdownMenuItem
+                        >
+                        <DropdownMenuItem class="text-yellow-600" @click="editShow(item)"
+                          >Edit</DropdownMenuItem
+                        >
+                        <DropdownMenuItem class="text-red-600" @click="deleteSubmit(item)"
+                          >Delete</DropdownMenuItem
+                        >
                       </DropdownMenuContent>
                     </DropdownMenu>
                     <svg
@@ -277,5 +291,9 @@ const operationExpenseCreate = async () => {
   } catch (error) {
     console.log(error)
   }
+}
+
+const editShow = (item) => {
+  expenseUpdate.value = true
 }
 </script>
