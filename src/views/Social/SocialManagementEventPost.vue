@@ -58,66 +58,40 @@
                 {{ event.state_time }}
               </p>
             </td>
-            <td class="py-4 p-2">
-              <div class="flex items-center gap-2">
-                <div @click="edit(event)" class="relative group">
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="rgb(135, 206, 235)"
-                      height="20"
-                      width="20"
+
+
+
+            <td class="py-4 p-2 flex justify-center">
+              <div
+                class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2"
+              >
+                <DropdownMenu class="w-full">
+                  <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
+                  <DropdownMenuContent class="w-40">
+                    <DropdownMenuItem class="text-yellow-600" 
+                      >Post</DropdownMenuItem
                     >
-                      <path
-                        d="M5 18.89H6.41421L15.7279 9.57627L14.3137 8.16206L5 17.4758V18.89ZM21 20.89H3V16.6473L16.435 3.21231C16.8256 2.82179 17.4587 2.82179 17.8492 3.21231L20.6777 6.04074C21.0682 6.43126 21.0682 7.06443 20.6777 7.45495L9.24264 18.89H21V20.89ZM15.7279 6.74785L17.1421 8.16206L18.5563 6.74785L17.1421 5.33363L15.7279 6.74785Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <p
-                    class="absolute bottom-[-130%] z-50 hidden group-hover:block px-3 py-1.5 rounded-md shadow-md bg-slate-600 text-white text-xs"
-                  >
-                    Edit
-                  </p>
-                </div>
-                <div class="relative group">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="red"
-                    height="20"
-                    width="20"
-                  >
-                    <path
-                      d="M17 6H22V8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8H2V6H7V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V6ZM18 8H6V20H18V8ZM9 11H11V17H9V11ZM13 11H15V17H13V11ZM9 4V6H15V4H9Z"
-                    ></path>
-                  </svg>
-                  <p
-                    class="absolute bottom-[-130%] z-50 hidden group-hover:block px-3 py-1.5 rounded-md shadow-md bg-slate-600 text-white text-xs"
-                  >
-                    Delete
-                  </p>
-                </div>
-                <div class="relative group">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="green"
-                    height="20"
-                    width="20"
-                  >
-                    <path
-                      d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11 11V7H13V11H17V13H13V17H11V13H7V11H11Z"
-                    ></path>
-                  </svg>
-                  <p
-                    class="absolute bottom-[-130%] z-50 hidden group-hover:block px-3 py-1.5 rounded-md shadow-md bg-slate-600 text-white text-xs"
-                  >
-                    Post
-                  </p>
-                </div>
+
+                    <DropdownMenuItem class="text-blue-600" @click="edit(event)"
+                      >Edit</DropdownMenuItem
+                    >
+                    <DropdownMenuItem class="text-red-600" 
+                      >Delete</DropdownMenuItem
+                    >
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                >
+                  <path d="M12 16L6 10H18L12 16Z"></path>
+                </svg>
               </div>
             </td>
+
           </tr>
         </tbody>
       </table>
@@ -378,6 +352,16 @@ import {
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger
+} from '/components/ui/dropdown-menu'
+
 
 import { useSocialStore } from '/src/stores/SocialDashboard.ts'
 const store = useSocialStore()
