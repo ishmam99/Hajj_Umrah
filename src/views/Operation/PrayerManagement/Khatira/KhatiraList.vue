@@ -15,57 +15,15 @@
             <th class="p-2 text-left">Khatira Topic</th>
             <th class="p-2 text-left">Time</th>
             <th class="p-2 text-left">Speaker</th>
-            <th class="p-2 text-left">Action</th>
+            <th class="p-2 text-left">Date</th>
             <th class="p-2 text-left">Status</th>
-            <th class="p-2 text-left"></th>
+            <th class="p-2 text-left">Action</th>
           </tr>
         </thead>
         <tbody>
           <tr class="">
-            <td class="py-4 p-2 gap-2">
+            <td class="py-4 p-2">
               <h3 class="font-bold">01</h3>
-            </td>
-            <td class="py-4 p-2 flex items-center gap-2">
-              <h3 class="font-bold">Save The Children</h3>
-            </td>
-            <td>
-              <p class="text-lg">12:00 AM</p>
-            </td>
-            <td class="py-4 p-2">Abdullah</td>
-            <td class="py-4 p-2">1 Feb 2024</td>
-            <td class="py-4 p-2">
-              <p class="text-sm font-bold text-blue-600">Pending</p>
-            </td>
-            <td class="py-4 p-2">
-              <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                Post
-              </button>
-            </td>
-          </tr>
-          <tr class="bg-white">
-            <td class="py-4 p-2 gap-2">
-              <h3 class="font-bold">02</h3>
-            </td>
-            <td class="py-4 p-2 flex items-center gap-2">
-              <h3 class="font-bold">Enhance Social Justice</h3>
-            </td>
-            <td>
-              <p class="text-lg">12:00 AM</p>
-            </td>
-            <td class="py-4 p-2">Abdullah</td>
-            <td class="py-4 p-2">10 Feb 2024</td>
-            <td class="py-4 p-2">
-              <p class="text-sm font-bold text-green-600">Completed</p>
-            </td>
-            <td class="py-4 p-2">
-              <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                Post
-              </button>
-            </td>
-          </tr>
-          <tr class="">
-            <td class="py-4 p-2">
-              <h3 class="font-bold">03</h3>
             </td>
             <td class="py-4 p-2 flex items-center gap-2">
               <h3 class="font-bold">Help the weak</h3>
@@ -78,10 +36,35 @@
             <td class="py-4 p-2">
               <p class="text-sm font-bold text-blue-600">Pending</p>
             </td>
-            <td class="py-4 p-2">
-              <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
-                Post
-              </button>
+            <td class="py-4 p-2 flex justify-center">
+              <div
+                class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2"
+              >
+                <DropdownMenu class="w-full">
+                  <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
+                  <DropdownMenuContent class="w-40">
+                    <DropdownMenuItem class="text-yellow-600" @click="goToEditPage(1)"
+                      >Post</DropdownMenuItem
+                    >
+
+                    <DropdownMenuItem class="text-blue-600" @click="goToDetailPage(1)"
+                      >Edit</DropdownMenuItem
+                    >
+                    <DropdownMenuItem class="text-red-600" @click="goToDetailPage(1)"
+                      >Delete</DropdownMenuItem
+                    >
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                >
+                  <path d="M12 16L6 10H18L12 16Z"></path>
+                </svg>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -90,6 +73,13 @@
   </div>
 </template>
 <script setup>
-import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import OperationSidebar from '/src/views/Operation/OperationSidevar.vue'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger
+} from '/components/ui/dropdown-menu'
+
 </script>
