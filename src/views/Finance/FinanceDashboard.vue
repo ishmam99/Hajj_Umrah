@@ -12,10 +12,8 @@
 <script setup>
 import FinanceSidebar from '/src/views/Finance/FinanceSidevar.vue'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import FinanceProfile from '/src/views/Finance/Profile/FinanceProfile.vue'
 
-import { useAccountStore } from '/src/stores/accountStore.ts'
-import { onMounted } from 'vue'
+import { useAdminStore } from '/src/stores/adminStore.ts'
 
-const store = useAccountStore()
+const store = useAdminStore()
 </script>

@@ -13,10 +13,5 @@
 import MediaAndComSidebar from '/src/views/MediaAndCom/MediaAndComSidebar.vue'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 
-import { useAccountStore } from '/src/stores/accountStore.ts'
-import { onMounted } from 'vue'
-
-const store = useAccountStore()
-
 
 </script>

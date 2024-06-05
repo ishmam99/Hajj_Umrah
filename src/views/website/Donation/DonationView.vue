@@ -109,7 +109,10 @@
 <script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import { Button } from '/components/ui/button'
-import { useAccountStore } from '/src/stores/accountStore'
+import { ref, onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import { useToast } from '/components/ui/toast/use-toast'
+import { useStore } from '/src/stores/store.ts'
 import {
   Card,
   CardContent,
@@ -129,19 +132,14 @@ import {
   SelectValue
 } from '/components/ui/select'
 
-import { ref, onMounted, watch } from 'vue'
-import { useRoute } from 'vue-router'
-import { useToast } from '/components/ui/toast/use-toast'
-import { useStore } from '/src/stores/store.ts'
+
 
 const store = useStore()
 const { toast } = useToast()
 const route = useRoute()
-const accountStore = useAccountStore()
 const selectDonation = ref({
   amount: ''
 })
-
 const loading = ref(false)
 
 const successURL = 'http://localhost:5173/Member_Donation'
@@ -202,8 +200,8 @@ const donnationList = async () => {
   loading.value = true
   try {
     const { data } = await api().get('donation-method-list')
-    accountStore.donationList = data.data
-    console.log(accountStore.donationList)
+    store.donationList = data.data
+    console.log(store.donationList)
   } catch (error) {
     console.log(error)
   }

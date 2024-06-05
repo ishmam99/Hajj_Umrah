@@ -15,7 +15,8 @@ export const useStore = defineStore( 'store',{
         active_project_list: [],
         past_project_list: [],
         upcomming_project_list:[],
-        registerVolunteerChk : null,
+        registerVolunteerChk: null,
+        donationList:[],
         donation: {
             donation_method_id: '',
             name: '',

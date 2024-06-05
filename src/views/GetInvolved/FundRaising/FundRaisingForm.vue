@@ -28,22 +28,7 @@
           <!-- {{ fundRaising.program }} -->
           <div class="flex gap-5">
             <div class="w-1/2">
-              <Select v-model="fundRaising.program">
-                <SelectTrigger class="w-full">
-                  <SelectValue placeholder="Select a program" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectItem value="Bulid A Mouque in Bangladesh"
-                      >Bulid A Mouque in Bangladesh</SelectItem
-                    >
-                    <SelectItem value="sheFund Paise for Gazalter">Fund Paise for Gaza</SelectItem>
-                    <SelectItem value="Help WinterEffectedPeople"
-                      >Help WinterEffectedPeople</SelectItem
-                    >
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+              <input v-model="fundRaising.program" type="text" placeholder="Enter Fundraising Program" class="py-2 px-3 w-full rounded-lg">
             </div>
             <div class="w-1/2 gap-2 flex items-center bg-white rounded-lg py-2 px-3">
               <p class="text-lg font-bold text-green-600">$</p>

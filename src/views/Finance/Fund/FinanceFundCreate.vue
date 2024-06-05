@@ -142,12 +142,12 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
-import { useAccountStore } from '/src/stores/accountStore.ts'
+import { useAdminStore } from '/src/stores/adminStore.ts'
 import { useAuthStore } from '/src/stores/AuthStore.ts'
 import { useRoute, useRouter } from 'vue-router'
 
 
-const store = useAccountStore()
+const store = useAdminStore()
 const authStore = useAuthStore()
 const route = useRoute()
 const router = useRouter()

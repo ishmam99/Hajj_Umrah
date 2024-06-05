@@ -45,9 +45,9 @@
 
 <script setup>
 import { ref , onMounted } from 'vue'
-import {useAccountStore} from '@/stores/accountStore';
+import {useAdminStore} from '@/stores/adminStore.ts';
 
-const store = useAccountStore()
+const store = useAdminStore()
 const loading = ref(false)
 const lastFunds = ref([]);
 

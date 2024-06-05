@@ -13,7 +13,6 @@ export const useMediaStore = defineStore('mediaStore',{
         categoryLit: [],
         categoryWiseImage: [],
         imageList:[],
-        authUser : '',
   }),
   actions: {
     

@@ -27,7 +27,6 @@ export const useAdminStore = defineStore('adminStore',{
         categoryLit: [],
         categoryWiseImage: [],
         imageList:[],
-        authUser : '',
   }),
   actions: {
     

@@ -8,6 +8,5 @@ export const useYouthStore = defineStore('youthStore',{
         event: [],
         yearPlannerList: [],
         programList: [],
-    authUser : '',
   }),
 });
