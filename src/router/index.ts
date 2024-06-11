@@ -473,7 +473,7 @@ const router = createRouter({
         {
           path: '/Youth_Dashboard/Program_Broadcast',
           name:'Youth_Program_Broadcast',
-              component: () => import('../views/Youth/YouthProgramBroadcast.vue.vue'),
+              component: () => import('../views/Youth/YouthProgramBroadcast.vue'),
         },
         {
           path: '/Youth_Dashboard/Youth_Program_Create',
