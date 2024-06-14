@@ -79,6 +79,7 @@ import {
   SelectValue
 } from '/components/ui/select'
 const store = useSocialStore()
+
 const announcemnetStore = ref({
   title: '',
   description: '',
