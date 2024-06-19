@@ -89,7 +89,7 @@
             <div class="relative mb-3 w-full">
               <input
                 type="text"
-                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[2] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                 id="exampleFormControlInput50"
                 value=""
                 v-model="EventList.address"
@@ -221,11 +221,17 @@
             </div>
           </div>
 
-          <button
-            type="submit"
-            class="w-full h-[45px] rounded-2xl bg-teal-800 text-white font-bold mx-auto flex items-center text-center justify-center"
-          >
-            Create
+          <button type="submit" class="w-full h-[45px] rounded-2xl bg-teal-800 text-white font-bold mx-auto flex items-center text-center justify-center">
+            <svg
+                v-if="loading"
+                xmlns="http://www.w3.org/2000/svg"
+                class="animate-spin !m-0 w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="rgba(255,255,255,1)"
+              >
+                <path
+                  d="M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z"
+                ></path></svg>Create
           </button>
         </div>
       </form>
@@ -285,15 +291,17 @@ const loading = ref(false)
 const { toast } = useToast()
 
 const upcomingEvent = async () => {
+  loading.value = true;
   try {
     const data = await api().post('event-store', EventList.value,)
     console.log(data)
     toast({
-      title: 'Fund Raise Event Created '
+      title: 'Event Created '
     })
   } catch (error) {
     console.log(error)
   }
+  loading.value = false
 }
 
 </script>
