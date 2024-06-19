@@ -30,9 +30,9 @@
             <div class="card-image">
               <img :src="otherAnnouncement?.image" class="w-full h-44 rounded-t-md" alt="" />
             </div>
-            <div class="flex flex-col justify-between px-2">
+            <div class="flex flex-col justify-between p-2">
               <p class="card-title pt-2 pb-1 font-semibold text-2xl">{{ otherAnnouncement?.title }}</p>
-              <p class="card-body text-justify min-h-32 flex-grow line-clamp-2" v-html="otherAnnouncement?.description">
+              <p class="card-body text-justify flex-grow line-clamp-2" v-html="otherAnnouncement?.description">
               </p>
               <!-- <p class="footer pt-2 w-full text-end">
                 <span class="font-bold">Created</span> at
@@ -68,7 +68,7 @@ const announcements = async () => {
     store.announcementList = data.data
     const myData = store.announcementList
     lastAnnouncement.value = myData[myData.length - 1]
-    otherAnnouncements.value = myData.slice(1, 6)
+    otherAnnouncements.value = myData.slice(-6, -1)
     console.log('lastAnnouncement Get api', lastAnnouncement)
     console.log('otherAnnouncements Get api', otherAnnouncements)
   } catch (error) {
