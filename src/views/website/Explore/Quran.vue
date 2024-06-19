@@ -66,7 +66,6 @@
 
 <script setup lang="ts">
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
-import FacilitiesMore from '@/components/FacilitiesMore.vue'
 import {
   Card,
   CardContent,
@@ -76,24 +75,9 @@ import {
   CardTitle
 } from '/components/ui/card'
 import { Skeleton } from '/components/ui/skeleton'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from '/components/ui/accordion'
-
-import { Button } from '/components/ui/button'
-import ContactMore from '/src/components/ContactMore.vue'
-import { Separator } from '/components/ui/separator'
 import { onMounted, ref } from 'vue'
 import axios from 'axios'
 const surahList = ref()
-const currentsurah = ref()
-const currentSection = ref()
-const currentChapter = ref()
-const surah = ref()
-const surahOfTheDay = ref()
 
 onMounted(() => {
   axios.get('https://api.alquran.cloud/v1/surah').then((response) => {

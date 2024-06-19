@@ -19,12 +19,12 @@
             class="py-1.5 px-2 rounded-md w-full"
             v-model="fundRaising.title"
           />
-          <div class="text-white flex items-center gap-2 m-2">
+          <!-- <div class="text-white flex items-center gap-2 m-2">
             <input type="checkbox" class="h-6 w-6" v-model="fundRaising.morocco_event" />
             <p>
               I would like to link my fundraiser to a Muslim Aid Event Morocco Earthquake Emergency
             </p>
-          </div>
+          </div> -->
           <!-- {{ fundRaising.program }} -->
           <div class="flex gap-5">
             <div class="w-1/2">

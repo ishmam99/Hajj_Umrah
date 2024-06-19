@@ -39,12 +39,12 @@
             Sign Up
           </button>
         </form>
-        <p class="text-center text-sm text-gray-600">OR</p>
+        <!-- <p class="text-center text-sm text-gray-600">OR</p>
         <button
           class="border border-gray-400 w-full px-3 py-2 rounded-md my-3 font-bold text-gray-400 flex items-center justify-center gap-2"
         >
           <ion-icon name="logo-google"></ion-icon>Sign up with Google
-        </button>
+        </button> -->
       </div>
       <div>
         <img src="@/assets/image/common/n21.avif" alt="" class="bg-white rounded-lg" />
