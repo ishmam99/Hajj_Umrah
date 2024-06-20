@@ -10,22 +10,24 @@ import FundComponent from '../components/HomeFolder/FundComponent.vue'
 import YearlyPlanner from '../components/HomeFolder/YearlyPlanner.vue'
 import KhutbaKhatira from '../components/HomeFolder/KhutbaKhatira.vue'
 import VirtualTour from '/src/components/HomeFolder/virtualTour.vue'
+import Gallery from '/src/components/HomeFolder/Gallery.vue'
 </script>
 
 <template>
   <DefaultLayout>
     <Hero />
     <div
-      class="py-[30px] px-[5%] bg-slate-50 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
-    >
-      <VirtualTour />
-    </div>
-    <div
-      class="py-[30px] px-[5%] bg-slate-100 bg-[url('../assets/image/home/pattern-1.png')] flex justify-center gap-5"
+      class="py-[30px] px-[5%] bg-slate-100 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
     >
       <!-- <Prayer/> -->
       <Announcement />
     </div>
+    <div
+      class="py-[30px] px-[5%] bg-slate-200 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
+    >
+      <VirtualTour />
+    </div>
+    
     <div
       class="py-[30px] rounded-lg bg-slate-50 bg-[url('/src/assets/image/home/pattern-1.png')] flex justify-center gap-5"
     >
@@ -45,8 +47,8 @@ import VirtualTour from '/src/components/HomeFolder/virtualTour.vue'
     </div>
     <KhutbaKhatira class="" />
     <!-- Gallery -->
-    <div>
+    <!-- <div>
       <Gallery />
-    </div>
+    </div> -->
   </DefaultLayout>
 </template>
