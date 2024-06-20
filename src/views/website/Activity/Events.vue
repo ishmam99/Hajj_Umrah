@@ -216,68 +216,28 @@
               </ul>
             </div>
           </div>
-          <div class="bg-white rounded-xl p-5 w-full flex items-center justify-center">
+          <div
+            v-if="authStore.isAuthenticated == true"
+            class="bg-white rounded-xl p-5 w-full flex items-center justify-center"
+          >
             <div class="space-y-8 w-full">
               <div class="bg-white rounded-xl w-full">
                 <div class="pt-2">
                   <h1 class="text-2xl font-bold">Event Application</h1>
                 </div>
                 <div class="py-5 space-y-7 mt-5">
-                  <div class="flex w-full gap-5">
-                    <div class="relative mb-3 w-full">
-                      <input
-                        type="text"
-                        class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                        id="exampleFormControlInput50"
-                       v-model="applyForm.first_name"
-                      />
-                      <label
-                        for="exampleFormControlInput50"
-                        class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                        >First Name <span class="text-red-500">*</span>
-                      </label>
-                    </div>
-                    <div class="relative mb-3 w-full">
-                      <input
-                        type="text"
-                        class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                        id="exampleFormControlInput50"
-                        v-model="applyForm.last_name"
-                      />
-                      <label
-                        for="exampleFormControlInput50"
-                        class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                        >Last Name <span class="text-red-500">*</span>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="flex w-full gap-5">
-                    <div class="relative mb-3 w-full">
-                      <input
-                        type="email"
-                        class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                        id="exampleFormControlInput50"
-                        v-model="applyForm.email"
-                      />
-                      <label
-                        for="exampleFormControlInput50"
-                        class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                        >Email <span class="text-red-500">*</span>
-                      </label>
-                    </div>
-                    <div class="relative mb-3 w-full">
-                      <input
-                        type="tel"
-                        class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                        id="exampleFormControlInput50"
-                        v-model="applyForm.phone"
-                      />
-                      <label
-                        for="exampleFormControlInput50"
-                        class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                        >Phone Number <span class="text-red-500">*</span>
-                      </label>
-                    </div>
+                  <div class="relative mb-3 w-full">
+                    <input
+                      type="tel"
+                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      id="exampleFormControlInput50"
+                      v-model="applyForm.phone"
+                    />
+                    <label
+                      for="exampleFormControlInput50"
+                      class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                      >Phone Number <span class="text-red-500">*</span>
+                    </label>
                   </div>
                   <div class="flex w-full gap-5">
                     <div class="relative mb-3 w-full">
@@ -323,13 +283,22 @@
                     </div>
                   </div>
                 </div>
-                <button @click="eventApply"
+                <button
+                  @click="eventApply"
                   class="w-[350px] h-[45px] rounded-2xl bg-[#23646dc6] text-white font-bold flex items-center justify-center mx-auto"
                 >
                   Apply
                 </button>
               </div>
             </div>
+          </div>
+          <div v-else class="flex justify-center gap-5">
+            <router-link to="/Signup" class="bg-blue-600 px-8 py-2 rounded-2xl text-white"
+              >Sign Up</router-link
+            >
+            <router-link to="/Member_Login" class="bg-green-600 px-8 py-2 rounded-2xl text-white"
+              >Sign In</router-link
+            >
           </div>
         </div>
       </div>
@@ -342,6 +311,7 @@ import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useStore } from '/src/stores/store.ts'
+import { useAuthStore } from '/src/stores/AuthStore.ts'
 import {
   Select,
   SelectContent,
@@ -354,6 +324,7 @@ import {
 import { useToast } from '/components/ui/toast/use-toast'
 
 const store = useStore()
+const authStore = useAuthStore()
 const route = useRoute()
 const { toast } = useToast()
 
@@ -376,12 +347,12 @@ const applyForm = ref({
   phone: '',
   address: '',
   city: '',
-  state:''
+  state: ''
 })
 
 const eventApply = async () => {
   try {
-    const {data} = await api().post('event-apply-store', applyForm.value,)
+    const { data } = await api().post('event-apply-store', applyForm.value)
     console.log(data)
     toast({
       title: 'Apply successful'

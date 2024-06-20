@@ -21,7 +21,7 @@
     <div class="flex item-center bg-teal-50 bg-cover justify-center py-10 px-[5%]">
       <Card>
         <div class="grid grid-cols-5 gap-5 p-8">
-          <div v-for="item in accountStore.donationList" :key="item.id"
+          <div v-for="item in store.donationList" :key="item.id"
             @click="store.donation.donation_method_id = item.id">
             <Label for="card"
               class="flex flex-col items-center justify-between rounded-md border-2 border-muted p-2 relative group shadow-lg bg-slate-100"
@@ -196,7 +196,7 @@ const confirmParams = ref({
 
 // Converts to using the Composition API's onMounted
 
-const donnationList = async () => {
+const donationList = async () => {
   loading.value = true
   try {
     const { data } = await api().get('donation-method-list')
@@ -209,6 +209,6 @@ const donnationList = async () => {
 }
 
 onMounted(async () => {
-  donnationList()
+  donationList()
 })
 </script>
