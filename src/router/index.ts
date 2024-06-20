@@ -338,6 +338,11 @@ const router = createRouter({
       component: () => import('../views/GetInvolved/FundRaising/FundRaising.vue')
     },
     {
+      path: '/Fund_Raising_details/:id',
+      name: 'Fund_Raising_details',
+      component: () => import('@/components/HomeFolder/FundComponentDetails.vue')
+    },
+    {
       path: '/Fund_Raising_Form',
       name: 'Fund_Raising_Form',
       component: () => import('../views/GetInvolved/FundRaising/FundRaisingForm.vue')
