@@ -176,7 +176,7 @@
               <router-link
                 to="/explore/watch"
                 class="w-full hover:pl-5 duration-300 text-sm font-semibold"
-                >Watch</router-link
+                >Khutba Khatira & Lectures</router-link
               >
             </MenubarItem>
             <MenubarItem>
