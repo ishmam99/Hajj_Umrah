@@ -4,12 +4,12 @@
       <h1 class="text-3xl font-bold uppercase pb-3">Announcement</h1>
       <div class="flex gap-36">
         <div class="w-2/6">
-          <div class="rounded w-full p-4 bg-gray-200">
+          <div class="rounded w-full p-4 bg-white">
             <div class="card-image bg-transparent">
               <!-- {{ lastAnnouncement }} -->
               <img :src="lastAnnouncement?.image" class="h-80 w-full rounded-lg" alt="" />
             </div>
-            <p class="card-title mt-6 font-semibold text-3xl">{{ lastAnnouncement?.title }}</p>
+            <p class="card-title mt-6 font-semibold text-3xl text-blue-700">{{ lastAnnouncement?.title }}</p>
             <p class="card-body mt-2">
               {{ lastAnnouncement?.description }}
             </p>
@@ -23,15 +23,15 @@
           <div
             v-for="otherAnnouncement in otherAnnouncements"
             :key="otherAnnouncement.id"
-            class="card bg-gray-200 rounded-lg"
+            class="card bg-white rounded-lg p-3"
           >
             <!-- <div v-for="otherAnnouncement in store.announcementList" :key="otherAnnouncement.id" class="card bg-gray-200"> -->
             <!-- {{ otherAnnouncement }} -->
             <div class="card-image">
-              <img :src="otherAnnouncement?.image" class="w-full h-44 rounded-t-md" alt="" />
+              <img :src="otherAnnouncement?.image" class="w-full h-44 rounded-md" alt="" />
             </div>
-            <div class="flex flex-col justify-between p-2">
-              <p class="card-title pt-2 pb-1 font-semibold text-2xl">{{ otherAnnouncement?.title }}</p>
+            <div class="flex flex-col justify-between">
+              <p class="card-title pt-2 pb-1 font-semibold text-2xl text-blue-700">{{ otherAnnouncement?.title }}</p>
               <p class="card-body text-justify flex-grow line-clamp-2" v-html="otherAnnouncement?.description">
               </p>
               <!-- <p class="footer pt-2 w-full text-end">

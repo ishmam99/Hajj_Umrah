@@ -24,7 +24,7 @@
           </div>
           <div class="flex flex-col justify-between">
             <p class="card-title pt-2 pb-1">{{ otherEvent?.name }}</p>
-            <p class="card-body text-justify line-clamp-6 min-h-32 flex-grow">
+            <p class="card-body text-justify line-clamp-2 flex-grow">
               {{ otherEvent?.description }}
             </p>
             <p class="footer pt-2 w-full text-end"> <span class="font-bold">Started</span> on <span class="date">{{ otherEvent?.start_date

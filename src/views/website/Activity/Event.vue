@@ -44,7 +44,7 @@
               <div class="absolute z-10 bottom-0 p-5 text-white flex flex-col gap-2">
                 <p class="text-xl text-white">{{ item.start_date }} - {{ item.end_date }}</p>
                 <h3 class="text-2xl font-bold">{{ item.name }}</h3>
-                <p>Feed The Hungry event of IDL Masjid</p>
+                <p>{{ item.description }}</p>
                 <router-link
                   :to="{
                     name: 'Events',
@@ -69,12 +69,12 @@
               :key="item.id"
               class="border border-gray-600 p-5 flex flex-col gap-2 text-center rounded-md"
             >
-              <img :src="item.image" alt="" class="w-full" />
-              <h3 class="text-2xl font-bold">{{ item.name }}</h3>
+              <img :src="item.image" alt="" class="w-full max-h-[120px]" />
+              <h3 class="text-2xl font-bold line-clamp-1">{{ item.name }}</h3>
               <p class="text-sm font-semibold text-yellow-600">
                 {{ item.start_date }} - {{ item.end_date }}
               </p>
-              <p>{{ item.description }}</p>
+              <p class="line-clamp-2">{{ item.description }}</p>
               <router-link
                 :to="{
                   name: 'Events',
@@ -96,12 +96,12 @@
               :key="item.id"
               class="border border-gray-600 p-5 flex flex-col gap-2 text-center rounded-md"
             >
-              <img :src="item.image" alt="" class="w-full" />
-              <h3 class="text-2xl font-bold">{{ item.name }}</h3>
+              <img :src="item.image" alt="" class="w-full max-h-[120px]" />
+              <h3 class="text-2xl font-bold line-clamp-1">{{ item.name }}</h3>
               <p class="text-sm font-semibold text-yellow-600">
                 {{ item.start_date }} - {{ item.end_date }}
               </p>
-              <p>{{ item.description }}</p>
+              <p class="line-clamp-2">{{ item.description }}</p>
               <!-- <button class="h-[50px] w-full border border-gray-600 rounded-md">Register</button> -->
             </div>
           </div>
