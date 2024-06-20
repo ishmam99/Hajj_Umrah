@@ -1,5 +1,5 @@
 <template>
-    <DefaultLayout>
+    <DefaultLayout class="">
       <div
         class="px-20 pt-20 mt-5 py-5 bg-emerald-800 bg-[url('/src/assets/image/home/bg123.png')] bg-repeat shadow-xl"
       >
@@ -17,12 +17,11 @@
               ></path>
             </svg>
             <p>Home</p>
-            <p>/ Activities</p>
             <!-- <p>/ Volunteers</p> -->
-            <p class="text-emerald-800">/ Events</p>
+            <p class="text-emerald-800">/ Announcements</p>
           </div>
           <div class="rounded-lg flex items-center justify-center relative py-3">
-            <h1 class="text-emerald-800 text-4xl font-bold">Events</h1>
+            <h1 class="text-emerald-800 text-4xl font-bold">Announcements</h1>
             <div>
               <p></p>
             </div>
@@ -30,39 +29,12 @@
         </div>
       </div>
       <!-- {{ store.active_event_list }} -->
-      <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
-        <div class="space-y-8 w-3/4">
-          <div class="bg-white rounded-xl p-5 w-full">
-            <h1 class="text-3xl underline font-semibold py-3">Active Events</h1>
-            <div v-if="store?.active_event_list.length > 0">
-              <div
-                v-for="item in store?.active_event_list"
-                :key="item.id"
-                class="min-w-[350px] min-h-[450px] overflow-hidden relative rounded-3xl"
-              >
-                <img :src="item.image" alt="" class="w-full absolute top-0" />
-                <div class="absolute z-10 bottom-0 p-5 text-white flex flex-col gap-2">
-                  <p class="text-xl text-white">{{ item.start_date }} - {{ item.end_date }}</p>
-                  <h3 class="text-2xl font-bold">{{ item.name }}</h3>
-                  <p>Feed The Hungry event of IDL Masjid</p>
-                  <router-link
-                    :to="{
-                      name: 'Events',
-                      params: {
-                        id: item.id
-                      }
-                    }"
-                    class="w-full hover:pl-5 duration-300"
-                  >
-                    <button class="h-[50px] w-[250px] bg-emerald-800 rounded-xl">Go To Event</button>
-                  </router-link>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full ">
+        <div class="space-y-8 container">
+         
           <!-- {{ store?.upcomming_event_list }} -->
           <div class="bg-white rounded-xl p-5 w-full">
-            <h1 class="text-3xl font-semibold underline py-3">Up Coming Events</h1>
+            <h1 class="text-3xl font-semibold underline py-3">Active Announcements</h1>
             <div class="class grid grid-cols-3 gap-5">
               <div
                 v-for="item in store?.upcomming_event_list"
@@ -89,7 +61,7 @@
             </div>
           </div>
           <div class="bg-white rounded-xl p-5 w-full">
-            <h1 class="text-3xl font-semibold underline py-3">Past Event</h1>
+            <h1 class="text-3xl font-semibold underline py-3">Past Announcements</h1>
             <div class="class grid grid-cols-3 gap-5">
               <div
                 v-for="item in store?.past_event_list"
@@ -107,7 +79,6 @@
             </div>
           </div>
         </div>
-        <ActivityMore />
       </div>
     </DefaultLayout>
   </template>
