@@ -20,6 +20,16 @@ const router = createRouter({
       component: HomeView
     },
     {
+      path: '/announcement/:id',
+      name: 'announcementDetails',
+      component: () => import('@/components/HomeFolder/AnnouncementDetails.vue')
+    },
+    {
+      path: '/announcementList',
+      name: 'announcementList',
+      component: () => import('@/components/HomeFolder/AnnouncementList.vue')
+    },
+    {
       path: '/year_planner/:id',
       name: 'year_planner',
       component: () => import('../components/HomeFolder/YearlyPlannerDetails.vue')

@@ -32,7 +32,7 @@
       <div class="bg-[#d1d1d185] h-full py-5 pt-10 flex gap-5 px-20 w-full">
         <div class="space-y-8 w-3/4">
           <div class="grid grid-cols-3 gap-5 justify-center items-center">
-            <img :src="img.image" alt="" v-for="img in selectedTask?.images" :key="img.id"/>
+            <img :src="img.image" alt="" v-for="img in selectedTask?.images" :key="img.id" />
           </div>
         </div>
         <GalleyMore />

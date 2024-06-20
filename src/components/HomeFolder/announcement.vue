@@ -34,7 +34,18 @@
               <p class="card-title pt-2 pb-1 font-semibold text-2xl">{{ otherAnnouncement?.title }}</p>
               <p class="card-body text-justify flex-grow line-clamp-2" v-html="otherAnnouncement?.description">
               </p>
-              <!-- <p class="footer pt-2 w-full text-end">
+              <router-link
+                :key="otherAnnouncement.id"
+                :to="{
+                    name: 'announcementDetails',
+                    params: {
+                        id: otherAnnouncement.id
+                    }
+                }"
+              >
+                  <p class="py-2"><svg class="w-full text-end" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(100,205,138,1)"><path d="M12 11V8L16 12L12 16V13H8V11H12ZM12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20Z"></path></svg></p>
+                </router-link>
+                  <!-- <p class="footer pt-2 w-full text-end">
                 <span class="font-bold">Created</span> at
                 <span class="date">{{ otherAnnouncement?.created_at }}</span>
               </p> -->
@@ -42,7 +53,7 @@
           </div>
           <div class="flex items-center justify-center">
             <router-link
-              to="/"
+              to="announcementList"
               class="px-5 py-2 bg-gray-200 text-sm text-gray-600 font-bold rounded-3xl hover:text-gray-800 hover:bg-gray-100 border hover:border-2 border-teal-500"
               >See More</router-link
             >
