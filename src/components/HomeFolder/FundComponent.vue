@@ -27,12 +27,9 @@
     </div>
     <div class="w-2/3">
       <h1 class="text-2xl font-bold pb-3 uppercase text-green-600">Our Campaigns</h1>
+      
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div class="flex flex-col gap-1 rounded-md p-2 bg-white" v-for="lastFund in lastFunds" :key="lastFund.id">
-          <img :src="lastFund?.image" alt="" class="w-full h-3/4" />
-          <p class="text-lg font-bold mb-1">{{ lastFund.title }}</p>
-          <p class="text-xs font-semibold text-gray-600"><span class="font-bold">Start Date:</span> {{ lastFund.start_date }}</p>
-          <p class="text-xs font-semibold text-gray-600"><span class="font-bold">End Date:</span> {{ lastFund.end_date }}</p>
           <router-link
                 :key="lastFund.id"
                 :to="{
@@ -41,9 +38,12 @@
                         id: lastFund.id
                     }
                 }"
-              >
-                  <p class="pt-2"><svg class="w-full text-end" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(100,205,138,1)"><path d="M12 11V8L16 12L12 16V13H8V11H12ZM12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20Z"></path></svg></p>
-                </router-link>
+          >
+          <img :src="lastFund?.image" alt="" class="w-full h-3/4" />
+          <p class="text-lg font-bold mb-1">{{ lastFund.title }}</p>
+          <p class="text-xs font-semibold text-gray-600"><span class="font-bold">Start Date:</span> {{ lastFund.start_date }}</p>
+          <p class="text-xs font-semibold text-gray-600"><span class="font-bold">End Date:</span> {{ lastFund.end_date }}</p>          
+            </router-link>
         </div>
       </div>
         <div class="flex items-center justify-center mt-14 w-full">
