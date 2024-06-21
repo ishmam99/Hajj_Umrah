@@ -32,25 +32,32 @@
     <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
       <div class="space-y-8 w-3/4">
         <div class="bg-white rounded-xl p-5 w-full">
-          <h1 class="text-3xl underline py-3 mb-4">On Going Project</h1>
-          <div v-for="item in store.active_project_list" class="min-w-[350px] min-h-[450px] overflow-hidden relative rounded-3xl">
-            <img src="/src/assets/image/home/l4.png" alt="" class="w-full absolute top-0" />
-            <div class="absolute z-10 bottom-0 p-5 text-white flex flex-col gap-2">
-              <p class="text-xl text-white">20 JAN 2024</p>
-              <h3 class="text-2xl font-extrabold">Youth Development Project</h3>
-              <p class="font-semibold">Youth Development project of IDL Masjid</p>
-              <router-link to="/activity/projects" class="w-full hover:pl-5 duration-300">
-                <button class="h-[50px] w-[250px] bg-cyan-800 rounded-xl">Go To Project</button>
-              </router-link>
+          <h1 class="text-3xl underline py-3 mb-4 text-center">On Going Project</h1>
+          <div v-if="store.active_project_list.length > 0">
+            <div
+              v-for="item in store.active_project_list"
+              :key="item"
+              class="min-w-[350px] min-h-[450px] overflow-hidden relative rounded-3xl"
+            >
+              <img src="/src/assets/image/home/l4.png" alt="" class="w-full absolute top-0" />
+              <div class="absolute z-10 bottom-0 p-5 text-white flex flex-col gap-2">
+                <p class="text-xl text-white">20 JAN 2024</p>
+                <h3 class="text-2xl font-extrabold">Youth Development Project</h3>
+                <p class="font-semibold">Youth Development project of IDL Masjid</p>
+                <router-link to="/activity/projects" class="w-full hover:pl-5 duration-300">
+                  <button class="h-[50px] w-[250px] bg-cyan-800 rounded-xl">Go To Project</button>
+                </router-link>
+              </div>
             </div>
           </div>
+          <p v-else class="text-3xl font-semibold">No Ongoing Projects</p>
         </div>
         <div class="">
           <div class="bg-white rounded-xl p-5 mb-5">
-            <h1 class="text-3xl underline py-3">Up Coming Projects</h1>
-            <div class="class grid grid-cols-2 gap-5">
+            <h1 class="text-3xl underline py-3 text-center">Up Coming Projects</h1>
+            <div v-if="store.upcomming_project_list.length>0" class="class grid grid-cols-2 gap-5">
               <div
-              v-for="item in store.upcomming_project_list"
+                v-for="item in store.upcomming_project_list"
                 :key="item.id"
                 class="border border-gray-699 p-5 flex flex-col gap-2 text-center rounded-md"
               >
@@ -59,16 +66,19 @@
                 </p>
                 <img :src="item.image" alt="" class="w-full h-[50%] rounded-2xl" />
                 <h3 class="text-2xl font-bold">{{ item.name }}</h3>
-                <p class="text-sm font-semibold text-cyan-600">{{ item.start_date }} - {{ item.end_date }}</p>
+                <p class="text-sm font-semibold text-cyan-600">
+                  {{ item.start_date }} - {{ item.end_date }}
+                </p>
                 <p>{{ item.description }}</p>
                 <button class="h-[50px] w-full border bg-cyan-800 text-white rounded-md">
                   Register
                 </button>
               </div>
             </div>
+            <p v-else class="text-3xl font-semibold">No Upgoing Projects</p>
           </div>
           <div class="bg-white rounded-xl p-5">
-            <h1 class="text-3xl underline py-3">Project History</h1>
+            <h1 class="text-3xl underline py-3 text-center">Project History</h1>
             <div class="class grid grid-cols-2 gap-5">
               <div
                 v-for="item in history"
@@ -78,7 +88,7 @@
                 <p class="absolute text-white text-2xl font-bold p-6 bg-[#0000005d] m-2 rounded-xl">
                   Project History
                 </p>
-                <img :src="item.image" alt="" class="w-full h-[50%] rounded-2xl" />
+                <img :src="item.image" alt="" class="w-full h-[220px] rounded-2xl" />
                 <h3 class="text-2xl font-bold">{{ item.title }}</h3>
                 <p class="text-sm font-semibold text-cyan-600">{{ item.date }}</p>
                 <p>{{ item.des }}</p>
@@ -161,7 +171,6 @@ const history = ref([
     des: 'ConnectCatalyst: Bridging Communities through Outreach Initiatives.'
   }
 ])
-
 
 import { useStore } from '/src/stores/store.ts'
 import { useRoute, useRouter } from 'vue-router'

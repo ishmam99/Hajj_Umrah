@@ -33,7 +33,7 @@
     <div class="bg-gray-100 h-full py-5 flex gap-5 px-20 w-full">
       <div class="space-y-8 w-3/4">
         <div class="bg-white rounded-xl p-5 w-full">
-          <h1 class="text-3xl underline font-semibold py-3">Active Events</h1>
+          <h1 class="text-3xl underline font-semibold py-3 text-center">Active Events</h1>
           <div v-if="store?.active_event_list.length > 0">
             <div
               v-for="item in store?.active_event_list"
@@ -59,11 +59,12 @@
               </div>
             </div>
           </div>
+          <p v-else class="text-3xl font-semibold">No Active Events</p>
         </div>
         <!-- {{ store?.upcomming_event_list }} -->
         <div class="bg-white rounded-xl p-5 w-full">
-          <h1 class="text-3xl font-semibold underline py-3">Up Coming Events</h1>
-          <div class="class grid grid-cols-3 gap-5">
+          <h1 class="text-3xl font-semibold underline py-3 text-center">Up Coming Events</h1>
+          <div v-if="store?.upcomming_event_list.length>0" class="class grid grid-cols-3 gap-5">
             <div
               v-for="item in store?.upcomming_event_list"
               :key="item.id"
@@ -87,9 +88,10 @@
               >
             </div>
           </div>
+          <p v-else class="text-3xl font-semibold">No Upcomming Events</p>
         </div>
         <div class="bg-white rounded-xl p-5 w-full">
-          <h1 class="text-3xl font-semibold underline py-3">Past Event</h1>
+          <h1 class="text-3xl font-semibold underline py-3 text-center">Past Event</h1>
           <div class="class grid grid-cols-3 gap-5">
             <div
               v-for="item in store?.past_event_list"

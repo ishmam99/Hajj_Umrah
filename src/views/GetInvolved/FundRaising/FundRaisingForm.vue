@@ -26,9 +26,9 @@
             </p>
           </div> -->
           <!-- {{ fundRaising.program }} -->
-          <div class="flex gap-5">
+          <div class="flex gap-5 mt-3">
             <div class="w-1/2">
-              <input v-model="fundRaising.program" type="text" placeholder="Enter Fundraising Program" class="py-2 px-3 w-full rounded-lg">
+              <input v-model="fundRaising.program" type="text" placeholder="Enter Fundraising Program Cause" class="py-2 px-3 w-full rounded-lg">
             </div>
             <div class="w-1/2 gap-2 flex items-center bg-white rounded-lg py-2 px-3">
               <p class="text-lg font-bold text-green-600">$</p>
