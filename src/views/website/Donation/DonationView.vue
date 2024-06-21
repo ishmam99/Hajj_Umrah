@@ -87,15 +87,15 @@
           <input v-model="selectDonation.amount" type="text" class="border py-1.5 px-2 rounded-md" />
         </CardHeader>
 
-        <form @submit.prevent="getSession()">
+        <form>
           <CardContent class="grid gap-6">
             <div class="grid gap-2">
               <Label for="name">Name</Label>
-              <Input id="name" v-model="store.donation.name" placeholder="First Last" />
+              <Input id="name" placeholder="First Last" />
             </div>
             <div class="grid gap-2">
               <Label for="number">Email</Label>
-              <Input id="number" v-model="store.donation.email" placeholder="" />
+              <Input id="number" placeholder="" />
             </div>
           </CardContent>
           <CardFooter>
