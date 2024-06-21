@@ -31,12 +31,12 @@ const subnav = ref(0)
     </div> -->
     
     <div class="px-[5%] py-5 text-2xl font-bold uppercase gap-2 flex items-center">
-      <a class="px-3 py-1.5" @click="subnav=0" :class="subnav==0 ? 'bg-teal-800 text-white rounded-md' : ''">Virtural Tour</a>
-      <a class="px-3 py-1.5" @click="subnav=1" :class="subnav==1 ? 'bg-teal-800 text-white rounded-md' : ''">Announcement</a>
-      <a class="px-3 py-1.5" @click="subnav=2" :class="subnav==2 ? 'bg-teal-800 text-white rounded-md' : ''">Fund Raising</a>
-      <a class="px-3 py-1.5" @click="subnav=3" :class="subnav==3 ? 'bg-teal-800 text-white rounded-md' : ''">Upcoming Event</a>
-      <a class="px-3 py-1.5" @click="subnav=4" :class="subnav==4 ? 'bg-teal-800 text-white rounded-md' : ''">Calender of Activities</a>
-      <a class="px-3 py-1.5" @click="subnav=5" :class="subnav==5 ? 'bg-teal-800 text-white rounded-md' : ''">Khudba & Khatira</a>
+      <a class="px-3 cursor-pointer py-1.5" @click="subnav=0" :class="subnav==0 ? 'bg-teal-800 text-white rounded-md' : ''">Virtural Tour</a>
+      <a class="px-3 cursor-pointer py-1.5" @click="subnav=1" :class="subnav==1 ? 'bg-teal-800 text-white rounded-md' : ''">Announcement</a>
+      <a class="px-3 cursor-pointer py-1.5" @click="subnav=2" :class="subnav==2 ? 'bg-teal-800 text-white rounded-md' : ''">Fund Raising</a>
+      <a class="px-3 cursor-pointer py-1.5" @click="subnav=3" :class="subnav==3 ? 'bg-teal-800 text-white rounded-md' : ''">Upcoming Event</a>
+      <a class="px-3 cursor-pointer py-1.5" @click="subnav=4" :class="subnav==4 ? 'bg-teal-800 text-white rounded-md' : ''">Calender of Activities</a>
+      <a class="px-3 cursor-pointer py-1.5" @click="subnav=5" :class="subnav==5 ? 'bg-teal-800 text-white rounded-md' : ''">Khudba & Khatira</a>
     </div>
     
     <div id="virtual"
