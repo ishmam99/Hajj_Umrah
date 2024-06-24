@@ -30,41 +30,35 @@ const subnav = ref(0)
       <a href="#khutba" class="px-3 py-1.5" :class="route.hash=='#khutba' ? 'bg-white text-teal-800 rounded-md' : ''">Khudba & Khatira</a>
     </div> -->
 
-    <div class="px-[5%] pt-5 text-2xl font-bold uppercase gap-5 flex items-center cursor-pointer">
+    <div class="px-[5%] pt-5 text-2xl font-bold uppercase gap-10 flex items-center cursor-pointer">
       <a
-        class="px-3 py-1.5"
+        class="px-3 py-1.5 bg-teal-100 font-bold rounded-t-3xl scale-110"
         @click="subnav = 0"
-        :class="subnav == 0 ? 'bg-teal-800 text-white rounded-t-3xl scale-110' : ''"
         >Virtural Tour</a
       >
       <a
-        class="px-3 py-1.5"
+        class="px-3 py-1.5 bg-orange-200 font-bold rounded-t-3xl scale-110"
         @click="subnav = 1"
-        :class="subnav == 1 ? 'bg-teal-800 text-white rounded-t-3xl scale-110' : ''"
         >Announcement</a
       >
       <a
-        class="px-3 py-1.5"
+        class="px-3 py-1.5 bg-rose-100 font-bold rounded-t-3xl scale-110"
         @click="subnav = 2"
-        :class="subnav == 2 ? 'bg-teal-800 text-white rounded-t-3xl scale-110' : ''"
         >Fund Raising</a
       >
       <a
-        class="px-3 py-1.5"
+        class="px-3 py-1.5 bg-lime-100 font-bold rounded-t-3xl scale-110"
         @click="subnav = 3"
-        :class="subnav == 3 ? 'bg-teal-800 text-white rounded-t-3xl scale-110' : ''"
         >Upcoming Event</a
       >
       <a
-        class="px-3 py-1.5"
+        class="px-3 py-1.5 bg-[#695acd5a] font-bold rounded-t-3xl scale-110"
         @click="subnav = 4"
-        :class="subnav == 4 ? 'bg-teal-800 text-white rounded-t-3xl scale-110' : ''"
         >Calender of Activities</a
       >
       <a
-        class="px-3 py-1.5"
+        class="px-3 py-1.5 bg-amber-100 font-bold rounded-t-3xl scale-110"
         @click="subnav = 5"
-        :class="subnav == 5 ? 'bg-teal-800 text-white rounded-t-3xl scale-110' : ''"
         >Khudba & Khatira</a
       >
     </div>
@@ -73,7 +67,7 @@ const subnav = ref(0)
       id="virtual"
       v-if="subnav == 0"
       class="pb-[30px] px-[5%] bg-slate-50 flex justify-center gap-5"
-      :class="subnav == 0 ? 'bg-teal-800' : ''"
+      :class="subnav == 0 ? 'bg-teal-100' : ''"
     >
       <VirtualTour />
     </div>
@@ -81,8 +75,8 @@ const subnav = ref(0)
     <div
       id="announcement"
       v-if="subnav == 1"
-      class="py-[30px] px-[5%] bg-slate-200 flex justify-center gap-5"
-      :class="subnav == 1 ? 'bg-teal-800' : ''"
+      class="py-[30px] px-[5%] bg-orange-200 flex justify-center gap-5"
+      :class="subnav == 1 ? 'bg-orange-200' : ''"
     >
       <!-- <Prayer/> -->
       <Announcement />
@@ -92,12 +86,12 @@ const subnav = ref(0)
       id="fund"
       v-if="subnav == 2"
       class="py-[30px] px-[5%] bg-slate-50 flex justify-center gap-5"
-      :class="subnav == 2 ? 'bg-teal-800' : ''"
+      :class="subnav == 2 ? '!bg-rose-100' : ''"
     >
       <FundComponent />
     </div>
 
-    <div v-if="subnav == 3" class="px-[5%] py-10" :class="subnav == 3 ? 'bg-teal-800' : ''">
+    <div v-if="subnav == 3" class="px-[5%] py-10" :class="subnav == 3 ? 'bg-lime-50' : ''">
       <UpcommingEvent id="events" />
     </div>
 
@@ -110,13 +104,13 @@ const subnav = ref(0)
     <div
       id="year"
       v-if="subnav == 4"
-      :class="subnav == 4 ? 'bg-teal-800' : ''"
+      :class="subnav == 4 ? 'bg-[#695acd5a]' : ''"
       class="py-10 px-[5%]"
     >
       <YearlyPlanner />
     </div>
 
-<div  v-if="subnav == 5" class="py-10 px-[5%]" :class="subnav == 5 ? 'bg-teal-800' : ''">
+<div  v-if="subnav == 5" class="py-10 px-[5%]" :class="subnav == 5 ? '!bg-amber-100' : ''">
   <KhutbaKhatira id="khutba" class="" />
 </div>
    

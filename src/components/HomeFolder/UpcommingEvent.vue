@@ -1,10 +1,10 @@
 <template>
-  <div class=" p-5 bg-white">
+  <div class=" p-5">
     <!-- <h1 class="text-3xl font-bold uppercase pb-3">Upcoming Event</h1> -->
     <!-- {{ lastEvent }} -->
     <div class="flex gap-36">
       <div class="w-2/6">
-        <div class="rounded-t-md w-full p-4 bg-gray-200 ">
+        <div class="rounded-t-md w-full p-4 bg-white ">
           <div class="card-image bg-transparent">
             <img :src="lastEvent?.image" class="h-80 w-full rounded-lg" alt="" />
           </div>
@@ -13,7 +13,7 @@
             {{ lastEvent?.description }}
           </p>
         </div>
-          <p class="footer w-full rounded-b-md p-6 bg-gray-200 text-end"> <span class="font-bold">Started</span> on <span class="date">{{ lastEvent?.start_date
+          <p class="footer w-full rounded-b-md p-6 bg-gray-200 text-end"> <span class="font-bold text-xl">Started</span> on <span class="date">{{ lastEvent?.start_date
               }}</span></p>
       </div>
       <div class="w-4/6 grid grid-cols-3 gap-5">
@@ -87,9 +87,9 @@ onMounted(async () => {
   border-radius: 20px;
   /* background: #e8e8e8; */
   /* background: #74bdb5; */
-  box-shadow: 5px 5px 6px #dadada,
+  /*box-shadow: 5px 5px 6px #dadada,
     -5px -5px 6px #f6f6f6;
-  transition: 0.4s;
+  transition: 0.4s; */
 }
 
 .card:hover {
