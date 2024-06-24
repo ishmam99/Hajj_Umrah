@@ -74,16 +74,13 @@
               <tbody>
                 <tr class="">
                   <td class="py-4 px-2 text-center w-1/5">
-                    <Select class="w-full" v-model="accountLedger.type">
+                    <Select class="w-full" v-model="accountLedger.ledger_type_id">
                       <SelectTrigger class="w-full">
                         <SelectValue placeholder="Revenue / Expense Type" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>
-                          <SelectItem value="Salay"> Salay </SelectItem>
-                          <SelectItem value="Operation"> Operation </SelectItem>
-                          <SelectItem value="Masjid Maintain"> Masjid Maintain </SelectItem>
-                          <SelectItem value="Project"> Project </SelectItem>
+                          <SelectItem :value="item.id" v-for="item in ledger" :key="item"> {{item.name}} </SelectItem>
                         </SelectGroup>
                       </SelectContent>
                     </Select>
@@ -120,6 +117,13 @@
       <div class="px-4 bg-white py-5">
         <div class="flex justify-between items-center pb-2">
           <p class="text-2xl text-yellow-600 font-bold">Ledger Update</p>
+          <button
+        v-if="ledgerUpdate == true"
+        @click="ledgerUpdate = false"
+        class="px-3 py-2 w-[150px] rounded-md shadow-md bg-red-600 text-white text-sm"
+      >
+        Cancle
+      </button>
         </div>
         <hr />
         <div
@@ -141,16 +145,13 @@
               <tbody>
                 <tr class="">
                   <td class="py-4 px-2 text-center w-1/5">
-                    <Select class="w-full" v-model="accountLedger.type">
+                    <Select class="w-full" v-model="accountLedger.ledger_type_id">
                       <SelectTrigger class="w-full">
                         <SelectValue placeholder="Revenue / Expense Type" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>
-                          <SelectItem value="Salay"> Salay </SelectItem>
-                          <SelectItem value="Operation"> Operation </SelectItem>
-                          <SelectItem value="Masjid Maintain"> Masjid Maintain </SelectItem>
-                          <SelectItem value="Project"> Project </SelectItem>
+                          <SelectItem :value="item.id" v-for="item in ledger" :key="item"> {{item.name}} </SelectItem>
                         </SelectGroup>
                       </SelectContent>
                     </Select>
@@ -199,6 +200,7 @@
           />
         </div>
         <hr />
+        
         <div
           class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center"
         >
@@ -216,12 +218,13 @@
             </thead>
             <tbody>
               <tr class="tableRowColor" v-for="item in store.accountLedger" :key="item.id">
+                <!-- {{ item }} -->
                 <td class="py-4 p-2 text-center w-1/8">01</td>
-                <td class="py-4 p-2 text-center text-sm w-1/8">{{ item.date }}</td>
-                <td class="py-4 p-2 text-center w-2/8">{{ item.type }}</td>
+                <td class="py-4 p-2 text-center text-sm w-1/8">{{ item.created_at }}</td>
+                <td class="py-4 p-2 text-center w-2/8">{{ item.description }}</td>
                 <td class="py-4 p-2 text-center w-1/8">$ {{ item.debit }}</td>
                 <td class="py-4 p-2 text-center w-1/8">$ {{ item.credit }}</td>
-                <td class="py-4 p-2 text-center w-1/8">$ 2500</td>
+                <td class="py-4 p-2 text-center w-1/8">$ {{ item.balance }}</td>
                 <td class="py-4 p-2 flex justify-center">
                   <div
                     class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2"
@@ -230,9 +233,9 @@
                       <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
                       <DropdownMenuContent>
                         
-                        <DropdownMenuItem class="text-blue-600" @click="detailsShow(item)"
+                        <!-- <DropdownMenuItem class="text-blue-600" @click="detailsShow(item)"
                           >Details</DropdownMenuItem
-                        >
+                        > -->
                         <DropdownMenuItem class="text-yellow-600" @click="editShow(item)"
                           >Edit</DropdownMenuItem
                         >
@@ -288,9 +291,10 @@ const store = useAdminStore()
 const ledgerCreate = ref(false)
 const ledgerUpdate = ref(false)
 const ledgerType = ref(false)
+const ledger = ref()
 
 const accountLedger = ref({
-  type: '',
+  ledger_type_id: '',
   description: '',
   credit: '',
   debit: ''
@@ -322,13 +326,34 @@ const ledgertype = async () => {
   }
 }
 
+const getLedgertype = async () => {
+  try {
+    const {data} = await api().get('ledger-type')
+    console.log(data)
+    ledger.value = data.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const getLedgerList = async () => {
+  try {
+    const {data} = await api().get('account-ledger-list')
+    console.log(data)
+    store.accountLedger = data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 const editShow = (item) => {
   ledgerUpdate.value = true
 }
 
 const { toast } = useToast()
 
-onMounted(async () => {
-  
+onMounted(() => {
+  getLedgertype()
+  getLedgerList()
 })
 </script>

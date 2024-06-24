@@ -13,7 +13,7 @@
           <thead>
             <tr class="bg-white">
               <th class="p-2 text-center w-1/8">Donation ID</th>
-              <th class="p-2 text-center line-clamp-1 w-2/8">Donation Event Name(s)</th>
+              <th class="p-2 line-clamp-1 w-2/8">Donation Event Name(s)</th>
               <th class="p-2 text-center w-1/8">Starting Date</th>
               <th class="p-2 text-center w-1/8">Ending Date</th>
               <th class="p-2 text-center w-1/8">Amount(Need)</th>
