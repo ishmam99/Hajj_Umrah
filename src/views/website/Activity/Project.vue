@@ -75,9 +75,9 @@
                 </button>
               </div>
             </div>
-            <p v-else class="text-3xl font-semibold">No Upgoing Projects</p>
+            <p v-else class="text-3xl font-semibold">No Upcoming Projects</p>
           </div>
-          <div class="bg-white rounded-xl p-5">
+          <div v-if="showProjectsList == true" class="bg-white rounded-xl p-5">
             <h1 class="text-3xl underline py-3 text-center">Project History</h1>
             <div class="class grid grid-cols-2 gap-5">
               <div
@@ -92,12 +92,42 @@
                 <h3 class="text-2xl font-bold">{{ item.title }}</h3>
                 <p class="text-sm font-semibold text-cyan-600">{{ item.date }}</p>
                 <p>{{ item.des }}</p>
-                <button class="h-[50px] w-full border bg-cyan-800 text-white rounded-md">
-                  Register
-                </button>
+                  <button @click="openDetails(project)" class="h-[50px] w-full border bg-cyan-800 text-white rounded-md">
+                    Details
+                  </button>
               </div>
             </div>
           </div>
+
+          <div v-else>
+          <div v-for="item in history" :key="item.id" class="p-5 rounded-md  bg-slate-100">
+            <div class="max-h-[250px] overflow-hidden">
+              <img :src="item?.img" alt="" class="w-full -translate-y-[350px]">
+            </div>
+            
+            <!-- <p class="text-3xl font-semibold">Title : </p> -->
+            <p class="text-3xl font-semibold pt-2">{{ item.title }}</p>
+            <div class="pt-2">
+              <p><span class="font-semibold">Posted Date : </span>{{ item.Date }}</p>
+              <p><span class="font-semibold">Deadline : </span>{{ item.Deadline }}</p>
+            </div>
+
+            <p class="text-2xl font-semibold mb-1">Project Details : </p>
+            <div v-for="(item,index) in item" :key="index" class="flex mb-3 bg-white p-2 rounded-md">
+              {{ index+1 }}
+              <div class="px-2">
+                <p class="text-xl font-semibold">Name : {{ item?.title }}</p>
+                <p>Details : {{ item?.Details }}</p>
+               <p>Amount : {{ item?.totalAmount }}</p>
+              </div>
+            </div>
+            <!-- <div class="flex justify-center gap-5">
+              <router-link to="/Member_Login" v-if="authStore.isAuthenticated == true" class="px-5 py-2 rounded-md bg-blue-600 text-white">Sign In</router-link>
+              <router-link to="/Signup" v-if="authStore.isAuthenticated == true" class="px-5 py-2 rounded-md bg-green-600 text-white">Sign Up</router-link>
+              <button v-else class="px-5 py-2 rounded-md bg-blue-600 text-white">Apply for bid</button>
+            </div> -->
+          </div>
+        </div>
         </div>
       </div>
       <ActivityMore />
@@ -178,6 +208,13 @@ import { useRoute, useRouter } from 'vue-router'
 const router = useRouter()
 
 const store = useStore()
+
+const showProjectsList = ref(true)
+const projectDetails = ref()
+const openDetails = (project) => {
+  showProjectsList.value = false
+  projectDetails.value = project
+}
 
 const getActiveProjectList = async () => {
   try {

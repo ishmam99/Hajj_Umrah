@@ -42,8 +42,8 @@
               </div>
             </div>
             <div class="flex justify-center gap-5">
-              <router-link to="/Member_Login" v-if="authStore.isAuthenticated == true" class="px-5 py-2 rounded-md bg-blue-600 text-white">Sign In</router-link>
-              <router-link to="/Signup" v-if="authStore.isAuthenticated == true" class="px-5 py-2 rounded-md bg-green-600 text-white">Sign Up</router-link>
+              <router-link to="/Member_Login" v-if="authStore.isAuthenticated == false" class="px-5 py-2 rounded-md bg-blue-600 text-white">Sign In</router-link>
+              <router-link to="/Signup" v-if="authStore.isAuthenticated == false" class="px-5 py-2 rounded-md bg-green-600 text-white">Sign Up</router-link>
               <button v-else class="px-5 py-2 rounded-md bg-blue-600 text-white">Apply for bid</button>
             </div>
           </div>
@@ -57,93 +57,7 @@
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import { ref } from 'vue'
 import {useAuthStore} from '/src/stores/AuthStore.ts'
-// const suppliers = [
-//   {
-//     name: 'Al-Falah Islamic Mart',
-//     contactPerson: 'Mohammed Ahmed',
-//     email: 'mohammed.ahmed@alfalahmart.com',
-//     phone: '+123 456 7890',
-//     address: {
-//       street: '123 Halal Street',
-//       city: 'Islamic City',
-//       state: 'Islamic State',
-//       zip: '54321',
-//       country: 'Muslimland'
-//     },
-//     products: [
-//       { id: 1, name: 'Islamic Books', category: 'Literature', price: 20 },
-//       { id: 2, name: 'Prayer Rugs', category: 'Spiritual', price: 30 }
-//     ],
-//     orders: [
-//       { id: 101, date: '2024-01-15', totalAmount: 50 },
-//       { id: 102, date: '2024-01-20', totalAmount: 40 }
-//     ]
-//   },
-//   {
-//     name: 'Nur al-Hidayah Bookstore',
-//     contactPerson: 'Fatima Ali',
-//     email: 'fatima.ali@nuralhidayah.com',
-//     phone: '+987 654 3210',
-//     address: {
-//       street: '789 Quran Avenue',
-//       city: 'Madina Town',
-//       state: 'Blessed Region',
-//       zip: '98765',
-//       country: 'Sacred Land'
-//     },
-//     products: [
-//       { id: 3, name: 'Islamic Art Prints', category: 'Art', price: 25 },
-//       { id: 4, name: 'Halal Cosmetics', category: 'Beauty', price: 40 }
-//     ],
-//     orders: [
-//       { id: 103, date: '2024-02-01', totalAmount: 60 },
-//       { id: 104, date: '2024-02-05', totalAmount: 75 }
-//     ]
-//   },
-//   {
-//     name: 'Sakinah Islamic Attire',
-//     contactPerson: 'Aisha Rahman',
-//     email: 'aisha.rahman@sakinahattire.com',
-//     phone: '+456 789 0123',
-//     address: {
-//       street: '456 Modesty Lane',
-//       city: 'Hijabville',
-//       state: 'Covered State',
-//       zip: '67890',
-//       country: 'Modestland'
-//     },
-//     products: [
-//       { id: 5, name: 'Abayas', category: 'Clothing', price: 50 },
-//       { id: 6, name: 'Kufi Caps', category: 'Accessories', price: 15 }
-//     ],
-//     orders: [
-//       { id: 105, date: '2024-03-10', totalAmount: 90 },
-//       { id: 106, date: '2024-03-15', totalAmount: 120 }
-//     ]
-//   },
-//   {
-//     name: 'Noor Islamic Grocery',
-//     contactPerson: 'Ahmed Malik',
-//     email: 'ahmed.malik@noorgrocery.com',
-//     phone: '+789 012 3456',
-//     address: {
-//       street: '789 Sunnah Street',
-//       city: 'Halal City',
-//       state: 'Blessed State',
-//       zip: '12345',
-//       country: 'Pureland'
-//     },
-//     products: [
-//       { id: 7, name: 'Dates', category: 'Food', price: 10 },
-//       { id: 8, name: 'Zamzam Water', category: 'Beverages', price: 5 }
-//     ],
-//     orders: [
-//       { id: 107, date: '2024-04-05', totalAmount: 15 },
-//       { id: 108, date: '2024-04-10', totalAmount: 20 }
-//     ]
-//   }
-//   // Add more Islamic-named suppliers as needed
-// ]
+
 
 const authStore =  useAuthStore()
 

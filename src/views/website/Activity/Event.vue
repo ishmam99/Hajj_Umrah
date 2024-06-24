@@ -63,7 +63,7 @@
         </div>
         <!-- {{ store?.upcomming_event_list }} -->
         <div class="bg-white rounded-xl p-5 w-full">
-          <h1 class="text-3xl font-semibold underline py-3 text-center">Up Coming Events</h1>
+          <h1 class="text-3xl font-semibold underline py-3 text-center">Up Coming EventsS</h1>
           <div v-if="store?.upcomming_event_list.length>0" class="class grid grid-cols-3 gap-5">
             <div
               v-for="item in store?.upcomming_event_list"
@@ -76,6 +76,7 @@
                 {{ item.start_date }} - {{ item.end_date }}
               </p>
               <p class="line-clamp-2">{{ item.description }}</p>
+             <div>
               <router-link
                 :to="{
                   name: 'Events',
@@ -86,9 +87,20 @@
                 class="h-[50px] w-full bg-emerald-800 text-white rounded-md flex items-center justify-center"
                 >Register</router-link
               >
+              <router-link
+                :to="{
+                  name: 'EventSchedule',
+                  params: {
+                    id: item.id
+                  }
+                }"
+                class="h-[50px] w-full bg-amber-400 mt-1 text-white rounded-md flex items-center justify-center"
+                >Schedule</router-link
+              >
+             </div>
             </div>
           </div>
-          <p v-else class="text-3xl font-semibold">No Upcomming Events</p>
+          <p v-else class="text-3xl font-semibold">No Upcoming Events</p>
         </div>
         <div class="bg-white rounded-xl p-5 w-full">
           <h1 class="text-3xl font-semibold underline py-3 text-center">Past Event</h1>
@@ -104,7 +116,6 @@
                 {{ item.start_date }} - {{ item.end_date }}
               </p>
               <p class="line-clamp-2">{{ item.description }}</p>
-              <!-- <button class="h-[50px] w-full border border-gray-600 rounded-md">Register</button> -->
             </div>
           </div>
         </div>
@@ -117,13 +128,16 @@
 <script setup>
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import ActivityMore from '/src/components/ActivityMore.vue'
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 import { useStore } from '/src/stores/store.ts'
-import { useRoute, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/learning-center/auth'
 
 const router = useRouter()
 
 const store = useStore()
+
+const authStore =  useAuthStore()
 
 const getActiveEventList = async () => {
   try {

@@ -39,7 +39,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="bg-slate-100 py-10 px-[5%]">
+  <section class="bg-slate-100 p-5">
     <div>
       <h2 class="text-3xl font-bold pb-6 uppercase">Khutba</h2>
       <div class="grid grid-cols-3 gap-12">

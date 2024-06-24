@@ -204,12 +204,22 @@ const router = createRouter({
     {
       path: '/activity/events/:id',
       name: 'Events',
-      component: () => import('../views/website/Activity/Events.vue')
+      component: () => import('@/views/website/Activity/Events.vue')
+    },
+    {
+      path: '/activity/eventsSchedule/:id',
+      name: 'EventSchedule',
+      component: () => import('../views/website/Activity/EventSchedule.vue')
     },
     {
       path: '/activity/project',
       name: 'activity/project',
       component: () => import('../views/website/Activity/Project.vue')
+    },
+    {
+      path: '/activity/projectDetails/:id',
+      name: 'projectDetails',
+      component: () => import('../views/website/Activity/ProjectDetails.vue')
     },
     {
       path: '/activity/projects',
