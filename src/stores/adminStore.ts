@@ -12,6 +12,7 @@ export const useAdminStore = defineStore('adminStore',{
         
         announcementList: [],
         bidList: [],
+        
         event: [],
         projectList: [],
         eventList: [],

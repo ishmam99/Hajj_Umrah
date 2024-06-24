@@ -15,12 +15,7 @@ import {
 
 const store = useAdminStore()
 const loading = ref(false)
-const { toast } = useToast()
-const selectedFile = ref(null)
-const editForm = ref(false)
-const showDetails = ref(false)
-const showList = ref(true)
-const detailsItem = ref()
+
 const bidList = async () => {
   loading.value = true
   try {
@@ -33,29 +28,7 @@ const bidList = async () => {
   loading.value = false
 }
 
-const showEdit = () => {
-  editForm.value = true
-  showList.value = false
-}
-
-const openShowDetails = (item) => {
-  showDetails.value = true
-  showList.value = false
-  detailsItem.value = item
-}
-
-const cancleEdit = () => {
-  editForm.value = false
-  showList.value = true
-}
-
-const closeDetails = () => {
-  showDetails.value = false
-  showList.value = true
-}
-
-
-onMounted(async () => {
+onMounted( () => {
   bidList()
 })
 </script>
