@@ -1,10 +1,30 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import api from '@/config/api'
+
+const positionList = ref()
+
+const getPositionList = async () => {
+  try {
+    const { data } = await api().get('get-position-list')
+    positionList.value = data.data
+    console.log(data.data, 'Here is the data')
+  } catch (error) {
+    console.error(error.message, 'Here is the issue')
+  }
+}
+
+onMounted(() => {
+  getPositionList()
+})
+</script>
 
 <template>
   <div class="px-4 bg-white py-5 w-3/4">
     <div class="flex justify-between items-center pt-4">
-      <p class="text-2xl text-yellow-600 font-bold pb-2">Position List</p>
+      <p class="text-2xl font-bold pb-2">Position List</p>
     </div>
+
     <hr />
     <div
       class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center"
@@ -12,38 +32,42 @@
       <table class="table-auto w-full">
         <thead>
           <tr class="bg-white text-sm">
-            <th class="p-2 text-left">Job ID</th>
-            <th class="p-2 text-left">Job Title</th>
-            <th class="p-2 text-left">Reports to</th>
-            <th class="p-2 text-left">Number of Positions</th>
-            <th class="p-2 text-left">Positions Occupied</th>
-            <th class="p-2 text-left">Vacancies available</th>
-            <th class="p-2 text-left">Salary type</th>
-            <th class="p-2 text-left">Salary Amount</th>
+            <th class="p-4 text-left">Job ID</th>
+            <th class="p-4 text-left">Job Title</th>
+            <th class="p-4 text-left">Reports to</th>
+            <th class="p-4 text-left">Number of Positions</th>
+            <th class="p-4 text-left">Positions Occupied</th>
+            <th class="p-4 text-left">Vacancies available</th>
+            <th class="p-4 text-left">Salary type</th>
+            <th class="p-4 text-left">Salary Amount</th>
           </tr>
         </thead>
-        <tbody>
-          <tr class="">
-            <td class="py-4 p-2 gap-2">
-              <h3 class="font-bold">01</h3>
+        <tbody class="mt-4">
+          <tr v-for="position in positionList" :key="position">
+            <td class="px-4 py-2">
+              <h3 class="font-bold">{{ position.id }}</h3>
             </td>
-            <td class="py-4 p-2 flex items-center gap-2">
-              <h4 class="mt-[30px]">Imam Higiring</h4>
+            <td class="px-4 py-2">
+              <h4 class="font-semibold">{{ position.job_title }}</h4>
             </td>
-            <td>
-              <p class="text-lg"></p>
+            <td class="px-4 py-2">
+              <p class="font-semibold">{{ position.repost_to }}</p>
             </td>
-            <td class="py-4 p-2">8</td>
-            <td class="py-4 p-2">2</td>
-            <td class="py-4 p-2 font-semibold">6</td>
-            <td class="py-4 p-2">
-              <p class="text-sm font-bold text-blue-600">Salaried</p>
+            <td class="px-4 py-2">
+              {{ position.number_of_position ? position.number_of_position : '-' }}
             </td>
-            <td class="py-4 p-2">
-              <div class="flex">
-                <p class="text-sm font-bold text-blue-600 mt-[30px] mx-3">$2000</p>
+            <td class="px-4 py-2">{{ position.position_occupied }}</td>
+            <td class="px-4 py-2">{{ position.vacancies_available }}</td>
+            <td class="px-4 py-2">
+              <p class="text-sm font-bold text-blue-600">{{ position.salary_type }}</p>
+            </td>
+            <td class="px-4 py-2">
+              <div class="flex gap-1">
+                <p class="text-sm font-bold text-blue-600 mx-3 mt-1">
+                  {{ position.salary_amount }}
+                </p>
                 <router-link to="/HR_Dashboard/HR_Position_List/1">
-                  <span class="text-gray-500 px-2">
+                  <span class="text-gray-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
