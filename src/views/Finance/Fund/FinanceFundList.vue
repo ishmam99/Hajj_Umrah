@@ -52,7 +52,7 @@
                       <DropdownMenuItem class="text-yellow-600" @click="showEdit(item)"
                         >Edit</DropdownMenuItem
                       >
-                      <DropdownMenuItem class="text-green-600" @click="showEdit(item)"
+                      <DropdownMenuItem class="text-green-600" @click="fundEventPost(item)"
                         >Post</DropdownMenuItem
                       >
                       <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
@@ -288,15 +288,7 @@
 import { useAdminStore } from '/src/stores/adminStore.ts'
 import { ref, onMounted } from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue
-} from '/components/ui/select'
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -371,7 +363,6 @@ const fundCreateFormCreate = async () => {
 
 const fundList = async () => {
   
-  loading.value = true
   try {
     const { data } = await api().get('fundraise-event-list',)
     store.fundList = data.data
@@ -379,7 +370,20 @@ const fundList = async () => {
   } catch (error) {
     console.log(error)
   }
-  loading.value = false
+}
+
+const fundEventPost = async (item) => {
+  try {
+    const data = await api().post(`fundraise-event-post/${item.id}`,
+      {event_status : 'Approved'}
+    )
+    console.log(data)
+    toast({
+      title: 'Event has been posted'
+    })
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 onMounted(async () => {

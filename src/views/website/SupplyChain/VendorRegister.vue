@@ -184,109 +184,13 @@
                 </div> -->
               </div>
             </div>
-            <button
-              class="lg:w-[350px] h-[45px] rounded-2xl bg-emerald-700 text-white flex items-center justify-center font-bold mx-auto"
-            >
-              Apply
-            </button>
+           
+            <div class="flex justify-center gap-5">
+              <router-link to="/Member_Login" v-if="authStore.isAuthenticated == false" class="px-5 py-2 rounded-md bg-blue-600 text-white">Sign In</router-link>
+              <router-link to="/Signup" v-if="authStore.isAuthenticated == false" class="px-5 py-2 rounded-md bg-green-600 text-white">Sign Up</router-link>
+              <button v-else class="lg:w-[350px] h-[45px] rounded-2xl bg-emerald-700 text-white flex items-center justify-center font-bold">Apply</button>
+            </div>
           </div>
-          <!-- <div class="bg-white rounded-xl p-5 w-full">
-            <div class="w-1/2">
-              <p class="text-sm font-semibold">
-                I have donated excess $100 (Family) or $50 (Individual) this year to Masjid
-                Operations
-              </p>
-              <div class="flex items-center gap-2 py-2 px-2">
-                <input type="checkbox" name="" id="" class="h-3 w-3" />
-                <label for="" class="text-xs"
-                  >Donated ($100 for family or $50 for individual or more)</label
-                >
-              </div>
-            </div>
-            <p class="text-sm font-semibold pt-5 pb-2">
-              By my signature I/We indicate that I/We have read and understand IDL-Masjid
-              Constitution. I am Muslim above 18 years of age that agrees to abide by the policies
-              of IDL-Masjid and its Constitution.<span class="text-red-600">*</span>
-            </p>
-            <div class="grid grid-cols-2 gap-2 px-2">
-              <div class="flex items-center gap-2">
-                <input id="Asr" type="checkbox" name="Event_Time" value="Dhur" class="h-3 w-3" />
-                <label for="Dhur" class="text-xs">Individual (Masjid Membership)</label>
-              </div>
-              <div class="flex items-center gap-2">
-                <input type="checkbox" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3" />
-                <label for="Asr" class="text-xs">Family (Masjid Membership)</label>
-              </div>
-            </div>
-            <div class="pt-10">
-              <h2 class="font-semibold">
-                Masjid Membership Dues <span class="text-red-500">*</span>
-              </h2>
-              <div class="pt-5">
-                <input
-                  type="text"
-                  placeholder="100 USD"
-                  class="py-2 px-4 rounded-2xl w-50 shadow-lg border border-black"
-                />
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="bg-white rounded-xl p-5 w-full">
-            <div class="py-3 flex flex-col gap-5 items-c">
-              <p class="text-lg font-bold">Credit Card Details</p>
-              <div class="flex gap-10">
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black"
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black"
-                />
-              </div>
-              <div class="flex gap-10">
-                <div
-                  class="rounded-2xl w-1/2 shadow-lg border border-black flex items-center justify-between px-4"
-                >
-                  <input
-                    type="text"
-                    placeholder="1111 2222 3333 4444 5555"
-                    class="py-2 w-1/2 rounded-2xl"
-                  />
-                  <img src="/src/assets/image/common/ft5.png" alt="" class="h-5" />
-                </div>
-                <div class="flex gap-5 w-1/2">
-                  <input
-                    type="date"
-                    class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black"
-                  />
-                  <input
-                    type="text"
-                    placeholder="CVC"
-                    class="py-2 px-4 rounded-2xl w-1/2 shadow-lg border border-black"
-                  />
-                </div>
-              </div>
-              <Select class="">
-                <SelectTrigger class="w-full rounded-2xl py-2 px-4 border border-black">
-                  <SelectValue placeholder="Country" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Country</SelectLabel>
-                    <SelectItem value="apple"> BanglaDesh </SelectItem>
-                    <SelectItem value="banana"> UsA </SelectItem>
-                    <SelectItem value="blueberry"> Canada </SelectItem>
-                    <SelectItem value="grapes"> Australia </SelectItem>
-                    <SelectItem value="pineapple"> Rasia </SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-              
-            </div>
-          </div> -->
         </div>
       </div>
     </DefaultLayout>
@@ -295,9 +199,9 @@
 
 <script setup>
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
-import Card from '/src/components/cardSection.vue'
-import RegistrationMore from '/src/components/RgistrationMore.vue'
 import { Input } from '/components/ui/input'
+import { useAuthStore } from '/src/stores/AuthStore.ts'
+const authStore =  useAuthStore()
 
 import {
   Select,

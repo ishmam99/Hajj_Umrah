@@ -1,7 +1,7 @@
 <template>
   <div class="w-full bg-repeat">
-    <div class="w-full px-5">
-      <h1 class="text-3xl font-bold uppercase pb-3">Announcement</h1>
+    <div class="w-full px-5 pt-5">
+      <!-- <h1 class="text-3xl font-bold uppercase pb-3">Announcement</h1> -->
       <div class="flex gap-36">
         <div class="w-2/6">
           <div class="rounded w-full p-4 bg-white">

@@ -1,8 +1,8 @@
 <template>
-  <div class="flex px-[5%] py-10 gap-10 bg-slate-200 my-10 w-full">
+  <div class="flex p-2 gap-10 bg-slate-200 w-full rounded-md">
     <div class="w-2/3">
-      <h1 class="text-4xl font-bold pb-3 uppercase">Fund Raising</h1>
-      <div class="bg-[url('/src/assets/image/common/v5.jpg')] bg-cover h-[93%] rounded-lg">
+      <!-- <h1 class="text-4xl font-bold pb-3 uppercase">Fund Raising</h1> -->
+      <div class="bg-[url('/src/assets/image/common/v5.jpg')] bg-cover rounded-lg">
         <div
           class="w-full h-full p-10 flex flex-col justify-center gap-5 bg-[#0000006e] rounded-lg"
         >
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="w-2/3">
-      <h1 class="text-2xl font-bold pb-3 uppercase text-green-600">Our Campaigns</h1>
+      <!-- <h1 class="text-2xl font-bold pb-3 uppercase text-green-600">Our Campaigns</h1> -->
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div class="flex flex-col gap-1 rounded-md p-2 bg-white" v-for="lastFund in lastFunds" :key="lastFund.id">

@@ -199,51 +199,51 @@
               <router-link
                 to="/learning-center"
                 class="hover:pl-5 duration-300 font-semibold text-sm"
-                >Areas Of Study
+                >Open Seminars
               </router-link>
             </MenubarItem>
             <MenubarItem>
               <router-link
                 to="/learning-center/all-courses"
                 class="hover:pl-5 duration-300 font-semibold text-sm"
-                >Our Courses</router-link
+                >Open Courses</router-link
               >
             </MenubarItem>
             <MenubarItem>
               <router-link
                 to="/learning-center/programs"
                 class="hover:pl-5 duration-300 font-semibold text-sm"
-                >Our Programs</router-link
+                >Programs</router-link
               >
             </MenubarItem>
             <MenubarItem>
               <router-link
                 to="/registration"
                 class="w-full hover:pl-5 duration-300 text-sm font-semibold"
-                >Student Admission
+                >Apply For Student
               </router-link>
             </MenubarItem>
             <MenubarItem>
               <router-link
                 to="/reg-teacher"
                 class="w-full hover:pl-5 duration-300 text-sm font-semibold"
-                >Teacher Registration
+                >Apply For Teacher
               </router-link>
             </MenubarItem>
-            <MenubarItem>
+            <!-- <MenubarItem>
               <router-link
                 to="/student-login"
                 class="w-full hover:pl-5 duration-300 text-sm font-semibold"
                 >Student Login
               </router-link></MenubarItem
-            >
-            <MenubarItem>
+            > -->
+            <!-- <MenubarItem>
               <router-link
                 to="/teacher-login"
                 class="w-full hover:pl-5 duration-300 text-sm font-semibold"
                 >Teacher Login
               </router-link></MenubarItem
-            >
+            > -->
           </MenubarContent>
         </MenubarMenu>
 
@@ -286,27 +286,20 @@
               >
               <!-- <a href="/more/hajj_and_umrah" class=" w-full hover:pl-5 duration-300 font-semibold">Hajj And Umrah Registration</a> -->
             </MenubarItem>
-            <MenubarItem>
+            <!-- <MenubarItem>
               <router-link
                 to="/more/registration/memebship_registration"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Membership Registration</router-link
               >
-              <!-- <a href="/more/registration/memebship_registration" class=" w-full hover:pl-5 duration-300 font-semibold">Membership Registration</a> -->
-            </MenubarItem>
-            <MenubarItem>
+            </MenubarItem> -->
+            <!-- <MenubarItem>
               <router-link
                 to="/boardmemberlogin"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Board Member Login</router-link
               >
-              <!-- <a
-                href="https://masjid.islamicdigitallane.com/login"
-                target="_blank"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Board Member Login</a
-              > -->
-            </MenubarItem>
+            </MenubarItem> -->
           </MenubarContent>
         </MenubarMenu>
 
@@ -492,13 +485,13 @@
                 >Customer</router-link
               >
             </MenubarItem> -->
-            <MenubarItem>
+            <!-- <MenubarItem>
               <router-link
                 to="/Supply_Chain/customerLogin"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Customer Login</router-link
               >
-            </MenubarItem>
+            </MenubarItem> -->
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
@@ -521,24 +514,7 @@
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger class="font-bold 2xl:text-lg"
-            >Member
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
-          </MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
-              <router-link to="/Member_Login" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Login</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link to="/Signup" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Sign up</router-link
-              >
-            </MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
+        
         <MenubarMenu v-if="authStore?.user">
           <MenubarTrigger class="px-1 font-bold">
             <router-link :to="authStore?.currentDashboard" class="p-1 rounded-md">
@@ -554,9 +530,20 @@
           <MenubarContent>
             <MenubarItem>
               <router-link to="/Member_Login" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Member Login</router-link
+                >Member Login / Signup</router-link
               >
             </MenubarItem>
+            <MenubarItem>
+              <router-link to="/student-login" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Student Login</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
+              <router-link to="/Supply_Chain/supplierLogin" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Vendor Login</router-link
+              >
+            </MenubarItem>
+           
             <MenubarSub>
               <MenubarSubTrigger>
                 <p class="hover:pl-5 duration-300 font-bold">Admin Login</p>
