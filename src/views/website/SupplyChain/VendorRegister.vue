@@ -34,19 +34,7 @@
         <div class="space-y-8 w-3/4">
          
           <div class="bg-white rounded-xl p-5 w-full">
-            <!-- <p class="text-xl font-bold pt-2 pb-2">
-              Membership Type<span class="text-red-600">*</span>
-            </p>
-            <div class="grid grid-cols-1 gap-2">
-              <div class="flex items-center gap-2 font-semibold">
-                <input id="Asr" type="radio" name="Event_Time" value="Dhur" class="h-3 w-3" />
-                <label for="Dhur">Individual (Masjid Membership)</label>
-              </div>
-              <div class="flex items-center gap-2 font-semibold">
-                <input type="radio" id="Asr" name="Event_Time" value="Asr" class="h-3 w-3" />
-                <label for="Asr">Family (Masjid Membership)</label>
-              </div>
-            </div> -->
+           
             <div class="pt-10">
               <h1 class="text-2xl font-semibold">Vendor Information</h1>
             </div>
@@ -173,15 +161,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- <div class="w-1/2">
-                  <label for="">CV <span class="text-red-500">*</span> </label>
-                  <div
-                    class="flex justify-center items-center h-[45px] rounded-2xl bg-white px-4 py-2 text-sm text-gray-500 text-center relative border-2 mt-2"
-                  >
-                    <input type="file" class="h-full w-full opacity-0 absolute top-0" />
-                    Choose File
-                  </div>
-                </div> -->
               </div>
             </div>
            
@@ -201,17 +180,10 @@
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
 import { Input } from '/components/ui/input'
 import { useAuthStore } from '/src/stores/AuthStore.ts'
-const authStore =  useAuthStore()
+const authStore = useAuthStore()
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue
-} from '/components/ui/select'
+
+
 </script>
 
 <style lang="scss" scoped></style>

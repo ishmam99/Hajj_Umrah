@@ -60,19 +60,33 @@
               </p>
             </div>
           </div>
-          <router-link
-            to="/volunteerRegister"
-            class="px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold"
-            v-if="store.registerVolunteerChk == false"
-            >register</router-link
-          >
-          <button
-            v-else
-            class="px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold"
-            @click="volunteerJobSubmit"
-          >
-            Apply
-          </button>
+          <div v-if="authStore.isAuthenticated == true">
+            <router-link
+              to="/volunteerRegister"
+              class="px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold"
+              v-if="store.registerVolunteerChk == false"
+              >register</router-link
+            >
+            <button
+              v-else
+              class="px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold"
+              @click="volunteerJobSubmit"
+            >
+              Apply
+            </button>
+          </div>
+          <div v-else class="flex gap-5">
+            <router-link
+              to="/Member_Login"
+              class="px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold"
+              >Sign In</router-link
+            >
+            <router-link
+              to="/Signup"
+              class="px-5 py-2 rounded-lg bg-green-600 text-white font-semibold"
+              >Sign Up</router-link
+            >
+          </div>
         </div>
       </div>
       <VolunteerMore />
@@ -87,7 +101,9 @@ import VolunteerMore from '/src/components/VolunteerMore.vue'
 import { ref, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from '/src/stores/store.ts'
+import {useAuthStore} from '/src/stores/AuthStore.ts'
 
+const authStore = useAuthStore()
 const store = useStore()
 const route = useRoute()
 
