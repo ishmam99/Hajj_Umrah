@@ -1,44 +1,32 @@
 <script setup lang="ts">
-
 import { useToast } from '/components/ui/toast/use-toast'
-
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
 
 import { ref } from 'vue'
 import api from '@/config/api'
-
 const { toast } = useToast()
 
-const jobCreate = ref({
-  title: '',
-  employ_type: '',
-  general_job_descriptio: '',
-  duties_and_responsibilities: '',
-  job_qualifications_and_requirements: '',
-  Key_Competencies: '',
-  position_of_reports: '',
-  number_of_positions: 10,
-  number_of_occupied: 2,
-  number_of_vacancy: 8,
-  about_us: '',
-  benefits: '',
-  salary: ''
+const positionCreate = ref({
+  job_title: '',
+  repost_to: '',
+  responsible_for: '',
+  number_of_position: '',
+  position_occupied: '',
+  vacancies_available: '',
+  salary_amount: '',
+  salary_type: ''
 })
 
 const jobceateSubmission = async () => {
   try {
-    const data = await api().post('create-job', {
-      method: 'post',
-      body: jobCreate.value
-    })
+    const data = await api().post('create-define-position', positionCreate.value)
     console.log('Create job check:', data)
     toast({
       title: 'Success',
@@ -64,9 +52,9 @@ const jobceateSubmission = async () => {
             <div class="relative mb-3 w-1/2">
               <input
                 type="text"
-                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.50rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                 id="title_name"
-                v-model="jobCreate.title"
+                v-model="positionCreate.job_title"
               />
               <label
                 for="exampleFormControlInput50"
@@ -77,9 +65,9 @@ const jobceateSubmission = async () => {
             <div class="relative mb-3 w-1/2">
               <input
                 type="text"
-                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.50rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                 id="exampleFormControlInput50"
-                value=""
+                v-model="positionCreate.repost_to"
               />
               <label
                 for="exampleFormControlInput50"
@@ -92,9 +80,9 @@ const jobceateSubmission = async () => {
             <div class="relative mb-3 w-1/2">
               <input
                 type="text"
-                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.50rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                 id="title_name"
-                v-model="jobCreate.title"
+                v-model="positionCreate.responsible_for"
               />
               <label
                 for="exampleFormControlInput50"
@@ -105,9 +93,9 @@ const jobceateSubmission = async () => {
             <div class="relative mb-3 w-1/2">
               <input
                 type="text"
-                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.50rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                 id="exampleFormControlInput50"
-                value=""
+                v-model="positionCreate.number_of_position"
               />
               <label
                 for="exampleFormControlInput50"
@@ -120,9 +108,9 @@ const jobceateSubmission = async () => {
             <div class="relative mb-3 w-1/2">
               <input
                 type="text"
-                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.50rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                 id="title_name"
-                v-model="jobCreate.title"
+                v-model="positionCreate.position_occupied"
               />
               <label
                 for="exampleFormControlInput50"
@@ -133,9 +121,9 @@ const jobceateSubmission = async () => {
             <div class="relative mb-3 w-1/2">
               <input
                 type="text"
-                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.50rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                 id="exampleFormControlInput50"
-                value=""
+                v-model="positionCreate.vacancies_available"
               />
               <label
                 for="exampleFormControlInput50"
@@ -146,8 +134,8 @@ const jobceateSubmission = async () => {
           </div>
           <div class="flex gap-4">
             <div class="relative w-1/2">
-              <Select v-model="jobCreate.employ_type">
-                <SelectTrigger class="w-full">
+              <Select v-model="positionCreate.salary_type">
+                <SelectTrigger class="w-full py-4">
                   <SelectValue placeholder="Select an option" />
                 </SelectTrigger>
                 <SelectContent>
@@ -167,9 +155,9 @@ const jobceateSubmission = async () => {
               <div class="relative mb-3">
                 <input
                   type="text"
-                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.50rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                   id="exampleFormControlInput50"
-                  value=""
+                  v-model="positionCreate.salary_amount"
                 />
                 <label
                   for="exampleFormControlInput50"
