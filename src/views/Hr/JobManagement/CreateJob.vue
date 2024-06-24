@@ -14,7 +14,7 @@ import {
 import api from '@/config/api'
 
 const { toast } = useToast()
-const allJobTitle = ref()
+const allJobTitle = ref([]) // Initialize as an empty array
 
 const jobCreate = ref({
   manage_organogram_id: '',
@@ -23,7 +23,6 @@ const jobCreate = ref({
   duties_for_responsibilities: '',
   job_qualification_requirment: '',
   key_competencies: '',
-  position_of_reports: '',
   position_report: '',
   about_us: '',
   benefits: ''
@@ -31,12 +30,24 @@ const jobCreate = ref({
 
 const jobceateSubmission = async () => {
   try {
+    console.log('Submitting jobCreate:', jobCreate.value)
     const data = await api().post('create-job-descrtiption', jobCreate.value)
     console.log('Create job check:', data)
     toast({
       title: 'Success',
-      description: 'Job Create Succesfully!'
+      description: 'Job Create Successfully!'
     })
+    jobCreate.value = {
+      manage_organogram_id: '',
+      job_id: '',
+      general_job_descriptio: '',
+      duties_for_responsibilities: '',
+      job_qualification_requirment: '',
+      key_competencies: '',
+      position_report: '',
+      about_us: '',
+      benefits: ''
+    }
   } catch (error) {
     console.log(error)
     toast({
@@ -56,11 +67,6 @@ const getJobList = async () => {
   }
 }
 
-const getTitleById = (id) => {
-  const job = allJobTitle.value?.find((job) => job.job_id === id)
-  return job ? job.job_title : ''
-}
-
 onMounted(() => {
   getJobList()
 })
@@ -70,23 +76,19 @@ onMounted(() => {
   <div class="px-5 bg-slate-50 py-5 w-3/4">
     <p class="text-2xl font-bold py-3 border-b">Create Job Description</p>
     <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
-      <form @submit.prevent="jobceateSubmission()">
+      <form @submit.prevent="jobceateSubmission">
         <div class="py-5 space-y-7 mt-5">
           <div class="flex gap-4">
             <div class="relative w-1/2">
               <Select v-model="jobCreate.manage_organogram_id" class="peer">
                 <SelectTrigger class="w-full py-3">
-                  <SelectValue>
-                    <template #default="{ value }">
-                      {{ getTitleById(value) || 'Select an option' }}
-                    </template>
-                  </SelectValue>
+                  <SelectValue placeholder="Select an option" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectItem v-for="job in allJobTitle" :key="job.job_id" :value="job.job_id">{{
-                      job.job_title
-                    }}</SelectItem>
+                    <SelectItem v-for="job in allJobTitle" :key="job.id" :value="job.id">
+                      {{ job.job_title }}
+                    </SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -107,8 +109,8 @@ onMounted(() => {
               <label
                 for="exampleFormControlInput50"
                 class="absolute left-3 font-semibold top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                >Job Id <span class="text-red-500">*</span>
-              </label>
+                >Job Id <span class="text-red-500">*</span></label
+              >
             </div>
           </div>
 
@@ -133,7 +135,7 @@ onMounted(() => {
                 Duties and Responsibilities
               </p>
               <textarea
-                v-model="jobCreate.duties_and_responsibilities"
+                v-model="jobCreate.duties_for_responsibilities"
                 name=""
                 id=""
                 cols=""
@@ -150,7 +152,7 @@ onMounted(() => {
                 Job qualifications and requirements
               </p>
               <textarea
-                v-model="jobCreate.job_qualifications_and_requirements"
+                v-model="jobCreate.job_qualification_requirment"
                 name=""
                 id=""
                 cols=""
@@ -165,7 +167,7 @@ onMounted(() => {
                 Key Competencies
               </p>
               <textarea
-                v-model="jobCreate.Key_Competencies"
+                v-model="jobCreate.key_competencies"
                 name=""
                 id=""
                 cols=""
@@ -182,6 +184,7 @@ onMounted(() => {
                 Who this position reports to
               </p>
               <textarea
+                v-model="jobCreate.position_report"
                 name=""
                 id=""
                 cols=""
