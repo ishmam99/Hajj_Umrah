@@ -33,7 +33,7 @@
     </div>
     <Separator />
 
-    <div class="w-full bg-[url('../assets/image/home/dua_banner.png')] bg-amber-400">
+    <div class="w-full bg-[url('/src/assets/image/home/dua_banner.png')] bg-amber-400">
       <h1 class="py-10 text-center bg-[#2d292938] text-4xl text-white font-bold"></h1>
       <!-- <p>{{ surahOfTheDay}}</p> -->
     </div>
