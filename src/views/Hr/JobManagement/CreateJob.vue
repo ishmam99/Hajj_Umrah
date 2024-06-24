@@ -14,8 +14,11 @@ import {
 import api from '@/config/api'
 
 const { toast } = useToast()
-const allJobTitle = ref([]) // Initialize as an empty array
 
+// variable to store data from get api (getJobList function)
+const allJobTitle = ref([])
+
+// Job create Form
 const jobCreate = ref({
   manage_organogram_id: '',
   job_id: '',
@@ -28,6 +31,7 @@ const jobCreate = ref({
   benefits: ''
 })
 
+// Job Create Function
 const jobceateSubmission = async () => {
   try {
     console.log('Submitting jobCreate:', jobCreate.value)
@@ -35,7 +39,7 @@ const jobceateSubmission = async () => {
     console.log('Create job check:', data)
     toast({
       title: 'Success',
-      description: 'Job Create Successfully!'
+      description: 'Job Created Successfully!'
     })
     jobCreate.value = {
       manage_organogram_id: '',
@@ -57,6 +61,7 @@ const jobceateSubmission = async () => {
   }
 }
 
+// Function to get all jobList to select
 const getJobList = async () => {
   try {
     const { data } = await api().get('get-position-list')
