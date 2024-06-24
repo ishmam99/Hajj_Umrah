@@ -1,6 +1,7 @@
 <script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import SupplySidebar from '/src/views/Supply/SupplySidevar.vue'
+import { useAdminStore } from '/src/stores/adminStore.ts'
 import {
   Dialog,
   DialogContent,
@@ -10,6 +11,19 @@ import {
   DialogTitle,
   DialogTrigger
 } from '/components/ui/dialog'
+
+const store = useAdminStore()
+const bidList = async () => {
+  loading.value = true
+  try {
+    const { data } = await api().get('get-bid-form')
+    store.bidList = data.data
+    console.log(store.bidList)
+  } catch (error) {
+    console.log(error)
+  }
+  loading.value = false
+}
 </script>
 
 <template>
@@ -27,12 +41,13 @@ import {
                   <tr class="bg-white text-xl">
                     <th class="p-2 text-left">Bid Id</th>
                     <th class="p-2 text-left">Project Name</th>
-                    <th class="p-2 text-left">Project Completion Timeframe</th>
+                    <th class="p-2 text-left">Project Completion Time Frame</th>
                     <th class="p-2 text-left">Budget</th>
                     <th class="p-2 text-left">Details</th>
                   </tr>
                 </thead>
                 <tbody>
+                  {{ store.bidList }}
                   <tr class="">
                     <td class="py-4 p-2 gap-2">
                       <h3 class="font-bold">01</h3>
@@ -86,7 +101,7 @@ import {
                                 </div>
                                 <div>
                                   <h1 class="font-semibold mt-2 text-l text-black">
-                                    Terms & Conditions:
+                                    Terms &amp; Conditions:
                                   </h1>
                                   1. Right to make changes to the agreement. <br />
                                   2. Warranty disclaimer.
@@ -98,7 +113,7 @@ import {
                       </button>
                     </td>
                   </tr>
-                  <tr class="bg-white">
+                  <!-- <tr class="bg-white">
                     <td class="py-4 p-2 gap-2">
                       <h3 class="font-bold">02</h3>
                     </td>
@@ -106,15 +121,8 @@ import {
                       <img src="/src/assets/image/home/l4.png" alt="" class="h-10" />
                       <h3 class="font-semibold">Computer, Printer, Camera</h3>
                     </td>
-                    <!-- <td>
-                      <p class="text-lg">Dallas Electronics</p>
-                    </td> -->
                     <td class="py-4 p-2">6 months</td>
-                    <!-- <td class="py-4 p-2">10 Feb 2024</td> -->
                     <td class="py-4 p-2 font-semibold">$ 5000</td>
-                    <!-- <td class="py-4 p-2">
-                      <p class="text-sm font-bold text-green-600">Completed</p>
-                    </td> -->
                     <td class="py-4 p-2">
                       <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         <Dialog>
@@ -144,13 +152,13 @@ import {
                                     $ 5000
                                   </div>
                                   <div class="flex gap-2">
-                                    <h1 class="text-black font-semibold">Completion Timeframe:</h1>
+                                    <h1 class="text-black font-semibold">Completion Time Frame:</h1>
                                     6 months
                                   </div>
                                 </div>
                                 <div>
                                   <h1 class="font-semibold mt-2 text-l text-black">
-                                    Terms & Conditions:
+                                    Terms &amp; Conditions:
                                   </h1>
                                   1. Right to make changes to the agreement. <br />
                                   2. Warranty disclaimer.
@@ -170,15 +178,8 @@ import {
                       <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
                       <h3 class="font-semibold">Sound System</h3>
                     </td>
-                    <!-- <td>
-                      <p class="text-lg">Karim</p>
-                    </td> -->
                     <td class="py-4 p-2">6 months</td>
-                    <!-- <td class="py-4 p-2">1 Feb 2024</td> -->
                     <td class="py-4 p-2 font-semibold">$ 500</td>
-                    <!-- <td class="py-4 p-2">
-                      <p class="text-sm font-bold text-blue-600">Pending</p>
-                    </td> -->
                     <td class="py-4 p-2">
                       <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                         <Dialog>
@@ -230,7 +231,7 @@ import {
                         </Dialog>
                       </button>
                     </td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
             </div>
