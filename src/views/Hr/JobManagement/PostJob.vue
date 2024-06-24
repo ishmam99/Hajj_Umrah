@@ -1,11 +1,9 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="px-4 bg-white py-5 w-3/4">
     <div class="flex justify-between items-center pt-4">
-      <p class="text-2xl text-yellow-600 font-bold pb-2">Job Post</p>
+      <p class="text-2xl font-bold pb-2">Job Post</p>
     </div>
     <hr />
     <div
@@ -14,23 +12,23 @@
       <table class="table-auto w-full">
         <thead>
           <tr class="bg-white text-sm">
-            <th class="p-2 text-left">Job ID</th>
-            <th class="p-2 text-left">Job Title</th>
-            <th class="p-2 text-left">Job Posting from</th>
-            <th class="p-2 text-left">Job posting to</th>
-            <th class="p-2 text-left">Status</th>
-            <th class="p-2 text-left">Action</th>
+            <th class="p-4 text-left">Job ID</th>
+            <th class="p-4 text-left">Job Title</th>
+            <th class="p-4 text-left">Job Posting from</th>
+            <th class="p-4 text-left">Job posting to</th>
+            <th class="p-4 text-left">Status</th>
+            <th class="p-4 text-left">Action</th>
           </tr>
         </thead>
-        <tbody>
-          <tr class="">
-            <td class="py-4 p-2 gap-2">
+        <tbody class="mt-4">
+          <tr>
+            <td class="px-4 py-2">
               <h3 class="font-bold">01</h3>
             </td>
-            <td class="py-4 p-2 flex items-center gap-2">
+            <td class="px-4 py-2">
               <h3 class="text-sm font-semibod">Imam Higiring</h3>
             </td>
-            <td>
+            <td class="px-4 py-2">
               <div class="flex">
                 <input
                   class="mx-3 peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
@@ -48,7 +46,7 @@
                 />
               </div>
             </td>
-            <td class="py-4 p-2">
+            <td class="px-4 py-2">
               <div class="flex">
                 <input
                   class="mx-3 peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
@@ -66,12 +64,12 @@
                 />
               </div>
             </td>
-            <td class="py-4 p-2 cursor-pointer">
+            <td class="px-4 py-2 cursor-pointer">
               <span class="text-sm text-white p-2 bg-green-500 rounded-sm">Active</span>
             </td>
-            <td class="py-4 p-2 font-semibold">
-              <div class="flex">
-                <span class="text-gray-500 px-2 cursor-pointer">
+            <td class="px-4 py-2 font-semibold">
+              <div class="flex gap-2">
+                <span class="text-gray-500 cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -87,7 +85,7 @@
                     />
                   </svg>
                 </span>
-                <span class="text-green-500 px-2 cursor-pointer">
+                <span class="text-green-500 cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -103,7 +101,7 @@
                     />
                   </svg>
                 </span>
-                <span class="text-red-500 px-2 cursor-pointer">
+                <span class="text-red-500 cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

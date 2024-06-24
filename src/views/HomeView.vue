@@ -30,7 +30,7 @@ const subnav = ref(0)
       <a href="#khutba" class="px-3 py-1.5" :class="route.hash=='#khutba' ? 'bg-white text-teal-800 rounded-md' : ''">Khudba & Khatira</a>
     </div> -->
 
-    <div class="px-[5%] pt-5 text-2xl font-bold uppercase gap-5 flex items-center">
+    <div class="px-[5%] pt-5 text-2xl font-bold uppercase gap-5 flex items-center cursor-pointer">
       <a
         class="px-3 py-1.5"
         @click="subnav = 0"
