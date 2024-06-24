@@ -517,7 +517,7 @@
         
         <MenubarMenu v-if="authStore?.user">
           <MenubarTrigger class="px-1 font-bold">
-            <router-link :to="authStore?.currentDashboard" class="p-1 rounded-md">
+            <router-link :to="authStore?.currentDashboard" class="p-1 rounded-md text-lg">
               Dashboard
             </router-link>
           </MenubarTrigger>
