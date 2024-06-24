@@ -17,6 +17,34 @@
     <div v-if="ledgerCreate == true" class="bg-slate-50">
       <div class="px-4 bg-white pb-5">
         <div class="flex justify-between items-center pb-2">
+          <p class="text-2xl text-yellow-600 font-bold">Create Ledger Type</p>
+          <button
+            v-if="ledgerType == false"
+            @click="ledgerType = true"
+            class="px-3 py-2 w-[150px] rounded-md shadow-md bg-blue-600 text-white text-sm"
+          >
+            Create
+          </button>
+          <button
+            v-if="ledgerType == true"
+            @click="ledgerType = false"
+            class="px-3 py-2 w-[150px] rounded-md shadow-md bg-red-600 text-white text-sm"
+          >
+            Cancle
+          </button>
+        </div>
+        
+        <div class="flex gap-5 mb-3"  v-if="ledgerType == true">
+          <p class="text-xl font-bold pb-3">Ledger Type Name</p>
+          <input type="text" class="border px-3 rounded-md" v-model="ledgerTypeForm.name">
+          <button @click="ledgertype"
+            class="px-3 py-2 w-[150px] rounded-md shadow-md bg-blue-600 text-white text-sm"
+          >
+            Save
+          </button>
+        </div>
+        <hr>
+        <div class="flex justify-between items-center pb-2 mt-2">
           <p class="text-2xl text-yellow-600 font-bold">Ledger Create</p>
           <button
             v-if="ledgerCreate == true"
@@ -257,20 +285,19 @@ import {
 } from '/components/ui/dropdown-menu'
 
 const store = useAdminStore()
-const currentDate = new Date()
-console.log(currentDate)
-const currentDateWithFormat = new Date().toJSON().slice(0, 10).replace(/-/g, '/')
-
 const ledgerCreate = ref(false)
 const ledgerUpdate = ref(false)
-
-console.log(currentDateWithFormat)
+const ledgerType = ref(false)
 
 const accountLedger = ref({
   type: '',
   description: '',
   credit: '',
   debit: ''
+})
+
+const ledgerTypeForm = ref({
+  name:''
 })
 
 const accountLedgerCreat = async () => {
@@ -285,6 +312,16 @@ const accountLedgerCreat = async () => {
   }
 }
 
+const ledgertype = async () => {
+  try {
+    const data = await api().post('ledger-type-store', ledgerTypeForm.value)
+    console.log(data)
+    ledgerTypeForm.value.name =''
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 const editShow = (item) => {
   ledgerUpdate.value = true
 }
@@ -292,6 +329,6 @@ const editShow = (item) => {
 const { toast } = useToast()
 
 onMounted(async () => {
-  currentDate()
+  
 })
 </script>
