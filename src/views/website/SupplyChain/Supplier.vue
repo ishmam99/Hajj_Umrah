@@ -146,7 +146,7 @@ const openDetails = (bid) => {
 }
 
 const goBack = () =>{
-  showBidList.value == true
+  showBidList.value = true
 }
 
 onMounted(() => {

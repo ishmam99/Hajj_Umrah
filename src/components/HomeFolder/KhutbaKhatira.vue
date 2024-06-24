@@ -39,12 +39,12 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="bg-slate-100 p-5">
+  <section class="bg-slate-0 p-5">
     <div>
       <h2 class="text-3xl font-bold pb-6 uppercase">Khutba</h2>
       <div class="grid grid-cols-3 gap-12">
         <div
-          class="bg-white shadow-lg rounded-lg overflow-hidden"
+          class="bg-white border-8 shadow-lg rounded-lg overflow-hidden"
           v-for="(khutbah, index) in store.khutbahList"
           :key="index"
           @click="playKhutba = khutbah.id"
@@ -71,7 +71,7 @@ onMounted(async () => {
       <h2 class="text-3xl font-bold pb-6 pt-10 uppercase">Khatira</h2>
       <div class="grid grid-cols-3 gap-12">
         <div
-          class="bg-white shadow-lg rounded-lg overflow-hidden"
+          class="bg-white border-8 shadow-lg rounded-lg overflow-hidden"
           v-for="(khatira, index) in store.khatiraList"
           :key="index"
           @click="playKhatira = khatira.id"

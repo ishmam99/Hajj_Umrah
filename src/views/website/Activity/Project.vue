@@ -137,6 +137,7 @@ import ActivityMore from '/src/components/ActivityMore.vue'
 
 import { ref, onMounted } from 'vue'
 
+
 const project = ref([
   {
     id: 1,
@@ -238,6 +239,10 @@ const getUpcommingProjectList = async () => {
   } catch (error) {
     console.log(error)
   }
+}
+
+const goBack = () =>{
+  showProjectsList.value = true
 }
 
 onMounted(async () => {
