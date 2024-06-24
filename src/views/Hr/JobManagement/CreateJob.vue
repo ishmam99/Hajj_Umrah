@@ -17,27 +17,21 @@ const { toast } = useToast()
 const allJobTitle = ref()
 
 const jobCreate = ref({
-  title: '',
-  employ_type: '',
+  manage_organogram_id: '',
+  job_id: '',
   general_job_descriptio: '',
-  duties_and_responsibilities: '',
-  job_qualifications_and_requirements: '',
-  Key_Competencies: '',
+  duties_for_responsibilities: '',
+  job_qualification_requirment: '',
+  key_competencies: '',
   position_of_reports: '',
-  number_of_positions: 10,
-  number_of_occupied: 2,
-  number_of_vacancy: 8,
+  position_report: '',
   about_us: '',
-  benefits: '',
-  salary: ''
+  benefits: ''
 })
 
 const jobceateSubmission = async () => {
   try {
-    const data = await api().post('create-job', {
-      method: 'post',
-      body: jobCreate.value
-    })
+    const data = await api().post('create-job-descrtiption', jobCreate.value)
     console.log('Create job check:', data)
     toast({
       title: 'Success',
@@ -62,6 +56,11 @@ const getJobList = async () => {
   }
 }
 
+const getTitleById = (id) => {
+  const job = allJobTitle.value?.find((job) => job.job_id === id)
+  return job ? job.job_title : ''
+}
+
 onMounted(() => {
   getJobList()
 })
@@ -75,13 +74,17 @@ onMounted(() => {
         <div class="py-5 space-y-7 mt-5">
           <div class="flex gap-4">
             <div class="relative w-1/2">
-              <Select v-model="jobCreate.employ_type" class="peer">
+              <Select v-model="jobCreate.manage_organogram_id" class="peer">
                 <SelectTrigger class="w-full py-3">
-                  <SelectValue placeholder="Select an option" />
+                  <SelectValue>
+                    <template #default="{ value }">
+                      {{ getTitleById(value) || 'Select an option' }}
+                    </template>
+                  </SelectValue>
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectItem v-for="job in allJobTitle" :key="job" :value="job.job_title">{{
+                    <SelectItem v-for="job in allJobTitle" :key="job.job_id" :value="job.job_id">{{
                       job.job_title
                     }}</SelectItem>
                   </SelectGroup>
@@ -99,7 +102,7 @@ onMounted(() => {
                 type="text"
                 class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.50rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                 id="exampleFormControlInput50"
-                value=""
+                v-model="jobCreate.job_id"
               />
               <label
                 for="exampleFormControlInput50"
