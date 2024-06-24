@@ -34,14 +34,14 @@
           >
             Login
           </button>
-          <div v-if="route.name != 'Admin Login'">
+          <!-- <div v-if="route.name != 'Admin Login'">
             <p class="text-center text-sm text-gray-600">OR</p>
             <button
               class="border border-gray-400 w-full px-3 py-2 rounded-md my-3 font-bold text-gray-400 flex items-center justify-center gap-2"
             >
               <ion-icon name="logo-google"></ion-icon>Sign in with Google
             </button>
-          </div>
+          </div> -->
 
           <div class="flex text-sm justify-between gap-2">
             <p class="text-gray-500">Don't have an account ?</p>
