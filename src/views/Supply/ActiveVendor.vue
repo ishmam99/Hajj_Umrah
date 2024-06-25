@@ -60,7 +60,7 @@ onMounted(() => {
                 <tbody>
                   <tr class="" v-for="(item, index) in store.vendorList" :key="item.id">
                     <td class="py-4 p-2 gap-2">
-                      <h3 class="font-bold">01</h3>
+                      <h3 class="font-bold">{{index+1}}</h3>
                     </td>
                     <td class="py-4 p-2 flex items-center gap-2">
                       <img src="/src/assets/image/home/l4.jpg" alt="" class="h-10" />
