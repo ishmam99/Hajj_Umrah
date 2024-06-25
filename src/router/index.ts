@@ -800,7 +800,27 @@ const router = createRouter({
 
       ]
     },
+
+    //Learning Management System LMS
+    {
+      path: '/LMS_Login',
+      name: 'LMS Login',
+      component: () => import('../views/Auth/LogIn.vue')
+    },
+    {
+      path: '/lms_Dashboard',
+      name: 'LMS_Dashboard',
+      component: () => import('../views/LearningManagementSystem/LMSDashboard.vue'),
+      children: [
+        {
+          path: '/lms_Management_profile',
+          name: 'LMS_profile',
+          component: () => import('../views/LearningManagementSystem/Profile/LMSprofile.vue'),
+        },
+      ],
+    },
     
+    //Operation Dashboard
     {
       path: '/Operation_Login',
       name: 'Operation Login',
@@ -1199,6 +1219,11 @@ const router = createRouter({
       name: 'LearningCenterCourses',
       component: () => import('../views/learning-center/modules/website/AllCourses.vue'),
       meta: { layout: LcFrntPageLayout }
+    },
+    {
+      path: '/learning_management_login',
+      name: 'LearningManagementSystemLoginPage',
+      component: () => import('../views/LearningManagementSystem/LMSDashboard.vue'),
     },
     {
       path: '/management-login',

@@ -509,7 +509,7 @@
             </MenubarItem>
             <MenubarItem>
               <router-link to="/Guest_Donation" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Guest / Annonymous</router-link
+                >Guest / Anonymous</router-link
               >
             </MenubarItem>
           </MenubarContent>
@@ -575,6 +575,13 @@
                     to="/Finance_Login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
                     >Finance Management</router-link
+                  >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link
+                    to="/lms_Management_profile"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Learning Management System</router-link
                   >
                 </MenubarItem>
                 <MenubarItem>
