@@ -11,6 +11,7 @@ export const useStore = defineStore( 'store',{
         donationForm: [],
         active_event_list: [],
         past_event_list: [],
+        bidForm: [],
         upcomming_event_list: [],
         active_project_list: [],
         past_project_list: [],

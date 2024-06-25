@@ -223,7 +223,7 @@
                 @click="cancleEdit()"
                 class="w-[250px] py-2 rounded-2xl bg-red-600 text-white font-bold"
               >
-                Cancle
+                Cancel
               </button>
             </div>
           </div>

@@ -12,37 +12,37 @@
       <table class="table-auto w-full">
         <thead>
           <tr class="bg-white">
-            <th class="p-2 text-center w-1/8">Applicant ID</th>
-            <th class="p-2 text-center w-1/8">Position Title</th>
-            <th class="p-2 text-center w-3/8">Name</th>
-            <th class="p-2 text-center w-1/8">Contact</th>
-            <th class="p-2 text-center w-1/8">Application Submited Date</th>
-            <th class="p-2 text-center w-1/8">Status</th>
+            <th class="p-4 text-center w-1/8">Applicant ID</th>
+            <th class="p-4 text-center w-1/8">Position Title</th>
+            <th class="p-4 text-center w-3/8">Name</th>
+            <th class="p-4 text-center w-1/8">Contact</th>
+            <th class="p-4 text-center w-1/8">Application Submited Date</th>
+            <th class="p-4 text-center w-1/8">Status</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="mt-4">
           <tr class="">
-            <td class="py-4 p-2 w-1/8 text-center">01</td>
-            <td class="py-4 p-2 text-center w-1/8">Imam hiring</td>
-            <td class="py-4 p-2 flex justify-center items-center gap-2 w-3/8">
-              <img
+            <td class="px-4 py-2">01</td>
+            <td class="px-4 py-2">Imam hiring</td>
+            <td class="px-4 py-2">
+              <!-- <img
                 src="/src/assets/image/home/l4.jpg"
                 alt=""
                 class="w-14 h-14 rounded-full ring-4 ring-gray-500"
-              />
+              /> -->
               <h3 class="font-bold">Ibnul Hossain</h3>
             </td>
-            <td class="py-4 p-2 text-center w-1/8">+8801823455640</td>
-            <td class="py-4 p-2 text-center w-1/8">02/14/2024</td>
+            <td class="px-4 py-2">+8801823455640</td>
+            <td class="px-4 py-2">02/14/2024</td>
 
-            <td class="py-4 p-2 text-center w-1/8">
-              <div class="flex">
-                <span class="text-sm text-whit mt-6">
-                  <span class="p-2 text-white bg-green-500 mx-2">Application Submitted</span>
+            <td class="py-2 px-4">
+              <div class="flex gap-2">
+                <span class="text-sm">
+                  <span class="p-2 text-white bg-green-500 rounded-sm">Application Submitted</span>
                 </span>
                 <span>
                   <router-link to="/HR_Dashboard/HR_Change_Application_Steps/1">
-                    <span class="text-gray-500 px-2">
+                    <span class="text-gray-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
