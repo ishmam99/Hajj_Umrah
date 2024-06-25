@@ -1,4 +1,7 @@
 <script setup>
+import { ref, onMounted } from 'vue'
+import { useAdminStore } from '/src/stores/adminStore.ts'
+import { useToast } from '/components/ui/toast/use-toast'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import SupplySidebar from '/src/views/Supply/SupplySidevar.vue'
 import {
@@ -10,6 +13,27 @@ import {
   DialogTitle,
   DialogTrigger
 } from '/components/ui/dialog'
+
+const { toast } = useToast();
+const store = useAdminStore();
+const loading = ref(false);
+
+const approvedVendorList = async () => {
+  loading.value = true;
+  try {
+    const { data } = await api().get('vendor-approved-list');
+    store.approvedVendorList = data.data;
+    console.log(store.approvedVendorList);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    loading.value = false;
+  }
+};
+
+onMounted(() => {
+  approvedVendorList()
+})
 </script>
 
 <template>
@@ -34,7 +58,7 @@ import {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="">
+                  <tr class="" v-for="(item, index) in store.vendorList" :key="item.id">
                     <td class="py-4 p-2 gap-2">
                       <h3 class="font-bold">01</h3>
                     </td>
