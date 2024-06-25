@@ -1198,9 +1198,7 @@ const router = createRouter({
           component: () => import('../views/Member/MemberAppointmentScholar.vue')
         },
       ],
-    },
-    
-   
+    },  
 
     {
       path: '/learning-center',
@@ -1256,6 +1254,19 @@ const router = createRouter({
       component: () => import('../auth/RegistrationPage.vue'),
       meta: { layout: AuthLayout, notAuthenticated: true }
     },
+    {
+      path: '/student/registration',
+      name: 'RegistrationPageForStudent',
+      component: () => import('../views/website/eLearning/Student/StudentApply.vue'),
+      meta: { layout: AuthLayout, notAuthenticated: true }
+    },
+    {
+      path: '/teacher/registration',
+      name: 'RegistrationPageForTeacher',
+      component: () => import('../views/website/eLearning/Teacher/TeacherApply.vue'),
+      meta: { layout: AuthLayout, notAuthenticated: true }
+    },
+
     {
       path: '/reg-teacher',
       name: 'TeacherRegistrationPage',

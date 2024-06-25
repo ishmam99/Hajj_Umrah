@@ -218,14 +218,14 @@
             </MenubarItem>
             <MenubarItem>
               <router-link
-                to="/registration"
+                to="/student/registration"
                 class="w-full hover:pl-5 duration-300 text-sm font-semibold"
                 >Apply For Student
               </router-link>
             </MenubarItem>
             <MenubarItem>
               <router-link
-                to="/reg-teacher"
+                to="/teacher/registration"
                 class="w-full hover:pl-5 duration-300 text-sm font-semibold"
                 >Apply For Teacher
               </router-link>
@@ -450,7 +450,7 @@
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
-      
+
         <MenubarMenu>
           <MenubarTrigger class="font-bold 2xl:text-lg"
             >Supply Chain
@@ -514,7 +514,7 @@
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
-        
+
         <MenubarMenu v-if="authStore?.user">
           <MenubarTrigger class="px-1 font-bold">
             <router-link :to="authStore?.currentDashboard" class="p-1 rounded-md text-lg">
@@ -539,11 +539,13 @@
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/Supply_Chain/supplierLogin" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link
+                to="/Supply_Chain/supplierLogin"
+                class="w-full hover:pl-5 duration-300 font-semibold"
                 >Vendor Login</router-link
               >
             </MenubarItem>
-           
+
             <MenubarSub>
               <MenubarSubTrigger>
                 <p class="hover:pl-5 duration-300 font-bold">Admin Login</p>
@@ -626,12 +628,9 @@
                 </MenubarItem>
               </MenubarSubContent>
             </MenubarSub>
-          
           </MenubarContent>
         </MenubarMenu>
-        <div class="flex items-center justify-between gap-2 text-white font-bold text-sm">
-       
-        </div>
+        <div class="flex items-center justify-between gap-2 text-white font-bold text-sm"></div>
       </Menubar>
     </div>
   </div>
