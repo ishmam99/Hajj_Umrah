@@ -18,7 +18,6 @@
           </svg>
           <p>Home</p>
           <p>/ Activities</p>
-          <!-- <p>/ Volunteers</p> -->
           <p class="text-emerald-800">/ Career</p>
         </div>
         <div class="rounded-lg flex items-center justify-center relative py-3">
@@ -31,8 +30,11 @@
     </div>
     <div class="bg-gray-100 h-full py-5 flex items-center justify-center gap-5 px-20 w-full">
       <div class="space-y-8 w-3/4">
-        <div class="grid lg:grid-cols-3 gap-5 py-10 px-[10%]">
+        <!-- Default job list view -->
+        <div v-if="!selectedJob" class="grid lg:grid-cols-3 gap-5 py-10 px-[10%]">
           <div
+            v-for="job in jobList"
+            :key="job"
             class="p-5 rounded-md bg-white shadow-md flex flex-col gap-5 justify-center items-center"
           >
             <img
@@ -42,49 +44,66 @@
             />
             <h1 class="font-bold text-lg text-blue-600 text-center">
               Job Title :
-              <span class="text-black font-[400] text-base">Imam</span>
+              <span class="text-black font-[400] text-base">
+                {{ job.manage_organogram.job_title }}
+              </span>
             </h1>
             <p class="font-bold text-lg text-blue-600 text-center">
               Application Deadline :
-              <span class="text-black font-[400] text-base">15 September, 2023</span>
+              <span class="text-black font-[400] text-base">{{ job.end_date }}</span>
             </p>
-            <button class="px-5 py-2 text-sm bg-[#1c2650] text-white w-full">Details</button>
+            <button
+              @click="showJobDetails(job)"
+              class="px-5 py-2 text-sm bg-[#1c2650] text-white w-full"
+            >
+              Details
+            </button>
           </div>
-          <div
-            class="p-5 rounded-md bg-white shadow-md flex flex-col gap-5 justify-center items-center"
+        </div>
+
+        <!-- Job details view -->
+        <div v-else class="p-5 rounded-md bg-white shadow-md w-full">
+          <button
+            @click="selectedJob = null"
+            class="flex gap-1 bg-green-500 text-white rounded-md px-3 py-1.5 font-semibold hover:drop-shadow-md"
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="flex"
+              height="24"
+              width="24"
+              fill="rgba(255,255,255,1)"
+            >
+              <path
+                d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20ZM12 11H16V13H12V16L8 12L12 8V11Z"
+              ></path>
+            </svg>
+
+            Back
+          </button>
+          <div class="flex flex-col items-center gap-5">
             <img
-              src="@/assets/image/gallery/e3.webp"
+              src="@/assets/image/gallery/e1.jpg"
               alt=""
-              class="rounded-full h-[100px] shadow-md"
+              class="rounded-md h-[200px] shadow-md"
             />
-            <h1 class="font-bold text-lg text-blue-600 text-center">
-              Job Title :
-              <span class="text-black font-[400] text-base">Teacher</span>
+            <h1 class="font-bold text-2xl text-emerald-800">
+              Job Title: {{ selectedJob.manage_organogram.job_title }}
             </h1>
-            <p class="font-bold text-lg text-blue-600 text-center">
-              Application Deadline :
-              <span class="text-black font-[400] text-base">15 September, 2023</span>
+            <p class="font-bold text-lg text-blue-600">
+              Application Start Date :
+              <span class="text-black font-[400] text-base"
+                >Start Date: {{ selectedJob.start_date }}</span
+              >
             </p>
-            <button class="px-5 py-2 text-sm bg-[#1c2650] text-white w-full">Details</button>
-          </div>
-          <div
-            class="p-5 rounded-md bg-white shadow-md flex flex-col gap-5 justify-center items-center"
-          >
-            <img
-              src="@/assets/image/gallery/e5.jpg"
-              alt=""
-              class="rounded-full h-[100px] shadow-md"
-            />
-            <h1 class="font-bold text-lg text-blue-600 text-center">
-              Job Title :
-              <span class="text-black font-[400] text-base">Cleaner</span>
-            </h1>
-            <p class="font-bold text-lg text-blue-600 text-center">
-              Application Deadline :
-              <span class="text-black font-[400] text-base">15 September, 2023</span>
+            <p class="font-bold text-lg text-blue-600">
+              Application End Date :
+              <span class="text-black font-[400] text-base"
+                >Start Date: {{ selectedJob.end_date }}</span
+              >
             </p>
-            <button class="px-5 py-2 text-sm bg-[#1c2650] text-white w-full">Details</button>
+            <p class="text-lg">{{ selectedJob.description }}</p>
           </div>
         </div>
       </div>
@@ -94,16 +113,32 @@
 
 <script setup>
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
+import api from '@/config/api'
+import { ref, onMounted } from 'vue'
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue
-} from '/components/ui/select'
+// variable to store data from get api
+const jobList = ref()
+
+const selectedJob = ref(null)
+
+// Get active job list Function
+const activeJobList = async () => {
+  try {
+    const { data } = await api().get('active-job-list')
+    jobList.value = data.data
+    console.log(data.data, 'Here is the data')
+  } catch (error) {
+    console.error(error.message, 'Here is the issue')
+  }
+}
+
+const showJobDetails = (job) => {
+  selectedJob.value = job
+}
+
+onMounted(() => {
+  activeJobList()
+})
 </script>
 
 <style lang="scss" scoped></style>

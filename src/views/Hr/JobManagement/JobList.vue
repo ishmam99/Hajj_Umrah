@@ -1,4 +1,25 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import api from '@/config/api'
+
+// variable to store data from get api (getJobList function)
+const jobList = ref()
+
+// Get job list Function
+const getJobList = async () => {
+  try {
+    const { data } = await api().get('get-position-list')
+    jobList.value = data.data
+    console.log(data.data, 'Here is the data')
+  } catch (error) {
+    console.error(error.message, 'Here is the issue')
+  }
+}
+
+onMounted(() => {
+  getJobList()
+})
+</script>
 
 <template>
   <div class="px-4 bg-white py-5 w-3/4">
@@ -24,22 +45,26 @@
           </tr>
         </thead>
         <tbody class="mt-4">
-          <tr>
+          <tr v-for="job in jobList" :key="job">
             <td class="py-2 px-4">
-              <h3 class="font-bold">01</h3>
+              <h3 class="font-bold">{{ job.id }}</h3>
             </td>
             <td class="px-4 py-2">
-              <h3 class="font-semibold">Imam Hiring for Idle Masjid</h3>
+              <h3 class="font-semibold">{{ job.job_title }}</h3>
             </td>
             <td class="px-4 py-2">
-              <p class="text-lg">Salaried</p>
+              <p>{{ job.salary_type }}</p>
             </td>
-            <td class="px-4 py-2">$2000</td>
-            <td class="px-4 py-2">5</td>
-            <td class="px-4 py-2">2</td>
-            <td class="px-4 py-2">2</td>
+            <td class="px-4 py-2">{{ job.salary_amount }}</td>
+            <td class="px-4 py-2 text-center">
+              {{ job.number_of_position ? job.number_of_position : '-' }}
+            </td>
+            <td class="px-4 py-2 text-center">{{ job.position_occupied }}</td>
+            <td class="px-4 py-2 text-center">{{ job.vacancies_available }}</td>
             <td class="px-4 py-2">
-              <p class="text-sm font-semibold text-blue-600">Inactive</p>
+              <p class="text-sm font-semibold text-blue-600">
+                {{ job.status === 1 ? 'Active' : 'Inactive' }}
+              </p>
             </td>
             <td class="px-4 py-2">
               <router-link to="/HR_Dashboard/HR_Edit_Job_Description/1">

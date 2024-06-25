@@ -13,6 +13,7 @@ import { ref } from 'vue'
 import api from '@/config/api'
 const { toast } = useToast()
 
+// position create Form
 const positionCreate = ref({
   job_title: '',
   repost_to: '',
@@ -24,19 +25,20 @@ const positionCreate = ref({
   salary_type: ''
 })
 
-const jobceateSubmission = async () => {
+// Position Create Function
+const positionceateSubmission = async () => {
   try {
     const data = await api().post('create-define-position', positionCreate.value)
     console.log('Create job check:', data)
     toast({
       title: 'Success',
-      description: 'Job Create Succesfully!'
+      description: 'Postion Created Succesfully!'
     })
   } catch (error) {
     console.log(error)
     toast({
       title: 'Error',
-      description: 'Fail to create Job!!'
+      description: 'Fail to create Position!!'
     })
   }
 }
@@ -46,7 +48,7 @@ const jobceateSubmission = async () => {
   <div class="px-5 bg-slate-50 py-5 w-3/4">
     <p class="text-2xl font-bold py-3 border-b">Define Postion</p>
     <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
-      <form @submit.prevent="jobceateSubmission()">
+      <form @submit.prevent="positionceateSubmission()">
         <div class="py-5 space-y-7 mt-5">
           <div class="flex gap-4">
             <div class="relative mb-3 w-1/2">
