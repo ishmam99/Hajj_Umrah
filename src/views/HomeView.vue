@@ -30,9 +30,9 @@ const subnav = ref(0)
       <a href="#khutba" class="px-3 py-1.5" :class="route.hash=='#khutba' ? 'bg-white text-teal-800 rounded-md' : ''">Khudba & Khatira</a>
     </div> -->
 
-    <div class="px-[5%] pt-5 text-2xl font-bold uppercase gap-10 flex items-center cursor-pointer">
+    <div class="px-[5%] pt-5 text-xl justify-center font-bold uppercase gap-10 flex items-center cursor-pointer mt-5">
       <a
-        class="px-3 py-1.5 bg-teal-100 font-bold rounded-t-3xl scale-110"
+        class="px-5 py-1.5 bg-teal-100 font-bold rounded-t-3xl scale-110"
         @click="subnav = 0"
         >Virtural Tour</a
       >
@@ -59,7 +59,7 @@ const subnav = ref(0)
       <a
         class="px-3 py-1.5 bg-amber-100 font-bold rounded-t-3xl scale-110"
         @click="subnav = 5"
-        >Khudba & Khatira</a
+        >Khudba &amp; Khatira</a
       >
     </div>
 

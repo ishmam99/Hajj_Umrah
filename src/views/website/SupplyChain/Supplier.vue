@@ -23,13 +23,13 @@
         </div>
         <div v-else>
           <div class="text-left flex items-center mb-2">
-                <p class="flex gap-1 items-center rounded-full ps-2 pr-3 py-1 cursor-pointer text-white bg-teal-500"
+                <!-- <p class="flex gap-1 items-center rounded-full ps-2 pr-3 py-1 cursor-pointer text-white bg-teal-500"
                   @click="goBack"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                     fill="currentColor">
                     <path
                       d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20ZM12 11H16V13H12V16L8 12L12 8V11Z">
                     </path>
-                  </svg>Back</p>
+                  </svg>Back</p> -->
               </div>
           <div class="p-5 rounded-md  bg-slate-100">
             <div class="max-h-[250px] overflow-hidden">
@@ -61,7 +61,7 @@
             <div class="flex justify-center gap-5">
               <router-link to="/Member_Login" v-if="authStore.isAuthenticated == false" class="px-5 py-2 rounded-md bg-blue-600 text-white">Sign In</router-link>
               <router-link to="/Signup" v-if="authStore.isAuthenticated == false" class="px-5 py-2 rounded-md bg-green-600 text-white">Sign Up</router-link>
-              <button v-else class="px-5 py-2 rounded-md bg-blue-600 text-white">Apply for bid</button>
+              <button v-else class="px-5 py-2 rounded-md bg-blue-600 text-white my-6">Apply for bid</button>
             </div>
           </div>
         </div>
