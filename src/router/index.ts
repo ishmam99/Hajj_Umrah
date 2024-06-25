@@ -934,8 +934,43 @@ const router = createRouter({
         {
           path: '/operation_announcement_broadcast_announcement',
           name: 'operation_announcement_broadcast_announcement',
-          component: () => import('../views/Operation/AnnouncementManagement/BroadcastAnnouncement.vue'),
+          component: () => import('@/views/Operation/AnnouncementManagement/BroadcastAnnouncement.vue'),
         },
+
+        //Prayer Announecment
+        {
+          path: '/operation_prayer_announcement_create_announcement',
+          name: 'operation_prayer_announcement_create_announcement',
+          component: () => import('@/views/Operation/PrayerAnnouncement/CreateAnnouncement.vue'),
+        },
+        {
+          path: '/operation_prayer_announcement_announcement_list',
+          name: 'operation_announcement_announcement_list',
+          component: () => import('@/views/Operation/PrayerAnnouncement/AnnouncementList.vue'),
+        },
+        {
+          path: '//operation_prayer_announcement_broadcast_announcement',
+          name: 'operation_announcement_broadcast_announcement',
+          component: () => import('@/views/Operation/PrayerAnnouncement/BroadcastAnnouncement.vue'),
+        },
+        //Next Prayer Service
+        {
+          path: '/operation_nextPrayer_announcement_create_announcement',
+          name: 'operation_nextPrayer_announcement_create_announcement',
+          component: () => import('../views/Operation/NextPrayerService/CreateNextPrayer.vue'),
+        },
+        {
+          path: '/operation_nextPrayer_announcement_announcement_list',
+          name: 'operation_nextPrayer_announcement_announcement_list',
+          component: () => import('../views/Operation/NextPrayerService/NextPrayerList.vue'),
+        },
+        {
+          path: '//operation_nextPrayer_announcement_broadcast_announcement',
+          name: 'operation_nextPrayer_announcement_broadcast_announcement',
+          component: () => import('../views/Operation/NextPrayerService/BroadcastNextPrayer.vue'),
+        },
+
+        //Recent Prayer Service
         {
           path: '/operation_maintenance_create_maintenance',
           name: 'Operation_Maintenance_Create_Maintenance',
