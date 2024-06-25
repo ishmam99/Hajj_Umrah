@@ -581,7 +581,7 @@
                   <router-link
                     to="/management-login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
-                    >Education Login</router-link
+                    >Learning Management Login</router-link
                   >
                 </MenubarItem>
                 <MenubarItem>

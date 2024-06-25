@@ -11,6 +11,8 @@ export const useAdminStore = defineStore('adminStore',{
         accountLedger: [],
         announcementList: [],
         bidList: [],
+        vendorList: [],
+        approvedVendorList: [],
         
         event: [],
         projectList: [],

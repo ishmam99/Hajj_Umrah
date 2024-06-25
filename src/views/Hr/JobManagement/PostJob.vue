@@ -1,4 +1,52 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useToast } from '/components/ui/toast/use-toast'
+import { ref, onMounted } from 'vue'
+import api from '@/config/api'
+const { toast } = useToast()
+
+// variable to store data from get api (getJobList function)
+const jobList = ref()
+
+// Get job list Function
+const getJobList = async () => {
+  try {
+    const { data } = await api().get('get-position-list')
+    jobList.value = data.data
+    console.log(data.data, 'Here is the data')
+  } catch (error) {
+    console.error(error.message, 'Here is the issue')
+  }
+}
+
+// Post Job Form
+const postJob = ref({
+  start_date: '',
+  end_date: ''
+})
+
+// Post Job Function
+const createPostList = async (id) => {
+  try {
+    const { data } = await api().post(`post-job-descrtiption/${id}`, postJob.value)
+
+    console.log(data, 'Here is the data')
+    toast({
+      title: 'Success',
+      description: 'Job posted successfully!'
+    })
+  } catch (error) {
+    console.error(error.message, 'Here is the issue')
+    toast({
+      title: 'Error',
+      description: 'Fail to post Job!!'
+    })
+  }
+}
+
+onMounted(() => {
+  getJobList()
+})
+</script>
 
 <template>
   <div class="px-4 bg-white py-5 w-3/4">
@@ -21,51 +69,43 @@
           </tr>
         </thead>
         <tbody class="mt-4">
-          <tr>
+          <tr v-for="job in jobList" :key="job">
             <td class="px-4 py-2">
-              <h3 class="font-bold">01</h3>
+              <h3 class="font-bold">{{ job.id }}</h3>
             </td>
             <td class="px-4 py-2">
-              <h3 class="text-sm font-semibod">Imam Higiring</h3>
+              <h3 class="text-sm font-semibod">{{ job.job_title }}</h3>
             </td>
             <td class="px-4 py-2">
-              <div class="flex">
+              <div>
                 <input
-                  class="mx-3 peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                  v-model="postJob.start_date"
+                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                   type="date"
                   name="event_date"
                   id="event_date"
                   placeholder="YYYY-MM-DD"
                   pattern="\d{4}-\d{2}-\d{2}"
-                />
-
-                <input
-                  type="time"
-                  class="mx-3 peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="title_name"
                 />
               </div>
             </td>
             <td class="px-4 py-2">
-              <div class="flex">
+              <div>
                 <input
-                  class="mx-3 peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                  v-model="postJob.end_date"
+                  class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                   type="date"
                   name="event_date"
                   id="event_date"
                   placeholder="YYYY-MM-DD"
                   pattern="\d{4}-\d{2}-\d{2}"
-                />
-
-                <input
-                  type="time"
-                  class="mx-3 peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                  id="title_name"
                 />
               </div>
             </td>
             <td class="px-4 py-2 cursor-pointer">
-              <span class="text-sm text-white p-2 bg-green-500 rounded-sm">Active</span>
+              <span class="text-sm text-white p-2 bg-green-500 rounded-sm">{{
+                job.status === 1 ? 'Active' : 'Inactive'
+              }}</span>
             </td>
             <td class="px-4 py-2 font-semibold">
               <div class="flex gap-2">
@@ -87,6 +127,7 @@
                 </span>
                 <span class="text-green-500 cursor-pointer">
                   <svg
+                    @click="createPostList(job.id)"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"

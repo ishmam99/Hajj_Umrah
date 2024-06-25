@@ -2,8 +2,10 @@
 import { ref, onMounted } from 'vue'
 import api from '@/config/api'
 
+// variable to store data from get api (getPositionList function)
 const positionList = ref()
 
+// Get position list Function
 const getPositionList = async () => {
   try {
     const { data } = await api().get('get-position-list')
