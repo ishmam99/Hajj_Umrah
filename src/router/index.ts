@@ -1269,6 +1269,11 @@ const router = createRouter({
       name: 'RegistrationPageForTeacher',
       component: () => import('../views/website/eLearning/Teacher/TeacherApply.vue'),
     },
+    {
+      path: '/teacher/login',
+      name: 'LoginPageForTeacher',
+      component: () => import('../views/website/eLearning/Teacher/TeacherLogin.vue'),
+    },
 
     {
       path: '/reg-teacher',

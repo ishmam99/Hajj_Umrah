@@ -39,7 +39,7 @@
 
         <div class="text-grey-dark mt-6">
           If you don't have any account,?
-          <router-link to="/student/registration" class="border-blue-500 text-blue-500">
+          <router-link to="/student/registration" class="border-b border-blue-500 text-blue-500">
             <span class="font-bold">Signup Now!</span> </router-link
           >.
         </div>
