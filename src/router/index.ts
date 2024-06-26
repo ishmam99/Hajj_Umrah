@@ -596,7 +596,7 @@ const router = createRouter({
 
     {
       path: '/Education_Login',
-      name: 'Education Login',
+      name: 'Learning Center Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
     {

@@ -86,7 +86,7 @@
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
-          v-if="route.name == 'Education Login'"
+          v-if="route.name == 'Learning Center Login'"
           src="@/assets/image/common/login-5.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
@@ -186,14 +186,10 @@ const login =async () => {
         authStore.currentDashboard = "Membar_Profile"
         router.push({ name: 'Membar_Profile' })
       }
-       else if (authStore.role == 'Imam') {
-      authStore.currentDashboard = "Membar_Profile"
-      router.push({ name: 'Membar_Profile' })
+       else if (authStore.role == 'Learning-center') {
+      authStore.currentDashboard = "/lms_Management_profile"
+      router.push({ name: 'LMS_profile' })
       }
-    
-      
-      
-      
     } catch (error) {
       console.log(error);
     }
