@@ -1261,13 +1261,18 @@ const router = createRouter({
     },
     {
       path: '/student/login',
-      name: 'LoginPageForStudent',
-      component: () => import('../views/website/eLearning/Student/StudentLogin.vue'),
+      name: 'Student Login',
+      component: () => import('../views/Auth/LogIn.vue'),
     },
     {
       path: '/teacher/registration',
       name: 'RegistrationPageForTeacher',
       component: () => import('../views/website/eLearning/Teacher/TeacherApply.vue'),
+    },
+    {
+      path: '/teacher/login',
+      name: 'Teacher Login',
+      component: () => import('../views/Auth/LogIn.vue'),
     },
 
     {
