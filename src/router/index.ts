@@ -1260,6 +1260,11 @@ const router = createRouter({
       component: () => import('../views/website/eLearning/Student/StudentApply.vue'),
     },
     {
+      path: '/student/login',
+      name: 'LoginPageForStudent',
+      component: () => import('../views/website/eLearning/Student/StudentLogin.vue'),
+    },
+    {
       path: '/teacher/registration',
       name: 'RegistrationPageForTeacher',
       component: () => import('../views/website/eLearning/Teacher/TeacherApply.vue'),
