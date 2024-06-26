@@ -581,18 +581,12 @@
                 </MenubarItem>
                 <MenubarItem>
                   <router-link
-                    to="/lms_Management_profile"
+                    to="/Education_Login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
                     >Learning Management System</router-link
                   >
                 </MenubarItem>
-                <MenubarItem>
-                  <router-link
-                    to="/management-login"
-                    class="w-full hover:pl-5 duration-300 font-semibold"
-                    >Learning Management Login</router-link
-                  >
-                </MenubarItem>
+                
                 <MenubarItem>
                   <router-link
                     to="/Supply_Chain_Management_Login"

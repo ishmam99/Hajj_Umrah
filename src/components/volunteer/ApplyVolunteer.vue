@@ -1,7 +1,5 @@
 <script setup>
 import { ref, onMounted, defineProps, defineEmits } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useVolunteerDataStore } from '@/stores/volunteerStore.ts'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import { useRouter } from 'vue-router';
 import { useToast } from '/components/ui/toast/use-toast'
@@ -17,21 +15,10 @@ import {
 } from '/components/ui/select'
 
 // pinia
-const { volunteerInterestExpertise } = storeToRefs(useVolunteerDataStore())
-const { setVolunteerInterestExpertise } = useVolunteerDataStore()
+
 
 const router = useRouter();
 const { toast } = useToast()
-
-// const props = defineProps({
-//   selectedVolunteerPost: {}
-// })
-// const emits = defineEmits(['allVolunteerPost'])
-
-// Function to call the parent function
-// const goToAllVolunteerPost = () => {
-//   emits('allVolunteerPost')
-// }
 
 const volunteerForm = ref({
   name: '',
@@ -75,11 +62,11 @@ const volunteerAdmissionSubmit = async () => {
 
 <template>
   <DefaultLayout>
-  <div class="px-5 bg-slate-50 py-5 pt-[80px]">
-    <div class="text-2xl font-bold py-3 border-b flex items-center space-x-3">
+  <div class="px-5 py-5 pt-[80px] bg-[url('/src/assets/image/gallery/e5.jpg')]">
+    <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5 max-w-[800px] mx-auto">
+      <div class="text-2xl font-bold py-3 border-b flex items-center space-x-3">
       <p>Apply for Volunteer</p>
     </div>
-    <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
       <form @submit.prevent="volunteerAdmissionSubmit()">
         <div class="py-5 space-y-7 mt-5">
           <div class="flex gap-4">
@@ -237,7 +224,7 @@ const volunteerAdmissionSubmit = async () => {
             />
           </div>
 
-          <div v-if="new Date().getFullYear() - volunteerForm.yob > 18">
+          <div>
             <div>
               <p class="p-3 left-2 bg-white text-gray-600">Parent Information</p>
             </div>
@@ -322,72 +309,6 @@ const volunteerAdmissionSubmit = async () => {
               </div>
             </div>
           </div>
-
-          <!-- <div>
-            <fieldset class="p-4">
-              <legend class="font-bold text-white">Interest in other volunteer jobs</legend>
-              <div class="columns-3">
-                <div
-                  v-for="volunteerInterestExpert in volunteerInterestExpertise"
-                  :key="volunteerInterestExpert.id"
-                  class="my-2"
-                >
-                  <div class="flex space-x-2">
-                    <label class="flex space-x-2">
-                      <input
-                        v-model="volunteerInterestExpert.isChecked"
-                        :id="volunteerInterestExpert.id"
-                        type="checkbox"
-                        :value="volunteerInterestExpert.isChecked"
-                        name="interest"
-                      />
-                      <div class="w-[200px]">
-                        {{ volunteerInterestExpert.interestField }}
-                      </div>
-                    </label>
-                    <select v-model="volunteerInterestExpert.expertise">
-                      <option>Expert</option>
-                      <option>Intermediate</option>
-                      <option>Beginner</option>
-                    </select>
-                  </div>
-                  <div
-                    v-if="
-                      volunteerInterestExpert.volunteerSubSection &&
-                      volunteerInterestExpert.volunteerSubSection.length > 0
-                    "
-                    class="mb-4"
-                  >
-                    <div
-                      v-for="volunteerInterestSub in volunteerInterestExpert.volunteerSubSection"
-                      :key="volunteerInterestSub.id"
-                      class="ml-3 my-2"
-                    >
-                      <div class="flex space-x-2">
-                        <label class="flex space-x-2">
-                          <input
-                            v-model="volunteerInterestSub.isChecked"
-                            :id="volunteerInterestSub.id"
-                            type="checkbox"
-                            :value="volunteerInterestSub.isChecked"
-                            name="interest"
-                          />
-                          <div class="w-[200px]">
-                            {{ volunteerInterestSub.interestField }}
-                          </div>
-                        </label>
-                        <select v-model="volunteerInterestSub.expertise">
-                          <option>Expert</option>
-                          <option>Intermediate</option>
-                          <option>Beginner</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div> -->
 
           <button
             type="submit"

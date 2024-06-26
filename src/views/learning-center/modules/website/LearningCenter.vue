@@ -10,7 +10,9 @@ const commonStore = useCommonStore()
 const areaListApi = 'area-list'
 const courseStore = useCourseStore()
 
+
 let getAreas = ref([])
+const getOpenSeminers = ref([])
 
 async function areas() {
   await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + areaListApi).then((response) => {
@@ -19,8 +21,16 @@ async function areas() {
   })
 }
 
+async function openSeminer(){
+  await axios.get(import.meta.VITE_ELEARNING_BASE_API+get-open-courses).than((response) => {
+    getOpenSeminers.value = response.data
+    console.log(getOpenSeminer.value)
+  })
+}
+
 onMounted(() => {
   areas()
+  openSeminer()
   courseStore.topSellingCourses()
   courseStore.newReleasedCourses()
   courseStore.featuredCourses()
@@ -40,10 +50,10 @@ onUnmounted(() => {
 
     <div class="top-areas">
       <div class="title">
-        <p>Areas of Study</p>
+        <p>Open Seminars</p>
         <!-- <router-link class="view-all" to="/">View All</router-link> -->
       </div>
-      <p class="text-lg">Islamic digital lane offering courses in the following area of studies:</p>
+      <p class="text-lg">Islamic digital lane offering Open Seminars in the following area of studies:</p>
 
       <div class="list mt-4">
         <router-link
@@ -53,6 +63,77 @@ onUnmounted(() => {
           class="item"
           >{{ area.title }}</router-link
         >
+      </div>
+      
+      <div class="my-19">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="p-4 shadow-md">
+              <div class="relative">
+                <img src="@/assets/image/common/login.png" alt="">
+              
+                <div class="absolute bottom-5 left-10">
+                  <div class="flex">
+                    <img src="@/assets/image/common/n20.png" alt="" class="w-8 h-8 ring-2 rounded">
+                    <h4 class="text-lg px-2 font-bold text-white">Various Scholars of IDL</h4>
+                  </div>
+                </div>
+              </div>
+              
+              <h3 class="text-2xl font-bold my-3">Arabic Conversation Level 01</h3>
+              <p>
+                This short course contains the great and inaugural Surah of the Holy Qur’an. This Surah is recited
+              </p>
+              <hr>
+              <div class="flex">
+                <button class="my-3 py-2 px-4 rounded-lg text-md bg-[#286d71] text-white hover:bg-blue-500">Details</button>
+              </div>
+            </div>
+
+            <div class="p-4 shadow-md">
+              <div class="relative">
+                <img src="@/assets/image/common/login.png" alt="">
+              
+                <div class="absolute bottom-5 left-10">
+                  <div class="flex">
+                    <img src="@/assets/image/common/n20.png" alt="" class="w-8 h-8 ring-2 rounded">
+                    <h4 class="text-lg px-2 font-bold text-white">Various Scholars of IDL</h4>
+                  </div>
+                </div>
+              </div>
+              
+              <h3 class="text-2xl font-bold my-3">Arabic Conversation Level 02</h3>
+              <p>
+                This short course contains the great and inaugural Surah of the Holy Qur’an. This Surah is recited
+              </p>
+              <hr>
+              <div class="flex">
+                <button class="my-3 py-2 px-4 rounded-lg text-md bg-[#286d71] text-white hover:bg-blue-500">Details</button>
+              </div>
+            </div>
+
+            <div class="p-4 shadow-md">
+              <div class="relative">
+                <img src="@/assets/image/common/login.png" alt="">
+              
+                <div class="absolute bottom-5 left-10">
+                  <div class="flex">
+                    <img src="@/assets/image/common/n20.png" alt="" class="w-8 h-8 ring-2 rounded">
+                    <h4 class="text-lg px-2 font-bold text-white">Various Scholars of IDL</h4>
+                  </div>
+                </div>
+              </div>
+              
+              <h3 class="text-2xl font-bold my-3">Arabic Conversation Level 03</h3>
+              <p>
+                This short course contains the great and inaugural Surah of the Holy Qur’an. This Surah is recited
+              </p>
+              <hr>
+              <div class="flex">
+                <button class="my-3 py-2 px-4 rounded-lg text-md bg-[#286d71] text-white hover:bg-blue-500">Details</button>
+              </div>
+            </div>
+
+        </div>
       </div>
     </div>
 

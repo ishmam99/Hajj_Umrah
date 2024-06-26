@@ -102,7 +102,9 @@ import { ref, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from '/src/stores/store.ts'
 import {useAuthStore} from '/src/stores/AuthStore.ts'
+import { useToast } from '/components/ui/toast/use-toast'
 
+const { toast } = useToast()
 const authStore = useAuthStore()
 const store = useStore()
 const route = useRoute()
@@ -140,6 +142,10 @@ const volunteerJobSubmit = async () => {
   try {
     const data = await api().post('volunteer-job-apply', jobform)
     console.log(data)
+    toast({
+      title: 'Success',
+      description: 'Volunteer Apply Successfully!'
+    })
   } catch (error) {
     console.log(error)
   }
