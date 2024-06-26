@@ -1234,8 +1234,8 @@ const router = createRouter({
     {
       path: '/learning-center/programs',
       name: 'LearningCenterPrograms',
-      component: () => import('../views/learning-center/modules/website/Programs.vue'),
-      meta: { layout: LcFrntPageLayout }
+      component: () => import('../views/website/eLearning/programs/Programs.vue'),
+      // meta: { layout: LcFrntPageLayout }
     },
     {
       path: '/learning-center/all-courses',
