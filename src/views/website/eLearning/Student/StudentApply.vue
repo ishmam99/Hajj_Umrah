@@ -2,7 +2,10 @@
   <DefaultLayout>
     <div class="bg-grey-lighter flex pt-[80px] pb-5">
       <img src="/src/assets/images/auth-banner.png" alt="" class="w-2/3" />
-      <div class="flex flex-col items-center justify-center px-2 w-1/3">
+      <div
+        v-if="authStore.isAuthenticated == true"
+        class="flex flex-col items-center justify-center px-2 w-1/3"
+      >
         <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
           <h1 class="mb-6 font-bold text-2xl text-green-700">Signup and start learning</h1>
           <div class="mb-3">
@@ -85,30 +88,26 @@
             type="submit"
             class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-dark focus:outline-none my-1"
           >
-            Signup
+            Register
           </button>
-
-          <!-- <div class="text-center text-sm text-grey-dark mt-4">
-          By signing up, you agree to the
-          <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
-            Terms of Service
-          </a>
-          and
-          <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
-            Privacy Policy
-          </a>
-        </div> -->
         </div>
-
-        <div class="text-grey-dark mt-6">
-          Already have an account?
-          <router-link
-            to="/student/login"
-            class="no-underline border-b border-blue-500 text-blue-500"
-            href="../login/"
-          >
-            <span class="font-bold">Log in</span> </router-link
-          >.
+      </div>
+      <div v-else class="flex justify-center items-center w-1/3">
+        <div>
+          <P class="text-3xl font-semibold text-center pb-1">Not a member yet ?</P>
+          <p class="text-center pb-2">Signin for register</p>
+          <div class="flex justify-center gap-5">
+            <router-link
+              to="/Member_Login"
+              class="px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold"
+              >Sign In</router-link
+            >
+            <router-link
+              to="/Signup"
+              class="px-5 py-2 rounded-lg bg-green-600 text-white font-semibold"
+              >Sign Up</router-link
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -116,4 +115,7 @@
 </template>
 <script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
+
+import { useAuthStore } from '@/stores/AuthStore'
+const authStore = useAuthStore()
 </script>
