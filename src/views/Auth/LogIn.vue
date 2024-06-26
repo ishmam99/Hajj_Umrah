@@ -62,6 +62,18 @@
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
+          v-if="route.name == 'Student Login'"
+          src="@/assets/image/common/n21.avif"
+          alt=""
+          class="bg-white rounded-lg h-[550px] w-[500px]"
+        />
+        <img
+          v-if="route.name == 'Teacher Login'"
+          src="@/assets/image/common/n21.avif"
+          alt=""
+          class="bg-white rounded-lg h-[550px] w-[500px]"
+        />
+        <img
           v-if="route.name == 'Admin Login'"
           src="@/assets/image/common/login.png"
           alt=""

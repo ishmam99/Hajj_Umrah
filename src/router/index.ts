@@ -1261,8 +1261,8 @@ const router = createRouter({
     },
     {
       path: '/student/login',
-      name: 'LoginPageForStudent',
-      component: () => import('../views/website/eLearning/Student/StudentLogin.vue'),
+      name: 'Student Login',
+      component: () => import('../views/Auth/LogIn.vue'),
     },
     {
       path: '/teacher/registration',
@@ -1271,8 +1271,8 @@ const router = createRouter({
     },
     {
       path: '/teacher/login',
-      name: 'LoginPageForTeacher',
-      component: () => import('../views/website/eLearning/Teacher/TeacherLogin.vue'),
+      name: 'Teacher Login',
+      component: () => import('../views/Auth/LogIn.vue'),
     },
 
     {

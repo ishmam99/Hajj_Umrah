@@ -534,8 +534,13 @@
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/student-login" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link to="/student/login" class="w-full hover:pl-5 duration-300 font-semibold"
                 >Student Login</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
+              <router-link to="/teacher/login" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Teacher Login</router-link
               >
             </MenubarItem>
             <MenubarItem>

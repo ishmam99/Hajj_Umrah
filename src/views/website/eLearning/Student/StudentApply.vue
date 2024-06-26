@@ -1,98 +1,24 @@
 <template>
   <DefaultLayout>
-    <div class="bg-grey-lighter flex pt-[80px] pb-5">
-      <img src="/src/assets/images/auth-banner.png" alt="" class="w-2/3" />
+    <div class="bg-grey-lighter flex justify-center items-center pt-[80px] pb-5 bg-[url('/src/assets/images/auth-banner.png')] min-h-[70vh] bg-cover bg-center">
       <div
         v-if="authStore.isAuthenticated == true"
         class="flex flex-col items-center justify-center px-2 w-1/3"
       >
-        <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
-          <h1 class="mb-6 font-bold text-2xl text-green-700">Signup and start learning</h1>
-          <div class="mb-3">
-            <label for="">Full Name <span class="text-red-500">*</span></label>
-            <input
-              type="text"
-              class="block border border-grey-light w-full p-2 rounded"
-              name="fullname"
-            />
+        <form @submit.prevent="studentRegister" class="w-full">
+          <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+            <h1 class="mb-6 font-bold text-2xl text-green-700">Signup and start learning</h1>
+            
+            <button
+              type="submit"
+              class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-dark focus:outline-none my-1"
+            >
+              Register
+            </button>
           </div>
-
-          <div class="mb-3">
-            <label for="">Phone <span class="text-red-500">*</span></label>
-            <input
-              type="text"
-              class="block border border-grey-light w-full p-2 rounded"
-              name="phone"
-            />
-          </div>
-
-          <div class="mb-3">
-            <label for="">Email <span class="text-red-500">*</span></label>
-
-            <input
-              type="text"
-              class="block border border-grey-light w-full p-2 rounded mb-4"
-              name="email"
-            />
-          </div>
-
-          <div class="mb-3">
-            <label for="">Gender</label>
-
-            <select class="block border border-grey-light w-full p-2 rounded mb-4">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label for="">Country</label>
-
-            <input
-              type="text"
-              class="block border border-grey-light w-full p-2 rounded mb-4"
-              name="country"
-            />
-          </div>
-
-          <div class="mb-3">
-            <label for="">Address</label>
-
-            <input
-              type="text"
-              class="block border border-grey-light w-full p-2 rounded mb-4"
-              name="address"
-            />
-          </div>
-
-          <div class="mb-3">
-            <label for="">Password <span class="text-red-500">*</span></label>
-            <input
-              type="password"
-              class="block border border-grey-light w-full p-2 rounded mb-4"
-              name="password"
-            />
-          </div>
-
-          <div class="mb-3">
-            <label for="">Confirm Password <span class="text-red-500">*</span></label>
-
-            <input
-              type="password"
-              class="block border border-grey-light w-full p-2 rounded mb-4"
-              name="confirm_password"
-            />
-          </div>
-
-          <button
-            type="submit"
-            class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-dark focus:outline-none my-1"
-          >
-            Register
-          </button>
-        </div>
+        </form>
       </div>
-      <div v-else class="flex justify-center items-center w-1/3">
+      <div v-else class="flex justify-center items-center w-1/3 bg-white p-10 rounded-md shadow-md">
         <div>
           <P class="text-3xl font-semibold text-center pb-1">Not a member yet ?</P>
           <p class="text-center pb-2">Signin for register</p>
@@ -114,8 +40,30 @@
   </DefaultLayout>
 </template>
 <script setup>
+import { ref } from 'vue'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 
 import { useAuthStore } from '@/stores/AuthStore'
+import { useToast } from '/components/ui/toast/use-toast'
+
 const authStore = useAuthStore()
+const id = authStore?.user?.id
+const { toast } = useToast()
+
+const studentRegister = async () => {
+  try {
+    const data = await api().post(`apply-student/${id}`,)
+    toast({
+      title: 'Register form submitted',
+      description: 'You will be notify in 24 hours'
+    })
+    console.log(data)
+  } catch (error) {
+    console.log(error)
+    toast({
+      title: 'Error',
+      description: 'Please Try Again'
+    })
+  }
+}
 </script>
