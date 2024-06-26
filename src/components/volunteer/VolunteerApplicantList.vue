@@ -83,7 +83,18 @@
         <p class="text-2xl text-yellow-600 font-bold">Volunteer Applicant List</p>
         <button @click="showDetails = false" class="bg-green-600 text-white rounded-md px-3 py-1.5">Back</button>
       </div>
-      {{ volunteerDetails }}
+      <!-- {{  volunteerDetails }} -->
+      
+      <div class="p-5 rounded-md shadow-lg">
+        <div>
+          <img :src="volunteerDetails.volunteer_jobs.image" alt="" class="h-60 w-full">
+          <h3 class="text-xl font-bold py-3">{{ volunteerDetails.volunteer_jobs.title }}</h3>
+        </div>
+        <div>
+          <p class="text-2xl my-3">Applicant Information</p>
+          <p class="text-xl font-bold">Name: {{ volunteerDetails.user.name }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
