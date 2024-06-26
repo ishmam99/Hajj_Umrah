@@ -84,17 +84,18 @@ watch(
               <th class="">Expertise Area</th>
               <th class="p-2 text-center">Additional Interest Area</th>
               <th class="p-2 text-center">More Info</th>
-              <th class="p-2 text-center">Action</th>
+              <!-- <th class="p-2 text-center">Action</th> -->
             </tr>
           </thead>
           <tbody>
+            <!-- {{  volunteerApplicantList  }} -->
             <template
               v-for="volunteerApplicant in volunteerApplicantList"
               :key="volunteerApplicant.id"
             >
+            <!-- {{ volunteerApplicant.id  }} -->
               <tr
-                v-if="volunteerApplicant.applicationStatus === 'Reject'"
-                :class="[`${volunteerApplicant.id % 2 === 0 ? 'bg-white' : ''}`]"
+               
               >
                 <td class="py-4 p-2 text-center">{{ volunteerApplicant.id }}</td>
                 <td class="py-4 p-2 text-center">{{ volunteerApplicant.name }}</td>
@@ -125,7 +126,7 @@ watch(
                   </button>
                 </td>
 
-                <td class="py-4 p-2 text-center text-red-600 font-bold">
+                <!-- <td class="py-4 p-2 text-center text-red-600 font-bold">
                   <div class="flex flex-col space-y-1">
                     <div>
                       <select
@@ -140,7 +141,7 @@ watch(
 
                     <div>{{ volunteerApplicant.applicationStatus }}ed</div>
                   </div>
-                </td>
+                </td> -->
               </tr>
             </template>
           </tbody>

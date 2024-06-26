@@ -27,6 +27,7 @@
               v-for="(volunteerApplicant , index) in allVolunteerList"
               :key="volunteerApplicant.id"
             >
+            
               <tr class="table-row">
         
                 <td class="py-4 p-2 text-center">{{ index+1 }}</td>
@@ -127,12 +128,12 @@ import { ref, watch, onMounted, computed } from 'vue'
 import { useVolunteerDashboardStore } from '@/stores/volunteerStore2.ts'
 
 const store = useVolunteerDashboardStore()
-
 const registerVolunteerAppliedList = async () => {
   try {
     const { data } = await api().get('volunteer-job-apply-list')
     console.log(data)
     store.registerVolunteerAppliedList = data.data
+    
   } catch (error) {
     console.log(error)
   }
