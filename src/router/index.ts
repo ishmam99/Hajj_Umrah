@@ -1197,6 +1197,16 @@ const router = createRouter({
           name: 'Scholar_Appointment',
           component: () => import('../views/Member/MemberAppointmentScholar.vue')
         },
+        {
+          path: '/Selected Course',
+          name: 'Selected Course',
+          component: () => import('../views/Member/Student/SelectedCourse.vue')
+        },
+        {
+          path: '/Assigned teacher',
+          name: 'Assigned teacher',
+          component: () => import('../views/Member/Student/AssignedTeacher.vue')
+        },
       ],
     },  
 
