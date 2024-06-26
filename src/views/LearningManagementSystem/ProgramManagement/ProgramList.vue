@@ -15,23 +15,24 @@
                 <th class="p-2 text-start w-1/8">ID</th>
                 <th class="p-2 text-start w-1/8">Program Name</th>
                 <th class="p-2 text-start w-2/8">Description</th>
+                <th class="p-2 text-start w-2/8">Program Type</th>
                 <th class="p-2 text-center w-1/8">Action</th>
               </tr>
             </thead>
             <tbody>
               <tr
-                v-for="(Announcement, index) in store.announcementList"
-                :key="index"
                 class="tableRowColor"
               >
-                <td class="py-4 px-2 w-1/8">{{ index + 1 }}</td>
+                <td class="py-4 px-2 w-1/8">01</td>
                 <td class="py-4 px-2 w-1/8">
-                  <h3 class="font-semibold">{{ Announcement.title }}</h3>
+                  <h3 class="font-semibold">Nadira Program</h3>
                 </td>
                 <td class="py-4 px-2 w-2/8">
-                  <h3 class="" v-html="Announcement.description"></h3>
+                  Be Hafiz by joining our program
                 </td>
-  
+                <td class="py-4 px-2 w-2/8">
+                  Full Time
+                </td>
                 <td class="py-4 px-2 flex justify-center">
                   <div
                     class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2"
