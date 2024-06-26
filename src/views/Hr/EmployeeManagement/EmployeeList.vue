@@ -1,11 +1,9 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="px-4 bg-white py-5 w-3/4">
     <div class="flex justify-between items-center pt-4">
-      <p class="text-2xl text-yellow-600 font-bold pb-2">Employee List</p>
+      <p class="text-2xl font-bold pb-2">Employee List</p>
     </div>
     <hr />
     <div
@@ -13,43 +11,36 @@
     >
       <table class="table-auto w-full">
         <thead>
-          <tr class="bg-white text-xl">
-            <th class="p-2 text-left">Employee ID</th>
-            <th class="p-2 text-left">Employee Name(s)</th>
-            <th class="text-left">Address</th>
-            <th class="p-2 text-left">Contact</th>
-            <!-- <th class="p-2 text-left">Ending Date</th> -->
-            <!-- <th class="p-2 text-left">Time</th> -->
-            <th class="p-2 text-left">Email</th>
-            <th class="p-2 text-left">Details</th>
+          <tr class="bg-white text-xm">
+            <th class="p-4 text-left">Employee ID</th>
+            <th class="p-4 text-left">Employee Name(s)</th>
+            <th class="p-4 text-left">Address</th>
+            <th class="p-4 text-left">Contact</th>
+            <th class="p-4 text-left">Email</th>
+            <th class="p-4 text-left">Details</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="mt-4">
           <tr class="">
-            <td class="py-4 p-2 gap-2">
+            <td class="px-4 py-2">
               <h3 class="font-bold">01</h3>
             </td>
-            <td class="py-4 p-2 flex items-center gap-2">
-              <img
-                src="/src/assets/image/home/l4.jpg"
-                alt=""
-                class="w-14 h-14 rounded-full ring-4 ring-gray-500"
-              />
+            <td class="px-4 py-2">
               <h3 class="px-3 font-bold">Dr. Imran</h3>
             </td>
-            <td>
+            <td class="px-4 py-2">
               <p class="text-lg">
                 Street: 3716 Andrews Hwy <br />
                 City/Town: Odessa <br />
                 State/Province/Region:Texas
               </p>
             </td>
-            <td class="py-4 p-2">+8801784366219</td>
+            <td class="px-4 py-2">+8801784366219</td>
 
-            <td class="py-4 p-2">
+            <td class="px-4 py-2">
               <p class="text-sm font-bold text-blue-600">exampe@gmail.com</p>
             </td>
-            <td class="py-4 p-2">
+            <td class="px-4 py-2">
               <span class="text-gray-500 px-2 cursor-pointer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

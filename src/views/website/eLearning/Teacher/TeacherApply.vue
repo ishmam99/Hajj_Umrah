@@ -1,9 +1,9 @@
 <script setup>
-import DefaultLayout from '@/layouts/DefaultLayout.vue';
+import DefaultLayout from '@/layouts/DefaultLayout.vue'
 </script>
 <template>
   <DefaultLayout>
-    <div class="bg-grey-lighter flex pt-[80px] pb-10">
+    <div class="bg-grey-lighter flex pt-[80px] pb-5">
       <img src="/src/assets/images/auth-banner.png" alt="" class="w-2/3" />
       <div class="flex flex-col items-center justify-center px-2 w-1/3">
         <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">

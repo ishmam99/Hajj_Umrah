@@ -59,11 +59,11 @@ onMounted(() => {
     >
       <table class="table-auto w-full">
         <thead>
-          <tr class="bg-white text-sm">
+          <tr class="bg-white text-xm">
             <th class="p-4 text-left">Job ID</th>
             <th class="p-4 text-left">Job Title</th>
-            <th class="p-4 text-left">Job Posting from</th>
-            <th class="p-4 text-left">Job posting to</th>
+            <th class="p-4 text-center">Job Posting from</th>
+            <th class="p-4 text-center">Job posting to</th>
             <th class="p-4 text-left">Status</th>
             <th class="p-4 text-left">Action</th>
           </tr>
