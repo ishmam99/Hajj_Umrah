@@ -37,7 +37,7 @@
               <h2 class="text-2xl font-bold">{{ program.name }}</h2>
               <p class="text-gray-600 text-lg">{{ program.details }}</p>
               <p class="text-gray-600 pt-1 font-semibold">Start Date: <span class="text-emerald-500">{{ program.startDate }}</span></p>
-              <p class="text-gray-600 pt-1 font-semibold">End Date: <span class="text-emerald-500">{{ program.endDate }}</span></p>
+              <!-- <p class="text-gray-600 pt-1 font-semibold">End Date: <span class="text-emerald-500">{{ program.endDate }}</span></p> -->
             </div>
           </div>
           <button @click="details(program)" class="text-center flex items-center justify-center bg-teal-600 hover:bg-cyan-600 font-semibold text-white py-1 w-1/3 mx-auto rounded-lg px-2 my-2">Details</button>
@@ -46,7 +46,10 @@
       <div v-else>
         <div class="flex justify-between items-center pt-4 pb-2">
           <p class="text-2xl text-green-800 font-bold">Program Details</p>
-          <button @click="showDetails = false" class="bg-green-600 text-white rounded-md px-3 py-1.5">Back</button>
+          <button @click="showDetails = false" class="bg-green-600 hover:bg-cyan-600 text-white rounded-md px-3 py-1.5 flex items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20ZM12 11H16V13H12V16L8 12L12 8V11Z"></path></svg>
+            <span>Back</span>
+          </button>
         </div>
         <div class="p-5 rounded-md shadow-lg">
           <div>
@@ -57,7 +60,7 @@
             <p class="text-2xl my-3">Program Information</p>
             <p class="text-xl font-bold">Details: {{ programDetails.details }}</p>
             <p class="text-xl font-bold">Start Date: {{ programDetails.startDate }}</p>
-            <p class="text-xl font-bold">End Date: {{ programDetails.endDate }}</p>
+            <!-- <p class="text-xl font-bold">End Date: {{ programDetails.endDate }}</p> -->
           </div>
           <div class="mt-6">
             <button class="text-center flex items-center justify-center bg-teal-600 hover:bg-cyan-600 font-semibold text-white py-2 w-1/3 mx-auto rounded-lg px-2 " >Register</button>
