@@ -1,7 +1,9 @@
-<script setup></script>
+
 <template>
-  <div class="bg-grey-lighter min-h-screen flex flex-col">
-    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+<DefaultLayout>
+  <div class="bg-grey-lighter flex pt-[80px]">
+    <img src="/src/assets/images/auth-banner.png" alt="" class="w-2/3">
+    <div class="flex flex-col items-center justify-center px-2 w-1/3">
       <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
         <h1 class="mb-6 font-bold text-2xl text-green-700">Signup and start learning</h1>
         <div class="mb-3">
@@ -107,4 +109,9 @@
       </div>
     </div>
   </div>
+</DefaultLayout>
+  
 </template>
+<script setup>
+import DefaultLayout from '@/layouts/DefaultLayout.vue';
+</script>

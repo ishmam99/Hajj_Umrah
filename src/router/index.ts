@@ -1203,8 +1203,8 @@ const router = createRouter({
     {
       path: '/learning-center',
       name: 'LearningCenter',
-      component: () => import('../views/learning-center/modules/website/LearningCenter.vue'),
-      meta: { layout: LcFrntPageLayout }
+      component: () => import('../views/website/eLearning/seminar/OpenSeminar.vue'),
+      // meta: { layout: LcFrntPageLayout }
     },
     {
       path: '/learning-center/programs',
@@ -1215,8 +1215,8 @@ const router = createRouter({
     {
       path: '/learning-center/all-courses',
       name: 'LearningCenterCourses',
-      component: () => import('../views/learning-center/modules/website/AllCourses.vue'),
-      meta: { layout: LcFrntPageLayout }
+      component: () => import('../views/website/eLearning/courses/OpenCourse.vue'),
+      // meta: { layout: LcFrntPageLayout }
     },
     {
       path: '/learning_management_login',
@@ -1258,13 +1258,11 @@ const router = createRouter({
       path: '/student/registration',
       name: 'RegistrationPageForStudent',
       component: () => import('../views/website/eLearning/Student/StudentApply.vue'),
-      meta: { layout: AuthLayout, notAuthenticated: true }
     },
     {
       path: '/teacher/registration',
       name: 'RegistrationPageForTeacher',
       component: () => import('../views/website/eLearning/Teacher/TeacherApply.vue'),
-      meta: { layout: AuthLayout, notAuthenticated: true }
     },
 
     {
