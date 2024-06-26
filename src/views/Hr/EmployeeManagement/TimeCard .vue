@@ -1,7 +1,7 @@
 <template>
   <div class="px-4 bg-white py-5 w-3/4">
     <div class="flex justify-between items-center pt-4">
-      <p class="text-2xl text-yellow-600 font-bold pb-2">Time Card</p>
+      <p class="text-2xl font-bold pb-2">Time Card</p>
     </div>
     <hr />
     <div
@@ -9,7 +9,7 @@
     >
       <table class="table-auto w-full">
         <thead>
-          <tr class="bg-white text-xl">
+          <tr class="bg-white text-xm">
             <th class="p-2 text-left">Number</th>
             <th class="p-2 text-left">Employee ID</th>
             <th class="p-2 text-left">Employee Name</th>
