@@ -825,7 +825,7 @@ const router = createRouter({
         {
           path: '/lms_program_management_program_list',
           name: 'LMS_Program_Management_Program_List',
-          component: () => import('@/views/LearningManagementSystem/TeacherManagement/RegisteredTeacher.vue'),
+          component: () => import('@/views/LearningManagementSystem/ProgramManagement/ProgramList.vue'),
         },
         {
           path: '/lms_program_management_time_slot',
@@ -846,6 +846,11 @@ const router = createRouter({
           path: '/lms_course_management_course_teacher',
           name: 'LMS_Course_Management_Course_Teacher',
           component: () => import('../views/LearningManagementSystem/CourseManagement/CourseTeacher.vue'),
+        },
+        {
+          path: '/lms_teacher_management_registered_teachers',
+          name: 'LMS_Teacher_Management_Registered_Teachers',
+          component: () => import('@/views/LearningManagementSystem/TeacherManagement/RegisteredTeacher.vue'),
         },
       ],
     },

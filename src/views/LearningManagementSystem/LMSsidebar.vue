@@ -89,7 +89,7 @@
           Teacher Management
         </button>
         <div v-show="currentAccordions === 'teacherManagement'" class="submenu mx-8">
-          <router-link to="" class="flex items-center gap-2">- Registered Teachers</router-link>
+          <router-link to="/lms_teacher_management_registered_teachers" class="flex items-center gap-2">- Registered Teachers</router-link>
         </div>
       </div>
 
