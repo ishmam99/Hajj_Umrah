@@ -825,7 +825,7 @@ const router = createRouter({
         {
           path: '/lms_program_management_program_list',
           name: 'LMS_Program_Management_Program_List',
-          component: () => import('@/views/LearningManagementSystem/ProgramManagement/ProgramList.vue'),
+          component: () => import('@/views/LearningManagementSystem/TeacherManagement/RegisteredTeacher.vue'),
         },
         {
           path: '/lms_program_management_time_slot',
