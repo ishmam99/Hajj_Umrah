@@ -828,6 +828,11 @@ const router = createRouter({
           component: () => import('@/views/LearningManagementSystem/ProgramManagement/ProgramList.vue'),
         },
         {
+          path: '/lms_program_management_time_slot',
+          name: 'LMS_Program_Management_time_slot',
+          component: () => import('@/views/LearningManagementSystem/ProgramManagement/TimeSlot.vue'),
+        },
+        {
           path: '/lms_course_management_create_program',
           name: 'LMS_Course_Management_Create_Program',
           component: () => import('../views/LearningManagementSystem/CourseManagement/CreateCourse.vue'),

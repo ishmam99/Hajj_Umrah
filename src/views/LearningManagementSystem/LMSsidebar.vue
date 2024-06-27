@@ -21,6 +21,7 @@
         <div v-show="currentAccordions === 'programCreate'" class="submenu mx-8">
           <router-link to="/lms_program_management_create_program" class="">- Create Program</router-link>
           <router-link to="/lms_program_management_program_list" class="flex items-center gap-2">- Program List</router-link>
+          <router-link to="/lms_program_management_time_slot" class="flex items-center gap-2">- Time Slot</router-link>
         </div>
       </div>
 
@@ -52,7 +53,6 @@
         </button>
         <div v-show="currentAccordions === 'teacherManagement'" class="submenu mx-8">
           <router-link to="" class="flex items-center gap-2">- Registered Teachers</router-link>
-          <router-link to="" class="flex items-center gap-2">- Teacher Application List</router-link>
         </div>
 
       </div>
