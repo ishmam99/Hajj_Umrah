@@ -1,6 +1,6 @@
 <template>
   <div class="px-4 bg-white py-5 w-3/4">
-    <div v-if="isEdit == false">
+    <div v-if="isDetailView == false && isEdit == false">
       <div class="flex justify-between items-center pt-4">
         <p class="text-2xl text-cyan-700 font-bold pb-2">Registered Teachers</p>
       </div>
@@ -14,24 +14,22 @@
             <tr class="bg-white text-lg">
               <th class="p-2 text-start w-1/8">ID</th>
               <th class="p-2 text-start w-1/8">Teacher Name</th>
-              <th class="p-2 text-start w-2/8">Description</th>
-              <th class="p-2 text-start w-2/8">Program Type</th>
+              <th class="p-2 text-start w-2/8">Subject</th>
               <th class="p-2 text-center w-1/8">Action</th>
             </tr>
           </thead>
           <tbody>
             <tr
               class="tableRowColor"
+              v-for="(item, index) in teachers" :key="item.id"
             >
-              <td class="py-4 px-2 w-1/8">01</td>
-              <td class="py-4 px-2 w-1/8">
-                <h3 class="font-semibold">Nadira Program</h3>
+              <td class="py-4 px-2 w-1/8">{{index+1}}</td>
+              <td class="py-4 px-2 w-1/8 flex items-center gap-2">
+                <img :src="item.image" class="h-12 w-12 rounded-full" alt="">
+                <h3 class="font-semibold text-xl">{{item.name}}</h3>
               </td>
               <td class="py-4 px-2 w-2/8">
-                Be Hafiz by joining our program
-              </td>
-              <td class="py-4 px-2 w-2/8">
-                Full Time
+                {{ item.subject }}
               </td>
               <td class="py-4 px-2 flex justify-center">
                 <div
@@ -40,12 +38,12 @@
                   <DropdownMenu class="w-full">
                     <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
                     <DropdownMenuContent class="w-40">
-                      <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
+                      <DropdownMenuItem class="text-blue-600" @click="viewDetails(item)">Details</DropdownMenuItem>
 
-                      <DropdownMenuItem class="text-cyan-800" @click="edit(event)"
+                      <DropdownMenuItem class="text-cyan-800" @click="edit(item)"
                         >Edit</DropdownMenuItem
                       >
-                      <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
+                      <DropdownMenuItem class="text-red-600" @click="deleteTeacher(item.id)">Delete</DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
                   <svg
@@ -65,8 +63,8 @@
       </div>
     </div>
 
-    <div v-else class="px-5 bg-slate-50 py-5 w-full">
-      <p class="text-2xl font-bold py-3 border-b">Update Announcement</p>
+    <div v-else-if="isEdit" class="px-5 bg-slate-50 py-5 w-full">
+      <p class="text-2xl font-bold py-3 border-b">Update Teacher</p>
       <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
         <form  @submit.prevent="editSubmit">
           <div class="py-5 space-y-7 mt-5">
@@ -79,7 +77,7 @@
                       <input
                         type="text"
                         class="py-2 px-6 rounded-2xl w-full border-2"
-                        v-model="announcemnetStore.title"
+                        v-model="editTeacher.name"
                       />
                     </div>
                   </div>
@@ -88,7 +86,7 @@
               <div class="w-1/2 flex flex-col gap-5">
                 <div class="">
                   <label for="" class="text-gray-600"
-                    >Event Thumbnail <span class="text-red-500">*</span></label
+                    >Image <span class="text-red-500">*</span></label
                   >
                   <div
                     class="flex justify-center items-center h-[45px] rounded-2xl bg-white px-4 py-2 text-sm text-gray-500 text-center relative border-2 mt-2"
@@ -104,17 +102,16 @@
               </div>
             </div>
             <div class="relative">
-              <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600">
-                Announcement Description <span class="text-red-500">*</span>
+              <p class="p-3 absolute top-[-25px] left-2 bg-white text-gray-600">Description <span class="text-red-500">*</span>
               </p>
               <textarea
                 name=""
                 id=""
                 cols=""
                 rows="4"
-                placeholder="Ex:23"
+                placeholder="Description"
                 class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
-                v-model="announcemnetStore.description"
+                v-model="editTeacher.details"
               ></textarea>
             </div>
 
@@ -128,10 +125,10 @@
 
             <button
               @click="isEdit = false"
-              type="submit"
+              type="button"
               class="w-full h-[45px] rounded-2xl bg-red-800 text-white font-bold mx-auto flex items-center text-center justify-center"
             >
-              Cancle
+              Cancel
             </button>
             </div>
             
@@ -140,97 +137,93 @@
       </div>
     </div>
 
+    <div v-else-if="isDetailView" class="px-5 bg-slate-50 py-5 w-full">
+      <div class="flex justify-between items-center pt-4 pb-2">
+        <p class="text-2xl text-green-800 font-bold">Teacher Details</p>
+        <button @click="isDetailView = false" class="bg-green-600 hover:bg-cyan-600 text-white rounded-md px-3 py-1.5 flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20ZM12 11H16V13H12V16L8 12L12 8V11Z"></path></svg>
+          <span>Back</span>
+        </button>
+      </div>
+      <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
+        <div class="py-5 space-y-7 mt-5">
+          <div class="flex gap-5">
+            <div class="w-1/3">
+              <img :src="selectedTeacher.image" class="w-full h-auto rounded-xl" alt="Teacher Image">
+            </div>
+            <div class="w-2/3 flex flex-col justify-between">
+              <div>
+                <h2 class="text-xl font-bold text-gray-800">{{ selectedTeacher.name }}</h2>
+                <p class="text-gray-600 mt-2">{{ selectedTeacher.subject }}</p>
+              </div>
+              <div class="mt-4">
+                <h3 class="text-lg font-semibold text-gray-700">Description</h3>
+                <p class="text-gray-600 mt-1">{{ selectedTeacher.details }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
-<script setup>
-import { ref, onMounted } from 'vue'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger
-} from '/components/ui/dialog'
 
+<script setup>
+import { ref } from 'vue';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '/components/ui/dropdown-menu'
+} from '/components/ui/dropdown-menu';
 
-import { useOperationStore } from '@/stores/operationDashboard.ts'
-import { useAuthStore } from '@/stores/AuthStore'
+const isEdit = ref(false);
+const isDetailView = ref(false);
+const editTeacher = ref({});
+const selectedTeacher = ref({});
 
-const store = useOperationStore()
-const authStore = useAuthStore()
+const viewDetails = (teacher) => {
+  isDetailView.value = true;
+  selectedTeacher.value = teacher;
+};
 
-const getProjectList = async () => {
-  try {
-    const { data } = await api().get('announcement-list')
-    store.announcementList = data.data
-    // console.log(store.serviceList[0])
-  } catch (error) {
-    console.log(error)
-  }
-}
-const isEdit = ref(false)
-const announceId = ref()
+const edit = (teacher) => {
+  isEdit.value = true;
+  editTeacher.value = { ...teacher };
+};
 
-const edit = (event) => {
-  isEdit.value = true
-  announceId.value = event.id
-  announcemnetStore.value.title = event.title
-  announcemnetStore.value.description = event.description
-  console.log(event, 'event chk')
-}
+const editSubmit = async () => {
+  isEdit.value = false;
+  // Implement edit logic here
+};
 
-const selectedFile = ref(null)
+const deleteTeacher = (id) => {
+  // Implement delete logic here
+};
 
-const announcemnetStore = ref({
-  name: '',
-  event_type: '',
-  occurrence_type: '',
-  human_resource: '',
-  material_resource: '',
-  description: '',
-  address: '',
-  city: '',
-  state: '',
-  start_date: '',
-  state_time: '',
-  end_date: '',
-  end_time: '',
-  image: ''
-})
-
-function onFileChange(event) {
-  selectedFile.value = event.target.files[0]
-  announcemnetStore.value.image = event.target.files[0]
-  console.log('Selected File:', selectedFile.value)
-}
-
-const editSubmit = async (eventId) => {
-  // try {
-  //   const data = await api().post('event-store', announcemnetStore.value,)
-  //   console.log(data)
-  //   toast({
-  //     title: 'Fund Raise Event Created '
-  //   })
-  // } catch (error) {
-  //   console.log(error)
-  // }
-
-  isEdit.value = false
-}
-
-onMounted(async () => {
-  getProjectList()
-})
+const teachers = ref([
+  {
+    id: 1,
+    image: '/src/assets/seminar/1.jpg',
+    name: 'Yasir Qadhi',
+    subject: 'Science',
+    details: 'A comprehensive guide to the teachings and interpretation of the Quran.'
+  },
+  {
+    id: 2,
+    image: '/src/assets/seminar/2.jpg',
+    name: 'Al Maneese',
+    subject: 'Physics',
+    details: 'An in-depth look into the life and legacy of Prophet Muhammad (PBUH).'
+  },
+  {
+    id: 3,
+    image: '/src/assets/seminar/3.jpg',
+    name: 'Harun Khan',
+    subject: 'Islamic Studies',
+    details: 'Understanding the principles of Islamic law and its application in daily life.'
+  },
+]);
 </script>
 
 <style>
