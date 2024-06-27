@@ -36,7 +36,7 @@
         </button>
         <div v-show="currentAccordions === 'courseManagement'" class="submenu mx-8">
           <router-link to="/lms_course_management_create_program" class="flex items-center gap-2">- Create Course</router-link>
-          <router-link to="/lms_course_management_create_program" class="flex items-center gap-2">- Create List</router-link>
+          <router-link to="/lms_course_management_create_program" class="flex items-center gap-2">- Course List</router-link>
           <!-- <router-link to="" class="flex items-center gap-2">- Student Application List</router-link> -->
           <!-- <router-link to="" class="flex items-center gap-2">- Registered Students</router-link> -->
         </div>
@@ -68,8 +68,11 @@
         </button>
         <div v-show="currentAccordions === 'studentManagement'" class="submenu mx-8">
           <!-- <router-link to="" class="flex items-center gap-2">- Create Event</router-link> -->
+          <router-link to="" class="flex items-center gap-2">- Attendance</router-link>
+          <router-link to="" class="flex items-center gap-2">- Attendance List</router-link>
           <router-link to="" class="flex items-center gap-2">- Student Application List</router-link>
-          <router-link to="" class="flex items-center gap-2">- Registered Students</router-link>
+          <router-link to="" class="flex items-center gap-2">- Registered Student List</router-link>
+          <router-link to="" class="flex items-center gap-2">- Course List</router-link>
         </div>
       </div>
 
