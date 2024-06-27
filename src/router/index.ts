@@ -746,7 +746,7 @@ const router = createRouter({
           name: 'HR_Post_List',
           component: () => import('../views/Hr/JobManagement/PostJob.vue'),
         },
-        //Hr higiring management
+        //Hr hiring management
         {
           path: '/HR_Dashboard/HR_Higiring_Application',
           name: 'HR_Higiring_Application',
@@ -805,17 +805,37 @@ const router = createRouter({
     {
       path: '/LMS_Login',
       name: 'LMS Login',
-      component: () => import('../views/Auth/LogIn.vue')
+      component: () => import('@/views/Auth/LogIn.vue')
     },
     {
       path: '/lms_Dashboard',
       name: 'LMS_Dashboard',
-      component: () => import('../views/LearningManagementSystem/LMSDashboard.vue'),
+      component: () => import('@/views/LearningManagementSystem/LMSDashboard.vue'),
       children: [
         {
           path: '/lms_Management_profile',
           name: 'LMS_profile',
-          component: () => import('../views/LearningManagementSystem/Profile/LMSprofile.vue'),
+          component: () => import('@/views/LearningManagementSystem/Profile/LMSprofile.vue'),
+        },
+        {
+          path: '/lms_program_management_create_program',
+          name: 'LMS_Program_Management_Create_Program',
+          component: () => import('@/views/LearningManagementSystem/ProgramManagement/CreateProgram.vue'),
+        },
+        {
+          path: '/lms_program_management_program_list',
+          name: 'LMS_Program_Management_Program_List',
+          component: () => import('@/views/LearningManagementSystem/ProgramManagement/ProgramList.vue'),
+        },
+        {
+          path: '/lms_program_management_time_slot',
+          name: 'LMS_Program_Management_time_slot',
+          component: () => import('@/views/LearningManagementSystem/ProgramManagement/TimeSlot.vue'),
+        },
+        {
+          path: '/lms_course_management_create_program',
+          name: 'LMS_Course_Management_Create_Program',
+          component: () => import('../views/LearningManagementSystem/CourseManagement/CreateCourse.vue'),
         },
       ],
     },
@@ -1197,6 +1217,16 @@ const router = createRouter({
           name: 'Scholar_Appointment',
           component: () => import('../views/Member/MemberAppointmentScholar.vue')
         },
+        {
+          path: '/Selected Course',
+          name: 'Selected Course',
+          component: () => import('../views/Member/Student/SelectedCourse.vue')
+        },
+        {
+          path: '/Assigned teacher',
+          name: 'Assigned teacher',
+          component: () => import('../views/Member/Student/AssignedTeacher.vue')
+        },
       ],
     },  
 
@@ -1209,8 +1239,8 @@ const router = createRouter({
     {
       path: '/learning-center/programs',
       name: 'LearningCenterPrograms',
-      component: () => import('../views/learning-center/modules/website/Programs.vue'),
-      meta: { layout: LcFrntPageLayout }
+      component: () => import('../views/website/eLearning/programs/Programs.vue'),
+      // meta: { layout: LcFrntPageLayout }
     },
     {
       path: '/learning-center/all-courses',
