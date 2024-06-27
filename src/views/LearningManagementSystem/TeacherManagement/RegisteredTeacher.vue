@@ -145,6 +145,7 @@
           <span>Back</span>
         </button>
       </div>
+      <hr>
       <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
         <div class="py-5 space-y-7 mt-5">
           <div class="flex gap-5">
