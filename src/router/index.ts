@@ -837,6 +837,16 @@ const router = createRouter({
           name: 'LMS_Course_Management_Create_Program',
           component: () => import('../views/LearningManagementSystem/CourseManagement/CreateCourse.vue'),
         },
+        {
+          path: '/lms_course_management_program_list',
+          name: 'LMS_Course_Management_Program_List',
+          component: () => import('../views/LearningManagementSystem/CourseManagement/CourseList.vue'),
+        },
+        {
+          path: '/lms_course_management_course_teacher',
+          name: 'LMS_Course_Management_Course_Teacher',
+          component: () => import('../views/LearningManagementSystem/CourseManagement/CourseTeacher.vue'),
+        },
       ],
     },
     
