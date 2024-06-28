@@ -16,7 +16,7 @@ const filters = ref({
   global: { value: null, matchMode: FilterMatchMode.CONTAINS }
 })
 
-let userId = ref(JSON.parse(localStorage.getItem('user')).id)
+// let userId = ref(JSON.parse(localStorage.getItem('user')).id)
 
 async function getData() {
   const resp = await axios.get(
@@ -26,14 +26,7 @@ async function getData() {
   console.log(products.value)
 }
 
-onMounted(() => {
-  getData()
-  commonStore.loading = false
-})
 
-onUnmounted(() => {
-  commonStore.loading = true
-})
 </script>
 
 <template>

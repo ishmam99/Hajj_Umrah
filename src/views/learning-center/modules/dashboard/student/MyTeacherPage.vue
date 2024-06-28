@@ -12,11 +12,11 @@ const commonStore = useCommonStore()
 const dt = ref()
 const products = ref()
 const selectedProducts = ref()
-const filters = ref({
-  global: { value: null, matchMode: FilterMatchMode.CONTAINS }
-})
+// const filters = ref({
+//   global: { value: null, matchMode: FilterMatchMode.CONTAINS }
+// })
 
-let userId = ref(JSON.parse(localStorage.getItem('user')).id)
+// let userId = ref(JSON.parse(localStorage.getItem('user')).id)
 
 async function getData() {
   const resp = await axios.get(
@@ -26,20 +26,12 @@ async function getData() {
   console.log(products.value)
 }
 
-onMounted(() => {
-  getData()
-  commonStore.loading = false
-})
-
-onUnmounted(() => {
-  commonStore.loading = true
-})
 </script>
 
 <template>
-  <div class="dashboard-content">
-    <img src="@/assets/images/dashboard/my-teacher.png" alt="" />
-    <div class="dashboard-wrapper">
+  <div class="w-full">
+    <img src="@/assets/images/dashboard/my-teacher.png" alt="" class="w-full"/>
+    <!-- <div class="">
       <DataTable
         ref="dt"
         :value="products"
@@ -83,7 +75,7 @@ onUnmounted(() => {
           style="min-width: 10rem"
         ></Column>
       </DataTable>
-    </div>
+    </div> -->
   </div>
 </template>
 

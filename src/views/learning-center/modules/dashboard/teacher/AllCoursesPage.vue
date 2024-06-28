@@ -63,11 +63,4 @@ async function fetchdata() {
   commonStore.loading = false
 }
 
-onMounted(() => {
-  fetchdata()
-})
-
-onUnmounted(() => {
-  commonStore.loading = true
-})
 </script>

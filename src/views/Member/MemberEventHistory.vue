@@ -1,5 +1,5 @@
 <template>
-  <div class="px-[5%] bg-white py-5 w-3/4">
+  <div class="px-[5%] bg-white py-5">
     <div class="flex justify-between items-center pt-4">
       <p class="text-2xl text-yellow-600 font-semibold pb-2">Registered Events</p>
     </div>

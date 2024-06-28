@@ -1213,15 +1213,67 @@ const router = createRouter({
           component: () => import('../views/Member/MemberAppointmentScholar.vue')
         },
         {
-          path: '/Selected Course',
-          name: 'Selected Course',
-          component: () => import('../views/Member/Student/SelectedCourse.vue')
+          path: '/my-registration',
+          name: 'StudentRegistrationPage',
+          component: () =>
+            import('/src/views/learning-center/modules/dashboard/student/StudentRegistrationPage.vue'),
         },
         {
-          path: '/Assigned teacher',
-          name: 'Assigned teacher',
-          component: () => import('../views/Member/Student/AssignedTeacher.vue')
+          path: '/dashboard/my-schedule',
+          name: 'MySchedulePage',
+          component: () => import('/src/views/learning-center/modules/dashboard/MySchedulePage.vue'),
         },
+        {
+          path: '/dashboard/my-courses',
+          name: 'CoursePage',
+          component: () =>
+            import('/src/views/learning-center/modules/dashboard/student/CoursePage.vue'),
+        },
+        {
+          path: '/dashboard/my-teachers',
+          name: 'MyTeacherPage',
+          component: () =>
+            import('/src/views/learning-center/modules/dashboard/student/MyTeacherPage.vue'),
+        },
+        {
+          path: '/dashboard/my-purchases',
+          name: 'PurchasePage',
+          component: () => import('/src/views/learning-center/modules/dashboard/PurchasePage.vue'),
+        },
+
+        // teacher
+
+        {
+          path: '/verify-teacher',
+          name: 'RegistrationPageTeacher',
+          component: () =>
+            import('/src/views/learning-center/modules/dashboard/TeacherVerificationPage.vue'),
+        },
+        {
+          path: '/dashboard/teacher/join-class',
+          name: 'JoinClassTeacher',
+          component: () =>
+            import('/src/views/learning-center/modules/dashboard/teacher/JoinClassTeacher.vue'),
+        },
+        {
+          path: '/dashboard/ongoing-courses',
+          name: 'OngoingCoursePage',
+          component: () =>
+            import('/src/views/learning-center/modules/dashboard/teacher/OngoingCoursesPage.vue'),
+        },
+        {
+          path: '/dashboard/all-courses',
+          name: 'AllCoursePage',
+          component: () =>
+            import('/src/views/learning-center/modules/dashboard/teacher/AllCoursesPage.vue'),
+        },
+        {
+          path: '/dashboard/my-students',
+          name: 'MyStudentPage',
+          component: () =>
+            import('/src/views/learning-center/modules/dashboard/teacher/MyStudentPage.vue'),
+        },
+        
       ],
     },  
 
@@ -1313,13 +1365,7 @@ const router = createRouter({
       meta: { layout: AuthLayout, notAuthenticated: true }
     },
 
-    {
-      path: '/my-registration',
-      name: 'StudentRegistrationPage',
-      component: () =>
-        import('/src/views/learning-center/modules/dashboard/student/StudentRegistrationPage.vue'),
-      meta: { layout: DashboardLayout, requiresAuth: true }
-    },
+    
     {
       path: '/dashboard/my-admin',
       name: 'MyAdminPage',
@@ -1332,26 +1378,9 @@ const router = createRouter({
       component: () => import('/src/views/learning-center/modules/dashboard/MyAdvisor.vue'),
       meta: { layout: DashboardLayout, requiresAuth: true }
     },
-    {
-      path: '/dashboard/my-students',
-      name: 'MyStudentPage',
-      component: () =>
-        import('/src/views/learning-center/modules/dashboard/teacher/MyStudentPage.vue'),
-      meta: { layout: DashboardLayout, requiresAuth: true }
-    },
-    {
-      path: '/dashboard/my-teachers',
-      name: 'MyTeacherPage',
-      component: () =>
-        import('/src/views/learning-center/modules/dashboard/student/MyTeacherPage.vue'),
-      meta: { layout: DashboardLayout, requiresAuth: true }
-    },
-    {
-      path: '/dashboard/my-schedule',
-      name: 'MySchedulePage',
-      component: () => import('/src/views/learning-center/modules/dashboard/MySchedulePage.vue'),
-      meta: { layout: DashboardLayout, requiresAuth: true }
-    },
+    
+    
+    
     {
       path: '/dashboard/help-center',
       name: 'HelpCenter',
@@ -1359,13 +1388,7 @@ const router = createRouter({
       meta: { layout: DashboardLayout, requiresAuth: true }
     },
 
-    {
-      path: '/verify-teacher',
-      name: 'RegistrationPageTeacher',
-      component: () =>
-        import('/src/views/learning-center/modules/dashboard/TeacherVerificationPage.vue'),
-      meta: { layout: DashboardLayout, requiresAuth: true }
-    },
+   
     {
       path: '/learning-center/areas/:id',
       name: 'AreaPage',
@@ -1404,13 +1427,7 @@ const router = createRouter({
         import('/src/views/learning-center/modules/dashboard/teacher/JoinClassPage.vue'),
       meta: { layout: DashboardLayout, requiresAuth: true }
     },
-    {
-      path: '/dashboard/teacher/join-class',
-      name: 'JoinClassTeacher',
-      component: () =>
-        import('/src/views/learning-center/modules/dashboard/teacher/JoinClassTeacher.vue'),
-      meta: { layout: DashboardLayout, requiresAuth: true }
-    },
+    
     {
       path: '/dashboard/teacher-verify',
       name: 'JoinClassPage',
@@ -1424,28 +1441,10 @@ const router = createRouter({
       component: () => import('/src/views/learning-center/modules/dashboard/ClassListPage.vue'),
       meta: { layout: DashboardLayout, requiresAuth: true }
     },
-    {
-      path: '/dashboard/my-courses',
-      name: 'CoursePage',
-      component: () =>
-        import('/src/views/learning-center/modules/dashboard/student/CoursePage.vue'),
-      meta: { layout: DashboardLayout, requiresAuth: true }
-    },
+    
 
-    {
-      path: '/dashboard/ongoing-courses',
-      name: 'OngoingCoursePage',
-      component: () =>
-        import('/src/views/learning-center/modules/dashboard/teacher/OngoingCoursesPage.vue'),
-      meta: { layout: DashboardLayout, requiresAuth: true }
-    },
-    {
-      path: '/dashboard/all-courses',
-      name: 'AllCoursePage',
-      component: () =>
-        import('/src/views/learning-center/modules/dashboard/teacher/AllCoursesPage.vue'),
-      meta: { layout: DashboardLayout, requiresAuth: true }
-    },
+    
+    
     {
       path: '/dashboard/my-courses/teacher-schedule/:courseId/:teacherId',
       name: 'TeacherSchedulePage',
@@ -1662,14 +1661,7 @@ const router = createRouter({
       component: () => import('/src/views/learning-center/modules/dashboard/CourseModulesPage.vue'),
       meta: { layout: DashboardLayout, requiresAuth: true }
     },
-    {
-      path: '/dashboard/my-purchases',
-      name: 'PurchasePage',
-      component: () => import('/src/views/learning-center/modules/dashboard/PurchasePage.vue'),
-      meta: { layout: DashboardLayout, requiresAuth: true }
-    },
-
-
+    
     {
       path: '/learning-center/course/:id/enroll',
       name: 'CourseEnrollment',

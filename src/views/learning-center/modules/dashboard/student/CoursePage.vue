@@ -45,10 +45,10 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="dashboard-content">
-    <img src="@/assets/images/dashboard/my-courses.png" alt="" />
-    <div class="dashboard-wrapper">
-      <div class="dashboard-title">
+  <div class="w-full">
+    <img src="@/assets/images/dashboard/my-courses.png" alt="" class="w-full" />
+    <div class="p-3">
+      <div class="text-2xl font-semibold">
         <font-awesome-icon :icon="['fas', 'fa-user-graduate']" /> My Courses
       </div>
 
