@@ -26,9 +26,9 @@
             <td class="py-4 p-2 text-center">{{ volunteerApplicant.volunteer_jobs.date }}</td>
             <td class="py-4 p-2 text-center">{{ volunteerApplicant.volunteer_jobs.total_working_time }}</td>
             <td class="py-4 p-2 text-center">
-              <p v-if="volunteerApplicant.status == 1" class="text-green-600 font-semibold">Approved</p>
-              <p v-if="volunteerApplicant.status == 2" class="text-green-600 font-semibold">Rejected</p>
-              <p v-if="volunteerApplicant.status == 0" class="text-yellow-600 font-semibold">Pending</p>
+              <p v-if="volunteerApplicant.volunteer_jobs.status == 2" class="text-green-600 font-semibold">Approved</p>
+              <p v-if="volunteerApplicant.volunteer_jobs.status == 3" class="text-red-600 font-semibold">Rejected</p>
+              <p v-if="volunteerApplicant.volunteer_jobs.status == 1" class="text-yellow-600 font-semibold">Pending</p>
             </td>
           </tr>
         </template>

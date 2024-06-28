@@ -1,11 +1,12 @@
 <template>
-  <div
-    class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover"
-  >
-    <div class="bg-[#3700ff5e] p-5 flex flex-col gap-3 font-semibold text-lg h-full">
+  <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover">
+    <div class="bg-[#0050129f] p-5 flex flex-col gap-3 font-semibold text-lg h-full">
       <p class="text-2xl font-bold text-[#ffffff]">Member Dashboard</p>
       <p class="text-xl font-bold text-white">Welcome Mr. karim</p>
-      <router-link to="/Membar_Profile" @click="dropdown = 0" class="flex items-center gap-2 bg-white p-2 rounded-md"
+      <router-link
+        to="/Membar_Profile"
+        @click="dropdown = 0"
+        class="flex items-center gap-2 bg-white p-2 rounded-md"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -29,7 +30,9 @@
             height="24"
             fill="currentColor"
           >
-          <path d="M3.16113 4.46875C5.58508 2.0448 9.44716 1.9355 12.0008 4.14085C14.5528 1.9355 18.4149 2.0448 20.8388 4.46875C23.2584 6.88836 23.3716 10.741 21.1785 13.2947L13.4142 21.0858C12.6686 21.8313 11.4809 21.8652 10.6952 21.1874L10.5858 21.0858L2.82141 13.2947C0.628282 10.741 0.741522 6.88836 3.16113 4.46875ZM4.57534 5.88296C2.86819 7.59011 2.81942 10.3276 4.42902 12.0937L4.57534 12.2469L12 19.6715L17.3026 14.3675L13.7677 10.8327L12.7071 11.8934C11.5355 13.0649 9.636 13.0649 8.46443 11.8934C7.29286 10.7218 7.29286 8.8223 8.46443 7.65073L10.5656 5.54823C8.85292 4.17713 6.37076 4.23993 4.7286 5.73663L4.57534 5.88296ZM13.0606 8.71139C13.4511 8.32086 14.0843 8.32086 14.4748 8.71139L18.7168 12.9533L19.4246 12.2469C21.1819 10.4896 21.1819 7.64032 19.4246 5.88296C17.7174 4.17581 14.9799 4.12704 13.2139 5.73663L13.0606 5.88296L9.87864 9.06494C9.51601 9.42757 9.49011 9.99942 9.80094 10.3919L9.87864 10.4792C10.2413 10.8418 10.8131 10.8677 11.2056 10.5569L11.2929 10.4792L13.0606 8.71139Z"></path>
+            <path
+              d="M3.16113 4.46875C5.58508 2.0448 9.44716 1.9355 12.0008 4.14085C14.5528 1.9355 18.4149 2.0448 20.8388 4.46875C23.2584 6.88836 23.3716 10.741 21.1785 13.2947L13.4142 21.0858C12.6686 21.8313 11.4809 21.8652 10.6952 21.1874L10.5858 21.0858L2.82141 13.2947C0.628282 10.741 0.741522 6.88836 3.16113 4.46875ZM4.57534 5.88296C2.86819 7.59011 2.81942 10.3276 4.42902 12.0937L4.57534 12.2469L12 19.6715L17.3026 14.3675L13.7677 10.8327L12.7071 11.8934C11.5355 13.0649 9.636 13.0649 8.46443 11.8934C7.29286 10.7218 7.29286 8.8223 8.46443 7.65073L10.5656 5.54823C8.85292 4.17713 6.37076 4.23993 4.7286 5.73663L4.57534 5.88296ZM13.0606 8.71139C13.4511 8.32086 14.0843 8.32086 14.4748 8.71139L18.7168 12.9533L19.4246 12.2469C21.1819 10.4896 21.1819 7.64032 19.4246 5.88296C17.7174 4.17581 14.9799 4.12704 13.2139 5.73663L13.0606 5.88296L9.87864 9.06494C9.51601 9.42757 9.49011 9.99942 9.80094 10.3919L9.87864 10.4792C10.2413 10.8418 10.8131 10.8677 11.2056 10.5569L11.2929 10.4792L13.0606 8.71139Z"
+            ></path>
           </svg>
           Event Panel
           <svg
@@ -51,8 +54,9 @@
               height="24"
               fill="currentColor"
             >
-            <path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path>
-            </svg
+              <path
+                d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"
+              ></path></svg
             >Registered List
           </router-link>
           <router-link to="/Select_Volunteer" class="flex items-center gap-2 cursor-pointer">
@@ -63,7 +67,9 @@
               height="24"
               fill="currentColor"
             >
-            <path d="M8.00008 6V9H5.00008V6H8.00008ZM3.00008 4V11H10.0001V4H3.00008ZM13.0001 4H21.0001V6H13.0001V4ZM13.0001 11H21.0001V13H13.0001V11ZM13.0001 18H21.0001V20H13.0001V18ZM10.7072 16.2071L9.29297 14.7929L6.00008 18.0858L4.20718 16.2929L2.79297 17.7071L6.00008 20.9142L10.7072 16.2071Z"></path></svg
+              <path
+                d="M8.00008 6V9H5.00008V6H8.00008ZM3.00008 4V11H10.0001V4H3.00008ZM13.0001 4H21.0001V6H13.0001V4ZM13.0001 11H21.0001V13H13.0001V11ZM13.0001 18H21.0001V20H13.0001V18ZM10.7072 16.2071L9.29297 14.7929L6.00008 18.0858L4.20718 16.2929L2.79297 17.7071L6.00008 20.9142L10.7072 16.2071Z"
+              ></path></svg
             >Active Event List
           </router-link>
           <router-link to="/Select_Volunteer" class="flex items-center gap-2 cursor-pointer">
@@ -86,15 +92,17 @@
               width="24"
               height="24"
               fill="currentColor"
-            ><path d="M8 4H21V6H8V4ZM3 3.5H6V6.5H3V3.5ZM3 10.5H6V13.5H3V10.5ZM3 17.5H6V20.5H3V17.5ZM8 11H21V13H8V11ZM8 18H21V20H8V18Z"></path>
-            </svg
+            >
+              <path
+                d="M8 4H21V6H8V4ZM3 3.5H6V6.5H3V3.5ZM3 10.5H6V13.5H3V10.5ZM3 17.5H6V20.5H3V17.5ZM8 11H21V13H8V11ZM8 18H21V20H8V18Z"
+              ></path></svg
             >Past Event List
           </router-link>
         </div>
       </div>
 
       <!-- volunteer panel  -->
-      <!-- <div class="bg-white p-2 rounded-md cursor-pointer">
+      <div class="bg-white p-2 rounded-md cursor-pointer">
         <p @click="dropdown = 2" class="pb-1 flex items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +136,7 @@
             <path d="M8 4H21V6H8V4ZM3 3.5H6V6.5H3V3.5ZM3 10.5H6V13.5H3V10.5ZM3 17.5H6V20.5H3V17.5ZM8 11H21V13H8V11ZM8 18H21V20H8V18Z"></path></svg
             >Volunteer Application List
           </router-link>
-          <router-link to="/Select_Volunteer" class="flex items-center gap-2 cursor-pointer">
+          <router-link to="/My_Volunteer" class="flex items-center gap-2 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -141,7 +149,7 @@
               ></path></svg
             >My Volunteer Event
           </router-link>
-          <router-link to="/Select_Volunteer" class="flex items-center gap-2 cursor-pointer">
+          <router-link to="/Volunteer_Complete_List" class="flex items-center gap-2 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -153,7 +161,7 @@
             >Completed Volunteer Event
           </router-link>
         </div>
-      </div> -->
+      </div>
 
       <!-- imam panel -->
       <!-- <div class="bg-white p-2 rounded-md cursor-pointer">
@@ -360,7 +368,7 @@
           </router-link>
         </div>
       </div> -->
-      
+
       <!-- teacher dropdown -->
       <div class="bg-white p-2 rounded-md cursor-pointer">
         <p @click="dropdown = 6" class="pb-1 flex items-center gap-3">
@@ -386,7 +394,7 @@
             <path d="M12 16L6 10H18L12 16Z"></path>
           </svg>
         </p>
-        <div v-if="dropdown ==6" class="flex flex-col gap-3 pl-2 py-2 bg-slate-100 rounded-md">
+        <div v-if="dropdown == 6" class="flex flex-col gap-3 pl-2 py-2 bg-slate-100 rounded-md">
           <router-link to="/verify-teacher" class="flex items-center gap-2 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -431,7 +439,10 @@
             >My class
           </router-link>
           <div class="pr-2">
-            <p @click="subDropDown =! subDropDown " class="flex items-center gap-2 cursor-pointer pb-1">
+            <p
+              @click="subDropDown = !subDropDown"
+              class="flex items-center gap-2 cursor-pointer pb-1"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -505,7 +516,7 @@
       </div>
 
       <!-- student dropdown  -->
-      <div class="bg-white p-2 rounded-md cursor-pointer">
+      <!-- <div class="bg-white p-2 rounded-md cursor-pointer">
         <p @click="dropdown = 7" class="pb-1 flex items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -529,7 +540,7 @@
             <path d="M12 16L6 10H18L12 16Z"></path>
           </svg>
         </p>
-        <div v-if="dropdown ==7" class="flex flex-col gap-3 pl-2 py-2 bg-slate-100 rounded-md">
+        <div v-if="dropdown == 7" class="flex flex-col gap-3 pl-2 py-2 bg-slate-100 rounded-md">
           <router-link to="/my-registration" class="flex items-center gap-2 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -596,9 +607,12 @@
             >My Purchases
           </router-link>
         </div>
-      </div>
+      </div> -->
 
-      <router-link to="/Membar_Donation_History" @click="dropdown = 0" class="flex items-center gap-2 bg-white p-2 rounded-md"
+      <router-link
+        to="/Membar_Donation_History"
+        @click="dropdown = 0"
+        class="flex items-center gap-2 bg-white p-2 rounded-md"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -612,7 +626,10 @@
         >Donation</router-link
       >
 
-      <router-link to="/Membar_Payment_History" @click="dropdown = 0" class="flex items-center gap-2 bg-white p-2 rounded-md"
+      <router-link
+        to="/Membar_Payment_History"
+        @click="dropdown = 0"
+        class="flex items-center gap-2 bg-white p-2 rounded-md"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -626,7 +643,10 @@
         >Payment</router-link
       >
 
-      <router-link to="/Membar_Change_Password" @click="dropdown = 0" class="flex items-center gap-2 bg-white p-2 rounded-md"
+      <router-link
+        to="/Membar_Change_Password"
+        @click="dropdown = 0"
+        class="flex items-center gap-2 bg-white p-2 rounded-md"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -642,7 +662,7 @@
 
       <button
         type="button"
-        @click="AuthStore.logout()"
+        @click="logout()"
         class="py-2 px-5 mt-2 w-1/2 bg-red-800 rounded-md text-white duration-300"
       >
         Log Out
@@ -663,17 +683,11 @@ const AuthStore = useAuthStore()
 const dropdown = ref(0)
 const subDropDown = ref(false)
 
-watch(
-  () => AuthStore.isAuthenticated,
-  (newIsAuthenticated) => {
-    console.log(newIsAuthenticated)
+const logout = () => {
+  AuthStore.isAuthenticated = false
+  router.push('/')
+}
 
-    if (!newIsAuthenticated) {
-      router.push('/')
-    }
-  }
-  )
-  
 </script>
 <style scoped>
 .router-link-active {
