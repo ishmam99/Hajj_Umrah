@@ -2,23 +2,30 @@
 import { ref, onMounted, defineProps } from 'vue'
 import Stepper from '@/components/Stepper/StepperComponent.vue'
 import axios from 'axios'
+import { useAuthStore } from '@/stores/AuthStore'
+
+const authstre = useAuthStore()
+
+const id = authstre?.user?.id
 
 defineProps({
   payment: Boolean,
   approved: Boolean
 })
 
-const user = JSON.parse(localStorage.getItem('user'))
-const api = 'user/edit-profile/'
 let userData = ref([])
 
-async function getUser(id) {
-  const resp = await axios.get(import.meta.env.VITE_ELEARNING_BASE_API + api + id)
-  userData.value = resp.data.data
+const getUser = async (id) => {
+  try {
+    const { data } = await api().get(`user/edit-profile/${id}`)
+    userData.value = data.data
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 onMounted(() => {
-  getUser(user.id)
+  getUser(id)
 })
 </script>
 
