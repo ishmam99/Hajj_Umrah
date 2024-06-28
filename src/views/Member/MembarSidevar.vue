@@ -20,8 +20,8 @@
       >
 
       <!-- event panel  -->
-      <div class="bg-white p-2 rounded-md cursor-pointer">
-        <p @click="dropdown = 1" class="pb-1 flex items-center gap-3">
+      <div class="bg-white p-2 rounded-md cursor-pointer ">
+        <p @click="dropdown = 1" class="pb-1 flex items-center gap-3 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -663,7 +663,7 @@ const AuthStore = useAuthStore()
 const dropdown = ref(0)
 const subDropDown = ref(false)
 
-<!-- watch(
+watch(
   () => AuthStore.isAuthenticated,
   (newIsAuthenticated) => {
     console.log(newIsAuthenticated)
@@ -672,7 +672,7 @@ const subDropDown = ref(false)
       router.push('/')
     }
   }
-  ) -->
+  )
   
 </script>
 <style scoped>
