@@ -20,8 +20,8 @@
       >
 
       <!-- event panel  -->
-      <div class="bg-white p-2 rounded-md cursor-pointer">
-        <p @click="dropdown = 1" class="pb-1 flex items-center gap-3">
+      <div class="bg-white p-2 rounded-md cursor-pointer ">
+        <p @click="dropdown = 1" class="pb-1 flex items-center gap-3 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -642,7 +642,7 @@
 
       <button
         type="button"
-        @click="store.logout()"
+        @click="AuthStore.logout()"
         class="py-2 px-5 mt-2 w-1/2 bg-red-800 rounded-md text-white duration-300"
       >
         Log Out
@@ -672,7 +672,8 @@ watch(
       router.push('/')
     }
   }
-)
+  )
+  
 </script>
 <style scoped>
 .router-link-active {

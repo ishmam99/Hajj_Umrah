@@ -2,10 +2,10 @@
   <div
     class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover w-1/4 min-h-screen sticky top-[80px]"
   >
-    <div class="bg-[#e1f2ff9a] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
-      <p class="text-2xl font-bold text-[#2e318a]">Learning Management System Dashboard</p>
-      <p class="text-xl font-bold">Welcome Mr. Hashim</p>
-      <router-link to="/lms_Management_profile" class="flex items-center gap-2"
+    <div class="bg-[#23646da9] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
+      <p class="text-2xl font-bold text-white">Learning Management System Dashboard</p>
+      <p class="text-xl font-bold text-white">Welcome Mr. Hashim</p>
+      <router-link to="/lms_Management_profile" class="flex items-center gap-2  bg-white p-2 rounded-md"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -18,8 +18,8 @@
           ></path></svg
         >Profile</router-link
       >
-      <div class="accordion">
-        <button @click="toggleAccordion('programCreate')" class="flex items-center gap-2">
+      <div class="accordion  bg-white p-2 rounded-md">
+        <button @click="toggleAccordion('programCreate')" class="flex items-center gap-2 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -32,6 +32,15 @@
             ></path>
           </svg>
           Program Management
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+          >
+            <path d="M12 16L6 10H18L12 16Z"></path>
+          </svg>
         </button>
         <div v-show="currentAccordions === 'programCreate'" class="submenu mx-8">
           <router-link to="/lms_program_management_create_program" class=""
@@ -46,7 +55,7 @@
         </div>
       </div>
 
-      <div class="accordion">
+      <div class="accordion  bg-white p-2 rounded-md">
         <button @click="toggleAccordion('courseManagement')" class="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -60,6 +69,15 @@
             ></path>
           </svg>
           Course Management
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+          >
+            <path d="M12 16L6 10H18L12 16Z"></path>
+          </svg>
         </button>
         <div v-show="currentAccordions === 'courseManagement'" class="submenu mx-8">
           <router-link to="/lms_course_management_create_program" class="flex items-center gap-2"
@@ -73,7 +91,7 @@
         </div>
       </div>
 
-      <div class="accordion">
+      <div class="accordion  bg-white p-2 rounded-md">
         <button @click="toggleAccordion('teacherManagement')" class="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -87,13 +105,22 @@
             ></path>
           </svg>
           Teacher Management
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+          >
+            <path d="M12 16L6 10H18L12 16Z"></path>
+          </svg>
         </button>
         <div v-show="currentAccordions === 'teacherManagement'" class="submenu mx-8">
           <router-link to="/lms_teacher_management_registered_teachers" class="flex items-center gap-2">- Registered Teachers</router-link>
         </div>
       </div>
 
-      <div class="accordion">
+      <div class="accordion  bg-white p-2 rounded-md">
         <button @click="toggleAccordion('studentManagement')" class="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -107,6 +134,15 @@
             ></path>
           </svg>
           Student Management
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+          >
+            <path d="M12 16L6 10H18L12 16Z"></path>
+          </svg>
         </button>
         <div v-show="currentAccordions === 'studentManagement'" class="submenu mx-8">
           <!-- <router-link to="" class="flex items-center gap-2">- Create Event</router-link> -->
@@ -120,7 +156,7 @@
         </div>
       </div>
 
-      <router-link to="" class="flex items-center gap-2"
+      <router-link to="" class="flex items-center gap-2  bg-white p-2 rounded-md"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
