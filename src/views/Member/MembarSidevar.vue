@@ -516,7 +516,7 @@
       </div>
 
       <!-- student dropdown  -->
-      <div class="bg-white p-2 rounded-md cursor-pointer">
+      <!-- <div class="bg-white p-2 rounded-md cursor-pointer">
         <p @click="dropdown = 7" class="pb-1 flex items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -607,7 +607,7 @@
             >My Purchases
           </router-link>
         </div>
-      </div>
+      </div> -->
 
       <router-link
         to="/Membar_Donation_History"
