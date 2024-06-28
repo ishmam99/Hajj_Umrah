@@ -1,7 +1,7 @@
 <template>
-  <div class="dashboard-content">
-    <img src="@/assets/images/dashboard/my-hiring.png" alt="">
-    <div class="dashboard-wrapper">
+  <div class="w-full">
+    <img src="@/assets/images/dashboard/my-hiring.png" alt="" class="w-full">
+    <div class="">
       <TeacherVerificationComponent class="hidden md:block"  :user="user" v-if="shouldRenderTeacherVerification" />
     </div>  
   </div>
@@ -31,11 +31,4 @@ const shouldRenderTeacherVerification = computed(() => {
   return user.role_id === 3 ;
 });
 
-onMounted(() => {
-  commonStore.loading = false;
-})
-
-onUnmounted(() => {
-  commonStore.loading = true;
-})
 </script>
