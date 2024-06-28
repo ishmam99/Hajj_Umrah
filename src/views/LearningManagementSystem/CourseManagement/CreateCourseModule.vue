@@ -23,7 +23,7 @@
                   class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                   id="exampleFormControlInput50" value="" />
                 <label for="exampleFormControlInput50"
-                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary">Course
+                  class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary">Course Module
                   Name <span class="text-red-500">*</span>
                 </label>
               </div>
@@ -31,16 +31,13 @@
               <div class="relative w-1/2 mb-3">
                 <Select>
                   <SelectTrigger class="w-full">
-                    <SelectValue placeholder="Day" />
+                    <SelectValue placeholder="Course Name" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectLabel>Select Day Name</SelectLabel>
-                      <SelectItem value="Saturday"> Saturday </SelectItem>
-                      <SelectItem value="Sunday"> Sunday </SelectItem>
-                      <SelectItem value="Monday"> Monday </SelectItem>
-                      <SelectItem value="Tuesday"> Tuesday </SelectItem>
-                      <SelectItem value="Wednesday"> Wednesday </SelectItem>
+                      <!-- <SelectLabel>Select Course Name</SelectLabel> -->
+                      <SelectItem value="Quran Reading"> Quran Reading </SelectItem>
+                      <SelectItem value="Hadith Learning"> Hadith Learning </SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
@@ -81,8 +78,8 @@
             <thead>
               <tr class="bg-white text-lg">
                 <th class="p-2 text-start w-1/8">ID</th>
+                <th class="p-2 text-start w-1/8">Course Module Name</th>
                 <th class="p-2 text-start w-1/8">Course Name</th>
-                <th class="p-2 text-start w-2/8">Day</th>
                 <th class="p-2 text-start w-2/8">Description</th>
                 <th class="p-2 text-center w-1/8">Action</th>
               </tr>
@@ -93,13 +90,30 @@
               >
                 <td class="py-4 px-2 w-1/8">01</td>
                 <td class="py-4 px-2 w-1/8">
+                  <h3 class="font-semibold">Module 1: Introduction to Hert</h3>
+                </td>
+                <td class="py-4 px-2 w-1/8">
                   <h3 class="font-semibold">Nadira Program</h3>
                 </td>
                 <td class="py-4 px-2 w-2/8">
-                  Friday
+                    Tajweed refers to the rules and principles of proper Quranic recitation. This section encompasses various aspects of Tajweed, including:
+                </td>
+                <td class="py-4 px-2 flex justify-center">
+                  <button class="bg-green-500 px-4 py-1 rounded font-semibold text-white hover:bg-green-600">Post</button>
+                </td>
+              </tr>
+              <tr
+                class="tableRowColor"
+              >
+                <td class="py-4 px-2 w-1/8">02</td>
+                <td class="py-4 px-2 w-1/8">
+                  <h3 class="font-semibold">Module 2: Tajweed Learning</h3>
+                </td>
+                <td class="py-4 px-2 w-1/8">
+                  <h3 class="font-semibold">Full-Time Hifz Program</h3>
                 </td>
                 <td class="py-4 px-2 w-2/8">
-                  Detail Description Here
+                    Regular sessions on the spiritual and ethical aspects of Quranic recitation
                 </td>
                 <td class="py-4 px-2 flex justify-center">
                   <button class="bg-green-500 px-4 py-1 rounded font-semibold text-white hover:bg-green-600">Post</button>

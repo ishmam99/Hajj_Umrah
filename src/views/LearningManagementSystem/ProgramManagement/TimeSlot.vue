@@ -96,6 +96,7 @@
             <tr class="bg-white text-lg">
               <th class="p-2 text-start w-1/8">ID</th>
               <th class="p-2 text-start w-1/8">Course Name</th>
+              <th class="p-2 text-start w-1/8">Day</th>
               <th class="p-2 text-start w-2/8">Start Time</th>
               <th class="p-2 text-start w-2/8">End Time</th>
               <th class="p-2 text-center w-1/8">Action</th>
@@ -108,6 +109,9 @@
               <td class="py-4 px-2 w-1/8">01</td>
               <td class="py-4 px-2 w-1/8">
                 <h3 class="font-semibold">Nadira Program</h3>
+              </td>
+              <td class="py-4 px-2 w-1/8">
+                <h3 class="font-semibold">Saturday</h3>
               </td>
               <td class="py-4 px-2 w-2/8">
                 10:00 AM
