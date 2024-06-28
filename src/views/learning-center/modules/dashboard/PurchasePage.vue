@@ -29,38 +29,20 @@ async function getPurchaseInfo() {
   commonStore.loading = false
 }
 
-onMounted(() => {
-  getPurchaseInfo()
-})
-
-onUnmounted(() => {
-  commonStore.loading = true
-})
 
 const fields = ref(['Id', 'Transaction_date', 'Amount'])
 </script>
 
 <template>
-  <div class="dashboard-content">
-    <div class="dashboard-title">
+  <div class="w-full pt-5">
+    <div class="w-full flex justify-center items-center text-2xl font-semibold gap-5">
       <font-awesome-icon :icon="['fas', 'fa-money-check']" /> My Purchases
     </div>
 
-    <Table :fields="fields" :tableData="tableData" />
+    <!-- <Table :fields="fields" :tableData="tableData" /> -->
   </div>
 </template>
 
 <style scoped>
-.dashboard-content {
-  padding: 20px;
-  height: 70vh;
-  overflow: auto;
-}
-.dashboard-title {
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: bold;
-}
+
 </style>
