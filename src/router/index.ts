@@ -286,7 +286,6 @@ const router = createRouter({
       component: () => import('../views/Volunteer/EducateTheChildren.vue')
     },
    
-
     {
       path: '/more/hajj_and_umrah',
       name: 'more/hajj_and_umrah',
@@ -327,11 +326,12 @@ const router = createRouter({
       name: 'Volunteer Register',
       component: () => import('@/components/volunteer/ApplyVolunteer.vue')
     },
-    {
-      path: '/volunteer',
-      name: 'Volunteer_Dashboard',
-      component: () => import('../views/GetInvolved/Volunteers/VolunteerDashboard.vue')
-    },
+    // {
+    //   path: '/volunteer',
+    //   name: 'Volunteer_Dashboard',
+    //   component: () => import('../views/GetInvolved/Volunteers/VolunteerDashboard.vue')
+    // },
+    
     {
       path: '/getinvolved/applyforspeaker',
       name: 'applyforspeaker',
@@ -866,6 +866,44 @@ const router = createRouter({
       ],
     },
     
+    //Voluneer Dashboad
+    {
+      path: '/volunteer_management',
+      name: 'Volunteer_Dashboard',
+      component: () => import('@/views/VolunteerManagement/Dashboard.vue'),
+      children: [
+        {
+          path: '/volunteer_profile',
+          name: 'volunteer_profile',
+          component: () => import('@/views/VolunteerManagement/Profile/Profile.vue'),
+        },
+        {
+          path: '/create_volunteer_job',
+          name: 'create_volunteer_job',
+          component: () => import('@/views/VolunteerManagement/CreateVolunteerJob.vue'),
+        },
+        {
+          path: '/volunteer_job_list',
+          name: 'volunteer_job_list',
+          component: () => import('@/views/VolunteerManagement/VolunteerJobList.vue'),
+        },
+        {
+          path: '/volunteer_applicant_list',
+          name: 'volunteer_applicant_list',
+          component: () => import('@/views/VolunteerManagement/VolunteerApplicantList.vue'),
+        },
+        {
+          path: '/approved_volunteer_list',
+          name: 'approved_volunteer_list',
+          component: () => import('@/views/VolunteerManagement/ApprovedVolunteerList.vue'),
+        },
+        {
+          path: '/rejected_volunteer_list',
+          name: 'rejected_volunteer_list',
+          component: () => import('@/views/VolunteerManagement/RejectedVolunteerList.vue'),
+        },
+      ]
+    },
     //Operation Dashboard
     {
       path: '/Operation_Login',
