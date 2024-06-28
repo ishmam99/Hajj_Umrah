@@ -642,7 +642,7 @@
 
       <button
         type="button"
-        @click="store.logout()"
+        @click="AuthStore.logout()"
         class="py-2 px-5 mt-2 w-1/2 bg-red-800 rounded-md text-white duration-300"
       >
         Log Out
@@ -663,7 +663,7 @@ const AuthStore = useAuthStore()
 const dropdown = ref(0)
 const subDropDown = ref(false)
 
-watch(
+<!-- watch(
   () => AuthStore.isAuthenticated,
   (newIsAuthenticated) => {
     console.log(newIsAuthenticated)
@@ -672,7 +672,8 @@ watch(
       router.push('/')
     }
   }
-)
+  ) -->
+  
 </script>
 <style scoped>
 .router-link-active {
