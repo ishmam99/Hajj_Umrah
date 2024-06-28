@@ -1212,11 +1212,24 @@ const router = createRouter({
           name: 'Membar_Change_Password',
           component: () => import('../views/Member/Profile/MemberPassChange.vue')
         },
+        // volunteer 
         {
           path: '/Select_Volunteer',
           name: 'Select Volunteer',
-          component: () => import('../views/Member/MemberVolunteerSelect.vue')
+          component: () => import('../views/Member/Volunteer/MemberVolunteerSelect.vue')
         },
+        {
+          path: '/My_Volunteer',
+          name: 'My Volunteer',
+          component: () => import('../views/Member/Volunteer/MyVolunteerEvent.vue')
+        },
+        {
+          path: '/Volunteer_Complete_List',
+          name: 'Volunteer Complete List',
+          component: () => import('../views/Member/Volunteer/VolunteerCompleteList.vue')
+        },
+
+        // imam 
         {
           path: '/Select_Imam',
           name: 'Select Imam',
@@ -1232,6 +1245,9 @@ const router = createRouter({
           name: 'Scholar_Appointment',
           component: () => import('../views/Member/MemberAppointmentScholar.vue')
         },
+
+        // student 
+
         {
           path: '/my-registration',
           name: 'StudentRegistrationPage',

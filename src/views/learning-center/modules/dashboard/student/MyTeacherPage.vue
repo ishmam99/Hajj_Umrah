@@ -5,33 +5,37 @@ import Column from 'primevue/column'
 import { FilterMatchMode } from 'primevue/api'
 import InputText from 'primevue/inputtext'
 import 'primevue/resources/themes/lara-light-teal/theme.css'
-import axios from 'axios'
-import { useCommonStore } from '@/stores/common'
 
-const commonStore = useCommonStore()
+import { useAuthStore } from '@/stores/AuthStore'
+
+const authstre = useAuthStore()
+
+const id = authstre?.user?.id
 const dt = ref()
 const products = ref()
 const selectedProducts = ref()
-// const filters = ref({
-//   global: { value: null, matchMode: FilterMatchMode.CONTAINS }
-// })
+const filters = ref({
+  global: { value: null, matchMode: FilterMatchMode.CONTAINS }
+})
 
-// let userId = ref(JSON.parse(localStorage.getItem('user')).id)
-
-async function getData() {
-  const resp = await axios.get(
-    import.meta.env.VITE_ELEARNING_BASE_API + 'get-teacher-by-student/' + userId.value
-  )
-  products.value = resp.data.data
-  console.log(products.value)
+const getData = async () => {
+  try {
+    const { data } = await api().get(`get-teacher-by-student/${id}`)
+    products.value = data.data
+  } catch (error) {
+    console.log(error)
+  }
 }
 
+onMounted(() => {
+  getData()
+})
 </script>
 
 <template>
   <div class="w-full">
     <img src="@/assets/images/dashboard/my-teacher.png" alt="" class="w-full"/>
-    <!-- <div class="">
+    <div class="">
       <DataTable
         ref="dt"
         :value="products"
@@ -75,7 +79,7 @@ async function getData() {
           style="min-width: 10rem"
         ></Column>
       </DataTable>
-    </div> -->
+    </div>
   </div>
 </template>
 

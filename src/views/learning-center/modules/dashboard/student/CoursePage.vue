@@ -1,26 +1,23 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
-import axios from 'axios'
-import { useCommonStore } from '@/stores/common'
 import StudentRegistrationComponent from '@/auth/StudentRegistrationComponent.vue'
+import { useAuthStore } from '@/stores/AuthStore'
 
 const router = useRouter()
-const courseListApi = 'ongoing-course/'
-const user = JSON.parse(localStorage.getItem('user'))
-const commonStore = useCommonStore()
+const authstre = useAuthStore()
 
 let courseList = ref([])
+const id = authstre?.user?.id
 
-async function getCourseByUser() {
-  commonStore.loading = true
-  await axios
-    .get(import.meta.env.VITE_ELEARNING_BASE_API + courseListApi + user.id)
-    .then((response) => {
-      courseList.value = response.data.data
+const getCourseByUser = async () => {
+  try {
+    const { data } = await api().get(`ongoing-course/${id}`)
+    courseList.value = data.data
       console.log(courseList.value)
-    })
-  commonStore.loading = false
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 function action(data, mode) {
@@ -39,20 +36,17 @@ onMounted(() => {
   getCourseByUser()
 })
 
-onUnmounted(() => {
-  commonStore.loading = true
-})
 </script>
 
 <template>
   <div class="w-full">
     <img src="@/assets/images/dashboard/my-courses.png" alt="" class="w-full" />
     <div class="p-3">
-      <div class="text-2xl font-semibold">
+      <!-- <div class="text-2xl font-semibold">
         <font-awesome-icon :icon="['fas', 'fa-user-graduate']" /> My Courses
-      </div>
+      </div> -->
 
-      <div v-if="courseList != 'List Empty'" class="course-list">
+      <div v-if="courseList.length>0" class="course-list">
         <div v-for="course in courseList" :key="course" class="slide">
           <div class="thumb"></div>
           <div class="details">
@@ -80,11 +74,8 @@ onUnmounted(() => {
           </div>
         </div>
       </div>
-      <div v-else-if="courseList == 'List Empty'" class="else-message">
-        <h4>You are not enrolled to any course yet</h4>
-      </div>
       <div v-else class="else-message">
-        <h4>Loading ...</h4>
+        <h4>Loading ..</h4>
       </div>
     </div>
   </div>
