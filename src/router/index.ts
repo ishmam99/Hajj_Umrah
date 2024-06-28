@@ -835,7 +835,12 @@ const router = createRouter({
         {
           path: '/lms_course_management_create_program',
           name: 'LMS_Course_Management_Create_Program',
-          component: () => import('../views/LearningManagementSystem/CourseManagement/CreateCourse.vue'),
+          component: () => import('@/views/LearningManagementSystem/CourseManagement/CreateCourse.vue'),
+        },
+        {
+          path: '/lms_course_management_create_course_module',
+          name: 'LMS_Course_Management_Create_Course_Module',
+          component: () => import('@/views/LearningManagementSystem/CourseManagement/CreateCourseModule.vue'),
         },
         {
           path: '/lms_course_management_program_list',

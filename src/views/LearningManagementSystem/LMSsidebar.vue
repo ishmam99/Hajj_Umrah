@@ -83,11 +83,12 @@
           <router-link to="/lms_course_management_create_program" class="flex items-center gap-2"
             >- Create Course</router-link
           >
+          <router-link to="/lms_course_management_create_course_module" class="flex items-center gap-2"
+            >-	Create Course Module</router-link
+          >
           <router-link to="/lms_course_management_program_list" class="flex items-center gap-2"
             >- Course List</router-link
           >
-          <!-- <router-link to="" class="flex items-center gap-2">- Student Application List</router-link> -->
-          <!-- <router-link to="" class="flex items-center gap-2">- Registered Students</router-link> -->
         </div>
       </div>
 
