@@ -828,9 +828,29 @@ const router = createRouter({
           component: () => import('@/views/LearningManagementSystem/ProgramManagement/ProgramList.vue'),
         },
         {
+          path: '/lms_program_management_time_slot',
+          name: 'LMS_Program_Management_time_slot',
+          component: () => import('@/views/LearningManagementSystem/ProgramManagement/TimeSlot.vue'),
+        },
+        {
           path: '/lms_course_management_create_program',
           name: 'LMS_Course_Management_Create_Program',
           component: () => import('../views/LearningManagementSystem/CourseManagement/CreateCourse.vue'),
+        },
+        {
+          path: '/lms_course_management_program_list',
+          name: 'LMS_Course_Management_Program_List',
+          component: () => import('../views/LearningManagementSystem/CourseManagement/CourseList.vue'),
+        },
+        {
+          path: '/lms_course_management_course_teacher',
+          name: 'LMS_Course_Management_Course_Teacher',
+          component: () => import('../views/LearningManagementSystem/CourseManagement/CourseTeacher.vue'),
+        },
+        {
+          path: '/lms_teacher_management_registered_teachers',
+          name: 'LMS_Teacher_Management_Registered_Teachers',
+          component: () => import('@/views/LearningManagementSystem/TeacherManagement/RegisteredTeacher.vue'),
         },
       ],
     },

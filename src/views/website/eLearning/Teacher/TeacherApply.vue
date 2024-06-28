@@ -1,6 +1,8 @@
 <template>
   <DefaultLayout>
-    <div class="bg-grey-lighter flex justify-center items-center pt-[80px] pb-5 bg-[url('/src/assets/images/auth-banner.png')] min-h-[70vh] bg-cover bg-center">
+    <div
+      class="bg-grey-lighter flex justify-center items-center pt-[80px] pb-5 bg-[url('/src/assets/images/auth-banner.png')] min-h-[70vh] bg-cover bg-center"
+    >
       <div
         v-if="authStore.isAuthenticated == true"
         class="flex flex-col items-center justify-center px-2 w-1/3"
