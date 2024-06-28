@@ -21,8 +21,8 @@
       >
 
       <!-- event panel  -->
-      <div class="bg-white p-2 rounded-md cursor-pointer">
-        <p @click="dropdown = 1" class="pb-1 flex items-center gap-3">
+      <div class="bg-white p-2 rounded-md cursor-pointer ">
+        <p @click="dropdown = 1" class="pb-1 flex items-center gap-3 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -683,11 +683,25 @@ const AuthStore = useAuthStore()
 const dropdown = ref(0)
 const subDropDown = ref(false)
 
+<<<<<<< HEAD
 const logout = () => {
   AuthStore.isAuthenticated = false
   router.push('/')
 }
 
+=======
+watch(
+  () => AuthStore.isAuthenticated,
+  (newIsAuthenticated) => {
+    console.log(newIsAuthenticated)
+
+    if (!newIsAuthenticated) {
+      router.push('/')
+    }
+  }
+  )
+  
+>>>>>>> 5773c5e7b06041b976e86766e419bade3935a34f
 </script>
 <style scoped>
 .router-link-active {

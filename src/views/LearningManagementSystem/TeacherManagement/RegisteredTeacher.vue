@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 bg-white py-5 w-3/4">
+  <div class="px-4 bg-white py-5">
     <div v-if="isDetailView == false && isEdit == false">
       <div class="flex justify-between items-center pt-4">
         <p class="text-2xl text-cyan-700 font-bold pb-2">Registered Teachers</p>
@@ -145,6 +145,7 @@
           <span>Back</span>
         </button>
       </div>
+      <hr>
       <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
         <div class="py-5 space-y-7 mt-5">
           <div class="flex gap-5">

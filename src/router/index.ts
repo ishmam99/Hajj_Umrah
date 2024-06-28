@@ -835,7 +835,12 @@ const router = createRouter({
         {
           path: '/lms_course_management_create_program',
           name: 'LMS_Course_Management_Create_Program',
-          component: () => import('../views/LearningManagementSystem/CourseManagement/CreateCourse.vue'),
+          component: () => import('@/views/LearningManagementSystem/CourseManagement/CreateCourse.vue'),
+        },
+        {
+          path: '/lms_course_management_create_course_module',
+          name: 'LMS_Course_Management_Create_Course_Module',
+          component: () => import('@/views/LearningManagementSystem/CourseManagement/CreateCourseModule.vue'),
         },
         {
           path: '/lms_course_management_program_list',
@@ -851,6 +856,12 @@ const router = createRouter({
           path: '/lms_teacher_management_registered_teachers',
           name: 'LMS_Teacher_Management_Registered_Teachers',
           component: () => import('@/views/LearningManagementSystem/TeacherManagement/RegisteredTeacher.vue'),
+        },
+        //Student Management
+        {
+          path: '/lms_student_management_enrollment_list',
+          name: 'LMS_Student_Management_Enrollment_List',
+          component: () => import('@/views/LearningManagementSystem/StudentManagement/EnrollmentList.vue'),
         },
       ],
     },
