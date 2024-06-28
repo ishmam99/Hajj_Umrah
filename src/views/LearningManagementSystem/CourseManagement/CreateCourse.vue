@@ -11,7 +11,7 @@
                                 id="exampleFormControlInput50" value="" />
                             <label for="exampleFormControlInput50"
                                 class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary">Course
-                                Name <span class="text-red-500">*</span>
+                                Title <span class="text-red-500">*</span>
                             </label>
                         </div>
                         <div class="w-1/4">
