@@ -684,7 +684,7 @@ const dropdown = ref(0)
 const subDropDown = ref(false)
 
 const logout = () => {
-  AuthStore.isAuthenticated = false
+  AuthStore.logout()
   router.push('/')
 }
 
