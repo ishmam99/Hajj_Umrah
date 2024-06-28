@@ -683,25 +683,11 @@ const AuthStore = useAuthStore()
 const dropdown = ref(0)
 const subDropDown = ref(false)
 
-<<<<<<< HEAD
 const logout = () => {
-  AuthStore.isAuthenticated = false
+  AuthStore.logout()
   router.push('/')
 }
 
-=======
-watch(
-  () => AuthStore.isAuthenticated,
-  (newIsAuthenticated) => {
-    console.log(newIsAuthenticated)
-
-    if (!newIsAuthenticated) {
-      router.push('/')
-    }
-  }
-  )
-  
->>>>>>> 5773c5e7b06041b976e86766e419bade3935a34f
 </script>
 <style scoped>
 .router-link-active {
