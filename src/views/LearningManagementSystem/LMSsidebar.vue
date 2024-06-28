@@ -43,14 +43,16 @@
           </svg>
         </button>
         <div v-show="currentAccordions === 'programCreate'" class="submenu mx-8">
-          <router-link to="/lms_program_management_create_program" class=""
-            >- Create Program</router-link
+          <router-link to="/lms_program_management_create_program" class="flex items-center gap-1"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM20 11H4V19H20V11ZM20 5H4V9H20V5ZM11 6V8H9V6H11ZM7 6V8H5V6H7Z"></path></svg>
+            Create Program</router-link
           >
-          <router-link to="/lms_program_management_program_list" class="flex items-center gap-2"
-            >- Program List</router-link
+          <router-link to="/lms_program_management_program_list" class="flex items-center gap-1"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM8 7H16V9H8V7ZM8 11H16V13H8V11ZM8 15H16V17H8V15Z"></path></svg> Program List</router-link
           >
-          <router-link to="/lms_program_management_time_slot" class="flex items-center gap-2"
-            >- Time Slot</router-link
+          <router-link to="/lms_program_management_time_slot" class="flex items-center gap-1"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4 2H20V6.45994L13.5366 12L20 17.5401V22H4V17.5401L10.4634 12L4 6.45994V2ZM16.2967 7L18 5.54007V4H6V5.54007L7.70326 7H16.2967ZM12 13.3171L6 18.4599V20H7L12 17L17 20H18V18.4599L12 13.3171Z"></path></svg> Time Slot</router-link
           >
         </div>
       </div>
@@ -80,14 +82,14 @@
           </svg>
         </button>
         <div v-show="currentAccordions === 'courseManagement'" class="submenu mx-8">
-          <router-link to="/lms_course_management_create_program" class="flex items-center gap-2"
-            >- Create Course</router-link
+          <router-link to="/lms_course_management_create_program" class="flex items-center gap-1"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM20 11H4V19H20V11ZM20 5H4V9H20V5ZM11 6V8H9V6H11ZM7 6V8H5V6H7Z"></path></svg> Create Course</router-link
           >
-          <router-link to="/lms_course_management_create_course_module" class="flex items-center gap-2"
-            >-	Create Course Module</router-link
+          <router-link to="/lms_course_management_create_course_module" class="flex items-center gap-1"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M11 19V9H4V19H11ZM11 7V4C11 3.44772 11.4477 3 12 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V8C2 7.44772 2.44772 7 3 7H11ZM13 5V19H20V5H13ZM5 16H10V18H5V16ZM14 16H19V18H14V16ZM14 13H19V15H14V13ZM14 10H19V12H14V10ZM5 13H10V15H5V13Z"></path></svg>	Create Course Module</router-link
           >
-          <router-link to="/lms_course_management_program_list" class="flex items-center gap-2"
-            >- Course List</router-link
+          <router-link to="/lms_course_management_program_list" class="flex items-center gap-1"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM8 7H16V9H8V7ZM8 11H16V13H8V11ZM8 15H16V17H8V15Z"></path></svg> Course List</router-link
           >
         </div>
       </div>
@@ -117,7 +119,7 @@
           </svg>
         </button>
         <div v-show="currentAccordions === 'teacherManagement'" class="submenu mx-8">
-          <router-link to="/lms_teacher_management_registered_teachers" class="flex items-center gap-2">- Registered Teachers</router-link>
+          <router-link to="/lms_teacher_management_registered_teachers" class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M9.97308 18H14.0269C14.1589 16.7984 14.7721 15.8065 15.7676 14.7226C15.8797 14.6006 16.5988 13.8564 16.6841 13.7501C17.5318 12.6931 18 11.385 18 10C18 6.68629 15.3137 4 12 4C8.68629 4 6 6.68629 6 10C6 11.3843 6.46774 12.6917 7.31462 13.7484C7.40004 13.855 8.12081 14.6012 8.23154 14.7218C9.22766 15.8064 9.84103 16.7984 9.97308 18ZM14 20H10V21H14V20ZM5.75395 14.9992C4.65645 13.6297 4 11.8915 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10C20 11.8925 19.3428 13.6315 18.2443 15.0014C17.624 15.7748 16 17 16 18.5V21C16 22.1046 15.1046 23 14 23H10C8.89543 23 8 22.1046 8 21V18.5C8 17 6.37458 15.7736 5.75395 14.9992ZM13 10.0048H15.5L11 16.0048V12.0048H8.5L13 6V10.0048Z"></path></svg> Registered Teachers</router-link>
         </div>
       </div>
 
@@ -147,14 +149,23 @@
         </button>
         <div v-show="currentAccordions === 'studentManagement'" class="submenu mx-8">
           <!-- <router-link to="" class="flex items-center gap-2">- Create Event</router-link> -->
-          <router-link to="" class="flex items-center gap-2">- Attendance</router-link>
-          <router-link to="" class="flex items-center gap-2">- Attendance List</router-link>
-          <router-link to="/lms_student_management_enrollment_list" class="flex items-center gap-2">- Enrollment List</router-link>
-          <router-link to="" class="flex items-center gap-2"
-            >- Student Application List</router-link
-          >
-          <router-link to="" class="flex items-center gap-2">- Registered Student List</router-link>
-          <router-link to="" class="flex items-center gap-2">- Course List</router-link>
+          <router-link to="" class="flex items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M3 12H7V21H3V12ZM17 8H21V21H17V8ZM10 2H14V21H10V2Z"></path></svg> Attendance
+          </router-link>
+          <router-link to="" class="flex items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM8 7H16V9H8V7ZM8 11H16V13H8V11ZM8 15H16V17H8V15Z"></path></svg>  Attendance List
+          </router-link>
+          <router-link to="/lms_student_management_enrollment_list" class="flex items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM8 7H16V9H8V7ZM8 11H16V13H8V11ZM8 15H16V17H8V15Z"></path></svg>  Enrollment List
+          </router-link>
+          <router-link to="" class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM8 7H16V9H8V7ZM8 11H16V13H8V11ZM8 15H16V17H8V15Z"></path></svg>  Student Application List
+          </router-link>
+          <router-link to="" class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM8 7H16V9H8V7ZM8 11H16V13H8V11ZM8 15H16V17H8V15Z"></path></svg>  Registered Student List
+          </router-link>
+          <router-link to="" class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM8 7H16V9H8V7ZM8 11H16V13H8V11ZM8 15H16V17H8V15Z"></path></svg>  Course List
+          </router-link>
         </div>
       </div>
 
