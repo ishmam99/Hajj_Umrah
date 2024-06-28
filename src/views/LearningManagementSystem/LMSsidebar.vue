@@ -149,6 +149,7 @@
           <!-- <router-link to="" class="flex items-center gap-2">- Create Event</router-link> -->
           <router-link to="" class="flex items-center gap-2">- Attendance</router-link>
           <router-link to="" class="flex items-center gap-2">- Attendance List</router-link>
+          <router-link to="/lms_student_management_enrollment_list" class="flex items-center gap-2">- Enrollment List</router-link>
           <router-link to="" class="flex items-center gap-2"
             >- Student Application List</router-link
           >

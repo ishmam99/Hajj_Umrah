@@ -857,6 +857,12 @@ const router = createRouter({
           name: 'LMS_Teacher_Management_Registered_Teachers',
           component: () => import('@/views/LearningManagementSystem/TeacherManagement/RegisteredTeacher.vue'),
         },
+        //Student Management
+        {
+          path: '/lms_student_management_enrollment_list',
+          name: 'LMS_Student_Management_Enrollment_List',
+          component: () => import('@/views/LearningManagementSystem/StudentManagement/EnrollmentList.vue'),
+        },
       ],
     },
     
