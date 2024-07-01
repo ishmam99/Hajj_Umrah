@@ -32,7 +32,7 @@
                 <h3 class="font-semibold text-xl">{{item.name}}</h3>
               </td>
               <td class="py-4 px-2 w-2/8">
-                {{ item?.details }}
+                {{ item?.email }}
               </td>
               <td class="py-4 px-2 w-2/8">
                 {{ item.phone }}
