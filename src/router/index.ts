@@ -19,6 +19,22 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
+// log in sign up 
+    {
+      path: '/Signup',
+      name: 'Signup',
+      component: () => import('../views/Auth/SingnUp.vue')
+    },
+    
+    {
+      path: '/HR-Login',
+      name: 'HR-Login',
+      component: () => import('../views/website/Employees/HR_Login.vue')
+    },
+    
+
+    // website 
+
     {
       path: '/announcement/:id',
       name: 'announcementDetails',
@@ -39,7 +55,6 @@ const router = createRouter({
       name: 'yearlyPlannerDetails',
       component: () => import('../components/HomeFolder/YearlyPlannerDetails24.vue')
     },
-
     {
       path: '/services/nikah',
       name: 'services',
@@ -111,7 +126,6 @@ const router = createRouter({
       name: 'Ranadam_Payer_Time',
       component: () => import('../views/website/Services/PrayerService/RamadanPrayerTime.vue')
     },
-
 
     {
       path: '/explore/dua',
@@ -185,17 +199,6 @@ const router = createRouter({
       component: () => import('../views/website/Contact/ContactUs.vue')
     },
 
-    {
-      path: '/employees/employeeLogin',
-      name: 'Employee Login',
-      component: () => import('../views/website/Employees/EmployeeLogin.vue')
-    },
-
-    {
-      path: '/HR-Login',
-      name: 'HR-Login',
-      component: () => import('../views/website/Employees/HR_Login.vue')
-    },
     {
       path: '/activity/event',
       name: 'Event',
@@ -283,10 +286,9 @@ const router = createRouter({
     {
       path: '/volunteer/service/:id',
       name: 'volunteer/service',
-      component: () => import('../views/Volunteer/EducateTheChildren.vue')
+      component: () => import('/src/views/website/Volunteer/EducateTheChildren.vue')
     },
    
-
     {
       path: '/more/hajj_and_umrah',
       name: 'more/hajj_and_umrah',
@@ -312,26 +314,14 @@ const router = createRouter({
       name: 'studentadmission',
       component: () => import('../views/website/LearningCenter/StudentAdmission.vue')
     },
-    {
-      path: '/volunteers/volunteeradmission',
-      name: 'volunteeradmission',
-      component: () => import('../views/GetInvolved/Volunteers/VolunteerAdmission.vue')
-    },
-    {
-      path: '/volunteerLogin',
-      name: 'Volunteer Login',
-      component: () => import('../views/Auth/LogIn.vue')
-    },
+    
     {
       path: '/volunteerRegister',
       name: 'Volunteer Register',
-      component: () => import('@/components/volunteer/ApplyVolunteer.vue')
+      component: () => import('@/views/website/Volunteer/ApplyVolunteer.vue')
     },
-    {
-      path: '/volunteer',
-      name: 'Volunteer_Dashboard',
-      component: () => import('../views/GetInvolved/Volunteers/VolunteerDashboard.vue')
-    },
+    
+    
     {
       path: '/getinvolved/applyforspeaker',
       name: 'applyforspeaker',
@@ -382,16 +372,8 @@ const router = createRouter({
       name: 'more/registration/esl_class_registration',
       component: () => import('../views/More/Registration/ESLClassRegistration.vue')
     },
-    {
-      path: '/Member_Login',
-      name: 'Member Login',
-      component: () => import('../views/Auth/LogIn.vue')
-    },
-    {
-      path: '/Membar_Dashboard',
-      name: 'Membar_Dashboard',
-      component: () => import('../views/Member/MembarDashbord.vue')
-    },
+   
+    // admin 
 
     {
       path: '/Admin_Login',
@@ -599,6 +581,8 @@ const router = createRouter({
       name: 'Learning Center Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
+
+// supply chain
     {
       path: '/Supply_Chain_Management_Login',
       name: 'Supply Chain Management Login',
@@ -682,6 +666,7 @@ const router = createRouter({
       ],
     },
     
+    // hr management 
 
     {
       path: '/HR_Login',
@@ -866,6 +851,50 @@ const router = createRouter({
       ],
     },
     
+    //Voluneer Dashboad
+    {
+      path: '/volunteerLogin',
+      name: 'Volunteer Login',
+      component: () => import('../views/Auth/LogIn.vue')
+    },
+    {
+      path: '/volunteer_management',
+      name: 'Volunteer_Dashboard',
+      component: () => import('@/views/VolunteerManagement/Dashboard.vue'),
+      children: [
+        {
+          path: '/volunteer_profile',
+          name: 'volunteer_profile',
+          component: () => import('@/views/VolunteerManagement/Profile/Profile.vue'),
+        },
+        {
+          path: '/create_volunteer_job',
+          name: 'create_volunteer_job',
+          component: () => import('@/views/VolunteerManagement/CreateVolunteerJob.vue'),
+        },
+        {
+          path: '/volunteer_job_list',
+          name: 'volunteer_job_list',
+          component: () => import('@/views/VolunteerManagement/VolunteerJobList.vue'),
+        },
+        {
+          path: '/volunteer_applicant_list',
+          name: 'volunteer_applicant_list',
+          component: () => import('@/views/VolunteerManagement/VolunteerApplicantList.vue'),
+        },
+        {
+          path: '/approved_volunteer_list',
+          name: 'approved_volunteer_list',
+          component: () => import('@/views/VolunteerManagement/ApprovedVolunteerList.vue'),
+        },
+        {
+          path: '/rejected_volunteer_list',
+          name: 'rejected_volunteer_list',
+          component: () => import('@/views/VolunteerManagement/RejectedVolunteerList.vue'),
+        },
+      ]
+    },
+
     //Operation Dashboard
     {
       path: '/Operation_Login',
@@ -1064,6 +1093,7 @@ const router = createRouter({
       ],
     },
 
+  // media management 
     {
       path: '/Media_Login',
       name: 'Media Login',
@@ -1184,15 +1214,22 @@ const router = createRouter({
     },
    
     {
-      path: '/Signup',
-      name: 'Signup',
-      component: () => import('../views/Auth/SingnUp.vue')
-    },
-    {
       path: '/boardmemberlogin',
       name: 'boardmemberlogin',
       component: () => import('../views/website/Activity/BoardMemberLogin.vue')
     },
+    // member dashboard 
+    {
+      path: '/employees/employeeLogin',
+      name: 'Employee Login',
+      component: () => import('../views/website/Employees/EmployeeLogin.vue')
+    },
+    {
+      path: '/Member_Login',
+      name: 'Member Login',
+      component: () => import('../views/Auth/LogIn.vue')
+    },
+   
     {
       path: '/Membar_Dashboard',
       name: 'Membar_Dashboard',
@@ -1324,6 +1361,7 @@ const router = createRouter({
       ],
     },  
 
+    // learnng center website 
     {
       path: '/learning-center',
       name: 'LearningCenter',
