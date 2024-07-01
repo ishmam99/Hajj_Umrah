@@ -28,7 +28,9 @@ export const useAdminStore = defineStore('adminStore',{
         khatiraList: [],
         categoryLit: [],
         categoryWiseImage: [],
-        imageList:[],
+        imageList: [],
+        
+        volunteerJobList :[],
   }),
   actions: {
     

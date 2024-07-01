@@ -9,15 +9,12 @@ import {
 } from '/components/ui/dropdown-menu'
 
 
-import ApplyVolunteer from '@/components/volunteer/ApplyVolunteer.vue'
 import { ref, onMounted, defineProps } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useVolunteerDataStore } from '@/stores/volunteerStore.ts'
 
-import { useMediaStore } from '/src/stores/mediaDashboard.ts'
+import { useAdminStore } from '/src/stores/adminStore.ts'
 import { useToast } from '/components/ui/toast/use-toast'
-import { useRoute, useRouter } from 'vue-router'
-import { useAuthStore } from '@/stores/AuthStore.ts'
 
 import {
   Select,
@@ -29,22 +26,14 @@ import {
   SelectValue
 } from '/components/ui/select'
 
-const store = useMediaStore()
-const authStore = useAuthStore()
-const route = useRoute()
-const router = useRouter()
-
+const store = useAdminStore()
 const loading = ref(false)
 const { toast } = useToast()
 
 const volunteerJobList = async () => {
   loading.value = true
   try {
-    const { data } = await api().get('volunteer-job-list', {
-      headers: {
-        Authorization: `Bearer ${authStore.token}`
-      }
-    })
+    const { data } = await api().get('volunteer-job-list')
 
     store.volunteerJobList = data.data
     console.log(store.volunteerJobList)
@@ -55,11 +44,9 @@ const volunteerJobList = async () => {
 }
 const volunteerJobPost = async (id) => {
   loading.value = true
-  // selectedVolunteerPost.value.job_status = "Approved"
   console.log( store.volunteerJobList, 'yo')
   try {
-    const { data } = await api().post(`volunteer-update-job-status/${id}`, 
-    // selectedVolunteerPost.value,
+    const { data } = await api().post(`volunteer-update-job-status/${id}`,
     { job_status : "Approved" }
     )
     toast({
@@ -74,38 +61,15 @@ const volunteerJobPost = async (id) => {
 }
 
 
-// pinia
-const { volunteeringPosts } = storeToRefs(useVolunteerDataStore())
-const { setVolunteeringPosts } = useVolunteerDataStore()
-
-const showAllPost = ref(true)
-const selectedVolunteerPost = ref({})
-
-const props = defineProps({
-  renderFrom: String // Explicitly specify the type of the prop as String
-})
-
-const handleApproveVolunteerPost = (id) => {
-  volunteeringPosts.value.forEach((singleVolunteerPost) => {
-    if (singleVolunteerPost.id === id) {
-      selectedVolunteerPost.value.isPosted = true
-      singleVolunteerPost.isPosted = true
-    }
-  })
-
-  setVolunteeringPosts(volunteeringPosts.value)
-}
-
 onMounted(() => {
-  console.log('here check', props)
   volunteerJobList()
 })
 </script>
 
 <template>
   <div class="px-5 bg-slate-50 py-5 w-full">
-    <div v-if="showAllPost">
-      <p class="text-2xl font-bold py-3 border-b">Open Volunteer Jobs</p>
+    <div>
+      <p class="text-2xl font-bold py-3 border-b">All Volunteer Jobs</p>
       
       <div
         class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center"

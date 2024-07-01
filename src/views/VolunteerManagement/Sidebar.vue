@@ -1,8 +1,8 @@
 <template>
   <div
-    class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover w-1/4 min-h-screen sticky top-[80px]"
+    class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover min-h-screen"
   >
-    <div class="bg-[#23646da9] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
+    <div class="bg-[#6d2351a9] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
       <p class="text-2xl font-bold text-white">Volunteer Dashboard</p>
       <p class="text-xl font-bold text-white">Welcome Mr. Hashim</p>
       <router-link
@@ -57,7 +57,46 @@
               d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V6H22V20C22 20.5523 21.5523 21 21 21H13ZM4 19H20V8H4V19ZM13 10H18V12H13V10ZM13 14H18V16H13V14ZM9 10V13H12C12 14.6569 10.6569 16 9 16C7.34315 16 6 14.6569 6 13C6 11.3431 7.34315 10 9 10ZM2 3H22V5H2V3Z"
             ></path>
           </svg>
-          View Volunteer Job List / Post Volunteer Job</router-link
+          Volunteer Job List</router-link
+      >
+      </div>
+      <div class="accordion bg-white rounded-md">
+        <router-link
+        to="/volunteer_job_list"
+        class="flex items-center gap-2 bg-white p-2 rounded-md"
+        >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+          >
+            <path
+              d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V6H22V20C22 20.5523 21.5523 21 21 21H13ZM4 19H20V8H4V19ZM13 10H18V12H13V10ZM13 14H18V16H13V14ZM9 10V13H12C12 14.6569 10.6569 16 9 16C7.34315 16 6 14.6569 6 13C6 11.3431 7.34315 10 9 10ZM2 3H22V5H2V3Z"
+            ></path>
+          </svg>
+          Active Volunteer Job List</router-link
+      >
+      </div>
+
+      <div class="accordion bg-white rounded-md">
+        <router-link
+        to="/volunteer_job_list"
+        class="flex items-center gap-2 bg-white p-2 rounded-md"
+        >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+          >
+            <path
+              d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V6H22V20C22 20.5523 21.5523 21 21 21H13ZM4 19H20V8H4V19ZM13 10H18V12H13V10ZM13 14H18V16H13V14ZM9 10V13H12C12 14.6569 10.6569 16 9 16C7.34315 16 6 14.6569 6 13C6 11.3431 7.34315 10 9 10ZM2 3H22V5H2V3Z"
+            ></path>
+          </svg>
+          Past Volunteer Job List</router-link
       >
       </div>
       
