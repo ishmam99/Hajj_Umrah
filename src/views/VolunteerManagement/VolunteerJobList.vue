@@ -42,6 +42,7 @@ const volunteerJobList = async () => {
   }
   loading.value = false
 }
+
 const volunteerJobPost = async (id) => {
   loading.value = true
   console.log( store.volunteerJobList, 'yo')
@@ -78,9 +79,9 @@ onMounted(() => {
           <thead>
             <tr class="bg-white">
               <th class="p-2 text-left w-1/8"> SL.</th>
-              <th class="p-2 text-left w-1/8"> Name</th>
-              <th class="p-2 text-left w-1/8">venue</th>
+              <th class="p-2 text-left w-1/8">Title</th>
               <th class="p-2 text-left w-1/8">Gender</th>
+              <th class="p-2 text-left w-1/8">venue</th>
               <th class="p-2 text-left w-1/8">Date</th>
               <th class="p-2 text-left w-1/8">Time</th>
               <th class="p-2 text-left w-1/8">Status</th>

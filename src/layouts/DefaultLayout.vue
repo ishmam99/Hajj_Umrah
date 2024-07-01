@@ -69,17 +69,10 @@ const getDonationType = async () => {
     console.log(error)
   }  
 }
-const getJobList = async () => {
-  try {
-    const { data } = await api().get('job-apply-list')
-    // store.volunteerJobList = data.data
-  }catch (error) {
-    console.log(error)
-  }  
-}
+
 const volunteerJobList = async () => {
   try {
-    const { data } = await api().get('volunteer-job-list', {
+    const { data } = await api().get('volunteer-approved-job-list', {
     })
 
     store.volunteerJobList = data.data
@@ -94,7 +87,6 @@ onMounted(async () => {
   getAnnouncement()
   getServiceList()
   getDonationType()
-  getJobList()
   volunteerJobList()
 })
 </script>

@@ -127,16 +127,6 @@ const volunteerJobDetails = async (id) => {
   }
 }
 
-const registerVolunteerChk = async () => {
-  try {
-    const { data } = await api().get('volunteer-form-check')
-    console.log(data.exists)
-    store.registerVolunteerChk = data.exists
-  } catch (error) {
-    console.log(error)
-  }
-}
-
 const volunteerJobSubmit = async () => {
   const jobform = { volunteer_job_id: selectedVolunteer.value.id }
   try {
@@ -153,7 +143,6 @@ const volunteerJobSubmit = async () => {
 
 onMounted(async () => {
   volunteerJobDetails(selectedId.value)
-  registerVolunteerChk()
 })
 </script>
 

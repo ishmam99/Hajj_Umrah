@@ -878,9 +878,19 @@ const router = createRouter({
           component: () => import('@/views/VolunteerManagement/VolunteerJobList.vue'),
         },
         {
+          path: '/Active_volunteer_job_list',
+          name: 'Active_Volunteer_list',
+          component: () => import('/src/views/VolunteerManagement/ActiveJobList.vue'),
+        },
+        {
+          path: '/Past_volunteer_job_list',
+          name: 'Past_Volunteer_list',
+          component: () => import('/src/views/VolunteerManagement/PastJobList.vue'),
+        },
+        {
           path: '/volunteer_applicant_list',
           name: 'volunteer_applicant_list',
-          component: () => import('@/views/VolunteerManagement/VolunteerApplicantList.vue'),
+          component: () => import('/src/views/VolunteerManagement/VolunteerApplicantList.vue'),
         },
         {
           path: '/approved_volunteer_list',

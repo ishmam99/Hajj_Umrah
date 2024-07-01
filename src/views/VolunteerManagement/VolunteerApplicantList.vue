@@ -17,7 +17,6 @@
                 <th class="p-2 text-left w-1/8">Email</th>
                 <th class="p-2 text-left w-1/8">phone_number</th>
                 <th class="p-2 text-left w-1/8">gender</th>
-                <th class="p-2 text-left w-1/8">Job Title</th>
                 <th class="p-2 text-left w-1/8">More Info</th>
                 <th class="p-2 text-left w-1/8">Action</th>
               </tr>
@@ -30,11 +29,10 @@
               
                 <tr class="table-row">
                   <td class="p-2 text-left w-1/8">{{ index+1 }}</td>
-                  <td class="p-2 text-left w-1/8">{{ volunteerApplicant.user.name }}</td>
-                  <td class="p-2 text-left w-1/8">{{ volunteerApplicant.user.email }}</td>
-                  <td class="p-2 text-left w-1/8">{{ volunteerApplicant.user.phone_no }}</td>
-                  <td class="p-2 text-left w-1/8">{{ volunteerApplicant.volunteer_jobs.gender }}</td>
-                  <td class="p-2 text-left w-1/8">{{ volunteerApplicant.volunteer_jobs.title }}</td>
+                  <td class="p-2 text-left w-1/8">{{ volunteerApplicant?.name}}</td>
+                  <td class="p-2 text-left w-1/8">{{ volunteerApplicant?.email }}</td>
+                  <td class="p-2 text-left w-1/8">{{ volunteerApplicant?.phone_number }}</td>
+                  <td class="p-2 text-left w-1/8">{{ volunteerApplicant?.gender }}</td>
                   <td class="py-4 p-2 text-left">
                     <button @click="details(volunteerApplicant)" class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                       Details
@@ -92,27 +90,27 @@
             <tbody>
               <tr >
                 <th class="p-2 text-left w-1/3">Volunteer Event Name:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_jobs.title }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails?.volunteer_jobs?.title }}</td>
               </tr>
               <tr class="bg-white">
                 <th class="p-2 text-left w-1/3">Volunteer Type:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_jobs.volunteering_type ? volunteerDetails.volunteer_jobs.volunteering_type : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_jobs?.volunteering_type ? volunteerDetails.volunteer_jobs?.volunteering_type : '---'  }}</td>
               </tr>
               <tr >
                 <th class="p-2 text-left w-1/3">Venue:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_jobs.venue ? volunteerDetails.volunteer_jobs.venue : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_jobs?.venue ? volunteerDetails.volunteer_jobs?.venue : '---'  }}</td>
               </tr>
               <tr class="bg-white">
                 <th class="p-2 text-left w-1/3">Gender:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_jobs.gender ? volunteerDetails.volunteer_jobs.gender : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_jobs?.gender ? volunteerDetails.volunteer_jobs?.gender : '---'  }}</td>
               </tr>
               <tr >
                 <th class="p-2 text-left w-1/3">Date and Time:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_jobs.date }} | {{ volunteerDetails.volunteer_jobs.time }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_jobs?.date }} | {{ volunteerDetails.volunteer_jobs?.time }}</td>
               </tr>
               <tr class="bg-white">
                 <th class="p-2 text-left w-1/3">Required  Qualification:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_jobs.qualification ? volunteerDetails.volunteer_jobs.qualification : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_jobs?.qualification ? volunteerDetails.volunteer_jobs?.qualification : '---'  }}</td>
               </tr>
             </tbody>
           </table>
@@ -122,43 +120,43 @@
             <tbody>
               <tr >
                 <th class="p-2 text-left w-1/3">Name:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.name }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.name }}</td>
               </tr>
               <tr class="bg-white">
                 <th class="p-2 text-left w-1/3">Email:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.email }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.email }}</td>
               </tr>
               <tr >
                 <th class="p-2 text-left w-1/3">Phone:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.phone_number ? volunteerDetails.volunteer_form.phone_number : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.phone_number ? volunteerDetails.volunteer_form.phone_number : '---'  }}</td>
               </tr>
               <tr class="bg-white">
                 <th class="p-2 text-left w-1/3">Gender:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.gender ? volunteerDetails.volunteer_form.gender : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.gender ? volunteerDetails.volunteer_form.gender : '---'  }}</td>
               </tr>
               <tr >
                 <th class="p-2 text-left w-1/3">Country:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.country ? volunteerDetails.volunteer_form.country : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.country ? volunteerDetails.volunteer_form.country : '---'  }}</td>
               </tr>
               <tr class="bg-white">
                 <th class="p-2 text-left w-1/3">Address:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.address ? volunteerDetails.volunteer_form.address : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.address ? volunteerDetails.volunteer_form.address : '---'  }}</td>
               </tr>
               <tr >
                 <th class="p-2 text-left w-1/3">Educational Qualification:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.educational_qualification ? volunteerDetails.volunteer_form.educational_qualification : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.educational_qualification ? volunteerDetails.volunteer_form.educational_qualification : '---'  }}</td>
               </tr>
               <tr class="bg-white">
                 <th class="p-2 text-left w-1/3">Professional Experience:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.professional_experience ? volunteerDetails.volunteer_form.professional_experience : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.professional_experience ? volunteerDetails.volunteer_form.professional_experience : '---'  }}</td>
               </tr>
               <tr >
                 <th class="p-2 text-left w-1/3">Expertise:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.expertise ? volunteerDetails.volunteer_form.expertise : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.expertise ? volunteerDetails.volunteer_form.expertise : '---'  }}</td>
               </tr>
               <tr class="bg-white">
                 <th class="p-2 text-left w-1/3">Previous Volunteer Experience:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.previous_volunteering ? volunteerDetails.volunteer_form.previous_volunteering : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.previous_volunteering ? volunteerDetails.volunteer_form.previous_volunteering : '---'  }}</td>
               </tr>
             </tbody>
           </table>
@@ -168,23 +166,23 @@
             <tbody>
               <tr >
                 <th class="p-2 text-left w-1/3">Parents Name:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.parents_name }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.parents_name }}</td>
               </tr>
               <tr class="bg-white">
                 <th class="p-2 text-left w-1/3">Relationship with Parents:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.relationship }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.relationship }}</td>
               </tr>
               <tr >
                 <th class="p-2 text-left w-1/3">Parents Email:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.parents_email ? volunteerDetails.volunteer_form.parents_email : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.parents_email ? volunteerDetails.volunteer_form.parents_email : '---'  }}</td>
               </tr>
               <tr class="bg-white">
                 <th class="p-2 text-left w-1/3">Parents Address:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.parents_address ? volunteerDetails.volunteer_form.parents_address : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.parents_address ? volunteerDetails.volunteer_form.parents_address : '---'  }}</td>
               </tr>
               <tr >
                 <th class="p-2 text-left w-1/3">Parents Phone:</th>
-                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form.parents_phone ? volunteerDetails.volunteer_form.country : '---'  }}</td>
+                <td class="p-2 text-left w-2/3">{{ volunteerDetails.volunteer_form?.parents_phone ? volunteerDetails.volunteer_form.country : '---'  }}</td>
               </tr>
             </tbody>
           </table>
@@ -206,8 +204,9 @@
   } from '/components/ui/dropdown-menu'
   
   import { ref, onMounted, computed } from 'vue'
-  import { useVolunteerDashboardStore } from '@/stores/volunteerStore2.ts'
-  
+  import { useAdminStore } from '/src/stores/adminStore.ts'
+
+  const store = useAdminStore()
   const showDetails = ref(false)
   const volunteerDetails = ref()
   
@@ -216,10 +215,10 @@
     volunteerDetails.value = volunteerApplicant
   }
   
-  const store = useVolunteerDashboardStore()
+
   const registerVolunteerAppliedList = async () => {
     try {
-      const { data } = await api().get('volunteer-job-apply-list')
+      const { data } = await api().get('volunteer-form-list')
       console.log(data)
       store.registerVolunteerAppliedList = data.data
       
@@ -227,6 +226,14 @@
       console.log(error)
     }
   }
+//   const getJobList = async () => {
+//   try {
+//     const { data } = await api().get('job-apply-list')
+//     // store.volunteerJobList = data.data
+//   }catch (error) {
+//     console.log(error)
+//   }  
+// }
   
   const allVolunteerList = computed(() => {
     return store.registerVolunteerAppliedList.filter((item)=>item.status == 0)
@@ -248,6 +255,18 @@
     try {
       const { data } = await api().post(`volunteer-job-apply-update-status/${id}`, {
         status:2
+      })
+      console.log(data)
+      registerVolunteerAppliedList()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const volunteerComplete = async (id) => {
+    try {
+      const { data } = await api().post(`volunteer-job-apply-update-status/${id}`, {
+        status:3
       })
       console.log(data)
       registerVolunteerAppliedList()

@@ -30,7 +30,8 @@ export const useAdminStore = defineStore('adminStore',{
         categoryWiseImage: [],
         imageList: [],
         
-        volunteerJobList :[],
+    volunteerJobList: [],
+    registerVolunteerAppliedList:[],
   }),
   actions: {
     
