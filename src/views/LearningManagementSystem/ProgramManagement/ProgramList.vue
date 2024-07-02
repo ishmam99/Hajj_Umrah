@@ -46,7 +46,7 @@
                           >Edit</DropdownMenuItem
                         >
                         <DropdownMenuItem class="text-cyan-800" @click="edit(event)"
-                          >Approved</DropdownMenuItem
+                          >Active</DropdownMenuItem
                         >
                         <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
                       </DropdownMenuContent>

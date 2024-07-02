@@ -22,6 +22,22 @@
                                     </SelectTrigger>
                                     <SelectContent>
                                         <SelectGroup>
+                                            <SelectLabel>Select Curriculum Type</SelectLabel>
+                                            <SelectItem value="Open Course">Open Course</SelectItem>
+                                            <SelectItem value="Paid Course">Paid Course</SelectItem>
+                                        </SelectGroup>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                        </div>
+                        <div class="w-1/4">
+                            <div class="relative mb-3">
+                                <Select v-model="courseData.type" required>
+                                    <SelectTrigger class="w-full">
+                                        <SelectValue placeholder="Course Type" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectGroup>
                                             <SelectLabel>Select Course Type</SelectLabel>
                                             <SelectItem value="Online">Online</SelectItem>
                                             <SelectItem value="Offline">Offline</SelectItem>
