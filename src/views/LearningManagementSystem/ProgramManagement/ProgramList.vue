@@ -68,7 +68,7 @@
         </div>
       </div>
   
-      <div v-else class="px-5 bg-slate-50 py-5 w-full">
+      <!-- <div v-else class="px-5 bg-slate-50 py-5 w-full">
         <p class="text-2xl font-bold py-3 border-b">Update Announcement</p>
         <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
           <form  @submit.prevent="editSubmit">
@@ -82,7 +82,7 @@
                         <input
                           type="text"
                           class="py-2 px-6 rounded-2xl w-full border-2"
-                          v-model="announcemnetStore.title"
+                          v-model="announcemnetStore?.title"
                         />
                       </div>
                     </div>
@@ -141,12 +141,13 @@
             </div>
           </form>
         </div>
-      </div>
+      </div> -->
   
     </div>
   </template>
   <script setup>
   import { ref, onMounted } from 'vue'
+  import { useToast } from '/components/ui/toast/use-toast'
   import {
     Dialog,
     DialogContent,
@@ -165,74 +166,26 @@
     DropdownMenuSeparator,
     DropdownMenuTrigger
   } from '/components/ui/dropdown-menu'
-  
-  import { useOperationStore } from '@/stores/operationDashboard.ts'
-  import { useAuthStore } from '@/stores/AuthStore'
-  
-  const store = useOperationStore()
-  const authStore = useAuthStore()
-  
-  const getProjectList = async () => {
-    try {
-      const { data } = await api().get('announcement-list')
-      store.announcementList = data.data
-      // console.log(store.serviceList[0])
-    } catch (error) {
-      console.log(error)
-    }
+import { useVolunteerDashboardStore } from '@/stores/volunteerStore2';
+
+  const loading = ref(false)
+  const isEdit = ref(false);
+const { toast } = useToast()
+
+const programList = async () =>{
+  loading.value = true;
+  try{
+    const {data} = await api().get('course_type')
+    store.createProgramData = data.data
+  } catch (error){
+    console.log(error)
   }
-  const isEdit = ref(false)
-  const announceId = ref()
+  loading.value = false
+}
   
-  const edit = (event) => {
-    isEdit.value = true
-    announceId.value = event.id
-    announcemnetStore.value.title = event.title
-    announcemnetStore.value.description = event.description
-    console.log(event, 'event chk')
-  }
-  
-  const selectedFile = ref(null)
-  
-  const announcemnetStore = ref({
-    name: '',
-    event_type: '',
-    occurrence_type: '',
-    human_resource: '',
-    material_resource: '',
-    description: '',
-    address: '',
-    city: '',
-    state: '',
-    start_date: '',
-    state_time: '',
-    end_date: '',
-    end_time: '',
-    image: ''
-  })
-  
-  function onFileChange(event) {
-    selectedFile.value = event.target.files[0]
-    announcemnetStore.value.image = event.target.files[0]
-    console.log('Selected File:', selectedFile.value)
-  }
-  
-  const editSubmit = async (eventId) => {
-    // try {
-    //   const data = await api().post('event-store', announcemnetStore.value,)
-    //   console.log(data)
-    //   toast({
-    //     title: 'Fund Raise Event Created '
-    //   })
-    // } catch (error) {
-    //   console.log(error)
-    // }
-  
-    isEdit.value = false
-  }
   
   onMounted(async () => {
-    getProjectList()
+    programList()
   })
   </script>
   

@@ -16,21 +16,22 @@
         </svg>
       </h4>
 
-      <form v-if="!showCourseTypeEntry" @submit.prevent="socialEventSubmit()">
+      <form v-if="!showCourseTypeEntry" @submit.prevent="submitCourseType()">
         <div class="py-5 space-y-7 mt-5">
           <div class="flex gap-3">
             <div class="relative w-full mb-3">
-              <input type="text"
+              <input type="text" v-model="courseTypeInput.course_type"
                 class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                id="exampleFormControlInput50" value="" />
+                id="exampleFormControlInput50" value="" required />
               <label for="exampleFormControlInput50"
-                class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary">Enter Course Type<span class="text-red-500">*</span>
+                class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.2] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary">Enter
+                Course Type<span class="text-red-500">*</span>
               </label>
             </div>
           </div>
 
           <button type="submit"
-            class="w-full h-[45px] rounded-2xl bg-teal-800 text-white font-bold mx-auto flex items-center text-center justify-center"><svg
+            class="w-1/2 h-[45px] rounded-2xl bg-teal-800 text-white font-bold mx-auto flex items-center text-center justify-center"><svg
               v-if="loading" xmlns="http://www.w3.org/2000/svg" class="animate-spin !m-0 w-5 h-5" viewBox="0 0 24 24"
               fill="rgba(255,255,255,1)">
               <path
@@ -44,11 +45,11 @@
 
       <hr>
 
-      <form @submit.prevent="socialEventSubmit()">
+      <form @submit.prevent="submitProgram()">
         <div class="py-5 space-y-7 mt-5">
           <div class="flex gap-5">
             <div class="relative mb-3 w-1/2">
-              <input type="text"
+              <input type="text" v-model="createProgram.course_name"
                 class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                 id="exampleFormControlInput50" value="" />
               <label for="exampleFormControlInput50"
@@ -58,7 +59,7 @@
             </div>
             <div class="w-1/2">
               <div class="relative mb-3">
-                <Select>
+                <Select v-model="createProgram.course_type">
                   <SelectTrigger class="w-full">
                     <SelectValue placeholder="Course Type" />
                   </SelectTrigger>
@@ -75,7 +76,7 @@
           </div>
 
           <div class="relative mb-3">
-            <Select>
+            <Select v-model="createProgram.course_status">
               <SelectTrigger class="w-full">
                 <SelectValue placeholder="Status" />
               </SelectTrigger>
@@ -95,7 +96,7 @@
             </p>
             <textarea name="" id="" cols="" rows="4" placeholder="Ex:23"
               class="w-full p-3 pt-5 rounded-lg border-2 focus:outline-gray-200"
-              v-model="announcemnetStore.description"></textarea>
+              v-model="createProgram.course_description"></textarea>
           </div>
 
           <button type="submit"
@@ -117,7 +118,7 @@
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import SocialSidebar from '/src/views/Operation/OperationSidevar.vue'
 import { useSocialStore } from '@/stores/SocialDashboard.ts'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
 import {
   Select,
@@ -128,30 +129,61 @@ import {
   SelectTrigger,
   SelectValue
 } from '/components/ui/select'
-const store = useSocialStore()
+import { useLMSStore } from '@/stores/LMSdashboard';
+const store = useLMSStore()
 
 const showCourseTypeEntry = ref(true);
 
-const announcemnetStore = ref({
-  title: '',
-  description: '',
-  image: ''
+const courseTypeInput = ref({
+  course_type: '',
 })
-const selectedFile = ref(null)
 
-function onFileChange(event) {
-  selectedFile.value = event.target.files[0]
-  announcemnetStore.value.image = event.target.files[0]
-  console.log('selected image', selectedFile.value)
-}
+const createProgram = ref({
+  course_name: '',
+  course_description: '',
+  course_type: '',
+  course_status: '',
+})
+
 const loading = ref(false)
 const { toast } = useToast()
 
-const socialEventSubmit = async () => {
-  console.log(socialEventSubmit)
+const programData = async () =>{
+  loading.value = true;
+  try{
+    const {data} = await api().get('course_type')
+    store.createProgramData = data.data
+  } catch (error){
+    console.log(error)
+  }
+  loading.value = false
+}
+
+const submitCourseType = async () => {
+  console.log('submitCourseType called', courseTypeInput.value) // Add this line
   loading.value = true
   try {
-    const data = await api().post('', announcemnetStore.value)
+    const data = await api().post('course-type', courseTypeInput.value)
+    toast({
+      title: 'Success',
+      description: 'Course Type Created'
+    })
+    console.log(data)
+  } catch (error) {
+    console.log(error)
+    toast({
+      title: 'Error',
+      description: 'Please Try Again'
+    })
+  }
+  loading.value = false
+}
+
+const submitProgram = async () => {
+  console.log('submitProgram called', createProgram.value) // Add this line
+  loading.value = true
+  try {
+    const data = await api().post('program', createProgram.value)
     toast({
       title: 'Success',
       description: 'Program Created'
@@ -166,4 +198,8 @@ const socialEventSubmit = async () => {
   }
   loading.value = false
 }
+
+onMounted(async () => {
+  programData()
+})
 </script>
