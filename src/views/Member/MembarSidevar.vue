@@ -102,7 +102,7 @@
       </div>
 
       <!-- volunteer panel  -->
-      <div class="bg-white p-2 rounded-md cursor-pointer">
+      <div v-if="AuthStore.user.is_volunteer == 2" class="bg-white p-2 rounded-md cursor-pointer">
         <p @click="dropdown = 2" class="pb-1 flex items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -163,8 +163,9 @@
         </div>
       </div>
 
+
       <!-- imam panel -->
-      <!-- <div class="bg-white p-2 rounded-md cursor-pointer">
+      <div v-if="AuthStore.user.is_imam == 2" class="bg-white p-2 rounded-md cursor-pointer">
         <p @click="dropdown =3" class="pb-1 flex items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -234,10 +235,10 @@
             >My Task list
           </router-link>
         </div>
-      </div> -->
+      </div>
 
       <!-- scholar panel  -->
-      <!-- <div class="bg-white p-2 rounded-md cursor-pointer">
+      <div v-if="AuthStore.user.is_scholar == 2" class="bg-white p-2 rounded-md cursor-pointer">
         <p @click="dropdown = 4" class="pb-1 flex items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -307,10 +308,10 @@
             >My Task list
           </router-link>
         </div>
-      </div> -->
+      </div>
 
       <!-- vendor panel  -->
-      <!-- <div class="bg-white p-2 rounded-md cursor-pointer">
+      <div v-if="AuthStore.user.is_vendor == 2" class="bg-white p-2 rounded-md cursor-pointer">
         <p @click="dropdown = 5" class="pb-1 flex items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -367,10 +368,10 @@
             >Completed Bid List
           </router-link>
         </div>
-      </div> -->
+      </div>
 
       <!-- teacher dropdown -->
-      <div class="bg-white p-2 rounded-md cursor-pointer">
+      <div v-if="AuthStore.user.is_teacher == 2" class="bg-white p-2 rounded-md cursor-pointer">
         <p @click="dropdown = 6" class="pb-1 flex items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -516,7 +517,7 @@
       </div>
 
       <!-- student dropdown  -->
-      <!-- <div class="bg-white p-2 rounded-md cursor-pointer">
+      <div v-if="AuthStore.user.is_student == 2" class="bg-white p-2 rounded-md cursor-pointer">
         <p @click="dropdown = 7" class="pb-1 flex items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -607,7 +608,7 @@
             >My Purchases
           </router-link>
         </div>
-      </div> -->
+      </div>
 
       <router-link
         to="/Membar_Donation_History"
@@ -643,27 +644,10 @@
         >Payment</router-link
       >
 
-      <router-link
-        to="/Membar_Change_Password"
-        @click="dropdown = 0"
-        class="flex items-center gap-2 bg-white p-2 rounded-md"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M12.0049 22.0027C6.48204 22.0027 2.00488 17.5256 2.00488 12.0027C2.00488 6.4799 6.48204 2.00275 12.0049 2.00275C17.5277 2.00275 22.0049 6.4799 22.0049 12.0027C22.0049 17.5256 17.5277 22.0027 12.0049 22.0027ZM12.0049 20.0027C16.4232 20.0027 20.0049 16.421 20.0049 12.0027C20.0049 7.58447 16.4232 4.00275 12.0049 4.00275C7.5866 4.00275 4.00488 7.58447 4.00488 12.0027C4.00488 16.421 7.5866 20.0027 12.0049 20.0027ZM7.00488 9.00275L10.0049 5.50275L13.0049 9.00275H11.0049V13.0027H9.00488V9.00275H7.00488ZM17.0049 15.0027L14.0049 18.5027L11.0049 15.0027H13.0049V11.0027H15.0049V15.0027H17.0049Z"
-          ></path></svg
-        >Change Password</router-link
-      >
-
       <button
         type="button"
         @click="logout()"
-        class="py-2 px-5 mt-2 w-1/2 bg-red-800 rounded-md text-white duration-300"
+        class="py-2 px-5 mt-2 bg-red-800 rounded-md text-white duration-300"
       >
         Log Out
       </button>
@@ -683,16 +667,10 @@ const AuthStore = useAuthStore()
 const dropdown = ref(0)
 const subDropDown = ref(false)
 
-watch(
-  () => AuthStore.isAuthenticated,
-  (newIsAuthenticated) => {
-    console.log(newIsAuthenticated)
-
-    if (!newIsAuthenticated) {
-      router.push('/')
-    }
-  }
-  )
+const logout = () => {
+  AuthStore.logout()
+  router.push('/')
+}
   
 </script>
 <style scoped>

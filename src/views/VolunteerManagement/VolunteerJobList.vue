@@ -54,7 +54,26 @@ const volunteerJobPost = async (id) => {
       title: 'Success',
       description: 'Volunteer posted successfully!'
     })
+    volunteerJobList()
     
+  } catch (error) {
+    console.log(error)
+  }
+  loading.value = false
+}
+
+const volunteerJobRemove = async (id) => {
+  loading.value = true
+  console.log( store.volunteerJobList, 'yo')
+  try {
+    const { data } = await api().post(`volunteer-update-job-status/${id}`,
+    { job_status : "Waiting" }
+    )
+    toast({
+      title: 'Success',
+      description: 'Volunteer posted successfully!'
+    })
+    volunteerJobList()
   } catch (error) {
     console.log(error)
   }
@@ -100,6 +119,7 @@ onMounted(() => {
               <td class="py-4 p-2 text-left w-1/8">{{ volunteerPost.time }} </td>
               <td v-if="volunteerPost.job_status == 'Approved'" class="py-4 p-2 text-left w-1/8 text-green-600 font-semibold">Approved</td>
               <td v-if="volunteerPost.job_status == 'Waiting'" class="py-4 p-2 text-left w-1/8 font-semibold text-gray-400">Pending</td>
+              <td v-if="volunteerPost.job_status == 'Complete'" class="py-4 p-2 text-left w-1/8 font-semibold text-yellow-600">Compete</td>
               <td class="py-4 p-2 text-left w-1/8">
                 <div
                   class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2"
@@ -111,11 +131,14 @@ onMounted(() => {
                       <DropdownMenuItem class="text-blue-600" 
                         >Details</DropdownMenuItem
                       >
-                      <DropdownMenuItem class="text-yellow-600" 
+                      <DropdownMenuItem v-if="volunteerPost.job_status != 'Complete'" class="text-yellow-600" 
                         >Edit</DropdownMenuItem
                       >
-                      <DropdownMenuItem class="text-green-600" @click="volunteerJobPost(volunteerPost.id)"
+                      <DropdownMenuItem v-if="volunteerPost.job_status == 'Waiting' && volunteerPost.job_status != 'Complete'" class="text-green-600" @click="volunteerJobPost(volunteerPost.id)"
                         >Post</DropdownMenuItem
+                      >
+                      <DropdownMenuItem v-if="volunteerPost.job_status == 'Approved' && volunteerPost.job_status != 'Complete'" class="text-green-600" @click="volunteerJobRemove(volunteerPost.id)"
+                        >Remove</DropdownMenuItem
                       >
                       <DropdownMenuItem class="text-red-600" @click="submitDelete()"
                         >Delete</DropdownMenuItem

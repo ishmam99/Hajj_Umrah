@@ -2,7 +2,7 @@
   <div
     class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover min-h-screen"
   >
-    <div class="bg-[#6d2351a9] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
+    <div class="bg-[#232e6da9] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
       <p class="text-2xl font-bold text-white">Volunteer Dashboard</p>
       <p class="text-xl font-bold text-white">Welcome Mr. Hashim</p>
       <router-link
@@ -96,7 +96,7 @@
               d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V6H22V20C22 20.5523 21.5523 21 21 21H13ZM4 19H20V8H4V19ZM13 10H18V12H13V10ZM13 14H18V16H13V14ZM9 10V13H12C12 14.6569 10.6569 16 9 16C7.34315 16 6 14.6569 6 13C6 11.3431 7.34315 10 9 10ZM2 3H22V5H2V3Z"
             ></path>
           </svg>
-          Past Volunteer Job List</router-link
+          Completed Volunteer Job List</router-link
       >
       </div>
       
@@ -179,7 +179,7 @@
       <button
         type="button"
         @click="store.logout()"
-        class="py-2 px-5 mt-2 w-1/2 bg-red-800 rounded-md text-white duration-300"
+        class="py-2 px-5 mt-2 bg-red-800 rounded-md text-white duration-300"
       >
         Log Out
       </button>

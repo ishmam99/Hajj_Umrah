@@ -32,6 +32,7 @@ export const useAdminStore = defineStore('adminStore',{
         
     volunteerJobList: [],
     registerVolunteerAppliedList:[],
+    volunteerWithUser:[]
   }),
   actions: {
     

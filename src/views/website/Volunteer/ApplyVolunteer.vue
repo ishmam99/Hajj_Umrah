@@ -3,6 +3,7 @@ import { ref, onMounted, defineProps, defineEmits } from 'vue'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import { useRouter } from 'vue-router';
 import { useToast } from '/components/ui/toast/use-toast'
+import {useAuthStore} from '/src/stores/AuthStore.ts' 
 
 import {
   Select,
@@ -16,7 +17,7 @@ import {
 
 // pinia
 
-
+const AuthStore = useAuthStore()
 const router = useRouter();
 const { toast } = useToast()
 
@@ -310,12 +311,20 @@ const volunteerAdmissionSubmit = async () => {
             </div>
           </div>
 
-          <button
+          <button v-if="AuthStore.isAuthenticated == true  && AuthStore.user.is_volunteer == 0"
             type="submit"
             class="w-full h-[45px] rounded-2xl bg-teal-800 text-white font-bold mx-auto flex items-center text-center justify-center"
           >
             Apply
           </button>
+          <div v-else class="flex justify-center gap-5">
+            <router-link to="/Signup" class="bg-blue-600 px-8 py-2 rounded-2xl text-white"
+              >Sign Up</router-link
+            >
+            <router-link to="/Member_Login" class="bg-green-600 px-8 py-2 rounded-2xl text-white"
+              >Sign In</router-link
+            >
+          </div>
         </div>
       </form>
     </div>

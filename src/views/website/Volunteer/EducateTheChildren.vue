@@ -64,7 +64,7 @@
             <router-link
               to="/volunteerRegister"
               class="px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold"
-              v-if="store.registerVolunteerChk == false"
+              v-if="authStore.user.is_volunteer == 0"
               >register</router-link
             >
             <button

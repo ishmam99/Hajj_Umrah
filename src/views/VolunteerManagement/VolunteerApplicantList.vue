@@ -226,23 +226,11 @@
       console.log(error)
     }
   }
-//   const getJobList = async () => {
-//   try {
-//     const { data } = await api().get('job-apply-list')
-//     // store.volunteerJobList = data.data
-//   }catch (error) {
-//     console.log(error)
-//   }  
-// }
-  
-  const allVolunteerList = computed(() => {
-    return store.registerVolunteerAppliedList.filter((item)=>item.status == 0)
-  })
   
   const volunteerConfirm = async (id) => {
     try {
-      const { data } = await api().post(`volunteer-job-apply-update-status/${id}`, {
-        status:1
+      const { data } = await api().post(`volunteer-approved/${id}`, {
+        status:'Approved'
       })
       console.log(data)
       registerVolunteerAppliedList()
@@ -253,8 +241,8 @@
   
   const volunteerReject = async (id) => {
     try {
-      const { data } = await api().post(`volunteer-job-apply-update-status/${id}`, {
-        status:2
+      const { data } = await api().post(`volunteer-approved/${id}`, {
+        status: 'Rejected '
       })
       console.log(data)
       registerVolunteerAppliedList()
@@ -263,17 +251,6 @@
     }
   }
 
-  const volunteerComplete = async (id) => {
-    try {
-      const { data } = await api().post(`volunteer-job-apply-update-status/${id}`, {
-        status:3
-      })
-      console.log(data)
-      registerVolunteerAppliedList()
-    } catch (error) {
-      console.log(error)
-    }
-  }
   
   
   

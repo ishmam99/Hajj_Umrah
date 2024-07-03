@@ -2,7 +2,7 @@
     <div class="px-5 bg-slate-50 py-5">
       <div v-if="showDetails == false" class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
         <div class="flex justify-between items-center pt-4 pb-2">
-          <p class="text-2xl text-yellow-600 font-bold">Volunteer Applicant List</p>
+          <p class="text-2xl text-yellow-600 font-bold">Approved Volunteer Applicant List</p>
         </div>
   
         <hr />
@@ -17,7 +17,7 @@
                 <th class="p-2 text-left w-1/8">Email</th>
                 <th class="p-2 text-left w-1/8">phone_number</th>
                 <th class="p-2 text-left w-1/8">gender</th>
-                <th class="p-2 text-left w-1/8">Job Title</th>
+                <!-- <th class="p-2 text-left w-1/8">Job Title</th> -->
                 <th class="p-2 text-left w-1/8">More Info</th>
               </tr>
             </thead>
@@ -32,7 +32,7 @@
                   <td class="p-2 text-left w-1/8">{{ volunteerApplicant.user.email }}</td>
                   <td class="p-2 text-left w-1/8">{{ volunteerApplicant.user.phone_no }}</td>
                   <td class="p-2 text-left w-1/8">{{ volunteerApplicant.volunteer_jobs.gender }}</td>
-                  <td class="p-2 text-left w-1/8">{{ volunteerApplicant.volunteer_jobs.title }}</td>
+                  <!-- <td class="p-2 text-left w-1/8">{{ volunteerApplicant.volunteer_jobs.title }}</td> -->
                   <td class="py-4 p-2 text-left">
                     <button
                       @click="details(volunteerApplicant)"

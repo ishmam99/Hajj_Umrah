@@ -2,7 +2,7 @@
     <div class="px-5 bg-slate-50 py-5">
       <div v-if="showDetails == false" class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
         <div class="flex justify-between items-center pt-4 pb-2">
-          <p class="text-2xl text-yellow-600 font-bold">Volunteer Applicant List</p>
+          <p class="text-2xl text-yellow-600 font-bold">Rejected Volunteer Applicant List</p>
         </div>
   
         <hr />
