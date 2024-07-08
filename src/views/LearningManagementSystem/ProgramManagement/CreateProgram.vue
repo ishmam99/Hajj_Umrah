@@ -3,7 +3,7 @@
     <p class="text-2xl text-cyan-700 font-bold pb-2">Create Program</p>
     <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
       <h4 @click="showCourseTypeEntry = !showCourseTypeEntry"
-        class="flex justify-end gap-2 items-center cursor-pointer font-bold text-xl">Entry Course Type <svg
+        class="flex justify-end gap-2 items-center cursor-pointer font-bold text-xl">Entry Program Type <svg
           v-if="showCourseTypeEntry" class="bg-green-300 p-1 rounded" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24" width="28" height="28" fill="rgba(255,255,255,1)">
           <path
@@ -25,7 +25,7 @@
                 id="exampleFormControlInput50" value="" required />
               <label for="exampleFormControlInput50"
                 class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.2] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary">Enter
-                Course Type<span class="text-red-500">*</span>
+                Program Type<span class="text-red-500">*</span>
               </label>
             </div>
           </div>
@@ -53,7 +53,7 @@
                 class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                 id="exampleFormControlInput50" value="" />
               <label for="exampleFormControlInput50"
-                class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary">Program
+                class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.2] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary">Program
                 Name <span class="text-red-500">*</span>
               </label>
             </div>
@@ -61,13 +61,15 @@
               <div class="relative mb-3">
                 <Select v-model="createProgram.course_type">
                   <SelectTrigger class="w-full">
-                    <SelectValue placeholder="Course Type" />
+                    <SelectValue placeholder="Program Type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Select Course Type</SelectLabel>
-                      <SelectItem value="Online">Full Time</SelectItem>
-                      <SelectItem value="Offline">Part Time</SelectItem>
+                    <SelectGroup v-for="courseType in store.courseTypeInfo" :key="courseType.id">
+                      <!-- {{ courseType }} -->
+                      <!-- <SelectLabel>Select Course Type</SelectLabel> -->
+                      <SelectItem :value="courseType.id">{{ courseType.title }}</SelectItem>
+                      <!-- <SelectItem value="Full Time">Full Time</SelectItem>
+                      <SelectItem value="Part Time">Part Time</SelectItem> -->
                     </SelectGroup>
                   </SelectContent>
                 </Select>
@@ -83,8 +85,8 @@
               <SelectContent>
                 <SelectGroup>
                   <SelectLabel>Select Status</SelectLabel>
-                  <SelectItem value="Online">Active</SelectItem>
-                  <SelectItem value="Offline">Inactive</SelectItem>
+                  <SelectItem value="1">Active</SelectItem>
+                  <SelectItem value="0">Inactive</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -148,19 +150,18 @@ const createProgram = ref({
 const loading = ref(false)
 const { toast } = useToast()
 
-const programData = async () =>{
+const programData = async () => {
   loading.value = true;
-  try{
-    const {data} = await api().get('course_type')
-    store.createProgramData = data.data
-  } catch (error){
+  try {
+    const { data } = await api().get('course-type')
+    store.courseTypeInfo = data.data
+  } catch (error) {
     console.log(error)
   }
   loading.value = false
 }
 
 const submitCourseType = async () => {
-  console.log('submitCourseType called', courseTypeInput.value) // Add this line
   loading.value = true
   try {
     const data = await api().post('course-type', courseTypeInput.value)
@@ -180,7 +181,6 @@ const submitCourseType = async () => {
 }
 
 const submitProgram = async () => {
-  console.log('submitProgram called', createProgram.value) // Add this line
   loading.value = true
   try {
     const data = await api().post('program', createProgram.value)

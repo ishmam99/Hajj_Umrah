@@ -5,8 +5,9 @@ import { defineStore } from 'pinia';
 
 export const useLMSStore = defineStore('lmsStore',{
   state: () => ({
-        courseType: [],
+        courseTypeInfo: [],
         createProgramData: [],
+        programListData: [],
 
   }),
   actions: {
