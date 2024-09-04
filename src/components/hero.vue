@@ -1,6 +1,6 @@
 <template>
   <div class="pt-[80px]"></div>
-  <div class="h-[80vh] 2xl:h-[50vh] relative">
+  <div class="h-[80vh] 2xl:h-[70vh] relative">
     <div class="h-full">
       <swiper
         :slidesPerView="'1'"
@@ -19,23 +19,23 @@
         class="mySwiper"
       >
         <swiper-slide>
-          <img src="/src/assets/image/hero/h1.jpg" alt="" class="" />
+          <img src="/src/assets/image/hero/kaba.jpg" alt="" class="" />
           <div class="head">
             <p>Welcome To</p>
-            <h1>Islamic Digital Lane</h1>
+            <h1>Hajj Exploration LLC</h1>
             <button class=""><router-link to="/Signup">Join Now</router-link></button>
           </div>
         </swiper-slide>
         <swiper-slide>
-          <img src="/src/assets/image/hero/h2.jpg" alt="" class="" />
+          <img src="/src/assets/image/hero/mina.jpg" alt="" class="" />
           <div class="head">
-            <p>Islamic Digital Lane</p>
+            <!-- <p>Islamic Digital Lane</p>
             <h1>Learning Center</h1>
-            <button class=""><router-link to="/onsitelearning">Join Now</router-link></button>
+            <button class=""><router-link to="/onsitelearning">Join Now</router-link></button> -->
           </div>
         </swiper-slide>
         <swiper-slide>
-          <img src="/src/assets/image/hero/h5.jpg" alt="" class="" />
+          <img src="/src/assets/image/hero/women.jpg" alt="" class="" />
           <div class="head">
             <p>Islamic Digital Lane</p>
             <h1>Prayer Service</h1>
@@ -43,7 +43,7 @@
           </div>
         </swiper-slide>
         <swiper-slide>
-          <img src="/src/assets/image/hero/h6.jpg" alt="" class="" />
+          <img src="/src/assets/image/hero/arafat.jpg" alt="" class="" />
           <div class="head">
             <p>Islamic Digital Lane</p>
             <h1>New Muslim Service</h1>
@@ -51,7 +51,7 @@
           </div>
         </swiper-slide>
         <swiper-slide>
-          <img src="https://images.unsplash.com/photo-1516570161787-2fd917215a3d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="" />
+          <img src="/src/assets/image/hero/people.jpeg" alt="" class="" />
           <div class="head">
             <p>Islamic Digital Lane</p>
             <h1>Fund Rising Service</h1>
@@ -59,7 +59,7 @@
           </div>
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/image/hero/donation.jpg" alt="" class="" />
+          <img src="../assets/image/hero/madinah.jpg" alt="" class="" />
           <div class="head">
             <p>Islamic Digital Lane</p>
             <h1>Donation Service</h1>
