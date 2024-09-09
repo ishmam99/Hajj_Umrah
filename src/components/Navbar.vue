@@ -27,19 +27,19 @@
 
             <MenubarItem>
               <router-link
-                to="/services/facilities"
+                to="/hajj-services"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Hajj Service</router-link
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/services/nikah" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link to="/umrah-services" class="w-full hover:pl-5 duration-300 font-semibold"
                 >Umrah Service</router-link
               >
             </MenubarItem>
             <MenubarItem>
               <router-link
-                to="/services/funeral"
+                to="/tour-services"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Tour Service</router-link
               >

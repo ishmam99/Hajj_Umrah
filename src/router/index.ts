@@ -19,6 +19,24 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
+
+    {
+      path: '/hajj-services',
+      name: 'hajj-services',
+      component: () => import('../views/Services/hajj-services.vue')
+    },
+    
+    {
+      path: '/umrah-services',
+      name: 'umrah-services',
+      component: () => import('../views/Services/umrah-services.vue')
+    },
+
+    {
+      path: '/tour-services',
+      name: 'tour-services',
+      component: () => import('../views/Services/tour-services.vue')
+    },
 // log in sign up 
     {
       path: '/Signup',
