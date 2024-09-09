@@ -23,39 +23,39 @@
           <div class="head">
             <p>Welcome To</p>
             <h1>Hajj Exploration LLC</h1>
-            <button class=""><router-link to="/Signup">Join Now</router-link></button>
+            <button class=""><router-link to="/Signup">Apply Now</router-link></button>
           </div>
         </swiper-slide>
-        <swiper-slide>
+        <!-- <swiper-slide>
           <img src="/src/assets/image/hero/mina.jpg" alt="" class="" />
           <div class="head">
-            <!-- <p>Islamic Digital Lane</p>
+            <p>Islamic Digital Lane</p>
             <h1>Learning Center</h1>
-            <button class=""><router-link to="/onsitelearning">Join Now</router-link></button> -->
+            <button class=""><router-link to="/onsitelearning">Apply Now</router-link></button>
           </div>
-        </swiper-slide>
+        </swiper-slide> -->
         <swiper-slide>
           <img src="/src/assets/image/hero/women.jpg" alt="" class="" />
           <div class="head">
-            <p>Islamic Digital Lane</p>
-            <h1>Prayer Service</h1>
-            <button class=""><router-link to="/Signup">Join Now</router-link></button>
+            <p>Hajj Exploration LLC</p>
+            <h1>Hajj Services</h1>
+            <button class=""><router-link to="/Signup">Apply Now</router-link></button>
           </div>
         </swiper-slide>
         <swiper-slide>
           <img src="/src/assets/image/hero/arafat.jpg" alt="" class="" />
           <div class="head">
-            <p>Islamic Digital Lane</p>
-            <h1>New Muslim Service</h1>
-            <button class=""><router-link to="/services/new_muslim">Join Now</router-link></button>
+            <p>Hajj Exploration LLC</p>
+            <h1>Umrah Services</h1>
+            <button class=""><router-link to="/services/new_muslim">Apply Now</router-link></button>
           </div>
         </swiper-slide>
         <swiper-slide>
           <img src="/src/assets/image/hero/people.jpeg" alt="" class="" />
           <div class="head">
-            <p>Islamic Digital Lane</p>
-            <h1>Fund Rising Service</h1>
-            <button><router-link to="/Fund_Raising">Join Now</router-link></button>
+            <p>Hajj Exploration LLCe</p>
+            <h1>Tours & Travels</h1>
+            <button><router-link to="/Fund_Raising">Apply Now</router-link></button>
           </div>
         </swiper-slide>
         <swiper-slide>
@@ -63,7 +63,7 @@
           <div class="head">
             <p>Islamic Digital Lane</p>
             <h1>Donation Service</h1>
-            <button><router-link to="/Guest_Donation">Join Now</router-link></button>
+            <button><router-link to="/Guest_Donation">Apply Now</router-link></button>
           </div>
         </swiper-slide>
       </swiper>

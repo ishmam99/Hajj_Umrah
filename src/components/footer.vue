@@ -2,7 +2,7 @@
   <div class="bg-[#36897b] bg-[url('/src/assets/image/home/pattern-1.png')]">
     <div class="grid grid-cols-3 gap-5 bg-[#23646dcb] bg-repeat">
       <div class="text-sm px-20 font-bold py-10">
-        <p class="text-2xl font-bold text-white py-3">MASJID</p>
+        <p class="text-2xl font-bold text-white py-3">Hajj Exploration LLC</p>
         <!-- <img src="../assets/landing/l1.png" alt="" class="py-3"> -->
         <div class="flex gap-3 items-center pb-3 text-white">
           <svg

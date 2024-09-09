@@ -30,36 +30,40 @@ const subnav = ref(0)
       <a href="#khutba" class="px-3 py-1.5" :class="route.hash=='#khutba' ? 'bg-white text-teal-800 rounded-md' : ''">Khudba & Khatira</a>
     </div> -->
 
-    <div class="px-[5%] pt-5 text-xl justify-center font-bold uppercase gap-10 flex items-center cursor-pointer mt-5">
+    <div class="flex items-center justify-center bg-gray-100  pb-10"> 
+        <P class="text-6xl font-bold my-6">Our Services</P>
+    </div>
+
+    <div class="px-[5%] text-xl justify-center font-bold uppercase gap-10 flex items-center cursor-pointer bg-gray-100">
       <a
         class="px-5 py-1.5 bg-teal-100 font-bold rounded-t-3xl scale-110"
         @click="subnav = 0"
-        >Virtural Tour</a
+        >Hajj Services</a
       >
       <a
         class="px-3 py-1.5 bg-orange-200 font-bold rounded-t-3xl scale-110"
         @click="subnav = 1"
-        >Announcement</a
+        >Umrah Servicest</a
       >
       <a
         class="px-3 py-1.5 bg-rose-100 font-bold rounded-t-3xl scale-110"
         @click="subnav = 2"
-        >Fund Raising</a
+        >Tours &amp; Travels</a
       >
       <a
         class="px-3 py-1.5 bg-lime-100 font-bold rounded-t-3xl scale-110"
         @click="subnav = 3"
-        >Upcoming Event</a
+        >Tickets</a
       >
       <a
         class="px-3 py-1.5 bg-[#695acd5a] font-bold rounded-t-3xl scale-110"
         @click="subnav = 4"
-        >Calender of Activities</a
+        >Hotels</a
       >
       <a
         class="px-3 py-1.5 bg-amber-100 font-bold rounded-t-3xl scale-110"
         @click="subnav = 5"
-        >Khudba &amp; Khatira</a
+        >Brochure</a
       >
     </div>
 
@@ -110,14 +114,11 @@ const subnav = ref(0)
       <YearlyPlanner />
     </div>
 
-<div  v-if="subnav == 5" class="py-10 px-[5%]" :class="subnav == 5 ? '!bg-amber-100' : ''">
-  <KhutbaKhatira id="khutba" class="" />
-</div>
+    <div  v-if="subnav == 5" class="py-10 px-[5%]" :class="subnav == 5 ? '!bg-amber-100' : ''">
+      <KhutbaKhatira id="khutba" class="" />
+    </div>
    
-    <!-- Gallery -->
-    <!-- <div>
-      <Gallery />
-    </div> -->
+  
   </DefaultLayout>
 </template>
 

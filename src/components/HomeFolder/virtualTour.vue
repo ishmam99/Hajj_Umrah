@@ -33,14 +33,25 @@
               class="mySwiper rounded-lg"
               ref="swiper" 
             >
-              <swiper-slide v-for="promotion in store.promotionList" :key="promotion.id">
-                <img :src="promotion.image" alt="" class="" />
+              <swiper-slide>
+                <img src="@/assets/image/hero/mina.jpg" alt="" class="" />
                 <div class="head">
                   <div class="ps-2 bg-gradient-to-r from-black to-transparent">
-                    <p class="pt-1 text-xl md:text-3xl font-bold">{{ promotion.title }}</p>
-                    <p class="py-2">{{ promotion.description }}</p>
+                    <p class="pt-1 text-xl md:text-3xl font-bold">Explore the wonders of Saudia Arabia, with a more comfortable & enriching</p>
+                    <!-- <p class="py-2">{{ promotion.description }}</p>
                     <p><span class="text-lg font-bold">Date: </span>{{ promotion.date }}</p>
-                    <p><span class="text-lg font-bold">Time: </span>{{ promotion.time }}</p>
+                    <p><span class="text-lg font-bold">Time: </span>{{ promotion.time }}</p> -->
+                  </div>
+                </div>
+              </swiper-slide>
+              <swiper-slide>
+                <img src="@/assets/image/hero/arafat.jpg" alt="" class="" />
+                <div class="head">
+                  <div class="ps-2 bg-gradient-to-r from-black to-transparent">
+                    <p class="pt-1 text-xl md:text-3xl font-bold">Your Gateway to a Journey of a Lifetime</p>
+                    <!-- <p class="py-2">{{ promotion.description }}</p>
+                    <p><span class="text-lg font-bold">Date: </span>{{ promotion.date }}</p>
+                    <p><span class="text-lg font-bold">Time: </span>{{ promotion.time }}</p> -->
                   </div>
                 </div>
               </swiper-slide>
@@ -66,6 +77,7 @@ import 'swiper/css/navigation'
 import { Pagination, Navigation, Autoplay } from 'swiper/modules'
 import { ref , onMounted } from 'vue'
 import { useMediaStore } from '@/stores/mediaDashboard'
+import image from '@/assets/image/hero/mina.jpg'
 const modules = [Pagination, Navigation, Autoplay]
 
 const store = useMediaStore()
@@ -83,6 +95,15 @@ const promotionList = async () => {
   }
   loading.value = false
 }
+
+const HajjList = [
+  {
+    image :image,
+    title : 'Explore the wonders of Saudia Arabia, with a more comfortable & enriching'
+  }
+]
+
+
 
 onMounted(async () => {
   promotionList()
