@@ -53,21 +53,135 @@
               </MenubarItem>   -->
           </MenubarContent>
         </MenubarMenu>
-   <MenubarMenu>
-          <MenubarTrigger class="px-1 font-bold">
-            <router-link to="/ddf" class="font-bold rounded-lg p-1 2xl:text-lg">Hajj</router-link>
+
+        <MenubarMenu>
+          <MenubarTrigger class="font-bold 2xl:text-lg"
+            >Hajj
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
           </MenubarTrigger>
+          <MenubarContent>
+           
+            <MenubarItem>
+              <router-link
+                to="/services/facilities"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >Hajj Packages</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
+              <router-link to="/services/nikah" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Hajj Facilities</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
+              <router-link to="/services/nikah" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Hajj Videos</router-link
+              >
+            </MenubarItem>
+            
+            <MenubarItem>
+              <router-link
+                to="/services/funeral"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >Hajj Trainning videos</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
+              <router-link
+                to="/services/funeral"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >Hajj FAQ's</router-link
+              >
+            </MenubarItem>
+           
+          </MenubarContent>
         </MenubarMenu>
-           <MenubarMenu>
-          <MenubarTrigger class="px-1 font-bold">
-            <router-link to="/fdsf" class="font-bold rounded-lg p-1 2xl:text-lg">Umrah</router-link>
+
+        <MenubarMenu>
+          <MenubarTrigger class="font-bold 2xl:text-lg"
+            >Umrah
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
           </MenubarTrigger>
+          <MenubarContent>
+           
+            <MenubarItem>
+              <router-link
+                to="/services/facilities"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >Umrah Visa</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
+              <router-link to="/services/nikah" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Umrah Packages</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
+              <router-link to="/services/nikah" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Umrah & International</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
+              <router-link
+                to="/services/funeral"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >Umrah FAQ's</router-link
+              >
+            </MenubarItem>
+           
+          </MenubarContent>
         </MenubarMenu>
-           <MenubarMenu>
-          <MenubarTrigger class="px-1 font-bold">
-            <router-link to="/fsdsd" class="font-bold rounded-lg p-1 2xl:text-lg">Tours</router-link>
+        
+        
+        <MenubarMenu>
+          <MenubarTrigger class="font-bold 2xl:text-lg"
+            >Tours
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
           </MenubarTrigger>
+          <MenubarContent>
+           
+            <MenubarItem>
+              <router-link
+                to="/services/facilities"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >Domestic Tours</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
+              <router-link to="/services/nikah" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Tour Packages</router-link
+              >
+            </MenubarItem>
+            
+          </MenubarContent>
         </MenubarMenu>
+        
+         
+        <MenubarMenu>
+          <MenubarTrigger class="font-bold 2xl:text-lg"
+            >Tickets
+           </MenubarTrigger>
+        </MenubarMenu>
+
+        <MenubarMenu>
+          <MenubarTrigger class="font-bold 2xl:text-lg"
+            >Hotels
+            </MenubarTrigger>
+        </MenubarMenu>
+
+        <MenubarMenu>
+          <MenubarTrigger class="font-bold 2xl:text-lg"
+            >Our Clients
+            </MenubarTrigger>
+        </MenubarMenu>
+
+        <MenubarMenu>
+          <MenubarTrigger class="font-bold 2xl:text-lg"
+            >Blogs
+            </MenubarTrigger>
+        </MenubarMenu>
+
+<!-- 
         <MenubarMenu>
           <MenubarTrigger class="font-bold 2xl:text-lg"> Learning Center </MenubarTrigger>
           <MenubarContent>
@@ -112,10 +226,10 @@
                 >Publication &amp; Books</router-link
               >
             </MenubarItem>
-            <!-- <MenubarItem>
+            <MenubarItem>
                 <a href="" class=" w-full hover:pl-5 duration-300 text-sm">Watch</a>
               </MenubarItem> -->
-          </MenubarSubContent>
+          <!-- </MenubarSubContent>
             </MenubarSub>
             <MenubarItem>
               <router-link
@@ -151,7 +265,7 @@
                 class="w-full hover:pl-5 duration-300 text-sm font-semibold"
                 >Apply For Teacher
               </router-link>
-            </MenubarItem>
+            </MenubarItem> -->
             <!-- <MenubarItem>
               <router-link
                 to="/student-login"
@@ -166,13 +280,13 @@
                 >Teacher Login
               </router-link></MenubarItem
             > -->
-          </MenubarContent>
-        </MenubarMenu>
+          <!-- </MenubarContent>
+        </MenubarMenu>  -->
 
-        <MenubarMenu>
+        <!-- <MenubarMenu>
           <MenubarTrigger class="font-bold 2xl:text-lg"
             >Activities
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
           </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
@@ -198,16 +312,14 @@
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Ramadan Special</router-link
               >
-              <!-- <a href="/more/ramadan_special" class=" w-full hover:pl-5 duration-300 font-semibold">Ramadan Special</a> -->
-            </MenubarItem>
+             </MenubarItem>
             <MenubarItem>
               <router-link
                 to="/more/hajj_and_umrah"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Hajj And Umrah Registration</router-link
               >
-              <!-- <a href="/more/hajj_and_umrah" class=" w-full hover:pl-5 duration-300 font-semibold">Hajj And Umrah Registration</a> -->
-            </MenubarItem>
+              </MenubarItem> -->
             <!-- <MenubarItem>
               <router-link
                 to="/more/registration/memebship_registration"
@@ -222,21 +334,21 @@
                 >Board Member Login</router-link
               >
             </MenubarItem> -->
-          </MenubarContent>
-        </MenubarMenu>
-
+          <!-- </MenubarContent>
+        </MenubarMenu> -->
+<!-- 
         <MenubarMenu>
           <MenubarTrigger class="font-bold 2xl:text-lg"
             >Get Involved
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
           </MenubarTrigger>
-          <MenubarContent>
+          <MenubarContent> -->
             <!-- <MenubarItem> -->
-            <MenubarSub>
+            <!-- <MenubarSub>
               <MenubarSubTrigger class="px-1 font-bold"> Volunteers </MenubarSubTrigger>
-              <MenubarSubContent>
+              <MenubarSubContent> -->
                 <!-- <MenubarItem> -->
-                <MenubarSub>
+                <!-- <MenubarSub>
                   <MenubarSubTrigger class="px-1 font-bold">
                     <p class="w-full">Volunteer Services</p>
                   </MenubarSubTrigger>
@@ -269,16 +381,16 @@
                     class="w-full hover:pl-5 duration-300 text-sm font-semibold"
                   >
                     Volunteer Login
-                  </router-link>
+                  </router-link> -->
                   <!-- <a href="/more/registration/mosjid_wavier_and_release_liability" class=" w-full hover:pl-5 duration-300">Volunteer Login</a> -->
-                </MenubarItem>
                 <!-- </MenubarItem> -->
-              </MenubarSubContent>
-            </MenubarSub>
+                <!-- </MenubarItem> -->
+              <!-- </MenubarSubContent>
+            </MenubarSub> -->
             <!-- </MenubarItem> -->
 
             <!-- </MenubarItem> -->
-            <MenubarItem>
+            <!-- <MenubarItem>
               <router-link
                 to="/getinvolved/applyforspeaker"
                 class="w-full hover:pl-5 duration-300 font-semibold"
@@ -298,20 +410,20 @@
               >
             </MenubarItem>
           </MenubarContent>
-        </MenubarMenu>
+        </MenubarMenu> -->
 
         <MenubarMenu>
           <MenubarTrigger class="font-bold 2xl:text-lg"
             >About Us
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
+          <!-- <MenubarContent> -->
+            <!-- <MenubarItem>
               <router-link to="/about/about_us" class="w-full hover:pl-5 duration-300 font-semibold"
                 >About</router-link
               >
-            </MenubarItem>
-            <MenubarItem>
+            </MenubarItem> -->
+            <!-- <MenubarItem>
               <router-link
                 to="/about/board_of_directors"
                 class="w-full hover:pl-5 duration-300 font-semibold"
@@ -324,16 +436,16 @@
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Committees</router-link
               >
-            </MenubarItem>
+            </MenubarItem> -->
             <!-- <MenubarItem>
                 <router-link to="/about/team" class=" w-full hover:pl-5 duration-300">Team</router-link>
               </MenubarItem> -->
-            <MenubarItem>
+            <!-- <MenubarItem>
               <router-link to="/about/policies" class="w-full hover:pl-5 duration-300 font-semibold"
                 >Policies</router-link
               >
-            </MenubarItem>
-          </MenubarContent>
+            </MenubarItem> -->
+          <!-- </MenubarContent> -->
         </MenubarMenu>
 
         <MenubarMenu>
@@ -341,7 +453,7 @@
             >Contact
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
-          <MenubarContent>
+          <!-- <MenubarContent>
             <MenubarItem>
               <router-link
                 to="/contact/ask_imam"
@@ -370,14 +482,14 @@
                 >Contact Us</router-link
               >
             </MenubarItem>
-          </MenubarContent>
+          </MenubarContent> -->
         </MenubarMenu>
 
-        <MenubarMenu>
+        <!-- <MenubarMenu>
           <MenubarTrigger class="font-bold 2xl:text-lg"
-            >Supply Chain
+            >Supply Chain -->
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
-          </MenubarTrigger>
+          <!-- </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
               <router-link
@@ -399,7 +511,7 @@
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Vendor Login</router-link
               >
-            </MenubarItem>
+            </MenubarItem> -->
             <!-- <MenubarItem>
               <router-link
                 to="/Supply_Chain/customer"
@@ -414,8 +526,8 @@
                 >Customer Login</router-link
               >
             </MenubarItem> -->
-          </MenubarContent>
-        </MenubarMenu>
+          <!-- </MenubarContent>
+        </MenubarMenu> -->
      
 
         <MenubarMenu v-if="authStore?.user">
