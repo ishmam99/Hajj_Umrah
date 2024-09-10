@@ -63,32 +63,35 @@
            
             <MenubarItem>
               <router-link
-                to="/services/facilities"
+                to="/hajj-package"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Hajj Packages</router-link
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/services/nikah" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link to="/hajj-facilities" class="w-full hover:pl-5 duration-300 font-semibold"
                 >Hajj Facilities</router-link
               >
             </MenubarItem>
+            
+            
             <MenubarItem>
-              <router-link to="/services/nikah" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link
+                to="/hajj-traning"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >Hajj Trainning videos</router-link
+              >
+            </MenubarItem>
+
+            <MenubarItem>
+              <router-link to="/hajj-videos" class="w-full hover:pl-5 duration-300 font-semibold"
                 >Hajj Videos</router-link
               >
             </MenubarItem>
             
             <MenubarItem>
               <router-link
-                to="/services/funeral"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Hajj Trainning videos</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link
-                to="/services/funeral"
+                to="/hajj-faqs"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Hajj FAQ's</router-link
               >
@@ -105,25 +108,26 @@
           <MenubarContent>
            
             <MenubarItem>
+              <router-link to="/umrah-package" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Umrah Packages</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
+              <router-link to="/umrah-international" class="w-full hover:pl-5 duration-300 font-semibold"
+                >Umrah & International</router-link
+              >
+            </MenubarItem>
+            
+            <MenubarItem>
               <router-link
-                to="/services/facilities"
+                to="/umrah-visa"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Umrah Visa</router-link
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/services/nikah" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Umrah Packages</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link to="/services/nikah" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Umrah & International</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
               <router-link
-                to="/services/funeral"
+                to="/umrah-faqs"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Umrah FAQ's</router-link
               >
@@ -142,13 +146,13 @@
            
             <MenubarItem>
               <router-link
-                to="/services/facilities"
+                to="/tour-services"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Domestic Tours</router-link
               >
             </MenubarItem>
             <MenubarItem>
-              <router-link to="/services/nikah" class="w-full hover:pl-5 duration-300 font-semibold"
+              <router-link to="/tour-services" class="w-full hover:pl-5 duration-300 font-semibold"
                 >Tour Packages</router-link
               >
             </MenubarItem>

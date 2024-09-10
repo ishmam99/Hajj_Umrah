@@ -37,6 +37,61 @@ const router = createRouter({
       name: 'tour-services',
       component: () => import('../views/Services/tour-services.vue')
     },
+
+    {
+      path: '/hajj-package',
+      name: 'hajj-package',
+      component: () => import('../views/website/Hajj/hajj-package.vue')
+    },
+    
+    {
+      path: '/hajj-facilities',
+      name: 'hajj-facilities',
+      component: () => import('../views/website/Hajj/hajj-facilities.vue')
+    },
+    
+    {
+      path: '/hajj-videos',
+      name: 'hajj-videos',
+      component: () => import('../views/website/Hajj/hajj-video.vue')
+    },
+
+    {
+      path: '/hajj-traning',
+      name: 'hajj-traning',
+      component: () => import('../views/website/Hajj/hajj-traning.vue')
+    },
+    
+    {
+      path: '/hajj-faqs',
+      name: 'hajj-faqs',
+      component: () => import('../views/website/Hajj/hajj-faqs.vue')
+    },
+    
+    {
+      path: '/umrah-package',
+      name: 'umrah-package',
+      component: () => import('../views/website/Umrah/umrah-package.vue')
+    },
+
+    {
+      path: '/umrah-international',
+      name: 'umrah-international',
+      component: () => import('../views/website/Umrah/umrah-international.vue')
+    },
+    
+    {
+      path: '/umrah-visa',
+      name: '/umrah-visa',
+      component: () => import('../views/website/Umrah/umrah-visa.vue')
+    },
+
+    {
+      path: '/umrah-faqs',
+      name: '/umrah-faqs',
+      component: () => import('../views/website/Umrah/umrah-faqs.vue')
+    },
+
 // log in sign up 
     {
       path: '/Signup',
