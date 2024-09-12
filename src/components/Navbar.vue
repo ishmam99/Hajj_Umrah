@@ -41,7 +41,7 @@
               <router-link
                 to="/tour-services"
                 class="w-full hover:pl-5 duration-300 font-semibold"
-                >Tour Service</router-link
+                >Travel Service</router-link
               >
             </MenubarItem>
          
@@ -139,7 +139,7 @@
         
         <MenubarMenu>
           <MenubarTrigger class="font-bold 2xl:text-lg"
-            >Tours
+            >Travel
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
           </MenubarTrigger>
           <MenubarContent>
@@ -153,7 +153,7 @@
             </MenubarItem>
             <MenubarItem>
               <router-link to="/tour-services" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Tour Packages</router-link
+                >Travel Packages</router-link
               >
             </MenubarItem>
             
@@ -489,49 +489,49 @@
           </MenubarContent> -->
         </MenubarMenu>
 
-        <!-- <MenubarMenu>
+        <MenubarMenu>
           <MenubarTrigger class="font-bold 2xl:text-lg"
-            >Supply Chain -->
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
-          <!-- </MenubarTrigger>
+            >Supply Chain
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+          </MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>
+            <!-- <MenubarItem>
               <router-link
                 to="/Supply_Chain/supplier"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Open Bids</router-link
               >
-            </MenubarItem>
-            <MenubarItem>
+            </MenubarItem> -->
+            <!-- <MenubarItem>
               <router-link
                 to="/Supply_Chain/vendor_registration"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Register As a New Vendor</router-link
               >
-            </MenubarItem>
-            <MenubarItem>
+            </MenubarItem> -->
+            <!-- <MenubarItem>
               <router-link
                 to="/Supply_Chain/supplierLogin"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Vendor Login</router-link
               >
             </MenubarItem> -->
-            <!-- <MenubarItem>
+            <MenubarItem>
               <router-link
                 to="/Supply_Chain/customer"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Customer</router-link
               >
-            </MenubarItem> -->
-            <!-- <MenubarItem>
+            </MenubarItem>
+            <MenubarItem>
               <router-link
                 to="/Supply_Chain/customerLogin"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Customer Login</router-link
               >
-            </MenubarItem> -->
-          <!-- </MenubarContent>
-        </MenubarMenu> -->
+            </MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
      
 
         <MenubarMenu v-if="authStore?.user">

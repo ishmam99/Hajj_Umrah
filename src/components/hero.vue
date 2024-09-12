@@ -37,35 +37,35 @@
         <swiper-slide>
           <img src="/src/assets/image/hero/women.jpg" alt="" class="" />
           <div class="head">
-            <p>Hajj Exploration LLC</p>
-            <h1>Hajj Services</h1>
+            <h4 class="text-xl">Hajj Exploration LLC</h4>
+            <h1>Hajj Package</h1>
             <button class=""><router-link to="/Signup">Apply Now</router-link></button>
           </div>
         </swiper-slide>
         <swiper-slide>
           <img src="/src/assets/image/hero/arafat.jpg" alt="" class="" />
           <div class="head">
-            <p>Hajj Exploration LLC</p>
-            <h1>Umrah Services</h1>
+            <h4 class="text-xl">Hajj Exploration LLC</h4>
+            <h1>Umrah Package</h1>
             <button class=""><router-link to="/services/new_muslim">Apply Now</router-link></button>
           </div>
         </swiper-slide>
         <swiper-slide>
           <img src="/src/assets/image/hero/people.jpeg" alt="" class="" />
           <div class="head">
-            <p>Hajj Exploration LLCe</p>
-            <h1>Tours & Travels</h1>
+            <h4 class="text-xl">Hajj Exploration LLC</h4>
+            <h1>Travel Package</h1>
             <button><router-link to="/Fund_Raising">Apply Now</router-link></button>
           </div>
         </swiper-slide>
-        <swiper-slide>
+        <!-- <swiper-slide>
           <img src="../assets/image/hero/madinah.jpg" alt="" class="" />
           <div class="head">
             <p>Islamic Digital Lane</p>
             <h1>Donation Service</h1>
             <button><router-link to="/Guest_Donation">Apply Now</router-link></button>
           </div>
-        </swiper-slide>
+        </swiper-slide> -->
       </swiper>
     </div>
     <div class="w-1/4 px-5 absolute top-[50%] translate-y-[-50%] right-[5%] z-30">
