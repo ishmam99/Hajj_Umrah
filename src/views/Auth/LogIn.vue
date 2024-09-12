@@ -80,13 +80,13 @@
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
-          v-if="route.name == 'Social Service Login'"
+          v-if="route.name == 'Customer Login'"
           src="@/assets/image/common/login-2.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
-          v-if="route.name == 'Youth Management Login'"
+          v-if="route.name == 'Imam Login'"
           src="@/assets/image/common/login-9.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"

@@ -54,58 +54,49 @@
   
 
  
-  <div class="container mx-auto mt-8 mb-8">
-    <div class="flex flex-col items-center justify-center  pb-4  mt-6"> 
-        <P class="text-5xl font-bold text-[#286d71]">Umrah Packages</P>
-        <p class="text-3xl mx-20 mt-3"></p>
+  <div class="container mx-auto my-8">
+    <div class="flex flex-col items-center justify-center  pb-10  my-6"> 
+        <P class="text-5xl font-bold text-[#286d71]">Umrah Basic Packages Details</P>
+        <p class="text-3xl font-semibold mx-20 mt-3">Registration is now Open for Fall Umrah!</p>
+    </div>
+    
+    
+    <div class="flex text-center items-center justify-center">
+      <div class="group relative">
+        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-auto">
+          <img src="@/assets/image/hajj/umrah-basic.webp" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+        </div>
+        <div class="flex justify-between bg-[#286d71] px-3 py-4 text-white">
+          <div>
+            <h3 class="text-xl font-bold ">
+              <!-- <a href="#">
+                <span aria-hidden="true" class="absolute inset-0 text-lg "></span>
+                Registration now!
+              </a> -->
+              <router-link
+                to="/Social_Service_Login"
+                class=" text-lg !text-white"
+                >Registration now!
+              </router-link>
+            </h3>
+          </div>
+          <!-- <p class="text-sm text-white font-medium">$2500</p> -->
+        </div>
+      </div>
     </div>
 
-    <div class="flex flex-row items-end justify-end my-3">
-
-<div></div>
-<form class="max-w-lg mx-full mx-10">
-  <label for="countries" class="block mb-2 text-xl font-medium text-[#286d71] dark:text-white">Select Country</label>
-  <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-    <option selected>Choose a country</option>
-    <option value="US">United States</option>
-    <option value="CA">Canada</option>
-    <option value="FR">France</option>
-    <option value="DE">Germany</option>
-  </select>
-</form>
-
-
-<form class="max-w-lg mx-full mr-10">
-  <label for="countries" class="block mb-2 text-xl font-medium text-[#286d71] dark:text-white">Select city</label>
-  <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-    <option selected>Choose a city</option>
-    <option value="US">Dallas</option>
-    <option value="CA">Freeport</option>
-    <option value="FR">Garland</option>
-    <option value="DE">Victoria</option>
-  </select>
-</form>
-
-
-
-
-    </div>
-
-    <div class="mt-6 mx-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
+    <!-- <div class="mt-6 mx-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
       <div class="group relative">
         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img src="@/assets/image/hajj/hajj-1.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
         </div>
         <div class="flex justify-between bg-[#286d71] px-3 py-4 text-white">
           <div>
-            
-            <h3 class="text-xl font-bold text-white">
-              <router-link
-                to="/umrah-details"
-                class=" text-lg !text-white"
-                >Umrah Basic
-              </router-link>
-              
+            <h3 class="text-xl font-bold ">
+              <a href="#">
+                <span aria-hidden="true" class="absolute inset-0 text-lg "></span>
+                Umrah Basic
+              </a>
             </h3>
           </div>
           <p class="text-sm text-white font-medium">$2500</p>
@@ -129,6 +120,7 @@
         </div>
       </div>
      </div>
+      -->
   </div>
  
 

@@ -87,11 +87,11 @@ const router = createRouter({
     },
 
     {
-      path: '/umrah-faqs',
-      name: '/umrah-faqs',
-      component: () => import('../views/website/Umrah/umrah-faqs.vue')
+      path: '/umrah-details',
+      name: 'umrah-details',
+      component: () => import('../views/website/Umrah/umrah-details.vue')
     },
-
+  
 // log in sign up 
     {
       path: '/Signup',
@@ -462,7 +462,7 @@ const router = createRouter({
     //social service dashboard start
     {
       path: '/Social_Service_Login',
-      name: 'Social Service Login',
+      name: 'Customer Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
     {
@@ -522,7 +522,7 @@ const router = createRouter({
 
     {
       path: '/Youth_Management_Login',
-      name: 'Youth Management Login',
+      name: 'Imam Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
     {
