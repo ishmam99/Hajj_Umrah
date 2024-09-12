@@ -68,13 +68,18 @@
         <div class="flex justify-between bg-[#286d71] px-3 py-4 text-white">
           <div>
             <h3 class="text-xl font-bold ">
-              <a href="#">
+              <!-- <a href="#">
                 <span aria-hidden="true" class="absolute inset-0 text-lg "></span>
-                Umrah Packages Titanium
-              </a>
+                Umrah Packages  
+              </a> -->
+              <router-link
+                to="/umrah-details"
+                class=" text-lg !text-white"
+                >Umrah Basic
+              </router-link>
             </h3>
           </div>
-          <p class="text-sm text-white font-medium">$5500</p>
+          <p class="text-sm text-white font-medium">$2500</p>
         </div>
       </div>
       <div class="group relative">
@@ -87,7 +92,7 @@
             <h3 class="text-xl font-bold ">
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0 text-lg "></span>
-                Umrah Packages Premium
+                Umrah Premium
               </a>
             </h3>
           </div>
