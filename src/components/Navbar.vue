@@ -442,7 +442,7 @@
         <MenubarMenu>
           <MenubarTrigger class="font-bold 2xl:text-lg"
             >Supply Chain
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
           </MenubarTrigger>
           <MenubarContent>
             
@@ -519,7 +519,7 @@
      
         <MenubarMenu>
           <MenubarTrigger class="font-bold 2xl:text-lg"
-            >Customer
+            >Customer/ Member
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
           </MenubarTrigger>
           <MenubarContent>
@@ -548,50 +548,36 @@
         <MenubarMenu v-else>
           <MenubarTrigger class="2xl:text-lg font-bold"
             >Admin Login
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
           </MenubarTrigger>
           <MenubarContent>
-            <!-- <MenubarItem>
-              <router-link to="/Member_Login" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Pilgrim Login / Signup</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link to="/student/login" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Agent/Leaders Login</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link to="/teacher/login" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Moallem Login</router-link
-              >
-            </MenubarItem> -->
+            
             <MenubarItem>
               <router-link
                 to="/Social_Service_Login"
                 class="w-full hover:pl-5 duration-300 font-semibold"
-                >Hajj Module</router-link
+                >Hajj Management System</router-link
               >
             </MenubarItem>
             <MenubarItem>
               <router-link
                 to="/Youth_Management_Login"
                 class="w-full hover:pl-5 duration-300 font-semibold"
-                >Umrah Module</router-link
+                >Umrah Management System</router-link
               >
             </MenubarItem>
             <MenubarItem>
               <router-link
                 to="/Supply_Chain/supplierLogin"
                 class="w-full hover:pl-5 duration-300 font-semibold"
-                >Travel Module</router-link
+                >Travel Management System</router-link
               >
             </MenubarItem>
             <MenubarItem>
                   <router-link
                     to="/Finance_Login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
-                    >Finance Management</router-link
+                    >Finance Management System</router-link
                   >
                 </MenubarItem>
                 <MenubarItem>
@@ -611,32 +597,30 @@
                 </MenubarItem>
                 <MenubarItem>
                   <router-link to="/HR_Login" class="w-full hover:pl-5 duration-300 font-semibold"
-                    >HR Management</router-link
+                    >HR Management System</router-link
                   >
                 </MenubarItem>
                 <MenubarItem>
                   <router-link
                     to="/volunteerLogin"
                     class="w-full hover:pl-5 duration-300 font-semibold"
-                    >Volunteer Management</router-link
+                    >Volunteer Management System</router-link
                   >
                 </MenubarItem>
                 <MenubarItem>
                   <router-link
                     to="/Operation_Login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
-                    >Operations Management</router-link
+                    >Operations Management System</router-link
                   >
                 </MenubarItem>
                 <MenubarItem>
                   <router-link
                     to="/Media_Login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
-                    >Media and Communication Management</router-link
+                    >Media and Communication Management System</router-link
                   >
                 </MenubarItem>
-            
-<!--        -->
           </MenubarContent>
         </MenubarMenu>
         <div class="flex items-center justify-between gap-2 text-white font-bold text-sm"></div>
