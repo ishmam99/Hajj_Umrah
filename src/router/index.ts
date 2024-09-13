@@ -20,12 +20,25 @@ const router = createRouter({
       component: HomeView
     },
 
+    //Hajj Management System
+    {
+      path: '/hajj_Management_Login',
+      name: 'Hajj Management System',
+      component: () => import('../views/Auth/LogIn.vue'),
+    },
     {
       path: '/hajj-services',
       name: 'hajj-services',
       component: () => import('../views/Services/hajj-services.vue')
     },
     
+    //Umrah Management System
+
+    {
+      path: '/Umrah_Management_Login',
+      name: 'Umrah Management System',
+      component: () => import('../views/Auth/LogIn.vue'),
+    },
     {
       path: '/umrah-services',
       name: 'umrah-services',
@@ -33,9 +46,9 @@ const router = createRouter({
     },
 
     {
-      path: '/tour-services',
-      name: 'tour-services',
-      component: () => import('../views/Services/tour-services.vue')
+      path: '/travel_Management_Login',
+      name: 'Tour Management System',
+      component: () => import('../views/Auth/LogIn.vue'),
     },
 
     {
@@ -476,9 +489,19 @@ const router = createRouter({
       component: () => import('../views/Social/SocialDashboard.vue'),
       children:[
         {
-        path: '/Social_Service_Dashboard/Profile',
-          name:'Social_Service_Dashboard_Profile',
-            component: () => import('../views/Social/Profile/SocialProfile.vue'),
+        path: '/umrah_package_create_new_package',
+          name:'Umrah_Package_Create_New_Package',
+            component: () => import('@/views/Admin/HajjModule/CreateNewPackage.vue'),
+        },
+        {
+        path: '/umrah_package_current_packages',
+          name:'Umrah_Package_Current_Packages',
+            component: () => import('@/views/Admin/HajjModule/CurrentPackages.vue'),
+        },
+        {
+        path: '/umrah_package_previous_packages',
+          name:'Umrah_Package_Previous_Packages',
+            component: () => import('@/views/Admin/HajjModule/PreviousPackages.vue'),
         },
         {
           path: '/Social_Service_Event_Post',

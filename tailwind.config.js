@@ -104,5 +104,5 @@ module.exports = {
       }
     }
   },
-  plugins: [animate]
+  plugins: [require('daisyui'),]
 }

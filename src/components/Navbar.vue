@@ -568,23 +568,23 @@
             </MenubarItem> -->
             <MenubarItem>
               <router-link
-                to="/Social_Service_Login"
+                to="/hajj_Management_Login"
                 class="w-full hover:pl-5 duration-300 font-semibold"
-                >Hajj Module</router-link
+                >Hajj Management System</router-link
               >
             </MenubarItem>
             <MenubarItem>
               <router-link
-                to="/Youth_Management_Login"
+                to="/Umrah_Management_Login"
                 class="w-full hover:pl-5 duration-300 font-semibold"
-                >Umrah Module</router-link
+                >Umrah Management System</router-link
               >
             </MenubarItem>
             <MenubarItem>
               <router-link
-                to="/Supply_Chain/supplierLogin"
+                to="/travel_Management_Login"
                 class="w-full hover:pl-5 duration-300 font-semibold"
-                >Travel Module</router-link
+                >Tour and Travel Management System</router-link
               >
             </MenubarItem>
             <MenubarItem>

@@ -158,9 +158,22 @@ const login =async () => {
       console.log(data.data, "logdata");
       console.log(data.data.user, data.data.token, data.data.role[0].name)
       authStore.login(data.data.user, data.data.token, data.data.role[0].name,)
+      console.log(authStore);
       if (authStore.role == 'Admin') {
         authStore.currentDashboard = "Admin_Dashboard"
         router.push({ name: 'Admin_Dashboard' })
+      }
+      else if (authStore.role == 'Hajj') {
+        authStore.currentDashboard = "Hajj Management System"
+        router.push({ name: 'Hajj Management System' })
+      }
+      else if (authStore.role == 'Umrah') {
+        authStore.currentDashboard = "Umrah Management System"
+        router.push({ name: 'Umrah Management System' })
+      }
+      else if (authStore.role == 'Travel') {
+        authStore.currentDashboard = "Tour Management System"
+        router.push({ name: 'Tour Management System' })
       }
       else if (authStore.role == 'Service') {
         authStore.currentDashboard = "Social_Service_Dashboard_Profile"
