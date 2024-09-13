@@ -362,6 +362,12 @@ const router = createRouter({
       component: () => import('../views/website/SupplyChain/imamRegister.vue')
     },
     {
+      path: '/Supply_Chain/agent_registration',
+      name: 'Agent Registration',
+      component: () => import('../views/website/SupplyChain/agentRegister.vue')
+    },
+    
+    {
       path: '/volunteer/service/:id',
       name: 'volunteer/service',
       component: () => import('/src/views/website/Volunteer/EducateTheChildren.vue')

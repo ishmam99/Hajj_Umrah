@@ -475,7 +475,7 @@
               <MenubarSubContent>
                 <MenubarItem>
                   <router-link
-                    to="/Admin_Login"
+                    to="/Supply_Chain/agent_registration"
                     class="w-full hover:pl-5 duration-300 font-semibold"
                     >Register Now</router-link
                   >
@@ -497,7 +497,7 @@
               <MenubarSubContent>
                 <MenubarItem>
                   <router-link
-                    to="/Admin_Login"
+                    to="/Supply_Chain/vendor_registration"
                     class="w-full hover:pl-5 duration-300 font-semibold"
                     >Register Now</router-link
                   >
