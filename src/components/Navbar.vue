@@ -444,43 +444,77 @@
             >Supply Chain
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
           </MenubarTrigger>
-          <!-- <MenubarContent> -->
-            <!-- <MenubarItem>
-              <router-link
-                to="/Supply_Chain/supplier"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Open Bids</router-link
-              >
-            </MenubarItem> -->
-            <!-- <MenubarItem>
-              <router-link
-                to="/Supply_Chain/vendor_registration"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Register As a New Vendor</router-link
-              >
-            </MenubarItem> -->
-            <!-- <MenubarItem>
-              <router-link
-                to="/Supply_Chain/supplierLogin"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Vendor Login</router-link
-              >
-            </MenubarItem> -->
-            <!-- <MenubarItem>
-              <router-link
-                to="/Supply_Chain/customer"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Customer</router-link
-              >
-            </MenubarItem> -->
-            <!-- <MenubarItem>
-              <router-link
-                to="/Supply_Chain/customerLogin"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Customer Login</router-link
-              >
-            </MenubarItem> -->
-          <!-- </MenubarContent> -->
+          <MenubarContent>
+            
+            <MenubarSub>
+              <MenubarSubTrigger>
+                <p class="hover:pl-5 duration-300 font-bold">Imam</p>
+              </MenubarSubTrigger>
+              <MenubarSubContent>
+                <MenubarItem>
+                  <router-link
+                    to="/Supply_Chain/imam_registration"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Register Now</router-link
+                  >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link
+                    to="/Admin_Login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Login</router-link
+                  >
+                </MenubarItem>
+               
+              </MenubarSubContent>
+            </MenubarSub>
+            <MenubarSub>
+              <MenubarSubTrigger>
+                <p class="hover:pl-5 duration-300 font-bold">Agent</p>
+              </MenubarSubTrigger>
+              <MenubarSubContent>
+                <MenubarItem>
+                  <router-link
+                    to="/Admin_Login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Register Now</router-link
+                  >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link
+                    to="/Admin_Login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Login</router-link
+                  >
+                </MenubarItem>
+               
+              </MenubarSubContent>
+            </MenubarSub>
+            <MenubarSub>
+              <MenubarSubTrigger>
+                <p class="hover:pl-5 duration-300 font-bold">Ventor</p>
+              </MenubarSubTrigger>
+              <MenubarSubContent>
+                <MenubarItem>
+                  <router-link
+                    to="/Admin_Login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Register Now</router-link
+                  >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link
+                    to="/Admin_Login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Login</router-link
+                  >
+                </MenubarItem>
+               
+              </MenubarSubContent>
+            </MenubarSub>
+       
+           
+          </MenubarContent>
         </MenubarMenu>
      
 

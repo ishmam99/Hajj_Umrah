@@ -355,7 +355,12 @@ const router = createRouter({
       name: 'Vendor Registration',
       component: () => import('../views/website/SupplyChain/VendorRegister.vue')
     },
-
+    
+    {
+      path: '/Supply_Chain/imam_registration',
+      name: 'Imam Registration',
+      component: () => import('../views/website/SupplyChain/imamRegister.vue')
+    },
     {
       path: '/volunteer/service/:id',
       name: 'volunteer/service',
