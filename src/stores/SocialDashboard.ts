@@ -8,6 +8,8 @@ export const useSocialStore = defineStore('socialStore',{
         event: [],
         projectList: [],
         eventList: [],
+        // Hajj Packages
+        createNewPackage: []
   }),
   actions: {
   },
