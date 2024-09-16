@@ -86,6 +86,12 @@ const router = createRouter({
       name: 'umrah-package',
       component: () => import('../views/website/Umrah/umrah-package.vue')
     },
+    {
+      path: '/umrah-details/:id',
+      name: 'umrah-details',
+      component: () => import('../views/website/Umrah/umrah-details.vue'),
+      props: true
+    },
 
     {
       path: '/umrah-international',
@@ -99,11 +105,6 @@ const router = createRouter({
       component: () => import('../views/website/Umrah/umrah-visa.vue')
     },
 
-    {
-      path: '/umrah-details',
-      name: 'umrah-details',
-      component: () => import('../views/website/Umrah/umrah-details.vue')
-    },
 
     // log in sign up
     {
