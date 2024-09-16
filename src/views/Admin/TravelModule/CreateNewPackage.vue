@@ -30,7 +30,7 @@
   
             <!-- Package Title and Code -->
             <div class="flex gap-5 mb-5">
-              <div class="w-1/2"> 
+              <div class="w-1/2">
                 <div class="label">
                   <span class="label-text">Package Title</span>
                 </div>

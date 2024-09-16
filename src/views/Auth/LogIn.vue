@@ -6,7 +6,8 @@
       <form @submit.prevent="login()">
         <div class="h-[550px] w-[500px] bg-[#ffffff] px-5 py-10 rounded-lg shadow-md">
           <img src="/src/assets/image/common/n1.png" alt="" class="w-20 m-auto" />
-          <p class="text-2xl font-bold text-center text-[#0b2036]">{{ route.name }}</p>
+         
+        <p class="text-2xl font-bold text-center text-[#0b2036]">{{ route.name.replace(/_/g, ' ') }}</p>
           <p class="font-semibold py-1.5">Email</p>
           <input
             @change="error = false"
@@ -158,22 +159,23 @@ const login =async () => {
       console.log(data.data, "logdata");
       console.log(data.data.user, data.data.token, data.data.role[0].name)
       authStore.login(data.data.user, data.data.token, data.data.role[0].name,)
-      console.log(authStore);
+      console.log(authStore.role);
       if (authStore.role == 'Admin') {
         authStore.currentDashboard = "Admin_Dashboard"
         router.push({ name: 'Admin_Dashboard' })
       }
       else if (authStore.role == 'Hajj') {
-        authStore.currentDashboard = "Hajj Management System"
-        router.push({ name: 'Hajj Management System' })
+        console.log('ssd')
+        authStore.currentDashboard = "Hajj_Management_System"
+        router.push('Hajj_Management_System')
       }
       else if (authStore.role == 'Umrah') {
-        authStore.currentDashboard = "Umrah Management System"
-        router.push({ name: 'Umrah Management System' })
+        authStore.currentDashboard = "Umrah_Management_System"
+        router.push({ name: 'Umrah_Management_System' })
       }
       else if (authStore.role == 'Travel') {
-        authStore.currentDashboard = "Tour Management System"
-        router.push({ name: 'Tour Management System' })
+        authStore.currentDashboard = "Travel_Management_System"
+        router.push({ name: 'Travel_Management_System' })
       }
       else if (authStore.role == 'Service') {
         authStore.currentDashboard = "Social_Service_Dashboard_Profile"

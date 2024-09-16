@@ -90,9 +90,9 @@
 
 
     </div>
-
-    <div class="mt-6 mx-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
-      <div class="group relative">
+    <div class="mt-6 mx-10 grid grid-cols-1 gap-x-6 gap-y-10 ">
+      
+      <div class="group relative" v-for="packageData in socialStore.createNewPackage">
         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img src="@/assets/image/hajj/hajj-1.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
         </div>
@@ -103,31 +103,19 @@
               <router-link
                 to="/umrah-details"
                 class=" text-lg !text-white"
-                >Umrah Basic
+                >{{ packageData.packageTitle }}
               </router-link>
               
             </h3>
           </div>
-          <p class="text-sm text-white font-medium">$2500</p>
+          <p class="text-sm text-white font-medium">${{ packageData.price }}</p>
         </div>
+        <div class="bg-gray-200 px-4 py-7 ">
+         <p class="text-sm text-gray-800 font-medium">{{ packageData.description }}</p>
+        </div>
+        
       </div>
-      <div class="group relative">
-        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-          <img src="@/assets/image/hajj/umrah-1.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-
-        <div class="flex justify-between bg-[#286d71] px-3 py-4 text-white">
-          <div>
-            <h3 class="text-xl font-bold ">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0 text-lg "></span>
-                Umrah Premium
-              </a>
-            </h3>
-          </div>
-          <p class="text-sm text-white font-medium">$4500</p>
-        </div>
-      </div>
+     
      </div>
   </div>
  
@@ -147,6 +135,9 @@ import 'swiper/css/navigation'
 
 // import required modules
 import { Pagination, Navigation, Autoplay } from 'swiper/modules'
+import { useSocialStore } from '@/stores/SocialDashboard.ts'
+
+const socialStore = useSocialStore()
 const modules = [Pagination, Navigation, Autoplay]
 </script>
 <style scoped>
