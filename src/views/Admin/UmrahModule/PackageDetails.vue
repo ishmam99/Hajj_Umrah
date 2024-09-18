@@ -6,9 +6,9 @@
       <div class="relative h-80 w-full bg-gray-300 rounded-b-lg shadow-xl overflow-hidden">
         <img src="@/assets/image/hajj/umrah-1.jpg" alt="Package Cover" class="h-full w-full object-cover" />
         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent py-6 px-8">
-          <p class="text-white text-5xl font-extrabold tracking-wide drop-shadow-md">{{ packageTitle }}</p>
-          <p class="text-white text-2xl font-semibold mt-1">{{ packageCode }}</p>
-          <p class="text-white text-lg mt-2">{{ startDate }} - {{ endDate }}</p>
+          <p class="text-white text-5xl font-extrabold tracking-wide drop-shadow-md">{{ packageDetails.title }}</p>
+          <p class="text-white text-2xl font-semibold mt-1">{{ packageDetails.code }}</p>
+          <p class="text-white text-lg mt-2">{{ packageDetails.startDate }} - {{ packageDetails.endDate }}</p>
         </div>
       </div>
   
@@ -61,10 +61,12 @@
 import { ref } from 'vue';
 import { itinerary } from '@/stores/itinenary.ts'
 
-const packageTitle = "Umrah Package Basic";
-const packageCode = "PKG12345";
-const startDate = "1st November 2024";
-const endDate = "10th November 2024";
+const packageDetails = {
+  title: "Umrah Package Basic",
+  code: "PKG12345",
+  startDate: "1st November 2024",
+  endDate: "10th November 2024"
+};
 
 const selectedDay = ref(0); // Default to Day 1
 </script>
