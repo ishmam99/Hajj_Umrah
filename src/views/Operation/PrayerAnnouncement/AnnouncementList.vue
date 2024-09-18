@@ -30,22 +30,22 @@
               >
                 <td class="py-4 px-2 w-1/8">{{ index + 1 }}</td>
                 <td class="py-4 px-2 w-1/8">
-                  <h3 class="font-semibold">{{ Announcement?.title }}</h3>
+                  <h3 class="font-semibold"></h3>
                 </td>
                 <td class="py-4 px-2 w-2/8">
-                  <h3 class="" v-html="Announcement?.description"></h3>
+                  <h3 class=""></h3>
                 </td>
                 <td class="py-4 px-2 w-1/8">
-                  <p>{{ Announcement?.created_at }}</p>
+                  <p></p>
                 </td>
                 <td class="py-4 px-2 w-1/8">
-                  <p>{{ Announcement?.created_at }}</p>
+                  <p></p>
                 </td>
                 <td class="py-4 px-2 w-1/8">
-                  <p>{{ Announcement?.created_at }}</p>
+                  <p></p>
                 </td>
                 <td class="py-4 px-2 w-1/8">
-                  <p>{{ Announcement?.created_at }}</p>
+                  <p></p>
                 </td>
   
                 <td class="py-4 px-2 flex justify-center">
