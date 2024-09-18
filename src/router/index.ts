@@ -610,7 +610,7 @@ const router = createRouter({
 
     {
       path: '/Youth_Management_Login',
-      name: 'Imam Login',
+      name: 'Vendor Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
     {
