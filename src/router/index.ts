@@ -1435,7 +1435,7 @@ const router = createRouter({
         {
           path: '/Membar_Payment_History',
           name: 'Membar_Payment_History',
-          component: () => import('../views/Member/Profile/MembarPaymentHistory.vue')
+          component: () => import('../views/Member/MemberPayment.vue')
         },
         {
           path: '/Membar_Change_Password',
