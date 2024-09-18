@@ -616,37 +616,42 @@ const router = createRouter({
     {
       path: '/Youth_Management_Dashboard',
       name: 'Youth_Dashboard',
-      component: () => import('../views/Youth/YouthDashborad.vue'),
+      component: () => import('../views/Vendor/YouthDashborad.vue'),
       children: [
         {
           path: '/Youth_Dashboard/Proile',
           name: 'Youth_Dashboard_Profile',
-          component: () => import('../views/Youth/Profile/YouthProfile.vue')
+          component: () => import('../views/Vendor/Profile/YouthProfile.vue')
         },
         {
           path: '/Youth_Dashboard/Year_Planer_Create',
           name: 'Youth_Year_Planer_Create',
-          component: () => import('../views/Youth/YouthYearPlannerCreate.vue')
+          component: () => import('../views/Vendor/YouthYearPlannerCreate.vue')
         },
         {
           path: '/Youth_Dashboard/Year_Planer',
           name: 'Youth_Year_Planer',
-          component: () => import('../views/Youth/YouthYearPlaner.vue')
+          component: () => import('../views/Vendor/YouthYearPlaner.vue')
         },
         {
           path: '/Youth_Dashboard/Program_List',
           name: 'Youth_Program_List',
-          component: () => import('../views/Youth/YouthProgramList.vue')
+          component: () => import('../views/Vendor/YouthProgramList.vue')
         },
         {
           path: '/Youth_Dashboard/Program_Broadcast',
           name: 'Youth_Program_Broadcast',
-          component: () => import('../views/Youth/YouthProgramBroadcast.vue')
+          component: () => import('../views/Vendor/YouthProgramBroadcast.vue')
         },
         {
-          path: '/Youth_Dashboard/Youth_Program_Create',
-          name: 'Youth_Program_Create',
-          component: () => import('../views/Youth/YouthProgramCreate.vue')
+          path: '/Youth_Dashboard/pending_bids',
+          name: 'pending_bids',
+          component: () => import('../views/Vendor/YouthProgramCreate.vue')
+        },
+        {
+          path: '/Youth_Dashboard/currently_provided_services',
+          name: 'currently_provided_services',
+          component: () => import('../views/Vendor/CurrentlyProvidedServices.vue')
         }
       ]
     },

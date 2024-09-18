@@ -27,10 +27,9 @@
           My bids
         </button>
         <div v-if="currentAccordions === 'projectManagement'" class="submenu mx-8">
-          <!-- <router-link to="/umrah_package_create_new_package" class="flex items-center gap-2 hover:px-2">- Create New Package</router-link> -->
-          <router-link to="/umrah_package_current_packages" class="flex items-center gap-2 hover:px-2">- Current
+          <router-link to="/Youth_Dashboard/Program_List" class="flex items-center gap-2 hover:px-2">-
             Accepted Bids</router-link>
-          <router-link to="/umrah_package_previous_packages" class="flex items-center gap-2 hover:px-2">- Previous
+          <router-link to="pending_bids" class="flex items-center gap-2 hover:px-2">-
             Pending Bids</router-link>
           
         </div>
@@ -45,9 +44,9 @@
           My Services
         </button>
         <div v-if="currentAccordions === 'bidManagement'" class="submenu mx-8">
-          <router-link to="/Social_Service_Event_Create" class="flex items-center gap-2 hover:px-2">- Basic
+          <router-link to="/Youth_Dashboard/currently_provided_services" class="flex items-center gap-2 hover:px-2">-
             Currently Provided Services</router-link>
-          <router-link to="" class="flex items-center gap-2 hover:px-2">- Current
+          <router-link to="" class="flex items-center gap-2 hover:px-2">-
             Previous Services</router-link>
           
           <!-- <router-link to="/Social_Service_Event_Post" class="flex items-center gap-2 hover:px-2"
@@ -133,8 +132,8 @@ import { watch, ref } from 'vue'
 import { useAuthStore } from '/src/stores/AuthStore'
 import { useRouter, useRoute } from 'vue-router'
 
-const currentAccordions = ref('bidManagement')
-const currentAccordions2 = ref('projectManagement')
+const currentAccordions = ref('projectManagement')
+const currentAccordions2 = ref('bidManagement')
 
 const toggleAccordion = (accordionName) => {
 
@@ -159,10 +158,10 @@ const store = useAuthStore()
 watch(() => route, () => {
   console.log(route.name)
   if (route.name.includes('Social_Service_Event')) {
-    currentAccordions.value = 'bidManagement'
+    currentAccordions.value = 'projectManagement'
   }
   else if (route.name.includes('Social_Service_Project')) {
-    currentAccordions.value = 'projectManagement'
+    currentAccordions.value = 'bidManagement'
   }
 }, {
   deep: true,

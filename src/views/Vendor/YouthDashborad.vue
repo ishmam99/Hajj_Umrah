@@ -10,9 +10,9 @@
 
 </template>
 <script setup>
-import YouthSidebar from '/src/views/Youth/youthSidebar.vue'
+import YouthSidebar from '/src/views/Vendor/youthSidebar.vue'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import YouthProfile from '/src/views/Youth/Profile/YouthProfile.vue'
+import YouthProfile from '/src/views/Vendor/Profile/YouthProfile.vue'
 import { ref, onMounted } from 'vue'
 import { useYouthStore } from '/src/stores/YouthDashboard.ts'
 import api from '@/config/api'

@@ -1,8 +1,8 @@
 <template>
   <div class="px-4 bg-white py-5 w-3/4">
      <div class="flex justify-between items-center pt-4 pb-2">
-          <p class="text-2xl text-yellow-600 font-bold">Program List</p>
-          <input type="date" placeholder="Search by date or name" class="py-1.5 px-2 rounded-md border text-sm">
+          <p class="text-2xl text-yellow-600 font-bold"> Accepted Bids</p>
+          <!-- <input type="date" placeholder="Search by date or name" class="py-1.5 px-2 rounded-md border text-sm">
           <input type="text" placeholder="Search by name" class="py-1.5 px-2 rounded-md border text-sm">
           <div class="w-[200px]">
             <Select class="">
@@ -16,33 +16,33 @@
                   </SelectGroup>
                 </SelectContent>
               </Select>
-          </div>
+          </div> -->
         </div>
      <hr />
      <div
        class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center"
      >
-       <table class="table-auto w-full">
+     <table class="table-auto w-full">
          <thead>
-           <tr class="bg-white" >
+           <tr class="bg-[#219C90] text-white text-lg" >
              <th class="p-2 text-center w-1/6">No.</th>
-             <th class="p-2 text-center w-1/6">Program Name(s)</th>
+             <th class="p-2 text-center w-1/6">Bid Id</th>
              <th class="p-2 text-center w-1/6">Starting Date</th>
              <th class="p-2 text-center w-1/6">Ending Date</th>
-             <th class="p-2 text-center w-1/6">Time</th>
-             <th class="p-2 text-center w-1/6">Action</th>
+             <th class="p-2 text-center w-1/6">Status</th>
+             <!-- <th class="p-2 text-center w-1/6">Action</th> -->
            </tr>
          </thead>
          <tbody>
-           <tr class="" v-for="(item,index) in store.programList" :key="item.id">
-             <td class="py-4 p-2 w-1/6 text-center">{{ index+1 }}</td>
-             <td class="py-4 p-2 flex justify-center items-center gap-2 w-1/6">
-               <h3 class="font-bold">{{ item.name }}</h3>
-             </td>
-             <td class="py-4 p-2 text-center w-1/6">{{item.start_date}}</td>
-             <td class="py-4 p-2 text-center w-1/6">{{ item.end_date }}</td>
-             <td class="py-4 p-2 text-center w-1/6">{{ item.state_time }} - {{item.end_time  }}</td>
+           <tr class="">
+             <td class="py-4 p-2 w-1/6 text-center">01</td>
              <td class="py-4 p-2 text-center w-1/6">
+              U-2027-24A-2400-1
+             </td>
+             <td class="py-4 p-2 text-center w-1/6">20 September</td>
+             <td class="py-4 p-2 text-center w-1/6">30 September</td>
+             <td class="py-4 p-2 text-center w-1/6 font-bold text-green-700">Accepted</td>
+             <!-- <td class="py-4 p-2 text-center w-1/6">
               <Select class="">
                 <SelectTrigger class="w-full">
                   <SelectValue placeholder="Select one" />
@@ -56,7 +56,7 @@
                   </SelectGroup>
                 </SelectContent>
               </Select>
-             </td>
+             </td> -->
            </tr>
          </tbody>
        </table>
