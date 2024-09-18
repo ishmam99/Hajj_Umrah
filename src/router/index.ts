@@ -1019,7 +1019,7 @@ const router = createRouter({
     //Voluneer Dashboad
     {
       path: '/volunteerLogin',
-      name: 'Volunteer Login',
+      name: 'Customer or Member Management Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
     {
