@@ -148,28 +148,36 @@
               placeholder="Description"
             ></textarea>
           </div>
-          <div class="flex flex-col gap-5 mt-4">
-            <form @submit.prevent="EventFormApply">
-              <!-- Existing form fields... -->
-              <div class="flex flex-col gap-5 mt-4">
-                <!-- <div class="label bg-yellow-600 text-white p-2 rounded-lg">Add Itinerary</div> -->
+          <div>
+            <h1>Create Itinerary</h1>
+            <!-- {{ itinerary }} -->
 
-                <!-- Add Air Fare section -->
-                <div class="px-5 bg-slate-50 py-5">
-                  <p class="text-2xl font-bold py-3 border-b">1. Select Air Transportation</p>
+            <button>Add Day</button>
+            <div class="bg-blue-100 rounded-lg shadow-md px-2 py-3">
 
-                  <!-- Add Fare button -->
-                  <div class="text-right">
-                    <button @click="showFareForm = !showFareForm" class="mt-1">
-                      <span v-if="showFareForm" class="bg-red-500 text-white py-1 px-2 rounded mt-1"
-                        >Hide Fare Form
-                      </span>
-                      <span v-else class="bg-blue-500 text-white py-1 px-2 rounded mt-1"
-                        >Add Fare Form
-                      </span>
-                      <!-- {{ showFareForm ? 'Hide Fare Form' : 'Add Air Fare' }} -->
-                    </button>
-                  </div>
+            
+             <h1 class="px-3 my-2 py-2 w-full font-bold text-xl rounded-lg shadow-md bg-blue-400 text-white">Day {{ day }} : {{ itinerary.date }}</h1>
+            <div class="flex items-center gap-5 justify-between">
+             
+               
+                 <label for="date" class="w-1/3 font-semibold text-lg text-center">Select Date</label>
+                <input type="date" name="date" v-model="itinerary.date" class="input input-bordered w-1/2">
+              <button @click="showActivity = true" type="button" class="w-1/2 px-3 py-3 rounded-lg bg-blue-500 text-white">Add Activity</button>
+             
+            </div>
+              <div v-if="showActivity" class="flex items-center justify-between px-3 py-2 w-1/2">
+                <label for="date" class="w-1/2 font-semibold text-lg text-center">Select Activity Type</label>
+                 <select v-model="itinerary.type" class="select select-bordered w-1/2">
+                <option disabled selected>Select an option</option>
+                <option >Air Transportation</option>
+                <option >Ground Transportation</option>
+                <option >Hotel</option>
+                <option >General Activities</option>
+              </select>
+              </div>
+            
+               <div v-if="itinerary.type == 'Air Transportation'" class="px-5 bg-slate-50 py-5">
+                  <p class="text-2xl font-bold py-3 border-b">Select Air Transportation</p>
 
                   <!-- Fare Form -->
                   <div class="bg-gray-100 p-5 mt-5 rounded-lg">
@@ -211,7 +219,7 @@
                           </option>
                         </select>
                       </div>
-                       <div class="w-full">
+                       <!-- <div class="w-full">
                         <label for="" class="text-slate-600">Select Day</label>
                         <select
                           v-model="airRoute.day"
@@ -225,7 +233,7 @@
                             {{ day }}
                           </option>
                         </select>
-                      </div>
+                      </div> -->
                        <button
                       v-if="selectdAirline"
                       @click="getRoutes" type="button"
@@ -234,12 +242,12 @@
                       Get Routes
                     </button>
                     </div>
-                    <div v-for="route in availableRoutes" class="mt-4 bg-gray-200 py-3 px-2">
-                      <div class="flex gap-1 rounded-lg shadow-lg bg-white px-4 py-2 w-1/2 justify-between items-center">
+                    <div v-for="route in availableRoutes" class="mt-4 flex bg-gray-200 py-3 px-2">
+                      <div class="flex gap-1 rounded-lg shadow-lg bg-white px-4 py-2 w-full justify-between items-center">
                         <div>
-                          <h1 class="font-semibold text-lg">{{ route.origin.name }}</h1> 
-                          <h1 class="font-semibold text-xl">{{ route.origin.short_name }}</h1> 
-                          <p class="font-bold text-sm">{{ route.day }} , {{ route.date }}</p>
+                          <h1 class="font-semibold text-lg">{{ route.origin.name }} ({{ route.origin.short_name }})</h1> 
+                          <h1 class="font-semibold text-xl">{{route.origin_time}} </h1> 
+                          <p class="font-bold text-sm">{{ route.date }}</p>
                         </div><svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -252,17 +260,9 @@
                                 ></path>
                               </svg>
                                 <div>
-                          <h1 class="font-semibold text-lg">{{ route.transit.name }}</h1> 
-                          <h1 class="font-semibold text-xl">{{ route.transit.short_name }}</h1> 
-                          <p class="font-bold text-sm">{{ route.day }} , {{ route.date }}</p>
-                        </div>
-                      </div>
-                      <h1 class="text-center w-1/2">Return</h1>
-                     <div class="flex gap-1 rounded-lg shadow-lg mt-2 bg-white px-4 py-2 w-1/2 justify-between items-center">
-                        <div>
-                          <h1 class="font-semibold text-lg">{{ route.transit.name }}</h1> 
-                          <h1 class="font-semibold text-xl">{{ route.transit.short_name }}</h1> 
-                          <p>{{ route.day }} , {{ route.date }}</p>
+                          <h1 class="font-semibold text-lg">{{ route.transit.name }} ({{ route.transit.short_name }})</h1> 
+                          <h1 class="font-semibold text-xl">{{route.transit_time}} </h1> 
+                          <p class="font-bold text-sm">{{ route.date }}</p>
                         </div>
                         <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -275,14 +275,17 @@
                                   d="M21.949 10.1118C22.1634 10.912 21.6886 11.7345 20.8884 11.9489L5.2218 16.1467C4.77856 16.2655 4.31138 16.0674 4.08866 15.6662L1.46582 10.9415L2.91471 10.5533L5.3825 12.9979L10.4778 11.6326L5.96728 4.55896L7.89913 4.04132L14.8505 10.4609L20.1119 9.05113C20.9121 8.83671 21.7346 9.31159 21.949 10.1118ZM4.00013 19H20.0001V21H4.00013V19Z"
                                 ></path>
                               </svg>
-                              <div>
-                          <h1 class="font-semibold text-lg">{{ route.destination.name }}</h1> 
-                          <h1 class="font-semibold text-xl">{{ route.destination.short_name }}</h1> 
-                          <p class="font-bold text-sm">{{ route.day }} , {{ route.date }}</p>
+                                <div>
+                          <h1 class="font-semibold text-lg">{{ route.destination.name }} ({{ route.destination.short_name }})</h1> 
+                          <h1 class="font-semibold text-xl">{{route.destination_time}} </h1> 
+                          <p class="font-bold text-sm"> {{ route.date }}</p>
                         </div>
-                               
+                      </div> 
+                      <div class="flex items-center gap-5 justify-end w-1/2">
+                        <h1>Ticket Fare : $1200</h1>
+                       
+                    <button type="button" @click="selectRoute(route)" class="rounded-lg bg-orange-600 text-white px-3 py-2">Select Flight</button>
                       </div>
-                     
                     </div>
                
                     <!-- Return fields -->
@@ -423,99 +426,136 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- Add Transport button -->
-                <button
-                  @click="showTransportForm = !showTransportForm"
-                  type="button"
-                  class="btn btn-sm btn-primary text-white px-5 mt-5"
-                >
-                  {{ showTransportForm ? 'Hide Transport Form' : 'Add Transport' }}
-                </button>
-
-                <!-- Transport Form -->
-                <div v-if="showTransportForm" class="px-5 bg-slate-50 py-5 mt-3">
-                  <p class="text-2xl font-bold py-3 border-b">2. Select Transport</p>
+                <div v-if="itinerary.type == 'Ground Transportation'" class="px-5 bg-slate-50 py-5 mt-3">
+                  <p class="text-2xl font-bold py-3 ">Select Ground Transport</p>
 
                   <!-- Transport Form Fields -->
                   <div class="flex gap-5 mb-5">
-                    <div class="w-1/2">
-                      <input
-                        v-model="newTransport.from"
-                        type="text"
+                     <div class="w-full">
+                          <label for="" class="text-slate-600">Select City</label>
+                      <select
+                        v-model="newTransport.city"
+                       
                         placeholder="From"
-                        class="input input-bordered w-full"
-                      />
+                      class="select select-bordered w-full"
+                      >
+                       <option disabled selected>Select City</option>
+                    <option v-for="city in countries.find(e=>e.name == 'Saudi Arabia').cities">{{ city.name }}</option>
+                    
+                    </select>
                     </div>
-                    <div class="w-1/2">
-                      <input
+                    <div class="w-full">
+                          <label for="" class="text-slate-600">Select From</label>
+                      <select
+                        v-model="newTransport.from"
+                       
+                        placeholder="From"
+                      class="select select-bordered w-full"
+                      >
+                       <option disabled selected>Select From</option>
+                    <option value="Medina Airport">Medina Airport</option>
+                    <option value="Medina Airport">Jeddah Airport</option>
+                    </select>
+                    </div>
+                     <div class="w-full">
+                          <label for="" class="text-slate-600">Select To</label>
+                      <select
                         v-model="newTransport.to"
-                        type="text"
-                        placeholder="To"
-                        class="input input-bordered w-full"
-                      />
+                       
+                        placeholder="From"
+                      class="select select-bordered w-full"
+                      >
+                       <option disabled selected>Select To</option>
+                    <option :value="hotel.name" v-for="hotel in hotels">{{ hotel.name }}</option>
+                    </select>
                     </div>
-                  </div>
-
-                  <div class="flex gap-5 mb-5">
-                    <div class="w-1/2">
-                      <input
+                     <div class="w-full">
+                          <label for="" class="text-slate-600">Select Type</label>
+                      <select
                         v-model="newTransport.type"
-                        type="text"
-                        placeholder="Transport"
-                        class="input input-bordered w-full"
-                      />
+                       
+                        placeholder="From"
+                      class="select select-bordered w-full"
+                      >
+                       <option disabled selected>Select Type</option>
+                    <option >Bus</option>
+                    <option >Taxi</option>
+                    <option >Car</option>
+                    </select>
                     </div>
-                    <div class="w-1/2">
-                      <input
-                        v-model="newTransport.cost"
-                        type="number"
-                        placeholder="Cost"
-                        class="input input-bordered w-full"
-                      />
+                    <div class="flex items-center justify-center w-1/2">
+                      <button type="button" @click="getTransports" class="btn btn-success text-white btn-sm h-10 mt-5 px-5">Get Transports</button>
                     </div>
+                    
                   </div>
+                    <div v-if="availableTransport.length > 0">
+                      <div v-for="trs in availableTransport" class="flex justify-between items-center p-2 m-2 rounded-md bg-gray-300">
+                       <h1> {{ trs.name }}</h1> <div class="flex justify-between items-center gap-5"><h1 class="text-blue-800 font-semibold">Fare :${{ trs.fare }}</h1>  <button type="button"  class="rounded-lg bg-orange-600 text-white px-3 py-2">Select Transport</button></div>
+
+                      </div>
+                    </div>
+                
 
                   <button @click="addTransport" class="btn btn-success text-white btn-sm px-5">
                     Save Transport
                   </button>
 
                   <!-- Transport List -->
-                  <div class="mt-5">
-                    <p class="font-bold">Transports:</p>
-                    <div v-if="transports.length === 0" class="text-gray-500">No Data Added</div>
-
-                    <div v-else>
-                      <ul>
-                        <li
-                          v-for="(transport, index) in transports"
-                          :key="index"
-                          class="py-2 border border-slate rounded my-1 px-1"
-                        >
-                          <div class="text-lg font-semibold flex justify-between items-center">
-                            <div>
-                              <span class="text-xl font-semibold">{{ index + 1 }}.</span>
-                              {{ transport.from }}, {{ transport.to }}, {{ transport.type }} Days
-                            </div>
-                            <div>$ {{ transport.cost }}</div>
-                          </div>
-                        </li>
-                      </ul>
-                      <div class="font-bold mt-3 text-xl flex items-center justify-end">
-                        Total: ${{ totalTransport }}
-                      </div>
-                    </div>
-                  </div>
+                 
                 </div>
 
+
+
+
+<!-- Activities -->
+                  <div class="bg-white p-3 my-2" v-if="itinerary.activities.length > 0">
+                <h1 class="font-semibold text-cyan-600 underline text-lg">Activities </h1>
+                <div v-for="activity in itinerary.activities" class="bg-green-100 my-3 px-2 py-3 rounded-lg">
+                  <div class="flex justify-start items-center gap-4 py-3">
+                    <h1 class="bg-amber-500 text-white font-bold px-2 py-1 rounded-md">{{ activity.time }}</h1>
+                    <p class="mx-4">Flight From</p>
+                    <h1 class="font-bold text-lg">{{ activity.from }}</h1>
+                     <p>To</p>
+                    <h1 class="font-bold text-lg">{{ activity.to }}</h1>
+                    By
+                    <h1 class="font-bold text-lg text-sky-700">{{ activity.by }}</h1>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Activities End-->
+          </div>
+          </div>
+          <div class="flex flex-col gap-5 mt-4">
+            <form @submit.prevent="EventFormApply">
+              <!-- Existing form fields... -->
+              <div class="flex flex-col gap-5 mt-4">
+                <!-- <div class="label bg-yellow-600 text-white p-2 rounded-lg">Add Itinerary</div> -->
+
+                <!-- Add Air Fare section -->
+               
+
+                <!-- Add Transport button -->
+                <!-- <button
+                  @click="showTransportForm = !showTransportForm"
+                  type="button"
+                  class="btn btn-sm btn-primary text-white px-5 mt-5"
+                >
+                  {{ showTransportForm ? 'Hide Transport Form' : 'Add Transport' }}
+                </button> -->
+
+                <!-- Transport Form -->
+                
+
                 <!-- Add Hotel button -->
-                <button
+                <!-- <button
                   @click="showHotelForm = !showHotelForm"
                   type="button"
                   class="btn btn-sm btn-success text-white px-5 mt-5"
                 >
                   {{ showHotelForm ? 'Hide Hotel Form' : 'Add Hotel' }}
-                </button>
+                </button> -->
 
                 <!-- Hotel Form -->
                 <div v-if="showHotelForm" class="px-5 bg-slate-50 py-5 mt-3">
@@ -592,7 +632,7 @@
                 </div>
               </div>
               <!-- Submit and Cancel Buttons -->
-              <div class="flex justify-center gap-5 my-5">
+              <div class="flex justify-center gap-5 my-5" v-if="0">
                 <div class="font-bold mt-5 text-2xl flex justify-end">
                   Total Travel Cost: ${{ totalTravelCost }}
                 </div>
@@ -618,13 +658,14 @@
 import { useSocialStore } from '@/stores/SocialDashboard.ts'
 import { countries, statuses } from '@/stores/itinenary.ts'
 import { computed, ref } from 'vue'
-
+import moment from 'moment'
 const store = useSocialStore()
-
+const showActivity = ref(false)
 const showFareForm = ref(false)
 const showTransportForm = ref(false)
 const showHotelForm = ref(false)
-
+const day = ref(1)
+const itinerary = ref({activities:[],type:null,date:null})
 const fares = ref([])
 const newFare = ref({
   departure: { from: '', to: '', airline: '', fare: null },
@@ -647,7 +688,7 @@ const totalFare = computed(() => {
   return 1200
 })
 
-const transports = ref([])
+// const transports = ref([])
 const newTransport = ref({ from: '', to: '', type: '', cost: null })
 
 const addTransport = () => {
@@ -662,7 +703,7 @@ const totalTransport = computed(() => {
   }, 0)
 })
 const selectdAirline = ref()
-const hotels = ref([])
+// const hotels = ref([])
 const newHotel = ref({ name: '', cost: null, city: '', days: '' })
 
 const addHotel = () => {
@@ -672,14 +713,55 @@ const addHotel = () => {
 }
 const availableRoutes = ref([])
 const getRoutes = () => {
+  let t = 9
   for (let i = 3; i < 7; i++) {
     let rt = { ...airRoute.value }
     rt.transit = { id: 11, name: 'Istanbul', short_name: 'IST' }
    
-    rt.date = `0${i}-11-24`
+    rt.date = moment(itinerary.value.date).format('ddd, DD MMM')
+    rt.origin_time = `${t}:00`
+    rt.transit_time = `${t+3}:00`
+    rt.destination_time = `${t+6}:00`
     availableRoutes.value.push(rt)
+    t += 4
   }
   console.log(availableRoutes.value)
+}
+const transports = ref([
+  {
+    name: "Khalid's Taxi",
+    city: "Medina",
+    type: "Bus",
+    fare: 200
+  },
+  {
+    name: "Mecca Express",
+    city: "Mecca",
+    type: "Bus",
+    fare: 180
+  },
+  {
+    name: "Jeddah Shuttle",
+    city: "Jeddah",
+    type: "Taxi",
+    fare: 150
+  },
+  {
+    name: "Medina Movers",
+    city: "Medina",
+    type: "Car",
+    fare: 120
+  },
+  {
+    name: "Holy City Transport",
+    city: "Mecca",
+    type: "Bus",
+    fare: 190
+  }
+])
+const availableTransport = ref([])
+const getTransports = () => {
+  availableTransport.value = transports.value.filter(e=>e.city == newTransport.value.city  && e.type == newTransport.value.type )
 }
 
 const totalHotel = computed(() => {
@@ -687,7 +769,28 @@ const totalHotel = computed(() => {
     return sum + (Number(hotel.cost) || 0)
   }, 0)
 })
-
+const selectRoute = (rt) => {
+  let activity1 = {
+    time: rt.origin_time,
+    from: rt.origin.name,
+    to: rt.transit.name,
+    type: 'air',
+    by: selectdAirline.value.name
+  }
+  let activity2 = {
+    time: rt.transit_time,
+    from: rt.transit.name,
+    to: rt.destination.name,
+    type: 'air',
+    by: selectdAirline.value.name
+  }
+  itinerary.value.activities.push(activity1)
+  itinerary.value.activities.push(activity2)
+  showActivity.value = false
+  itinerary.value.type = null
+  selectdAirline.value = null
+  availableRoutes.value = []
+}
 const totalTravelCost = computed(() => {
   return totalFare.value + totalTransport.value + totalHotel.value
 })
@@ -729,6 +832,18 @@ const airLines = ref([
       { id: 6, name: 'Jeddah', short_name: 'JED' }
     ]
   }
+])
+const hotels = ref([
+  { id: 1, name: 'Anwar Al Madinah Mövenpick Hotel', city: 'Madina' },
+  { id: 2, name: 'Dar Al Tawhid Intercontinental Makkah', city: 'Makkah' },
+  { id: 3, name: 'Swissotel Al Maqam Makkah', city: 'Makkah' },
+  { id: 4, name: 'Madinah Hilton', city: 'Madina' },
+  { id: 5, name: 'Anjum Hotel Makkah', city: 'Makkah' },
+  { id: 6, name: 'Le Meridien Medina', city: 'Madina' },
+  { id: 7, name: 'Hyatt Regency Makkah Jabal Omar', city: 'Makkah' },
+  { id: 8, name: 'Pullman Zamzam Madina', city: 'Madina' },
+  { id: 9, name: 'Raffles Makkah Palace', city: 'Makkah' },
+  { id: 10, name: 'Crowne Plaza Madinah', city: 'Madina' }
 ])
 const step = ref({
   type: '',
