@@ -93,6 +93,8 @@ const router = createRouter({
       props: true
     },
 
+
+
     {
       path: '/umrah-international',
       name: 'umrah-international',
@@ -534,7 +536,12 @@ const router = createRouter({
           path: '/umrah_package_completed_packages',
           name: 'Umrah_Package_completed_Packages',
           component: () => import('@/views/Admin/UmrahModule/CompletedPackages.vue')
-        }
+        },
+        {
+          path: '/package-details',
+          name: 'package-details',
+          component: () => import('../views/Admin/UmrahModule/PackageDetails.vue')
+        },
       ]
     },
     {
