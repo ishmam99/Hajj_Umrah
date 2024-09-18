@@ -180,6 +180,6 @@ watch(
 </script>
 <style scoped>
 .router-link-active {
-  color: #ca8a04;
+  color: #1086aa
 }
 </style>

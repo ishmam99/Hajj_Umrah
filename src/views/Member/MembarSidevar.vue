@@ -1,7 +1,7 @@
 <template>
   <div class="bg-[#135D66] bg-cover">
     <div class="p-5 flex flex-col gap-3 font-semibold text-lg h-full">
-      <p class="text-2xl font-bold text-[#ffffff]">Member Dashboard</p>
+      <p class="text-2xl font-bold text-[#ffffff]">Customer Dashboard</p>
       <p class="text-xl font-bold text-white">Welcome Mr. karim</p>
       <router-link to="/Membar_Profile" @click="dropdown = 0"
         class="flex items-center gap-2 bg-white p-2 rounded-md"><svg xmlns="http://www.w3.org/2000/svg"

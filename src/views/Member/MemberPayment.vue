@@ -39,9 +39,6 @@
       <span class="badge badge-success">Paid</span>
     </td>
     <td>$5000</td>
-    <th>
-      <button class="btn btn-ghost btn-xs">Details</button>
-    </th>
   </tr>
   <!-- row 2: Umrah Package Payment -->
   <tr>
@@ -65,9 +62,6 @@
       <span class="badge badge-warning">Pending</span>
     </td>
     <td>$3000</td>
-    <th>
-      <button class="btn btn-ghost btn-xs">Details</button>
-    </th>
   </tr>
   <!-- row 3: VIP Hajj Package Payment -->
   <tr>
@@ -91,9 +85,6 @@
       <span class="badge badge-error">Failed</span>
     </td>
     <td>$10000</td>
-    <th>
-      <button class="btn btn-ghost btn-xs">Details</button>
-    </th>
   </tr>
 </tbody>
 

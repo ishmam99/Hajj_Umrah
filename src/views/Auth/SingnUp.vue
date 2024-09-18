@@ -81,7 +81,7 @@ const signup = async () => {
       description: 'sign Completed'
     })
     console.log(data)
-    router.push({ name: 'Member Login' })
+    router.push({ name: 'Customer Login' })
   } catch (error) {
     console.log(error)
     toast({

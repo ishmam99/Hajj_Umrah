@@ -1413,7 +1413,7 @@ const router = createRouter({
     },
     {
       path: '/Member_Login',
-      name: 'Member Login',
+      name: 'Customer Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
 
@@ -1426,6 +1426,11 @@ const router = createRouter({
           path: '/Membar_Profile',
           name: 'Membar_Profile',
           component: () => import('../views/Member/Profile/MembarProfile.vue')
+        },
+        {
+          path: '/member_package_list',
+          name: 'Membar_Package_List',
+          component: () => import('../views/Member/Profile/PackageList.vue'),
         },
         {
           path: '/Membar_Event_History',
