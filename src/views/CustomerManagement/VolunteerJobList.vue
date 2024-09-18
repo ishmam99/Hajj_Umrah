@@ -93,7 +93,7 @@ onMounted(() => {
       >
         <table class="table-auto w-full">
           <thead>
-            <tr class="bg-white">
+            <tr class="bg-[#219C90] text-white text-lg">
               <th class="p-2 text-left w-1/8">SL.</th>
               <th class="p-2 text-left w-1/8">Name</th>
               <th class="p-2 text-left w-1/8">Gnder</th>
@@ -143,7 +143,7 @@ onMounted(() => {
                 </button>
               </td>
             </tr>
-            <tr class="bg-white">
+            <tr class="bg-white ">
               <td class="p-2">4</td>
               <td class="p-2">Emily Davis</td>
               <td class="p-2">Female</td>

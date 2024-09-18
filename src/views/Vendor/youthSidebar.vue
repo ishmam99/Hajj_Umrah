@@ -3,7 +3,7 @@
     class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover w-1/4 h-screen sticky top-[80px]"
   >
     <div class="bg-[#e1f2ff9a] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
-      <p class="text-2xl font-bold text-[#2e318a]">Youth Management Dashboard</p>
+      <p class="text-2xl font-bold text-[#2e318a]">Vendor Dashboard</p>
       <p class="text-xl font-bold">Welcome Mr. Hashim</p>
       <router-link to="/Youth_Dashboard/Proile" class="flex items-center gap-2"
         ><svg
@@ -17,32 +17,46 @@
             d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z"
           ></path></svg>Profile</router-link
       >
-      <router-link to="/Youth_Dashboard/Year_Planer_Create" class="flex items-center gap-2"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z"
-          ></path></svg>Year Planner Create</router-link
-      >
-      <router-link to="/Youth_Dashboard/Year_Planer" class="flex items-center gap-2"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z"
-          ></path></svg>Year Planner List</router-link
-      >
+      
+      <div class="accordion">
+        <button @click.stop="toggleAccordion('projectManagement')" class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path
+              d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z" />
+          </svg>
+          My bids
+        </button>
+        <div v-if="currentAccordions === 'projectManagement'" class="submenu mx-8">
+          <router-link to="/Youth_Dashboard/Program_List" class="flex items-center gap-2 hover:px-2">-
+            Accepted Bids</router-link>
+          <router-link to="pending_bids" class="flex items-center gap-2 hover:px-2">-
+            Pending Bids</router-link>
+          
+        </div>
+      </div>
 
-      <router-link to="/Youth_Dashboard/Youth_Program_Create" class="flex items-center gap-2"
+      <div class="accordion">
+        <button @click.stop="toggleAccordion('bidManagement')" class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path
+              d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z" />
+          </svg>
+          My Services
+        </button>
+        <div v-if="currentAccordions === 'bidManagement'" class="submenu mx-8">
+          <router-link to="/Youth_Dashboard/currently_provided_services" class="flex items-center gap-2 hover:px-2">-
+            Currently Provided Services</router-link>
+          <router-link to="" class="flex items-center gap-2 hover:px-2">-
+            Previous Services</router-link>
+          
+          <!-- <router-link to="/Social_Service_Event_Post" class="flex items-center gap-2 hover:px-2"
+            >- Post Event</router-link
+          > -->
+        </div>
+      </div>
+
+
+      <!-- <router-link to="/Youth_Dashboard/Youth_Program_Create" class="flex items-center gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -87,7 +101,7 @@
           <path
             d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z"
           ></path></svg>Volunteer Management</router-link
-      >
+      > -->
 
       <router-link to="" class="flex items-center gap-2"
         ><svg
@@ -118,10 +132,41 @@ import { watch, ref } from 'vue'
 import { useAuthStore } from '/src/stores/AuthStore'
 import { useRouter, useRoute } from 'vue-router'
 
+const currentAccordions = ref('projectManagement')
+const currentAccordions2 = ref('bidManagement')
+
+const toggleAccordion = (accordionName) => {
+
+  if (accordionName === currentAccordions.value) {
+    currentAccordions.value = ''
+  } else {
+    currentAccordions.value = accordionName
+  }
+}
+
+const toggleAccordion2 = (accordionName2) => {
+  if (accordionName2 === currentAccordions2.value) {
+    currentAccordions2.value = ''
+  } else {
+    currentAccordions2.value = accordionName2
+  }
+}
+
 const route = useRoute()
 const router = useRouter()
 const store = useAuthStore()
-
+watch(() => route, () => {
+  console.log(route.name)
+  if (route.name.includes('Social_Service_Event')) {
+    currentAccordions.value = 'projectManagement'
+  }
+  else if (route.name.includes('Social_Service_Project')) {
+    currentAccordions.value = 'bidManagement'
+  }
+}, {
+  deep: true,
+  immediate: true
+})
 watch(
   () => store.isAuthenticated,
   (newIsAuthenticated) => {

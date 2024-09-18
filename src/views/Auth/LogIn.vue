@@ -87,7 +87,7 @@
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
-          v-if="route.name == 'Imam Login'"
+          v-if="route.name == 'Vendor Login'"
           src="@/assets/image/common/login-9.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
@@ -116,7 +116,7 @@
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"
         /><img
-          v-if="route.name == 'Customer or Member Management Login'"
+          v-if="route.name == 'Customer Management Login'"
           src="@/assets/image/common/login-7.png"
           alt=""
           class="bg-white rounded-lg h-[550px] w-[500px]"

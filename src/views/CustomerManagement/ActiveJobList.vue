@@ -14,7 +14,7 @@
       >
         <table class="w-full">
           <thead>
-              <tr class="bg-white">
+              <tr class="bg-[#219C90] text-white text-lg">
                 <th class="p-2 text-left w-1/8">No.</th>
                 <th class="p-2 text-left w-1/8">Country</th>
                 <th class="p-2 text-left w-1/8">City</th>

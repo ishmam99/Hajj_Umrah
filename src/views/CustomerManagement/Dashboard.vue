@@ -15,5 +15,5 @@
 </template>
 <script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import VMsidebar from '../VolunteerManagement/Sidebar.vue';
+import VMsidebar from '../CustomerManagement/Sidebar.vue';
 </script>
