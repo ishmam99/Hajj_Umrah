@@ -1045,7 +1045,7 @@ const router = createRouter({
         {
           path: '/Active_volunteer_job_list',
           name: 'Active_Volunteer_list',
-          component: () => import('/src/views/VolunteerManagement/ActiveJobList.vue')
+          component: () => import('@/views/VolunteerManagement/ActiveJobList.vue')
         },
         {
           path: '/Past_volunteer_job_list',

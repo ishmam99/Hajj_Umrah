@@ -5,7 +5,7 @@
       class="bg-white rounded-xl p-5 w-full shadow-md mt-5"
     >
       <div class="flex justify-between items-center pb-2">
-        <p class="text-2xl text-yellow-600 font-bold">Active Volunteer Job List</p>
+        <p class="text-2xl text-yellow-600 font-bold">Registered Customers Package List</p>
       </div>
 
       <hr />
@@ -14,70 +14,34 @@
       >
         <table class="w-full">
           <thead>
-            <tr class="bg-white">
-              <th class="p-2 text-left w-1/8">No</th>
-              <th class="p-2 text-left w-1/8">Title</th>
-              <th class="p-2 text-left w-1/8">Gender</th>
-              <th class="p-2 text-left w-1/8">venue</th>
-              <th class="p-2 text-left w-1/8">Date</th>
-              <th class="p-2 text-left w-1/8">Time</th>
-              <th class="p-2 text-left w-1/8">Show Volunteer</th>
-              <th class="p-2 text-left w-1/8">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="table-row" v-for="(volunteerPost, index) in allVolunteerList" :key="index">
-              <td class="py-4 p-2 w-1/8">{{ index + 1 }}</td>
-              <td class="py-4 p-2 gap-2 w-1/8">
-                <h3 class="font-bold">{{ volunteerPost.title }}</h3>
-              </td>
-              <td class="py-4 p-2 text-left w-1/8">{{ volunteerPost.gender }}</td>
-              <td class="py-4 p-2 text-left w-1/8">{{ volunteerPost.venue }}</td>
-              <td class="py-4 p-2 text-left w-1/8">{{ volunteerPost.date }}</td>
-              <td class="py-4 p-2 text-left w-1/8">{{ volunteerPost.time }}</td>
-              <td class="py-4 p-2 text-left w-1/8">
-                <button
-                  @click="details(volunteerPost)"
-                  class="px-5 py-1.5 rounded-md bg-blue-600 text-sm text-white"
-                >
-                  View
-                </button>
-              </td>
-              <td class="py-4 p-2 text-left w-1/8">
-                <div
-                  class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2"
-                >
-                  <DropdownMenu class="w-full">
-                    <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
-
-                    <DropdownMenuContent>
-                      <DropdownMenuItem @click="jobDetails(volunteerPost)" class="text-blue-600"
-                        >Details</DropdownMenuItem
-                      >
-                      <DropdownMenuItem class="text-yellow-600">Edit</DropdownMenuItem>
-                      <DropdownMenuItem
-                        class="text-green-600"
-                        @click="volunteerJobPost(volunteerPost.id)"
-                        >Complete</DropdownMenuItem
-                      >
-                      <DropdownMenuItem class="text-red-600" @click="submitDelete()"
-                        >Delete</DropdownMenuItem
-                      >
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
+              <tr class="bg-white">
+                <th class="p-2 text-left w-1/8">No.</th>
+                <th class="p-2 text-left w-1/8">Country</th>
+                <th class="p-2 text-left w-1/8">City</th>
+                <th class="p-2 text-left w-1/8">Package Code</th>
+                <th class="p-2 text-left w-1/8">Package Id</th>
+                <th class="p-2 text-left w-1/8">Registered Customer</th>
+                <th class="p-2 text-left w-1/8">More Info</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-row">
+                <td class="p-2 text-left w-1/8">01</td>
+                <td class="p-2 text-left w-1/8">USA</td>
+                <td class="p-2 text-left w-1/8">LA(LAX)</td>
+                <td class="p-2 text-left w-1/8">01000</td>
+                <td class="p-2 text-left w-1/8">U-2027-01000</td>
+                <td class="p-2 text-left w-1/8">10 </td>
+                <td class="py-4 p-2 text-left">
+                  <button
+                    @click="details(volunteerApplicant)"
+                    class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm"
                   >
-                    <path d="M12 16L6 10H18L12 16Z"></path>
-                  </svg>
-                </div>
-              </td>
-            </tr>
-          </tbody>
+                    Details
+                  </button>
+                </td>
+              </tr>
+            </tbody>
         </table>
       </div>
     </div>

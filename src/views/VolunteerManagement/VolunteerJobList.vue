@@ -8,7 +8,6 @@ import {
   DropdownMenuTrigger
 } from '/components/ui/dropdown-menu'
 
-
 import { ref, onMounted, defineProps } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useVolunteerDataStore } from '@/stores/volunteerStore.ts'
@@ -45,17 +44,16 @@ const volunteerJobList = async () => {
 
 const volunteerJobPost = async (id) => {
   loading.value = true
-  console.log( store.volunteerJobList, 'yo')
+  console.log(store.volunteerJobList, 'yo')
   try {
-    const { data } = await api().post(`volunteer-update-job-status/${id}`,
-    { job_status : "Approved" }
-    )
+    const { data } = await api().post(`volunteer-update-job-status/${id}`, {
+      job_status: 'Approved'
+    })
     toast({
       title: 'Success',
       description: 'Volunteer posted successfully!'
     })
     volunteerJobList()
-    
   } catch (error) {
     console.log(error)
   }
@@ -64,11 +62,11 @@ const volunteerJobPost = async (id) => {
 
 const volunteerJobRemove = async (id) => {
   loading.value = true
-  console.log( store.volunteerJobList, 'yo')
+  console.log(store.volunteerJobList, 'yo')
   try {
-    const { data } = await api().post(`volunteer-update-job-status/${id}`,
-    { job_status : "Waiting" }
-    )
+    const { data } = await api().post(`volunteer-update-job-status/${id}`, {
+      job_status: 'Waiting'
+    })
     toast({
       title: 'Success',
       description: 'Volunteer posted successfully!'
@@ -79,7 +77,6 @@ const volunteerJobRemove = async (id) => {
   }
   loading.value = false
 }
-
 
 onMounted(() => {
   volunteerJobList()
@@ -89,72 +86,74 @@ onMounted(() => {
 <template>
   <div class="px-5 bg-slate-50 py-5 w-full">
     <div>
-      <p class="text-2xl font-bold py-3 border-b">All Volunteer Jobs</p>
-      
+      <p class="text-2xl font-bold py-3 border-b">All Customer List</p>
+
       <div
         class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center"
       >
         <table class="table-auto w-full">
           <thead>
             <tr class="bg-white">
-              <th class="p-2 text-left w-1/8"> SL.</th>
-              <th class="p-2 text-left w-1/8">Title</th>
-              <th class="p-2 text-left w-1/8">Gender</th>
-              <th class="p-2 text-left w-1/8">venue</th>
-              <th class="p-2 text-left w-1/8">Date</th>
-              <th class="p-2 text-left w-1/8">Time</th>
-              <th class="p-2 text-left w-1/8">Status</th>
+              <th class="p-2 text-left w-1/8">SL.</th>
+              <th class="p-2 text-left w-1/8">Name</th>
+              <th class="p-2 text-left w-1/8">Gnder</th>
+              <th class="p-2 text-left w-1/8">Address</th>
+              <th class="p-2 text-left w-1/8">Email</th>
+              <th class="p-2 text-left w-1/8">Contack Inf.</th>
               <th class="p-2 text-left w-1/8">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="tableRowColor" v-for="(volunteerPost, index) in store.volunteerJobList" :key="index">
-              <td class="py-4 p-2 w-1/8">{{ index+1 }}</td>
-              <td class="py-4 p-2 gap-2 w-1/8">
-                <h3 class="font-bold">{{ volunteerPost.title }}</h3>
+            <tr class="bg-gray-50">
+              <td class="p-2">1</td>
+              <td class="p-2">John Doe</td>
+              <td class="p-2">Male</td>
+              <td class="p-2">123 Main St, New York, NY</td>
+              <td class="p-2">johndoe@example.com</td>
+              <td class="p-2">+1 (123) 456-7890</td>
+              <td class="p-2">
+                <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                  Details
+                </button>
               </td>
-              <td class="py-4 p-2 text-left w-1/8">{{ volunteerPost.gender }}</td>
-              <td class="py-4 p-2 text-left w-1/8">{{ volunteerPost.venue }}</td>
-              <td class="py-4 p-2 text-left w-1/8">{{ volunteerPost.date }} </td>
-              <td class="py-4 p-2 text-left w-1/8">{{ volunteerPost.time }} </td>
-              <td v-if="volunteerPost.job_status == 'Approved'" class="py-4 p-2 text-left w-1/8 text-green-600 font-semibold">Approved</td>
-              <td v-if="volunteerPost.job_status == 'Waiting'" class="py-4 p-2 text-left w-1/8 font-semibold text-gray-400">Pending</td>
-              <td v-if="volunteerPost.job_status == 'Complete'" class="py-4 p-2 text-left w-1/8 font-semibold text-yellow-600">Compete</td>
-              <td class="py-4 p-2 text-left w-1/8">
-                <div
-                  class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2"
-                >
-                  <DropdownMenu class="w-full">
-                    <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
-                    
-                    <DropdownMenuContent>
-                      <DropdownMenuItem class="text-blue-600" 
-                        >Details</DropdownMenuItem
-                      >
-                      <DropdownMenuItem v-if="volunteerPost.job_status != 'Complete'" class="text-yellow-600" 
-                        >Edit</DropdownMenuItem
-                      >
-                      <DropdownMenuItem v-if="volunteerPost.job_status == 'Waiting' && volunteerPost.job_status != 'Complete'" class="text-green-600" @click="volunteerJobPost(volunteerPost.id)"
-                        >Post</DropdownMenuItem
-                      >
-                      <DropdownMenuItem v-if="volunteerPost.job_status == 'Approved' && volunteerPost.job_status != 'Complete'" class="text-green-600" @click="volunteerJobRemove(volunteerPost.id)"
-                        >Remove</DropdownMenuItem
-                      >
-                      <DropdownMenuItem class="text-red-600" @click="submitDelete()"
-                        >Delete</DropdownMenuItem
-                      >
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                  >
-                    <path d="M12 16L6 10H18L12 16Z"></path>
-                  </svg>
-                </div>
+            </tr>
+            <tr class="bg-white">
+              <td class="p-2">2</td>
+              <td class="p-2">Jane Smith</td>
+              <td class="p-2">Female</td>
+              <td class="p-2">456 Elm St, Los Angeles, CA</td>
+              <td class="p-2">janesmith@example.com</td>
+              <td class="p-2">+1 (987) 654-3210</td>
+              <td class="p-2">
+                <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                  Details
+                </button>
+              </td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="p-2">3</td>
+              <td class="p-2">Samuel Jackson</td>
+              <td class="p-2">Male</td>
+              <td class="p-2">789 Oak St, Chicago, IL</td>
+              <td class="p-2">samjackson@example.com</td>
+              <td class="p-2">+1 (555) 123-4567</td>
+              <td class="p-2">
+                <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                  Details
+                </button>
+              </td>
+            </tr>
+            <tr class="bg-white">
+              <td class="p-2">4</td>
+              <td class="p-2">Emily Davis</td>
+              <td class="p-2">Female</td>
+              <td class="p-2">101 Pine St, San Francisco, CA</td>
+              <td class="p-2">emilydavis@example.com</td>
+              <td class="p-2">+1 (222) 654-9876</td>
+              <td class="p-2">
+                <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
+                  Details
+                </button>
               </td>
             </tr>
           </tbody>
@@ -165,7 +164,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.tableRowColor:nth-child(even){
+.tableRowColor:nth-child(even) {
   background: white;
 }
 </style>
