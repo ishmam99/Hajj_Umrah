@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover">
-    <div class="bg-[#0050129f] p-5 flex flex-col gap-3 font-semibold text-lg h-full">
+  <div class="bg-[#135D66] bg-cover">
+    <div class="p-5 flex flex-col gap-3 font-semibold text-lg h-full">
       <p class="text-2xl font-bold text-[#ffffff]">Member Dashboard</p>
       <p class="text-xl font-bold text-white">Welcome Mr. karim</p>
       <router-link to="/Membar_Profile" @click="dropdown = 0"
@@ -392,6 +392,6 @@ const logout = () => {
 </script>
 <style scoped>
 .router-link-active {
-  color: #0008ff;
+  color: lightseagreen
 }
 </style>
