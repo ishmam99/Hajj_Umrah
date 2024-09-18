@@ -1428,9 +1428,9 @@ const router = createRouter({
           component: () => import('../views/Member/MemberEventHistory.vue')
         },
         {
-          path: '/Membar_Donation_History',
-          name: 'Membar_Donation_History',
-          component: () => import('../views/Member/Profile/MemberDonationHistory.vue')
+          path: '/member_package_list',
+          name: 'Member_Package_List',
+          component: () => import('../views/Member/Profile/PackageList.vue')
         },
         {
           path: '/Membar_Payment_History',
