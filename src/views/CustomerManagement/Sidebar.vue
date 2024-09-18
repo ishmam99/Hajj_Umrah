@@ -3,7 +3,7 @@
     class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover min-h-screen"
   >
     <div class="bg-[#232e6da9] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
-      <p class="text-2xl font-bold text-white">Customer or Member Management Dashboard</p>
+      <p class="text-xl font-bold text-white">Customer Management Dashboard</p>
       <p class="text-xl font-bold text-white">Welcome Mr. Hashim</p>
       <router-link
         to="/volunteer_profile"

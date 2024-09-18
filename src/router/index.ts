@@ -1024,53 +1024,53 @@ const router = createRouter({
     //Voluneer Dashboad
     {
       path: '/volunteerLogin',
-      name: 'Customer or Member Management Login',
+      name: 'Customer Management Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
     {
       path: '/volunteer_management',
       name: 'Volunteer_Dashboard',
-      component: () => import('@/views/VolunteerManagement/Dashboard.vue'),
+      component: () => import('@/views/CustomerManagement/Dashboard.vue'),
       children: [
         {
           path: '/volunteer_profile',
           name: 'volunteer_profile',
-          component: () => import('@/views/VolunteerManagement/Profile/Profile.vue')
+          component: () => import('@/views/CustomerManagement/Profile/Profile.vue')
         },
         {
           path: '/create_volunteer_job',
           name: 'create_volunteer_job',
-          component: () => import('@/views/VolunteerManagement/CreateVolunteerJob.vue')
+          component: () => import('@/views/CustomerManagement/CreateVolunteerJob.vue')
         },
         {
           path: '/volunteer_job_list',
           name: 'volunteer_job_list',
-          component: () => import('@/views/VolunteerManagement/VolunteerJobList.vue')
+          component: () => import('@/views/CustomerManagement/VolunteerJobList.vue')
         },
         {
           path: '/Active_volunteer_job_list',
           name: 'Active_Volunteer_list',
-          component: () => import('@/views/VolunteerManagement/ActiveJobList.vue')
+          component: () => import('@/views/CustomerManagement/ActiveJobList.vue')
         },
         {
           path: '/Past_volunteer_job_list',
           name: 'Past_Volunteer_list',
-          component: () => import('/src/views/VolunteerManagement/PastJobList.vue')
+          component: () => import('/src/views/CustomerManagement/PastJobList.vue')
         },
         {
           path: '/volunteer_applicant_list',
           name: 'volunteer_applicant_list',
-          component: () => import('/src/views/VolunteerManagement/VolunteerApplicantList.vue')
+          component: () => import('/src/views/CustomerManagement/VolunteerApplicantList.vue')
         },
         {
           path: '/approved_volunteer_list',
           name: 'approved_volunteer_list',
-          component: () => import('@/views/VolunteerManagement/ApprovedVolunteerList.vue')
+          component: () => import('@/views/CustomerManagement/ApprovedVolunteerList.vue')
         },
         {
           path: '/rejected_volunteer_list',
           name: 'rejected_volunteer_list',
-          component: () => import('@/views/VolunteerManagement/RejectedVolunteerList.vue')
+          component: () => import('@/views/CustomerManagement/RejectedVolunteerList.vue')
         }
       ]
     },

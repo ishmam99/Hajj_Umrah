@@ -605,7 +605,7 @@
                   <router-link
                     to="/volunteerLogin"
                     class="w-full hover:pl-5 duration-300 font-semibold"
-                    >Customer/Member Management System</router-link
+                    >Customer Management System</router-link
                   >
                 </MenubarItem>
                 <MenubarItem>
