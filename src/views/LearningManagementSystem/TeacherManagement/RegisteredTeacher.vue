@@ -14,7 +14,10 @@
             <tr class="bg-white text-lg">
               <th class="p-2 text-start w-1/8">ID</th>
               <th class="p-2 text-start w-1/8">Teacher Name</th>
+              <th class="p-2 text-start w-1/8">Email</th>
+              <th class="p-2 text-start w-1/8">Phone</th>
               <th class="p-2 text-start w-2/8">Subject</th>
+              <th>Status</th>
               <th class="p-2 text-center w-1/8">Action</th>
             </tr>
           </thead>
@@ -29,7 +32,16 @@
                 <h3 class="font-semibold text-xl">{{item.name}}</h3>
               </td>
               <td class="py-4 px-2 w-2/8">
+                {{ item?.email }}
+              </td>
+              <td class="py-4 px-2 w-2/8">
+                {{ item.phone }}
+              </td>
+              <td class="py-4 px-2 w-2/8">
                 {{ item.subject }}
+              </td>
+              <td class="py-4 px-2 w-2/8">
+                {{ item.status }}
               </td>
               <td class="py-4 px-2 flex justify-center">
                 <div
@@ -207,21 +219,30 @@ const teachers = ref([
     id: 1,
     image: '/src/assets/seminar/1.jpg',
     name: 'Yasir Qadhi',
+    email: 'yasir@gmail.com',
+    phone: '+19675423',
     subject: 'Science',
+    status: 'Active',
     details: 'A comprehensive guide to the teachings and interpretation of the Quran.'
   },
   {
     id: 2,
     image: '/src/assets/seminar/2.jpg',
     name: 'Al Maneese',
+    email: 'maneese@gmail.com',
+    phone: '+15675423',
     subject: 'Physics',
+    status: 'inActive',
     details: 'An in-depth look into the life and legacy of Prophet Muhammad (PBUH).'
   },
   {
     id: 3,
     image: '/src/assets/seminar/3.jpg',
-    name: 'Harun Khan',
+    name: 'Ashraful Hider Jaed',
+    email: 'qadhi@gmail.com',
+    phone: '+13675423',
     subject: 'Islamic Studies',
+    status: 'Active',
     details: 'Understanding the principles of Islamic law and its application in daily life.'
   },
 ]);

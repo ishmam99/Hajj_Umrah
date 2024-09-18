@@ -1,74 +1,60 @@
 <template>
-    <div class="px-4 bg-white py-5">
-      <div v-if="isEdit == false">
-        <div class="flex justify-between items-center pt-4">
-          <p class="text-2xl text-cyan-700 font-bold pb-2">Program List</p>
-        </div>
-        <hr />
-  
-        <div
-          class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center"
-        >
-          <table class="table-auto w-full">
-            <thead>
-              <tr class="bg-white text-lg">
-                <th class="p-2 text-start w-1/8">ID</th>
-                <th class="p-2 text-start w-1/8">Program Name</th>
-                <th class="p-2 text-start w-2/8">Description</th>
-                <th class="p-2 text-start w-2/8">Program Type</th>
-                <th class="p-2 text-center w-1/8">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                class="tableRowColor"
-              >
-                <td class="py-4 px-2 w-1/8">01</td>
-                <td class="py-4 px-2 w-1/8">
-                  <h3 class="font-semibold">Nadira Program</h3>
-                </td>
-                <td class="py-4 px-2 w-2/8">
-                  Be Hafiz by joining our program
-                </td>
-                <td class="py-4 px-2 w-2/8">
-                  Full Time
-                </td>
-                <td class="py-4 px-2 flex justify-center">
-                  <div
-                    class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2"
-                  >
-                    <DropdownMenu class="w-full">
-                      <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
-                      <DropdownMenuContent class="w-40">
-                        <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
-  
-                        <DropdownMenuItem class="text-cyan-800" @click="edit(event)"
-                          >Edit</DropdownMenuItem
-                        >
-                        <DropdownMenuItem class="text-cyan-800" @click="edit(event)"
-                          >Approved</DropdownMenuItem
-                        >
-                        <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      height="24"
-                      fill="currentColor"
-                    >
-                      <path d="M12 16L6 10H18L12 16Z"></path>
-                    </svg>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+  <div class="px-4 bg-white py-5">
+    <div v-if="isEdit == false">
+      <div class="flex justify-between items-center pt-4">
+        <p class="text-2xl text-cyan-700 font-bold pb-2">Program List</p>
       </div>
-  
-      <div v-else class="px-5 bg-slate-50 py-5 w-full">
+      <hr />
+
+      <div class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center">
+        <table class="table-auto w-full">
+          <thead>
+            <tr class="bg-white text-lg">
+              <th class="p-2 text-start w-1/8">ID</th>
+              <th class="p-2 text-start w-1/8">Program Name</th>
+              <th class="p-2 text-start w-2/8">Description</th>
+              <th class="p-2 text-start w-2/8">Program Type</th>
+              <th class="p-2 text-center w-1/8">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(tableList, index) in store.programListData" :key="index" class="tableRowColor">
+              {{ tableList }}
+              <td class="py-4 px-2 w-1/8">{{ index + 1 }}</td>
+              <td class="py-4 px-2 w-1/8">
+                <h3 class="font-semibold">{{ tableList.name }}</h3>
+              </td>
+              <td class="py-4 px-2 w-2/8">
+                <p v-html="tableList.description"></p>
+              </td>
+              <td class="py-4 px-2 w-2/8">
+                {{ tableList.type_id }}
+              </td>
+              <td class="py-4 px-2 flex justify-center">
+                <div class="w-full flex justify-center border py-2 rounded-md text-sm bg-white pr-2">
+                  <DropdownMenu class="w-full">
+                    <DropdownMenuTrigger class="w-full">Action</DropdownMenuTrigger>
+                    <DropdownMenuContent class="w-40">
+                      <DropdownMenuItem class="text-blue-600">Details</DropdownMenuItem>
+
+                      <DropdownMenuItem class="text-cyan-800" @click="edit(event)">Edit</DropdownMenuItem>
+                      <DropdownMenuItem class="text-cyan-800" @click="edit(event)">Active</DropdownMenuItem>
+                      <DropdownMenuItem class="text-red-600">Delete</DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                    fill="currentColor">
+                    <path d="M12 16L6 10H18L12 16Z"></path>
+                  </svg>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- <div v-else class="px-5 bg-slate-50 py-5 w-full">
         <p class="text-2xl font-bold py-3 border-b">Update Announcement</p>
         <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
           <form  @submit.prevent="editSubmit">
@@ -82,7 +68,7 @@
                         <input
                           type="text"
                           class="py-2 px-6 rounded-2xl w-full border-2"
-                          v-model="announcemnetStore.title"
+                          v-model="announcemnetStore?.title"
                         />
                       </div>
                     </div>
@@ -141,104 +127,58 @@
             </div>
           </form>
         </div>
-      </div>
-  
-    </div>
-  </template>
-  <script setup>
-  import { ref, onMounted } from 'vue'
-  import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger
-  } from '/components/ui/dialog'
-  
-  import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger
-  } from '/components/ui/dropdown-menu'
-  
-  import { useOperationStore } from '@/stores/operationDashboard.ts'
-  import { useAuthStore } from '@/stores/AuthStore'
-  
-  const store = useOperationStore()
-  const authStore = useAuthStore()
-  
-  const getProjectList = async () => {
-    try {
-      const { data } = await api().get('announcement-list')
-      store.announcementList = data.data
-      // console.log(store.serviceList[0])
-    } catch (error) {
-      console.log(error)
-    }
+      </div> -->
+
+  </div>
+</template>
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useToast } from '/components/ui/toast/use-toast'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '/components/ui/dialog'
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger
+} from '/components/ui/dropdown-menu'
+import { useVolunteerDashboardStore } from '@/stores/volunteerStore2';
+import { useLMSStore } from '@/stores/LMSdashboard';
+
+const loading = ref(false)
+const isEdit = ref(false);
+const { toast } = useToast()
+const store = useLMSStore()
+
+const programList = async () => {
+  loading.value = true;
+  try {
+    const { data } = await api().get('program')
+    store.programListData = data.data
+  } catch (error) {
+    console.log(error)
   }
-  const isEdit = ref(false)
-  const announceId = ref()
-  
-  const edit = (event) => {
-    isEdit.value = true
-    announceId.value = event.id
-    announcemnetStore.value.title = event.title
-    announcemnetStore.value.description = event.description
-    console.log(event, 'event chk')
-  }
-  
-  const selectedFile = ref(null)
-  
-  const announcemnetStore = ref({
-    name: '',
-    event_type: '',
-    occurrence_type: '',
-    human_resource: '',
-    material_resource: '',
-    description: '',
-    address: '',
-    city: '',
-    state: '',
-    start_date: '',
-    state_time: '',
-    end_date: '',
-    end_time: '',
-    image: ''
-  })
-  
-  function onFileChange(event) {
-    selectedFile.value = event.target.files[0]
-    announcemnetStore.value.image = event.target.files[0]
-    console.log('Selected File:', selectedFile.value)
-  }
-  
-  const editSubmit = async (eventId) => {
-    // try {
-    //   const data = await api().post('event-store', announcemnetStore.value,)
-    //   console.log(data)
-    //   toast({
-    //     title: 'Fund Raise Event Created '
-    //   })
-    // } catch (error) {
-    //   console.log(error)
-    // }
-  
-    isEdit.value = false
-  }
-  
-  onMounted(async () => {
-    getProjectList()
-  })
-  </script>
-  
-  <style>
-  .tableRowColor:nth-child(even) {
-    background: white;
-  }
-  </style>
-  
+  loading.value = false
+}
+
+
+onMounted(async () => {
+  programList()
+})
+</script>
+
+<style>
+.tableRowColor:nth-child(even) {
+  background: white;
+}
+</style>

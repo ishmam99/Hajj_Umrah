@@ -82,7 +82,7 @@ const volunteerJobList = async () => {
   }
 }
 onMounted(async () => {
-  gatprayerTime()
+  // gatprayerTime()
   getEvent()
   getAnnouncement()
   getServiceList()
