@@ -2,7 +2,7 @@
   <div
     class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover min-h-screen"
   >
-    <div class="bg-[#232e6da9] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
+    <div class="bg-[#135D66] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
       <p class="text-xl font-bold text-white">Customer Management Dashboard</p>
       <p class="text-xl font-bold text-white">Welcome Mr. Hashim</p>
       <router-link
@@ -46,17 +46,10 @@
         to="/volunteer_job_list"
         class="flex items-center gap-2 bg-white p-2 rounded-md"
         >
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            fill="currentColor"
-          >
-            <path
-              d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V6H22V20C22 20.5523 21.5523 21 21 21H13ZM4 19H20V8H4V19ZM13 10H18V12H13V10ZM13 14H18V16H13V14ZM9 10V13H12C12 14.6569 10.6569 16 9 16C7.34315 16 6 14.6569 6 13C6 11.3431 7.34315 10 9 10ZM2 3H22V5H2V3Z"
-            ></path>
-          </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
+</svg>
+
           Customer List</router-link
       >
       </div>

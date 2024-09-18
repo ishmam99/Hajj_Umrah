@@ -99,8 +99,8 @@ onMounted(() => {
               <th class="p-2 text-left w-1/8">Gnder</th>
               <th class="p-2 text-left w-1/8">Address</th>
               <th class="p-2 text-left w-1/8">Email</th>
-              <th class="p-2 text-left w-1/8">Contack Inf.</th>
-              <th class="p-2 text-left w-1/8">Action</th>
+              <th class="p-2 text-left w-1/8">Phone Number.</th>
+              <!-- <th class="p-2 text-left w-1/8">Action</th> -->
             </tr>
           </thead>
           <tbody>
@@ -111,11 +111,11 @@ onMounted(() => {
               <td class="p-2">123 Main St, New York, NY</td>
               <td class="p-2">johndoe@example.com</td>
               <td class="p-2">+1 (123) 456-7890</td>
-              <td class="p-2">
+              <!-- <td class="p-2">
                 <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                   Details
                 </button>
-              </td>
+              </td> -->
             </tr>
             <tr class="bg-white">
               <td class="p-2">2</td>
@@ -124,11 +124,11 @@ onMounted(() => {
               <td class="p-2">456 Elm St, Los Angeles, CA</td>
               <td class="p-2">janesmith@example.com</td>
               <td class="p-2">+1 (987) 654-3210</td>
-              <td class="p-2">
+              <!-- <td class="p-2">
                 <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                   Details
                 </button>
-              </td>
+              </td> -->
             </tr>
             <tr class="bg-gray-50">
               <td class="p-2">3</td>
@@ -137,11 +137,11 @@ onMounted(() => {
               <td class="p-2">789 Oak St, Chicago, IL</td>
               <td class="p-2">samjackson@example.com</td>
               <td class="p-2">+1 (555) 123-4567</td>
-              <td class="p-2">
+              <!-- <td class="p-2">
                 <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                   Details
                 </button>
-              </td>
+              </td> -->
             </tr>
             <tr class="bg-white ">
               <td class="p-2">4</td>
@@ -150,11 +150,11 @@ onMounted(() => {
               <td class="p-2">101 Pine St, San Francisco, CA</td>
               <td class="p-2">emilydavis@example.com</td>
               <td class="p-2">+1 (222) 654-9876</td>
-              <td class="p-2">
+              <!-- <td class="p-2">
                 <button class="px-3 py-2 rounded-md shadow-md bg-cyan-600 text-white text-sm">
                   Details
                 </button>
-              </td>
+              </td> -->
             </tr>
           </tbody>
         </table>
