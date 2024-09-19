@@ -538,9 +538,14 @@ const router = createRouter({
           component: () => import('@/views/Admin/UmrahModule/CompletedPackages.vue')
         },
         {
-          path: '/package-details',
+          path: '/package_details',
           name: 'package-details',
           component: () => import('../views/Admin/UmrahModule/PackageDetails.vue')
+        },
+        {
+          path: '/view_packages',
+          name: 'view-details',
+          component: () => import('../views/Admin/UmrahModule/ViewPackages.vue')
         },
       ]
     },

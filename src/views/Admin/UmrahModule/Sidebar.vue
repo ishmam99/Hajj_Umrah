@@ -66,6 +66,7 @@ watch(
         </button>
         <div v-if="currentAccordions === 'projectManagement'" class="submenu mx-8">
           <router-link to="/Umrah_Package_Create_New_Package" class="flex items-center gap-2 hover:px-2">- Create New Package</router-link>
+          <router-link to="/view_packages" class="flex items-center gap-2 hover:px-2">- View / Edit Packages</router-link>
           <router-link to="/umrah_package_current_packages" class="flex items-center gap-2 hover:px-2">- Approve
             Packages</router-link>
           <router-link to="/Umrah_package_previous_packages" class="flex items-center gap-2 hover:px-2">- Upcoming Packages List
@@ -74,7 +75,7 @@ watch(
             </router-link>
           <router-link to="/Umrah_package_previous_packages" class="flex items-center gap-2 hover:px-2">- All Packages List
             </router-link>
-          <router-link to="/package-details" class="flex items-center gap-2 hover:px-2">- Package Details
+          <router-link to="/package_details" class="flex items-center gap-2 hover:px-2">- Package Details
             </router-link>
           <!-- <router-link to="/Social_Service_Project_Post" class="flex items-center gap-2 hover:px-2"
             >- Post Project</router-link
