@@ -3,14 +3,15 @@
     <div class="">
       <div class="pt-[80px] flex flex-row justify-between">
         <Sidebar />
-         <router-view />
-       
+         <router-view v-if="$route.name != 'Umrah_Management_System'" />
+       <Dashboard v-else/>
       </div>
     </div>
   </DefaultLayout>
 </template>
 <script setup>
-import Sidebar from '/src/views/Admin/HajjModule/Sidebar.vue'
+import Sidebar from './Sidebar.vue'
+import Dashboard from './Dashboard.vue'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 
 import { ref, onMounted } from 'vue'

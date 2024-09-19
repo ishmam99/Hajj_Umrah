@@ -690,8 +690,8 @@ export const itinerary = [
     events: [
       { time: '06:00 AM', activity: 'Fajr Prayer at Masjid Al-Haram' },
       { time: '07:30 AM', activity: 'Breakfast at Hotel 1' },
-      { time: '09:00 AM', activity: 'Transfer to Madinah (Bus Ride)' },
-      { time: '02:00 PM', activity: 'Check-in at Hotel 2 in Madinah' },
+      { time: '09:00 AM', activity: 'Transfer to Medinah (Bus Ride)' },
+      { time: '02:00 PM', activity: 'Check-in at Hotel 2 in Medinah' },
       { time: '04:00 PM', activity: 'Visit to Masjid Al-Nabawi' },
       { time: '06:00 PM', activity: 'Maghrib Prayer at Masjid Al-Nabawi' },
       { time: '07:00 PM', activity: 'Dinner at Local Restaurant' },
@@ -721,16 +721,16 @@ export const itinerary = [
       { time: '09:00 AM', activity: 'Free Time for Rest or Shopping' },
       { time: '12:00 PM', activity: 'Dhuhr Prayer at Masjid Al-Nabawi' },
       { time: '01:30 PM', activity: 'Lunch at Local Restaurant' },
-      { time: '03:00 PM', activity: 'Optional City Tour in Madinah' },
+      { time: '03:00 PM', activity: 'Optional City Tour in Medinah' },
       { time: '07:00 PM', activity: 'Farewell Dinner at Hotel 2' },
       { time: '09:00 PM', activity: 'Packing and Preparation for Departure' }
     ]
   }
 ]
 
-import img1 from '@/assets/image/hajj/umrah-1.jpg'
 import img2 from '@/assets/image/hajj/hajj-1.jpg'
 import img3 from '@/assets/image/hajj/hajj-5.jpg'
+import img1 from '@/assets/image/hajj/umrah-1.jpg'
 export const packages = [
   {
     id: '1',
@@ -769,4 +769,3 @@ export const packages = [
     img: img3
   }
 ]
-

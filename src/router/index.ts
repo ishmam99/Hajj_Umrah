@@ -93,8 +93,6 @@ const router = createRouter({
       props: true
     },
 
-
-
     {
       path: '/umrah-international',
       name: 'umrah-international',
@@ -106,7 +104,6 @@ const router = createRouter({
       name: '/umrah-visa',
       component: () => import('../views/website/Umrah/umrah-visa.vue')
     },
-
 
     // log in sign up
     {
@@ -381,7 +378,7 @@ const router = createRouter({
       name: 'Agent Registration',
       component: () => import('../views/website/SupplyChain/agentRegister.vue')
     },
-    
+
     {
       path: '/volunteer/service/:id',
       name: 'volunteer/service',
@@ -515,12 +512,17 @@ const router = createRouter({
     {
       path: '/Umrah_Management_System',
       name: 'Umrah_Management_System',
-      component: () => import('../views/Admin/UmrahModule/Dashboard.vue'),
+      component: () => import('../views/Admin/UmrahModule/Layout.vue'),
       children: [
         {
           path: '/umrah_package_create_new_package',
           name: 'Umrah_Package_Create_New_Package',
           component: () => import('@/views/Admin/UmrahModule/CreateNewPackage.vue')
+        },
+        {
+          path: '/dashboard',
+          name: 'Umrah_Management_System_Dashboard',
+          component: () => import('@/views/Admin/UmrahModule/Dashboard.vue')
         },
         {
           path: '/umrah_package_current_packages',
@@ -546,7 +548,7 @@ const router = createRouter({
           path: '/view_packages',
           name: 'view-details',
           component: () => import('../views/Admin/UmrahModule/ViewPackages.vue')
-        },
+        }
       ]
     },
     {

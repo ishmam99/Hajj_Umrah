@@ -1,5 +1,5 @@
 <template>
-  <div class="px-5 bg-gradient-to-r from-slate-50 via-slate-100 to-slate-50 py-5 w-full">
+  <div class="px-5 bg-gradient-to-r from-slate-50 via-slate-100 to-slate-50 py-5 w-3/4">
     <div class="container mx-auto my-8">
       <!-- Umrah Packages Header -->
       <div class="text-center pb-6 border-b-4 border-gray-300 mb-12">

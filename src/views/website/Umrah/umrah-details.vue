@@ -23,7 +23,10 @@
             <img src="/src/assets/image/hero/hajj_services.jpg" alt="" class="" />
             <div class="head">
               <p>Umrah - Texas - 2024</p>
-              <h3 class="text-xl">Learn about your Deen, come closer to your Lord, and explore the world with Muslim World Adventures</h3>
+              <h3 class="text-xl">
+                Learn about your Deen, come closer to your Lord, and explore the world with Muslim
+                World Adventures
+              </h3>
               <button class=""><router-link to="/Signup">Registration now!</router-link></button>
             </div>
           </swiper-slide>
@@ -31,7 +34,10 @@
             <img src="/src/assets/image/hero/madinah.jpg" alt="" class="" />
             <div class="head">
               <p>Umrah - Texas - 2024</p>
-              <h3 class="text-xl">Learn about your Deen, come closer to your Lord, and explore the world with Muslim World Adventures</h3>
+              <h3 class="text-xl">
+                Learn about your Deen, come closer to your Lord, and explore the world with Muslim
+                World Adventures
+              </h3>
               <button class=""><router-link to="/Signup">Registration now!</router-link></button>
             </div>
           </swiper-slide>
@@ -39,7 +45,7 @@
       </div>
     </div>
     <div class="container mx-auto my-8">
-      <div class="flex flex-col items-center justify-center pb-10 my-6"> 
+      <div class="flex flex-col items-center justify-center pb-10 my-6">
         <P class="text-5xl font-bold text-[#286d71]">Packages Details</P>
       </div>
       <div class="shadow-xl mb-20 shadow-[#36897b39] bg-slate-50 rounded-md pb-8">
@@ -48,42 +54,82 @@
             <div class="text-slate-800">
               <ul class="text-xl">
                 <li class="flex items-center mx-2">
-                  <div v-html="svgContent"> </div>
-                  <span class="mx-2">Package Id - <span class="text-xl text-[#286d71] font-semibold"> {{packageDetails.packageId || 'N/A'}}</span></span>
+                  <div v-html="svgContent"></div>
+                  <span class="mx-2"
+                    >Package Id -
+                    <span class="text-xl text-[#286d71] font-semibold">
+                      {{ packageDetails.packageId || 'N/A' }}</span
+                    ></span
+                  >
                 </li>
                 <li class="flex items-center mx-2">
-                  <div v-html="svgContent"> </div>
-                  <span class="mx-2">Country - <span class="text-xl text-[#286d71] font-semibold"> {{packageDetails.country?.name || 'N/A'}}</span></span>
+                  <div v-html="svgContent"></div>
+                  <span class="mx-2"
+                    >Country -
+                    <span class="text-xl text-[#286d71] font-semibold">
+                      {{ packageDetails.country?.name || 'N/A' }}</span
+                    ></span
+                  >
                 </li>
                 <li class="flex items-center mx-2">
-                  <div v-html="svgContent"> </div>
-                  <span class="mx-2">City - <span class="text-xl text-[#286d71] font-semibold"> {{packageDetails.city?.name || 'N/A'}}</span></span>
+                  <div v-html="svgContent"></div>
+                  <span class="mx-2"
+                    >City -
+                    <span class="text-xl text-[#286d71] font-semibold">
+                      {{ packageDetails.city?.name || 'N/A' }}</span
+                    ></span
+                  >
                 </li>
                 <li class="flex items-center mx-2">
-                  <div v-html="svgContent"> </div>
-                  <span class="mx-2">Package Code - <span class="text-xl text-[#286d71] font-semibold"> {{packageDetails.packageCode || 'N/A'}}</span></span>
+                  <div v-html="svgContent"></div>
+                  <span class="mx-2"
+                    >Package Code -
+                    <span class="text-xl text-[#286d71] font-semibold">
+                      {{ packageDetails.packageCode || 'N/A' }}</span
+                    ></span
+                  >
                 </li>
               </ul>
-            </div>          
+            </div>
           </div>
           <div class="my-6 py-5 w-full mx-10">
             <div class="text-slate-800">
               <ul class="text-xl">
                 <li class="flex items-center mx-2">
-                  <div v-html="svgContent"> </div>
-                  <span class="mx-2"> Package Price - <span class="text-xl text-[#286d71] font-semibold">$ {{packageDetails.price || 'N/A'}}</span></span>
+                  <div v-html="svgContent"></div>
+                  <span class="mx-2">
+                    Package Price -
+                    <span class="text-xl text-[#286d71] font-semibold"
+                      >$ {{ packageDetails.price || 'N/A' }}</span
+                    ></span
+                  >
                 </li>
                 <li class="flex items-center mx-2">
-                  <div v-html="svgContent"> </div>
-                  <span class="mx-2"> Package Year - <span class="text-xl text-[#286d71] font-semibold"> {{packageDetails.packageYear || 'N/A'}}</span></span>
+                  <div v-html="svgContent"></div>
+                  <span class="mx-2">
+                    Package Year -
+                    <span class="text-xl text-[#286d71] font-semibold">
+                      {{ packageDetails.packageYear || 'N/A' }}</span
+                    ></span
+                  >
                 </li>
                 <li class="flex items-center mx-2">
-                  <div v-html="svgContent"> </div>
-                  <span class="mx-2"> Start Date - <span class="text-xl text-[#286d71] font-semibold"> {{moment(packageDetails.startDate).format('MMMM Do YYYY') || 'N/A'}}</span></span>
+                  <div v-html="svgContent"></div>
+                  <span class="mx-2">
+                    Start Date -
+                    <span class="text-xl text-[#286d71] font-semibold">
+                      {{ moment(packageDetails.startDate).format('MMMM Do YYYY') || 'N/A' }}</span
+                    ></span
+                  >
                 </li>
                 <li class="flex items-center mx-2">
-                  <div v-html="svgContent"> </div>
-                  <span class="mx-2"> Ending Date - <span class="text-xl text-[#286d71] font-semibold"> {{moment(packageDetails.endDate).format('MMMM Do YYYY') || 'N/A'}}</span></span>
+                  <div v-html="svgContent"></div>
+                  <span class="mx-2">
+                    Ending Date -
+                    <span class="text-xl text-[#286d71] font-semibold">
+                      {{ moment(packageDetails.endDate).format('MMMM Do YYYY') || 'N/A' }}</span
+                    ></span
+                  >
                 </li>
               </ul>
             </div>
@@ -93,7 +139,7 @@
 
       <!-- Itinerary Section -->
       <div class="shadow-xl shadow-[#36897b39] bg-slate-50 rounded-md pb-8 mt-8">
-        <div class="flex flex-col items-center justify-center pb-10 my-6"> 
+        <div class="flex flex-col items-center justify-center pb-10 my-6">
           <P class="text-5xl font-bold text-[#286d71] pt-5">Travel Itinerary</P>
         </div>
         <div class="my-6 py-5 w-full mx-10">
@@ -101,10 +147,10 @@
             <ul class="text-xl">
               <li v-for="(step, index) in packageDetails.steps || []" :key="index" class="my-4">
                 <div class="flex items-center">
-                  <div v-html="svgContent" class="mr-2"> </div>
+                  <div v-html="svgContent" class="mr-2"></div>
                   <div>
                     <p class="font-semibold">
-                      {{ step.transportation_type?.name || 'N/A' }} - 
+                      {{ step.transportation_type?.name || 'N/A' }} -
                       {{ step.transportation_vendor?.name || 'N/A' }}
                     </p>
                     <p>{{ step.duration || 'N/A' }}</p>
@@ -125,16 +171,16 @@
 
 <script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
 import { useSocialStore } from '@/stores/SocialDashboard.ts'
+import moment from 'moment'
 import 'swiper/css'
-import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import { Pagination, Navigation, Autoplay } from 'swiper/modules'
-const modules = [Pagination, Navigation, Autoplay]
+import 'swiper/css/pagination'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import moment from 'moment'
+const modules = [Pagination, Navigation, Autoplay]
 
 const route = useRoute()
 const socialStore = useSocialStore()
@@ -143,8 +189,9 @@ const svgContent = `
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="rgba(40,109,113,1)"><path d="M11.602 13.7599L13.014 15.1719L21.4795 6.7063L22.8938 8.12051L13.014 18.0003L6.65 11.6363L8.06421 10.2221L10.189 12.3469L11.6025 13.7594L11.602 13.7599ZM11.6037 10.9322L16.5563 5.97949L17.9666 7.38977L13.014 12.3424L11.6037 10.9322ZM8.77698 16.5873L7.36396 18.0003L1 11.6363L2.41421 10.2221L3.82723 11.6352L3.82604 11.6363L8.77698 16.5873Z"></path></svg>
 `
 
-const packageDetails = computed(() => 
-  socialStore.createNewPackage.find(pkg => pkg.country.id === route.params.id) || { steps: [] }
+const packageDetails = computed(
+  () =>
+    socialStore.createNewPackage.find((pkg) => pkg.country.id === route.params.id) || { steps: [] }
 )
 </script>
 
