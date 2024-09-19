@@ -618,7 +618,7 @@ const router = createRouter({
       component: () => import('@/views/Agent/AgentDashboard.vue'),
       children: [
         {
-          path: '/Agent_Dashboard/Profile',
+          path: '/agent_profile',
           name: 'Agent_Dashboard_Profile',
           component: () => import('@/views/Agent/Profile/AgentProfile.vue')
         },
@@ -664,6 +664,24 @@ const router = createRouter({
         {
           path: '/Imam_management_Dashboard/Profile',
           name: 'Imam_Management_Dashboard_Profile',
+          component: () => import('@/views/ImamManagement/Profile/ImamProfile.vue')
+        },
+      ]
+    },
+    //Customer Managemente Login
+    {
+      path: '/customer_management_login',
+      name: 'Customer Management Login',
+      component: () => import('../views/Auth/LogIn.vue')
+    },
+    {
+      path: '/Customer_management_Dashboard',
+      name: 'Customer_Management_Dashboard',
+      component: () => import('@/views/ImamManagement/ImamDashboard.vue'),
+      children: [
+        {
+          path: '/Customer_management_Profile',
+          name: 'Customer_Management_Profile',
           component: () => import('@/views/ImamManagement/Profile/ImamProfile.vue')
         },
       ]
@@ -1486,7 +1504,7 @@ const router = createRouter({
       children: [
         {
           path: '/Member_Profile',
-          name: 'Membar_Profile',
+          name: 'Member_Profile',
           component: () => import('../views/Member/Profile/MembarProfile.vue')
         },
         {

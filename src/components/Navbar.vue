@@ -582,6 +582,13 @@
               >
             </MenubarItem>
             <MenubarItem>
+              <router-link
+                to="/Customer_management_Profile"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >Customer Management System</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
                   <router-link
                     to="/Finance_Login"
                     class="w-full hover:pl-5 duration-300 font-semibold"

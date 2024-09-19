@@ -212,16 +212,20 @@ const login =async () => {
         router.push({ name: 'Youth_Dashboard_Profile' })
       }
       else if (authStore.role == 'Agent') {
-        authStore.currentDashboard = "Agent_Dashboard"
-        router.push({ name: 'Agent_Dashboard' })
+        authStore.currentDashboard = "Agent_Dashboard_Profile"
+        router.push({ name: 'Agent_Dashboard_Profile' })
       }
       else if (authStore.role == 'AdminImam') {
         authStore.currentDashboard = "Imam_Management_Dashboard"
         router.push({ name: 'Imam_Management_Dashboard' })
       }
+      else if (authStore.role == 'AdminCustomer') {
+        authStore.currentDashboard = "Customer_Management_Dashboard"
+        router.push({ name: 'Customer_Management_Dashboard' })
+      }
       else if (authStore.role == 'Imam') {
-        authStore.currentDashboard = "Imam_Dashboard"
-        router.push({ name: 'Imam_Dashboard' })
+        authStore.currentDashboard = "Imam_Dashboard_Profile"
+        router.push({ name: 'Imam_Dashboard_Profile' })
       }
       else if (authStore.role == 'Finance') {
         authStore.currentDashboard = "/Finance_Dashboard/Profile"
@@ -240,8 +244,8 @@ const login =async () => {
         router.push({ name: 'volunteer_profile' })
       }
       else if (authStore.role == 'Member') {
-        authStore.currentDashboard = "Membar_Profile"
-        router.push({ name: 'Membar_Profile' })
+        authStore.currentDashboard = "Member_Profile"
+        router.push({ name: 'Member_Profile' })
       }
        else if (authStore.role == 'Learning-center') {
       authStore.currentDashboard = "/lms_Management_profile"
