@@ -617,16 +617,24 @@ const router = createRouter({
       name: 'Imam Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
+
+
+    // Imam Dashboard =================================
     {
       path: '/Imam_Dashboard',
       name: 'Imam_Dashboard',
       component: () => import('@/views/Imam/ImamDashboard.vue'),
       children: [
         {
-          path: '/Imam_Dashboard/Proile',
+          path: '/Imam_Profile',
           name: 'Imam_Dashboard_Profile',
           component: () => import('@/views/Imam/Profile/ImamProfile.vue')
         },
+        // {
+        //   path: '/Imam_Dashboard/Proile',
+        //   name: 'Imam_Dashboard_Profile',
+        //   component: () => import('@/views/Imam/Profile/ImamProfile.vue')
+        // },
       ]
     },
 

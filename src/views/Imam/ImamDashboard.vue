@@ -1,7 +1,7 @@
 <template>
   <DefaultLayout>
     <div class="">
-      <div class="pt-[80px] flex justify-between">
+      <div class="pt-[80px] flex">
         <ImamSidebar />
         <router-view />
       </div>
