@@ -613,6 +613,19 @@ const router = createRouter({
       component: () => import('../views/Auth/LogIn.vue')
     },
     {
+      path: '/Agent_Dashboard',
+      name: 'Agent_Dashboard',
+      component: () => import('@/views/Agent/AgentDashboard.vue'),
+      children: [
+        {
+          path: '/Agent_Dashboard/Profile',
+          name: 'Agent_Dashboard_Profile',
+          component: () => import('@/views/Agent/Profile/AgentProfile.vue')
+        },
+      ]
+    },
+    //Imam login
+    {
       path: '/imam_login',
       name: 'Imam Login',
       component: () => import('../views/Auth/LogIn.vue')
@@ -637,7 +650,24 @@ const router = createRouter({
         // },
       ]
     },
-
+    //Imam Managemnte Login
+    {
+      path: '/imam_management_login',
+      name: 'Imam Management Login',
+      component: () => import('../views/Auth/LogIn.vue')
+    },
+    {
+      path: '/Imam_management_Dashboard',
+      name: 'Imam_Management_Dashboard',
+      component: () => import('@/views/ImamManagement/ImamDashboard.vue'),
+      children: [
+        {
+          path: '/Imam_management_Dashboard/Profile',
+          name: 'Imam_Management_Dashboard_Profile',
+          component: () => import('@/views/ImamManagement/Profile/ImamProfile.vue')
+        },
+      ]
+    },
     // social service dashboard end
 
     {
