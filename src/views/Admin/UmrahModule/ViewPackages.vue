@@ -7,49 +7,48 @@
         <p class="text-xl text-gray-600 mt-3">Find your perfect Umrah experience</p>
       </div>
 
-      <!-- Packages Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
-        <div
-          v-for="(pkg, index) in packages"
-          :key="index"
-          class="relative flex flex-col justify-between bg-white shadow-lg rounded-xl transition-transform transform hover:scale-105 hover:shadow-2xl hover:border-gray-400 border border-gray-200"
-        >
-          <div>
-            <!-- Package Image -->
-            <div class="relative h-64 w-full overflow-hidden rounded-t-xl">
-              <img :src="pkg.img" alt="Package Image" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
-            </div>
-
-            <!-- Package Details -->
-            <div class="p-6 space-y-2">
-              <h6 class="text-3xl text-[#1f565b] font-bold">
-                {{ pkg.title }}
-              </h6>
-              <p class="text-lg text-gray-700 font-semibold">Package ID: {{ pkg.pkgId }}</p>
-              <p class="text-lg text-gray-700 font-semibold">Country: {{ pkg.country }}</p>
-              <p class="text-lg text-gray-600">City: {{ pkg.city }}</p>
-              <p class="text-md text-gray-500">Start: {{ pkg.startDate }} | End: {{ pkg.endDate }}</p>
-              <p class="text-gray-600 font-light leading-relaxed">
-                {{ pkg.description }}
-              </p>
-            </div>
-          </div>
-
-          <!-- Buttons -->
-          <div class="flex justify-between px-6 pb-6">
-            <router-link :to="{ path: 'package_details/' }">
-              <button class="bg-[#286d71] hover:bg-[#1f565b] text-white py-2 px-6 rounded-lg shadow-md transition-all duration-300">
-                See Details
-              </button>
-            </router-link>
-            <button
-              class="bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-lg shadow-md transition-all duration-300"
-              @click="deletePackage(pkg.packageId)"
-            >
-              Delete
-            </button>
-          </div>
-        </div>
+      <!-- Packages Table -->
+      <div class="overflow-x-auto bg-slate-100 shadow">
+        <table class="table-auto w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-[#286d71] text-white">
+              <th class="border px-6 py-3">Title</th>
+              <th class="border px-6 py-3">Package ID</th>
+              <th class="border px-6 py-3">Country</th>
+              <th class="border px-6 py-3">City</th>
+              <th class="border px-6 py-3">Start Date</th>
+              <th class="border px-6 py-3">End Date</th>
+              <th class="border px-6 py-3">Status</th>
+              <th class="border px-6 py-3">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(pkg, index) in packages" :key="index" class="hover:bg-gray-50 shadow">
+              <td class=" px-4 py-2">{{ pkg.title }}</td>
+              <td class=" px-4 py-2">{{ pkg.pkgId }}</td>
+              <td class=" px-4 py-2">{{ pkg.country }}</td>
+              <td class=" px-4 py-2">{{ pkg.city }}</td>
+              <td class=" px-4 py-2">{{ pkg.startDate }}</td>
+              <td class=" px-4 py-2">{{ pkg.startDate }}</td>
+              <td class=" px-4 py-2">{{ pkg.status }}</td>
+              <td class=" px-4 py-2">
+                <div class="flex space-x-2">
+                  <router-link :to="{ path: 'package_details/' }">
+                    <button class="bg-[#286d71] hover:bg-[#1f565b] text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
+                      View Details
+                    </button>
+                  </router-link>
+                  <button
+                    class="bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300"
+                    @click="deletePackage(pkg.packageId)"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -62,3 +61,9 @@ const deletePackage = (packageId) => {
   alert(`Package ${packageId} deleted!`)
 }
 </script>
+
+<style scoped>
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>

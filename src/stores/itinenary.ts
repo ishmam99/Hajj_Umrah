@@ -742,7 +742,8 @@ export const packages = [
     endDate: '10th November 2024',
     description:
       'Our meticulously designed package guarantees an unforgettable Umrah experience, with knowledgeable professionals guiding you every step of the way.',
-    img: img1
+    img: img1,
+    status: 'In Plan'
   },
   {
     id: '2',
@@ -754,7 +755,8 @@ export const packages = [
     endDate: '15th December 2024',
     description:
       'Experience the ultimate comfort and convenience with our Deluxe Umrah Package, featuring exclusive services and amenities.',
-    img: img2
+    img: img2,
+    status: 'In Preparation'
   },
   {
     id: '3',
@@ -766,6 +768,7 @@ export const packages = [
     endDate: '25th December 2024',
     description:
       'Experience the ultimate comfort and convenience with our Premium Umrah Package, featuring exclusive services and amenities, with knowledgeable professionals guiding you every step of the way.',
-    img: img3
+    img: img3,
+    status: 'In Review'
   }
 ]
