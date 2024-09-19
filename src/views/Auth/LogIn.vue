@@ -93,6 +93,18 @@
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
+          v-if="route.name == 'Agent Login'"
+          src="@/assets/image/common/login-2.png"
+          alt=""
+          class="bg-white rounded-lg h-[550px] w-[500px]"
+        />
+        <img
+          v-if="route.name == 'Imam Login'"
+          src="@/assets/image/common/login-8.png"
+          alt=""
+          class="bg-white rounded-lg h-[550px] w-[500px]"
+        />
+        <img
           v-if="route.name == 'Finance Login'"
           src="@/assets/image/common/login-4.png"
           alt=""
@@ -193,6 +205,10 @@ const login =async () => {
         authStore.currentDashboard = "Youth_Dashboard_Profile"
         router.push({ name: 'Youth_Dashboard_Profile' })
       }
+      else if (authStore.role == 'Imam') {
+        authStore.currentDashboard = "Imam_Dashboard"
+        router.push({ name: 'Imam_Dashboard' })
+      }
       else if (authStore.role == 'Finance') {
         authStore.currentDashboard = "/Finance_Dashboard/Profile"
         router.push({ name: 'Finance_Dashboard_Profile' })
@@ -217,12 +233,10 @@ const login =async () => {
       authStore.currentDashboard = "/lms_Management_profile"
       router.push({ name: 'LMS_profile' })
       }
+      
     } catch (error) {
       console.log(error);
     }
-
-
-
 
   }
 }

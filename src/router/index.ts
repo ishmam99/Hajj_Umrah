@@ -606,6 +606,30 @@ const router = createRouter({
         }
       ]
     },
+    // agent login 
+    {
+      path: '/agent_login',
+      name: 'Agent Login',
+      component: () => import('../views/Auth/LogIn.vue')
+    },
+    {
+      path: '/imam_login',
+      name: 'Imam Login',
+      component: () => import('../views/Auth/LogIn.vue')
+    },
+    {
+      path: '/Imam_Dashboard',
+      name: 'Imam_Dashboard',
+      component: () => import('@/views/Imam/ImamDashboard.vue'),
+      children: [
+        {
+          path: '/Imam_Dashboard/Proile',
+          name: 'Imam_Dashboard_Profile',
+          component: () => import('@/views/Imam/Profile/ImamProfile.vue')
+        },
+      ]
+    },
+
     // social service dashboard end
 
     {

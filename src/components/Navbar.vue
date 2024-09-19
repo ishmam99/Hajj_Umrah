@@ -482,7 +482,7 @@
                 </MenubarItem>
                 <MenubarItem>
                   <router-link
-                    to="/Admin_Login"
+                    to="/imam_login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
                     >Login</router-link
                   >
@@ -504,7 +504,7 @@
                 </MenubarItem>
                 <MenubarItem>
                   <router-link
-                    to="/Admin_Login"
+                    to="/agent_login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
                     >Login</router-link
                   >
