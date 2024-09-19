@@ -1437,7 +1437,7 @@ const router = createRouter({
     },
     {
       path: '/Member_Login',
-      name: 'Member Login',
+      name: 'Customer Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
 
@@ -1447,9 +1447,14 @@ const router = createRouter({
       component: () => import('../views/Member/MembarDashbord.vue'),
       children: [
         {
-          path: '/Membar_Profile',
+          path: '/Member_Profile',
           name: 'Membar_Profile',
           component: () => import('../views/Member/Profile/MembarProfile.vue')
+        },
+        {
+          path: '/member_package_list',
+          name: 'Membar_Package_List',
+          component: () => import('../views/Member/Profile/PackageList.vue'),
         },
         {
           path: '/Membar_Event_History',
@@ -1467,10 +1472,15 @@ const router = createRouter({
           component: () => import('../views/Member/MemberPayment.vue')
         },
         {
-          path: '/Membar_Change_Password',
-          name: 'Membar_Change_Password',
-          component: () => import('../views/Member/Profile/MemberPassChange.vue')
+          path: '/member_rewards',
+          name: 'Member_Rewards',
+          component: () => import('@/views/Member/MemberRewards.vue')
         },
+        // {
+        //   path: '/Membar_Change_Password',
+        //   name: 'Membar_Change_Password',
+        //   component: () => import('../views/Member/Profile/MemberPassChange.vue')
+        // },
         // volunteer
         {
           path: '/Select_Volunteer',

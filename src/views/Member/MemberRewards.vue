@@ -1,6 +1,6 @@
 <template>
     <div class="px-[20px] bg-white py-5 rounded-md shadow-md">
-            <p class="text-2xl font-bold py-3 border-b">Member Payment History</p>
+            <p class="text-2xl font-bold py-3 border-b">Member Rewards</p>
             <div class="bg-slate-50 rounded-lg gap-y-2 w-full px-4 py-2 border-b-gray-100 mb-2 mt-3">
               <div class="overflow-x-auto">
     <table class="table">
