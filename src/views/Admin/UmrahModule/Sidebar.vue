@@ -75,8 +75,7 @@ watch(
             </router-link>
           <router-link to="/Umrah_package_previous_packages" class="flex items-center gap-2 hover:px-2">- All Packages List
             </router-link>
-          <router-link to="/package_details" class="flex items-center gap-2 hover:px-2">- Package Details
-            </router-link>
+          <!-- <router-link to="/package_details" class="flex items-center gap-2 hover:px-2">- Package Details</router-link> -->
           <!-- <router-link to="/Social_Service_Project_Post" class="flex items-center gap-2 hover:px-2"
             >- Post Project</router-link
           > -->

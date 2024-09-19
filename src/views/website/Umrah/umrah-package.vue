@@ -76,7 +76,7 @@
     </div>
     <div class="mt-6 mx-10 grid grid-cols-3 gap-x-6 gap-y-10 ">
       <div v-for="packageData in socialStore.createNewPackage" class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
-        <!-- {{ packageData.packageId }} -->
+        {{ packageData.country.id}}
           <!-- {{ packageData.id }} -->
         <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
           <img src="@/assets/image/hajj/hajj-1.jpg" alt="card-image" />
@@ -100,7 +100,7 @@
         </div>
         <div class="px-4 pb-4 pt-0 mt-2">
           <router-link
-          :to="{ name: 'umrah-details', params: { id: packageData.packageId } }"
+          :to="{ name: 'umrah-details', params: { id: packageData.country.id } }"
           class="text-lg !text-white"
         >
           <button

@@ -108,10 +108,10 @@
                       {{ step.transportation_vendor?.name || 'N/A' }}
                     </p>
                     <p>{{ step.duration || 'N/A' }}</p>
-                    <p>
+                    <!-- <p>
                       From {{ step.from_type?.name || 'N/A' }} {{ step.from || 'N/A' }} 
                       to {{ step.to_type?.name || 'N/A' }} {{ step.to || 'N/A' }}
-                    </p>
+                    </p> -->
                   </div>
                 </div>
               </li>
@@ -144,7 +144,7 @@ const svgContent = `
 `
 
 const packageDetails = computed(() => 
-  socialStore.createNewPackage.find(pkg => pkg.packageId === route.params.id) || { steps: [] }
+  socialStore.createNewPackage.find(pkg => pkg.country.id === route.params.id) || { steps: [] }
 )
 </script>
 
