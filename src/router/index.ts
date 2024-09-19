@@ -1423,7 +1423,7 @@ const router = createRouter({
       component: () => import('../views/Member/MembarDashbord.vue'),
       children: [
         {
-          path: '/Membar_Profile',
+          path: '/Member_Profile',
           name: 'Membar_Profile',
           component: () => import('../views/Member/Profile/MembarProfile.vue')
         },
@@ -1448,10 +1448,15 @@ const router = createRouter({
           component: () => import('../views/Member/MemberPayment.vue')
         },
         {
-          path: '/Membar_Change_Password',
-          name: 'Membar_Change_Password',
-          component: () => import('../views/Member/Profile/MemberPassChange.vue')
+          path: '/member_rewards',
+          name: 'Member_Rewards',
+          component: () => import('@/views/Member/MemberRewards.vue')
         },
+        // {
+        //   path: '/Membar_Change_Password',
+        //   name: 'Membar_Change_Password',
+        //   component: () => import('../views/Member/Profile/MemberPassChange.vue')
+        // },
         // volunteer
         {
           path: '/Select_Volunteer',
