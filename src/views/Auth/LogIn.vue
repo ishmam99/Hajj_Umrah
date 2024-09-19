@@ -123,6 +123,12 @@
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
+          v-if="route.name == 'Imam Management Login'"
+          src="@/assets/image/common/login-2.png"
+          alt=""
+          class="bg-white rounded-lg h-[550px] w-[500px]"
+        />
+        <img
           v-if="route.name == 'HR Login'"
           src="@/assets/image/common/login-7.png"
           alt=""
@@ -204,6 +210,14 @@ const login =async () => {
       else if (authStore.role == 'Youth') {
         authStore.currentDashboard = "Youth_Dashboard_Profile"
         router.push({ name: 'Youth_Dashboard_Profile' })
+      }
+      else if (authStore.role == 'Agent') {
+        authStore.currentDashboard = "Agent_Dashboard"
+        router.push({ name: 'Agent_Dashboard' })
+      }
+      else if (authStore.role == 'AdminImam') {
+        authStore.currentDashboard = "Imam_Management_Dashboard"
+        router.push({ name: 'Imam_Management_Dashboard' })
       }
       else if (authStore.role == 'Imam') {
         authStore.currentDashboard = "Imam_Dashboard"
