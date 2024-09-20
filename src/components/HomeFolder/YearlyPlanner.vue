@@ -2,17 +2,18 @@
   <div class="bg-slate-100 p-5">
     <!-- <h2 class="text-3xl font-bold pb-16 uppercase">Calender of Activities</h2> -->
     <div class="flex gap-11">
-        <div class="w-1/3 rounded-2xl relative">
-          <div class="h-1/2">
-            <img class="w-full rounded-xl" src="@/assets/image/hero/madinah.jpg" alt="" />
-          </div>
-          <div class="flex-1 rounded-xl bg-primaryGreen3 hover:bg-primaryGreen2 text-white absolute bottom-0 z-10 w-full  h-[30%] flex justify-center items-center">
-            <router-link  to="/yearlyPlannerDetails">
-              <p class="font-extrabold">Saudi Arabia</p>
-            </router-link>
-          </div>
+      <div class="w-1/3 rounded-2xl relative">
+        <div class="h-1/2">
+          <img class="w-full rounded-xl" src="@/assets/image/hero/madinah.jpg" alt="" />
         </div>
-      
+        <div
+          class="flex-1 rounded-xl bg-primaryGreen3 hover:bg-primaryGreen2 text-white absolute bottom-0 z-10 w-full h-[30%] flex justify-center items-center"
+        >
+          <router-link to="/yearlyPlannerDetails">
+            <p class="font-extrabold">Saudi Arabia</p>
+          </router-link>
+        </div>
+      </div>
 
       <div class="w-2/3 grid grid-cols-2 gap-5">
         <div v-for="date in dateList" :key="date.id">
@@ -32,9 +33,7 @@
                 <div class="w-3/6">
                   <img class="rounded-none" :src="date.img" alt="" />
                 </div>
-                <div
-                  class="w-2/3 rounded-lg bg-primaryGreen3 hover:bg-primaryGreen2 text-white"
-                >
+                <div class="w-2/3 rounded-lg bg-primaryGreen3 hover:bg-primaryGreen2 text-white">
                   <div class="flex justify-center items-center align-middle">
                     <span class="font-extrabold p-12">{{ date.date }}</span>
                   </div>
@@ -53,15 +52,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import img1 from '@/assets/image/commitees/1.png'
-import img2 from '@/assets/image/commitees/2.png'
-import img3 from '@/assets/image/commitees/3.png'
-import img4 from '@/assets/image/commitees/4.png'
-import img5 from '@/assets/image/commitees/u.jpg'
 import img6 from '@/assets/image/commitees/al.jpg'
-import img7 from '@/assets/image/commitees/t.jpg'
 import img8 from '@/assets/image/commitees/m.jpg'
+import img7 from '@/assets/image/commitees/t.jpg'
+import img5 from '@/assets/image/commitees/u.jpg'
+import { ref } from 'vue'
 
 const dateList = ref([
   // {id: 1, date: 2016, img: img1},

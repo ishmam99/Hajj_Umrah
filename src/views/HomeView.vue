@@ -43,7 +43,7 @@ const subnav = ref(0)
       <a
         class="px-3 py-1.5 bg-orange-200 font-bold rounded-t-3xl scale-110"
         @click="subnav = 1"
-        >Umrah Servicest</a
+        >Umrah Services</a
       >
       <a
         class="px-3 py-1.5 bg-rose-100 font-bold rounded-t-3xl scale-110"

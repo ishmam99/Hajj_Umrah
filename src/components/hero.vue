@@ -136,11 +136,11 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 // Import Swiper styles
 import 'swiper/css'
 
-import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 // import required modules
-import { Pagination, Navigation, Autoplay } from 'swiper/modules'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 const modules = [Pagination, Navigation, Autoplay]
 </script>
 <style scoped>

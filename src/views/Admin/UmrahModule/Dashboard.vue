@@ -2,10 +2,10 @@
   <DefaultLayout>
     <div class="">
       <div class="pt-[80px] flex flex-row justify-between">
-        <Sidebar />
+        <!-- <Sidebar /> -->
        
-         <router-view v-if="$route.name != 'Umrah_Management_System'" />
-         <div v-else class="w-full">
+         <!-- <router-view v-if="$route.name == 'Umrah_Management_System'" /> -->
+         <div class="w-full">
           <div class="w-full px-4 py-5 h-auto flex justify-center items-center shadow-lg">
             <h1 class="my-5 mx-1 text-2xl font-bold">Umrah Package Management System Dashbaord</h1>
          
