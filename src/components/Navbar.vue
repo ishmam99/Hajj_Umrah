@@ -583,9 +583,9 @@
             </MenubarItem>
             <MenubarItem>
               <router-link
-                to=""
+                to="/agent_management_login"
                 class="w-full hover:pl-5 duration-300 font-semibold"
-                >Vendor Management System</router-link
+                >Agent Management System</router-link
               >
             </MenubarItem>
             <MenubarItem>
