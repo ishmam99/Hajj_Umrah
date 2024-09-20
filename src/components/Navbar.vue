@@ -583,9 +583,9 @@
             </MenubarItem>
             <MenubarItem>
               <router-link
-                to="/Customer_management_Profile"
+                to=""
                 class="w-full hover:pl-5 duration-300 font-semibold"
-                >Customer Management System</router-link
+                >Vendor Management System</router-link
               >
             </MenubarItem>
             <MenubarItem>

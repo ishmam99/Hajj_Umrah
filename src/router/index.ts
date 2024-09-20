@@ -677,12 +677,32 @@ const router = createRouter({
     {
       path: '/Customer_management_Dashboard',
       name: 'Customer_Management_Dashboard',
-      component: () => import('@/views/ImamManagement/ImamDashboard.vue'),
+      component: () => import('@/views/CustomerManagement/Dashboard.vue'),
       children: [
         {
           path: '/Customer_management_Profile',
           name: 'Customer_Management_Profile',
-          component: () => import('@/views/ImamManagement/Profile/ImamProfile.vue')
+          component: () => import('@/views/CustomerManagement/Profile/Profile.vue')
+        },
+      ]
+    },
+   
+   
+    //Vendor Management Login
+    {
+      path: '/vendor_management_login',
+      name: 'Vendor Management Login',
+      component: () => import('../views/Auth/LogIn.vue')
+    },
+    {
+      path: '/Vendor_management_Dashboard',
+      name: 'Vendor_Management_Dashboard',
+      component: () => import('@/views/CustomerManagement/Dashboard.vue'),
+      children: [
+        {
+          path: '/Customer_management_Profile',
+          name: 'Customer_Management_Profile',
+          component: () => import('@/views/CustomerManagement/Profile/Profile.vue')
         },
       ]
     },
