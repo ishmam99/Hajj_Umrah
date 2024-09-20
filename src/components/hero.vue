@@ -26,14 +26,6 @@
             <button class=""><router-link to="/Signup">Apply Now</router-link></button>
           </div>
         </swiper-slide>
-        <!-- <swiper-slide>
-          <img src="/src/assets/image/hero/mina.jpg" alt="" class="" />
-          <div class="head">
-            <p>Islamic Digital Lane</p>
-            <h1>Learning Center</h1>
-            <button class=""><router-link to="/onsitelearning">Apply Now</router-link></button>
-          </div>
-        </swiper-slide> -->
         <swiper-slide>
           <img src="/src/assets/image/hero/women.jpg" alt="" class="" />
           <div class="head">
@@ -58,14 +50,6 @@
             <button><router-link to="/Fund_Raising">Apply Now</router-link></button>
           </div>
         </swiper-slide>
-        <!-- <swiper-slide>
-          <img src="../assets/image/hero/madinah.jpg" alt="" class="" />
-          <div class="head">
-            <p>Islamic Digital Lane</p>
-            <h1>Donation Service</h1>
-            <button><router-link to="/Guest_Donation">Apply Now</router-link></button>
-          </div>
-        </swiper-slide> -->
       </swiper>
     </div>
     <div class="w-1/4 px-5 absolute top-[50%] translate-y-[-50%] right-[5%] z-30">

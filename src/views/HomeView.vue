@@ -21,14 +21,6 @@ const subnav = ref(0)
 <template>
   <DefaultLayout>
     <Hero />
-    <!-- <div class="flex gap-2 justify-center py-3 font-semibold bg-teal-800 text-white sticky top-[76px] z-40 items-center">
-      <a href="#virtual" class="px-3 py-1.5" :class="route.hash=='#virtual' ? 'bg-white text-teal-800 rounded-md' : ''">Virtural Tour</a>
-      <a href="#announcement" class="px-3 py-1.5" :class="route.hash=='#announcement' ? 'bg-white text-teal-800 rounded-md' : ''">Announcement</a>
-      <a href="#fund" class="px-3 py-1.5" :class="route.hash=='#fund' ? 'bg-white text-teal-800 rounded-md' : ''">Fund Raising</a>
-      <a href="#events" class="px-3 py-1.5" :class="route.hash=='#events' ? 'bg-white text-teal-800 rounded-md' : ''">Upcoming Event</a>
-      <a href="#year" class="px-3 py-1.5" :class="route.hash=='#year' ? 'bg-white text-teal-800 rounded-md' : ''">Calender of Activities</a>
-      <a href="#khutba" class="px-3 py-1.5" :class="route.hash=='#khutba' ? 'bg-white text-teal-800 rounded-md' : ''">Khudba & Khatira</a>
-    </div> -->
 
     <div class="flex items-center justify-center bg-gray-100  pb-10"> 
         <P class="text-6xl font-bold my-6">Our Services</P>
