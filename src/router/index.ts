@@ -572,21 +572,21 @@ const router = createRouter({
     },
    
    
-    //Vendor Management Login
+    //Agent Management Login
     {
-      path: '/vendor_management_login',
-      name: 'Vendor Management Login',
+      path: '/agent_management_login',
+      name: 'Agent Management Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
     {
-      path: '/Vendor_management_Dashboard',
-      name: 'Vendor_Management_Dashboard',
-      component: () => import('@/views/CustomerManagement/Dashboard.vue'),
+      path: '/agent_management_Dashboard',
+      name: 'Agent_Management_Dashboard',
+      component: () => import('@/views/Admin/AgentManagement/AgentDashboard.vue'),
       children: [
         {
-          path: '/Customer_management_Profile',
-          name: 'Customer_Management_Profile',
-          component: () => import('@/views/CustomerManagement/Profile/Profile.vue')
+          path: '/agent_management_Profile',
+          name: 'Agent_Management_Profile',
+          component: () => import('@/views/Admin/AgentManagement/Profile/AgentProfile.vue')
         },
       ]
     },

@@ -129,6 +129,12 @@
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
+          v-if="route.name == 'Agent Management Login'"
+          src="@/assets/image/common/login-7.png"
+          alt=""
+          class="bg-white rounded-lg h-[550px] w-[500px]"
+        />
+        <img
           v-if="route.name == 'HR Login'"
           src="@/assets/image/common/login-7.png"
           alt=""
@@ -222,6 +228,10 @@ const login =async () => {
       else if (authStore.role == 'AdminCustomer') {
         authStore.currentDashboard = "Customer_Management_Profile"
         router.push({ name: 'Customer_Management_Profile' })
+      }
+      else if (authStore.role == 'AdminAgent') {
+        authStore.currentDashboard = "Agent_Management_Profile"
+        router.push({ name: 'Agent_Management_Profile' })
       }
       else if (authStore.role == 'Imam') {
         authStore.currentDashboard = "Imam_Dashboard_Profile"
