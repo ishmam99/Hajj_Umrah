@@ -2,7 +2,7 @@
     <DefaultLayout>
         <div class="">
             <div class="pt-[80px] flex justify-between">
-                <AMsidebar class="w-[300px] 2xl:w-[350px]"/>
+                <supportSidebar class="w-[300px] 2xl:w-[350px]"/>
                 <div class="w-[calc(100%-300px)] 2xl:w-[calc(100%-350px)]">
                   <router-view/>
                 </div>
@@ -15,5 +15,5 @@
 </template>
 <script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import AMsidebar from '../AgentManagement/AgentManagementSidebar.vue';
+import supportSidebar from '/src/views/SupportDashboard/SupportSidebar.vue';
 </script>

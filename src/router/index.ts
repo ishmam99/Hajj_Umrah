@@ -570,6 +570,25 @@ const router = createRouter({
         },
       ]
     },
+
+    //Support Login
+    {
+      path: '/support_login',
+      name: 'Support_Login',
+      component: () => import('../views/Auth/LogIn.vue')
+    },
+    {
+      path: '/support_Dashboard',
+      name: 'Support_Dashboard',
+      component: () => import('@/views/SupportDashboard/SupportDashboard.vue'),
+      children: [
+        {
+          path: '/support_Profile',
+          name: 'Support_Profile',
+          component: () => import('@/views/SupportDashboard/Profile/SupportProfile.vue')
+        },
+      ]
+    },
    
    
     //Agent Management Login

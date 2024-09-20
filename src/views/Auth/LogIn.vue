@@ -105,6 +105,12 @@
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
+          v-if="route.name == 'Support_Login'"
+          src="@/assets/image/common/login-8.png"
+          alt=""
+          class="bg-white rounded-lg h-[550px] w-[500px]"
+        />
+        <img
           v-if="route.name == 'Finance Login'"
           src="@/assets/image/common/login-4.png"
           alt=""
@@ -236,6 +242,10 @@ const login =async () => {
       else if (authStore.role == 'Imam') {
         authStore.currentDashboard = "Imam_Dashboard_Profile"
         router.push({ name: 'Imam_Dashboard_Profile' })
+      }
+      else if (authStore.role == 'support') {
+        authStore.currentDashboard = "Support_Profile"
+        router.push({ name: 'Support_Profile' })
       }
       else if (authStore.role == 'Finance') {
         authStore.currentDashboard = "/Finance_Dashboard/Profile"

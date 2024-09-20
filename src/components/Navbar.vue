@@ -490,6 +490,7 @@
                
               </MenubarSubContent>
             </MenubarSub>
+
             <MenubarSub>
               <MenubarSubTrigger>
                 <p class="hover:pl-5 duration-300 font-bold">Agent</p>
@@ -505,6 +506,29 @@
                 <MenubarItem>
                   <router-link
                     to="/agent_login"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Login</router-link
+                  >
+                </MenubarItem>
+               
+              </MenubarSubContent>
+            </MenubarSub>
+            
+            <MenubarSub>
+              <MenubarSubTrigger>
+                <p class="hover:pl-5 duration-300 font-bold">Support</p>
+              </MenubarSubTrigger>
+              <MenubarSubContent>
+                <MenubarItem>
+                  <router-link
+                    to="/Supply_Chain/agent_registration"
+                    class="w-full hover:pl-5 duration-300 font-semibold"
+                    >Register Now</router-link
+                  >
+                </MenubarItem>
+                <MenubarItem>
+                  <router-link
+                    to="/support_login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
                     >Login</router-link
                   >

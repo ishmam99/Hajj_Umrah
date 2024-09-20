@@ -59,14 +59,59 @@
               <path
                 d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z">
               </path>
-            </svg>Accepted Packages
+            </svg>Active Packages
+          </router-link>
+          
+          <router-link to="" class="flex items-center gap-2 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path
+                d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z">
+              </path>
+            </svg>Upcoming Packages
           </router-link>
           <router-link to="" class="flex items-center gap-2 cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
               <path
                 d="M8.00008 6V9H5.00008V6H8.00008ZM3.00008 4V11H10.0001V4H3.00008ZM13.0001 4H21.0001V6H13.0001V4ZM13.0001 11H21.0001V13H13.0001V11ZM13.0001 18H21.0001V20H13.0001V18ZM10.7072 16.2071L9.29297 14.7929L6.00008 18.0858L4.20718 16.2929L2.79297 17.7071L6.00008 20.9142L10.7072 16.2071Z">
               </path>
-            </svg>Upcoming Packages
+            </svg>Completed Packages
+          </router-link>
+        </div>
+      </div>
+
+
+      <!-- Payment  -->
+      <div class="bg-white p-2 rounded-md cursor-pointer ">
+        <p @click="dropdown = 3" class="pb-1 flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20 3L22 7V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V7.00353L4 3H20ZM20 9H4V19H20V9ZM12 10L16 14H13V18H11V14H8L12 10ZM18.764 5H5.236L4.237 7H19.764L18.764 5Z"></path></svg>
+         
+          My Payments
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 16L6 10H18L12 16Z"></path>
+          </svg>
+        </p>
+        <div v-if="dropdown == 3" class="flex flex-col gap-3 pl-2 py-2 bg-slate-100 rounded-md">
+          <router-link to="" class="flex items-center gap-2 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path
+                d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z">
+              </path>
+            </svg>Pending Payments
+          </router-link>
+          
+          <router-link to="" class="flex items-center gap-2 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path
+                d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z">
+              </path>
+            </svg>Received Payments
+          </router-link>
+          <router-link to="" class="flex items-center gap-2 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path
+                d="M8.00008 6V9H5.00008V6H8.00008ZM3.00008 4V11H10.0001V4H3.00008ZM13.0001 4H21.0001V6H13.0001V4ZM13.0001 11H21.0001V13H13.0001V11ZM13.0001 18H21.0001V20H13.0001V18ZM10.7072 16.2071L9.29297 14.7929L6.00008 18.0858L4.20718 16.2929L2.79297 17.7071L6.00008 20.9142L10.7072 16.2071Z">
+              </path>
+            </svg>Request Payment
           </router-link>
         </div>
       </div>
@@ -363,6 +408,7 @@
           </router-link>
         </div>
       </div>
+
 
 
       <button type="button" @click="logout()" class="py-2 px-5 mt-80 bg-red-800 rounded-md text-white duration-300">
