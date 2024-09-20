@@ -368,38 +368,9 @@
 
         <MenubarMenu>
           <MenubarTrigger class="font-bold 2xl:text-lg"
-            >About Us
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg> -->
+            >
+            <router-link to="/about/about_us"> About Us</router-link>
           </MenubarTrigger>
-          <!-- <MenubarContent> -->
-            <!-- <MenubarItem>
-              <router-link to="/about/about_us" class="w-full hover:pl-5 duration-300 font-semibold"
-                >About</router-link
-              >
-            </MenubarItem> -->
-            <!-- <MenubarItem>
-              <router-link
-                to="/about/board_of_directors"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Board Of Directors</router-link
-              >
-            </MenubarItem>
-            <MenubarItem>
-              <router-link
-                to="/about/committees"
-                class="w-full hover:pl-5 duration-300 font-semibold"
-                >Committees</router-link
-              >
-            </MenubarItem> -->
-            <!-- <MenubarItem>
-                <router-link to="/about/team" class=" w-full hover:pl-5 duration-300">Team</router-link>
-              </MenubarItem> -->
-            <!-- <MenubarItem>
-              <router-link to="/about/policies" class="w-full hover:pl-5 duration-300 font-semibold"
-                >Policies</router-link
-              >
-            </MenubarItem> -->
-          <!-- </MenubarContent> -->
         </MenubarMenu>
 
         <MenubarMenu>
@@ -619,13 +590,13 @@
                     >Finance Management System</router-link
                   >
                 </MenubarItem>
-                <MenubarItem>
+                <!-- <MenubarItem>
                   <router-link
                     to="/Education_Login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
                     >Learning Management System</router-link
                   >
-                </MenubarItem>
+                </MenubarItem> -->
                 
                 <MenubarItem>
                   <router-link

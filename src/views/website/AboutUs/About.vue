@@ -40,50 +40,23 @@
             >
           </CardHeader>
           <CardContent class="text-gray-600">
-            Islamic Digital Lane (IDL) stands as a beacon of educational, religious, and social
-            enlightenment, embodying the principles outlined in the Quran and guided by the
-            teachings and traditions of Prophet Mohammed (Peace Be upon Him). Established as a
-            non-profit tax-exempt organization under the Tax-ID: 20-0629612, IDL proudly operates
-            under the umbrella of the Internal Revenue Service's 501(c)(3) revenue code,
-            exemplifying its dedication to charitable and community-oriented endeavors. At its core,
-            IDL is more than just a physical space; it is a virtual Islamic center known for its
-            commitment to inclusivity and diversity. A multi-ethnic, multi-racial, and multi-lingual
-            community, IDL thrives as a non-sectarian and open congregation, welcoming individuals
-            from all walks of life who pledge to uphold its rules, regulations, and procedures.
-            Emphasizing the equal participation and involvement of men and women within its
-            community, IDL champions the principles of equality and unity. Educational pursuits lie
-            at the heart of IDL's mission, with a focus on disseminating knowledge in alignment with
-            Islamic teachings. Through various programs and initiatives, IDL endeavors to provide a
-            comprehensive understanding of Islam, fostering an environment where individuals can
-            deepen their spiritual connection and intellectual engagement. From Quranic studies to
-            discussions on Prophet Mohammed's teachings, IDL serves as a reservoir of wisdom for
-            those seeking spiritual growth and enlightenment. As a religious institution, IDL plays
-            a pivotal role in nurturing the faith of its members. Regular prayer services, religious
-            classes, and community events create an atmosphere conducive to spiritual reflection and
-            growth. The organization's commitment to following the teachings of the Quran ensures
-            that its religious activities are conducted with sincerity and adherence to the
-            principles outlined in the holy book. In the realm of social engagement, IDL extends its
-            reach beyond its immediate community. With a commitment to civic and civil involvement,
-            IDL actively seeks to engage with communities of other faiths and the broader society.
-            Through interfaith dialogues, community service initiatives, and collaborative projects,
-            IDL aims to foster understanding, harmony, and cooperation among diverse groups. By
-            building bridges with other faith communities, IDL contributes to the rich tapestry of a
-            pluralistic society. The ethos of IDL extends to the digital realm, as indicated by its
-            name – Islamic Digital Lane. Recognizing the significance of technology in the
-            contemporary world, IDL harnesses digital platforms to connect with a global audience.
-            Online lectures, webinars, and interactive forums facilitate the dissemination of
-            Islamic knowledge to individuals around the world, transcending geographical boundaries
-            and promoting a sense of community in the virtual space. As a tax-exempt organization,
-            IDL relies on the support and contributions of its members and well-wishers to sustain
-            its mission. Donations to IDL not only support the maintenance of physical and digital
-            infrastructure but also contribute to the various educational and community programs
-            that enrich the lives of its members. In conclusion, Islamic Digital Lane emerges as a
-            dynamic and inclusive Islamic center, seamlessly blending traditional values with a
-            contemporary approach. Through its educational, religious, and social initiatives, IDL
-            strives to empower individuals with knowledge, foster spiritual growth, and build
-            bridges of understanding within the wider society. In a rapidly changing world, IDL
-            stands as a testament to the enduring principles of Islam, promoting unity, diversity,
-            and engagement for the greater good.
+            Hajj Exploration LLC stands as a leading provider of transformative religious and cultural experiences, dedicated to guiding pilgrims through the profound journey of Hajj and Umrah. Rooted in the sacred teachings of the Quran and the traditions of Prophet Mohammed (Peace Be upon Him), Hajj Exploration LLC is committed to fostering a deep spiritual connection and meaningful engagement for all who embark on this sacred pilgrimage.
+
+Established as a trusted travel and educational resource, Hajj Exploration LLC operates as a dedicated service provider, focusing on the highest standards of integrity, inclusivity, and excellence. Our multi-ethnic and multi-lingual team ensures that individuals from diverse backgrounds receive personalized guidance, support, and access to a range of services designed to enhance their spiritual journey.
+
+At the heart of Hajj Exploration LLC is a firm commitment to inclusivity. We welcome individuals from all walks of life, offering equal opportunities for men and women to participate in and benefit from our programs. Whether you're preparing for your first pilgrimage or seeking to deepen your understanding of the rituals, our knowledgeable guides and educational resources provide comprehensive support every step of the way.
+
+Educational Initiatives are integral to our mission, offering pilgrims the opportunity to learn about the rituals, history, and spiritual significance of Hajj and Umrah. Through workshops, pre-departure orientations, and online resources, we help ensure that every pilgrim is spiritually prepared and fully equipped to engage with the rites of passage in a meaningful way.
+
+Our religious services go beyond logistical support; they are rooted in a sincere commitment to ensuring that all rituals are performed in accordance with Islamic principles. Our experienced guides provide mentorship throughout the pilgrimage, ensuring that each moment is spiritually enriching and conducted with the highest degree of sincerity and devotion.
+
+In addition to our core pilgrimage services, Hajj Exploration LLC is dedicated to fostering social and community engagement. We believe in building bridges between individuals of different backgrounds and promoting understanding through dialogue, service, and collaboration. Whether through community initiatives or interfaith projects, our mission extends beyond the pilgrimage itself, encouraging our clients to engage meaningfully with the broader global community.
+
+Hajj Exploration LLC also embraces the digital age, offering a range of online services to connect with our clients and provide ongoing support. Through our website, digital learning platforms, and webinars, we offer educational content and resources to help pilgrims prepare for their journey no matter where they are in the world.
+
+As a professional service provider, Hajj Exploration LLC relies on the trust and support of our clients to sustain our operations and continue offering quality services. Contributions and bookings help support our infrastructure, allowing us to provide high-quality pilgrimage experiences and educational programs.
+
+In conclusion, Hajj Exploration LLC is more than just a travel provider; we are a dedicated partner in your spiritual journey. Through our comprehensive educational, religious, and community-focused services, we aim to make the pilgrimage experience as enriching and spiritually fulfilling as possible. We are committed to promoting unity, diversity, and engagement, ensuring that every pilgrim embarks on their journey with peace of mind and heart.
           </CardContent>
         </Card>
         <Card class="rounded-2xl">
