@@ -637,7 +637,7 @@ const router = createRouter({
     // social service dashboard end
 
     {
-      path: '/Youth_Management_Login',
+      path: '/vendor_login',
       name: 'Vendor Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
@@ -647,40 +647,37 @@ const router = createRouter({
       component: () => import('../views/Vendor/YouthDashborad.vue'),
       children: [
         {
-          path: '/Youth_Dashboard/Proile',
-          name: 'Youth_Dashboard_Profile',
-          component: () => import('../views/Vendor/Profile/YouthProfile.vue')
+          path: '/vendor_profile',
+          name: 'vendor_profile',
+          component: () => import('../views/Vendor/Profile/VendorProfile.vue')
+        },
+        // My Bids
+        {
+          path: '/vendor_accepted_bids',
+          name: 'vendor_accepted_bids',
+          component: () => import('../views/Vendor/MyBids/AcceptedBids.vue')
         },
         {
-          path: '/Youth_Dashboard/Year_Planer_Create',
-          name: 'Youth_Year_Planer_Create',
-          component: () => import('../views/Vendor/YouthYearPlannerCreate.vue')
+          path: '/vendor_pending_bids',
+          name: 'Vendor Pending Bids',
+          component: () => import('@/views/Vendor/MyBids/PendingBids.vue')
+        },
+        //My Services
+        {
+          path: '/vendor_add_transportService',
+          name: 'vendor_add_transportService',
+          component: () => import('../views/Vendor/MyServices/AddTransportService.vue')
         },
         {
-          path: '/Youth_Dashboard/Year_Planer',
-          name: 'Youth_Year_Planer',
-          component: () => import('../views/Vendor/YouthYearPlaner.vue')
+          path: '/vendor_hotel_Service',
+          name: 'vendor_hotel_Service',
+          component: () => import('../views/Vendor/MyServices/HotelService.vue')
         },
         {
-          path: '/Youth_Dashboard/Program_List',
-          name: 'Youth_Program_List',
-          component: () => import('../views/Vendor/YouthProgramList.vue')
+          path: '/ground_transport_service',
+          name: 'Ground Transport Service',
+          component: () => import('../views/Vendor/MyServices/GroundTransportService.vue')
         },
-        {
-          path: '/Youth_Dashboard/Program_Broadcast',
-          name: 'Youth_Program_Broadcast',
-          component: () => import('../views/Vendor/YouthProgramBroadcast.vue')
-        },
-        {
-          path: '/Youth_Dashboard/pending_bids',
-          name: 'pending_bids',
-          component: () => import('../views/Vendor/YouthProgramCreate.vue')
-        },
-        {
-          path: '/Youth_Dashboard/currently_provided_services',
-          name: 'currently_provided_services',
-          component: () => import('../views/Vendor/CurrentlyProvidedServices.vue')
-        }
       ]
     },
 

@@ -430,7 +430,7 @@
                 </MenubarItem>
                 <MenubarItem>
                   <router-link
-                    to="/Youth_Management_Login"
+                    to="/vendor_login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
                     >Login</router-link
                   >

@@ -219,9 +219,9 @@ const login =async () => {
         authStore.currentDashboard = "Opration_Management_profile"
         router.push({ name: 'Opration_Management_profile' })
       }
-      else if (authStore.role == 'Youth') {
-        authStore.currentDashboard = "Youth_Dashboard_Profile"
-        router.push({ name: 'Youth_Dashboard_Profile' })
+      else if (authStore.role == 'Vendor') {
+        authStore.currentDashboard = "vendor_profile"
+        router.push({ name: 'vendor_profile' })
       }
       else if (authStore.role == 'Agent') {
         authStore.currentDashboard = "Agent_Dashboard_Profile"

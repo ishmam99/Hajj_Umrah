@@ -3,7 +3,7 @@
     <div class="bg-[#135D66] p-5 h-full flex flex-col gap-3 font-semibold text-lg text-white">
       <p class="text-2xl font-bold text-white">Vendor Dashboard</p>
       <p class="text-xl font-bold">Welcome Mr. Hashim</p>
-      <router-link to="/Youth_Dashboard/Proile"
+      <router-link to="/vendor_profile"
         class="flex items-center gap-2 bg-white p-2 rounded-md hover:bg-gray-200 text-slate-800"><svg
           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
           <path
@@ -23,9 +23,9 @@
           My bids
         </button>
         <div v-if="currentAccordions === 'projectManagement'" class="submenu mx-8">
-          <router-link to="/Youth_Dashboard/Program_List" class="flex items-center gap-2 hover:px-2">-
+          <router-link to="/vendor_accepted_bids" class="flex items-center gap-2 hover:px-2">-
             Accepted Bids</router-link>
-          <router-link to="pending_bids" class="flex items-center gap-2 hover:px-2">-
+          <router-link to="/vendor_pending_bids" class="flex items-center gap-2 hover:px-2">-
             Pending Bids</router-link>
 
         </div>
@@ -43,11 +43,11 @@
           My Services
         </button>
         <div v-if="currentAccordions === 'bidManagement'" class="submenu mx-8">
-          <router-link to="" class="flex items-center gap-2 hover:px-2">-
+          <router-link to="/vendor_add_transportService" class="flex items-center gap-2 hover:px-2">-
             Add Transport Service</router-link>
-          <router-link to="/Youth_Dashboard" class="flex items-center gap-2 hover:px-2">-
+          <router-link to="/vendor_hotel_Service" class="flex items-center gap-2 hover:px-2">-
             Hotel Service</router-link>
-          <router-link to="/Youth_Dashboard" class="flex items-center gap-2 hover:px-2">-
+          <router-link to="/ground_transport_service" class="flex items-center gap-2 hover:px-2">-
             Ground Transport Service</router-link>
 
 
@@ -55,52 +55,7 @@
       </div>
 
 
-      <!-- <router-link to="/Youth_Dashboard/Youth_Program_Create" class="flex items-center gap-2"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
-          ></path></svg>Create Program</router-link>
-
-        
-
-      <router-link to="/Youth_Dashboard/Program_List" class="flex items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
-          ></path></svg >Program List</router-link>
-        
-        <router-link to="/Youth_Dashboard/Program_Broadcast" class="flex items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H6V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
-          ></path></svg>Program Broadcast</router-link>
-
-      <router-link to="/volunteer" class="flex items-center gap-2"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path
-            d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z"
-          ></path></svg>Volunteer Management</router-link
-      > -->
+     
 
       <router-link to="" class="flex items-center gap-2 bg-white text-slate-800 p-2 rounded-md"><svg
           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
