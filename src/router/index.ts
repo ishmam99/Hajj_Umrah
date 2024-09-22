@@ -421,6 +421,38 @@ const router = createRouter({
           name: 'Agent_Dashboard_Profile',
           component: () => import('@/views/Agent/Profile/AgentProfile.vue')
         },
+        // Packages
+        {
+          path: '/agent_packages_active_package',
+          name: 'Agent_Packages_Active_Package',
+          component: () => import('@/views/Agent/MyPackages/ActivePackages.vue')
+        },
+        {
+          path: '/agent_packages_upcoming_package',
+          name: 'Agent_Packages_Upcoming_Package',
+          component: () => import('@/views/Agent/MyPackages/UpcomingPackages.vue')
+        },
+        {
+          path: '/agent_packages_completed_package',
+          name: 'Agent_Packages_Completed_Package',
+          component: () => import('@/views/Agent/MyPackages/CompletedPackages.vue')
+        },
+        // Payments
+        {
+          path: '/agent_packages_pending_payments',
+          name: 'Agent_Packages_Pending_payments',
+          component: () => import('@/views/Agent/MyPayments/PendingPayments.vue')
+        },
+        {
+          path: '/agent_packages_received_payments',
+          name: 'Agent_Packages_Received_Payments',
+          component: () => import('@/views/Agent/MyPayments/ReceivedPayments.vue')
+        },
+        {
+          path: '/agent_packages_request_payments',
+          name: 'Agent_Packages_Request_Payments',
+          component: () => import('@/views/Agent/MyPayments/RequestPayment.vue')
+        },
       ]
     },
     //Imam login
@@ -438,15 +470,42 @@ const router = createRouter({
       component: () => import('@/views/Imam/ImamDashboard.vue'),
       children: [
         {
-          path: '/Imam_Profile',
-          name: 'Imam_Dashboard_Profile',
+          path: '/imam_profile',
+          name: 'imam_Dashboard_Profile',
           component: () => import('@/views/Imam/Profile/ImamProfile.vue')
         },
-        // {
-        //   path: '/Imam_Dashboard/Proile',
-        //   name: 'Imam_Dashboard_Profile',
-        //   component: () => import('@/views/Imam/Profile/ImamProfile.vue')
-        // },
+        // Packages
+        {
+          path: '/imam_packages_active_package',
+          name: 'imam_Packages_Active_Package',
+          component: () => import('@/views/Imam/MyPackages/ActivePackages.vue')
+        },
+        {
+          path: '/imam_packages_upcoming_package',
+          name: 'imam_Packages_Upcoming_Package',
+          component: () => import('@/views/Imam/MyPackages/UpcomingPackages.vue')
+        },
+        {
+          path: '/imam_packages_completed_package',
+          name: 'imam_Packages_Completed_Package',
+          component: () => import('@/views/Imam/MyPackages/CompletedPackages.vue')
+        },
+        // Payments
+        {
+          path: '/imam_packages_pending_payments',
+          name: 'imam_Packages_Pending_payments',
+          component: () => import('@/views/Imam/MyPayments/PendingPayments.vue')
+        },
+        {
+          path: '/imam_packages_received_payments',
+          name: 'imam_Packages_Received_Payments',
+          component: () => import('@/views/Imam/MyPayments/ReceivedPayments.vue')
+        },
+        {
+          path: '/imam_packages_request_payments',
+          name: 'imam_Packages_Request_Payments',
+          component: () => import('@/views/Imam/MyPayments/RequestPayment.vue')
+        },
       ]
     },
     //Imam Managemnte Login
@@ -514,12 +573,44 @@ const router = createRouter({
     {
       path: '/support_Dashboard',
       name: 'Support_Dashboard',
-      component: () => import('@/views/SupportDashboard/SupportDashboard.vue'),
+      component: () => import('@/views/SupportDashboard/Dashboard.vue'),
       children: [
         {
-          path: '/support_Profile',
-          name: 'Support_Profile',
+          path: '/Support_profile',
+          name: 'Support_Dashboard_Profile',
           component: () => import('@/views/SupportDashboard/Profile/SupportProfile.vue')
+        },
+        // Packages
+        {
+          path: '/support_packages_active_package',
+          name: 'support_Packages_Active_Package',
+          component: () => import('@/views/SupportDashboard/MyPackages/ActivePackages.vue')
+        },
+        {
+          path: '/support_packages_upcoming_package',
+          name: 'support_Packages_Upcoming_Package',
+          component: () => import('@/views/SupportDashboard/MyPackages/UpcomingPackages.vue')
+        },
+        {
+          path: '/support_packages_completed_package',
+          name: 'support_Packages_Completed_Package',
+          component: () => import('@/views/SupportDashboard/MyPackages/CompletedPackages.vue')
+        },
+        // Payments
+        {
+          path: '/support_packages_pending_payments',
+          name: 'support_Packages_Pending_payments',
+          component: () => import('@/views/SupportDashboard/MyPayments/PendingPayments.vue')
+        },
+        {
+          path: '/support_packages_received_payments',
+          name: 'support_Packages_Received_Payments',
+          component: () => import('@/views/SupportDashboard/MyPayments/ReceivedPayments.vue')
+        },
+        {
+          path: '/support_packages_request_payments',
+          name: 'support_Packages_Request_Payments',
+          component: () => import('@/views/SupportDashboard/MyPayments/RequestPayment.vue')
         },
       ]
     },

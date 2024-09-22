@@ -240,12 +240,12 @@ const login =async () => {
         router.push({ name: 'Agent_Management_Profile' })
       }
       else if (authStore.role == 'Imam') {
-        authStore.currentDashboard = "Imam_Dashboard_Profile"
-        router.push({ name: 'Imam_Dashboard_Profile' })
+        authStore.currentDashboard = "imam_Dashboard_Profile"
+        router.push({ name: 'imam_Dashboard_Profile' })
       }
-      else if (authStore.role == 'support') {
-        authStore.currentDashboard = "Support_Profile"
-        router.push({ name: 'Support_Profile' })
+      else if (authStore.role == 'Support') {
+        authStore.currentDashboard = "Support_Dashboard_Profile"
+        router.push({ name: 'Support_Dashboard_Profile' })
       }
       else if (authStore.role == 'Finance') {
         authStore.currentDashboard = "/Finance_Dashboard/Profile"

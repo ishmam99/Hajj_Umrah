@@ -9,7 +9,7 @@
             alt="Profile Image"
             class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
           >
-          <h2 class="text-2xl text-white font-bold mt-4">Mushfiq Rahman</h2>
+          <h2 class="text-2xl text-yellow-300 font-bold mt-4">Mushfiq Rahman</h2>
           <p class="text-white text-xl font-semibold">Support</p>
         </div>
   
