@@ -36,6 +36,7 @@
             <td>
                 <span class="badge badge-outline">Completed</span>
             </td>
+            <!--  -->
             <td>
                 <button class="btn btn-outline btn-xs">details</button>
             </td>
