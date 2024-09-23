@@ -75,7 +75,7 @@
             <img src="@/assets/image/hajj/hajj-1.jpg" alt="Package Image" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
           </div>
 
-          <!-- Package Info -->
+          
           <div class="p-6">
             <h2 class="text-xl font-bold text-slate-800 mb-2">{{ packageData.packageTitle }}</h2>
             <p class="text-slate-600 leading-normal">{{ packageData.description }}</p>
