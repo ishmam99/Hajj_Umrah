@@ -34,6 +34,11 @@ const router = createRouter({
       component: () => import('../views/Auth/LogIn.vue')
     },
     {
+      path: '/Umrah_usa_packageList',
+      name: 'Umrah_usa_packageList',
+      component: () => import('../views/website/Umrah/UmrahUSApackageList.vue')
+    },
+    {
       path: '/umrah-services',
       name: 'umrah-services',
       component: () => import('../views/Services/umrah-services.vue')
