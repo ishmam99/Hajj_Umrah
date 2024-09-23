@@ -102,7 +102,13 @@
 
           <!-- View Packages Button -->
           <div class="text-center py-2 bg-[#286d71] rounded-b-lg">
-            <router-link to="/Umrah_usa_packageList" class="text-white text-lg hover:underline">View Packages</router-link>
+            <router-link 
+            :to="{
+              name: 'Umrah_packageList',
+              params: { id: packageData.id },
+              query: { country: selectedCountry?.name }
+            }"
+            class="text-white text-lg hover:underline">View Packages</router-link>
           </div>
         </div>
       </div>
@@ -428,7 +434,7 @@ const packagesList = ref([
       },
       {
         id: 3,
-        name: 'Sudan',
+        name: 'Burkina Faso',
         cities: [
           'Islamabad',
           'Lahore',
