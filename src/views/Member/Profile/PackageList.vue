@@ -2,114 +2,74 @@
   <div class="px-[20px] bg-white py-5 rounded-md shadow-md">
           <p class="text-2xl font-bold py-3 border-b">Package List</p>
           <div class="bg-slate-50 rounded-lg gap-y-2 w-full px-4 py-2 border-b-gray-100 mb-2 mt-3">
-            <div class="overflow-x-auto">
-  <table class="table">
-    <!-- head -->
-    <thead>
-      <tr class="bg-[#219C90] text-white text-lg">
-        <th>
-          No.
-        </th>
-        <th>Package Name</th>
-        <th>Country</th>
-        <th>Duration</th>
-        <th>Price</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- row 1: Hajj Package -->
-      <tr>
-        <th>
-          1.
-        </th>
-        <td>
-          <div class="flex items-center gap-3">
-            <div class="avatar">
-              <div class="mask mask-squircle h-12 w-12">
-                <img
-                  :src="hajj2img"
-                  alt="Avatar Tailwind CSS Component" />
-              </div>
+            <div class="overflow-x-auto bg-slate-100 shadow">
+              <table class="table-auto w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-[#286d71] text-white">
+                    <th class="border px-3 py-3">Title</th>
+                    <th class="border px-3 py-3">Package ID</th>
+                    <th class="border px-3 py-3">Country</th>
+                    <th class="border px-3 py-3">City</th>
+                    <th class="border px-3 py-3">Agent Name</th>
+                    <th class="border px-3 py-3">Imam Name</th>
+                    <th class="border px-3 py-3">Support Manager Name</th>
+      
+                    <th class="border px-3 py-3">Start-End Date</th>
+                    <!-- <th class="border px-6 py-3">End Date</th> -->
+                    <th class="border px-3 py-3">Status</th>
+                    <th class="border px-3 py-3">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(pkg, index) in packages" :key="index" class="hover:bg-gray-50 shadow">
+                    <td class=" px-4 py-2">{{ pkg.title }}</td>
+                    <td class=" px-4 py-2">{{ pkg.pkgId }}</td>
+                    <td class=" px-4 py-2">{{ pkg.country }}</td>
+                    <td class=" px-4 py-2">{{ pkg.city }}</td>
+                    <td class=" px-4 py-2">{{ pkg.agent }}</td>
+                    <td class=" px-4 py-2">{{ pkg.imam }}</td>
+                    <td class=" px-4 py-2">{{ pkg.support_manager }}</td>
+                    <td class=" px-4 py-2">{{ pkg.startDate }} - {{ pkg.startDate }}</td>
+                    <!-- <td class=" px-4 py-2"></td> -->
+                    <td class=" px-4 py-2">{{ pkg.status }} </td>
+                    <td class=" px-4 py-2">
+                      <div class="flex space-x-2">
+                        <router-link :to="'customer_package_details/'+pkg.id">
+                          <button class="bg-[#286d71] hover:bg-[#1f565b] text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
+                            View Details
+                          </button>
+                        </router-link>
+                      
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div>
-              <div class="font-bold">Hajj Package 2024</div>
-          <div class="text-sm opacity-50">Inclusive of all necessary amenities</div>
-            </div>
-          </div>
-        </td>
-        <td>Saudi Arabia</td>
-        <td>30 Days</td>
-        <td>$5000</td>
-        <th>
-          <button class="btn btn-ghost btn-xs">Details</button>
-        </th>
-      </tr>
-      <!-- row 2: Umrah Package -->
-      <tr>
-        <th>
-          2.
-        </th>
-        <td>
-          <div class="flex items-center gap-3">
-            <div class="avatar">
-              <div class="mask mask-squircle h-12 w-12">
-                <img
-                  :src="hajjimg"
-                  alt="Avatar Tailwind CSS Component" />
-              </div>
-            </div>
-            <div>
-              <div class="font-bold">Umrah Package 2024</div>
-          <div class="text-sm opacity-50">Affordable and comfortable</div>
-            </div>
-          </div>
-        </td>
-        <td>Saudi Arabia</td>
-        <td>15 Days</td>
-        <td>$3000</td>
-        <th>
-          <button class="btn btn-ghost btn-xs">Details</button>
-        </th>
-      </tr>
-      <!-- row 3: Special Package -->
-      <tr>
-        <th>
-          3.
-        </th>
-        <td>
-          <div class="flex items-center gap-3">
-            <div class="avatar">
-              <div class="mask mask-squircle h-12 w-12">
-                <img
-                  :src="umrahimg"
-                  alt="Avatar Tailwind CSS Component" />
-              </div>
-            </div>
-            <div>
-              <div class="font-bold">VIP Hajj Package</div>
-          <div class="text-sm opacity-50">Premium service with additional benefits</div>
-            </div>
-          </div>
-        </td>
-        <td>Saudi Arabia</td>
-        <td>30 Days</td>
-        <td>$10000</td>
-        <th>
-          <button class="btn btn-ghost btn-xs">Details</button>
-        </th>
-      </tr>
-    </tbody>
-  </table>
-</div>
 
           </div>
         </div>
 </template>
 <script setup>
-import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import MembarSidebar from '/src/views/Member/MembarSidevar.vue'
-import hajjimg from "/src/assets/image/hajj/hajj-1.jpg";
-import hajj2img from "/src/assets/image/hajj/hajj-2.jpg";
-import umrahimg from "/src/assets/image/prayer-rugs.jpg";
+import { packages } from '@/stores/itinenary.ts'
+
+const deletePackage = (packageId) => {
+  alert(`Package ${packageId} deleted!`)
+}
+ const statuses = [
+  { id: 1, name: 'Not In Plan' },
+  { id: 2, name: 'In Plan' },
+  { id: 3, name: 'In Preparation' },
+  { id: 4, name: 'In Review' },
+  { id: 5, name: 'In Approval Process' },
+  { id: 6, name: 'Approved' },
+  { id: 7, name: 'Published' },
+  { id: 8, name: 'Discontinued' }
+]
 </script>
+
+<style scoped>
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>

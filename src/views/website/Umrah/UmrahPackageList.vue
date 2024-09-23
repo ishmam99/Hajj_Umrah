@@ -36,7 +36,7 @@
                 </swiper>
             </div>
         </div>
-        <div class="max-w-screen-2xl mx-auto mt-8 mb-8">
+        <div class="max-w-screen-4xl mx-auto mt-8 mb-8">
             <!-- Header Section -->
             <div class="flex flex-col items-center justify-center pb-4 mt-6">
                 <p class="text-5xl font-bold text-[#286d71]">{{ selectedCountry }} Package List</p>
@@ -49,67 +49,43 @@
                         selectedCountry }}</span></p>
 
                 <!-- Package Table -->
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <!-- Header Row -->
-                    <div
-                        class="grid grid-cols-1 md:grid-cols-6 bg-blue-700 text-white p-4 text-left text-lg font-semibold">
-                        <div class="p-2">Name</div>
-                        <div class="p-2">Start Date</div>
-                        <div class="p-2">End Date</div>
-                        <div class="p-2">City</div>
-                        <div class="p-2">Country</div>
-                        <div class="p-2 ps-6">Details</div>
-                    </div>
-
-                    <!-- Package Rows -->
-                    <div class="divide-y divide-gray-300">
-                        <!-- Row 1 -->
-                        <div class="grid grid-cols-1 md:grid-cols-6 bg-gray-100 hover:bg-blue-100 transition-colors">
-                            <div class="p-4 font-semibold text-blue-700">Premium Hajj Package</div>
-                            <div class="p-4">March 1, 2025</div>
-                            <div class="p-4">March 20, 2025</div>
-                            <div class="p-4">Mecca</div>
-                            <div class="p-4">Saudi Arabia</div>
-                            <div class="p-4">
-                                <router-link to="umrah-details/2"
-                                    class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
-                                    View Details
-                                </router-link>
-                            </div>
-                        </div>
-
-                        <!-- Row 2 -->
-                        <div class="grid grid-cols-1 md:grid-cols-6 bg-white hover:bg-blue-100 transition-colors">
-                            <div class="p-4 font-semibold text-blue-700">Economy Umrah Package</div>
-                            <div class="p-4">April 5, 2025</div>
-                            <div class="p-4">April 15, 2025</div>
-                            <div class="p-4">Medina</div>
-                            <div class="p-4">Saudi Arabia</div>
-                            <div class="p-4">
-                                <router-link to="umrah-details/2"
-                                    class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
-                                    View Details
-                                </router-link>
-                            </div>
-                        </div>
-
-                        <!-- Row 3 -->
-                        <div class="grid grid-cols-1 md:grid-cols-6 bg-gray-100 hover:bg-blue-100 transition-colors">
-                            <div class="p-4 font-semibold text-blue-700">VIP Hajj Package</div>
-                            <div class="p-4">June 1, 2025</div>
-                            <div class="p-4">June 15, 2025</div>
-                            <div class="p-4">Jeddah</div>
-                            <div class="p-4">Saudi Arabia</div>
-                            <div class="p-4">
-                                <router-link to="umrah-details/2"
-                                    class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
-                                    View Details
-                                </router-link>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="bg-white shadow-xl  rounded-lg overflow-hidden">
+                  <table class="min-w-full ">
+                      <!-- Header Row -->
+                      <thead class="bg-blue-700 text-white">
+                          <tr class="text-center text-lg font-semibold py-4">
+                              <th class="py-6 border-r-2 border-gray-100">Name</th>
+                              <th class="p-2 border-r-2 border-gray-100">Umrah Start Date</th>
+                              <th class="p-2 border-r-2 border-gray-100">Umrah End Date</th>
+                              <th class="p-2 border-r-2 border-gray-100">Package Origin Country</th>
+                              <th class="p-2 border-r-2 border-gray-100">Package Origin City</th>
+                              <th class="p-2 border-r-2 border-gray-100">Package Origin Airport</th>
+                              <th class="p-2 border-r-2 border-gray-100">Status Of Package</th>
+                              <th class="p-2">Package Details</th>
+                          </tr>
+                      </thead>
+              
+                      <!-- Package Rows -->
+                      <tbody class="divide-y divide-gray-300 bg-gray-200 ">
+                          <tr v-for="(packageData, index) in packageList" :key="index" class="hover:bg-blue-100 transition-colors text-center py-4 ">
+                              <td class="p-2 font-semibold text-blue-700 border-r-2 border-gray-700">{{ packageData.title }}</td>
+                              <td class="py-6 border-r-2 border-gray-700">{{ packageData.startDate }}</td>
+                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.endDate }}</td>
+                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.country }}</td>
+                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.city }}</td>
+                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.airport }}</td>
+                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.status }}</td>
+                              <td class="p-2 ">
+                                  <router-link :to="`umrah-details/` + packageData.id"
+                                      class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
+                                      View Details
+                                  </router-link>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              
             </section>
         </div>
 
@@ -120,17 +96,26 @@ import DefaultLayout from '@/layouts/DefaultLayout.vue'
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 // import required modules
 import { Pagination, Navigation, Autoplay } from 'swiper/modules'
-import { useSocialStore } from '@/stores/SocialDashboard.ts'
+import { packages } from '@/stores/itinenary.ts'
 import { useRoute } from 'vue-router'
 const route = useRoute()
 const selectedCountry = route.query.country || ' ' // Default to 'No Country Selected' if no country is passed
 const modules = [Pagination, Navigation, Autoplay]
+const packageList = computed(() => {
+  let data = [];
+  console.log(selectedCountry);
+  if(selectedCountry !== ' '){
+    data = packages.filter(e => e.country == selectedCountry);
+  }
+   
+  return data;
+})
 </script>
 <style scoped>
 .swiper {

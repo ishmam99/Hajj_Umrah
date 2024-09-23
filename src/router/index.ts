@@ -1233,6 +1233,11 @@ const router = createRouter({
           component: () => import('../views/Member/Profile/PackageList.vue'),
         },
         {
+          path: '/customer_package_details/:id',
+          name: 'customer_package_details',
+          component: () => import('../views/Member/PackageDetails.vue'),
+        },
+        {
           path: '/Membar_Event_History',
           name: 'Membar_Event_History',
           component: () => import('../views/Member/MemberEventHistory.vue')
