@@ -621,16 +621,16 @@ export const countries = [
     cities: []
   }
 ]
-export const statuses = [
-  { id: 1, name: 'Not In Plan' },
-  { id: 2, name: 'In Plan' },
-  { id: 3, name: 'In Preparation' },
-  { id: 4, name: 'In Review' },
-  { id: 5, name: 'In Approval Process' },
-  { id: 6, name: 'Approved' },
-  { id: 7, name: 'Published' },
-  { id: 8, name: 'Discontinued' }
-]
+  export const statuses = [
+    { id: 1, name: 'Not In Plan' },
+    { id: 2, name: 'In Plan' },
+    { id: 3, name: 'In Preparation' },
+    { id: 4, name: 'In Review' },
+    { id: 5, name: 'In Approval Process' },
+    { id: 6, name: 'Approved' },
+    { id: 7, name: 'Published' },
+    { id: 8, name: 'Discontinued' }
+  ]
 export const itinerary = [
   {
     day: 'Day 1',
@@ -738,8 +738,11 @@ export const packages = [
     country: 'USA',
     city: 'Texas',
     title: 'Umrah Package Basic',
-    startDate: '1st November 2024',
-    endDate: '10th November 2024',
+    imam: 'Shayek Imran',
+    agent: 'MD Karim',
+    support_manager: 'Abdur Rahman',
+    startDate: '1st Nov, 2024',
+    endDate: '10th Nov, 2024',
     description:
       'Our meticulously designed package guarantees an unforgettable Umrah experience, with knowledgeable professionals guiding you every step of the way.',
     img: img1,
@@ -750,9 +753,12 @@ export const packages = [
     pkgId: 'PKG67890',
     country: 'Canada',
     city: 'Toronto',
+    imam: 'Shayek Imran',
+    agent: 'MD Karim',
+    support_manager: 'Abdur Rahman',
     title: 'Umrah Package Deluxe',
-    startDate: '5th December 2024',
-    endDate: '15th December 2024',
+    startDate: '5th Dec, 2024',
+    endDate: '15th Dec, 2024',
     description:
       'Experience the ultimate comfort and convenience with our Deluxe Umrah Package, featuring exclusive services and amenities.',
     img: img2,
@@ -763,9 +769,12 @@ export const packages = [
     pkgId: 'PKG678100',
     country: 'USA',
     city: 'New York',
+    imam: 'Shayek Imran',
+    agent: 'MD Karim',
+    support_manager: 'Abdur Rahman',
     title: 'Umrah Package Premium',
-    startDate: '15th December 2024',
-    endDate: '25th December 2024',
+    startDate: '15th Dec, 2024',
+    endDate: '25th Dec, 2024',
     description:
       'Experience the ultimate comfort and convenience with our Premium Umrah Package, featuring exclusive services and amenities, with knowledgeable professionals guiding you every step of the way.',
     img: img3,

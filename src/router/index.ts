@@ -315,9 +315,19 @@ const router = createRouter({
           component: () => import('@/views/Admin/UmrahModule/CurrentPackages.vue')
         },
         {
+          path: '/umrah_package_all_packages',
+          name: 'Umrah_Package_all_Packages',
+          component: () => import('@/views/Admin/UmrahModule/AllPackages.vue')
+        },
+        {
           path: '/umrah_package_previous_packages',
           name: 'Umrah_Package_Previous_Packages',
           component: () => import('@/views/Admin/UmrahModule/PreviousPackages.vue')
+        },
+        {
+          path: '/umrah_package_upcoming_packages',
+          name: 'Umrah_Package_Upcoming_Packages',
+          component: () => import('@/views/Admin/UmrahModule/UpcomingPackages.vue')
         },
         {
           path: '/umrah_package_completed_packages',
@@ -325,7 +335,7 @@ const router = createRouter({
           component: () => import('@/views/Admin/UmrahModule/CompletedPackages.vue')
         },
         {
-          path: '/package_details',
+          path: '/package_details/:id',
           name: 'package-details',
           component: () => import('../views/Admin/UmrahModule/PackageDetails.vue')
         },

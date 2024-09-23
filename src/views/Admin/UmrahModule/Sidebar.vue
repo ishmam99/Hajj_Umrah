@@ -3,7 +3,7 @@ import { watch, ref } from 'vue'
 import { useAuthStore } from '/src/stores/AuthStore'
 import { useRouter, useRoute } from 'vue-router'
 
-const currentAccordions = ref('bidManagement')
+const currentAccordions = ref('projectManagement')
 const currentAccordions2 = ref('projectManagement')
 
 const toggleAccordion = (accordionName) => {
@@ -69,11 +69,11 @@ watch(
           <router-link to="/view_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- View / Edit Packages</router-link>
           <router-link to="/umrah_package_current_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Approve
             Packages</router-link>
-          <router-link to="/Umrah_package_previous_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Upcoming Packages List
+          <router-link to="/Umrah_package_upcoming_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Upcoming Packages List
             </router-link>
-          <router-link to="/Umrah_package_previous_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Completed Packages List
+          <router-link to="/Umrah_Package_completed_Packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Completed Packages List
             </router-link>
-          <router-link to="/Umrah_package_previous_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- All Packages List
+          <router-link to="/Umrah_package_all_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- All Packages List
             </router-link>
           <!-- <router-link to="/package_details" class="flex items-center gap-2 hover:px-2">- Package Details</router-link> -->
           <!-- <router-link to="/Social_Service_Project_Post" class="flex items-center gap-2 hover:px-2"

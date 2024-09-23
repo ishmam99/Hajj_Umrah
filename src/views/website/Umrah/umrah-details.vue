@@ -1,185 +1,130 @@
 <template>
-  <DefaultLayout>
-    <div class="pt-[80px]"></div>
-    <div class="h-[60vh] 2xl:h-[50vh] relative">
-      <div class="h-full">
-        <swiper
-          :slidesPerView="'1'"
-          :centeredSlides="true"
-          :spaceBetween="0"
-          :loop="true"
-          :autoplay="{
-            delay: 5000,
-            disableOnInteraction: false
-          }"
-          :pagination="{
-            clickable: true
-          }"
-          :navigation="false"
-          :modules="modules"
-          class="mySwiper"
-        >
-          <swiper-slide>
-            <img src="/src/assets/image/hero/hajj_services.jpg" alt="" class="" />
-            <div class="head">
-              <p>Umrah - Texas - 2024</p>
-              <h3 class="text-xl">
-                Learn about your Deen, come closer to your Lord, and explore the world with Muslim
-                World Adventures
-              </h3>
-              <button class=""><router-link to="/Signup">Registration now!</router-link></button>
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <img src="/src/assets/image/hero/madinah.jpg" alt="" class="" />
-            <div class="head">
-              <p>Umrah - Texas - 2024</p>
-              <h3 class="text-xl">
-                Learn about your Deen, come closer to your Lord, and explore the world with Muslim
-                World Adventures
-              </h3>
-              <button class=""><router-link to="/Signup">Registration now!</router-link></button>
-            </div>
-          </swiper-slide>
-        </swiper>
+ <DefaultLayout>
+  <div class="font-sans mt-20">
+    <!-- Hero Section -->
+    <section class="flex justify-center items-center bg-cover bg-center h-[70vh] bg-[url('/src/assets/image/hajj/hajj-2.jpg')]" >
+      <div class="absolute inset-0 bg-black opacity-20 h-[79vh]"></div>
+      <div class="relative z-10 text-center text-white p-10">
+        <h1 class="text-4xl md:text-6xl font-bold">Umrah Package 2024</h1>
+        <p class="mt-4 text-xl md:text-2xl">A Spiritual Journey to Mecca and Medina</p>
+        <button class="mt-6 px-8 py-3 bg-yellow-500 hover:bg-yellow-600 text-lg font-semibold rounded">
+          Book Now
+        </button>
       </div>
-    </div>
-    <div class="container mx-auto my-8">
-      <div class="flex flex-col items-center justify-center pb-10 my-6">
-        <P class="text-5xl font-bold text-[#286d71]">Packages Details</P>
-      </div>
-      <div class="shadow-xl mb-20 shadow-[#36897b39] bg-slate-50 rounded-md pb-8">
-        <div class="flex items-center justify-center">
-          <div class="my-6 py-5 w-full mx-10">
-            <div class="text-slate-800">
-              <ul class="text-xl">
-                <li class="flex items-center mx-2">
-                  <div v-html="svgContent"></div>
-                  <span class="mx-2"
-                    >Package Id -
-                    <span class="text-xl text-[#286d71] font-semibold">
-                      {{ packageDetails.packageId || 'N/A' }}</span
-                    ></span
-                  >
-                </li>
-                <li class="flex items-center mx-2">
-                  <div v-html="svgContent"></div>
-                  <span class="mx-2"
-                    >Country -
-                    <span class="text-xl text-[#286d71] font-semibold">
-                      {{ packageDetails.country?.name || 'N/A' }}</span
-                    ></span
-                  >
-                </li>
-                <li class="flex items-center mx-2">
-                  <div v-html="svgContent"></div>
-                  <span class="mx-2"
-                    >City -
-                    <span class="text-xl text-[#286d71] font-semibold">
-                      {{ packageDetails.city?.name || 'N/A' }}</span
-                    ></span
-                  >
-                </li>
-                <li class="flex items-center mx-2">
-                  <div v-html="svgContent"></div>
-                  <span class="mx-2"
-                    >Package Code -
-                    <span class="text-xl text-[#286d71] font-semibold">
-                      {{ packageDetails.packageCode || 'N/A' }}</span
-                    ></span
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="my-6 py-5 w-full mx-10">
-            <div class="text-slate-800">
-              <ul class="text-xl">
-                <li class="flex items-center mx-2">
-                  <div v-html="svgContent"></div>
-                  <span class="mx-2">
-                    Package Price -
-                    <span class="text-xl text-[#286d71] font-semibold"
-                      >$ {{ packageDetails.price || 'N/A' }}</span
-                    ></span
-                  >
-                </li>
-                <li class="flex items-center mx-2">
-                  <div v-html="svgContent"></div>
-                  <span class="mx-2">
-                    Package Year -
-                    <span class="text-xl text-[#286d71] font-semibold">
-                      {{ packageDetails.packageYear || 'N/A' }}</span
-                    ></span
-                  >
-                </li>
-                <li class="flex items-center mx-2">
-                  <div v-html="svgContent"></div>
-                  <span class="mx-2">
-                    Start Date -
-                    <span class="text-xl text-[#286d71] font-semibold">
-                      {{ moment(packageDetails.startDate).format('MMMM Do YYYY') || 'N/A' }}</span
-                    ></span
-                  >
-                </li>
-                <li class="flex items-center mx-2">
-                  <div v-html="svgContent"></div>
-                  <span class="mx-2">
-                    Ending Date -
-                    <span class="text-xl text-[#286d71] font-semibold">
-                      {{ moment(packageDetails.endDate).format('MMMM Do YYYY') || 'N/A' }}</span
-                    ></span
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+    </section>
 
-      <!-- Itinerary Section -->
-      <div class="shadow-xl shadow-[#36897b39] bg-slate-50 rounded-md pb-8 mt-8">
-        <div class="flex flex-col items-center justify-center pb-10 my-6">
-          <P class="text-5xl font-bold text-[#286d71] pt-5">Travel Itinerary</P>
+    <!-- Package Overview -->
+    <section class="py-16 px-4 text-center bg-gray-50">
+      <h2 class="text-3xl font-bold mb-8">Package Details</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-sky-600 text-white p-6 shadow-md rounded-lg">
+          <h3 class="text-xl font-semibold">Duration</h3>
+          <p>10 Days / 9 Nights</p>
         </div>
-        <div class="my-6 py-5 w-full mx-10">
-          <div class="text-slate-800">
-            <ul class="text-xl">
-              <li v-for="(step, index) in packageDetails.steps || []" :key="index" class="my-4">
-                <div class="flex items-center">
-                  <div v-html="svgContent" class="mr-2"></div>
-                  <div>
-                    <p class="font-semibold">
-                      {{ step.transportation_type?.name || 'N/A' }} -
-                      {{ step.transportation_vendor?.name || 'N/A' }}
-                    </p>
-                    <p>{{ step.duration || 'N/A' }}</p>
-                    <!-- <p>
-                      From {{ step.from_type?.name || 'N/A' }} {{ step.from || 'N/A' }} 
-                      to {{ step.to_type?.name || 'N/A' }} {{ step.to || 'N/A' }}
-                    </p> -->
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
+        <div class="bg-cyan-600 text-white p-6 shadow-md rounded-lg">
+          <h3 class="text-xl font-semibold">Cities Covered</h3>
+          <p>Mecca, Medina</p>
+        </div>
+        <div class="bg-teal-600 text-white p-6 shadow-md rounded-lg">
+          <h3 class="text-xl font-semibold">Price</h3>
+          <p>$1500 per person</p>
         </div>
       </div>
-    </div>
-  </DefaultLayout>
+      <button class="mt-8 px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded">
+        Request More Info
+      </button>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section class="py-16 px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Day-wise Itinerary</h2>
+      <div class=" mx-auto space-y-6">
+        <div class="flex items-center justify-center">
+          <ItineraryItem day="1" description="Arrival in Jeddah, transfer to Mecca. Perform Umrah. Stay at a 5-star hotel." />
+          <img src="@/assets/image/hajj/mecca.jpg" alt="Mecca" class="w-1/2 rounded-lg shadow-md" />
+        </div>
+        <div class="flex items-center justify-between">
+          <img src="@/assets/image/hajj/haram.jpg" alt="Haram" class="w-1/2 rounded-lg shadow-md" />
+       <ItineraryItem day="2-5" description="Stay in Mecca. Optional guided tours, prayers at the Haram, and free time." />
+           </div>
+        <div class="flex items-center justify-between">
+          <ItineraryItem day="6" description="Travel to Medina. Visit historical sites, Masjid an-Nabawi." />
+          <img src="@/assets/image/hajj/medina.webp" alt="Medina" class="w-1/2 rounded-lg shadow-md" />
+        </div>
+        <div class="flex items-center justify-between">
+         <img src="@/assets/image/hajj/masjid-an-nabawi.jpg" alt="Masjid an-Nabawi" class="w-1/2 rounded-lg shadow-md" />  <ItineraryItem day="7-9" description="Stay in Medina. Prayers at Masjid an-Nabawi, guided city tours." />
+         
+        </div>
+        <div class="flex items-center justify-between">
+          <ItineraryItem day="10" description="Return flight to home country." />
+          <img src="@/assets/image/hajj/airport.jpg" alt="Airport" class="w-1/2 rounded-lg shadow-md" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 px-4 bg-gray-50">
+      <h2 class="text-3xl font-bold text-center mb-8">Gallery</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <img src="@/assets/image/hajj/hajj-1.jpg" alt="Mecca" class="rounded-lg shadow-md" />
+        <img src="@/assets/image/hajj/hajj-2.jpg" alt="Medina" class="rounded-lg shadow-md" />
+        <img src="@/assets/image/hajj/hajj-3.webp" alt="Hotel" class="rounded-lg shadow-md" />
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">What Our Customers Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <TestimonialCard name="John Doe" review="An amazing experience, well organized and spiritual." />
+        <TestimonialCard name="Fatima A." review="Excellent service, hotels were close to Haram." />
+        <TestimonialCard name="Ahmed K." review="The best Umrah package I have ever taken." />
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 px-4 bg-gray-50">
+      <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+      <div class="max-w-3xl mx-auto">
+        <FaqItem question="What documents are required?" answer="A valid passport, visa, and vaccination certificates." />
+        <FaqItem question="Can I book extra Ziyarat tours?" answer="Yes, additional Ziyarat tours can be arranged upon request." />
+        <FaqItem question="What is the best time to book?" answer="We recommend booking at least 3 months in advance." />
+      </div>
+    </section>
+
+  
+  </div>
+</DefaultLayout>
 </template>
 
+
 <script setup>
+import ItineraryItem from '/src/components/ItineraryItem.vue';
+import TestimonialCard from '@/components/TestimonialCard.vue';
+import FaqItem from '@/components/FaqItem.vue';
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import { useSocialStore } from '@/stores/SocialDashboard.ts'
+import {
+    useSocialStore
+} from '@/stores/SocialDashboard.ts'
 import moment from 'moment'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import { Autoplay, Navigation, Pagination } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import {
+    Autoplay,
+    Navigation,
+    Pagination
+} from 'swiper/modules'
+import {
+    Swiper,
+    SwiperSlide
+} from 'swiper/vue'
+import {
+    computed
+} from 'vue'
+import {
+    useRoute
+} from 'vue-router'
 const modules = [Pagination, Navigation, Autoplay]
 
 const route = useRoute()
@@ -190,62 +135,64 @@ const svgContent = `
 `
 
 const packageDetails = computed(
-  () =>
-    socialStore.createNewPackage.find((pkg) => pkg.country.id === route.params.id) || { steps: [] }
+    () =>
+    socialStore.createNewPackage.find((pkg) => pkg.country.id === route.params.id) || {
+        steps: []
+    }
 )
 </script>
 
 <style scoped>
 .swiper {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .head {
-  text-shadow: 2px 2px 3px black;
-  font-size: 54px;
-  font-weight: 700;
-  color: white;
-  position: absolute;
-  text-transform: uppercase;
-  left: 5%;
-  text-align: left;
+    text-shadow: 2px 2px 3px black;
+    font-size: 54px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    text-transform: uppercase;
+    left: 5%;
+    text-align: left;
 }
 
 .head p {
-  text-shadow: 2px 2px 3px black;
-  font-size: 34px;
-  color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 3px black;
+    font-size: 34px;
+    color: rgb(255, 255, 255);
 }
 
 .head button {
-  font-size: 24px;
-  font-weight: 500;
-  padding: 8px 12px;
-  border: 3px solid #286d71;
-  text-shadow: 2px 2px 3px black;
-  border-radius: 8px;
-  background: #286d71;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border: 3px solid #286d71;
+    text-shadow: 2px 2px 3px black;
+    border-radius: 8px;
+    background: #286d71;
 }
 
 .head button:hover {
-  background: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  text-shadow: none;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-shadow: none;
 }
 
 .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 </style>
