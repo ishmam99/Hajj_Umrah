@@ -36,15 +36,15 @@
                 </swiper>
             </div>
         </div>
-        <div class="container mx-auto mt-8 mb-8">
+        <div class="max-w-screen-2xl mx-auto mt-8 mb-8">
             <div class="flex flex-col items-center justify-center  pb-4  mt-6">
                 <P class="text-5xl font-bold text-[#286d71]">{{ selectedCountry }} Package List</P>
                 <p class="text-3xl mx-20 mt-3"></p>
             </div>
             
-            <section class="w-full p-10 bg-gray-50">
+            <section class="w-full p-10 bg-gray-100 rounded">
   <!-- Title -->
-  <p class="text-3xl font-bold pb-10 font-mono text-blue-600">Available Packages</p>
+  <p class="text-3xl font-bold pb-10 font-mono text-blue-600">Available Packages For {{selectedCountry}}</p>
 
   <!-- Package Table -->
   <div class="bg-white shadow-md rounded-lg overflow-hidden">
@@ -124,7 +124,7 @@ import { Pagination, Navigation, Autoplay } from 'swiper/modules'
 import { useSocialStore } from '@/stores/SocialDashboard.ts'
 import { useRoute } from 'vue-router'
 const route = useRoute()
-const selectedCountry = route.query.country || ' ' // Default to 'No Country Selected' if no country is passed
+const selectedCountry =  route.query.country || ' ' // Default to 'No Country Selected' if no country is passed
 const modules = [Pagination, Navigation, Autoplay]
 </script>
 <style scoped>
