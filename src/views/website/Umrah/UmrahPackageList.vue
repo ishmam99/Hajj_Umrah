@@ -70,7 +70,7 @@
           <div class="p-4">Saudi Arabia</div>
           <div class="p-4">
             <router-link 
-              to="umrah-details/1" 
+              to="umrah-details/2" 
               class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
               View Details
             </router-link>
@@ -102,10 +102,11 @@
           <div class="p-4">Saudi Arabia</div>
           <div class="p-4">
             <router-link 
-              to="umrah-details/3" 
+              to="umrah-details/2" 
               class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
               View Details
             </router-link>
+       
           </div>
         </div>
       </div>

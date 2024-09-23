@@ -86,7 +86,7 @@ const router = createRouter({
       component: () => import('../views/website/Umrah/umrah-package.vue')
     },
     {
-      path: '/umrah-details/:id',
+      path: '/Umrah_packageList/umrah-details/:id',
       name: 'umrah-details',
       component: () => import('../views/website/Umrah/umrah-details.vue'),
       props: true
