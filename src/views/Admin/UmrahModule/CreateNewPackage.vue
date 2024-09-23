@@ -1,6 +1,9 @@
 <template>
   <div class="px-5 bg-slate-50 py-5 w-3/4">
-    <p class="text-2xl font-bold py-3 border-b">Create New Package</p>
+    <div class="text-center pb-6 border-b-4 border-gray-300 mb-12">
+        <p class="text-5xl font-bold text-[#286d71] tracking-tight">Create New Umrah Package</p>
+        <p class="text-xl text-gray-600 mt-3">Add all package details and itinerary details </p>
+      </div>
     <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
       <form @submit.prevent="EventFormApply">
         <section>
@@ -24,6 +27,42 @@
                 <option v-for="city in formData.country.cities" :value="city">
                   {{ city.name }}
                 </option>
+              </select>
+            </div>
+          </div>
+           <div class="flex gap-5 mb-5">
+            <div class="w-1/3">
+              <div class="label">
+                <span class="label-text">Agent Name</span>
+              </div>
+              <select v-model="formData.agent" class="select select-bordered w-full">
+                <option disabled selected>Select  Agent Name</option>
+                <option >MD Khalid</option>
+                <option >Abrar Khan</option>
+                <option >Shahid Alam</option>
+              </select>
+            </div>
+            <div class="w-1/3">
+              <div class="label">
+                <span class="label-text">Imam Name</span>
+              </div>
+              <select v-model="formData.imam" class="select select-bordered w-full">
+                <option disabled selected>Select  Imam Name</option>
+                <option >Shayekh Mostafa</option>
+                <option >Habib Ahsan</option>
+                <option >Mirza Kaif</option>
+                
+              </select>
+            </div>
+            <div class="w-1/3">
+              <div class="label">
+                <span class="label-text">Support Manager Name</span>
+              </div>
+              <select v-model="formData.support_manager" class="select select-bordered w-full">
+                <option disabled selected>Select  Support Manager Name</option>
+                <option >MD Sayed</option>
+                <option >Sohan Islam</option>
+                <option >Wasim Akram</option>
               </select>
             </div>
           </div>

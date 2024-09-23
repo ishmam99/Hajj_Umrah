@@ -1,66 +1,84 @@
 <template>
-  <div class="px-4 bg-white py-5 w-3/4">
-    <div class="flex justify-between items-center pt-4">
-      <p class="text-2xl text-cyan-700 font-bold pb-2">Approve Package List</p>
-    </div>
-    <hr />
-    
-    <div
-    v-if="store.createNewPackage.length > 0"
-      class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center"
-    >
-      <table class="table-auto w-full">
-        <thead>
-          <tr class="bg-white text-lg">
-            <th class="p-2 text-left">Package Code</th>
-            <th class="p-2 text-left">Package ID</th>
-            <th class="p-2 text-left">Package Title</th>
-            <th class="p-2 text-left">Package Year</th>
-            <th class="p-2 text-left">Origin Country</th>
-            <th class="p-2 text-left">Origin City</th>
-            <th class="p-2 text-left">Starting Date</th>
-            <th class="p-2 text-left">Ending Date</th>
-            <th class="p-2 text-left">Pax</th>
-            <th class="p-2 text-left">Status</th>
-            <!-- <th class="p-2 text-left">Action</th> -->
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(event, index) in store.createNewPackage" :key="index" class="tableRowColor">
-          
-            <td class="py-4 p-2 gap-2">
-              <h3 class="font-bold">{{ event.packageCode }}</h3>
-            </td>
-            <td class="py-4 p-2 flex items-center gap-2">
-              <!-- <img :src="event.image" alt="" class="h-10" /> -->
-              <p class="font-semibold">{{ event.packageId }}</p>
-            </td>
-            <td class="py-4 p-2 items-center gap-2">
-              <p class="font-semibold">{{ event.packageTitle }}</p>
-            </td>
-            <td class="py-4 p-2 items-center gap-2">
-              <p class="font-semibold">{{ event.packageYear }}</p>
-            </td>
-            <td>
-              <p class="font-semibold text-sm">{{ event.country.name }}</p>
-            </td>
-            <td class="py-4 p-2 font-semibold">{{ event.city.name }}</td>
-            <td class="py-4 p-2 font-semibold">{{ event.startDate }}</td>
-            <td class="py-4 p-2 font-semibold">{{ event.endDate }}</td>
-            <td class="py-4 p-2 font-semibold">{{ event.pax }}</td>
-            <td class="py-4 p-2 font-semibold">{{ event.status }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-   
- 
+  <div class="px-5 bg-gradient-to-r from-slate-50 via-slate-100 to-slate-50 py-5 w-3/4">
+    <div class="container mx-auto my-8">
+      <!-- Umrah Packages Header -->
+      <div class="text-center pb-6 border-b-4 border-gray-300 mb-12">
+        <p class="text-5xl font-bold text-[#286d71] tracking-tight">Approve Umrah Packages</p>
+        <p class="text-xl text-gray-600 mt-3">Update Package Status</p>
+      </div>
 
+      <!-- Packages Table -->
+      <div class="overflow-x-auto bg-slate-100 shadow">
+        <table class="table-auto w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-[#286d71] text-white">
+              <th class="border px-3 py-3">Title</th>
+              <th class="border px-3 py-3">Package ID</th>
+              <th class="border px-3 py-3">Country</th>
+              <th class="border px-3 py-3">City</th>
+              <th class="border px-3 py-3">Agent Name</th>
+              <th class="border px-3 py-3">Imam Name</th>
+              <th class="border px-3 py-3">Support Manager Name</th>
+
+              <th class="border px-3 py-3">Start-End Date</th>
+              <!-- <th class="border px-6 py-3">End Date</th> -->
+              <th class="border px-3 py-3">Status</th>
+              <th class="border px-3 py-3">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(pkg, index) in packages" :key="index" class="hover:bg-gray-50 shadow">
+              <td class=" px-4 py-2">{{ pkg.title }}</td>
+              <td class=" px-4 py-2">{{ pkg.pkgId }}</td>
+              <td class=" px-4 py-2">{{ pkg.country }}</td>
+              <td class=" px-4 py-2">{{ pkg.city }}</td>
+              <td class=" px-4 py-2">{{ pkg.agent }}</td>
+              <td class=" px-4 py-2">{{ pkg.imam }}</td>
+              <td class=" px-4 py-2">{{ pkg.support_manager }}</td>
+              <td class=" px-4 py-2">{{ pkg.startDate }} - {{ pkg.startDate }}</td>
+              <!-- <td class=" px-4 py-2"></td> -->
+              <td class=" px-4 py-2"> <select v-model="pkg.status" class="select select-bordered w-full">
+                <option disabled selected>Select an option</option>
+                <option v-for="status in statuses" :value="status.name">{{ status.name }}</option>
+              </select></td>
+              <td class=" px-4 py-2">
+                <div class="flex space-x-2">
+                  <router-link :to="{ path: 'package_details/' }">
+                    <button class="bg-[#286d71] hover:bg-[#1f565b] text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
+                      Update Status
+                    </button>
+                  </router-link>
+                
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </template>
-<script setup>
-import { useSocialStore } from '@/stores/SocialDashboard.ts'
 
-const store = useSocialStore()
-const packages = store.createNewPackage
+<script setup>
+import { packages } from '@/stores/itinenary.ts'
+
+const deletePackage = (packageId) => {
+  alert(`Package ${packageId} deleted!`)
+}
+ const statuses = [
+  { id: 1, name: 'Not In Plan' },
+  { id: 2, name: 'In Plan' },
+  { id: 3, name: 'In Preparation' },
+  { id: 4, name: 'In Review' },
+  { id: 5, name: 'In Approval Process' },
+  { id: 6, name: 'Approved' },
+  { id: 7, name: 'Published' },
+  { id: 8, name: 'Discontinued' }
+]
 </script>
+
+<style scoped>
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>

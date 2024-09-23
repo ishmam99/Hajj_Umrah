@@ -1,14 +1,15 @@
 <template>
   <div class="px-5 bg-slate-50 py-5 w-3/4">
-    <p class="text-2xl font-bold py-3 border-b">Package Details</p>
+    <p class="text-2xl font-bold py-3 border-b">Umrah Package Details</p>
     <div class="bg-slate-50 py-10">
+      <!-- {{ packageDetails }} -->
       <!-- Cover Image Section -->
       <div class="relative h-80 w-full bg-gray-300 rounded-b-lg shadow-xl overflow-hidden">
-        <img src="@/assets/image/hajj/umrah-1.jpg" alt="Package Cover" class="h-full w-full object-cover" />
+        <img src="https://via.placeholder.com/150" alt="Package Cover" class="h-full w-full object-cover" />
         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent py-6 px-8">
-          <p class="text-white text-5xl font-extrabold tracking-wide drop-shadow-md">{{ packageDetails.title }}</p>
-          <p class="text-white text-2xl font-semibold mt-1">{{ packageDetails.code }}</p>
-          <p class="text-white text-lg mt-2">{{ packageDetails.startDate }} - {{ packageDetails.endDate }}</p>
+          <p class="text-white text-5xl font-extrabold tracking-wide drop-shadow-md">{{ packageDetails?.title }}</p>
+          <p class="text-white text-2xl font-semibold mt-1">{{ packageDetails?.code }}</p>
+          <p class="text-white text-lg mt-2">{{ packageDetails?.startDate }} - {{ packageDetails?.endDate }}</p>
         </div>
       </div>
   
@@ -58,15 +59,21 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref ,watch,onMounted} from 'vue';
+import { useRoute} from 'vue-router'
 import { itinerary } from '@/stores/itinenary.ts'
+import { packages } from '@/stores/itinenary.ts'
+const route = useRoute()
+const packageID = route.params.id
 
-const packageDetails = {
-  title: "Umrah Package Basic",
-  code: "PKG12345",
-  startDate: "1st November 2024",
-  endDate: "10th November 2024"
-};
-
+const packageDetails = ref();
+watch(()=>route,() => {
+  packageDetails.value = packages.find(data =>data.id == packageID.value)
+  
+})
 const selectedDay = ref(0); // Default to Day 1
+onMounted(() => {
+  packageDetails.value = packages.find(data => data.id == packageID)
+    
+})
 </script>

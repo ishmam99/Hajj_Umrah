@@ -3,8 +3,8 @@
     <div class="container mx-auto my-8">
       <!-- Umrah Packages Header -->
       <div class="text-center pb-6 border-b-4 border-gray-300 mb-12">
-        <p class="text-5xl font-bold text-[#286d71] tracking-tight">Completed Umrah Packages</p>
-        <p class="text-xl text-gray-600 mt-3">All Completed Umrah Packages List</p>
+        <p class="text-5xl font-bold text-[#286d71] tracking-tight">All Umrah Packages</p>
+        <p class="text-xl text-gray-600 mt-3">All Umrah  Package List</p>
       </div>
 
       <!-- Packages Table -->
@@ -37,13 +37,13 @@
               <td class=" px-4 py-2">{{ pkg.support_manager }}</td>
               <td class=" px-4 py-2">{{ pkg.startDate }} - {{ pkg.startDate }}</td>
               <!-- <td class=" px-4 py-2"></td> -->
-             <td class=" px-4 py-2"> 
+              <td class=" px-4 py-2"> 
                 {{ pkg.status }}</td>
               <td class=" px-4 py-2">
                 <div class="flex space-x-2">
                   <router-link :to="{ path: 'package_details/' }">
                     <button class="bg-[#286d71] hover:bg-[#1f565b] text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
-                      View Details
+                      Update Status
                     </button>
                   </router-link>
                 
