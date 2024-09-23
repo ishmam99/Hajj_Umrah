@@ -100,6 +100,23 @@
             </div>
           </div>
 
+          <!-- <div class="px-4 pb-4 pt-0 mt-2" v-if="selectedCity">
+            <router-link
+              :to="{
+                name: 'umrah-details',
+                params: { id: packageData.id, country: selectedCountry.name, city: selectedCity }
+              }"
+              class="text-lg !text-white"
+            >
+              <button
+                class="rounded-md bg-[#286d71] py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                type="button"
+              >
+                Click To See Details
+              </button>
+            </router-link>
+          </div> -->
+
           <!-- View Packages Button -->
           <div class="text-center py-2 bg-[#286d71] rounded-b-lg">
             <router-link to="/Umrah_usa_packageList" class="text-white text-lg hover:underline">View Packages</router-link>
