@@ -81,8 +81,8 @@
             <p class="text-slate-600 leading-normal">{{ packageData.description }}</p>
 
             <!-- Country Selector -->
-            <div class="mt-6">
-              <label for="countries" class="block mb-2 text-lg font-medium text-[#286d71]">Select Country</label>
+            <div class="mt-6 flex justify-between">
+              <label for="countries" class="block mb-2 text-sm font-medium text-[#286d71]">Select Country</label>
               <select
                 id="countries"
                 v-model="selectedCountry"

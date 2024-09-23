@@ -7,8 +7,8 @@
                     delay: 5000,
                     disableOnInteraction: false
                 }" :pagination="{
-            clickable: true
-        }" :navigation="false" :modules="modules" class="mySwiper">
+                    clickable: true
+                }" :navigation="false" :modules="modules" class="mySwiper">
                     <swiper-slide>
                         <img src="/src/assets/image/hero/people.jpeg" alt="" class="" />
                         <div class="head">
@@ -37,82 +37,81 @@
             </div>
         </div>
         <div class="max-w-screen-2xl mx-auto mt-8 mb-8">
-  <!-- Header Section -->
-  <div class="flex flex-col items-center justify-center pb-4 mt-6">
-    <p class="text-5xl font-bold text-[#286d71]">{{ selectedCountry }} Package List</p>
-  </div>
+            <!-- Header Section -->
+            <div class="flex flex-col items-center justify-center pb-4 mt-6">
+                <p class="text-5xl font-bold text-[#286d71]">{{ selectedCountry }} Package List</p>
+            </div>
 
-  <!-- Package List Section -->
-  <section class="w-full p-8 bg-gray-50 rounded-lg shadow-lg">
-    <!-- Title -->
-    <p class="text-3xl font-bold pb-8 font-mono">Available Packages For <span class="text-blue-700">{{ selectedCountry }}</span></p>
+            <!-- Package List Section -->
+            <section class="w-full p-8 bg-gray-50 rounded-lg shadow-lg">
+                <!-- Title -->
+                <p class="text-3xl font-bold pb-8 font-mono">Available Packages For <span class="text-blue-700">{{
+                        selectedCountry }}</span></p>
 
-    <!-- Package Table -->
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-      <!-- Header Row -->
-      <div class="grid grid-cols-1 md:grid-cols-6 bg-blue-700 text-white p-4 text-left text-lg font-semibold">
-        <div class="p-2">Name</div>
-        <div class="p-2">Start Date</div>
-        <div class="p-2">End Date</div>
-        <div class="p-2">City</div>
-        <div class="p-2">Country</div>
-        <div class="p-2 ps-6">Details</div>
-      </div>
+                <!-- Package Table -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <!-- Header Row -->
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-6 bg-blue-700 text-white p-4 text-left text-lg font-semibold">
+                        <div class="p-2">Name</div>
+                        <div class="p-2">Start Date</div>
+                        <div class="p-2">End Date</div>
+                        <div class="p-2">City</div>
+                        <div class="p-2">Country</div>
+                        <div class="p-2 ps-6">Details</div>
+                    </div>
 
-      <!-- Package Rows -->
-      <div class="divide-y divide-gray-300">
-        <!-- Row 1 -->
-        <div class="grid grid-cols-1 md:grid-cols-6 bg-gray-100 hover:bg-blue-100 transition-colors">
-          <div class="p-4 font-semibold text-blue-700">Premium Hajj Package</div>
-          <div class="p-4">March 1, 2025</div>
-          <div class="p-4">March 20, 2025</div>
-          <div class="p-4">Mecca</div>
-          <div class="p-4">Saudi Arabia</div>
-          <div class="p-4">
-            <router-link 
-              to="umrah-details/2" 
-              class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
-              View Details
-            </router-link>
-          </div>
+                    <!-- Package Rows -->
+                    <div class="divide-y divide-gray-300">
+                        <!-- Row 1 -->
+                        <div class="grid grid-cols-1 md:grid-cols-6 bg-gray-100 hover:bg-blue-100 transition-colors">
+                            <div class="p-4 font-semibold text-blue-700">Premium Hajj Package</div>
+                            <div class="p-4">March 1, 2025</div>
+                            <div class="p-4">March 20, 2025</div>
+                            <div class="p-4">Mecca</div>
+                            <div class="p-4">Saudi Arabia</div>
+                            <div class="p-4">
+                                <router-link to="umrah-details/2"
+                                    class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
+                                    View Details
+                                </router-link>
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="grid grid-cols-1 md:grid-cols-6 bg-white hover:bg-blue-100 transition-colors">
+                            <div class="p-4 font-semibold text-blue-700">Economy Umrah Package</div>
+                            <div class="p-4">April 5, 2025</div>
+                            <div class="p-4">April 15, 2025</div>
+                            <div class="p-4">Medina</div>
+                            <div class="p-4">Saudi Arabia</div>
+                            <div class="p-4">
+                                <router-link to="umrah-details/2"
+                                    class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
+                                    View Details
+                                </router-link>
+                            </div>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="grid grid-cols-1 md:grid-cols-6 bg-gray-100 hover:bg-blue-100 transition-colors">
+                            <div class="p-4 font-semibold text-blue-700">VIP Hajj Package</div>
+                            <div class="p-4">June 1, 2025</div>
+                            <div class="p-4">June 15, 2025</div>
+                            <div class="p-4">Jeddah</div>
+                            <div class="p-4">Saudi Arabia</div>
+                            <div class="p-4">
+                                <router-link to="umrah-details/2"
+                                    class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
+                                    View Details
+                                </router-link>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-
-        <!-- Row 2 -->
-        <div class="grid grid-cols-1 md:grid-cols-6 bg-white hover:bg-blue-100 transition-colors">
-          <div class="p-4 font-semibold text-blue-700">Economy Umrah Package</div>
-          <div class="p-4">April 5, 2025</div>
-          <div class="p-4">April 15, 2025</div>
-          <div class="p-4">Medina</div>
-          <div class="p-4">Saudi Arabia</div>
-          <div class="p-4">
-            <router-link 
-              to="umrah-details/2" 
-              class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
-              View Details
-            </router-link>
-          </div>
-        </div>
-
-        <!-- Row 3 -->
-        <div class="grid grid-cols-1 md:grid-cols-6 bg-gray-100 hover:bg-blue-100 transition-colors">
-          <div class="p-4 font-semibold text-blue-700">VIP Hajj Package</div>
-          <div class="p-4">June 1, 2025</div>
-          <div class="p-4">June 15, 2025</div>
-          <div class="p-4">Jeddah</div>
-          <div class="p-4">Saudi Arabia</div>
-          <div class="p-4">
-            <router-link 
-              to="umrah-details/2" 
-              class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
-              View Details
-            </router-link>
-       
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
 
     </DefaultLayout>
 </template>
@@ -130,7 +129,7 @@ import { Pagination, Navigation, Autoplay } from 'swiper/modules'
 import { useSocialStore } from '@/stores/SocialDashboard.ts'
 import { useRoute } from 'vue-router'
 const route = useRoute()
-const selectedCountry =  route.query.country || ' ' // Default to 'No Country Selected' if no country is passed
+const selectedCountry = route.query.country || ' ' // Default to 'No Country Selected' if no country is passed
 const modules = [Pagination, Navigation, Autoplay]
 </script>
 <style scoped>
