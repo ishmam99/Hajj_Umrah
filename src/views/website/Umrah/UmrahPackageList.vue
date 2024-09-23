@@ -38,7 +38,7 @@
         </div>
         <div class="container mx-auto mt-8 mb-8">
             <div class="flex flex-col items-center justify-center  pb-4  mt-6">
-                <P class="text-5xl font-bold text-[#286d71]">USA Package List</P>
+                <P class="text-5xl font-bold text-[#286d71]">{{ selectedCountry }} Package List</P>
                 <p class="text-3xl mx-20 mt-3"></p>
             </div>
             
@@ -114,11 +114,6 @@
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { packages } from '@/stores/itinenary.ts'
-// Import Swiper styles
-import img2 from '@/assets/image/hajj/hajj-1.jpg'
-import img3 from '@/assets/image/hajj/hajj-5.jpg'
-import img1 from '@/assets/image/hajj/umrah-1.jpg'
 import 'swiper/css'
 import { ref } from 'vue'
 import 'swiper/css/pagination'
@@ -127,131 +122,9 @@ import 'swiper/css/navigation'
 // import required modules
 import { Pagination, Navigation, Autoplay } from 'swiper/modules'
 import { useSocialStore } from '@/stores/SocialDashboard.ts'
-const selectedCountry = ref()
-const selectedCity = ref()
-const packagesList = ref([
-
-    {
-        id: 1,
-        name: "North America",
-        packageTitle: 'Umrah Package North America',
-        startDate: '1st Nov, 2024',
-        endDate: '10th Nov, 2024',
-        description:
-            'Our meticulously designed package guarantees an unforgettable Umrah experience, with knowledgeable professionals guiding you every step of the way.',
-        img: img1,
-        status: 'In Plan',
-        countries: [
-            {
-                id: 1,
-                name: 'USA',
-                cities: ['New York', 'Los Angeles', 'Chicago', 'Houston', 'San Francisco', 'Boston', 'Seattle', 'Miami']
-            },
-            {
-                id: 2,
-                name: 'Canada',
-                cities: ['Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Ottawa', 'Edmonton', 'Winnipeg', 'Quebec City']
-            },
-            {
-                id: 3,
-                name: 'Mexico',
-                cities: ['Mexico City', 'Guadalajara', 'Monterrey', 'Puebla', 'Toluca', 'Tijuana', 'Leon', 'Juarez']
-            }
-        ]
-    }, {
-        id: 2,
-        name: "South America",
-        packageTitle: 'Umrah Package South America',
-        startDate: '1st Nov, 2024',
-        endDate: '10th Nov, 2024',
-        description:
-            'Our meticulously designed package guarantees an unforgettable Umrah experience, with knowledgeable professionals guiding you every step of the way.',
-        img: img2,
-        status: 'In Plan',
-        countries: [
-            {
-                id: 1,
-                name: 'Brazil',
-                cities: ['Rio de Janeiro', 'São Paulo', 'Brasília', 'Salvador', 'Belo Horizonte', 'Porto Alegre', 'Recife', 'Curitiba']
-            },
-            {
-                id: 2,
-                name: 'Argentina',
-                cities: ['Buenos Aires', 'Córdoba', 'Mendoza', 'Tucumán', 'Rosario', 'Mar del Plata', 'Salta', 'Santa Fe']
-            },
-            {
-                id: 3,
-                name: 'Chile',
-                cities: ['Santiago', 'Valparaíso', 'Concepción', 'La Serena', 'Antofagasta', 'Puerto Montt', 'Temuco', 'Iquique']
-            }
-        ]
-    }, {
-        id: 3,
-        name: "Europe",
-        packageTitle: 'Umrah Package Europe',
-        startDate: '1st Nov, 2024',
-        endDate: '10th Nov, 2024',
-        description:
-            'Our meticulously designed package guarantees an unforgettable Umrah experience, with knowledgeable professionals guiding you every step of the way.',
-        img: img3,
-        status: 'In Plan',
-        countries: [
-            {
-                id: 1,
-                name: 'United Kingdom',
-                cities: ['London', 'Manchester', 'Birmingham', 'Leeds', 'Glasgow', 'Sheffield', 'Bradford', 'Liverpool']
-            },
-            {
-                id: 2,
-                name: 'Germany',
-                cities: ['Berlin', 'Hamburg', 'Munich', 'Cologne', 'Frankfurt', 'Stuttgart', 'Düsseldorf', 'Leipzig']
-            },
-            {
-                id: 3,
-                name: 'France',
-                cities: ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Nice', 'Nantes', 'Strasbourg', 'Montpellier']
-            }
-        ]
-    }, {
-        id: 4,
-        name: "Asia",
-        packageTitle: 'Umrah Package Asia',
-        startDate: '1st Nov, 2024',
-        endDate: '10th Nov, 2024',
-        description:
-            'Our meticulously designed package guarantees an unforgettable Umrah experience, with knowledgeable professionals guiding you every step of the way.',
-        img: img1,
-        status: 'In Plan',
-        countries: [
-            {
-                id: 1,
-                name: 'Bangladesh',
-                cities: ['Dhaka', 'Chittagong', 'Sylhet', 'Rajshahi', 'Khulna', 'Barisal']
-            },
-            {
-                id: 2,
-                name: 'India',
-                cities: ['New Delhi', 'Mumbai', 'Kolkata', 'Bengaluru', 'Hyderabad', 'Chennai', 'Ahmedabad', 'Pune']
-            },
-            {
-                id: 3,
-                name: 'Pakistan',
-                cities: ['Islamabad', 'Lahore', 'Karachi', 'Faisalabad', 'Rawalpindi', 'Gujranwala', 'Peshawar', 'Multan']
-            },
-            {
-                id: 4,
-                name: 'Indonesia',
-                cities: ['Jakarta', 'Surabaya', 'Bandung', 'Bekasi', 'Depok', 'Tangerang', 'Palembang', 'Semarang']
-            },
-            {
-                id: 5,
-                name: 'Malaysia',
-                cities: ['Kuala Lumpur', 'Seberang Perai', 'Kuching', 'Johor Bahru', 'Petaling Jaya', 'Shah Alam', 'George Town', 'Ipoh']
-            }
-        ]
-    }
-])
-const socialStore = useSocialStore()
+import { useRoute } from 'vue-router'
+const route = useRoute()
+const selectedCountry = route.query.country || ' ' // Default to 'No Country Selected' if no country is passed
 const modules = [Pagination, Navigation, Autoplay]
 </script>
 <style scoped>
