@@ -306,9 +306,9 @@
   
   <script setup>
   import DefaultLayout from '/src/layouts/DefaultLayout.vue'
-  import Card from '/src/components/cardSection.vue'
-  import RegistrationMore from '/src/components/RgistrationMore.vue'
-  import { Separator } from '/components/ui/separator'
+  // import Card from '/src/components/cardSection.vue'
+  // import RegistrationMore from '/src/components/RgistrationMore.vue'
+  // import { Separator } from '/components/ui/separator'
   import {
     Select,
     SelectContent,

@@ -129,8 +129,8 @@
   
   <script setup>
   import DefaultLayout from '/src/layouts/DefaultLayout.vue'
-  import Card from '/src/components/cardSection.vue'
-  import ContactMore from '/src/components/ContactMore.vue'
+  // import Card from '/src/components/cardSection.vue'
+  // import ContactMore from '/src/components/ContactMore.vue'
   import {
   Select,
   SelectContent,
