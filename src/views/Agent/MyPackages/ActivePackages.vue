@@ -11,7 +11,7 @@
                             <th class="p-3">Package Name</th>
                             <th class="p-3">City</th>
                             <th class="p-3">Country</th>
-                            <th class="p-3">Agent</th>
+                            <th class="p-3">Imam</th>
                             <th class="p-3">Support Manager</th>
                             <th class="p-3">Start Date</th>
                             <th class="p-3">End Date</th>

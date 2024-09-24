@@ -11,7 +11,7 @@
                             <th>Package Name</th>
                             <th>City</th>
                             <th>Country</th>
-                            <th>Agent</th>
+                            <th>Imam</th>
                             <th>Support Manager</th>
                             <th>Start Date</th>
                             <th>End Date</th>
