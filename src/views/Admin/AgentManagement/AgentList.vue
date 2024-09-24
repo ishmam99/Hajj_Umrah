@@ -1,6 +1,6 @@
 <template>
-    <section class="w-full p-10">
-        <p class="text-3xl font-bold pb-10 font-mono text-cyan-600">Customer List</p>
+    <section class="w-4/5 p-10">
+        <p class="text-3xl font-bold pb-10 font-mono text-cyan-600">Agent List</p>
         <div class="px-5">
             <div class="overflow-x-auto">
                 <table class="table w-full border-collapse border border-gray-300">
@@ -8,7 +8,7 @@
                     <thead>
                         <tr class="bg-teal-700 text-white items-center text-xl">
                             <th>No.</th>
-                            <th>Customer Name</th>
+                            <th>Agent Name</th>
                             <th>City</th>
                             <th>Country</th>
                             <th>Email</th>
