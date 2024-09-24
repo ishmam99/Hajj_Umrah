@@ -612,7 +612,7 @@
                 </MenubarItem>
                 <MenubarItem>
                   <router-link
-                    to="/volunteerLogin"
+                    to="/customer_management_login"
                     class="w-full hover:pl-5 duration-300 font-semibold"
                     >Customer Management System</router-link
                   >
