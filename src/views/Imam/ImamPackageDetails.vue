@@ -34,7 +34,7 @@
                     }"
                     class="rounded-s py-4 w-full flex justify-center items-center "
                   >
-                    To-Do List
+                    My To-Do List
                   </button>
                 </div>
             
@@ -91,7 +91,7 @@
                 <!-- To-Do List Section -->
                 <div v-if="currentTab === 'todo'" class="bg-green-100 py-10 px-6 max-w-screen-2xl  mx-auto shadow-2xl rounded-2xl">
                   <div class="bg-white p-6 rounded-lg">
-                    <p class="text-4xl font-extrabold text-blue-600 pb-4 border-b-2 border-gray-200 tracking-tight">To-Do List</p>
+                    <p class="text-4xl font-extrabold text-blue-600 pb-4 border-b-2 border-gray-200 tracking-tight">My To-Do List</p>
             
                     <div class="">
                       <!-- Add New To-Do Item -->
