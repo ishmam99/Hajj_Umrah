@@ -521,6 +521,11 @@ const router = createRouter({
           name: 'imam_Packages_Request_Payments',
           component: () => import('@/views/Imam/MyPayments/RequestPayment.vue')
         },
+        {
+          path: '/imam_package_details',
+          name: 'imam_package_details',
+          component: () => import('@/views/Imam/ImamPackageDetails.vue')
+        },
       ]
     },
     //Imam Managemnte Login
