@@ -625,7 +625,7 @@ export const countries = [
     { id: 1, name: 'Not In Plan' },
     { id: 2, name: 'In Plan' },
     { id: 3, name: 'In Preparation' },
-    { id: 4, name: 'In Review' },
+    { id: 4, name: 'Fully Booked' },
     { id: 5, name: 'In Approval Process' },
     { id: 6, name: 'Approved' },
     { id: 7, name: 'Published' },
