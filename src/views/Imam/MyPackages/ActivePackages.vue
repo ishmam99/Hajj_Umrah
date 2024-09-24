@@ -58,7 +58,10 @@
                                 <progress class="progress progress-info w-56" value="70" max="100"></progress>
                             </td>
                             <td>
-                                <button class="btn btn-primary btn-xs">Details</button>
+                                <button class="btn btn-primary btn-xs text-white">
+
+                                    <router-link :to="'imam_package_details/'+pkg.id">Details</router-link>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
