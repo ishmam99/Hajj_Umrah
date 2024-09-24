@@ -68,7 +68,7 @@ const customers = ref([
     },
     {
         id: 2,
-        name: 'Salah Uddin',
+        name: 'Fatima Zahir',
         company: 'Innovate Inc.',
         city: 'London',
         country: 'UK',

@@ -57,7 +57,7 @@
   const customerPackages = ref([
     {
       id: 1,
-      customerName: 'Ahmed Khan',
+      customerName: 'Jayed Ahmed',
       packageName: 'Hajj Economy Package',
       city: 'Mecca',
       country: 'Saudi Arabia',
@@ -81,7 +81,7 @@
     },
     {
       id: 3,
-      customerName: 'Ibrahim Al-Masri',
+      customerName: 'Mohammad Ali',
       packageName: 'VIP Hajj Package',
       city: 'Mecca',
       country: 'Saudi Arabia',
