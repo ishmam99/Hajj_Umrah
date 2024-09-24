@@ -9,7 +9,7 @@
         <section>
           <!-- Country and City -->
           <div class="flex gap-5 mb-5">
-            <div class="w-1/2">
+            <div class="w-1/3">
               <div class="label">
                 <span class="label-text">Country</span>
               </div>
@@ -18,7 +18,7 @@
                 <option v-for="country in countries" :value="country">{{ country.name }}</option>
               </select>
             </div>
-            <div class="w-1/2">
+            <div class="w-1/3">
               <div class="label">
                 <span class="label-text">City</span>
               </div>
@@ -26,6 +26,17 @@
                 <option disabled selected>Select a City</option>
                 <option v-for="city in formData.country.cities" :value="city">
                   {{ city.name }}
+                </option>
+              </select>
+            </div>
+            <div class="w-1/3">
+              <div class="label">
+                <span class="label-text">Airport</span>
+              </div>
+              <select v-model="formData.airport" class="select select-bordered w-full">
+                <option disabled selected>Select an Airport</option>
+                <option v-for="airport in airports" :value="airport">
+                  {{ airport.name }} ({{ airport.short_name }})
                 </option>
               </select>
             </div>
@@ -891,7 +902,12 @@ const totalFare = computed(() => {
   // }, 0)
   return 1200
 })
-
+const airports = [ { id: 1, name: 'Houston', short_name: 'IAH' },
+      { id: 2, name: 'Texas', short_name: 'DFW' },
+      { id: 4, name: 'New York', short_name: 'JFK' },
+      { id: 10, name: 'Washington', short_name: 'IAD' },
+      { id: 3, name: 'Medina', short_name: 'MED' },
+      { id: 6, name: 'Jeddah', short_name: 'JED' }]
 // const transports = ref([])
 const newTransport = ref({ from: '', to: '', type: '', cost: null })
 

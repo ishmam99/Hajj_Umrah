@@ -96,7 +96,7 @@
 
 <script setup>
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
-import ActivityMore from '/src/components/ActivityMore.vue'
+// import ActivityMore from '/src/components/ActivityMore.vue'
 import { ref, onMounted } from 'vue'
 import { useStore } from '/src/stores/store.ts'
 import { useRoute, useRouter } from 'vue-router'

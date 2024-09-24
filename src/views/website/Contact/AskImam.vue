@@ -157,8 +157,8 @@
 
 <script setup>
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
-import Card from '/src/components/cardSection.vue'
-import ContactMore from '/src/components/ContactMore.vue'
+// import Card from '/src/components/cardSection.vue'
+// import ContactMore from '/components/ContactMore.vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useContactStore } from '/src/stores/contactStore'
 import { ref, onMounted } from 'vue'

@@ -440,8 +440,8 @@
 
 <script setup>
 import DefaultLayout from '/src/layouts/DefaultLayout.vue'
-import Card from '/src/components/cardSection.vue'
-import RegistrationMore from '/src/components/RgistrationMore.vue'
+// import Card from '/src/components/cardSection.vue'
+// import RegistrationMore from '/src/components/RgistrationMore.vue'
 import { ref } from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
 
