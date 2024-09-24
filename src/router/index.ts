@@ -562,6 +562,16 @@ const router = createRouter({
           name: 'Customer_Management_Profile',
           component: () => import('@/views/CustomerManagement/Profile/Profile.vue')
         },
+        {
+          path: '/Customer_management_customer_list',
+          name: 'Customer_Management_Customer_List',
+          component: () => import('@/views/CustomerManagement/CustomerList.vue')
+        },
+        {
+          path: '/Customer_management_customer_package_list',
+          name: 'Customer_Management_Customer_Package_List',
+          component: () => import('@/views/CustomerManagement/CustomerPackageList.vue')
+        },
       ]
     },
 
