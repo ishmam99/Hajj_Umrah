@@ -43,7 +43,7 @@
 
       <div class="accordion bg-white rounded-md">
         <router-link
-        to="/volunteer_job_list"
+        to="/Customer_management_customer_list"
         class="flex items-center gap-2 bg-white p-2 rounded-md"
         >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -56,7 +56,7 @@
 
       <div class="accordion bg-white rounded-md">
         <router-link
-        to="/Active_volunteer_job_list"
+        to="/Customer_management_customer_package_list"
         class="flex items-center gap-2 bg-white p-2 rounded-md"
         >
         <svg
