@@ -522,7 +522,7 @@ const router = createRouter({
           component: () => import('@/views/Imam/MyPayments/RequestPayment.vue')
         },
         {
-          path: '/imam_package_details',
+          path: '/imam_package_details/:id',
           name: 'imam_package_details',
           component: () => import('@/views/Imam/ImamPackageDetails.vue')
         },

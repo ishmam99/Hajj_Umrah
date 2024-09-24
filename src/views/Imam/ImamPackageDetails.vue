@@ -178,8 +178,8 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-import { itinerary } from '../../stores/itinenary.ts';
-import { packages } from '../../stores/itinenary.ts';
+import { itinerary } from '@/stores/itinenary.ts';
+import { packages } from '@/stores/itinenary.ts';
 import moment from 'moment';
 
 const route = useRoute();
