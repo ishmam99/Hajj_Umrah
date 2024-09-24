@@ -22,16 +22,16 @@
                 </thead>
                 <tbody>
                   <tr v-for="(pkg, index) in packages" :key="index" class="hover:bg-gray-50 shadow">
-                    <td class=" px-4 py-2">{{ pkg.title }}</td>
-                    <td class=" px-4 py-2">{{ pkg.pkgId }}</td>
-                    <td class=" px-4 py-2">{{ pkg.country }}</td>
-                    <td class=" px-4 py-2">{{ pkg.city }}</td>
-                    <td class=" px-4 py-2">{{ pkg.agent }}</td>
-                    <td class=" px-4 py-2">{{ pkg.imam }}</td>
-                    <td class=" px-4 py-2">{{ pkg.support_manager }}</td>
-                    <td class=" px-4 py-2">{{ pkg.startDate }} - {{ pkg.startDate }}</td>
+                    <td class="border-r border-slate-700 px-4 py-2">{{ pkg.title }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.pkgId }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.country }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.city }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.agent }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.imam }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.support_manager }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.startDate }} - {{ pkg.startDate }}</td>
                     <!-- <td class=" px-4 py-2"></td> -->
-                    <td class=" px-4 py-2">{{ pkg.status }} </td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.customerStatus }} </td>
                     <td class=" px-4 py-2">
                       <div class="flex space-x-2">
                         <router-link :to="'customer_package_details/'+pkg.id">

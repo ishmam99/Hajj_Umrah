@@ -747,7 +747,8 @@ export const packages = [
     description:
       'Our meticulously designed package guarantees an unforgettable Umrah experience, with knowledgeable professionals guiding you every step of the way.',
     img: img1,
-    status: 'In Plan'
+    status: 'In Plan',
+    customerStatus: 'Wishlisted',
   },
   {
     id: '2',
@@ -764,7 +765,8 @@ export const packages = [
     description:
       'Experience the ultimate comfort and convenience with our Deluxe Umrah Package, featuring exclusive services and amenities.',
     img: img2,
-    status: 'In Preparation'
+    status: 'In Preparation',
+    customerStatus: 'Purchased',
   },
   {
     id: '3',
@@ -781,6 +783,25 @@ export const packages = [
     description:
       'Experience the ultimate comfort and convenience with our Premium Umrah Package, featuring exclusive services and amenities, with knowledgeable professionals guiding you every step of the way.',
     img: img3,
-    status: 'In Review'
+    status: 'In Review',
+    customerStatus: 'Ongoing',
+  },
+  {
+    id: '4',
+    pkgId: 'PKG678100',
+    country: 'USA',
+    airport: 'Philadelphia International Airport',
+    city: 'Philadelphia',
+    imam: 'Shayek Imran',
+    agent: 'MD Karim',
+    support_manager: 'Abdur Rahman',
+    title: 'Umrah Package December 2025',
+    startDate: '15th Jan, 2025',
+    endDate: '25th Jan, 2025',
+    description:
+      'Experience the ultimate comfort and convenience with our Premium Umrah Package, featuring exclusive services and amenities, with knowledgeable professionals guiding you every step of the way.',
+    img: img3,
+    status: 'In Review',
+    customerStatus: 'Completed',
   }
 ]
