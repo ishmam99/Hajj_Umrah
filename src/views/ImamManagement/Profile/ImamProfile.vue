@@ -1,5 +1,5 @@
 <template>
-  <div class="px-[5%] bg-white py-5 w-3/4 flex flex-col items-center">
+  <div class="max-w-screen-xl mx-auto bg-white py-5 w-full flex flex-col items-center">
     <img
       src="/src/assets/image/home/download.jpeg"
       alt=""

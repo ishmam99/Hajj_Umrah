@@ -538,11 +538,28 @@ const router = createRouter({
       path: '/Imam_management_Dashboard',
       name: 'Imam_Management_Dashboard',
       component: () => import('@/views/ImamManagement/ImamDashboard.vue'),
+      // children: [
+      //   {
+      //     path: '/Imam_management_Dashboard/Profile',
+      //     name: 'Imam_Management_Dashboard_Profile',
+      //     component: () => import('@/views/ImamManagement/Profile/ImamProfile.vue')
+      //   },
+      // ]
       children: [
         {
           path: '/Imam_management_Dashboard/Profile',
           name: 'Imam_Management_Dashboard_Profile',
           component: () => import('@/views/ImamManagement/Profile/ImamProfile.vue')
+        },
+        {
+          path: '/imam_management_imam_list',
+          name: 'Imam_Management_imam_List',
+          component: () => import('@/views/ImamManagement/ImamList.vue')
+        },
+        {
+          path: '/imam_management_imam_package_list',
+          name: 'imam_Management_imam_Package_List',
+          component: () => import('@/views/ImamManagement/ImamPackageList.vue')
         },
       ]
     },
@@ -590,6 +607,16 @@ const router = createRouter({
           path: '/agent_management_Profile',
           name: 'Agent_Management_Profile',
           component: () => import('@/views/Admin/AgentManagement/Profile/AgentProfile.vue')
+        },
+        {
+          path: '/agent_management_agent_list',
+          name: 'agent_Management_agent_List',
+          component: () => import('@/views/Admin/AgentManagement/AgentList.vue')
+        },
+        {
+          path: '/agent_management_package_list',
+          name: 'Agent_Management_Package_List',
+          component: () => import('@/views/Admin/AgentManagement/AgentPackageList.vue')
         },
       ]
     },
