@@ -1,7 +1,7 @@
 <template>
-    <section class="w-4/5 p-10">
-        <p class="text-3xl font-bold pb-10 font-mono text-cyan-600">Upcoming Packages</p>
-        <div class="px-4">
+    <section class="w-full">
+      <p class="text-3xl font-bold p-5 pb-10 font-mono text-cyan-600">Upcoming Packages</p>
+      <div class="px-5">
             <div class="overflow-x-visible">
                 <table class="table w-full border-collapse border border-gray-300">
                     <!-- head -->

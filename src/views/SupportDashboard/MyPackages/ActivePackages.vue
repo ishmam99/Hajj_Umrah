@@ -1,7 +1,7 @@
 <template>
-    <section class="w-full p-10">
-        <p class="text-3xl font-bold pb-10 font-mono text-cyan-600">Active Packages</p>
-        <div class="px-5">
+    <section class="w-full">
+      <p class="text-3xl font-bold p-5 pb-10 font-mono text-cyan-600">Active Packages</p>
+      <div class="px-5">
             <div class="overflow-x-auto">
                 <table class="table w-full border-collapse border border-gray-300">
                     <!-- head -->
@@ -29,12 +29,12 @@
                                 <div class="flex items-center gap-3 justify-start">
                                     <div class="avatar">
                                         <div class="mask mask-squircle h-12 w-12">
-                                            <img :src="activeImg1" alt="Premium Hajj Package 2025" />
+                                            <img :src="activeImg4" alt="Premium Hajj Package 2025" />
                                         </div>
                                     </div>
                                     <div>
                                         <div class="font-bold">{{ pkg.title }}</div>
-                                        <div class="text-sm opacity-50">Exclusive Facilities</div>
+                                        <!-- <div class="text-sm opacity-50">Exclusive Facilities</div> -->
                                     </div>
                                 </div>
                             </td>
@@ -72,9 +72,6 @@
 </template>
 
 <script setup>
-import activeImg1 from "@/assets/image/hajj/Platinum-Maktab-A-1.jpg"
-import activeImg2 from "@/assets/image/hajj/hajj-3.webp"
-import activeImg3 from "@/assets/image/hajj/hajj-4.webp"
 import activeImg4 from "@/assets/image/hajj/hajj-5.jpg"
 
 import { packages } from '@/stores/itinenary.ts'
