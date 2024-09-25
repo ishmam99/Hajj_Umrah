@@ -35,7 +35,7 @@
               </div>
               <select v-model="formData.airport" class="select select-bordered w-full">
                 <option disabled selected>Select an Airport</option>
-                <option v-for="airport in airports" :value="airport">
+                <option v-for="airport in formData.city.airports" :value="airport">
                   {{ airport.name }} ({{ airport.short_name }})
                 </option>
               </select>
@@ -46,22 +46,18 @@
               <div class="label">
                 <span class="label-text">Agent Name</span>
               </div>
-              <select v-model="formData.agent" class="select select-bordered w-full">
+              <select v-model="formData.agent_id" class="select select-bordered w-full">
                 <option disabled selected>Select  Agent Name</option>
-                <option >MD Khalid</option>
-                <option >Abrar Khan</option>
-                <option >Shahid Alam</option>
+               <option :value="agent.id" v-for="agent in agents">{{ agent.user.name }}</option>
               </select>
             </div>
             <div class="w-1/3">
               <div class="label">
                 <span class="label-text">Imam Name</span>
               </div>
-              <select v-model="formData.imam" class="select select-bordered w-full">
+              <select v-model="formData.imam_id" class="select select-bordered w-full">
                 <option disabled selected>Select  Imam Name</option>
-                <option >Shayekh Mostafa</option>
-                <option >Habib Ahsan</option>
-                <option >Mirza Kaif</option>
+                 <option :value="imam.id" v-for="imam in imams">{{ imam.user.name }}</option>
                 
               </select>
             </div>
@@ -69,11 +65,10 @@
               <div class="label">
                 <span class="label-text">Support Manager Name</span>
               </div>
-              <select v-model="formData.support_manager" class="select select-bordered w-full">
+              <select v-model="formData.support_manager_id" class="select select-bordered w-full">
                 <option disabled selected>Select  Support Manager Name</option>
-                <option >MD Sayed</option>
-                <option >Sohan Islam</option>
-                <option >Wasim Akram</option>
+                <option :value="support.id" v-for="support in support_managers">{{ support.user.name }}</option>
+               
               </select>
             </div>
           </div>
@@ -95,15 +90,16 @@
               <div class="label">
                 <span class="label-text">Package Year</span>
               </div>
-              <input
+              <select
                 v-model="formData.packageYear"
                 @change="
-                  formData.packageId = `${formData.packageYear}-${formData.country.id}-${formData.city.id}-${formData.packageCode}`
+                  formData.packageId = `${formData.packageYear}-${formData.country?.short_name}-${formData.city?.short_name}-${formData.packageCode}`
                 "
-                type="text"
-                placeholder="Type here"
-                class="input input-bordered w-full"
-              />
+                class="select select-bordered w-full"
+              >
+                <option disabled selected>Select a year</option>
+                <option v-for="year in years" :key="year">{{ year }}</option>
+              </select>
             </div>
           </div>
 
@@ -116,7 +112,7 @@
               <input
                 v-model="formData.packageCode"
                 @change="
-                  formData.packageId = `${formData.packageYear}-${formData.country.id}-${formData.city.id}-${formData.packageCode}`
+                  formData.packageId = `${formData.packageYear}-${formData.country?.short_name}-${formData.city?.short_name}-${formData.packageCode}`
                 "
                 type="text"
                 placeholder="Type here"
@@ -144,7 +140,7 @@
               </div>
               <select v-model="formData.status" class="select select-bordered w-full">
                 <option disabled selected>Select an option</option>
-                <option v-for="status in statuses" :value="status.name">{{ status.name }}</option>
+                <option v-for="status in statuses" :value="status.id">{{ status.name }}</option>
               </select>
             </div>
             <div class="w-1/2">
@@ -870,22 +866,28 @@
 
 <script setup>
 import { useSocialStore } from '@/stores/SocialDashboard.ts'
-import { countries, statuses } from '@/stores/itinenary.ts'
+// import {  statuses } from '@/stores/itinenary.ts'
+
 import moment from 'moment'
-import { computed, ref } from 'vue'
+import { computed, ref ,onMounted} from 'vue'
 const store = useSocialStore()
 const showActivity = ref(false)
 const showFareForm = ref(false)
 const showTransportForm = ref(false)
 const showHotelForm = ref(false)
 const day = ref(0)
+const countries = ref()
 const itinerary = ref({ activities: [], type: null, date: null })
 const fares = ref([])
+const agents = ref([])
+const imams = ref([])
+const support_managers = ref([])
 const itineraries = ref([])
 const newFare = ref({
   departure: { from: '', to: '', airline: '', fare: null },
   return: { from: '', to: '', airline: '', fare: null }
 })
+const createdPackage = ref()
 const showItiniraryForm = ref(false)
 const addFare = () => {
   fares.value.push(airRoute.value)
@@ -895,7 +897,16 @@ const addFare = () => {
   // }
   showFareForm.value = false
 }
-
+const statuses = [
+    { id: 1, name: 'Not In Plan' },
+    { id: 2, name: 'In Plan' },
+    { id: 3, name: 'In Preparation' },
+    { id: 4, name: 'Fully Booked' },
+    { id: 5, name: 'In Approval Process' },
+    { id: 6, name: 'Approved' },
+    { id: 7, name: 'Published' },
+    { id: 8, name: 'Discontinued' }
+  ]
 const totalFare = computed(() => {
   // return fares.value.reduce((sum, fare) => {
   //   return sum + (Number(fare.departure.fare) || 0) + (Number(fare.return.fare) || 0)
@@ -1203,25 +1214,102 @@ const removeStep = (index) => {
 if (!store.createNewPackage) {
   store.createNewPackage = []
 }
+const years = Array.from({length: 41}, (_, i) => 2020 + i)
+const EventFormApply = async() => {
+  // formData.value.itineraries = itineraries.value
+  // store.createNewPackage.push({ ...formData.value })
+  // console.log('Form Data Submitted:', formData.value)
 
-const EventFormApply = () => {
-  formData.value.itineraries = itineraries.value
-  store.createNewPackage.push({ ...formData.value })
-  console.log('Form Data Submitted:', formData.value)
+  // formData.value = {
+  //   country: '',
+  //   city: '',
+  //   packageTitle: '',
+  //   packageCode: '',
+  //   packageYear: '',
+  //   packageId: '',
+  //   status: '',
+  //   price: '',
+  //   startDate: '',
+  //   endDate: '',
+  //   description: '',
+  //   itineraries:[]
+  // }
+  let packageData = {
+    country_id : formData.value.country.id,
+    city_id : formData.value.city.id,
+    airport_id : formData.value.airport.id,
+    package_title : formData.value.packageTitle,
+    package_year : formData.value.packageYear,
+    package_code : formData.value.packageCode,
+    package_id : formData.value.packageId,
+    status_of_package : formData.value.status,
+    price : formData.value.price,
+    start_at : formData.value.startDate,
+    end_at : formData.value.endDate,
+    // image : null,
+    description : formData.value.description,
+    pax : formData.value.pax,
+    agent_id : formData.value.agent_id,
+    imam_id : formData.value.imam_id,
+    support_manager_id : formData.value.support_manager_id,
+  }
+  try {
+    const data = await api().post('package', packageData)
+    console.log(data)
+    createdPackage.value = data.data.data
+  }
+  catch (error)
+  {
+    console.log(error)
+  }
+ 
+}
+//API Call
 
-  formData.value = {
-    country: '',
-    city: '',
-    packageTitle: '',
-    packageCode: '',
-    packageYear: '',
-    packageId: '',
-    status: '',
-    price: '',
-    startDate: '',
-    endDate: '',
-    description: '',
-    itineraries:[]
+const getCountries = async() => {
+  try {
+    const { data }  = await api().get('country')
+    console.log(data)
+    countries.value = data.data
+  } catch (error)
+  {
+    console.log(error)
   }
 }
+const getImams = async() => {
+  try {
+    const { data }  = await api().get('imam')
+    console.log(data)
+    imams.value = data.data
+  } catch (error)
+  {
+    console.log(error)
+  }
+}
+const getAgents = async() => {
+  try {
+    const { data }  = await api().get('agents')
+    console.log(data)
+    agents.value = data.data
+  } catch (error)
+  {
+    console.log(error)
+  }
+}
+const getSupports = async() => {
+  try {
+    const { data }  = await api().get('support-manager')
+    console.log(data)
+    support_managers.value = data.data
+  } catch (error)
+  {
+    console.log(error)
+  }
+}
+onMounted(() => {
+  getCountries()
+  getImams()
+  getSupports()
+  getAgents()
+})
 </script>

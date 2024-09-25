@@ -83,10 +83,10 @@ const volunteerJobList = async () => {
 }
 onMounted(async () => {
   // gatprayerTime()
-  getEvent()
-  getAnnouncement()
-  getServiceList()
-  getDonationType()
-  volunteerJobList()
+  // getEvent()
+  // getAnnouncement()
+  // getServiceList()
+  // getDonationType()
+  // volunteerJobList()
 })
 </script>

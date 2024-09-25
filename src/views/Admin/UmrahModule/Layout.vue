@@ -40,7 +40,7 @@ const getEventList = async () => {
 }
 
 onMounted(async () => {
-    getProjectList()
-    getEventList()
+    // getProjectList()
+    // getEventList()
 })
 </script>
