@@ -236,7 +236,6 @@ const router = createRouter({
       component: () => import('../views/More/RamadanSpecial.vue')
     },
 
-
     {
       path: '/more/registration/memebship_registration',
       name: 'more/registration/memebship_registration',
@@ -420,7 +419,7 @@ const router = createRouter({
         }
       ]
     },
-    // agent login 
+    // agent login
     {
       path: '/agent_login',
       name: 'Agent Login',
@@ -467,7 +466,7 @@ const router = createRouter({
           path: '/agent_packages_request_payments',
           name: 'Agent_Packages_Request_Payments',
           component: () => import('@/views/Agent/MyPayments/RequestPayment.vue')
-        },
+        }
       ]
     },
     //Imam login
@@ -476,7 +475,6 @@ const router = createRouter({
       name: 'Imam Login',
       component: () => import('../views/Auth/LogIn.vue')
     },
-
 
     // Imam Dashboard =================================
     {
@@ -525,7 +523,7 @@ const router = createRouter({
           path: '/imam_package_details/:id',
           name: 'imam_package_details',
           component: () => import('@/views/Imam/ImamPackageDetails.vue')
-        },
+        }
       ]
     },
     //Imam Managemnte Login
@@ -560,7 +558,7 @@ const router = createRouter({
           path: '/imam_management_imam_package_list',
           name: 'imam_Management_imam_Package_List',
           component: () => import('@/views/ImamManagement/ImamPackageList.vue')
-        },
+        }
       ]
     },
     //Customer Managemente Login
@@ -588,7 +586,7 @@ const router = createRouter({
           path: '/Customer_management_customer_package_list',
           name: 'Customer_Management_Customer_Package_List',
           component: () => import('@/views/CustomerManagement/CustomerPackageList.vue')
-        },
+        }
       ]
     },
 
@@ -609,15 +607,15 @@ const router = createRouter({
           component: () => import('@/views/Admin/AgentManagement/Profile/AgentProfile.vue')
         },
         {
-          path: '/agent_management_agent_list',
-          name: 'agent_Management_agent_List',
+          path: '/agent_management_agent_List',
+          name: 'Agent_Management_agent_List',
           component: () => import('@/views/Admin/AgentManagement/AgentList.vue')
         },
         {
           path: '/agent_management_package_list',
           name: 'Agent_Management_Package_List',
           component: () => import('@/views/Admin/AgentManagement/AgentPackageList.vue')
-        },
+        }
       ]
     },
 
@@ -668,29 +666,28 @@ const router = createRouter({
           path: '/support_packages_request_payments',
           name: 'support_Packages_Request_Payments',
           component: () => import('@/views/SupportDashboard/MyPayments/RequestPayment.vue')
-        },
+        }
       ]
     },
-   
-   
-    //Agent Management Login
-    {
-      path: '/agent_management_login',
-      name: 'Agent Management Login',
-      component: () => import('../views/Auth/LogIn.vue')
-    },
-    {
-      path: '/agent_management_Dashboard',
-      name: 'Agent_Management_Dashboard',
-      component: () => import('@/views/Admin/AgentManagement/AgentDashboard.vue'),
-      children: [
-        {
-          path: '/agent_management_Profile',
-          name: 'Agent_Management_Profile',
-          component: () => import('@/views/Admin/AgentManagement/Profile/AgentProfile.vue')
-        },
-      ]
-    },
+
+    // //Agent Management Login
+    // {
+    //   path: '/agent_management_login',
+    //   name: 'Agent Management Login',
+    //   component: () => import('../views/Auth/LogIn.vue')
+    // },
+    // {
+    //   path: '/agent_management_Dashboard',
+    //   name: 'Agent_Management_Dashboard',
+    //   component: () => import('@/views/Admin/AgentManagement/AgentDashboard.vue'),
+    //   children: [
+    //     {
+    //       path: '/agent_management_Profile',
+    //       name: 'Agent_Management_Profile',
+    //       component: () => import('@/views/Admin/AgentManagement/Profile/AgentProfile.vue')
+    //     },
+    //   ]
+    // },
     // social service dashboard end
 
     {
@@ -734,7 +731,7 @@ const router = createRouter({
           path: '/ground_transport_service',
           name: 'Ground Transport Service',
           component: () => import('../views/Vendor/MyServices/GroundTransportService.vue')
-        },
+        }
       ]
     },
 
@@ -1036,7 +1033,7 @@ const router = createRouter({
       name: 'LMS Login',
       component: () => import('@/views/Auth/LogIn.vue')
     },
-   
+
     //Operation Dashboard
     {
       path: '/Operation_Login',
@@ -1078,7 +1075,7 @@ const router = createRouter({
           name: 'Opration_Meeting_Post_Meeting',
           component: () => import('../views/Operation/MeetingManagement/PostMeeting.vue')
         },
-   
+
         {
           path: '/operation_announcement_create_announcement',
           name: 'operation_announcement_create_announcement',
@@ -1098,7 +1095,6 @@ const router = createRouter({
         },
 
         //Prayer Announecment
-    
 
         //Recent Prayer Service
         {
@@ -1272,12 +1268,12 @@ const router = createRouter({
         {
           path: '/member_package_list',
           name: 'Membar_Package_List',
-          component: () => import('../views/Member/Profile/PackageList.vue'),
+          component: () => import('../views/Member/Profile/PackageList.vue')
         },
         {
           path: '/customer_package_details/:id',
           name: 'customer_package_details',
-          component: () => import('../views/Member/PackageDetails.vue'),
+          component: () => import('../views/Member/PackageDetails.vue')
         },
         {
           path: '/Membar_Event_History',
@@ -1327,14 +1323,9 @@ const router = createRouter({
           path: '/Scholar_Appointment',
           name: 'Scholar_Appointment',
           component: () => import('../views/Member/MemberAppointmentScholar.vue')
-        },
-
-
-
-       
+        }
       ]
     },
-
 
     // {
     //   path: '/management-login',
@@ -1385,8 +1376,7 @@ const router = createRouter({
       name: 'ManagementRegistrationPage',
       component: () => import('../auth/ManagementRegistrationPage.vue'),
       meta: { notAuthenticated: true }
-    },
-
+    }
   ]
 })
 
