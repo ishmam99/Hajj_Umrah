@@ -1,7 +1,7 @@
 <template>
-    <section class="w-4/5 p-10">
+    <section class="w-full p-10 ">
       <p class="text-3xl font-bold pb-10 font-mono text-indigo-600">Agent Package List</p>
-      <div class="px-5">
+      <div class="px-5 max-w">
         <div class="overflow-x-auto">
           <table class="table w-full border-collapse border border-gray-300">
             <!-- head -->

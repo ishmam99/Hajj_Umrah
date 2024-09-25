@@ -1286,6 +1286,16 @@ const router = createRouter({
           component: () => import('../views/Member/Profile/PackageList.vue')
         },
         {
+          path: '/wishlist',
+          name: 'wishlist',
+          component: () => import('../views/Member/Profile/Wishlist.vue'),
+        },
+        {
+          path: '/completed_packages',
+          name: 'completed_packages',
+          component: () => import('../views/Member/Profile/CompletedPackages.vue'),
+        },
+        {
           path: '/customer_package_details/:id',
           name: 'customer_package_details',
           component: () => import('../views/Member/PackageDetails.vue')

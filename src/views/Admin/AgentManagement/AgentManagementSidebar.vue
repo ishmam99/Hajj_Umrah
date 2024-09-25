@@ -6,7 +6,7 @@
       <p class="text-xl font-bold text-white">Agent Management Dashboard</p>
       <p class="text-xl font-bold text-white">Welcome Mr. Hashim</p>
       <router-link
-        to="/Imam_management_Dashboard/Profile"
+        to="/agent_management_Profile"
         class="flex items-center gap-2 bg-white p-2 rounded-md"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@
 
       <div class="accordion bg-white rounded-md">
         <router-link
-        to="/imam_management_imam_package_list"
+        to="/agent_management_package_list"
         class="flex items-center gap-2 bg-white p-2 rounded-md"
         >
         <svg
