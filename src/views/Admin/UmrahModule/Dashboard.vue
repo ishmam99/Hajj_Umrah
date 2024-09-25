@@ -1,5 +1,5 @@
 <template>
-  <DefaultLayout>
+  
     <div class="">
       <div class="flex flex-row justify-between">
         <!-- <Sidebar /> -->
@@ -82,7 +82,6 @@
           
       </div>
     </div>
-  </DefaultLayout>
 </template>
 <script setup>
 import Sidebar from './Sidebar.vue'

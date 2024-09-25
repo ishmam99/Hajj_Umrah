@@ -7,7 +7,7 @@
       <div class="relative h-80 w-full bg-gray-300 rounded-b-lg shadow-xl overflow-hidden">
         <img src="https://via.placeholder.com/150" alt="Package Cover" class="h-full w-full object-cover" />
         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent py-6 px-8">
-          <p class="text-white text-5xl font-extrabold tracking-wide drop-shadow-md">{{ packageDetails?.title }}</p>
+          <p class="text-white text-5xl font-extrabold tracking-wide drop-shadow-md">{{ packageDetails?.package_title }}</p>
           <p class="text-white text-2xl font-semibold mt-1">{{ packageDetails?.code }}</p>
           <p class="text-white text-lg mt-2">{{ packageDetails?.startDate }} - {{ packageDetails?.endDate }}</p>
         </div>
@@ -68,12 +68,15 @@ const packageID = route.params.id
 
 const packageDetails = ref();
 watch(()=>route,() => {
-  packageDetails.value = packages.find(data =>data.id == packageID.value)
-  
+  getPackage()
 })
 const selectedDay = ref(0); // Default to Day 1
+const getPackage = async() => {
+  const { data } = await api().get('package/' + packageID)
+  packageDetails.value = data.data
+}
 onMounted(() => {
-  packageDetails.value = packages.find(data => data.id == packageID)
-    
+  // packageDetails.value = packages.find(data => data.id == packageID)
+    getPackage()
 })
 </script>

@@ -106,7 +106,7 @@ const HajjList = [
 
 
 onMounted(async () => {
-  promotionList()
+  // promotionList()
 })
 </script>
 
