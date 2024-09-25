@@ -1,6 +1,6 @@
 <template>
-  <div class="px-5 bg-gradient-to-r from-slate-50 via-slate-100 to-slate-50 py-5 w-3/4">
-    <div class="container mx-auto my-8">
+  <div class=" bg-gradient-to-r from-slate-50 via-slate-100 to-slate-50 py-5 w-3/4">
+    <div class="container my-8">
       <!-- Umrah Packages Header -->
       <div class="text-center pb-6 border-b-4 border-gray-300 mb-12">
         <p class="text-5xl font-bold text-[#286d71] tracking-tight">All Umrah Packages</p>
@@ -12,43 +12,60 @@
         <table class="table-auto w-full text-left border-collapse">
           <thead>
             <tr class="bg-[#286d71] text-white">
-              <th class="border px-3 py-3">Title</th>
-              <th class="border px-3 py-3">Package ID</th>
-              <th class="border px-3 py-3">Country</th>
-              <th class="border px-3 py-3">City</th>
-              <th class="border px-3 py-3">Agent Name</th>
-              <th class="border px-3 py-3">Imam Name</th>
-              <th class="border px-3 py-3">Support Manager Name</th>
-
-              <th class="border px-3 py-3">Start-End Date</th>
-              <!-- <th class="border px-6 py-3">End Date</th> -->
+                <th class="border px-6 py-3">Title</th>
+              <th class="border px-6 py-3">Package ID</th>
+              <th class="border px-6 py-3">Agent Name</th>
+              <th class="border px-6 py-3">Imam Name</th>
+              <th class="border px-6 py-3">Local Support Name</th>
+              <th class="border px-6 py-3">Origin Country</th>
+              <th class="border px-6 py-3">Origin City</th>
+              <th class="border px-6 py-3">Origin Airport</th>
+              <th class="border px-6 py-3">Start Date</th>
+              <th class="border px-6 py-3">End Date</th>
               <th class="border px-3 py-3">Status</th>
               <th class="border px-3 py-3">Actions</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(pkg, index) in packages" :key="index" class="hover:bg-gray-50 shadow">
-              <td class=" px-4 py-2">{{ pkg.title }}</td>
-              <td class=" px-4 py-2">{{ pkg.pkgId }}</td>
-              <td class=" px-4 py-2">{{ pkg.country }}</td>
-              <td class=" px-4 py-2">{{ pkg.city }}</td>
-              <td class=" px-4 py-2">{{ pkg.agent }}</td>
-              <td class=" px-4 py-2">{{ pkg.imam }}</td>
-              <td class=" px-4 py-2">{{ pkg.support_manager }}</td>
-              <td class=" px-4 py-2">{{ pkg.startDate }} - {{ pkg.startDate }}</td>
-              <!-- <td class=" px-4 py-2"></td> -->
-              <td class=" px-4 py-2"> 
-                {{ pkg.status }}</td>
+            <tr v-for="(pkg, index) in packages" v-if="packages.length > 0" :key="index" class="hover:bg-gray-50 shadow">
+               <td class=" px-4 py-2 border-e-2">{{ pkg.package_title }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.package_id }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.agent?.user?.name }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.imam?.user?.name }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.support_manager?.user?.name }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.country?.name }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.city?.name }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.airport.short_name }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.start_at }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.end_at }}</td>
+              <td class=" px-4 py-2"> <select v-model="pkg.status_of_package" class="select select-bordered w-full">
+                <option disabled selected>Select an option</option>
+                <option v-for="status in statuses" :value="status.id" >{{ status.name }}</option>
+              </select></td>
               <td class=" px-4 py-2">
                 <div class="flex space-x-2">
                   <router-link :to="{ path: 'package_details/' }">
                     <button class="bg-[#286d71] hover:bg-[#1f565b] text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
-                      Update Status
+                      View Status
                     </button>
                   </router-link>
                 
                 </div>
               </td>
+            </tr>
+             <tr v-else v-for="i in 3" >
+                <th class="border px-6 py-3 h-20 bg-gray-300"></th>
+              <th class="border px-6 py-3 h-20 bg-gray-300"></th>
+              <th class="border px-6 py-3 h-20 bg-gray-300"></th>
+              <th class="border px-6 py-3 h-20 bg-gray-300"></th>
+              <th class="border px-6 py-3 h-20 bg-gray-300"></th>
+              <th class="border px-6 py-3 h-20 bg-gray-300"></th>
+              <th class="border px-6 py-3 h-20 bg-gray-300"></th>
+              <th class="border px-6 py-3 h-20 bg-gray-300"></th>
+              <th class="border px-6 py-3 h-20 bg-gray-300"></th>
+              <th class="border px-6 py-3 h-20 bg-gray-300"></th>
+              <th class="border px-6 py-3 h-20 bg-gray-300"></th>
+              <th class="border px-6 py-3 h-20 bg-gray-300"></th>
             </tr>
           </tbody>
         </table>
@@ -58,21 +75,34 @@
 </template>
 
 <script setup>
-import { packages } from '@/stores/itinenary.ts'
-
+import {ref , onMounted} from 'vue'
+// import { packages } from '@/stores/itinenary.ts'
+const packages = ref([])
+const getPackages = async () => {
+  const { data } = await api().get('package')
+  packages.value = data.data
+}
+const statuses = [
+    { id: 1, name: 'Not In Plan' },
+    { id: 2, name: 'In Plan' },
+    { id: 3, name: 'In Preparation' },
+    { id: 4, name: 'Fully Booked' },
+    { id: 5, name: 'In Approval Process' },
+    { id: 6, name: 'Approved' },
+    { id: 7, name: 'Published' },
+    { id: 8, name: 'Discontinued' }
+  ];
+const getStatus = (status) => {
+  
+ 
+  return statuses.find(s => s.id == status)?.name || 'Unknown Status';
+}
 const deletePackage = (packageId) => {
   alert(`Package ${packageId} deleted!`)
 }
- const statuses = [
-  { id: 1, name: 'Not In Plan' },
-  { id: 2, name: 'In Plan' },
-  { id: 3, name: 'In Preparation' },
-  { id: 4, name: 'In Review' },
-  { id: 5, name: 'In Approval Process' },
-  { id: 6, name: 'Approved' },
-  { id: 7, name: 'Published' },
-  { id: 8, name: 'Discontinued' }
-]
+onMounted(() => {
+  getPackages()
+})
 </script>
 
 <style scoped>
