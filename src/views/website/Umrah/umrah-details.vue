@@ -5,8 +5,8 @@
     <section class="flex justify-center items-center bg-cover bg-center h-[70vh] bg-[url('/src/assets/image/hajj/hajj-2.jpg')]" >
       <div class="absolute inset-0 bg-black opacity-20 h-[79vh]"></div>
       <div class="relative z-10 text-center text-white p-10">
-        <h1 class="text-4xl md:text-6xl font-bold">Umrah Package 2024</h1>
-        <p class="mt-4 text-xl md:text-2xl">A Spiritual Journey to Mecca and Medina</p>
+        <h1 class="text-4xl md:text-6xl font-bold">{{ packageDetails?.package_title }}</h1>
+        <p class="mt-4 text-xl md:text-2xl">{{ packageDetails?.description }}</p>
         <button class="mt-6 px-8 py-3 bg-yellow-500 hover:bg-yellow-600 text-lg font-semibold rounded">
           Book Now
         </button>
@@ -27,7 +27,7 @@
         </div>
         <div class="bg-teal-600 text-white p-6 shadow-md rounded-lg">
           <h3 class="text-xl font-semibold">Price</h3>
-          <p>$1500 per person</p>
+          <p>${{ packageDetails?.price }} per person</p>
         </div>
       </div>
       <button class="mt-8 px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded">
@@ -36,29 +36,15 @@
     </section>
 
     <!-- Itinerary Section -->
-    <section class="py-16 px-4">
+    <section class="py-16 px-[5%]" v-if="packageDetails">
       <h2 class="text-3xl font-bold text-center mb-8">Day-wise Itinerary</h2>
       <div class=" mx-auto space-y-6">
-        <div class="flex items-center justify-center">
-          <ItineraryItem day="1" description="Arrival in Jeddah, transfer to Mecca. Perform Umrah. Stay at a 5-star hotel." />
-          <img src="@/assets/image/hajj/mecca.jpg" alt="Mecca" class="w-1/2 rounded-lg shadow-md" />
+        <div class="flex items-center justify-stretch" v-for="(itinerary,index) in packageDetails.itineraries">
+           <img v-if="index%2 !== 0" src="@/assets/image/hajj/mecca.jpg" alt="Mecca" class="w-full rounded-lg shadow-md" />
+          <ItineraryItem :day="itinerary" class="w-full px-10" />
+          <img v-if="index%2 == 0" src="@/assets/image/hajj/mecca.jpg" alt="Mecca" class="w-full rounded-lg shadow-md" />
         </div>
-        <div class="flex items-center justify-between">
-          <img src="@/assets/image/hajj/haram.jpg" alt="Haram" class="w-1/2 rounded-lg shadow-md" />
-       <ItineraryItem day="2-5" description="Stay in Mecca. Optional guided tours, prayers at the Haram, and free time." />
-           </div>
-        <div class="flex items-center justify-between">
-          <ItineraryItem day="6" description="Travel to Medina. Visit historical sites, Masjid an-Nabawi." />
-          <img src="@/assets/image/hajj/medina.webp" alt="Medina" class="w-1/2 rounded-lg shadow-md" />
-        </div>
-        <div class="flex items-center justify-between">
-         <img src="@/assets/image/hajj/masjid-an-nabawi.jpg" alt="Masjid an-Nabawi" class="w-1/2 rounded-lg shadow-md" />  <ItineraryItem day="7-9" description="Stay in Medina. Prayers at Masjid an-Nabawi, guided city tours." />
-         
-        </div>
-        <div class="flex items-center justify-between">
-          <ItineraryItem day="10" description="Return flight to home country." />
-          <img src="@/assets/image/hajj/airport.jpg" alt="Airport" class="w-1/2 rounded-lg shadow-md" />
-        </div>
+     
       </div>
     </section>
 
@@ -119,12 +105,13 @@ import {
     Swiper,
     SwiperSlide
 } from 'swiper/vue'
-import {
+import {ref, onMounted,
     computed
 } from 'vue'
 import {
     useRoute
 } from 'vue-router'
+
 const modules = [Pagination, Navigation, Autoplay]
 
 const route = useRoute()
@@ -134,12 +121,20 @@ const svgContent = `
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="rgba(40,109,113,1)"><path d="M11.602 13.7599L13.014 15.1719L21.4795 6.7063L22.8938 8.12051L13.014 18.0003L6.65 11.6363L8.06421 10.2221L10.189 12.3469L11.6025 13.7594L11.602 13.7599ZM11.6037 10.9322L16.5563 5.97949L17.9666 7.38977L13.014 12.3424L11.6037 10.9322ZM8.77698 16.5873L7.36396 18.0003L1 11.6363L2.41421 10.2221L3.82723 11.6352L3.82604 11.6363L8.77698 16.5873Z"></path></svg>
 `
 
-const packageDetails = computed(
-    () =>
-    socialStore.createNewPackage.find((pkg) => pkg.country.id === route.params.id) || {
-        steps: []
-    }
-)
+// const packageDetails = computed(
+//     () =>
+//     socialStore.createNewPackage.find((pkg) => pkg.country.id === route.params.id) || {
+//         steps: []
+//     }
+// )
+const packageDetails = ref()
+const getPackage = async() => {
+  const { data } = await api().get('package/'+route.params.id)
+  packageDetails.value = data.data
+}
+onMounted(() => {
+  getPackage()
+})
 </script>
 
 <style scoped>

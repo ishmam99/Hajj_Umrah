@@ -82,7 +82,7 @@
 
             <!-- Country Selector -->
             <div class="mt-6 flex justify-between">
-              <label for="countries" class="block mb-2 text-sm font-medium text-[#286d71]">Select Country</label>
+              <label for="countries" class="block w-full mb-2 text-sm font-medium text-[#286d71]">Select Country</label>
               <select
                 id="countries"
                 v-model="selectedCountry"

@@ -1,5 +1,5 @@
 <template>
-  <div class="px-5 bg-slate-50 py-5 w-3/4">
+  <div class="px-5 bg-slate-50 py-5 w-3/4" v-if="!createdPackage">
     <div class="text-center pb-6 border-b-4 border-gray-300 mb-12">
         <p class="text-5xl font-bold text-[#286d71] tracking-tight">Create New Umrah Package</p>
         <p class="text-xl text-gray-600 mt-3">Add all package details and itinerary details </p>
@@ -11,7 +11,7 @@
           <div class="flex gap-5 mb-5">
             <div class="w-1/3">
               <div class="label">
-                <span class="label-text">Country</span>
+                <span class="label-text">Origin Country</span>
               </div>
               <select v-model="formData.country" class="select select-bordered w-full">
                 <option disabled selected>Select a Country</option>
@@ -20,7 +20,7 @@
             </div>
             <div class="w-1/3">
               <div class="label">
-                <span class="label-text">City</span>
+                <span class="label-text">Origin City</span>
               </div>
               <select v-model="formData.city" class="select select-bordered w-full">
                 <option disabled selected>Select a City</option>
@@ -31,7 +31,7 @@
             </div>
             <div class="w-1/3">
               <div class="label">
-                <span class="label-text">Airport</span>
+                <span class="label-text">Origin Airport</span>
               </div>
               <select v-model="formData.airport" class="select select-bordered w-full">
                 <option disabled selected>Select an Airport</option>
@@ -194,12 +194,152 @@
               placeholder="Description"
             ></textarea>
           </div>
+        
+         
+          <!-- Buttons -->
+          <div class="flex justify-center gap-5 my-5">
+            <button type="submit" :disabled="saving"  class="btn btn-success btn-sm px-5 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" v-if="saving" class="h-6 w-6 animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H5" />
+              </svg>
+              Save Package Data</button>
+            <button type="button" class="btn btn-error text-white btn-sm px-5">Cancel</button>
+          </div>
+        </section>
+      </form>
+    </div>
+  </div>
+  <div class="px-5 bg-slate-50 py-5 w-3/4" v-else>
+     <div class="text-center pb-6 border-b-4 border-gray-300 mb-12">
+        <p class="text-5xl font-bold text-[#149856] tracking-tight">Congrats New Umrah Package Created Successfully</p>
+        <p class="text-xl text-gray-600 mt-3">All package details and itinerary details are given bellow</p>
+      </div>
+      <div>
+         <div class="flex gap-5 mb-5">
+            <div class="w-1/3">
+              <div class="label">
+                <span class="label-text">Origin Country</span>
+              </div>
+             <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.country.name}}</h1>
+            </div>
+            <div class="w-1/3">
+              <div class="label">
+                <span class="label-text">Origin City</span>
+              </div>
+                <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.city.name}}</h1>
+            </div>
+            <div class="w-1/3">
+              <div class="label">
+                <span class="label-text">Origin Airport</span>
+              </div>
+               <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.airport.short_name}}</h1>
+            </div>
+          </div>
+           <div class="flex gap-5 mb-5">
+            <div class="w-1/3">
+              <div class="label">
+                <span class="label-text">Agent Name</span>
+              </div>
+               <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.agent.user.name}}</h1>
+            </div>
+            <div class="w-1/3">
+              <div class="label">
+                <span class="label-text">Imam Name</span>
+              </div>
+               <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.imam.user.name}}</h1>
+            </div>
+            <div class="w-1/3">
+              <div class="label">
+                <span class="label-text">Support Manager Name</span>
+              </div>
+                <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.support_manager.user.name}}</h1>
+            </div>
+          </div>
+
+          <!-- Package Title and Code -->
+          <div class="flex gap-5 mb-5">
+            <div class="w-1/2">
+              <div class="label">
+                <span class="label-text">Package Title</span>
+              </div>
+               <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.package_title}}</h1>
+            </div>
+            <div class="w-1/2">
+              <div class="label">
+                <span class="label-text">Package Year</span>
+              </div>
+               <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.package_year}}</h1>
+            </div>
+          </div>
+
+          <!-- Package Year and ID -->
+          <div class="flex gap-5 mb-5">
+            <div class="w-1/2">
+              <div class="label">
+                <span class="label-text">Package Code</span>
+              </div>
+               <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.package_code}}</h1>
+            </div>
+            <div class="w-1/2">
+              <div class="label">
+                <span class="label-text">Package ID</span>
+              </div>
+                <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.package_id}}</h1>
+            </div>
+          </div>
+
+          <!-- Package Status and Price -->
+          <div class="flex gap-5 mb-5">
+            <div class="w-1/2">
+              <div class="label">
+                <span class="label-text">Status of Package</span>
+              </div>
+               <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ getStatus(createdPackage.status_of_package)}}</h1>
+            </div>
+            <div class="w-1/2">
+              <div class="label">
+                <span class="label-text">Price</span>
+              </div>
+              <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">${{ createdPackage.price}}</h1>
+            </div>
+            <div class="w-1/2">
+              <div class="label">
+                <span class="label-text">Member Quota</span>
+              </div>
+              <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.pax}}</h1>
+            </div>
+          </div>
+
+          <!-- Dates -->
+          <div class="flex gap-5 mb-5">
+            <div class="w-1/2">
+              <div class="label">
+                <span class="label-text">Starting Date</span>
+              </div>
+               <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.start_at}}</h1>
+            </div>
+            <div class="w-1/2">
+              <div class="label">
+                <span class="label-text">Ending Date</span>
+              </div>
+              <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.end_at}}</h1>
+            </div>
+          </div>
+
+          <!-- Description -->
           <div>
+            <div class="label">
+              <span class="label-text">Description</span>
+            </div>
+            <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">{{ createdPackage.description}}</h1>
+          </div>
+      </div>
+      <div>
            
            
-            <div class="p-2 bg-green-50" v-if="itineraries.length > 0">
+            <div class="p-2 bg-green-50" v-if="createdPackage?.itineraries?.length > 0">
               <h1>Itineraries</h1>
-              <div v-for="itineraryData in itineraries">
+              <div v-for="itineraryData in createdPackage.itineraries">
                  <div class="bg-blue-100 rounded-lg shadow-md px-2 py-3">
               <h1
                 class="px-3 my-2 py-2 w-full font-bold text-xl rounded-lg shadow-md bg-blue-400 text-white"
@@ -209,10 +349,10 @@
             
 
               <!-- Activities -->
-              <div class="bg-white p-3 my-2" v-if="itineraryData.activities.length > 0">
+              <div class="bg-white p-3 my-2" v-if="itineraryData?.activities?.length > 0">
                 <h1 class="font-semibold text-cyan-600 underline text-lg">Activities</h1>
                 <div
-                  v-for="activity in itineraryData.activities"
+                  v-for="activity in itineraryData?.activities"
                   class="bg-green-100 my-3 px-2 py-3 rounded-lg"
                 >
                   <div class="flex justify-start items-center gap-4 py-3">
@@ -223,8 +363,8 @@
                     <h1 class="font-bold text-lg">{{ activity.from }}</h1>
                     <p v-if="activity.to">To</p>
                     <h1 class="font-bold text-lg">{{ activity.to }}</h1>
-                   <p v-if="activity.by">By</p> 
-                    <h1 class="font-bold text-lg text-sky-700">{{ activity.by }}</h1>
+                   <p v-if="activity.transportation_by">By</p> 
+                    <h1 class="font-bold text-lg text-sky-700">{{ activity.transportation_by }}</h1>
                   </div>
                 </div>
                 <div class="flex justify-center items-center">
@@ -241,7 +381,7 @@
                <h1 class="text-2xl text-sky-800 font-semibold">Create Itinerary</h1>
             <!-- {{ itinerary }} -->
 
-            <button v-if="!showItiniraryForm" @click="day++,showItiniraryForm = true" type="button" class="btn btn-info text-white">Add Day</button>
+            <button v-if="!showItiniraryForm" @click="day++,showItiniraryForm=true" type="button" class="btn btn-info text-white">Add Day</button>
             </div>
             <div v-if="showItiniraryForm" class="bg-blue-100 rounded-lg shadow-md px-2 py-3">
               <h1
@@ -739,128 +879,6 @@
               <!-- Activities End-->
             </div>
           </div>
-          <div class="flex flex-col gap-5 mt-4">
-            <form @submit.prevent="EventFormApply">
-              <!-- Existing form fields... -->
-              <div class="flex flex-col gap-5 mt-4">
-                <!-- <div class="label bg-yellow-600 text-white p-2 rounded-lg">Add Itinerary</div> -->
-
-                <!-- Add Air Fare section -->
-
-                <!-- Add Transport button -->
-                <!-- <button
-                  @click="showTransportForm = !showTransportForm"
-                  type="button"
-                  class="btn btn-sm btn-primary text-white px-5 mt-5"
-                >
-                  {{ showTransportForm ? 'Hide Transport Form' : 'Add Transport' }}
-                </button> -->
-
-                <!-- Transport Form -->
-
-                <!-- Add Hotel button -->
-                <!-- <button
-                  @click="showHotelForm = !showHotelForm"
-                  type="button"
-                  class="btn btn-sm btn-success text-white px-5 mt-5"
-                >
-                  {{ showHotelForm ? 'Hide Hotel Form' : 'Add Hotel' }}
-                </button> -->
-
-                <!-- Hotel Form -->
-                <div v-if="showHotelForm" class="px-5 bg-slate-50 py-5 mt-3">
-                  <p class="text-2xl font-bold py-3 border-b">3. Select Hotel</p>
-
-                  <!-- Hotel Form Fields -->
-                  <div class="flex gap-5 mb-5">
-                    <div class="w-1/2">
-                      <input
-                        v-model="newHotel.city"
-                        type="text"
-                        placeholder="City Name"
-                        class="input input-bordered w-full"
-                      />
-                    </div>
-                    <div class="w-1/2">
-                      <input
-                        v-model="newHotel.name"
-                        type="text"
-                        placeholder="Hotel name"
-                        class="input input-bordered w-full"
-                      />
-                    </div>
-                  </div>
-                  <div class="flex gap-5 mb-5">
-                    <div class="w-1/2">
-                      <input
-                        v-model="newHotel.days"
-                        type="text"
-                        placeholder="Days"
-                        class="input input-bordered w-full"
-                      />
-                    </div>
-                    <div class="w-1/2">
-                      <input
-                        v-model="newHotel.cost"
-                        type="number"
-                        placeholder="Cost"
-                        class="input input-bordered w-full"
-                      />
-                    </div>
-                  </div>
-
-                  <button @click="addHotel" class="btn btn-success text-white btn-sm px-5">
-                    Save Hotel
-                  </button>
-
-                  <!-- Hotel List -->
-                  <div class="mt-5">
-                    <p class="font-bold">Hotels:</p>
-                    <div v-if="hotels.length === 0" class="text-gray-500">No Data Added</div>
-
-                    <div v-else>
-                      <ul>
-                        <li
-                          v-for="(hotel, index) in hotels"
-                          :key="index"
-                          class="py-2 border border-slate rounded my-1 px-1"
-                        >
-                          <div class="text-lg font-semibold flex justify-between items-center">
-                            <div>
-                              <span class="text-xl font-semibold">{{ index + 1 }}.</span>
-                              {{ hotel.name }}, {{ hotel.city }}, {{ hotel.days }}
-                            </div>
-                            <div>$ {{ hotel.cost }}</div>
-                          </div>
-                        </li>
-                      </ul>
-                      <div class="font-bold mt-3 text-xl flex items-center justify-end">
-                        Total: ${{ totalHotel }}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Submit and Cancel Buttons -->
-              <div class="flex justify-center gap-5 my-5" v-if="0">
-                <div class="font-bold mt-5 text-2xl flex justify-end">
-                  Total Travel Cost: ${{ totalTravelCost }}
-                </div>
-                <!-- <button type="submit" class="btn btn-success btn-sm px-5">Create</button>
-                    <button type="button" class="btn btn-error btn-sm px-5">Cancel</button> -->
-              </div>
-            </form>
-
-            <!-- <button @click="addNewStep" type="button" class="btn btn-sm btn-success text-white px-5">Add New Steps</button> -->
-          </div>
-          <!-- Buttons -->
-          <div class="flex justify-center gap-5 my-5">
-            <button type="submit" class="btn btn-success btn-sm px-5 text-white">Save Package Data</button>
-            <button type="button" class="btn btn-error text-white btn-sm px-5">Cancel</button>
-          </div>
-        </section>
-      </form>
-    </div>
   </div>
 </template>
 
@@ -883,6 +901,7 @@ const agents = ref([])
 const imams = ref([])
 const support_managers = ref([])
 const itineraries = ref([])
+const saving  = ref(false)
 const newFare = ref({
   departure: { from: '', to: '', airline: '', fare: null },
   return: { from: '', to: '', airline: '', fare: null }
@@ -996,12 +1015,7 @@ const getTransports = () => {
     (e) => e.city == newTransport.value.city && e.type == newTransport.value.type
   )
 }
-const saveItineray = () => {
-  itinerary.value.day = day.value
-  itineraries.value.push(itinerary.value)
-  itinerary.value = { activities: [], type: null, date: moment(itinerary.value.date).add(1, 'days').format('YYYY-MM-DD') }
-  showItiniraryForm.value = false
-}
+
 const totalHotel = computed(() => {
   return hotels.value.reduce((sum, hotel) => {
     return sum + (Number(hotel.cost) || 0)
@@ -1215,7 +1229,8 @@ if (!store.createNewPackage) {
   store.createNewPackage = []
 }
 const years = Array.from({length: 41}, (_, i) => 2020 + i)
-const EventFormApply = async() => {
+const EventFormApply = async () => {
+  saving.value = true
   // formData.value.itineraries = itineraries.value
   // store.createNewPackage.push({ ...formData.value })
   // console.log('Form Data Submitted:', formData.value)
@@ -1262,9 +1277,65 @@ const EventFormApply = async() => {
   {
     console.log(error)
   }
- 
+ saving.value = false
 }
-//API Call
+const getStatus = (status) => {
+  
+  const statuses = [
+    { id: 1, name: 'Not In Plan' },
+    { id: 2, name: 'In Plan' },
+    { id: 3, name: 'In Preparation' },
+    { id: 4, name: 'Fully Booked' },
+    { id: 5, name: 'In Approval Process' },
+    { id: 6, name: 'Approved' },
+    { id: 7, name: 'Published' },
+    { id: 8, name: 'Discontinued' }
+  ];
+  return statuses.find(s => s.id == status)?.name || 'Unknown Status';
+}
+//Create API
+const addDay = async () => {
+  day.value++
+  const data = await api().post('itinerary', {
+    package_id: createdPackage.value.id,
+    day:day.value,
+    date: moment(createdPackage.value.start_at).add('days',day).format('dd-mm-yyyy')
+  })
+  itinerary.value = data.data
+  showItiniraryForm.value = true
+}
+const saveItineray = async () => {
+  console.log(itinerary.value)
+  const {data} = await api().post('itinerary',
+    {
+      day: day.value,
+      package_id: createdPackage.value.id,
+      date: moment(itinerary.value.date).format('YYYY-MM-DD')
+    })
+  if (data)
+  {
+    console.log(data.data)
+    for (let i = 0; i < itinerary.value.activities.length; i++) {
+      const activity = itinerary.value.activities[i];
+      const d = await api().post('activity', {
+        itinerary_id: data.data.id,
+        activity_type: activity.type,
+        time: activity.time,
+        from: activity.from,
+        to: activity.to,
+        type: activity.type,
+        transportation_by: activity.by,
+        description: activity.description
+      })
+    }
+        
+    }
+  itinerary.value = { activities: [], type: null, date: moment(itinerary.value.date).add(1, 'days').format('YYYY-MM-DD') }
+  showItiniraryForm.value = false
+  getPackage()
+}
+
+//GET API Call
 
 const getCountries = async() => {
   try {
@@ -1306,10 +1377,15 @@ const getSupports = async() => {
     console.log(error)
   }
 }
+const getPackage = async() => {
+  const { data } = await api().get('package/'+createdPackage.value.id)
+  createdPackage.value = data.data
+}
 onMounted(() => {
   getCountries()
   getImams()
   getSupports()
   getAgents()
+  // getPackage()
 })
 </script>

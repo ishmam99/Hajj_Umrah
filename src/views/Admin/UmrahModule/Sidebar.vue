@@ -69,6 +69,9 @@ watch(
           <router-link to="/view_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- View / Edit Packages</router-link>
           <router-link to="/umrah_package_current_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Approve
             Packages</router-link>
+        
+          <router-link to="/umrah_package_approved_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Approved
+            Packages</router-link>
           <router-link to="/Umrah_package_upcoming_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Upcoming Packages List
             </router-link>
           <router-link to="/Umrah_Package_completed_Packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Completed Packages List

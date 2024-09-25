@@ -45,14 +45,14 @@
             <!-- Package List Section -->
             <section class="w-full p-8 bg-gray-50 rounded-lg shadow-lg">
                 <!-- Title -->
-                <p class="text-3xl font-bold pb-8 font-mono">Available Packages For <span class="text-blue-700">{{
+                <p class="text-3xl font-bold pb-8 font-mono">Available Packages For <span class="text-cyan-700">{{
                         selectedCountry }}</span></p>
 
                 <!-- Package Table -->
                 <div class="bg-white shadow-xl  rounded-lg overflow-hidden">
                   <table class="min-w-full ">
                       <!-- Header Row -->
-                      <thead class="bg-blue-700 text-white">
+                      <thead class="bg-sky-700 text-white">
                           <tr class="text-center text-lg font-semibold py-4">
                               <th class="py-6 border-r-2 border-gray-100">Name</th>
                               <th class="p-2 border-r-2 border-gray-100">Umrah Start Date</th>
@@ -68,16 +68,17 @@
                       <!-- Package Rows -->
                       <tbody class="divide-y divide-gray-300 bg-gray-200 ">
                           <tr v-for="(packageData, index) in packageList" :key="index" class="hover:bg-blue-100 transition-colors text-center py-4 ">
-                              <td class="p-2 font-semibold text-blue-700 border-r-2 border-gray-700">{{ packageData.title }}</td>
-                              <td class="py-6 border-r-2 border-gray-700">{{ packageData.startDate }}</td>
-                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.endDate }}</td>
-                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.country }}</td>
-                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.city }}</td>
-                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.airport }}</td>
-                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.status }}</td>
+                              <td class="p-2 font-semibold text-blue-700 border-r-2 border-gray-700">{{ packageData.package_title }}</td>
+                              <td class="py-6 border-r-2 border-gray-700">{{ packageData.start_at }}</td>
+                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.end_at }}</td>
+                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.country.name }}</td>
+                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.city.name }}</td>
+                              <td class="p-2 border-r-2 border-gray-700">{{ packageData.airport.short_name }}</td>
+                         
+                              <td class="p-2 border-r-2 border-gray-700">{{ getStatus(packageData.status_of_package) }}</td>
                               <td class="p-2 ">
                                   <router-link :to="`umrah-details/` + packageData.id"
-                                      class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow-md">
+                                      class="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded shadow-md">
                                       View Details
                                   </router-link>
                               </td>
@@ -96,14 +97,15 @@ import DefaultLayout from '@/layouts/DefaultLayout.vue'
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
-import { computed, ref } from 'vue'
+import { onMounted,computed, ref } from 'vue'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-
+// import {ref, } from 'vue'
 // import required modules
 import { Pagination, Navigation, Autoplay } from 'swiper/modules'
-import { packages } from '@/stores/itinenary.ts'
+// import { packages } from '@/stores/itinenary.ts'
 import { useRoute } from 'vue-router'
+const packages  = ref([])
 const route = useRoute()
 const selectedCountry = route.query.country || ' ' // Default to 'No Country Selected' if no country is passed
 const modules = [Pagination, Navigation, Autoplay]
@@ -111,10 +113,32 @@ const packageList = computed(() => {
   let data = [];
   console.log(selectedCountry);
   if(selectedCountry !== ' '){
-    data = packages.filter(e => e.country == selectedCountry);
+    data = packages.value.filter(e => e.country.name == selectedCountry);
   }
    
   return data;
+})
+const getPackages = async () => {
+  const { data } = await api().get('package')
+  packages.value = data.data
+}
+const statuses = [
+    { id: 1, name: 'Not In Plan' },
+    { id: 2, name: 'In Plan' },
+    { id: 3, name: 'In Preparation' },
+    { id: 4, name: 'Fully Booked' },
+    { id: 5, name: 'In Approval Process' },
+    { id: 6, name: 'Approved' },
+    { id: 7, name: 'Published' },
+    { id: 8, name: 'Discontinued' }
+  ];
+const getStatus = (status) => {
+  
+ 
+  return statuses.find(s => s.id == status)?.name || 'Unknown Status';
+}
+onMounted(() => {
+  getPackages()
 })
 </script>
 <style scoped>

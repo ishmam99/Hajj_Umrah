@@ -1,10 +1,10 @@
 <template>
   <DefaultLayout>
     <div class="">
-      <div class="pt-[80px] flex flex-row justify-between">
+      <div class="pt-[80px] flex flex-row justify-stretch w-full">
         <Sidebar />
          <router-view v-if="$route.name != 'Umrah_Management_System'" />
-       <Dashboard v-else/>
+       <Dashboard class="w-full" v-else/>
       </div>
     </div>
   </DefaultLayout>
