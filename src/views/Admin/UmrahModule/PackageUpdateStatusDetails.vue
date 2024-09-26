@@ -34,7 +34,7 @@
       <!-- {{ packageDetails }} -->
 
 
-  <div v-if="packageDetails" class="pt-10">
+      <div v-if="packageDetails" class="pt-10">
     <ul class="steps w-full steps-vertical lg:steps-horizontal lg:w-full mb-10">
       <li 
         v-for="(status, index) in statuses" 
@@ -43,19 +43,31 @@
         :class="{ 'step step-success': status.id <= packageDetails.status_of_package, 'step': status.id > packageDetails.status_of_package }">
         
         <!-- Display status name -->
-        <div class="text-xl font-semibold">{{ status.name }}</div>
+        <div class="text-lg font-semibold">{{ status.name }}</div>
 
         <!-- Conditionally show relevant details based on status -->
         <div class="text-sm text-gray-500 mt-1">
-          <p v-if="status.name === 'Date'">{{ packageDetails.start_at }}</p>
-          <p v-if="status.name === 'Imam'">{{ packageDetails.imam.name }}</p>
-          <p v-if="status.name === 'Agent'">{{ packageDetails.agent.name }}</p>
-          <p v-if="status.name === 'Flight'">Turkish Airlines</p>
-          <p v-if="status.name === 'Bus'">Green Line Bus</p>
-          <p v-if="status.name === 'Hotel'">Mövenpick Hotel</p>
+          <p v-if="status.name === 'Date'" 
+             :class="{ 'text-green-500': isChecked(status.name) }">
+            {{ packageDetails.start_at }}
+          </p>
+          <p v-if="status.name === 'Imam'" :class="{ 'text-green-500': isChecked(status.name) }">{{ packageDetails.imam.name }}</p>
+          <p v-if="status.name === 'Agent'" :class="{ 'text-green-500': isChecked(status.name) }">{{ packageDetails.agent.name }}</p>
+          <p v-if="status.name === 'Flight'" :class="{ 'text-green-500': isChecked(status.name) }">Turkish Airlines</p>
+          <p v-if="status.name === 'Bus'" :class="{ 'text-green-500': isChecked(status.name) }">Green Line Bus</p>
+          <p v-if="status.name === 'Hotel'" :class="{ 'text-green-500': isChecked(status.name) }">Mövenpick Hotel</p>
 
           <!-- Shared Input Fields -->
           <div class="mt-2 space-y-3">
+            <!-- Checkbox for Date -->
+            <div class="form-control">
+              <label class="cursor-pointer flex justify-start gap-4 label">
+                <input type="checkbox" v-model="checkedStatus[status.name]" class="checkbox checkbox-primary checkbox-sm" />
+                <span class="label-text text-sm">{{ checkedStatus[status.name] ? 'Is Approved' : 'Is Approve' }}</span>
+                <!-- <span class="label-text text-sm">Is Approved</span> -->
+              </label>
+            </div>
+
             <!-- Text input (Note) -->
             <div class="form-control">
               <label class="label">
@@ -70,14 +82,6 @@
                 <span class="label-text text-sm ps-1">Attachment</span>
               </label>
               <input type="file" class="file-input file-input-bordered w-32 lg:w-48 file-input-sm" />
-            </div>
-
-            <!-- Checkbox (isApproved) -->
-            <div class="form-control">
-              <label class="cursor-pointer flex justify-start gap-4 label">
-                <input type="checkbox" class="checkbox checkbox-primary checkbox-sm" />
-                <span class="label-text text-sm">Is Approved</span>
-              </label>
             </div>
           </div>
         </div>
@@ -123,4 +127,13 @@ const statuses = [
   { id: 7, name: 'Final Review' },
   // { id: 8, name: 'Discontinued' }
 ];
+
+
+// Reactive object to track checked statuses
+const checkedStatus = ref({});
+
+// Function to check if the status is checked
+const isChecked = (statusName) => {
+  return checkedStatus.value[statusName] || false;
+};
 </script>
