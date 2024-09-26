@@ -41,6 +41,11 @@
               <td class=" px-4 py-2 border-e-2">{{ getStatus(pkg.status_of_package) }}</td>
               <td class=" px-4 py-2">
                 <div class="flex space-x-2">
+                  <router-link :to="'package_update_status/'+pkg.id">
+                    <button class="bg-blue-500 hover:bg-bg-blue-600 text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
+                      Update Status
+                    </button>
+                  </router-link> 
                   <router-link :to="'package_details/'+pkg.id">
                     <button class="bg-[#286d71] hover:bg-[#1f565b] text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
                       View Details

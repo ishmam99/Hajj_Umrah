@@ -49,7 +49,11 @@
                       View Status
                     </button>
                   </router-link>
-                
+                  <router-link :to="'package_update_status/'+pkg.id">
+                    <button class="bg-blue-500 hover:bg-bg-blue-600 text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
+                      Update Status
+                    </button>
+                  </router-link> 
                 </div>
               </td>
             </tr>

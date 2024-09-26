@@ -349,6 +349,11 @@ const router = createRouter({
           component: () => import('../views/Admin/UmrahModule/PackageDetails.vue')
         },
         {
+          path: '/package_update_status/:id',
+          name: 'package_update_status',
+          component: () => import('../views/Admin/UmrahModule/PackageUpdateStatusDetails.vue')
+        },
+        {
           path: '/package_details/package_edit/:id',
           name: 'package_edit',
           component: () => import('../views/Admin/UmrahModule/EditPackage.vue')
@@ -1288,12 +1293,12 @@ const router = createRouter({
         {
           path: '/wishlist',
           name: 'wishlist',
-          component: () => import('../views/Member/Profile/Wishlist.vue'),
+          component: () => import('../views/Member/Profile/Wishlist.vue')
         },
         {
           path: '/completed_packages',
           name: 'completed_packages',
-          component: () => import('../views/Member/Profile/CompletedPackages.vue'),
+          component: () => import('../views/Member/Profile/CompletedPackages.vue')
         },
         {
           path: '/customer_package_details/:id',
