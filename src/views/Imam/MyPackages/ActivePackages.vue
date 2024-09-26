@@ -1,67 +1,83 @@
 <template>
-    <section class="w-full py-10">
-        <p class="text-3xl font-bold pb-10 ps-6 font-mono text-cyan-600">Active Packages</p>
+    <section class="w-4/5">
+        <p class="text-3xl font-bold p-5 pb-10 font-mono text-cyan-600 border-b">Active Packages</p>
         <div class="px-5">
             <div class="overflow-x-auto">
-                <table class="table w-full border-collapse border border-gray-300">
-                    <!-- head -->
+                <!-- Loader -->
+                <div v-if="loading" class="text-center py-10">
+                    <svg class="animate-spin h-10 w-10 text-cyan-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 0116 0h-2a6 6 0 00-12 0H4z"></path>
+                    </svg>
+                    <p class="text-xl text-gray-500">Loading...</p>
+                </div>
+                
+                <!-- No data message -->
+                <p v-if="!loading && packagesData.length === 0" class="border w-1/4 mx-auto py-6 rounded my-10 bg-gray-200 text-center text-red-500 text-xl font-semibold">
+                    No data available for this user
+                </p>
+
+                <!-- Data table -->
+                <table v-if="!loading && packagesData.length > 0" class="table w-full my-2 border-collapse border border-gray-300">
                     <thead>
-                        <tr class="bg-blue-700 text-white text-center text-lg">
-                            <th class="p-3">No.</th>
-                            <th class="p-3 border-s">Package Name</th>
-                            <th class="p-3 border-s">City</th>
-                            <th class="p-3 border-s">Country</th>
-                            <th class="p-3 border-s">Agent</th>
-                            <th class="p-3 border-s">Support Manager</th>
-                            <th class="p-3 border-s">Start Date</th>
-                            <th class="p-3 border-s">End Date</th>
-                            <th class="p-3 border-s">Total Days</th>
+                        <tr class="bg-gray-800 text-white items-center text-lg">
+                            <th>Package Name</th>
+                            <th class="border-s">Package ID</th>
+                            <th class="border-s">Agent Name</th>
+                            <th class="border-s">Imam Name</th>
+                            <th class="border-s">Local Support Name</th>
+                            <th class="border-s">Origin Country</th>
+                            <th class="border-s">Origin City</th>
+                            <th class="border-s">Origin Airport</th>
                             <th class="p-3 border-s">Status</th>
-                            <th class="p-3 border-s">Progress</th>
-                            <th class="p-3 border-s">Details</th>
+                            <th class="text-center">Date</th>
+                            <th class="text-center">Details</th>
                         </tr>
                     </thead>
-                    <tbody class="text-center">
-                        <!-- row 1 -->
-                        <tr v-for="(pkg, index) in packages" :key="index" class="hover:bg-gray-100">
-                            <th>{{ index + 1 }}</th>
-                            <td class="border-s border-slate-200">
-                                <div class="flex items-center gap-3 justify-start">
+                    <tbody>
+                        <tr v-for="pkg in packagesData" :key="pkg.id" class="bg-gray-100">
+                            <td>
+                                <div class="flex items-center gap-3">
                                     <div class="avatar">
                                         <div class="mask mask-squircle h-12 w-12">
-                                            <img :src="activeImg1" alt="Premium Hajj Package 2025" />
+                                            <img src="/src/assets/image/prayer-rugs.jpg" alt="Upcoming Premium Hajj Package 2026" />
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="font-bold">{{ pkg.title }}</div>
-                                        <div class="text-sm opacity-50">Exclusive Facilities</div>
+                                        <div class="font-bold">{{ pkg.package_title }}</div>
                                     </div>
                                 </div>
                             </td>
-                            <td class="border-s border-slate-200">{{ pkg.city }}</td>
-                            <td class="border-s border-slate-200">{{ pkg.country }}</td>
-                            <td class="border-s border-slate-200">{{ pkg.agent }}</td>
-                            <td class="border-s border-slate-200">{{ pkg.support_manager }}</td>
-                            <td class="border-s border-slate-200">{{ pkg.startDate }}</td>
-                            <td class="border-s border-slate-200">{{ pkg.endDate }}</td>
-                            <td class="border-s border-slate-200">21 Days</td>
+                            <td class="border-s border-slate-200" >{{ pkg.package_id }}</td>
+                            <td class="border-s border-slate-200" >{{ pkg.agent?.user?.name }}</td>
+                            <td class="border-s border-slate-200" >{{ pkg.imam?.user?.name }}</td>
+                            <td class="border-s border-slate-200" >{{ pkg.support_manager?.user?.name }}</td>
+                            <td class="border-s border-slate-200" >{{ pkg.country?.name }}</td>
+                            <td class="border-s border-slate-200" >{{ pkg.city?.name }}</td>
+                            <td class="border-s border-slate-200" >{{ pkg.airport.short_name }}</td>
                             <td
+                            
                             class="border-s border-slate-200" 
                             :class="{
-                                'text-green-500': pkg.status === 'In Plan',
-                                'text-red-500': pkg.status === 'Fully Booked',
-                                'text-yellow-500 font-semibold': pkg.status !== 'In Plan' && pkg.status !== 'Fully Booked'
+                                'text-green-500': pkg.status_of_package === 'In Plan',
+                                'text-red-500': pkg.status_of_package === 'Fully Booked',
+                                'text-yellow-500 font-semibold': pkg.status_of_package !== 'In Plan' && pkg.status_of_package !== 'Fully Booked'
                             }">
-                                {{ pkg.status }}
+                                <span v-if="pkg.status_of_package === '1'">Not In Plan</span>
+                                <span v-if="pkg.status_of_package === '2'">In Plan</span>
+                                <span v-if="pkg.status_of_package === '3'">In Preparation</span>
+                                <span v-if="pkg.status_of_package === '4'">Fully Booked</span>
+                                <span v-if="pkg.status_of_package === '5'">In Approval Process</span>
+                                <span v-if="pkg.status_of_package === '6'">Approved</span>
+                                <span v-if="pkg.status_of_package === '7'">Published</span>
+                                <span v-if="pkg.status_of_package === '7'">Discontinued</span>
                             </td>
-
-
-                            <td class="border-s border-slate-200">
-                                <progress class="progress progress-info w-56" value="70" max="100"></progress>
+                            <td class="text-center border-s border-slate-200">
+                                <p class="text-gray-600"><span class="font-semibold text-base">Started: </span>{{ pkg.start_at }}</p><br />
+                                <p class="text-red-600"><span class="font-semibold text-base">Ended: </span>{{ pkg.end_at }}</p>
                             </td>
                             <td class="border-s border-slate-200">
                                 <button class="btn btn-primary btn-xs text-white">
-
                                     <router-link :to="'imam_package_details/'+pkg.id">Details</router-link>
                                 </button>
                             </td>
@@ -74,12 +90,28 @@
 </template>
 
 <script setup>
-import activeImg1 from "@/assets/image/hajj/Platinum-Maktab-A-1.jpg"
-import activeImg2 from "@/assets/image/hajj/hajj-3.webp"
-import activeImg3 from "@/assets/image/hajj/hajj-4.webp"
-import activeImg4 from "@/assets/image/hajj/hajj-5.jpg"
-
+import { useAuthStore } from '@/stores/AuthStore';
+import { ref, onMounted } from 'vue';
 import { packages } from '@/stores/itinenary.ts'
+const store = useAuthStore();
+const packagesData = ref([]);
+const loading = ref(true);
+
+const getPackages = async () => {
+    loading.value = true; // Start loading
+    try {
+        const { data } = await api().get('package');
+        packagesData.value = data.data.filter(pkg => pkg.imam?.user?.id === store.user.id);
+    } catch (error) {
+        console.error(error);
+    } finally {
+        loading.value = false; // End loading
+    }
+};
+
+onMounted(() => {
+    getPackages();
+});
 </script>
 
 <style scoped>
