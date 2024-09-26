@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#135D66] bg-cover w-2/12">
+  <div class="bg-[#135D66] bg-cover w-1/5">
     <div class="p-5 flex flex-col gap-3 font-semibold text-lg h-full">
       <p class="text-2xl font-bold text-[#ffffff]">Imam Dashboard &nbsp; &nbsp;</p>
       <p class="text-xl font-bold text-white">Welcome Mr. Mahmadullah</p>
