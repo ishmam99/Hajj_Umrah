@@ -8,19 +8,30 @@
           <img src="/src/assets/image/common/n1.png" alt="" class="w-20 m-auto" />
          
         <p class="text-2xl font-bold text-center text-[#0b2036]">{{ route.name.replace(/_/g, ' ') }}</p>
-          <p class="font-semibold py-1.5">Email</p>
+        <div v-if="errorData?.message" class="text-red-500 bg-red-100 rounded-lg p-2 my-2 text-center flex justify-center">
+          {{ errorData.message}} !!
+        </div>
+          <div>
+            <p class="font-semibold py-1.5">Email</p>
           <input
             @change="error = false"
             v-model="loginData.email"
             type="email"
             class="border border-gray-300 focus:outline-yellow-600 rounded-md w-full py-1.5 px-3"
           />
-          <p class="font-semibold py-1.5">Password</p>
+          </div>
+          <div class="relative">
+            <p class="font-semibold py-1.5">Password</p>
           <input
             v-model="loginData.password"
-            type="password"
+            :type="showPassword ? 'text' : 'password'"
             class="border border-gray-300 focus:outline-yellow-600 rounded-md w-full py-1.5 px-3"
           />
+          <button type="button" @click="togglePasswordVisibility" class="absolute right-2 top-10">
+            <span v-if="showPassword">Hide</span>
+            <span v-else>Show</span>
+          </button>
+          </div>
           <div class="flex justify-between items-center gap-5 my-3">
             <div class="flex items-center gap-2">
               <input type="checkbox" class="" />
@@ -173,10 +184,15 @@ import { useRoute, useRouter } from 'vue-router'
 import Tilt from 'vanilla-tilt-vue'
 import { useToast } from "/components/ui/toast/use-toast";
 const { toast } = useToast();
+const errorData = ref()
 const loginload = ref(false)
 const route = useRoute()
 const router = useRouter()
 const error = ref(false)
+const showPassword = ref(false);
+  const togglePasswordVisibility = () => {
+  showPassword.value = !showPassword.value;
+};
 
 const loginData = ref({
   email: '',
@@ -279,6 +295,8 @@ const login =async () => {
       
     } catch (error) {
       console.log(error);
+      errorData.value = error.response.data
+      console.log(errorData.value.message);
     }
     loginload.value = false
 
