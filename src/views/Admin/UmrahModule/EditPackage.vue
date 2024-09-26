@@ -1,6 +1,6 @@
 <template>
   
-  <div class="px-5 bg-slate-50 py-5 w-3/4" v-if="!edit">
+  <div class="px-5 bg-slate-50 py-5 w-4/5" v-if="!edit">
      <div class="text-center pb-6 border-b-4 border-gray-300 mb-12">
         <p class="text-5xl font-bold text-[#149856] tracking-tight">Update Package Details</p>
         <p class="text-xl text-gray-600 mt-3">All package details and itinerary details are given bellow</p>
