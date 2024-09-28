@@ -9,7 +9,7 @@
           alt="Profile Image"
           class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
         >
-        <h2 class="text-2xl text-white font-bold mt-4">Mahmadullah</h2>
+        <h2 class="text-2xl text-white font-bold mt-4">{{store?.user.name}}</h2>
         <p class="text-white text-xl font-semibold">Imam</p>
       </div>
 
@@ -86,12 +86,14 @@
 <script setup>
 const isEditing = ref(false);
 import { ref } from "vue";
+
+import { useAuthStore } from "@/stores/AuthStore";
 //  import people from "../../../assets/image/userProfile.webp";
 import people from "/src/assets/image/userProfile.webp";
-
+const store = useAuthStore();
 const profileFields = {
-Name: 'Mahmadullah',
-Email: 'mammad@gmail.com',
+Name: store?.user.name,
+Email: store?.user.email,
 'Phone Number': '+10124543232',
 Country: 'USA',
 Address: 'Texas',
@@ -107,8 +109,8 @@ gender: { label: 'Gender', type: 'text' },
 };
 
 const userData = ref({
-name: 'Mahmadultan',
-email: 'mammad@gmail.com',
+name: store?.user.name,
+email: store?.user.email,
 address: 'Texas',
 phone_no: '+10124543232',
 country: 'USA',

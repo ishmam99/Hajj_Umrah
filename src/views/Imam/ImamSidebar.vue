@@ -2,7 +2,7 @@
   <div class="bg-[#135D66] bg-cover w-1/5">
     <div class="p-5 flex flex-col gap-3 font-semibold text-lg h-full">
       <p class="text-2xl font-bold text-[#ffffff]">Imam Dashboard &nbsp; &nbsp;</p>
-      <p class="text-xl font-bold text-white">Welcome Mr. Mahmadullah</p>
+      <p class="text-xl font-bold text-white">Welcome Mr. {{AuthStore?.user.name}}</p>
       <router-link to="/Imam_Profile" @click="dropdown = 0"
         class="flex items-center gap-2 bg-white p-2 rounded-md"><svg xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -66,9 +66,17 @@
         </div>
       </div>
 
-
-      <button type="button" @click="logout()" class="py-2 px-5 mt-40 bg-red-800 rounded-md text-white duration-300">
-        Log Out
+      <button type="button" @click="logout" class="py-2 px-5 mt-2 bg-red-800 rounded-md text-white duration-300">
+        <span v-if="loginload" class="flex justify-center items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 animate-spin"
+            fill="currentColor">
+            <path
+              d="M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z">
+            </path>
+          </svg>
+          Logging Out...
+        </span>
+        <span v-else>Logout</span>
       </button>
     </div>
   </div>
@@ -82,13 +90,20 @@ import { useAuthStore } from '/src/stores/AuthStore.ts'
 const route = useRoute()
 const router = useRouter()
 const AuthStore = useAuthStore()
-
+const loginload = ref(false);
 const dropdown = ref(0)
 const subDropDown = ref(false)
 
 const logout = () => {
-  AuthStore.logout()
-  router.push('/')
+  loginload.value = true;
+  try{
+
+    AuthStore.logout()
+    router.push('/')
+  } catch (error) {
+    console.log(error);
+  }
+  loginload.value = false;
 }
 
 </script>
