@@ -51,11 +51,11 @@ watch(
 </script>
 
 <template>
-  <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover w-1/4 min-h-screen sticky top-[80px]">
+  <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover w-1/5 min-h-screen sticky top-[80px]">
     <div class="bg-cyan-600 bg-opacity-60 p-5 h-full flex flex-col gap-3 font-semibold text-lg">
       <p class="text-2xl font-bold text-white shadow-lg px-2 bg-cyan-500">Umrah Package Management System</p>
 
-        <router-link to="/Umrah_Management_System" class="flex items-center gap-2 py-3 rounded-lg bg-sky-600 text-white px-2 hover:px-3 hover:px-2">Dashboard</router-link>
+        <router-link to="/Umrah_Management_System" class="flex items-center gap-2 py-3 rounded-lg bg-sky-600 text-white px-2 hover:px-3">Dashboard</router-link>
       <div class="accordion">
         <button @click.stop="toggleAccordion('projectManagement')" class="flex items-center gap-2 py-3 rounded-lg bg-blue-600 w-full mb-2 text-white px-2 hover:px-3">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
