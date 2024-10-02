@@ -882,22 +882,23 @@
                   v-for="(itinerary, index) in packageDetails.itineraries"
                   :key="itinerary.id"
                 >
-                  <tr>
-                    <td :colspan="1">
+                  <tr class="border-y-2 border-gray-500">
+                    <td class="border-x-2 border-gray-500" :colspan="1">
                       <p>{{ moment(itinerary.date, 'DD-MM-YYYY').format('dddd, DD MMM YYYY') }}</p>
                     </td>
-                    <td :colspan="6">{{ 'Day ' + (index + 1) }}</td>
+                    <td class="border-x-2 border-gray-500" :colspan="1">{{ 'Day ' + (index + 1) }}</td>
+                    <td class="border-x-2 border-gray-500" :colspan="5"></td>
                   </tr>
-                  <tr v-for="activity in itinerary.activities" :key="activity.id">
+                  <tr class="border-y-2 border-gray-500" v-for="activity in itinerary.activities" :key="activity.id">
                     <td></td>
                     <td></td>
-                    <td>{{ activity.time }}</td>
-                    <td>{{ activity.activity_type }}</td>
+                    <td class="border-x-2 border-gray-500">{{ activity.time }}</td>
+                    <td class="border-x-2 border-gray-500">{{ activity.activity_type }}</td>
 
-                    <td>{{ activity.from }}</td>
-                    <td>{{ activity.to }}</td>
-                    <td>{{ activity.transportation_by }}</td>
-                    <td>{{ activity.description }}</td>
+                    <td class="border-x-2 border-gray-500">{{ activity.from }}</td>
+                    <td class="border-x-2 border-gray-500">{{ activity.to }}</td>
+                    <td class="border-x-2 border-gray-500">{{ activity.transportation_by }}</td>
+                    <td class="border-x-2 border-gray-500">{{ activity.description }}</td>
                     <!-- <td>{{ activity.status }}</td> -->
                   </tr>
                 </template>
