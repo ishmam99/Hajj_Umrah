@@ -222,6 +222,15 @@
                         </option>
                       </select>
                     </div>
+                     <div class="w-full">
+                    <label for="" class="text-slate-600">Description</label>
+                    <input
+                      v-model="airRoute.description"
+                      type="text"
+                      placeholder="Description"
+                      class="input input-bordered w-full"
+                    />
+                  </div>
                    
                     <button
                       v-if="selectdAirline"
@@ -765,6 +774,15 @@
                         </option>
                       </select>
                     </div>
+                     <div class="w-full">
+                    <label for="" class="text-slate-600">Description</label>
+                    <input
+                      v-model="newTransport.description"
+                      type="text"
+                      placeholder="Description"
+                      class="input input-bordered w-full"
+                    />
+                  </div>
                     <!-- <div class="w-full">
                         <label for="" class="text-slate-600">Select Day</label>
                         <select
@@ -1556,11 +1574,19 @@ const getRoutes = () => {
     rt.transit = { id: 11, name: 'Istanbul', short_name: 'IST' }
 
     rt.date = moment(itinerary.value.date).format('ddd, DD MMM')
-    rt.origin_time = `${t}:00`
-    rt.transit_time = `${t + 3}:00`
-    rt.destination_time = `${t + 6}:00`
+    if (rt.origin == 'Jeddah' || rt.origin == 'Medina')
+    {
+     rt.origin_time = `02:25`
+    rt.transit_time = `08:50`
+    rt.destination_time = `08:50`
+    }
+  else{
+    rt.origin_time = `21:25`
+    rt.transit_time = `21:00`
+      rt.destination_time = `21:00`
+  }
     availableRoutes.value.push(rt)
-    t += 4
+    
   }
   console.log(availableRoutes.value)
 }
@@ -1665,14 +1691,16 @@ const selectRoute = (rt) => {
     from: rt.origin.name,
     to: rt.transit.name,
     activity_type: 'Flight from',
-    by: selectdAirline.value.name
+    by: selectdAirline.value.name,
+    description:airRoute.value.description
   }
   let activity2 = {
     time: rt.transit_time,
     from: rt.transit.name,
     to: rt.destination.name,
     activity_type: 'Flight from',
-    by: selectdAirline.value.name
+    by: selectdAirline.value.name,
+    description:airRoute.value.description
   }
   itinerary.value.activities.push(activity1)
   itinerary.value.activities.push(activity2)
@@ -1690,7 +1718,8 @@ const selectRouteNewActivity = async(rt, id) => {
     from: rt.origin.name,
     to: rt.transit.name,
     activity_type: 'Flight from',
-    transportation_by: selectdAirline.value.name
+     transportation_by: selectdAirline.value.name,
+    description:airRoute.value.description
   }
    let activity2 = {
      itinerary_id: id,
@@ -1698,7 +1727,8 @@ const selectRouteNewActivity = async(rt, id) => {
     from: rt.transit.name,
     to: rt.destination.name,
     activity_type: 'Flight from',
-    transportation_by: selectdAirline.value.name
+     transportation_by: selectdAirline.value.name,
+    description:airRoute.value.description
   }
 
    const { data } = await api().post('activity', activity1)
