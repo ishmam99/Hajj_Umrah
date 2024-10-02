@@ -3,7 +3,7 @@
     class="h-[80px] w-full flex justify-center bg-[url('/src/assets/image/home/pattern-1.png')] bg-repeat items-center text-black fixed top-0 z-40 bg-[#36897bfa] duration-300"
   >
     <div
-      class="flex items-center justify-center gap-5 bg-[#23646dc6] py-4 px-[3%] uppercase text-sm w-full font-semibold"
+      class="flex items-center justify-center gap-5 bg-gradient-to-r from-[#1a6bc1c6] to-[#128471c8] py-4 px-[3%] uppercase text-sm w-full font-semibold"
     >
       <div>
         <img src="/src/assets/image/common/n1.png" alt="" class="h-[50px] bg-white rounded-xl" />

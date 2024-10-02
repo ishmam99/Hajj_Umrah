@@ -51,7 +51,7 @@ watch(
 </script>
 
 <template>
-  <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover w-1/5 min-h-screen sticky top-[80px]">
+  <div class="bg-[url('/src/assets/image/common/bg-pattern.jpg')] bg-cover w-1/4 min-h-screen sticky top-[80px]">
     <div class="bg-cyan-600 bg-opacity-60 p-5 h-full flex flex-col gap-3 font-semibold text-lg">
       <p class="text-2xl font-bold text-white shadow-lg px-2 bg-cyan-500">Umrah Package Management System</p>
 
@@ -65,18 +65,24 @@ watch(
           Umrah Packages
         </button>
         <div v-if="currentAccordions === 'projectManagement'" class="submenu ms-8 space-y-2">
-          <router-link to="/Umrah_Package_Create_New_Package" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Create New Package</router-link>
-          <router-link to="/view_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- View / Edit Packages</router-link>
-          <router-link to="/umrah_package_current_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Approve
-            Packages</router-link>
+          <router-link to="/Umrah_Package_Create_New_Package" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">1. Create New Package</router-link>
+          <router-link to="/view_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">2. View / Edit Packages</router-link>
+         <button @click.stop="toggleAccordion2('pkg')" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 w-full mb-2 text-white px-2 hover:px-3">
+          3.
+         Package Approval
+        </button>
+        <div v-if="currentAccordions2 === 'pkg'" class="submenu ms-8 space-y-2">
+          <router-link to="/umrah_package_current_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white  px-2 hover:px-3">3a. 
+            Pending Package for Approval</router-link>
         
-          <router-link to="/umrah_package_approved_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Approved
+          <router-link to="/umrah_package_approved_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white  px-2 hover:px-3">3b. Approved
             Packages</router-link>
-          <router-link to="/Umrah_package_upcoming_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Upcoming Packages List
+            </div>
+          <router-link to="/Umrah_package_upcoming_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">4. Upcoming Packages List
             </router-link>
-          <router-link to="/Umrah_Package_completed_Packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- Completed Packages List
+          <router-link to="/Umrah_Package_completed_Packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">5. Completed Packages List
             </router-link>
-          <router-link to="/Umrah_package_all_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">- All Packages List
+          <router-link to="/Umrah_package_all_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">6. All Packages List
             </router-link>
           <!-- <router-link to="/package_details" class="flex items-center gap-2 hover:px-2">- Package Details</router-link> -->
           <!-- <router-link to="/Social_Service_Project_Post" class="flex items-center gap-2 hover:px-2"

@@ -22,19 +22,19 @@
                 </thead>
                 <tbody>
                   <tr v-for="(pkg, index) in packages" :key="index" class="hover:bg-gray-50 shadow">
-                    <td class="border-r border-slate-700 px-4 py-2">{{ pkg.title }}</td>
-                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.pkgId }}</td>
-                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.country }}</td>
-                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.city }}</td>
-                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.agent }}</td>
-                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.imam }}</td>
-                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.support_manager }}</td>
-                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.startDate }} - {{ pkg.startDate }}</td>
+                    <td class="border-r border-slate-700 px-4 py-2">{{ pkg.package.package_title }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.package.package_id }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.package.country.name }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.package.city.name }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.package.agent.name }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.package.imam.name }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.package.support_manager.name }}</td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.package.start_at }} - {{ pkg.package.end_at }}</td>
                     <!-- <td class=" px-4 py-2"></td> -->
-                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.customerStatus }} </td>
+                    <td class="border-r border-slate-700  px-4 py-2">{{ pkg.status == 0 ? 'Paid' : 'Completed' }} </td>
                     <td class=" px-4 py-2">
                       <div class="flex space-x-2">
-                        <router-link :to="'customer_package_details/'+pkg.id">
+                        <router-link :to="'customer_package_details/'+pkg.package.id">
                           <button class="bg-[#286d71] hover:bg-[#1f565b] text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
                             View Details
                           </button>
@@ -51,8 +51,10 @@
         </div>
 </template>
 <script setup>
-import { packages } from '@/stores/itinenary.ts'
+// import { packages } from '@/stores/itinenary.ts'
 
+import { onMounted, ref } from 'vue'
+const packages = ref([])
 const deletePackage = (packageId) => {
   alert(`Package ${packageId} deleted!`)
 }
@@ -65,7 +67,14 @@ const deletePackage = (packageId) => {
   { id: 6, name: 'Approved' },
   { id: 7, name: 'Published' },
   { id: 8, name: 'Discontinued' }
-]
+ ]
+const getPackages = async () => {
+  const { data } = await api().get('customer-packages')
+  packages.value = data.data
+ }
+onMounted(() => {
+  getPackages()
+})
 </script>
 
 <style scoped>

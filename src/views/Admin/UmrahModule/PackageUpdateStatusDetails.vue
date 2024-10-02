@@ -1,26 +1,30 @@
 <template>
-  <div class="px-5 bg-slate-50 py-5 w-4/5">
-    <p class="text-2xl font-bold py-3 border-b">Umrah Package Status</p>
-    <div class="bg-slate-50 py-10">
-      <div class="relative h-72 w-full bg-gray-300 rounded-b-lg shadow-xl overflow-hidden">
-        <img src="/src/assets/image/hajj/hajj-3.webp" alt="Package Cover" class="h-full w-full object-cover" />
-        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent py-6 px-8">
-          <p class="text-white text-5xl font-extrabold tracking-wide drop-shadow-md">{{ packageDetails?.package_title }}
+  <div class="px-5 bg-slate-50 py-5 w-3/4">
+    <p class="text-2xl font-bold py-3 border-b">Umrah Package Status Approval</p>
+    <div class="flex justify-start items-center py-3">
+      <button @click="$router.go(-1)" class="btn btn-primary text-white">Back</button>
+    </div>
+    <div class="bg-slate-50 py-1">
+      <div class="relative h-auto w-full text-white bg-sky-600 rounded-b-lg shadow-xl overflow-hidden">
+        <!-- <img src="/src/assets/image/hajj/hajj-3.webp" alt="Package Cover" class="h-full w-full object-cover" /> -->
+        <div class=" bottom-0 left-0 w-full py-6 px-8">
+          <p class=" text-5xl font-extrabold tracking-wide drop-shadow-md">{{ packageDetails?.package_title }}
           </p>
-          <p class="text-white text-2xl font-semibold mt-1">{{ packageDetails?.code }}</p>
-          <p class="text-white text-lg mt-2">{{ moment(packageDetails?.start_at).format("MMM Do YY") }} -
+          <p class=" text-2xl font-semibold mt-1">{{ packageDetails?.code }}</p>
+          <p class=" text-lg mt-2">{{ moment(packageDetails?.start_at).format("MMM Do YY") }} -
             {{ moment(packageDetails?.end_at).format("MMM Do YY") }}</p>
+          <p class=" text-lg mt-2">{{packageDetails?.package_id }}</p>
         </div>
       </div>
 
-      <div v-if="packageDetails" class="pt-10">
-        <ul class="steps w-full steps-vertical lg:steps-horizontal lg:w-full mb-10">
+      <!-- <div v-if="packageDetails" class="pt-10">
+        <ul class="steps w-full steps-vertical lg:steps-horizontal lg:w-full  mb-10">
           <li v-for="(status, index) in statuses" :key="index" class="flex-1 text-center"
             :class="{ 'step step-success': isChecked(status.name), 'step': true }">
 
             <div class="text-lg font-semibold">{{ status.name }}</div>
 
-            <div class="text-sm text-gray-500 mt-1">
+            <div class="text-sm  text-gray-500 mt-1">
               <p v-if="status.name === 'Date'"
                 :class="{ 'text-green-500 text-base font-semibold': isChecked(status.name) }">
                 {{ packageDetails.start_at }}
@@ -73,6 +77,439 @@
             </div>
           </li>
         </ul>
+      </div> -->
+
+      <div class="flex w-full justify-between mt-5 border-t-2 border-x-2 border-teal-600">
+        <button @click="currentTab = 'date'" class="py-3 px-5  border-e border-white font-semibold w-full text-xl" :class="currentTab == 'date' ? 'bg-white text-teal-700':'bg-teal-600 text-white'">Date</button>
+        <button @click="currentTab = 'imam'" class="py-3 px-5  border-e border-white font-semibold w-full text-xl" :class="currentTab == 'imam' ? 'bg-white text-teal-700':'bg-teal-600 text-white'">Imam</button>
+        <button @click="currentTab = 'agent'" class="py-3 px-5  border-e border-white font-semibold w-full text-xl" :class="currentTab == 'agent' ? 'bg-white text-teal-700':'bg-teal-600 text-white'">Agent</button>
+        <button @click="currentTab = 'flight'" class="py-3 px-5  border-e border-white font-semibold w-full text-xl" :class="currentTab == 'flight' ? 'bg-white text-teal-700':'bg-teal-600 text-white'">Flight</button>
+        <button @click="currentTab = 'bus'" class="py-3 px-5  border-e border-white font-semibold w-full text-xl" :class="currentTab == 'bus' ? 'bg-white text-teal-700':'bg-teal-600 text-white'">Bus</button>
+        <button @click="currentTab = 'hotel'" class="py-3 px-5  border-e border-white font-semibold w-full text-xl" :class="currentTab == 'hotel' ? 'bg-white text-teal-700':'bg-teal-600 text-white'">Hotel</button>
+        <button @click="currentTab = 'fr'" class="py-3 px-5  border-e border-white  w-full font-semibold text-xl" :class="currentTab == 'fr' ? 'bg-white text-teal-700':'bg-teal-600 text-white'">Final Review</button>
+      </div>
+      <div v-if="currentTab == 'date'" class="bg-white border-x-2 border-teal-700 border-b-2">
+        <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">Approve Package Start and Ending Date</h1>
+        <div class="px-10">
+          <div class="flex items-center my-5 justify-center" v-if="packageDetails">
+             <h1 class="w-full px-5">Start Date :</h1>  <input v-model="packageDetails.start_at" type="date" class="input input-bordered w-full" />
+          </div>
+          <div class="flex items-center my-5 justify-center" v-if="packageDetails">
+             <h1 class="w-full px-5">End Date :</h1>  <input v-model="packageDetails.end_at" type="date" class="input input-bordered w-full" />
+          </div>
+           
+          <div class="justify-between items-center w-full flex">
+                  <label class="label px-5 w-full">
+                   Note :
+                  </label>
+                  <input type="text" placeholder="Add a note" class="input input-bordered w-full input-sm" />
+                </div>
+              
+          <div class="flex justify-start gap-20 items-center w-full px-5" v-if="packageDetails">
+                  <label class="cursor-pointer flex justify-start gap-4 label">
+                    <span class="label-text text-sm">{{ packageDetails.package_status.date_approve? 'Approved' : 'Approve'
+                      }}</span> 
+                  
+                  </label> <input type="checkbox" v-model="packageDetails.package_status.date_approve" :disabled="index > currentCheckboxIndex"
+                      @change="handleCheckboxChange(index)" class="checkbox checkbox-primary checkbox-sm" />
+                </div>
+
+                <div class="flex justify-center items-center py-10">
+                 <button class="btn btn-success text-white ">Update Date</button>
+        </div></div>
+      </div>
+      <div v-if="currentTab == 'imam'" class="bg-white border-x-2 border-teal-700 border-b-2">
+        <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">Approve Package Imam</h1>
+        <div class="px-10">
+          <div class="flex items-center my-5 justify-center" v-if="packageDetails">
+             <h1 class="w-full px-5">Current Imam :</h1>  
+              <h1 class="w-full px-5">{{ packageDetails.imam.user.name }}</h1>  
+          </div>
+          <div class="flex items-center my-5 justify-center" v-if="packageDetails">
+             <h1 class="w-full px-5">Change Imam:</h1>    <select v-model="packageDetails.imam.id" class="select select-bordered w-full">
+                <option disabled selected>Select  Imam Name</option>
+                 <option :value="imam.id" v-for="imam in imams">{{ imam.user.name }}</option>
+                
+              </select>
+          </div>
+           
+          <div class="justify-between items-center w-full flex">
+                  <label class="label px-5 w-full">
+                   Note :
+                  </label>
+                  <input type="text" placeholder="Add a note" class="input input-bordered w-full input-sm" />
+                </div>
+              
+          <div class="flex justify-start gap-20 items-center w-full px-5" v-if="packageDetails">
+                  <label class="cursor-pointer flex justify-start gap-4 label">
+                    <span class="label-text text-sm">{{ packageDetails.package_status.date_approve? 'Approved' : 'Approve'
+                      }}</span> 
+                  
+                  </label> <input type="checkbox" v-model="packageDetails.package_status.date_approve" :disabled="index > currentCheckboxIndex"
+                      @change="handleCheckboxChange(index)" class="checkbox checkbox-primary checkbox-sm" />
+                </div>
+
+                <div class="flex justify-center items-center py-10">
+                 <button class="btn btn-success text-white ">Update Date</button>
+        </div></div>
+      </div>
+      <div v-if="currentTab == 'agent'" class="bg-white border-x-2 border-teal-700 border-b-2">
+        <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">Approve Package Agent</h1>
+        <div class="px-10">
+          <div class="flex items-center my-5 justify-center" v-if="packageDetails">
+             <h1 class="w-full px-5">Current Agent :</h1>  
+              <h1 class="w-full px-5">{{ packageDetails.agent.user.name }}</h1>  
+          </div>
+          <div class="flex items-center my-5 justify-center" v-if="packageDetails">
+             <h1 class="w-full px-5">Change Agent:</h1>    <select v-model="packageDetails.agent.id" class="select select-bordered w-full">
+                <option disabled selected>Select  Agent Name</option>
+                 <option :value="agent.id" v-for="agent in agents">{{ agent.user.name }}</option>
+                
+              </select>
+          </div>
+           
+          <div class="justify-between items-center w-full flex">
+                  <label class="label px-5 w-full">
+                   Note :
+                  </label>
+                  <input type="text" placeholder="Add a note" class="input input-bordered w-full input-sm" />
+                </div>
+              
+          <div class="flex justify-start gap-20 items-center w-full px-5" v-if="packageDetails">
+                  <label class="cursor-pointer flex justify-start gap-4 label">
+                    <span class="label-text text-sm">{{ packageDetails.package_status.date_approve? 'Approved' : 'Approve'
+                      }}</span> 
+                  
+                  </label> <input type="checkbox" v-model="packageDetails.package_status.date_approve" :disabled="index > currentCheckboxIndex"
+                      @change="handleCheckboxChange(index)" class="checkbox checkbox-primary checkbox-sm" />
+                </div>
+
+                <div class="flex justify-center items-center py-10">
+                 <button class="btn btn-success text-white ">Update Date</button>
+        </div></div>
+      </div>
+      <div v-if="currentTab == 'flight'" class="bg-white border-x-2 border-teal-700 border-b-2 px-2">
+        <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">Approve Package Flights</h1>
+        <div class="flex justify-end items-center py-3 px-5">
+           <button @click="showAirForm = !showAirForm" class="btn btn-success text-white">Add New Flight Details</button>
+      
+        </div>
+        <div>
+        <div class="px-10" v-if="showAirForm">
+          <form class="space-y-4" @submit.prevent="saveFligt">
+            <div class="flex items-center justify-between">
+              <label for="airline" class="w-1/3">Airline:</label>
+              <select id="airline" v-model="flightData.airline" class="select select-bordered w-2/3">
+                <option disabled selected>Select Airline</option>
+                <option v-for="airline in airlines" :key="airline.id" :value="airline">{{ airline.name }}</option>
+              </select>
+            </div>
+            <div class="flex items-center justify-between">
+              <label for="airroute" class="w-1/3">Air Route:</label>
+              <select id="airroute" v-model="flightData.airroute_id" class="select select-bordered w-2/3">
+                <option disabled selected>Select Air Route</option>
+                <option v-if="flightData.airline" v-for="route in flightData.airline.routes" :key="route.id" :value="route.id">{{ route.origin_airport.short_name }} - {{ route.transit_airport.short_name }}- {{ route.destination_airport.short_name }}</option>
+              </select>
+            </div>
+            <div class="flex justify-center items-center mt-4">
+              <button type="submit" class="btn btn-success text-white">Save Flight</button>
+            </div>
+          </form>
+        </div>
+        </div>
+          <div class="px-10">
+          <div class="overflow-x-auto py-5">
+            <table class="table w-full bg-gray-200">
+              <thead>
+                <tr>
+                  <th>Flight Number</th>
+                  <th>Departure</th>
+                  <th>Transit</th>
+                  <th>Destination</th>
+                  <th>Departure Date</th>
+                  <th>Return Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="flight in package_flights" :key="flight.id">
+                 
+                  <td>{{ flight.airroute.flight_number?flight.airroute.flight_number : 'F1G56' }}</td>
+                  <td>{{ flight.airroute.origin_airport.short_name }}</td>
+                  <td>{{ flight.airroute.transit_airport.short_name }}</td>
+                  <td>{{ flight.airroute.destination_airport.short_name }}</td>
+               
+                  <td>{{ packageDetails.start_at }}</td>
+                  <td>{{  packageDetails.end_at }}</td>
+                  <td>{{ flight.status == 1 ? 'Confirmed':'Pending' }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+         
+              
+          <div class="flex justify-start items-center w-full" v-if="packageDetails">
+             <div class="justify-between items-center w-full gap-10 flex">
+                  <label class="label px-5 w-full">
+                   Note :
+                  </label>
+                  <input type="text" placeholder="Add a note" class="input input-bordered w-full input-sm" />
+               
+                  <label class="cursor-pointer w-full flex justify-start gap-4 label">
+                    <span class="label-text text-sm">{{ packageDetails.package_status.date_approve? 'Approved' : 'Approve'
+                      }}</span> 
+                  
+                  </label> 
+                  <input type="checkbox" v-model="packageDetails.package_status.date_approve" :disabled="index > currentCheckboxIndex"
+                      @change="handleCheckboxChange(index)" class="checkbox checkbox-primary checkbox-sm" />
+                </div> </div>
+
+                <div class="flex justify-center items-center py-10">
+                 <button class="btn btn-success text-white ">Update Date</button>
+        </div></div>
+      </div>
+      <div v-if="currentTab == 'bus'" class="bg-white border-x-2 border-teal-700 border-b-2">
+        <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">Approve Package Buses</h1>
+        <div class="flex justify-end items-center py-3 px-5">
+          <button @click="showBusForm = !showBusForm" class="btn btn-success text-white">Add New Bus Details</button>
+        </div>
+        <div>
+          <div class="px-10" v-if="showBusForm">
+            <form class="space-y-4" @submit.prevent="saveBus">
+              <div class="flex items-center justify-between">
+                <label for="busOperator" class="w-1/3">Bus Operator:</label>
+                <select id="busOperator" v-model="busData.busOperator" class="select select-bordered w-2/3">
+                  <option disabled selected>Select Bus Operator</option>
+                  <option v-for="operator in buses" :key="operator.id" :value="operator">{{ operator.name }}</option>
+                </select>
+              </div>
+              <div class="flex items-center justify-between">
+                <label for="busRoute" class="w-1/3">Bus Route:</label>
+                <select id="busRoute" v-model="busData.busRoute" class="select select-bordered w-2/3">
+                  <option disabled selected>Select Bus Route</option>
+                  <option v-if="busData.busOperator" v-for="route in busData.busOperator.routes" :key="route.id" :value="route.id">{{route.bus_number}} : {{ route.departure_from }} To {{ route.departure_to }}</option>
+                </select>
+              </div>
+              <div class="flex justify-center items-center mt-4">
+                <button type="submit" class="btn btn-success text-white">Save Bus</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="px-10">
+          <div class="overflow-x-auto py-5">
+            <table class="table w-full bg-gray-200">
+              <thead>
+                <tr>
+                  <th>Bus Number</th>
+                  <th>Departure</th>
+                  <th>Departure Timing</th>
+                  <th>Destination</th>
+                  <!-- <th>Departure Date</th>
+                  <th>Return Date</th> -->
+                  <th>Arrival Timing</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="bus in package_transportations" :key="bus.id">
+                  <td>{{ bus.bus_route.bus_number }}</td>
+                  <td>{{ bus.bus_route.departure_from }}</td>
+                  <td>{{ bus.bus_route.departure_time }}</td>
+                  <td>{{ bus.bus_route.departure_to }}</td>
+                  <!-- <td>{{ bus.bus_route.departure_date }}</td>
+                  <td>{{ bus.bus_route.return_date }}</td> -->
+                  <td>{{ bus.bus_route.arrival_time }}</td>
+                  <td>{{ bus.status==1?'Confirmed':'Pending' }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+         
+              
+          <div class="flex justify-start items-center w-full" v-if="packageDetails">
+             <div class="justify-between items-center w-full gap-10 flex">
+                  <label class="label px-5 w-full">
+                   Note :
+                  </label>
+                  <input type="text" placeholder="Add a note" class="input input-bordered w-full input-sm" />
+               
+                  <label class="cursor-pointer w-full flex justify-start gap-4 label">
+                    <span class="label-text text-sm">{{ packageDetails.package_status.date_approve? 'Approved' : 'Approve'
+                      }}</span> 
+                  
+                  </label> 
+                  <input type="checkbox" v-model="packageDetails.package_status.date_approve" :disabled="index > currentCheckboxIndex"
+                      @change="handleCheckboxChange(index)" class="checkbox checkbox-primary checkbox-sm" />
+                </div> </div>
+
+                <div class="flex justify-center items-center py-10">
+                 <button class="btn btn-success text-white ">Update Date</button>
+        </div></div>
+      </div>
+      <div v-if="currentTab == 'hotel'" class="bg-white border-x-2 border-teal-700 border-b-2">
+        <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">Approve Package Hotels</h1>
+          <div class="flex justify-end items-center py-3 px-5">
+          <button @click="showHotelForm = !showHotelForm" class="btn btn-success text-white">Add New Hotel Details</button>
+        </div>
+        <div class="px-10 py-5">
+          <form @submit.prevent="addHotelData" v-if="showHotelForm" class="px-2 py-3 bg-gray-200 rounded-md">
+            <div class="flex flex-col gap-4">
+              <div class="flex gap-4 w-full">
+                <div class="flex flex-col w-full">
+                  <label for="hotel_id" class=" font-medium text-gray-700">Select Hotel</label>
+                  <select id="hotel_id" name="hotel_id" v-model="hotelData.hotel_id" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 p-3 focus:ring-opacity-50" required>
+                    <option v-for="hotel in hotels" :key="hotel.id" :value="hotel.id">{{ hotel.name }}</option>
+                  </select>
+                </div>
+                <div class="flex flex-col w-full">
+                  <label for="checkin_date" class=" font-medium text-gray-700">Check-in Date</label>
+                  <input type="date" id="checkin_date" name="checkin_date" v-model="hotelData.checkin_date" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 p-3 focus:ring-opacity-50" required>
+                </div>
+                <div class="flex flex-col w-full">
+                  <label for="checkout_date" class=" font-medium text-gray-700">Check-out Date</label>
+                  <input type="date" id="checkout_date" name="checkout_date" v-model="hotelData.checkout_date" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 p-3 focus:ring-opacity-50" required>
+                </div>
+              </div>
+              <div class="flex gap-4 mt-4 w-full">
+                <div class="flex flex-col w-full">
+                  <label for="two_bed" class=" font-medium text-gray-700">Number of Double Bed Room </label>
+                  <input type="number" id="two_bed" name="two_bed" v-model="hotelData.two_bed" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 p-3 focus:ring-opacity-50" required>
+                </div>
+                <div class="flex flex-col w-full">
+                  <label for="three_bed" class=" font-medium text-gray-700">Number of Triple Bed Room</label>
+                  <input type="number" id="three_bed" name="three_bed" v-model="hotelData.three_bed" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                </div>
+                <div class="flex flex-col w-full">
+                  <label for="four_bed" class=" font-medium text-gray-700">Number of Quad Bed Room</label>
+                  <input type="number" id="four_bed" name="four_bed" v-model="hotelData.four_bed" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add Hotel Data</button>
+            </div>
+          </form>
+        </div>
+        <div class="px-10">
+          <div class="overflow-x-auto py-5">
+            <table class="table w-full bg-gray-200">
+              <thead>
+                <tr>
+                  <th>Hotel Name</th>
+                  <th>Location</th>
+                  <th>Check-in Date</th>
+                  <th>Check-out Date</th>
+                  <th>Double</th>
+                  <th>Triple</th>
+                  <th>Quad</th>
+                  
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="hotel in package_hotels" :key="hotel.id">
+                  <!-- {{ hotel }} -->
+                  <td>{{ hotel.hotel.name }}</td>
+                  <td>{{ hotel.hotel.city.name }}</td>
+                  <td>{{ hotel.checkin_date }}</td>
+                  <td>{{ hotel.checkout_date }}</td>
+                  <td>{{ hotel.two_bed }}</td>
+                  <td>{{ hotel.three_bed }}</td>
+                  <td>{{ hotel.four_bed }}</td>
+                  <td>{{ hotel.status==1?'Confirmed':'Pending' }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+         
+              
+          <div class="flex justify-start items-center w-full" v-if="packageDetails">
+             <div class="justify-between items-center w-full gap-10 flex">
+                  <label class="label px-5 w-full">
+                   Note :
+                  </label>
+                  <input type="text" placeholder="Add a note" class="input input-bordered w-full input-sm" />
+               
+                  <label class="cursor-pointer w-full flex justify-start gap-4 label">
+                    <span class="label-text text-sm">{{ packageDetails.package_status.date_approve? 'Approved' : 'Approve'
+                      }}</span> 
+                  
+                  </label> 
+                  <input type="checkbox" v-model="packageDetails.package_status.date_approve" :disabled="index > currentCheckboxIndex"
+                      @change="handleCheckboxChange(index)" class="checkbox checkbox-primary checkbox-sm" />
+                </div> </div>
+
+                <div class="flex justify-center items-center py-10">
+                 <button class="btn btn-success text-white ">Update Date</button>
+        </div></div>
+      </div>
+      <div v-if="currentTab == 'fr'" class="bg-white border-x-2 border-teal-700 border-b-2">
+        <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">Approve Umrah Package Final Review</h1>
+        <div class="px-10">
+          <div class="overflow-x-auto py-5">
+            <table class="table w-full bg-gray-200">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Day</th>
+                   <th>Time</th>
+                    <th>Activity Type</th>
+                
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Vendor</th>
+                  <th>Action</th>
+                  <!-- <th>Status</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <template v-for="(itinerary, index) in packageDetails.itineraries" :key="itinerary.id">
+                  <tr>
+                    <td :colspan="1"> <p>{{ moment(itinerary.date, 'DD-MM-YYYY').format('dddd, DD MMM YYYY') }}</p>
+                     
+                    </td>
+                    <td :colspan="6">{{ 'Day ' + (index + 1) }}
+                  
+                    </td>
+                  </tr>
+                  <tr v-for="activity in itinerary.activities" :key="activity.id">
+                    <td></td>
+                    <td></td>
+                     <td>{{ activity.time }}</td>
+                    <td>{{ activity.activity_type }}</td>
+                   
+                    <td>{{ activity.from }}</td>
+                    <td>{{ activity.to }}</td>
+                    <td>{{ activity.transportation_by }}</td>
+                    <td>{{ activity.description }}</td>
+                    <!-- <td>{{ activity.status }}</td> -->
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+         
+              
+          <div class="flex justify-start items-center w-full" v-if="packageDetails">
+             <div class="justify-between items-center w-full gap-10 flex">
+                  <label class="label px-5 w-full">
+                   Note :
+                  </label>
+                  <input type="text" placeholder="Add a note" class="input input-bordered w-full input-sm" />
+               
+                  <label class="cursor-pointer w-full flex justify-start gap-4 label">
+                    <span class="label-text text-sm">{{ packageDetails.package_status.date_approve? 'Approved' : 'Approve'
+                      }}</span> 
+                  
+                  </label> 
+                  <input type="checkbox" v-model="packageDetails.package_status.date_approve" :disabled="index > currentCheckboxIndex"
+                      @change="handleCheckboxChange(index)" class="checkbox checkbox-primary checkbox-sm" />
+                </div> </div>
+
+                <div class="flex justify-center items-center py-10">
+                 <button class="btn btn-success text-white ">Update Date</button>
+        </div></div>
       </div>
     </div>
   </div>
@@ -82,25 +519,70 @@
 import { ref, watch, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import moment from 'moment';
-
+const currentTab = ref('date')
 const route = useRoute();
 const packageID = route.params.id;
 const packageDetails = ref();
 const checkedStatus = ref({}); // Track checkbox states
 const currentCheckboxIndex = ref(0); // Track the index of the currently enabled checkbox
+const showAirForm = ref(false)
+const showHotelForm = ref(false)
+const flightData = ref({
+  airline: null,
+  airroute_id: null,
+  package_id:null
+})
+const hotelData = ref({
+  checkin_date: null,
+  checkout_date: null,
+  hotel_id: null,
+  package_id: null,
+  two_bed:null,
+  three_bed:null,
+  four_bed:null,
+})
+const showBusForm = ref(false)
+const busData = ref({
+  busOperator: null,
+  busRoute: null,
+  package_id:null
+})
+const flights = ref([
+  
+    {
+      id: 1,
+      flight_number: 'UA123',
+      departure: 'New York',
+      destination: 'Jeddah',
+      departure_date: '2023-02-01',
+      return_date: '2023-02-15',
+      status: 'pending'
+    },
+    {
+      id: 2,
+      flight_number: 'UA124',
+      departure: 'Jeddah',
+      destination: 'New York',
+      departure_date: '2023-02-15',
+      return_date: '2023-02-29',
+      status: 'pending'
+    }
+])
 
-watch(() => route, () => {
-  getPackage();
-});
-
+const package_flights = ref([])
+const package_hotels = ref([])
+const package_transportations = ref([])
 const getPackage = async () => {
+  showAirForm.value = false
+  showBusForm.value = false
+  showHotelForm.value = false
   const { data } = await api().get('package/' + packageID);
   packageDetails.value = data.data;
+  package_flights.value = data.package_flights
+  package_hotels.value = data.package_hotels
+  package_transportations.value = data.package_transportations
 };
 
-onMounted(() => {
-  getPackage();
-});
 
 const statuses = [
   { id: 1, name: 'Date' },
@@ -124,4 +606,70 @@ const handleCheckboxChange = (index) => {
 const isChecked = (statusName) => {
   return checkedStatus.value[statusName] || false;
 };
+const imams = ref([])
+const agents = ref([])
+const getImams = async() => {
+  try {
+    const { data }  = await api().get('imam')
+    console.log(data)
+    imams.value = data.data
+  } catch (error)
+  {
+    console.log(error)
+  }
+}
+const getAgents = async() => {
+  try {
+    const { data }  = await api().get('agents')
+    console.log(data)
+    agents.value = data.data
+  } catch (error)
+  {
+    console.log(error)
+  }
+}
+const airlines = ref([])
+const hotels = ref([])
+const buses = ref([])
+const getAirlines = async () => {
+  const { data } = await api().get('airline')
+  airlines.value = data.data
+}
+const getBusRoutes = async () => {
+  const { data } = await api().get('package-transport-vendors')
+  buses.value = data.data
+}
+const getHotels = async () => {
+  const { data } = await api().get('hotels')
+  hotels.value = data.data
+}
+const saveFligt = async () => {
+  const data = await api().post('package-flights', {
+    package_id : packageDetails.value.id,
+    airroute_id : flightData.value.airroute_id
+  })
+   getPackage()
+}
+const saveBus = async () => {
+  const data = await api().post('package-transports', {
+    package_id : packageDetails.value.id,
+    bus_route_id : busData.value.busRoute
+  })
+   getPackage()
+}
+const addHotelData = async () => {
+  hotelData.value.package_id = packageDetails.value.id
+  console.log(hotelData.value)
+  const data = await api().post('package-hotels', hotelData.value)
+   getPackage()
+}
+
+  onMounted(() => {
+   getPackage()
+  getAgents()
+    getImams()
+    getAirlines()
+    getBusRoutes()
+  getHotels()
+})
 </script>

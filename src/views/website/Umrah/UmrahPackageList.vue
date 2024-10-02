@@ -54,7 +54,7 @@
                       <!-- Header Row -->
                       <thead class="bg-sky-700 text-white">
                           <tr class="text-center text-lg font-semibold py-4">
-                              <th class="py-6 border-r-2 border-gray-100">Name</th>
+                              <th class="py-6 border-r-2 border-gray-100">Umrah Package Name</th>
                               <th class="p-2 border-r-2 border-gray-100">Umrah Start Date</th>
                               <th class="p-2 border-r-2 border-gray-100">Umrah End Date</th>
                               <th class="p-2 border-r-2 border-gray-100">Package Origin Country</th>

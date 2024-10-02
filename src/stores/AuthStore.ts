@@ -9,28 +9,35 @@ export const useAuthStore = defineStore('authStore', {
     token: null,
     role: null,
     currentDashboard: null,
-    authUser: ''
+    authUser: '',
+    payment: {
+      session_token: null,
+      success_token: null,
+      package_id: null,
+      accomodation:null,
+      amount: null
+    }
   }),
   actions: {
-    login(user,token,role) {
+    login(user, token, role) {
       this.isAuthenticated = true
       this.user = user
       this.token = token
       this.role = role
-      console.log(user, token,role )
+      console.log(user, token, role)
     },
 
     logout() {
       this.isAuthenticated = false
       this.user = null
-      this.token= null
-      this.role= null
-      this.currentDashboard= null
+      this.token = null
+      this.role = null
+      this.currentDashboard = null
     },
     signup(user) {
       this.isAuthenticated = true
       this.user = user
     }
   },
-  persist:true
+  persist: true
 })

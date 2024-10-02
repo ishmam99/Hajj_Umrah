@@ -20,97 +20,39 @@
       >
         <swiper-slide>
           <img src="/src/assets/image/hero/kaba.jpg" alt="" class="" />
-          <div class="head">
+          <div class="head w-full flex flex-col items-center h-full bg-[#0802022a] justify-center">
             <p>Welcome To</p>
-            <h1>Hajj Exploration LLC</h1>
-            <button class=""><router-link to="/Signup">Apply Now</router-link></button>
+            <h1 class="shadow-lg">Hajj Exploration LLC</h1>
+            <button class=""><router-link to="/Signup">Learn More</router-link></button>
           </div>
         </swiper-slide>
         <swiper-slide>
           <img src="/src/assets/image/hero/women.jpg" alt="" class="" />
-          <div class="head">
-            <h4 class="text-xl">Hajj Exploration LLC</h4>
+          <div class="head w-full flex flex-col items-center h-full bg-[#0802022a] justify-center">
+            <p>Hajj Exploration LLC</p>
             <h1>Hajj Package</h1>
-            <button class=""><router-link to="/Signup">Apply Now</router-link></button>
+            <button class=""><router-link to="/Signup">Learn More</router-link></button>
           </div>
         </swiper-slide>
         <swiper-slide>
           <img src="/src/assets/image/hero/arafat.jpg" alt="" class="" />
-          <div class="head">
-            <h4 class="text-xl">Hajj Exploration LLC</h4>
+          <div class="head w-full flex flex-col items-center h-full bg-[#0802022a] justify-center">
+            <p>Hajj Exploration LLC</p>
             <h1>Umrah Package</h1>
-            <button class=""><router-link to="/services/new_muslim">Apply Now</router-link></button>
+            <button class=""><router-link to="/services/new_muslim">Learn More</router-link></button>
           </div>
         </swiper-slide>
         <swiper-slide>
           <img src="/src/assets/image/hero/people.jpeg" alt="" class="" />
-          <div class="head">
-            <h4 class="text-xl">Hajj Exploration LLC</h4>
+          <div class="head w-full flex flex-col items-center h-full bg-[#0802022a] justify-center">
+            <p>Hajj Exploration LLC</p>
             <h1>Travel Package</h1>
-            <button><router-link to="/Fund_Raising">Apply Now</router-link></button>
+            <button><router-link to="/Fund_Raising">Learn More</router-link></button>
           </div>
         </swiper-slide>
       </swiper>
     </div>
-    <div class="w-1/4 px-5 absolute top-[50%] translate-y-[-50%] right-[5%] z-30">
-      <!-- <h1 class="text-3xl font-bold text-white uppercase pb-3">Prayer time</h1> -->
-      <div class="bg-[#ffffffe0] p-5 rounded-2xl drop-shadow-md">
-        <p class="mx-3 text-sm font-semibold text-gray-500 text-center">11 th January,2024</p>
-        <div class="grid grid-cols-2">
-          <div>
-            <h4 class="text-blue-600 text-4xl font-semibold uppercase">Next</h4>
-            <p class="text-gray-500 text-xl font-semibold">Prayer</p>
-          </div>
-          <div class="text-right text-sm font-semibold">
-            <p class="text-gray-600">Dhuhr</p>
-            <p class="text-yellow-600">1:00 PM</p>
-            <p class="text-green-600">4h 16m left</p>
-          </div>
-        </div>
-        <div class="">
-          <div class="pt-3 pb-1 flex gap-2 text-center font-bold border-b">
-            <p class="w-1/3">Prayer</p>
-            <p class="w-1/3">Adhaan</p>
-            <p class="w-1/3">Iqamah</p>
-          </div>
-          <div class="pt-3 pb-1 flex gap-2 text-center border-b font-semibold">
-            <p class="w-1/3 text-sm">Fajr</p>
-            <p class="w-1/3 text-sm">06:18 AM</p>
-            <p class="w-1/3 text-sm">06:30 AM</p>
-          </div>
-          <div class="pt-3 pb-1 flex gap-2 text-center border-b font-semibold">
-            <p class="w-1/3 text-sm">Sunrise</p>
-            <p class="w-1/3 text-sm">07:31 AM</p>
-            <p class="w-1/3 text-sm"></p>
-          </div>
-          <div class="pt-3 pb-1 flex gap-2 text-center border-b font-semibold">
-            <p class="w-1/3 text-sm">Dhuhr</p>
-            <p class="w-1/3 text-sm">12:35 PM</p>
-            <p class="w-1/3 text-sm">02:00 PM</p>
-          </div>
-          <div class="pt-3 pb-1 flex gap-2 text-center border-b font-semibold">
-            <p class="w-1/3 text-sm">Asr</p>
-            <p class="w-1/3 text-sm">03:20 PM</p>
-            <p class="w-1/3 text-sm">04:00 PM</p>
-          </div>
-          <div class="pt-3 pb-1 flex gap-2 text-center border-b font-semibold">
-            <p class="w-1/3 text-sm">Maghrib</p>
-            <p class="w-1/3 text-sm">05:39 PM</p>
-            <p class="w-1/3 text-sm">05:44 PM</p>
-          </div>
-          <div class="pt-3 pb-1 flex gap-2 text-center border-b font-semibold">
-            <p class="w-1/3 text-sm">Isha</p>
-            <p class="w-1/3 text-sm">06:52 PM</p>
-            <p class="w-1/3 text-sm">08:00 PM</p>
-          </div>
-          <div class="pt-3 pb-1 flex gap-2 text-center font-semibold">
-            <p class="w-1/3 text-sm">Jumu’ah</p>
-            <p class="w-1/3 text-sm">06:52 PM</p>
-            <p class="w-1/3 text-sm">08:00 PM</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  
   </div>
 </template>
 <script setup>
@@ -145,27 +87,30 @@ const modules = [Pagination, Navigation, Autoplay]
   position: relative;
 }
 .head {
-  text-shadow: 2px 2px 3px black;
-  font-size: 54px;
+  text-shadow: 4px 2px 4px rgb(2, 125, 138);
+  
+  font-size: 78px;
   font-weight: 700;
-  color: white;
+  color: rgb(146, 241, 249);
   position: absolute;
   text-transform: uppercase;
-  left: 5%;
+
   text-align: left;
 }
 .head p {
   text-shadow: 2px 2px 3px black;
-  font-size: 34px;
+  font-size: 44px;
   color: rgb(255, 255, 255);
 }
 .head button {
   font-size: 24px;
   font-weight: 500;
   padding: 8px 12px;
-  border: 3px solid white;
+  /* border: 3px solid white; */
   text-shadow: 2px 2px 3px black;
   border-radius: 8px;
+   background: rgb(10, 147, 159);
+   color:azure
   /* transition: .2s ease-in-out; */
 }
 .head button:hover {
