@@ -2012,7 +2012,7 @@ const hotels = ref([
   { id: 8, name: 'Pullman Zamzam Medina', city: 'Medina' },
   { id: 9, name: 'Raffles Makkah Palace', city: 'Makkah' },
   { id: 10, name: 'Crowne Plaza Medinah', city: 'Medina' },
-  { id: 10, name: 'Hotel Movenpick', city: 'Makkah' }
+  { id: 10, name: 'Hotel Movenpick Makkah', city: 'Makkah' }
 ])
 const locations = ref([
   { id: 1, name: 'Mecca', city: 'Mecca' },
