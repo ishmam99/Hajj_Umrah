@@ -1,7 +1,7 @@
 <template>
   <div class="px-5 bg-slate-50 py-5 w-3/4">
-    <p class="text-2xl font-bold py-3 border-b">Umrah Package Status</p>
-    <div class="flex justify-start items-center py-3">
+    
+    <div class="flex justify-between items-center py-3"><p class="text-2xl font-bold py-3 border-b">Umrah Package Approval Status</p>
       <button @click="$router.go(-1)" class="btn btn-primary text-white">Back</button>
     </div>
     <div class="bg-slate-50 py-10">
@@ -15,20 +15,91 @@
           <p class="text-white text-lg mt-2">{{ moment(packageDetails?.start_at).format("MMM Do YY") }} - {{moment(packageDetails?.end_at).format("MMM Do YY") }}</p>
         </div>
       </div>
-      <div class="grid grid-cols-8 mt-10" v-if="packageDetails">
-        <div v-for="(status, index) in statuses" :key="index" class="flex flex-wrap items-center relative">
+      <div class="grid grid-cols-7 px-5 mt-10" v-if="packageDetails">
+
+        <!-- Date Status -->
+        <div  class="flex flex-wrap items-center relative">
           <div class="flex items-center">
-    <div :class="{'w-16 h-16 bg-green-500 rounded-full flex items-center justify-center': status.id <= packageDetails.status_of_package, 'w-16 h-16 bg-gray-500 rounded-full flex items-center justify-center': status.id > packageDetails.status_of_package}"> 
+            
+    <div :class="{'w-16 h-16 bg-green-500 rounded-full flex items-center justify-center':packageDetails.package_status.date_approve == 1, 'w-16 h-16 bg-gray-500 rounded-full flex items-center justify-center':packageDetails.package_status.date_approve ==0}"> 
      
-            <p class="text-white">{{ index + 1 }}</p>
+            <p class="text-white">1</p>
           </div>
-            <div v-if="index < statuses.length - 1" :class="{' top-9  w-24 h-1 bg-green-500': status.id <= packageDetails.status_of_package, ' top-9 w-24 h-1 bg-gray-500': status.id > packageDetails.status_of_package}" class="-z-0"></div>
+            <div  :class="{' top-9  w-24 h-1 bg-green-500': packageDetails.package_status.date_approve ==1, ' top-9 w-24 h-1 bg-gray-500':packageDetails.package_status.date_approve == 0}" class="-z-0"></div>
           </div>
       
-          <p class="mt-2 text-lg font-semibold">{{ status.name }}</p>
+          <p class="mt-2 px-2 text-lg text-center font-semibold">Date</p>
           <!-- Line connecting steps -->
     
         </div>
+        <!-- Imam Status -->
+        <div  class="flex flex-wrap items-center relative">
+          <div class="flex items-center">
+    <div :class="{'w-16 h-16 bg-green-500 rounded-full flex items-center justify-center': packageDetails.package_status.imam_approve == 1, 'w-16 h-16 bg-gray-500 rounded-full flex items-center justify-center': packageDetails.package_status.imam_approve == 0}"> 
+     
+            <p class="text-white">2</p>
+          </div>
+            <div :class="{' top-9  w-24 h-1 bg-green-500': packageDetails.package_status.imam_approve == 1, ' top-9 w-24 h-1 bg-gray-500': packageDetails.package_status.imam_approve == 0}" class="-z-0"></div>
+          </div>
+      
+          <p class="mt-2 px-2 text-lg font-semibold">Imam</p>
+          <!-- Line connecting steps -->
+    
+        <!-- Agent Status -->
+         </div>
+        <div  class="flex flex-wrap items-center relative">
+          <div class="flex items-center">
+            <div :class="{'w-16 h-16 bg-green-500 rounded-full flex items-center justify-center': packageDetails.package_status.agent_approve == 1, 'w-16 h-16 bg-gray-500 rounded-full flex items-center justify-center': packageDetails.package_status.agent_approve == 0}"> 
+              <p class="text-white">3</p>
+            </div>
+            <div :class="{' top-9  w-24 h-1 bg-green-500': packageDetails.package_status.agent_approve == 1, ' top-9 w-24 h-1 bg-gray-500': packageDetails.package_status.agent_approve == 0}" class="-z-0"></div>
+          </div>
+          <p class="mt-2 px-2 text-lg text-center font-semibold">Agent</p>
+        </div>
+        <!-- Flight Status -->
+        <div  class="flex flex-wrap items-center relative">
+          <div class="flex items-center">
+            <div :class="{'w-16 h-16 bg-green-500 rounded-full flex items-center justify-center': packageDetails.package_status.flight_approve == 1, 'w-16 h-16 bg-gray-500 rounded-full flex items-center justify-center': packageDetails.package_status.flight_approve == 0}"> 
+              <p class="text-white">4</p>
+            </div>
+            <div :class="{' top-9  w-24 h-1 bg-green-500': packageDetails.package_status.flight_approve == 1, ' top-9 w-24 h-1 bg-gray-500': packageDetails.package_status.flight_approve == 0}" class="-z-0"></div>
+          </div>
+          <p class="mt-2 px-2 text-lg text-center font-semibold">Flight</p>
+        </div>
+        <!-- Bus Status -->
+        <div  class="flex flex-wrap items-center relative">
+          <div class="flex items-center">
+            <div :class="{'w-16 h-16 bg-green-500 rounded-full flex items-center justify-center': packageDetails.package_status.bus_approve == 1, 'w-16 h-16 bg-gray-500 rounded-full flex items-center justify-center': packageDetails.package_status.bus_approve == 0}"> 
+              <p class="text-white">5</p>
+            </div>
+            <div :class="{' top-9  w-24 h-1 bg-green-500': packageDetails.package_status.bus_approve == 1, ' top-9 w-24 h-1 bg-gray-500': packageDetails.package_status.bus_approve == 0}" class="-z-0"></div>
+          </div>
+          <p class="mt-2 px-3 text-lg text-center font-semibold">Bus</p>
+        </div>
+        <!-- Hotel Status -->
+        <div  class="flex flex-wrap items-center relative">
+          <div class="flex items-center">
+            <div :class="{'w-16 h-16 bg-green-500 rounded-full flex items-center justify-center': packageDetails.package_status.hotel_approve == 1, 'w-16 h-16 bg-gray-500 rounded-full flex items-center justify-center': packageDetails.package_status.hotel_approve == 0}"> 
+              <p class="text-white">6</p>
+            </div>
+            <div :class="{' top-9  w-24 h-1 bg-green-500': packageDetails.package_status.hotel_approve == 1, ' top-9 w-24 h-1 bg-gray-500': packageDetails.package_status.hotel_approve == 0}" class="-z-0"></div>
+          </div>
+          <p class="mt-2 px-3 text-lg text-center font-semibold">Hotel</p>
+        </div>
+        <!-- Final Review Status -->
+        <div  class="flex flex-wrap items-center relative">
+          <div class="flex items-center">
+            <div :class="{'w-16 h-16 bg-green-500 rounded-full flex items-center justify-center': packageDetails.package_status.finalreview == 1, 'w-16 h-16 bg-gray-500 rounded-full flex items-center justify-center': packageDetails.package_status.finalreview == 0}"> 
+              <p class="text-white">7</p>
+            </div>
+            <!-- <div :class="{' top-9  w-24 h-1 bg-green-500': packageDetails.package_status.finalreview == 1, ' top-9 w-24 h-1 bg-gray-500': packageDetails.package_status.finalreview == 0}" class="-z-0"></div> -->
+          </div>
+          <p class="mt-2 text-center  text-lg font-semibold">Final Review</p>
+        </div>
+      
+      
+       
+
       </div>
     </div>
   </div>

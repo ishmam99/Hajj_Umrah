@@ -354,6 +354,11 @@ const router = createRouter({
           component: () => import('../views/Admin/UmrahModule/PackageUpdateStatusDetails.vue')
         },
         {
+          path: '/package_lifecycle_status/:id',
+          name: 'package_lifecycle_status',
+          component: () => import('../views/Admin/UmrahModule/PackageLifecycleStatus.vue')
+        },
+        {
           path: '/package_details/package_edit/:id',
           name: 'package_edit',
           component: () => import('../views/Admin/UmrahModule/EditPackage.vue')
