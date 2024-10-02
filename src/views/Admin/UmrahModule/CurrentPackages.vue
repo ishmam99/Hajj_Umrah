@@ -23,8 +23,8 @@
               <th class="border px-6 py-3">Start Date</th>
               <th class="border px-6 py-3">End Date</th>
               <th class="border px-3 py-3">Status</th>
-              <th class="border px-3 py-3">Package Status</th>
-              <th class="border px-3 py-3">Package Approval</th>
+              <th class="border px-3 py-3">Package Approval Status</th>
+              <th class="border px-3 py-3">Package Lifecycle Status</th>
             </tr>
           </thead>
           <tbody>
@@ -50,7 +50,7 @@
                    Package Update for Approval
                     </button>
                   </router-link> 
-                 <router-link :to="'package_update_status/'+pkg.id">
+                 <router-link :to="'package_status/'+pkg.id">
                     <button class="bg-blue-500 hover:bg-bg-blue-600 text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
                    Package Aprroval Status
                     </button>
@@ -60,7 +60,7 @@
               </td>
               <td class=" px-4 py-2">
                 <div class="flex space-x-2">
-                 <router-link :to="{ path: 'package_status/'+pkg.id }">
+                 <router-link :to="{ path: 'package_lifecycle_status/'+pkg.id }">
                     <button class="bg-[#286d71] hover:bg-[#1f565b] text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
                        Package Lifecycle Status
                     </button>
