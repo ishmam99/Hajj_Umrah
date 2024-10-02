@@ -1987,6 +1987,7 @@ const airLines = ref([
       { id: 3, name: 'Medina', short_name: 'MED' },
       { id: 6, name: 'Jeddah', short_name: 'JED' },
       { id: 7, name: 'Torronto', short_name: 'YYZ' },
+      { id: 8, name: 'Chicago', short_name: 'ORD' },
     ],
     transits: [{ id: 11, name: 'Istanbul', short_name: 'IST' }],
     destination: [
@@ -1997,6 +1998,7 @@ const airLines = ref([
       { id: 3, name: 'Medina', short_name: 'MED' },
       { id: 6, name: 'Jeddah', short_name: 'JED' },
       { id: 7, name: 'Torronto', short_name: 'YYZ' },
+      { id: 8, name: 'Chicago', short_name: 'ORD' },
     ]
   }
 ])
