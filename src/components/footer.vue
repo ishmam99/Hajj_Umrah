@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-[#36897b] bg-[url('/src/assets/image/home/pattern-1.png')]">
-    <div class="grid grid-cols-3 gap-5 bg-[#23646dcb] bg-repeat">
+  <div class="bg-[#366489] bg-[url('/src/assets/image/home/pattern-1.png')]">
+    <div class="grid grid-cols-3 gap-5 bg-[#23376dcb] bg-repeat">
       <div class="text-sm px-20 font-bold py-10">
         <p class="text-2xl font-bold text-white py-3">Hajj Exploration LLC</p>
         <!-- <img src="../assets/landing/l1.png" alt="" class="py-3"> -->
@@ -83,7 +83,7 @@
         <p class="pb-3">Privacy Policy</p>
       </div>
     </div>
-    <div class="flex justify-between px-[5%] bg-[#23646dcb] py-5">
+    <div class="flex justify-between px-[5%] bg-[#23386dcb] py-5">
       <p class="text-sm text-white font-bold">© 2024, All rights reserved</p>
       <div>
         <img src="../assets/image/common/ft5.png" alt="" />

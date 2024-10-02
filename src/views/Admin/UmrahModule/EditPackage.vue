@@ -1,11 +1,12 @@
 <template>
   
-  <div class="px-5 bg-slate-50 py-5 w-4/5" v-if="!edit">
+  <div class="px-5 bg-slate-50 py-5 w-3/4" v-if="!edit">
      <div class="text-center pb-6 border-b-4 border-gray-300 mb-12">
         <p class="text-5xl font-bold text-[#149856] tracking-tight">Update Package Details</p>
         <p class="text-xl text-gray-600 mt-3">All package details and itinerary details are given bellow</p>
-        <div class="w-full flex justify-end items-center px-20">
+        <div class="w-full flex gap-3 justify-end items-center px-20">
           <button class="btn btn-success text-white" @click="edit =!edit">Edit</button>
+        <button @click="$router.go(-1)" class="btn btn-primary text-white">Back</button>
         </div>
          
       </div>
@@ -526,6 +527,15 @@
                       v-model="newTransport.time"
                       type="time"
                       placeholder="Select Time"
+                      class="input input-bordered w-full"
+                    />
+                  </div>
+                   <div class="w-full">
+                    <label for="" class="text-slate-600">Description</label>
+                    <input
+                      v-model="newTransport.description"
+                      type="text"
+                      placeholder="Description"
                       class="input input-bordered w-full"
                     />
                   </div>
@@ -1077,6 +1087,15 @@
                       class="input input-bordered w-full"
                     />
                   </div>
+                  <div class="w-full">
+                    <label for="" class="text-slate-600">Description</label>
+                    <input
+                      v-model="newTransport.description"
+                      type="text"
+                      placeholder="Description"
+                      class="input input-bordered w-full"
+                    />
+                  </div>
                   <div class="flex items-center justify-center w-1/2">
                     <button
                       type="button"
@@ -1500,11 +1519,11 @@ const airports = [ { id: 1, name: 'Houston', short_name: 'IAH' },
       { id: 3, name: 'Medina', short_name: 'MED' },
       { id: 6, name: 'Jeddah', short_name: 'JED' }]
 // const transports = ref([])
-const newTransport = ref({ from: '', to: '', type: '', cost: null })
+const newTransport = ref({ from: '', to: '', activity_type: '', cost: null , description:''})
 
 const addTransport = () => {
   transports.value.push({ ...newTransport.value })
-  newTransport.value = { from: '', to: '', type: '', cost: null }
+  newTransport.value = { from: '', to: '', activity_type: '', cost: null }
   // Don't close the form here
 }
 
@@ -1547,8 +1566,14 @@ const getRoutes = () => {
 }
 const transports = ref([
   {
-    name: "Khalid's Taxi",
+    name: "TAWFIQ",
     city: 'Medina',
+    type: 'Bus',
+    fare: 200
+  },
+  {
+    name: "TAWFIQ",
+    city: 'Mecca',
     type: 'Bus',
     fare: 200
   },
@@ -1604,7 +1629,8 @@ const toLocations = computed(() => {
       { id: 1, name: 'Medina Airpot', city: 'Medina' },
       { id: 2, name: 'Jeddah Airpot', city: 'Jeddah' }
     ]
-  } else if (newTransport.value.to_type == 'Locations') {
+  } else if (newTransport.value.to_type == 'Location') {
+    console.log(locations.value)
     data = locations.value
   }
   return data
@@ -1638,14 +1664,14 @@ const selectRoute = (rt) => {
     time: rt.origin_time,
     from: rt.origin.name,
     to: rt.transit.name,
-    type: 'Flight from',
+    activity_type: 'Flight from',
     by: selectdAirline.value.name
   }
   let activity2 = {
     time: rt.transit_time,
     from: rt.transit.name,
     to: rt.destination.name,
-    type: 'Flight from',
+    activity_type: 'Flight from',
     by: selectdAirline.value.name
   }
   itinerary.value.activities.push(activity1)
@@ -1700,7 +1726,8 @@ const selectTransport = (tr) => {
     time: newTransport.value.time,
     from: newTransport.value.from,
     to: newTransport.value.to,
-    type: `${newTransport.value.type} from `,
+    description:newTransport.value.description,
+    activity_type: `${newTransport.value.type} from `,
     by: tr.name
   }
   
@@ -1708,7 +1735,7 @@ const selectTransport = (tr) => {
   itinerary.value.activities.push(activity1)
    showActivity.value = false
   itinerary.value.type = null
-  newTransport.value = { from: '', to: '', type: '', cost: null }
+  newTransport.value = { from: '', to: '', type: '', cost: null ,description:''}
   availableTransport.value = []
 }
 const selectTransportActivity = async(tr,id) => {
@@ -1737,7 +1764,7 @@ const saveHotel = ()=>{
     time: selectedHotel.value.time,
     from: selectedHotel.value.name,
     to: null,
-    type: `Check-In at `,
+    activity_type: `Check-In at `,
     by: null,
    }
   itinerary.value.activities.push(activity1)
@@ -1771,7 +1798,7 @@ const saveActivity = () => {
     time: selectedGeneral.value.time,
     from: null,
     to: null,
-    type: selectedGeneral.value.type,
+    activity_type: selectedGeneral.value.type,
      by: null,
     description : selectedGeneral.value.description
    }
@@ -1849,8 +1876,9 @@ const airLines = ref([
 ])
 const hotels = ref([
   { id: 1, name: 'Anwar Al Medinah Mövenpick Hotel', city: 'Medina' },
+  { id: 11, name: 'Medina Intercontinental', city: 'Medina' },
   { id: 2, name: 'Dar Al Tawhid Intercontinental Makkah', city: 'Makkah' },
-  { id: 3, name: 'Swissotel Al Maqam Makkah', city: 'Makkah' },
+  { id: 3, name: 'Makkah Towers', city: 'Makkah' },
   { id: 4, name: 'Medinah Hilton', city: 'Medina' },
   { id: 5, name: 'Anjum Hotel Makkah', city: 'Makkah' },
   { id: 6, name: 'Le Meridien Medina', city: 'Medina' },
@@ -1867,7 +1895,9 @@ const locations = ref([
   { id: 5, name: 'Mina', city: 'Mecca' },
   { id: 6, name: 'Arafat', city: 'Mecca' },
   { id: 7, name: 'Muzdalifah', city: 'Mecca' },
-  { id: 8, name: 'Masjid Al Nabawi', city: 'Medina' }
+  { id: 8, name: 'Masjid Al Nabawi', city: 'Medina' },
+  { id: 9, name: 'Ziarat, Dates farm etc', city: 'Medina' },
+  { id: 10, name: 'Ziarat', city: 'Medina' }
 ])
 const step = ref({
   type: '',
@@ -2010,7 +2040,7 @@ const saveItineray = async () => {
       const activity = itinerary.value.activities[i];
       const d = await api().post('activity', {
         itinerary_id: data.data.id,
-        activity_type: activity.type,
+        activity_type: activity.activity_type,
         time: activity.time,
         from: activity.from,
         to: activity.to,

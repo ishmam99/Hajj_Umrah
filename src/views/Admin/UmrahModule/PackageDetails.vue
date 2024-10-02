@@ -1,6 +1,9 @@
 <template>
   <div class="px-5 bg-slate-50 py-5 w-3/4">
     <p class="text-2xl font-bold py-3 border-b">Umrah Package Details</p>
+    <div class="flex justify-start items-center py-3">
+      <button @click="$router.go(-1)" class="btn btn-primary text-white">Back</button>
+    </div>
     <div class="bg-slate-50 py-10">
       <!-- {{ packageDetails }} -->
       <!-- Cover Image Section -->
@@ -23,7 +26,7 @@
         </div>
         <!-- Tabs for Days -->
         <div class="my-8" v-if="packageDetails">
-          <nav class="flex space-x-4 overflow-x-auto pb-4 border-b-2 border-gray-200">
+          <nav class="flex space-x-2 overflow-x-auto pb-4 border-b-2 border-gray-200">
             <button
               v-for="(day, index) in packageDetails.itineraries"
               :key="index"

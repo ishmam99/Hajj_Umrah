@@ -23,7 +23,8 @@
               <th class="border px-6 py-3">Start Date</th>
               <th class="border px-6 py-3">End Date</th>
               <th class="border px-3 py-3">Status</th>
-              <th class="border px-3 py-3">Actions</th>
+              <th class="border px-3 py-3">Package Status</th>
+              <th class="border px-3 py-3">Package Approval</th>
             </tr>
           </thead>
           <tbody>
@@ -44,16 +45,27 @@
               </select></td>
               <td class=" px-4 py-2">
                 <div class="flex space-x-2">
-                  <router-link :to="{ path: 'package_status/'+pkg.id }">
-                    <button class="bg-[#286d71] hover:bg-[#1f565b] text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
-                      View Status
-                    </button>
-                  </router-link>
-                  <router-link :to="'package_update_status/'+pkg.id">
-                    <button class="bg-blue-500 hover:bg-bg-blue-600 text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
-                      Update Status
+                 <router-link :to="'package_update_status/'+pkg.id">
+                    <button class="bg-green-500 hover:bg-bg-blue-600 text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
+                   Package Update for Approval
                     </button>
                   </router-link> 
+                 <router-link :to="'package_update_status/'+pkg.id">
+                    <button class="bg-blue-500 hover:bg-bg-blue-600 text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
+                   Package Aprroval Status
+                    </button>
+                  </router-link> 
+                  
+                </div>
+              </td>
+              <td class=" px-4 py-2">
+                <div class="flex space-x-2">
+                 <router-link :to="{ path: 'package_status/'+pkg.id }">
+                    <button class="bg-[#286d71] hover:bg-[#1f565b] text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
+                       Package Lifecycle Status
+                    </button>
+                  </router-link>
+                  
                 </div>
               </td>
             </tr>
@@ -109,6 +121,7 @@ const updateStatus = async (pkg) => {
   pkg.agent_id = pkg.agent.id
   pkg.imam_id = pkg.imam.id
   pkg.support_manager_id = pkg.support_manager.id
+  console.log(pkg)
   const {data} = await api().post('package/'+pkg.id,pkg)
 }
 const deletePackage = (packageId) => {
