@@ -45,7 +45,7 @@
               </select></td>
               <td class=" px-4 py-2">
                 <div class="flex space-x-2">
-                 <router-link :to="'package_update_status/'+pkg.id">
+                 <router-link :to="'package_update_status_approve/'+pkg.id">
                     <button class="bg-green-500 hover:bg-bg-blue-600 text-white py-1 px-3 rounded-lg shadow-md transition-all duration-300">
                    Package Update for Approval
                     </button>

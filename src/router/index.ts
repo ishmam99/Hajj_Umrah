@@ -354,6 +354,11 @@ const router = createRouter({
           component: () => import('../views/Admin/UmrahModule/PackageUpdateStatusDetails.vue')
         },
         {
+          path: '/package_update_status_approve/:id',
+          name: 'package_update_status_approve',
+          component: () => import('../views/Admin/UmrahModule/PackageStatusApprove.vue')
+        },
+        {
           path: '/package_lifecycle_status/:id',
           name: 'package_lifecycle_status',
           component: () => import('../views/Admin/UmrahModule/PackageLifecycleStatus.vue')
@@ -1294,6 +1299,16 @@ const router = createRouter({
           path: '/member_package_list',
           name: 'Membar_Package_List',
           component: () => import('../views/Member/Profile/PackageList.vue')
+        },
+        {
+          path: '/member_todo_list',
+          name: 'Membar_Todo_List',
+          component: () => import('../views/Member/Profile/TodoList.vue')
+        },
+        {
+          path: '/create_todo_list',
+          name: 'create_todo_List',
+          component: () => import('../views/Member/TodoListCreate.vue')
         },
         {
           path: '/wishlist',

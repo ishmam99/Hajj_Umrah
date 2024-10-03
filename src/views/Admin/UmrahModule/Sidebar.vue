@@ -67,7 +67,7 @@ watch(
         <div v-if="currentAccordions === 'projectManagement'" class="submenu ms-8 space-y-2">
           <router-link to="/Umrah_Package_Create_New_Package" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">1. Create New Package</router-link>
           <router-link to="/view_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">2. View / Edit Packages</router-link>
-         <button @click.stop="toggleAccordion2('pkg')" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 w-full mb-2 text-white px-2 hover:px-3">
+         <button @click.stop="toggleAccordion2('pkg')" :class="currentAccordions2 =='pkg' ?'bg-cyan-600' : 'bg-sky-700'" class="flex items-center gap-2 py-3 rounded-lg  w-full mb-2 text-white px-2 hover:px-3">
           3.
          Package Approval
         </button>

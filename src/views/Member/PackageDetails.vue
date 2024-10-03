@@ -2,38 +2,6 @@
   <div class="px-5 bg-slate-50 py-5 w-4/4">
     <p class="text-2xl font-bold py-3 border-b">Customer Package Details</p>
 
-    <div v-if="packageDetails" class="relative h-80 w-full bg-gray-300 rounded-t-lg shadow-xl overflow-hidden">
-      <img src="/src/assets/image/hajj/hajj-2.jpg" alt="Package Cover" class="h-full w-full object-cover" />
-      <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent py-6 px-8">
-        <p class="text-white text-5xl font-extrabold tracking-wide drop-shadow-md">{{ packageDetails?.package_title }}</p>
-        <p class="text-white text-2xl font-semibold mt-1">{{ packageDetails?.package_code }}</p>
-        <p class="text-white text-lg mt-2">{{ packageDetails?.start_at }} - {{ packageDetails?.end_at }}</p>
-      </div>
-    </div>
-    
-    <!-- Tabs for switching between Package Details and To-Do List -->
-    <div class="flex items-baseline bg-blue-600 justify-between w-full gap-16 text-2xl font-semibold pt-6">
-      <button
-        @click="currentTab = 'details'"
-        :class="{
-          ' bg-green-100 border-blue-600 text-blue-600': currentTab === 'details',
-          'bg-blue-600 text-white': currentTab !== 'details',
-        }"
-        class="w-full py-4 rounded-e flex justify-center items-center"
-      >
-        Package Details
-      </button>
-      <button
-        @click="currentTab = 'todo'"
-        :class="{
-          ' bg-green-100 border-blue-600 text-blue-600': currentTab === 'todo',
-          'bg-blue-600 text-white': currentTab !== 'todo',
-        }"
-        class="rounded-s py-4 w-full flex justify-center items-center "
-      >
-        My To-Do List
-      </button>
-    </div>
 
     <!-- Conditional Rendering for Package Details and To-Do List -->
     <div v-if="currentTab === 'details'" class="bg-green-100 py-10">
@@ -93,7 +61,7 @@
         </div>
       </div>
     </div>
-
+<!-- {{ todoList }} -->
     <!-- To-Do List Section -->
     <div v-if="currentTab === 'todo'" class="bg-green-100 py-10 px-6 max-w-screen-2xl  mx-auto shadow-2xl rounded-2xl">
       <div class="bg-white p-6 rounded-lg">
@@ -192,15 +160,21 @@ const packageID = route.params.id;
 // For package details
 const packageDetails = ref(null);
 const selectedDay = ref(0);
-
+const todoList = ref([])
 // For tabs (Package Details and To-Do List)
 const currentTab = ref('details'); 
 const getPackage = async () => {
   const { data } = await api().get('package/' + packageID)
   packageDetails.value = data.data
+  todoList.value = todoList.value.filter(t=>t.package.id == data.data.id)
+}
+const getTodo = async () => {
+  const { data } = await api().get('customer-to-do-lists')
+  todoList.value = data.data
 }
 // Fetch package details when mounted
 onMounted(() => {
+ getTodo()
  getPackage()
 });
 
