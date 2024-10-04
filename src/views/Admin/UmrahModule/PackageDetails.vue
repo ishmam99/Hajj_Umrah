@@ -19,7 +19,7 @@
       <!-- Package Details Container -->
       <div class="px-6 py-10 max-w-7xl mx-auto bg-white shadow-2xl rounded-2xl mt-10">
         <!-- Title Section -->
-         <div class="flex w-full justify-between items-center">
+         <div v-if="packageDetails" class="flex w-full justify-between items-center">
         <p class="text-4xl font-extrabold text-blue-600 pb-8 border-b-2 border-gray-200 tracking-tight">Itinerary Details</p>
         <router-link :to="{ path: 'package_edit/' + packageDetails?.id }">
         <button class="btn btn-info text-white">Edit Itinery</button></router-link>

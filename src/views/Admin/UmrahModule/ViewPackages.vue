@@ -11,7 +11,7 @@
         <table class="table-auto w-full text-left border-collapse" style="table-layout: fixed;">
           <thead>
             <tr class="bg-[#286d71] text-white">
-              <th class="border px-6 py-3 w-[200px]">Title</th>
+              <th class="border px-6 py-3 w-[300px]">Title</th>
               <th class="border px-6 py-3 w-[100px]">Package Update</th>
               <th class="border px-6 py-3 w-[100px]">Package Itinerary</th>
               <th class="border px-6 py-3 w-[100px]">Origin City</th>
@@ -29,7 +29,7 @@
           </thead>
           <tbody>
             <tr v-for="(pkg, index) in packages" v-if="packages.length > 0" :key="index" class="hover:bg-gray-50 shadow">
-              <td class=" px-4 py-2 border-e-2 w-[200px]">{{ pkg.package_title }}</td>
+              <td class=" px-4 py-2 border-e-2 text-nowrap w-[300px]">{{ pkg.package_title }}</td>
               <td class="  py-2 border-e-2 ">
                 <div class="flex space-x-2">
                   <router-link :to="'package_update_status/'+pkg.id">
