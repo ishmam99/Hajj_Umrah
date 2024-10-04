@@ -1,7 +1,7 @@
 <template>
   <div class="px-5 bg-slate-50 py-5 w-3/4">
     <div class="flex justify-between items-center py-3">
-      <p class="text-2xl font-bold py-3 border-b">Umrah Package Status Update</p>
+      <p class="text-2xl font-bold py-3 border-b">Umrah Package Status Approval</p>
       <button @click="$router.go(-1)" class="btn btn-primary text-white">Back</button>
     </div>
     <div class="bg-slate-50 py-1">
@@ -187,13 +187,13 @@
 
             <select
               v-model="packageDetails.package_status.date_approve"
-              class="select select-bordered w-1/2" disabled
+              class="select select-bordered w-1/2"
             >
               <option disabled selected>Select Status</option>
               <option value="0">Pending</option>
               <option value="1">Approved</option>
             </select>
-            <!-- <button
+            <button
               @click="updatePackageStatus"
               class="btn btn-info text-white"
               :disabled="applying"
@@ -212,9 +212,9 @@
                 ></path>
               </svg>
               Apply
-            </button> -->
+            </button>
           </div>
-          <!-- <div class="flex justify-start gap-5 items-center w-full py-2 px-5" v-if="packageDetails">
+          <div class="flex justify-start gap-5 items-center w-full py-2 px-5" v-if="packageDetails">
             <div class="justify-between items-center w-full flex">
               <label class="label px-5 w-full"> Note : </label>
               <input
@@ -224,7 +224,7 @@
                 class="input input-bordered w-full input-sm"
               />
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
       <div v-if="currentTab == 'imam'" class="bg-white border-x-2 border-teal-700 border-b-2">
@@ -269,14 +269,14 @@
             <h1 class="w-full px-5">Imam Approval Status :</h1>
 
             <select
-              v-model="packageDetails.package_status.imam_approve" disabled
+              v-model="packageDetails.package_status.imam_approve"
               class="select select-bordered w-1/2"
             >
               <option disabled selected>Select Status</option>
               <option value="0">Pending</option>
               <option value="1">Approved</option>
             </select>
-            <!-- <button
+            <button
               @click="updatePackageStatus"
               class="btn btn-info text-white"
               :disabled="applying"
@@ -295,9 +295,9 @@
                 ></path>
               </svg>
               Apply
-            </button> -->
+            </button>
           </div>
-          <!-- <div class="flex justify-start gap-5 items-center w-full py-2 px-5" v-if="packageDetails">
+          <div class="flex justify-start gap-5 items-center w-full py-2 px-5" v-if="packageDetails">
             <div class="justify-between items-center w-full flex">
               <label class="label px-5 w-full"> Note : </label>
               <input
@@ -307,7 +307,7 @@
                 class="input input-bordered w-full input-sm"
               />
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
       <div v-if="currentTab == 'agent'" class="bg-white border-x-2 border-teal-700 border-b-2">
@@ -353,13 +353,13 @@
 
             <select
               v-model="packageDetails.package_status.agent_approve"
-              class="select select-bordered w-1/2" disabled
+              class="select select-bordered w-1/2"
             >
               <option disabled selected>Select Status</option>
               <option value="0">Pending</option>
               <option value="1">Approved</option>
             </select>
-            <!-- <button
+            <button
               @click="updatePackageStatus"
               class="btn btn-info text-white"
               :disabled="applying"
@@ -378,9 +378,9 @@
                 ></path>
               </svg>
               Apply
-            </button> -->
+            </button>
           </div>
-          <!-- <div class="flex justify-start gap-5 items-center w-full py-2 px-5" v-if="packageDetails">
+          <div class="flex justify-start gap-5 items-center w-full py-2 px-5" v-if="packageDetails">
             <div class="justify-between items-center w-full flex">
               <label class="label px-5 w-full"> Note : </label>
               <input
@@ -390,7 +390,7 @@
                 class="input input-bordered w-full input-sm"
               />
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -487,13 +487,13 @@
 
               <select
                 v-model="packageDetails.package_status.flight_approve"
-                class="select select-bordered w-1/2" disabled
+                class="select select-bordered w-1/2"
               >
                 <option disabled selected>Select Status</option>
                 <option value="0">Pending</option>
                 <option value="1">Approved</option>
               </select>
-              <!-- <button
+              <button
                 @click="updatePackageStatus"
                 class="btn btn-info text-white"
                 :disabled="applying"
@@ -512,9 +512,9 @@
                   ></path>
                 </svg>
                 Apply
-              </button> -->
+              </button>
             </div>
-            <!-- <div
+            <div
               class="flex justify-start gap-5 items-center w-full py-2 px-5"
               v-if="packageDetails"
             >
@@ -527,7 +527,7 @@
                   class="input input-bordered w-full input-sm"
                 />
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -619,13 +619,13 @@
 
               <select
                 v-model="packageDetails.package_status.bus_approve"
-                class="select select-bordered w-1/2" disabled
+                class="select select-bordered w-1/2"
               >
                 <option disabled selected>Select Status</option>
                 <option value="0">Pending</option>
                 <option value="1">Approved</option>
               </select>
-              <!-- <button
+              <button
                 @click="updatePackageStatus"
                 class="btn btn-info text-white"
                 :disabled="applying"
@@ -644,9 +644,9 @@
                   ></path>
                 </svg>
                 Apply
-              </button> -->
+              </button>
             </div>
-            <!-- <div
+            <div
               class="flex justify-start gap-5 items-center w-full py-2 px-5"
               v-if="packageDetails"
             >
@@ -659,7 +659,7 @@
                   class="input input-bordered w-full input-sm"
                 />
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -812,13 +812,13 @@
 
               <select
                 v-model="packageDetails.package_status.hotel_approve"
-                class="select select-bordered w-1/2" disabled
+                class="select select-bordered w-1/2"
               >
                 <option disabled selected>Select Status</option>
                 <option value="0">Pending</option>
                 <option value="1">Approved</option>
               </select>
-              <!-- <button
+              <button
                 @click="updatePackageStatus"
                 class="btn btn-info text-white"
                 :disabled="applying"
@@ -837,9 +837,9 @@
                   ></path>
                 </svg>
                 Apply
-              </button> -->
+              </button>
             </div>
-            <!-- <div
+            <div
               class="flex justify-start gap-5 items-center w-full py-2 px-5"
               v-if="packageDetails"
             >
@@ -852,7 +852,7 @@
                   class="input input-bordered w-full input-sm"
                 />
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -889,7 +889,7 @@
                     <td class="border-x-2 border-gray-500" :colspan="1">{{ 'Day ' + (index + 1) }}</td>
                     <td class="border-x-2 border-gray-500" :colspan="5"></td>
                   </tr> -->
-                  <tr class="border-y-2 border-gray-500" v-for="activity in itinerary.activities" :key="activity.id">
+                  <tr class="border-y-2 rounded-lg border-gray-500" v-for="activity in itinerary.activities" :key="activity.id">
                     <td class="border-x-2 border-gray-500" >
                       <p>{{ moment(itinerary.date, 'DD-MM-YYYY').format('dddd, DD MMM YYYY') }}</p>
                     </td>
@@ -916,13 +916,13 @@
 
               <select
                 v-model="packageDetails.package_status.flight_approve"
-                class="select select-bordered w-1/2" disabled
+                class="select select-bordered w-1/2"
               >
                 <option disabled selected>Select Status</option>
                 <option value="0">Pending</option>
                 <option value="1">Approved</option>
               </select>
-              <!-- <button
+              <button
                 @click="updatePackageStatus"
                 class="btn btn-info text-white"
                 :disabled="applying"
@@ -941,7 +941,7 @@
                   ></path>
                 </svg>
                 Apply
-              </button> -->
+              </button>
             </div>
           </div>
         </div>
