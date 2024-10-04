@@ -2,7 +2,7 @@
   <div class="px-5 bg-slate-50 py-5 w-3/4">
     
     <div class="flex justify-between items-center py-3"><p class="text-2xl font-bold py-3 border-b">Umrah Package Approval Status</p>
-      <button @click="$router.go(-1)" class="btn btn-primary text-white">Back</button>
+      <button @click="$router.go(-1)" class="btn btn-primary flex items-center gap-2 text-white"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"></path></svg> Back</button>
     </div>
     <div class="bg-slate-50 py-10">
       <!-- {{ packageDetails }} -->

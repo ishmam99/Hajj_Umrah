@@ -6,8 +6,8 @@
         All package details and itinerary details are given bellow
       </p>
       <div class="w-full flex gap-3 justify-end items-center px-20">
-        <button class="btn btn-success text-white" @click="edit = !edit">Edit</button>
-        <button @click="$router.go(-1)" class="btn btn-primary text-white">Back</button>
+        <button class="btn btn-success text-white" @click="edit = !edit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M5 18.89H6.41421L15.7279 9.57627L14.3137 8.16206L5 17.4758V18.89ZM21 20.89H3V16.6473L16.435 3.21231C16.8256 2.82179 17.4587 2.82179 17.8492 3.21231L20.6777 6.04074C21.0682 6.43126 21.0682 7.06443 20.6777 7.45495L9.24264 18.89H21V20.89ZM15.7279 6.74785L17.1421 8.16206L18.5563 6.74785L17.1421 5.33363L15.7279 6.74785Z"></path></svg> Edit</button>
+        <button @click="$router.go(-1)" class="btn btn-primary text-white flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"></path></svg> Back</button>
       </div>
     </div>
 
@@ -43,6 +43,14 @@
             {{ createdPackage?.imam.user.name }}
           </h1>
         </div>
+        <div class="w-full py-3 my-3 border-cyan-400 border p-2 rounded-md bg-cyan-200">
+          <div class="label">
+            <span class="label-text">Imam Email</span>
+          </div>
+          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
+            {{ createdPackage?.imam.user.email }}
+          </h1>
+        </div>
         </div>
         <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-teal-100">
         <h1 class="my-5 text-center text-xl text-teal-700 font-semibold">3. Agent Section</h1>
@@ -52,6 +60,56 @@
           </div>
           <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
             {{ createdPackage?.agent.user.name }}
+          </h1>
+        </div>
+        <div class="w-full my-4 py-3 border-teal-400 border p-2 rounded-md bg-teal-200">
+          <div class="label">
+            <span class="label-text">Agent Email</span>
+          </div>
+          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
+             {{ createdPackage?.agent.user.email }}
+          </h1>
+        </div>
+        </div>
+        <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-purple-100">
+        <h1 class="my-5 text-center text-xl text-teal-700 font-semibold">4. Flight Section</h1>
+        <div class="w-full my-4 py-3 border-teal-400 border p-2 rounded-md bg-teal-200">
+          <div class="label">
+            <span class="label-text">Flight Name</span>
+          </div>
+          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
+            {{ createdPackage?.itineraries[0]?.activities[0]?.activity_type }} {{ createdPackage?.itineraries[0]?.activities[0]?.from }} {{ createdPackage?.itineraries[0]?.activities[0]?.to }} By {{ createdPackage?.itineraries[0]?.activities[0]?.transportation_by }}
+          </h1>
+        </div>
+        <div class="w-full my-4 py-3 border-teal-400 border p-2 rounded-md bg-teal-200">
+          <div class="label">
+            <span class="label-text">Flight Date &amp; Time</span>
+          </div>
+          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
+            <span class="border-e-2 border-blue-400 pe-10">{{ createdPackage?.itineraries[0]?.date }}</span>  
+            <span class="ps-10">{{ createdPackage?.itineraries[0]?.activities[0]?.time }}</span>
+          </h1>
+        </div>
+        </div>
+        <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-emerald-100">
+        <h1 class="my-5 text-center text-xl text-teal-700 font-semibold">5. Bus Section</h1>
+        <div class="w-full my-4 py-3 border-teal-400 border p-2 rounded-md bg-teal-200">
+          <div class="label">
+            <span class="label-text">Bus Company Name</span>
+          </div>
+          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
+            {{ createdPackage?.itineraries[2]?.activities[0]?.activity_type}} {{ createdPackage?.itineraries[2]?.activities[0]?.from }} {{ createdPackage?.itineraries[2]?.activities[0]?.to }} By {{ createdPackage?.itineraries[2]?.activities[0]?.transportation_by }}
+          </h1>
+        </div>
+        </div>
+        <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-sky-100">
+        <h1 class="my-5 text-center text-xl text-teal-700 font-semibold">6. Hotel Section</h1>
+        <div class="w-full my-4 py-3 border-teal-400 border p-2 rounded-md bg-teal-200">
+          <div class="label">
+            <span class="label-text">Hotel Name</span>
+          </div>
+          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
+            {{ createdPackage?.itineraries[2]?.activities[1].activity_type}}  {{ createdPackage?.itineraries[2]?.activities[0].to}} At {{ createdPackage?.itineraries[2]?.activities[1].time}}
           </h1>
         </div>
         </div>
@@ -1341,7 +1399,7 @@
         All package details and itinerary details are given bellow
       </p>
       <div class="w-full flex justify-end items-center px-20">
-        <button class="btn btn-warning text-white" @click="edit = !edit">Cancel Edit</button>
+        <button class="btn btn-warning bg-red-600 hover:bg-red-700 text-white" @click="edit = !edit">Cancel Edit</button>
       </div>
     </div>
     <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">

@@ -2,7 +2,9 @@
   <div class="px-5 bg-slate-50 py-5 w-3/4">
     <div class="flex justify-between items-center py-3">
       <p class="text-2xl font-bold py-3 border-b">Umrah Package Status Approval</p>
-      <button @click="$router.go(-1)" class="btn btn-primary text-white">Back</button>
+      <button @click="$router.go(-1)" class="btn btn-primary flex items-center gap-2 text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"></path></svg>
+        Back</button>
     </div>
     <div class="bg-slate-50 py-1">
       <div
@@ -189,24 +191,24 @@
               v-model="packageDetails.package_status.date_approve"
               class="select select-bordered w-1/2"
             >
-              <option disabled selected>Select Status</option>
-              <option value="0">In Preparation</option>
-              <option value="1">In Preparation -Started</option>
-              <option value="1">In Preparation -In Work</option>
-              <option value="1">In Preparation -Completed</option>
-              <option value="1">Quotation</option>
-              <option value="1">Quotation -Requested</option>
-              <option value="1">Quotation -Received</option>
-              <option value="1">Quotation -Approved</option>
-              <option value="1">Contract </option>
-              <option value="1">Contract -Requested</option>
-              <option value="1">Contract -Received</option>
-              <option value="1">Contract -Signed</option>
-              <option value="1">Contract -Fund Deposited</option>
-              <option value="1">Approved</option>
-              <option value="1">Approved -Started</option>
-              <option value="1">Approved -In Work</option>
-              <option value="1">Approved -Completed</option>
+            <option disabled selected>Select Status</option>
+            <option value="0">1. In Preparation</option>
+            <option value="1">1a. In Preparation -Started</option>
+            <option value="1">1b. In Preparation -In Work</option>
+            <option value="1">1c. In Preparation -Completed</option>
+            <option value="1">2. Quotation</option>
+            <option value="1">2a. Quotation -Requested</option>
+            <option value="1">2b. Quotation -Received</option>
+            <option value="1">2c. Quotation -Approved</option>
+            <option value="1">3. Contract </option>
+            <option value="1">3a. Contract -Requested</option>
+            <option value="1">3b. Contract -Received</option>
+            <option value="1">3c. Contract -Signed</option>
+            <option value="1">3d. Contract -Fund Deposited</option>
+            <option value="1">4. Approved</option>
+            <option value="1">4a. Approved -Started</option>
+            <option value="1">4b. Approved -In Work</option>
+            <option value="1">4c. Approved -Completed</option>
             </select>
             <button
               @click="updatePackageStatus"
@@ -287,9 +289,24 @@
               v-model="packageDetails.package_status.imam_approve"
               class="select select-bordered w-1/2"
             >
-              <option disabled selected>Select Status</option>
-              <option value="0">Pending</option>
-              <option value="1">Approved</option>
+            <option disabled selected>Select Status</option>
+              <option value="0">1. In Preparation</option>
+              <option value="1">1a. In Preparation -Started</option>
+              <option value="1">1b. In Preparation -In Work</option>
+              <option value="1">1c. In Preparation -Completed</option>
+              <option value="1">2. Quotation</option>
+              <option value="1">2a. Quotation -Requested</option>
+              <option value="1">2b. Quotation -Received</option>
+              <option value="1">2c. Quotation -Approved</option>
+              <option value="1">3. Contract </option>
+              <option value="1">3a. Contract -Requested</option>
+              <option value="1">3b. Contract -Received</option>
+              <option value="1">3c. Contract -Signed</option>
+              <option value="1">3d. Contract -Fund Deposited</option>
+              <option value="1">4. Approved</option>
+              <option value="1">4a. Approved -Started</option>
+              <option value="1">4b. Approved -In Work</option>
+              <option value="1">4c. Approved -Completed</option>
             </select>
             <button
               @click="updatePackageStatus"
@@ -371,8 +388,23 @@
               class="select select-bordered w-1/2"
             >
               <option disabled selected>Select Status</option>
-              <option value="0">Pending</option>
-              <option value="1">Approved</option>
+              <option value="0">1. In Preparation</option>
+              <option value="1">1a. In Preparation -Started</option>
+              <option value="1">1b. In Preparation -In Work</option>
+              <option value="1">1c. In Preparation -Completed</option>
+              <option value="1">2. Quotation</option>
+              <option value="1">2a. Quotation -Requested</option>
+              <option value="1">2b. Quotation -Received</option>
+              <option value="1">2c. Quotation -Approved</option>
+              <option value="1">3. Contract </option>
+              <option value="1">3a. Contract -Requested</option>
+              <option value="1">3b. Contract -Received</option>
+              <option value="1">3c. Contract -Signed</option>
+              <option value="1">3d. Contract -Fund Deposited</option>
+              <option value="1">4. Approved</option>
+              <option value="1">4a. Approved -Started</option>
+              <option value="1">4b. Approved -In Work</option>
+              <option value="1">4c. Approved -Completed</option>
             </select>
             <button
               @click="updatePackageStatus"
@@ -504,9 +536,24 @@
                 v-model="packageDetails.package_status.flight_approve"
                 class="select select-bordered w-1/2"
               >
-                <option disabled selected>Select Status</option>
-                <option value="0">Pending</option>
-                <option value="1">Approved</option>
+              <option disabled selected>Select Status</option>
+              <option value="0">1. In Preparation</option>
+              <option value="1">1a. In Preparation -Started</option>
+              <option value="1">1b. In Preparation -In Work</option>
+              <option value="1">1c. In Preparation -Completed</option>
+              <option value="1">2. Quotation</option>
+              <option value="1">2a. Quotation -Requested</option>
+              <option value="1">2b. Quotation -Received</option>
+              <option value="1">2c. Quotation -Approved</option>
+              <option value="1">3. Contract </option>
+              <option value="1">3a. Contract -Requested</option>
+              <option value="1">3b. Contract -Received</option>
+              <option value="1">3c. Contract -Signed</option>
+              <option value="1">3d. Contract -Fund Deposited</option>
+              <option value="1">4. Approved</option>
+              <option value="1">4a. Approved -Started</option>
+              <option value="1">4b. Approved -In Work</option>
+              <option value="1">4c. Approved -Completed</option>
               </select>
               <button
                 @click="updatePackageStatus"
@@ -636,9 +683,24 @@
                 v-model="packageDetails.package_status.bus_approve"
                 class="select select-bordered w-1/2"
               >
-                <option disabled selected>Select Status</option>
-                <option value="0">Pending</option>
-                <option value="1">Approved</option>
+              <option disabled selected>Select Status</option>
+              <option value="0">1. In Preparation</option>
+              <option value="1">1a. In Preparation -Started</option>
+              <option value="1">1b. In Preparation -In Work</option>
+              <option value="1">1c. In Preparation -Completed</option>
+              <option value="1">2. Quotation</option>
+              <option value="1">2a. Quotation -Requested</option>
+              <option value="1">2b. Quotation -Received</option>
+              <option value="1">2c. Quotation -Approved</option>
+              <option value="1">3. Contract </option>
+              <option value="1">3a. Contract -Requested</option>
+              <option value="1">3b. Contract -Received</option>
+              <option value="1">3c. Contract -Signed</option>
+              <option value="1">3d. Contract -Fund Deposited</option>
+              <option value="1">4. Approved</option>
+              <option value="1">4a. Approved -Started</option>
+              <option value="1">4b. Approved -In Work</option>
+              <option value="1">4c. Approved -Completed</option>
               </select>
               <button
                 @click="updatePackageStatus"
@@ -829,9 +891,24 @@
                 v-model="packageDetails.package_status.hotel_approve"
                 class="select select-bordered w-1/2"
               >
-                <option disabled selected>Select Status</option>
-                <option value="0">Pending</option>
-                <option value="1">Approved</option>
+              <option disabled selected>Select Status</option>
+              <option value="0">1. In Preparation</option>
+              <option value="1">1a. In Preparation -Started</option>
+              <option value="1">1b. In Preparation -In Work</option>
+              <option value="1">1c. In Preparation -Completed</option>
+              <option value="1">2. Quotation</option>
+              <option value="1">2a. Quotation -Requested</option>
+              <option value="1">2b. Quotation -Received</option>
+              <option value="1">2c. Quotation -Approved</option>
+              <option value="1">3. Contract </option>
+              <option value="1">3a. Contract -Requested</option>
+              <option value="1">3b. Contract -Received</option>
+              <option value="1">3c. Contract -Signed</option>
+              <option value="1">3d. Contract -Fund Deposited</option>
+              <option value="1">4. Approved</option>
+              <option value="1">4a. Approved -Started</option>
+              <option value="1">4b. Approved -In Work</option>
+              <option value="1">4c. Approved -Completed</option>
               </select>
               <button
                 @click="updatePackageStatus"
@@ -933,9 +1010,24 @@
                 v-model="packageDetails.package_status.flight_approve"
                 class="select select-bordered w-1/2"
               >
-                <option disabled selected>Select Status</option>
-                <option value="0">Pending</option>
-                <option value="1">Approved</option>
+              <option disabled selected>Select Status</option>
+              <option value="0">1. In Preparation</option>
+              <option value="1">1a. In Preparation -Started</option>
+              <option value="1">1b. In Preparation -In Work</option>
+              <option value="1">1c. In Preparation -Completed</option>
+              <option value="1">2. Quotation</option>
+              <option value="1">2a. Quotation -Requested</option>
+              <option value="1">2b. Quotation -Received</option>
+              <option value="1">2c. Quotation -Approved</option>
+              <option value="1">3. Contract </option>
+              <option value="1">3a. Contract -Requested</option>
+              <option value="1">3b. Contract -Received</option>
+              <option value="1">3c. Contract -Signed</option>
+              <option value="1">3d. Contract -Fund Deposited</option>
+              <option value="1">4. Approved</option>
+              <option value="1">4a. Approved -Started</option>
+              <option value="1">4b. Approved -In Work</option>
+              <option value="1">4c. Approved -Completed</option>
               </select>
               <button
                 @click="updatePackageStatus"

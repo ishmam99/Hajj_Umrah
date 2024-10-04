@@ -13,15 +13,15 @@
           <thead>
             <tr class="bg-[#286d71] text-white">
               <th class="border px-6 py-3">Title</th>
+              <th class="border px-6 py-3">Origin City</th>
+              <th class="border px-6 py-3">Origin Airport</th>
+              <th class="border px-6 py-3">Origin Country</th>
+              <th class="border px-6 py-3">Start Date</th>
+              <th class="border px-6 py-3">End Date</th>
               <th class="border px-6 py-3">Package ID</th>
               <th class="border px-6 py-3">Agent Name</th>
               <th class="border px-6 py-3">Imam Name</th>
               <th class="border px-6 py-3">Local Support Name</th>
-              <th class="border px-6 py-3">Origin Country</th>
-              <th class="border px-6 py-3">Origin City</th>
-              <th class="border px-6 py-3">Origin Airport</th>
-              <th class="border px-6 py-3">Start Date</th>
-              <th class="border px-6 py-3">End Date</th>
               <th class="border px-6 py-3">Status</th>
               <th class="border px-6 py-3">Actions</th>
             </tr>
@@ -29,15 +29,15 @@
           <tbody>
             <tr v-for="(pkg, index) in packages.filter(e=>e.status_of_package > 5)" v-if="packages.length > 0" :key="index" class="hover:bg-gray-50 shadow">
               <td class=" px-4 py-2 border-e-2">{{ pkg.package_title }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.city?.name }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.airport.short_name }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.country?.name }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.start_at }}</td>
+              <td class=" px-4 py-2 border-e-2">{{ pkg.end_at }}</td>
               <td class=" px-4 py-2 border-e-2">{{ pkg.package_id }}</td>
               <td class=" px-4 py-2 border-e-2">{{ pkg.agent?.user?.name }}</td>
               <td class=" px-4 py-2 border-e-2">{{ pkg.imam?.user?.name }}</td>
               <td class=" px-4 py-2 border-e-2">{{ pkg.support_manager?.user?.name }}</td>
-              <td class=" px-4 py-2 border-e-2">{{ pkg.country?.name }}</td>
-              <td class=" px-4 py-2 border-e-2">{{ pkg.city?.name }}</td>
-              <td class=" px-4 py-2 border-e-2">{{ pkg.airport.short_name }}</td>
-              <td class=" px-4 py-2 border-e-2">{{ pkg.start_at }}</td>
-              <td class=" px-4 py-2 border-e-2">{{ pkg.end_at }}</td>
               <td class=" px-4 py-2 border-e-2">{{ getStatus(pkg.status_of_package) }}</td>
               <td class=" px-4 py-2">
                 <div class="flex space-x-2">

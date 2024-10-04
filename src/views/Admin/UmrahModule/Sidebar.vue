@@ -69,7 +69,10 @@ watch(
           <router-link to="/view_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white px-2 hover:px-3">2. View / Edit Packages</router-link>
          <button @click.stop="toggleAccordion2('pkg')" :class="currentAccordions2 =='pkg' ?'bg-cyan-600' : 'bg-sky-700'" class="flex items-center gap-2 py-3 rounded-lg  w-full mb-2 text-white px-2 hover:px-3">
           3.
-         Package Approval
+         Package Approval 
+         <svg v-if="currentAccordions2 == 'pkg'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 8L18 14H6L12 8Z"></path></svg> 
+         <svg v-else xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 14L8 10H16L12 14Z"></path>
+         </svg> 
         </button>
         <div v-if="currentAccordions2 === 'pkg'" class="submenu ms-8 space-y-2">
           <router-link to="/umrah_package_current_packages" class="flex items-center gap-2 py-3 rounded-lg bg-sky-700 text-white  px-2 hover:px-3">3a. 

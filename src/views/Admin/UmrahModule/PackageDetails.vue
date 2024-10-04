@@ -2,7 +2,7 @@
   <div class="px-5 bg-slate-50 py-5 w-3/4">
     <p class="text-2xl font-bold py-3 border-b">Umrah Package Details</p>
     <div class="flex justify-start items-center py-3">
-      <button @click="$router.go(-1)" class="btn btn-primary text-white">Back</button>
+      <button @click="$router.go(-1)" class="btn btn-primary text-white flex items-center gap-2"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"></path></svg>Back</button>
     </div>
     <div class="bg-slate-50 py-10">
       <!-- {{ packageDetails }} -->
@@ -61,7 +61,10 @@
                    <p v-if="activity.by">By</p> 
                     <h1 class="font-bold text-lg text-sky-700">{{ activity.by }}</h1>
                    
-                     <p>{{ activity.description }}</p>
+                     <p>
+                      <span class="border-e-2 border-blue-500 pe-10">{{ activity.description }}</span>
+                      <span class="px-10">By <span class="text-blue-400 font-semibold">{{AuthStore.user.name}}</span> </span>
+                     </p>
                 </div>
               </div>
             </li>
@@ -77,6 +80,8 @@ import { ref ,watch,onMounted} from 'vue';
 import { useRoute} from 'vue-router'
 import { itinerary } from '@/stores/itinenary.ts'
 import { packages } from '@/stores/itinenary.ts'
+import { useAuthStore } from '@/stores/AuthStore';
+const AuthStore = useAuthStore()
 const route = useRoute()
 const packageID = route.params.id
 
