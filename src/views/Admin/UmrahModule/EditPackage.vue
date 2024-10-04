@@ -12,6 +12,51 @@
     </div>
 
     <div>
+        <div class=" gap-5 mb-5 border-blue-400 border p-2 rounded-md bg-blue-100">
+       <h1 class="my-2 text-center text-xl text-blue-700 font-semibold">1. Package Dates Section</h1>
+        <div class="flex gap-5 py-5 mb-5 border-blue-400 border p-2 rounded-md bg-blue-200">
+        <div class="w-1/2">
+          <div class="label">
+            <span class="label-text">Starting Date</span>
+          </div>
+          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
+            {{ createdPackage?.start_at }}
+          </h1>
+        </div>
+        <div class="w-1/2">
+          <div class="label">
+            <span class="label-text">Ending Date</span>
+          </div>
+          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
+            {{ createdPackage?.end_at }}
+          </h1>
+        </div>
+      </div>
+      </div>
+        <div class="w-full  border-cyan-400 border p-2 rounded-md bg-cyan-100">
+      <h1 class="my-2 text-xl text-center text-cyan-700 font-semibold">2. Imam Section</h1>
+        <div class="w-full py-3 my-3 border-cyan-400 border p-2 rounded-md bg-cyan-200">
+          <div class="label">
+            <span class="label-text">Imam Name</span>
+          </div>
+          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
+            {{ createdPackage?.imam.user.name }}
+          </h1>
+        </div>
+        </div>
+        <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-teal-100">
+        <h1 class="my-5 text-center text-xl text-teal-700 font-semibold">3. Agent Section</h1>
+        <div class="w-full my-4 py-3 border-teal-400 border p-2 rounded-md bg-teal-200">
+          <div class="label">
+            <span class="label-text">Agent Name</span>
+          </div>
+          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
+            {{ createdPackage?.agent.user.name }}
+          </h1>
+        </div>
+        </div>
+        <br>
+        <br>
       <div class="flex gap-5 mb-5">
         <div class="w-1/3">
           <div class="label">
@@ -39,22 +84,8 @@
         </div>
       </div>
       <div class="flex gap-5 mb-5">
-        <div class="w-1/3">
-          <div class="label">
-            <span class="label-text">Agent Name</span>
-          </div>
-          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
-            {{ createdPackage?.agent.user.name }}
-          </h1>
-        </div>
-        <div class="w-1/3">
-          <div class="label">
-            <span class="label-text">Imam Name</span>
-          </div>
-          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
-            {{ createdPackage?.imam.user.name }}
-          </h1>
-        </div>
+        
+      
         <div class="w-1/3">
           <div class="label">
             <span class="label-text">Support Manager Name</span>
@@ -134,24 +165,7 @@
       </div>
 
       <!-- Dates -->
-      <div class="flex gap-5 mb-5">
-        <div class="w-1/2">
-          <div class="label">
-            <span class="label-text">Starting Date</span>
-          </div>
-          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
-            {{ createdPackage?.start_at }}
-          </h1>
-        </div>
-        <div class="w-1/2">
-          <div class="label">
-            <span class="label-text">Ending Date</span>
-          </div>
-          <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
-            {{ createdPackage?.end_at }}
-          </h1>
-        </div>
-      </div>
+    
 
       <!-- Description -->
       <div>
@@ -298,7 +312,7 @@
                             d="M21.949 10.1118C22.1634 10.912 21.6886 11.7345 20.8884 11.9489L5.2218 16.1467C4.77856 16.2655 4.31138 16.0674 4.08866 15.6662L1.46582 10.9415L2.91471 10.5533L5.3825 12.9979L10.4778 11.6326L5.96728 4.55896L7.89913 4.04132L14.8505 10.4609L20.1119 9.05113C20.9121 8.83671 21.7346 9.31159 21.949 10.1118ZM4.00013 19H20.0001V21H4.00013V19Z"
                           ></path>
                         </svg>
-                        <div>
+                        <!-- <div>
                           <h1 class="font-semibold text-lg">
                             {{ route.transit.name }} ({{ route.transit.short_name }})
                           </h1>
@@ -315,7 +329,7 @@
                           <path
                             d="M21.949 10.1118C22.1634 10.912 21.6886 11.7345 20.8884 11.9489L5.2218 16.1467C4.77856 16.2655 4.31138 16.0674 4.08866 15.6662L1.46582 10.9415L2.91471 10.5533L5.3825 12.9979L10.4778 11.6326L5.96728 4.55896L7.89913 4.04132L14.8505 10.4609L20.1119 9.05113C20.9121 8.83671 21.7346 9.31159 21.949 10.1118ZM4.00013 19H20.0001V21H4.00013V19Z"
                           ></path>
-                        </svg>
+                        </svg> -->
                         <div>
                           <h1 class="font-semibold text-lg">
                             {{ route.destination.name }} ({{ route.destination.short_name }})
@@ -1689,11 +1703,11 @@ const getRoutes = () => {
     rt.date = moment(itinerary.value.date).format('ddd, DD MMM')
     if (rt.origin == 'Jeddah' || rt.origin == 'Medina') {
       rt.origin_time = `02:25`
-      rt.transit_time = `08:50`
+      // rt.transit_time = `08:50`
       rt.destination_time = `08:50`
     } else {
       rt.origin_time = `21:25`
-      rt.transit_time = `21:00`
+      // rt.transit_time = `21:00`
       rt.destination_time = `21:00`
     }
     availableRoutes.value.push(rt)
@@ -1798,22 +1812,22 @@ const fromLocations = computed(() => {
 const selectRoute = (rt) => {
   let activity1 = {
     time: rt.origin_time,
-    from: rt.origin.name,
-    to: rt.transit.name,
-    activity_type: 'Flight from',
-    by: selectdAirline.value.name,
-    description: airRoute.value.description
-  }
-  let activity2 = {
-    time: rt.transit_time,
-    from: rt.transit.name,
+    from: rt.destination.name,
     to: rt.destination.name,
     activity_type: 'Flight from',
     by: selectdAirline.value.name,
     description: airRoute.value.description
   }
+  // let activity2 = {
+  //   time: rt.transit_time,
+  //   from: rt.transit.name,
+  //   to: rt.destination.name,
+  //   activity_type: 'Flight from',
+  //   by: selectdAirline.value.name,
+  //   description: airRoute.value.description
+  // }
   itinerary.value.activities.push(activity1)
-  itinerary.value.activities.push(activity2)
+  // itinerary.value.activities.push(activity2)
   showActivity.value = false
   itinerary.value.type = null
   selectdAirline.value = null
@@ -1825,28 +1839,27 @@ const selectRouteNewActivity = async (rt, id) => {
       itinerary_id: id,
       time: rt.origin_time,
       from: rt.origin.name,
-      to: rt.transit.name,
-      activity_type: 'Flight from',
-      transportation_by: selectdAirline.value.name,
-      description: airRoute.value.description
-    }
-    let activity2 = {
-      itinerary_id: id,
-      time: rt.transit_time,
-      from: rt.transit.name,
       to: rt.destination.name,
       activity_type: 'Flight from',
       transportation_by: selectdAirline.value.name,
       description: airRoute.value.description
     }
+    // let activity2 = {
+    //   itinerary_id: id,
+    //   time: rt.transit_time,
+    //   from: rt.transit.name,
+    //   to: rt.destination.name,
+    //   activity_type: 'Flight from',
+    //   transportation_by: selectdAirline.value.name,
+    //   description: airRoute.value.description
+    // }
 
     const { data } = await api().post('activity', activity1)
     if (data) {
-      const data2 = await api().post('activity', activity2)
-      if (data2) {
+    
         showForm.value = null
         getPackage()
-      }
+      
     }
   } catch (error) {
     console.log(error)
@@ -1988,9 +2001,11 @@ const airLines = ref([
       { id: 6, name: 'Jeddah', short_name: 'JED' },
       { id: 7, name: 'Torronto', short_name: 'YYZ' },
       { id: 8, name: 'Chicago', short_name: 'ORD' },
+      { id: 11, name: 'Istanbul', short_name: 'IST' }
     ],
     transits: [{ id: 11, name: 'Istanbul', short_name: 'IST' }],
     destination: [
+      { id: 11, name: 'Istanbul', short_name: 'IST' },
       { id: 1, name: 'Houston', short_name: 'IAH' },
       { id: 2, name: 'Texas', short_name: 'DFW' },
       { id: 4, name: 'New York', short_name: 'JFK' },
@@ -1999,6 +2014,7 @@ const airLines = ref([
       { id: 6, name: 'Jeddah', short_name: 'JED' },
       { id: 7, name: 'Torronto', short_name: 'YYZ' },
       { id: 8, name: 'Chicago', short_name: 'ORD' },
+
     ]
   }
 ])

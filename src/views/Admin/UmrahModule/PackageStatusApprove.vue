@@ -190,8 +190,23 @@
               class="select select-bordered w-1/2"
             >
               <option disabled selected>Select Status</option>
-              <option value="0">Pending</option>
+              <option value="0">In Preparation</option>
+              <option value="1">In Preparation -Started</option>
+              <option value="1">In Preparation -In Work</option>
+              <option value="1">In Preparation -Completed</option>
+              <option value="1">Quotation</option>
+              <option value="1">Quotation -Requested</option>
+              <option value="1">Quotation -Received</option>
+              <option value="1">Quotation -Approved</option>
+              <option value="1">Contract </option>
+              <option value="1">Contract -Requested</option>
+              <option value="1">Contract -Received</option>
+              <option value="1">Contract -Signed</option>
+              <option value="1">Contract -Fund Deposited</option>
               <option value="1">Approved</option>
+              <option value="1">Approved -Started</option>
+              <option value="1">Approved -In Work</option>
+              <option value="1">Approved -Completed</option>
             </select>
             <button
               @click="updatePackageStatus"
