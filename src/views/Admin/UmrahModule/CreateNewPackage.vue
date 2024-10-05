@@ -1,9 +1,14 @@
 <template>
   <div class="px-5 bg-slate-50 py-5 w-3/4" v-if="!createdPackage">
-    <div class="text-center pb-6 border-b-4 border-gray-300 mb-12">
+    <div class="text-center flex items-center justify-center gap-24 pb-6 border-b-4 border-gray-300 mb-12">
+      <img src="/src/assets/image/makkah.jpg" alt="" class="w-24 rounded-full h-24">
+      <div>
         <p class="text-5xl font-bold text-[#286d71] tracking-tight">Create New Umrah Package</p>
         <p class="text-xl text-gray-600 mt-3">Add all package details and itinerary details </p>
       </div>
+      <img src="/src/assets/image/madinah.jpg" alt="" class="w-24 rounded-full h-24">
+    </div>
+    
     <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
       <form @submit.prevent="EventFormApply">
         <section>

@@ -448,11 +448,11 @@
         <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
           Approve Package Flights
         </h1>
-        <div class="flex justify-end items-center py-3 px-5">
+        <!-- <div class="flex justify-end items-center py-3 px-5">
           <button @click="showAirForm = !showAirForm" class="btn btn-success text-white">
             Add New Flight Details
           </button>
-        </div>
+        </div> -->
         <div>
           <div class="px-10" v-if="showAirForm">
             <form class="space-y-4" @submit.prevent="saveFligt">
@@ -952,106 +952,77 @@
         <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
           Approve Umrah Package Final Review
         </h1>
-        <div class="px-10">
-          <div class="overflow-x-auto py-5">
-            <table class="table w-full bg-gray-200">
-              <thead>
-                <tr class="rounded-xl">
-                  <th class="border-2 rounded-xl border-gray-500">Date</th>
-                  <th class="border-2 rounded-lg border-gray-500">Day</th>
-                  <th class="border-2 rounded-lg border-gray-500">Time</th>
-                  <th class="border-2 rounded-lg border-gray-500">Activity Type</th>
-
-                  <th class="border-2 rounded-lg border-gray-500">From</th>
-                  <th class="border-2 rounded-lg border-gray-500">To</th>
-                  <th class="border-2 rounded-lg border-gray-500">Vendor</th>
-                  <th class="border-2 rounded-lg border-gray-500">Action</th>
-                  <!-- <th>Status</th> -->
+        <div class="p-5">
+          <div class="overflow-x-auto">
+            <table class="table-auto w-full  shadow-md rounded-lg border-collapse border border-gray-300 ">
+              <thead class="bg-gradient-to-r from-teal-600 to-blue-500 text-white rounded-lg">
+                <tr class="rounded-lg">
+                  <th class="px-4 py-3 border border-gray-300 text-center">Date</th>
+                  <th class="px-4 py-3 border border-gray-300 text-center">Day</th>
+                  <th class="px-4 py-3 border border-gray-300 text-center">Time</th>
+                  <th class="px-4 py-3 border border-gray-300 text-center">Activity Type</th>
+                  <th class="px-4 py-3 border border-gray-300 text-center">From</th>
+                  <th class="px-4 py-3 border border-gray-300 text-center">To</th>
+                  <th class="px-4 py-3 border border-gray-300 text-center">Vendor</th>
+                  <th class="px-4 py-3 border border-gray-300 text-center">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <template
-                  v-for="(itinerary, index) in packageDetails.itineraries"
-                  :key="itinerary.id"
-                >
-                  <!-- <tr class="border-y-2 border-gray-500">
-                    <td class="border-x-2 border-gray-500" :colspan="1">
+                <template v-for="(itinerary, index) in packageDetails.itineraries" :key="itinerary.id">
+                  <tr class="bg-gray-100 hover:bg-white transition duration-200" v-for="activity in itinerary.activities" :key="activity.id">
+                    <td class="px-4 py-3 border border-gray-300 text-center">
                       <p>{{ moment(itinerary.date, 'DD-MM-YYYY').format('dddd, DD MMM YYYY') }}</p>
                     </td>
-                    <td class="border-x-2 border-gray-500" :colspan="1">{{ 'Day ' + (index + 1) }}</td>
-                    <td class="border-x-2 border-gray-500" :colspan="5"></td>
-                  </tr> -->
-                  <tr class="border-y-2 rounded-lg border-gray-500" v-for="activity in itinerary.activities" :key="activity.id">
-                    <td class="border-x-2 border-gray-500" >
-                      <p>{{ moment(itinerary.date, 'DD-MM-YYYY').format('dddd, DD MMM YYYY') }}</p>
-                    </td>
-                    <td class="border-x-2 border-gray-500 text-nowrap" >{{ 'Day ' + (index + 1) }}</td>
-                    <td class="border-x-2 border-gray-500">{{ activity.time }}</td>
-                    <td class="border-x-2 border-gray-500">{{ activity.activity_type }}</td>
-
-                    <td class="border-x-2 border-gray-500">{{ activity.from }}</td>
-                    <td class="border-x-2 border-gray-500">{{ activity.to }}</td>
-                    <td class="border-x-2 border-gray-500">{{ activity.transportation_by }}</td>
-                    <td class="border-x-2 border-gray-500">{{ activity.description }}</td>
-                    <!-- <td>{{ activity.status }}</td> -->
+                    <td class="px-4 py-3 border border-gray-300 text-center">{{ 'Day ' + (index + 1) }}</td>
+                    <td class="px-4 py-3 border border-gray-300 text-center">{{ activity.time }}</td>
+                    <td class="px-4 py-3 border border-gray-300 text-center">{{ activity.activity_type }}</td>
+                    <td class="px-4 py-3 border border-gray-300 text-center">{{ activity.from }}</td>
+                    <td class="px-4 py-3 border border-gray-300 text-center">{{ activity.to }}</td>
+                    <td class="px-4 py-3 border border-gray-300 text-center">{{ activity.transportation_by }}</td>
+                    <td class="px-4 py-3 border border-gray-300 text-center">{{ activity.description }}</td>
                   </tr>
                 </template>
               </tbody>
             </table>
           </div>
-          <div class="border-t-2 border-teal-600 p-5">
-            <div
-              class="flex justify-start gap-5 items-center w-full py-2 px-5"
-              v-if="packageDetails"
-            >
-              <h1 class="w-full px-5">Final Approval Status :</h1>
-
-              <select
-                v-model="packageDetails.package_status.flight_approve"
-                class="select select-bordered w-1/2"
-              >
-              <option disabled selected>Select Status</option>
-              <option value="0">1. In Preparation</option>
-              <option value="1">1a. In Preparation -Started</option>
-              <option value="1">1b. In Preparation -In Work</option>
-              <option value="1">1c. In Preparation -Completed</option>
-              <option value="1">2. Quotation</option>
-              <option value="1">2a. Quotation -Requested</option>
-              <option value="1">2b. Quotation -Received</option>
-              <option value="1">2c. Quotation -Approved</option>
-              <option value="1">3. Contract </option>
-              <option value="1">3a. Contract -Requested</option>
-              <option value="1">3b. Contract -Received</option>
-              <option value="1">3c. Contract -Signed</option>
-              <option value="1">3d. Contract -Fund Deposited</option>
-              <option value="1">4. Approved</option>
-              <option value="1">4a. Approved -Started</option>
-              <option value="1">4b. Approved -In Work</option>
-              <option value="1">4c. Approved -Completed</option>
+        
+          <div class="border-t-4 border-teal-600 p-5 mt-5 bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg shadow-lg">
+            <div class="flex justify-start gap-5 items-center w-full py-2 px-5">
+              <h1 class="w-full font-semibold text-lg text-gray-700">Final Approval Status:</h1>
+              <select v-model="packageDetails.package_status.flight_approve" class="select select-bordered w-1/2">
+                <option disabled selected>Select Status</option>
+                <option value="0">1. In Preparation</option>
+                <option value="1">1a. In Preparation -Started</option>
+                <option value="1">1b. In Preparation -In Work</option>
+                <option value="1">1c. In Preparation -Completed</option>
+                <option value="1">2. Quotation</option>
+                <option value="1">2a. Quotation -Requested</option>
+                <option value="1">2b. Quotation -Received</option>
+                <option value="1">2c. Quotation -Approved</option>
+                <option value="1">3. Contract</option>
+                <option value="1">3a. Contract -Requested</option>
+                <option value="1">3b. Contract -Received</option>
+                <option value="1">3c. Contract -Signed</option>
+                <option value="1">3d. Contract -Fund Deposited</option>
+                <option value="1">4. Approved</option>
+                <option value="1">4a. Approved -Started</option>
+                <option value="1">4b. Approved -In Work</option>
+                <option value="1">4c. Approved -Completed</option>
               </select>
               <button
                 @click="updatePackageStatus"
-                class="btn btn-info text-white"
+                class="btn btn-info text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
                 :disabled="applying"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  v-if="applying"
-                  class="animate-spin"
-                  viewBox="0 0 24 24"
-                  width="18"
-                  height="18"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z"
-                  ></path>
+                <svg xmlns="http://www.w3.org/2000/svg" v-if="applying" class="animate-spin mr-2" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z"></path>
                 </svg>
                 Apply
               </button>
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   </div>

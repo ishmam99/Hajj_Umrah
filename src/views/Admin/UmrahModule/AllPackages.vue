@@ -4,7 +4,7 @@
       <!-- Umrah Packages Header -->
       <div class="text-center pb-6 border-b-4 border-gray-300 mb-12">
         <p class="text-5xl font-bold text-[#286d71] tracking-tight">All Umrah Packages</p>
-        <p class="text-xl text-gray-600 mt-3">All Umrah  Package List</p>
+        <p class="text-xl text-gray-600 mt-3">All Umrah Package List</p>
       </div>
 
       <!-- Packages Table -->
@@ -13,31 +13,31 @@
           <thead>
             <tr class="bg-[#286d71] text-white">
                 <th class="border px-6 py-3">Title</th>
+                <th class="border px-6 py-3">Origin City</th>
+                <th class="border px-6 py-3">Origin Airport</th>
+                <th class="border px-6 py-3">Origin Country</th>
+                <th class="border px-6 py-3">Start Date</th>
+                <th class="border px-6 py-3">End Date</th>
               <th class="border px-6 py-3">Package ID</th>
               <th class="border px-6 py-3">Agent Name</th>
               <th class="border px-6 py-3">Imam Name</th>
               <th class="border px-6 py-3">Local Support Name</th>
-              <th class="border px-6 py-3">Origin Country</th>
-              <th class="border px-6 py-3">Origin City</th>
-              <th class="border px-6 py-3">Origin Airport</th>
-              <th class="border px-6 py-3">Start Date</th>
-              <th class="border px-6 py-3">End Date</th>
               <th class="border px-3 py-3">Status</th>
               <th class="border px-3 py-3">Actions</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(pkg, index) in packages" v-if="packages.length > 0" :key="index" class="hover:bg-gray-50 shadow">
-               <td class=" px-4 py-2 border-e-2">{{ pkg.package_title }}</td>
+               <td class=" px-4 py-2 border-e-2 text-nowrap">{{ pkg.package_title }}</td>
+               <td class=" px-4 py-2 border-e-2">{{ pkg.city?.name }}</td>
+               <td class=" px-4 py-2 border-e-2">{{ pkg.airport.short_name }}</td>
+               <td class=" px-4 py-2 border-e-2">{{ pkg.country?.name }}</td>
+               <td class=" px-4 py-2 border-e-2">{{ pkg.start_at }}</td>
+               <td class=" px-4 py-2 border-e-2">{{ pkg.end_at }}</td>
               <td class=" px-4 py-2 border-e-2">{{ pkg.package_id }}</td>
               <td class=" px-4 py-2 border-e-2">{{ pkg.agent?.user?.name }}</td>
               <td class=" px-4 py-2 border-e-2">{{ pkg.imam?.user?.name }}</td>
               <td class=" px-4 py-2 border-e-2">{{ pkg.support_manager?.user?.name }}</td>
-              <td class=" px-4 py-2 border-e-2">{{ pkg.country?.name }}</td>
-              <td class=" px-4 py-2 border-e-2">{{ pkg.city?.name }}</td>
-              <td class=" px-4 py-2 border-e-2">{{ pkg.airport.short_name }}</td>
-              <td class=" px-4 py-2 border-e-2">{{ pkg.start_at }}</td>
-              <td class=" px-4 py-2 border-e-2">{{ pkg.end_at }}</td>
               <td class=" px-4 py-2"> <select v-model="pkg.status_of_package" class="select select-bordered w-full">
                 <option disabled selected>Select an option</option>
                 <option v-for="status in statuses" :value="status.id" >{{ status.name }}</option>

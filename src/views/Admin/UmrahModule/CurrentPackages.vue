@@ -12,7 +12,7 @@
       </div>
 
       <!-- Sorting Dropdowns -->
-      <div class="flex space-x-4 mb-6">
+      <div class="flex space-x-4 mb-6 px-10">
         <!-- Sort by Country -->
         <div class="flex flex-col w-1/3 gap-1">
           <label for="">Sort by Country</label>

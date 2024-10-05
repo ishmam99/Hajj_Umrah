@@ -12,7 +12,7 @@
     </div>
 
     <div>
-        <div class=" gap-5 mb-5 border-blue-400 border p-2 rounded-md bg-blue-100">
+        <div class=" gap-5 mb-5 border-blue-400 border p-2 rounded-md bg-blue-200">
        <h1 class="my-2 text-center text-xl text-blue-700 font-semibold">1. Package Dates Section</h1>
         <div class="flex gap-5 py-5 mb-5 border-blue-400 border p-2 rounded-md bg-blue-200">
         <div class="w-1/2">
@@ -33,7 +33,7 @@
         </div>
       </div>
       </div>
-        <div class="w-full  border-cyan-400 border p-2 rounded-md bg-cyan-100">
+        <div class="w-full  border-cyan-400 border p-2 rounded-md bg-cyan-200">
       <h1 class="my-2 text-xl text-center text-cyan-700 font-semibold">2. Imam Section</h1>
         <div class="w-full py-3 my-3 border-cyan-400 border p-2 rounded-md bg-cyan-200">
           <div class="label">
@@ -52,7 +52,7 @@
           </h1>
         </div>
         </div>
-        <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-teal-100">
+        <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-teal-200">
         <h1 class="my-5 text-center text-xl text-teal-700 font-semibold">3. Agent Section</h1>
         <div class="w-full my-4 py-3 border-teal-400 border p-2 rounded-md bg-teal-200">
           <div class="label">
@@ -71,17 +71,79 @@
           </h1>
         </div>
         </div>
-        <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-purple-100">
-        <h1 class="my-5 text-center text-xl text-teal-700 font-semibold">4. Flight Section</h1>
-        <div class="w-full my-4 py-3 border-teal-400 border p-2 rounded-md bg-teal-200">
+        <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-purple-200">
+        <h1 class="my-5 text-center  text-xl text-teal-700 font-semibold">4. Flight Section</h1>
+        <!-- <div v-for="route in availableRoutes" class="mt-4 flex bg-gray-200 py-3 px-2"> -->
+          
+          <!-- <div v-for="route in availableRoutes" class="mt-8 flex flex-col gap-4 p-6 rounded-lg shadow-lg bg-white"> -->
+            <div  class="flex flex-col gap-4 p-6 rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-200 max-w-7xl mt-2 mx-auto">
+  
+              <!-- Main Flight Route Display -->
+              <div class="flex justify-between items-center">
+                
+                <!-- Origin Section -->
+                <div class="flex-1 text-center bg-blue-50 p-4 rounded-lg shadow-sm">
+                  <h1 class="font-bold text-xl text-blue-600">New York (JFK)</h1>
+                  <h2 class="text-gray-500">15:30</h2>
+                  <p class="text-sm text-gray-400">Mon, 13 Jan</p>
+                </div>
+            
+                <!-- Custom Flight Icon -->
+                <div class="mx-6 text-blue-400" v-html="flightSvg"></div>
+            
+                <!-- Transit Section -->
+                <div class="flex-1 text-center bg-yellow-50 p-4 rounded-lg shadow-sm">
+                  <h1 class="font-bold text-xl text-yellow-600">Istanbul (IST)</h1>
+                  <h2 class="text-gray-500">5:00</h2>
+                  <p class="text-sm text-gray-400">Mon, 13 Jan</p>
+                </div>
+            
+                <!-- Custom Flight Icon -->
+                <div class="mx-6 text-yellow-400" v-html="flightSvg"></div>
+            
+                <!-- Destination Section -->
+                <div class="flex-1 text-center bg-green-50 p-4 rounded-lg shadow-sm">
+                  <h1 class="font-bold text-xl text-green-600">Medina (MED)</h1>
+                  <h2 class="text-gray-500">8:00</h2>
+                  <p class="text-sm text-gray-400">Mon, 13 Jan</p>
+                </div>
+              </div>
+            
+              <!-- Divider Line -->
+              <div class="border-t border-gray-200 my-4"></div>
+            
+              <!-- Flight Time and Fare Section -->
+              <div class="flex justify-between items-center">
+                
+                <!-- Flight Time Info -->
+                <div class="flex-1">
+                  <h1 class="text-lg font-semibold text-gray-800">Total Flight Time: 10h + 3h</h1>
+                  <p class="text-gray-600">Includes layover in <span class="font-bold text-yellow-600">Istanbul</span></p>
+                </div>
+            
+                <!-- Ticket Fare and Select Button -->
+                <div class="flex-1 text-right">
+                  <h1 class="text-xl font-bold text-green-600">Ticket Fare: $1200</h1>
+                  <!-- <button
+                    type="button"
+                    @click="selectRoute(route)"
+                    class="mt-2 rounded-full bg-green-500 text-white px-6 py-2 hover:bg-green-600 transition duration-300 shadow-md"
+                  >
+                    Select Flight
+                  </button> -->
+                </div>
+              </div>
+            </div>
+          
+        <div class="w-full my-4 py-3 border-purple-400 border p-2 rounded-md bg-purple-200">
           <div class="label">
             <span class="label-text">Flight Name</span>
           </div>
           <h1 class="text-xl font-semibold p-2 border rounded-md bg-white">
-            {{ createdPackage?.itineraries[0]?.activities[0]?.activity_type }} {{ createdPackage?.itineraries[0]?.activities[0]?.from }} {{ createdPackage?.itineraries[0]?.activities[0]?.to }} By {{ createdPackage?.itineraries[0]?.activities[0]?.transportation_by }}
+            {{ createdPackage?.itineraries[0]?.activities[0]?.activity_type }} {{ createdPackage?.itineraries[0]?.activities[0]?.from }} To {{ createdPackage?.itineraries[0]?.activities[0]?.to }} By {{ createdPackage?.itineraries[0]?.activities[0]?.transportation_by }}
           </h1>
         </div>
-        <div class="w-full my-4 py-3 border-teal-400 border p-2 rounded-md bg-teal-200">
+        <div class="w-full my-4 py-3 border-purple-400 border p-2 rounded-md bg-purple-200">
           <div class="label">
             <span class="label-text">Flight Date &amp; Time</span>
           </div>
@@ -91,9 +153,9 @@
           </h1>
         </div>
         </div>
-        <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-emerald-100">
+        <div class="w-full my-5 border-emerald-400 border p-2 rounded-md bg-emerald-200">
         <h1 class="my-5 text-center text-xl text-teal-700 font-semibold">5. Bus Section</h1>
-        <div class="w-full my-4 py-3 border-teal-400 border p-2 rounded-md bg-teal-200">
+        <div class="w-full my-4 py-3 border-emerald-400 border p-2 rounded-md bg-emerald-200">
           <div class="label">
             <span class="label-text">Bus Company Name</span>
           </div>
@@ -102,9 +164,9 @@
           </h1>
         </div>
         </div>
-        <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-sky-100">
+        <div class="w-full my-5 border-sky-400 border p-2 rounded-md bg-sky-200">
         <h1 class="my-5 text-center text-xl text-teal-700 font-semibold">6. Hotel Section</h1>
-        <div class="w-full my-4 py-3 border-teal-400 border p-2 rounded-md bg-teal-200">
+        <div class="w-full my-4 py-3 border-sky-400 border p-2 rounded-md bg-sky-200">
           <div class="label">
             <span class="label-text">Hotel Name</span>
           </div>
@@ -959,106 +1021,71 @@
               >
                 Get Routes
               </button>
+              <!-- rasik -->
             </div>
-            <div v-for="route in availableRoutes" class="mt-4 flex bg-gray-200 py-3 px-2">
-              <div
-                class="flex gap-1 rounded-lg shadow-lg bg-white px-4 py-2 w-full justify-between items-center"
-              >
-                <div>
-                  <h1 class="font-semibold text-lg">
-                    {{ route.origin.name }} ({{ route.origin.short_name }})
-                  </h1>
-                  <h1 class="font-semibold text-xl">{{ route.origin_time }}</h1>
-                  <p class="font-bold text-sm">{{ route.date }}</p>
+            <div v-for="route in availableRoutes" class="flex flex-col gap-4 p-6 rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-200 max-w-7xl mt-2 mx-auto">
+  
+              <!-- Main Flight Route Display -->
+              <div class="flex justify-between items-center">
+                
+                <!-- Origin Section -->
+                <div class="flex-1 text-center bg-blue-50 p-4 rounded-lg shadow-sm">
+                  <h1 class="font-bold text-xl text-blue-600">{{ route.origin.name }} ({{ route.origin.short_name }})</h1>
+                  <h2 class="text-gray-500">{{ route.origin_time }}</h2>
+                  <p class="text-sm text-gray-400">{{ route.date }}</p>
                 </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="28"
-                  height="28"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M21.949 10.1118C22.1634 10.912 21.6886 11.7345 20.8884 11.9489L5.2218 16.1467C4.77856 16.2655 4.31138 16.0674 4.08866 15.6662L1.46582 10.9415L2.91471 10.5533L5.3825 12.9979L10.4778 11.6326L5.96728 4.55896L7.89913 4.04132L14.8505 10.4609L20.1119 9.05113C20.9121 8.83671 21.7346 9.31159 21.949 10.1118ZM4.00013 19H20.0001V21H4.00013V19Z"
-                  ></path>
-                </svg>
-                <div>
-                  <h1 class="font-semibold text-lg">
-                    {{ route.transit.name }} ({{ route.transit.short_name }})
-                  </h1>
-                  <h1 class="font-semibold text-xl">{{ route.transit_time }}</h1>
-                  <p class="font-bold text-sm">{{ route.date }}</p>
+            
+                <!-- Custom Flight Icon -->
+                <div class="mx-6 text-blue-400" v-html="flightSvg"></div>
+            
+                <!-- Transit Section -->
+                <div class="flex-1 text-center bg-yellow-50 p-4 rounded-lg shadow-sm">
+                  <h1 class="font-bold text-xl text-yellow-600">{{ route.transit.name }} ({{ route.transit.short_name }})</h1>
+                  <h2 class="text-gray-500">{{ route.transit_time }}</h2>
+                  <p class="text-sm text-gray-400">{{ route.date }}</p>
                 </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="28"
-                  height="28"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M21.949 10.1118C22.1634 10.912 21.6886 11.7345 20.8884 11.9489L5.2218 16.1467C4.77856 16.2655 4.31138 16.0674 4.08866 15.6662L1.46582 10.9415L2.91471 10.5533L5.3825 12.9979L10.4778 11.6326L5.96728 4.55896L7.89913 4.04132L14.8505 10.4609L20.1119 9.05113C20.9121 8.83671 21.7346 9.31159 21.949 10.1118ZM4.00013 19H20.0001V21H4.00013V19Z"
-                  ></path>
-                </svg>
-                <div>
-                  <h1 class="font-semibold text-lg">
-                    {{ route.destination.name }} ({{ route.destination.short_name }})
-                  </h1>
-                  <h1 class="font-semibold text-xl">{{ route.destination_time }}</h1>
-                  <p class="font-bold text-sm">{{ route.date }}</p>
+            
+                <!-- Custom Flight Icon -->
+                <div class="mx-6 text-yellow-400" v-html="flightSvg"></div>
+            
+                <!-- Destination Section -->
+                <div class="flex-1 text-center bg-green-50 p-4 rounded-lg shadow-sm">
+                  <h1 class="font-bold text-xl text-green-600">{{ route.destination.name }} ({{ route.destination.short_name }})</h1>
+                  <h2 class="text-gray-500">{{ route.destination_time }}</h2>
+                  <p class="text-sm text-gray-400">{{ route.date }}</p>
                 </div>
               </div>
-              <div class="flex items-center gap-5 justify-end w-1/2">
-                <h1>Ticket Fare : $1200</h1>
-
-                <button
-                  type="button"
-                  @click="selectRoute(route)"
-                  class="rounded-lg bg-orange-600 text-white px-3 py-2"
-                >
-                  Select Flight
-                </button>
+            
+              <!-- Divider Line -->
+              <div class="border-t border-gray-200 my-4"></div>
+            
+              <!-- Flight Time and Fare Section -->
+              <div class="flex justify-between items-center">
+                
+                <!-- Flight Time Info -->
+                <div class="flex-1">
+                  <h1 class="text-lg font-semibold text-gray-800">Total Flight Time: {{ route.flight_time }}</h1>
+                  <p class="text-gray-600">Includes layover in <span class="font-bold text-yellow-600">{{ route.transit.name }}</span></p>
+                </div>
+            
+                <!-- Ticket Fare and Select Button -->
+                <div class="flex-1 text-right">
+                  <h1 class="text-xl font-bold text-green-600">Ticket Fare: $1200</h1>
+                  <button
+                    type="button"
+                    @click="selectRoute(route)"
+                    class="mt-2 rounded-full bg-green-500 text-white px-6 py-2 hover:bg-green-600 transition duration-300 shadow-md"
+                  >
+                    Select Flight
+                  </button>
+                </div>
               </div>
             </div>
-
-            <!-- Return fields -->
-            <!-- <div class="flex gap-5 mb-5">
-                          <div class="w-1/2">
-                            <input
-                              v-model="newFare.return.from"
-                              type="text"
-                              placeholder="Return From"
-                              class="input input-bordered w-full"
-                            />
-                          </div>
-                          <div class="w-1/2">
-                            <input
-                              v-model="newFare.return.to"
-                              type="text"
-                              placeholder="Return To"
-                              class="input input-bordered w-full"
-                            />
-                          </div>
-                        </div>
-
-                        <div class="flex gap-5 mb-5">
-                          <div class="w-1/2">
-                            <input
-                              v-model="newFare.return.airline"
-                              type="text"
-                              placeholder="Return Airline"
-                              class="input input-bordered w-full"
-                            />
-                          </div>
-                          <div class="w-1/2">
-                            <input
-                              v-model="newFare.return.fare"
-                              type="number"
-                              placeholder="Return Fare"
-                              class="input input-bordered w-full"
-                            />
-                          </div>
-                        </div> -->
+            
+            
+            
+            
+            
           </div>
 
           <!-- Air Fares List -->
@@ -1076,17 +1103,7 @@
                   <!-- {{ fare }} -->
                   <div class="text-lg font-semibold flex justify-between items-center">
                     <div class="flex items-center gap-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="48"
-                        height="48"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M21.949 10.1118C22.1634 10.912 21.6886 11.7345 20.8884 11.9489L5.2218 16.1467C4.77856 16.2655 4.31138 16.0674 4.08866 15.6662L1.46582 10.9415L2.91471 10.5533L5.3825 12.9979L10.4778 11.6326L5.96728 4.55896L7.89913 4.04132L14.8505 10.4609L20.1119 9.05113C20.9121 8.83671 21.7346 9.31159 21.949 10.1118ZM4.00013 19H20.0001V21H4.00013V19Z"
-                        ></path>
-                      </svg>
+                      <div v-html="flightSvg"></div>
                       Departure From {{ fare.origin.name }} To {{ fare.transit.name }} By
                       {{ selectdAirline.name }}
                     </div>
@@ -1095,17 +1112,7 @@
                   <br />
                   <div class="text-lg font-semibold flex justify-between items-center">
                     <div class="flex items-center gap-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="48"
-                        height="48"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M21.949 10.1118C22.1634 10.912 21.6886 11.7345 20.8884 11.9489L5.2218 16.1467C4.77856 16.2655 4.31138 16.0674 4.08866 15.6662L1.46582 10.9415L2.91471 10.5533L5.3825 12.9979L10.4778 11.6326L5.96728 4.55896L7.89913 4.04132L14.8505 10.4609L20.1119 9.05113C20.9121 8.83671 21.7346 9.31159 21.949 10.1118ZM4.00013 19H20.0001V21H4.00013V19Z"
-                        ></path>
-                      </svg>
+                      <div v-html="flightSvg"></div>
                       Departure From {{ fare.transit.name }} To {{ fare.destination.name }} By
                       {{ selectdAirline.name }}
                     </div>
@@ -1115,17 +1122,7 @@
 
                   <div class="text-lg font-semibold flex justify-between items-center">
                     <div class="flex items-center gap-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="48"
-                        height="48"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M21.949 10.1118C22.1634 10.912 21.6886 11.7345 20.8884 11.9489L5.2218 16.1467C4.77856 16.2655 4.31138 16.0674 4.08866 15.6662L1.46582 10.9415L2.91471 10.5533L5.3825 12.9979L10.4778 11.6326L5.96728 4.55896L7.89913 4.04132L14.8505 10.4609L20.1119 9.05113C20.9121 8.83671 21.7346 9.31159 21.949 10.1118ZM4.00013 19H20.0001V21H4.00013V19Z"
-                        ></path>
-                      </svg>
+                      <div v-html="flightSvg"></div>
                       Return From {{ fare.return_origin.name }} To {{ fare.return_transit.name }} By
                       {{ selectdAirline.name }}
                     </div>
@@ -1133,17 +1130,7 @@
                   </div>
                   <div class="text-lg font-semibold flex justify-between items-center">
                     <div class="flex items-center gap-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="48"
-                        height="48"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M21.949 10.1118C22.1634 10.912 21.6886 11.7345 20.8884 11.9489L5.2218 16.1467C4.77856 16.2655 4.31138 16.0674 4.08866 15.6662L1.46582 10.9415L2.91471 10.5533L5.3825 12.9979L10.4778 11.6326L5.96728 4.55896L7.89913 4.04132L14.8505 10.4609L20.1119 9.05113C20.9121 8.83671 21.7346 9.31159 21.949 10.1118ZM4.00013 19H20.0001V21H4.00013V19Z"
-                        ></path>
-                      </svg>
+                      <div v-html="flightSvg"></div>
                       Return From {{ fare.return_transit.name }} To
                       {{ fare.return_destination.name }} By {{ selectdAirline.name }}
                     </div>
@@ -1753,25 +1740,48 @@ const selectedGeneral = ref({
 })
 const availableRoutes = ref([])
 const getRoutes = () => {
-  let t = 9
-  for (let i = 3; i < 7; i++) {
-    let rt = { ...airRoute.value }
-    rt.transit = { id: 11, name: 'Istanbul', short_name: 'IST' }
+  let t = 9;
 
-    rt.date = moment(itinerary.value.date).format('ddd, DD MMM')
+  const originTimes = ['02:25', '15:30', '20:40', '22:10'];
+  const destinationTimes = ['08:50', 'Next Day 8:00', '10:30', '13:45'];
+  const transitTimes = ['05:30', 'Next Day 5:00', '07:20', '09:15'];
+  
+  // Define flight durations for origin to transit and transit to destination
+  const flightDurations = {
+    'Dallas-Istanbul': '10h',
+    'Istanbul-Madina': '3h'
+  };
+
+  for (let i = 3; i < 7; i++) {
+    let rt = { ...airRoute.value };
+    rt.transit = { id: 11, name: 'Istanbul', short_name: 'IST' };
+
+    rt.date = moment(itinerary.value.date).format('ddd, DD MMM');
+
     if (rt.origin == 'Jeddah' || rt.origin == 'Medina') {
-      rt.origin_time = `02:25`
-      // rt.transit_time = `08:50`
-      rt.destination_time = `08:50`
+      rt.origin_time = originTimes[i % originTimes.length];
+      rt.transit_time = transitTimes[i % transitTimes.length];
+      rt.destination_time = destinationTimes[i % destinationTimes.length];
+
+      // Assign total flight time
+      rt.flight_time = flightDurations['Istanbul-Madina']; 
     } else {
-      rt.origin_time = `21:25`
-      // rt.transit_time = `21:00`
-      rt.destination_time = `21:00`
+      rt.origin_time = originTimes[(i + 2) % originTimes.length];
+      rt.transit_time = transitTimes[(i + 2) % transitTimes.length];
+      rt.destination_time = destinationTimes[(i + 2) % destinationTimes.length];
+
+      // Assign total flight time for multi-leg flights
+      rt.flight_time = flightDurations['Dallas-Istanbul'] + ' + ' + flightDurations['Istanbul-Madina'];
     }
-    availableRoutes.value.push(rt)
+
+    availableRoutes.value.push(rt);
   }
-  console.log(availableRoutes.value)
-}
+
+  console.log(availableRoutes.value);
+};
+
+
+
 const transports = ref([
   {
     name: 'TAWFIQ',
@@ -2298,6 +2308,17 @@ const getPackage = async () => {
   const { data } = await api().get('package/' + route.params.id)
   createdPackage.value = data.data
 }
+const flightSvg = `<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M21.949 10.1118C22.1634 10.912 21.6886 11.7345 20.8884 11.9489L5.2218 16.1467C4.77856 16.2655 4.31138 16.0674 4.08866 15.6662L1.46582 10.9415L2.91471 10.5533L5.3825 12.9979L10.4778 11.6326L5.96728 4.55896L7.89913 4.04132L14.8505 10.4609L20.1119 9.05113C20.9121 8.83671 21.7346 9.31159 21.949 10.1118ZM4.00013 19H20.0001V21H4.00013V19Z"
+                  ></path>
+                </svg>`
 onMounted(() => {
   getCountries()
   getImams()

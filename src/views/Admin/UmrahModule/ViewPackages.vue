@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gradient-to-r from-slate-50 via-slate-100 to-slate-50 py-5 w-3/4">
-    <div class="px-2 my-8">
+    <div class="px-2 mb-8">
       <!-- Umrah Packages Header -->
       <div class="text-center flex items-center justify-center gap-24 pb-6 border-b-4 border-gray-300 mb-12">
         <img src="/src/assets/image/makkah.jpg" alt="" class="w-24 rounded-full h-24">
