@@ -13,7 +13,11 @@
 
     <div>
         <div class=" gap-5 mb-5 border-blue-400 border p-2 rounded-md bg-blue-200">
-       <h1 class="my-2 text-center text-xl text-blue-700 font-semibold">1. Package Dates Section</h1>
+       <div class="flex  items-center justify-between">
+        <div></div>
+        <h1 class="my-2 text-center text-xl text-blue-700 font-semibold">1. Package Dates Section</h1>
+       <button class="bg-green-600 hover:bg-green-700 py-0.5 px-3 rounded text-white">Edit</button>
+       </div>
         <div class="flex gap-5 py-5 mb-5 border-blue-400 border p-2 rounded-md bg-blue-200">
         <div class="w-1/2">
           <div class="label">
@@ -34,7 +38,11 @@
       </div>
       </div>
         <div class="w-full  border-cyan-400 border p-2 rounded-md bg-cyan-200">
-      <h1 class="my-2 text-xl text-center text-cyan-700 font-semibold">2. Imam Section</h1>
+          <div class="flex  items-center justify-between">
+            <div></div>
+            <h1 class="my-2 text-center text-xl text-blue-700 font-semibold">2. Imam Section</h1>
+           <button class="bg-green-600 hover:bg-green-700 py-0.5 px-3 rounded text-white">Edit</button>
+           </div>
         <div class="w-full py-3 my-3 border-cyan-400 border p-2 rounded-md bg-cyan-200">
           <div class="label">
             <span class="label-text">Imam Name</span>
@@ -53,7 +61,11 @@
         </div>
         </div>
         <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-teal-200">
-        <h1 class="my-5 text-center text-xl text-teal-700 font-semibold">3. Agent Section</h1>
+          <div class="flex  items-center justify-between">
+            <div></div>
+            <h1 class="my-2 text-center text-xl text-blue-700 font-semibold">3. Agent Section</h1>
+           <button class="bg-green-600 hover:bg-green-700 py-0.5 px-3 rounded text-white">Edit</button>
+           </div>
         <div class="w-full my-4 py-3 border-teal-400 border p-2 rounded-md bg-teal-200">
           <div class="label">
             <span class="label-text">Agent Name</span>
@@ -72,7 +84,11 @@
         </div>
         </div>
         <div class="w-full my-5 border-teal-400 border p-2 rounded-md bg-purple-200">
-        <h1 class="my-5 text-center  text-xl text-teal-700 font-semibold">4. Flight Section</h1>
+          <div class="flex  items-center justify-between">
+            <div></div>
+            <h1 class="my-2 text-center text-xl text-teal-700 font-semibold">4. Flight Section</h1>
+           <button class="bg-green-600 hover:bg-green-700 py-0.5 px-3 rounded text-white">Edit</button>
+           </div>
         <!-- <div v-for="route in availableRoutes" class="mt-4 flex bg-gray-200 py-3 px-2"> -->
           
           <!-- <div v-for="route in availableRoutes" class="mt-8 flex flex-col gap-4 p-6 rounded-lg shadow-lg bg-white"> -->
@@ -154,7 +170,11 @@
         </div>
         </div>
         <div class="w-full my-5 border-emerald-400 border p-2 rounded-md bg-emerald-200">
-        <h1 class="my-5 text-center text-xl text-teal-700 font-semibold">5. Bus Section</h1>
+          <div class="flex  items-center justify-between">
+            <div></div>
+            <h1 class="my-2 text-center text-xl text-blue-700 font-semibold">5. Bus Section</h1>
+           <button class="bg-green-600 hover:bg-green-700 py-0.5 px-3 rounded text-white">Edit</button>
+           </div>
         <div class="w-full my-4 py-3 border-emerald-400 border p-2 rounded-md bg-emerald-200">
           <div class="label">
             <span class="label-text">Bus Company Name</span>
@@ -165,7 +185,11 @@
         </div>
         </div>
         <div class="w-full my-5 border-sky-400 border p-2 rounded-md bg-sky-200">
-        <h1 class="my-5 text-center text-xl text-teal-700 font-semibold">6. Hotel Section</h1>
+          <div class="flex  items-center justify-between">
+            <div></div>
+            <h1 class="my-2 text-center text-xl text-teal-700 font-semibold">6. Hotel Section</h1>
+           <button class="bg-green-600 hover:bg-green-700 py-0.5 px-3 rounded text-white">Edit</button>
+           </div>
         <div class="w-full my-4 py-3 border-sky-400 border p-2 rounded-md bg-sky-200">
           <div class="label">
             <span class="label-text">Hotel Name</span>
