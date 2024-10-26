@@ -1298,7 +1298,7 @@ const router = createRouter({
         {
           path: '/member_package_list',
           name: 'Membar_Package_List',
-          component: () => import('../views/Member/Profile/PackageList.vue')
+          component: () => import('../views/Member/Profile/ViewPackages.vue')
         },
         {
           path: '/member_todo_list',
