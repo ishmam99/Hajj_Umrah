@@ -432,13 +432,16 @@
         class="bg-white border-x-2 border-teal-700 border-b-2 px-2"
       >
         <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
-          Approve Package Flights
+          Approve Package Flights 
         </h1>
-        <!-- <div class="flex justify-end items-center py-3 px-5">
+        <div class="flex justify-end gap-2 items-center py-3 px-5">
           <button @click="showAirForm = !showAirForm" class="btn btn-success text-white">
             Add New Flight Details
           </button>
-        </div> -->
+          <button v-if="showAirForm" @click="showAirForm = !showAirForm" class="btn bg-red-500 hover:bg-red-600 text-white">
+            Cancel
+          </button>
+        </div>
         <div>
           <div class="px-10" v-if="showAirForm">
             <form class="space-y-4" @submit.prevent="saveFligt">
