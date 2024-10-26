@@ -432,57 +432,101 @@
         class="bg-white border-x-2 border-teal-700 border-b-2 px-2"
       >
         <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
-          Approve Package Flights
+          Approve Package Flights 
         </h1>
-        <!-- <div class="flex justify-end items-center py-3 px-5">
+        <div class="flex justify-end gap-2 items-center py-3 px-5">
           <button @click="showAirForm = !showAirForm" class="btn btn-success text-white">
             Add New Flight Details
           </button>
-        </div> -->
+          <button v-if="showAirForm" @click="showAirForm = !showAirForm" class="btn bg-red-500 hover:bg-red-600 text-white">
+            Cancel
+          </button>
+        </div>
         <div>
+
           <div class="px-10" v-if="showAirForm">
-            <form class="space-y-4" @submit.prevent="saveFligt">
-              <div class="flex items-center justify-between">
-                <label for="airline" class="w-1/3">Airline:</label>
-                <select
-                  id="airline"
-                  v-model="flightData.airline"
-                  class="select select-bordered w-2/3"
-                >
-                  <option disabled selected>Select Airline</option>
-                  <option v-for="airline in airlines" :key="airline.id" :value="airline">
-                    {{ airline.name }}
-                  </option>
-                </select>
-              </div>
-              <div class="flex items-center justify-between">
-                <label for="airroute" class="w-1/3">Air Route:</label>
-                <select
-                  id="airroute"
-                  v-model="flightData.airroute_id"
-                  class="select select-bordered w-2/3"
-                >
-                  <option disabled selected>Select Air Route</option>
-                  <option
-                    v-if="flightData.airline"
-                    v-for="route in flightData.airline.routes"
-                    :key="route.id"
-                    :value="route.id"
-                  >
-                    {{ route.origin_airport.short_name }} - {{ route.transit_airport.short_name }}-
-                    {{ route.destination_airport.short_name }}
-                  </option>
-                </select>
-              </div>
-              <div class="flex justify-center items-center mt-4">
-                <button type="submit" class="btn btn-success text-white">Save Flight</button>
-              </div>
-            </form>
-          </div>
+  <form class="space-y-4" @submit.prevent="saveFlightData">
+    <div class="flex w-full gap-4">
+      <!-- Airline Selection -->
+      <div class="flex items-center justify-between w-1/2">
+        <label for="airline" class="w-1/6">Airline:</label>
+        <select
+          id="airline"
+          v-model="packageFlightData.airline_id"
+          class="select select-bordered w-5/6"
+        >
+          <option disabled selected>Select Airline</option>
+          <option v-for="airline in airLinerRoutes" :key="airline.id" :value="airline.airline.id">
+            {{ airline?.airline?.name }} - {{ airline?.airline?.short_name }} {{ airline?.airline?.code }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Origin City Selection -->
+      <div class="flex items-center justify-between w-1/2">
+        <label for="origin_city" class="w-1/6">Origin City:</label>
+        <select
+          id="origin_city"
+          v-model="packageFlightData.origin_airport_id"
+          class="select select-bordered w-5/6"
+        >
+          <option disabled selected>Select Origin City</option>
+          <option
+            v-for="airline in airLinerRoutes"
+            :key="airline.id"
+            :value="airline.origin_airport.city.id"
+          >
+            {{ airline.origin_airport.city.name }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="flex w-full gap-4">
+      <!-- Destination City Selection -->
+      <div class="flex items-center justify-between w-1/2">
+        <label for="destination_city" class="w-2/6">Destination City:</label>
+        <select
+          id="destination_city"
+          v-model="packageFlightData.destination_airport_id"
+          class="select select-bordered w-5/6"
+        >
+          <option disabled selected>Select Destination City</option>
+          <option
+            
+            v-for="airline in airLinerRoutes"
+            :key="airline.id"
+            :value="airline.destination_airport.city.id"
+          >
+            {{ airline.destination_airport.city.name }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Departure Date -->
+      <div class="flex items-center justify-between w-1/2">
+        <label for="departure_date" class="w-1/6">Date:</label>
+        <input
+          type="date"
+          v-model="packageFlightData.departure_time"
+          id="departure_date"
+          class="border border-slate-300 w-5/6 p-2 rounded-lg"
+        />
+      </div>
+    </div>
+
+    <!-- Save Button -->
+    <div class="flex justify-center items-center mt-4">
+      <button type="submit" class="btn btn-success text-white">Save Flight</button>
+    </div>
+  </form>
+</div>
+
+          
         </div>
         <div class="px-10">
           <div class="overflow-x-auto py-5">
-            <table class="table w-full bg-gray-200">
+            <!-- <table class="table w-full bg-gray-200">
               <thead>
                 <tr>
                   <th>Flight Number</th>
@@ -500,7 +544,6 @@
                     {{ flight.airroute.flight_number ? flight.airroute.flight_number : 'F1G56' }}
                   </td>
                   <td>{{ flight.airroute.origin_airport.short_name }}</td>
-                  <td>{{ flight.airroute.transit_airport.short_name }}</td>
                   <td>{{ flight.airroute.destination_airport.short_name }}</td>
 
                   <td>{{ packageDetails.start_at }}</td>
@@ -508,7 +551,7 @@
                   <td>{{ flight.status == 1 ? 'Confirmed' : 'Pending' }}</td>
                 </tr>
               </tbody>
-            </table>
+            </table> -->
           </div>
 
           <div class="border-t-2 border-teal-600 p-5">
@@ -558,20 +601,7 @@
                 Apply
               </button>
             </div>
-            <!-- <div
-              class="flex justify-start gap-5 items-center w-full py-2 px-5"
-              v-if="packageDetails"
-            >
-              <div class="justify-between items-center w-full flex">
-                <label class="label px-5 w-full"> Note : </label>
-                <input
-                  v-model="packageDetails.package_status.flight_note"
-                  type="text"
-                  placeholder="Add a note"
-                  class="input input-bordered w-full input-sm"
-                />
-              </div>
-            </div> -->
+            
           </div>
         </div>
       </div>
@@ -633,8 +663,6 @@
                   <th>Departure</th>
                   <th>Departure Timing</th>
                   <th>Destination</th>
-                  <!-- <th>Departure Date</th>
-                  <th>Return Date</th> -->
                   <th>Arrival Timing</th>
                   <th>Status</th>
                 </tr>
@@ -645,8 +673,6 @@
                   <td>{{ bus.bus_route.departure_from }}</td>
                   <td>{{ bus.bus_route.departure_time }}</td>
                   <td>{{ bus.bus_route.departure_to }}</td>
-                  <!-- <td>{{ bus.bus_route.departure_date }}</td>
-                  <td>{{ bus.bus_route.return_date }}</td> -->
                   <td>{{ bus.bus_route.arrival_time }}</td>
                   <td>{{ bus.status == 1 ? 'Confirmed' : 'Pending' }}</td>
                 </tr>
@@ -1020,6 +1046,7 @@ const flightData = ref({
   airroute_id: null,
   package_id: null
 })
+
 const hotelData = ref({
   checkin_date: null,
   checkout_date: null,
@@ -1117,10 +1144,43 @@ const getAgents = async () => {
 const airlines = ref([])
 const hotels = ref([])
 const buses = ref([])
+const airLinerRoutes = ref([])
 const getAirlines = async () => {
   const { data } = await api().get('airline')
   airlines.value = data.data
 }
+const packageFlightData = ref({
+  airline_id : '',
+  origin_airport_id: '',
+  destination_airport_id: '',
+  fare: '',
+  departure_time: '',
+  arrival_time: '',
+  flight_number: ''
+})
+const getAirlineRoutes = async () => {
+  const { data } = await api().get('airroute')
+  airLinerRoutes.value = data.data
+}
+const saveFlightData = async () => {
+  try {
+    await api().post('airroute', {
+      airline_id: packageFlightData.value.airline.id,
+      origin_airport_id: packageFlightData.value.airroute_id,
+      destination_airport_id: packageFlightData.value.airline.destination_airport.id,
+      fare: packageFlightData.value.fare,
+      departure_time: packageFlightData.value.departure_time,
+      arrival_time: packageFlightData.value.arrival_time,
+      flight_number: packageFlightData.value.flight_number
+    });
+    getPackage(); // Call to refresh package data if necessary
+  } catch (error) {
+    console.error("Error saving flight data:", error);
+  }
+};
+
+
+
 const getBusRoutes = async () => {
   const { data } = await api().get('package-transport-vendors')
   buses.value = data.data
@@ -1190,5 +1250,6 @@ onMounted(() => {
   getAirlines()
   getBusRoutes()
   getHotels()
+  getAirlineRoutes()
 })
 </script>
