@@ -513,6 +513,11 @@ const router = createRouter({
       component: () => import('@/views/Imam/ImamDashboard.vue'),
       children: [
         {
+          path: '/imam_management_dashboard',
+          name: 'imam_management_dashboard',
+          component: () => import('@/views/Imam/ImamManagementDashboard.vue')
+        },
+        {
           path: '/imam_profile',
           name: 'imam_Dashboard_Profile',
           component: () => import('@/views/Imam/Profile/ImamProfile.vue')

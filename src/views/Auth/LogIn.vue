@@ -249,8 +249,8 @@ const login =async () => {
         router.push({ name: 'Agent_Dashboard_Profile' })
       }
       else if (authStore.role == 'AdminImam') {
-        authStore.currentDashboard = "Imam_Management_Dashboard_Profile"
-        router.push({ name: 'Imam_Management_Dashboard_Profile' })
+        authStore.currentDashboard = "imam_management_dashboard"
+        router.push({ name: 'imam_management_dashboard' })
       }
       else if (authStore.role == 'AdminCustomer') {
         authStore.currentDashboard = "Customer_Management_Profile"
