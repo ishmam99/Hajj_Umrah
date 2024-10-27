@@ -117,7 +117,8 @@ watch(
 
 <style scoped>
 .router-link-active {
-  color: #2e318a;
+  background-color: #2e318a;
+  color: white;
 }
 </style>
 

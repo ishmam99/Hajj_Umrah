@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 w-4/5">
+  <div class=" w-4/5">
     <div class="flex flex-col justify-start">
       <div class="flex flex-row justify-between items-center w-full px-4 py-5">
         <!-- <Sidebar /> -->
@@ -7,7 +7,7 @@
         <div class="w-full">
           <Breadcrumb />
           <div class="w-full rounded-lg px-4 py-5 h-auto flex justify-center items-center border-b-2">
-            <h1 class="text-2xl font-bold">Imam Management System Dashboard</h1>
+            <h1 class="text-2xl font-bold">Imam Dashboard</h1>
           </div>
           <div class="w-full gap-3 h-auto flex flex-wrap justify-center items-center py-10">
             <div class="w-fit rounded-[25px] bg-blue-500 text-white p-8 aspect">

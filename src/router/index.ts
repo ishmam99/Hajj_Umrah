@@ -513,8 +513,13 @@ const router = createRouter({
       component: () => import('@/views/Imam/ImamDashboard.vue'),
       children: [
         {
+          path: '/imam_dashboard_profile',
+          name: 'imam_dashboard_profile',
+          component: () => import('@/views/Imam/ImamDashboardProfile.vue')
+        },
+        {
           path: '/imam_profile',
-          name: 'imam_Dashboard_Profile',
+          name: 'imam_Profile',
           component: () => import('@/views/Imam/Profile/ImamProfile.vue')
         },
         // Packages
@@ -553,7 +558,18 @@ const router = createRouter({
           path: '/imam_package_details/:id',
           name: 'imam_package_details',
           component: () => import('@/views/Imam/ImamPackageDetails.vue')
-        }
+        },
+        //to do list
+        {
+          path: '/imam_todo_list',
+          name: 'imam_todo_list',
+          component: () => import('../views/Imam/TodoList.vue')
+        },
+        {
+          path: '/create_imam_todo_list',
+          name: 'create_imam_todo_list',
+          component: () => import('../views/Imam/TodoListCreate.vue')
+        },
       ]
     },
     //Imam Managemnte Login

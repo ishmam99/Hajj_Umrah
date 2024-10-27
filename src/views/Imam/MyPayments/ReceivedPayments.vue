@@ -1,6 +1,7 @@
 <template>
-    <section class="w-full p-10">
-        <p class="text-3xl font-bold pb-10 font-mono text-green-600">Received Payments</p>
+    <section class="w-4/5 p-10">
+        <Breadcrumb />
+        <p class="text-3xl font-bold pb-2 mb-4 text-center border-b-2 font-mono text-green-600">Received Payments</p>
         <div class="px-12">
             <div class="overflow-x-auto">
                 <table class="table-auto w-full border-collapse bg-white shadow-md rounded-lg">
@@ -23,10 +24,10 @@
                             <td class="p-4 border-r">Premium Hajj Package 2025</td>
                             <td class="p-4 border-r">February 20, 2025</td>
                             <td class="p-4 border-r">$1,500</td>
-                            <td class="p-4 text-yellow-500 font-semibold border-r">Pending</td>
+                            <td class="p-4 text-green-500 font-semibold border-r">Received</td>
                             <td class="p-4">
-                                <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-8 py-2 rounded">
-                                    Waiting
+                                <button class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded">
+                                    View Receipt
                                 </button>
                             </td>
                         </tr>
@@ -64,7 +65,9 @@
         </div>
     </section>
 </template>
-
+<script setup>
+    import Breadcrumb from "/src/components/Breadcrumb.vue";
+</script>
 <style scoped>
 tr:nth-child(even) {
     background-color: rgba(173, 216, 230, 0.26);
