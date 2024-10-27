@@ -8,28 +8,37 @@
         <!-- Filters Section -->
         <div class="flex gap-4 px-5 py-4 w-full">
             <!-- Filter by Country -->
-            <select v-model="selectedCountry" @change="applyFilters" class="border rounded p-2 w-1/3">
-                <option value="">All Countries</option>
-                <option v-for="country in countryOptions" :key="country.id" :value="country.id">
-                    {{ country.name }}
-                </option>
-            </select>
+            <div class="w-1/3 flex flex-col gap-1">
+                <label for="countrySort" class="mr-2">Sort by Country:</label>
+                <select v-model="selectedCountry" @change="applyFilters" class="border rounded p-2">
+                    <option value="" disabled>All Countries</option>
+                    <option v-for="country in countryOptions" :key="country.id" :value="country.id">
+                        {{ country.name }}
+                    </option>
+                </select>
+            </div>
 
             <!-- Filter by City -->
-            <select v-model="selectedCity" @change="applyFilters" class="border rounded p-2 w-1/3">
-                <option value="">All Cities</option>
-                <option v-for="city in cityOptions" :key="city.id" :value="city.id">
-                    {{ city.name }}
-                </option>
-            </select>
+            <div class="w-1/3 flex flex-col gap-1">
+                <label for="countrySort" class="mr-2">Sort by City:</label>
+                <select v-model="selectedCity" @change="applyFilters" class="border rounded p-2">
+                    <option value="" disabled>All Cities</option>
+                    <option v-for="city in cityOptions" :key="city.id" :value="city.id">
+                        {{ city.name }}
+                    </option>
+                </select>
+            </div>
 
             <!-- Filter by Airport -->
-            <select v-model="selectedAirport" @change="applyFilters" class="border rounded p-2 w-1/3">
-                <option value="">All Airports</option>
-                <option v-for="airport in airportOptions" :key="airport.id" :value="airport.id">
-                    {{ airport.short_name }}
-                </option>
-            </select>
+            <div class="w-1/3 flex flex-col gap-1"> 
+                <label for="countrySort" class="mr-2">Sort by Country:</label>
+                <select v-model="selectedAirport" @change="applyFilters" class="border rounded p-2">
+                    <option value="" disabled>All Airports</option>
+                    <option v-for="airport in airportOptions" :key="airport.id" :value="airport.id">
+                        {{ airport.short_name }}
+                    </option>
+                </select>
+            </div>
         </div>
 
         <div class="px-5">
