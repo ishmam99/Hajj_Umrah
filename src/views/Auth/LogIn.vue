@@ -249,8 +249,8 @@ const login =async () => {
         router.push({ name: 'Agent_Dashboard_Profile' })
       }
       else if (authStore.role == 'AdminImam') {
-        authStore.currentDashboard = "Imam_Management_Dashboard_Profile"
-        router.push({ name: 'Imam_Management_Dashboard_Profile' })
+        authStore.currentDashboard = "Imam_management_dashboard_Profile"
+        router.push({ name: 'Imam_management_dashboard_Profile' })
       }
       else if (authStore.role == 'AdminCustomer') {
         authStore.currentDashboard = "Customer_Management_Profile"
@@ -261,8 +261,8 @@ const login =async () => {
         router.push({ name: 'Agent_Management_Profile' })
       }
       else if (authStore.role == 'Imam') {
-        authStore.currentDashboard = "imam_Dashboard_Profile"
-        router.push({ name: 'imam_Dashboard_Profile' })
+        authStore.currentDashboard = "imam_dashboard_profile"
+        router.push({ name: 'imam_dashboard_profile' })
       }
       else if (authStore.role == 'Support') {
         authStore.currentDashboard = "Support_Dashboard_Profile"

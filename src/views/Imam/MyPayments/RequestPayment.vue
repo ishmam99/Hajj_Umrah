@@ -1,10 +1,12 @@
 <template>
-    <section class="w-full p-10">
-        <p class="text-3xl font-bold pb-10 font-mono text-blue-600">Request Payment</p>
+    <section class="w-4/5 p-10">
+        <Breadcrumb />
+        <p class="text-3xl font-bold pb-2 mb-4 text-center border-b-2 font-mono text-blue-600">Request Payment</p>
         <div class="px-12">
-            <form class="bg-white shadow-md rounded-lg p-6">
-                <!-- Package Dropdown -->
-                <div class="mb-6">
+            <form class=" shadow-lg bg-gray-100 rounded-lg p-6 ">
+                <div class="flex w-full gap-2">
+                    <!-- Package Dropdown -->
+                <div class="mb-6 w-1/2">
                     <label for="package" class="block text-lg font-semibold text-gray-700">Select Package</label>
                     <select id="package" class="w-full border border-gray-300 px-4 py-2 rounded-md focus:ring focus:border-blue-300">
                         <option value="premium-hajj">Premium Hajj Package</option>
@@ -14,9 +16,10 @@
                 </div>
 
                 <!-- Work Hours -->
-                <div class="mb-6">
+                <div class="mb-6 w-1/2">
                     <label for="workHours" class="block text-lg font-semibold text-gray-700">Work Hours</label>
                     <input type="number" id="workHours" class="w-full border border-gray-300 px-4 py-2 rounded-md focus:ring focus:border-blue-300" placeholder="Enter total work hours" />
+                </div>
                 </div>
 
                 <!-- Commission -->
@@ -57,7 +60,9 @@
         </div>
     </section>
 </template>
-
+<script setup>
+    import Breadcrumb from "/src/components/Breadcrumb.vue";
+</script>
 <style scoped>
 /* Optional styling for the form */
 form {

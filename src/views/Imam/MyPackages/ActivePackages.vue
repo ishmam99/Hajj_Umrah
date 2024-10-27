@@ -1,6 +1,9 @@
 <template>
     <section class="w-4/5">
-        <p class="text-3xl font-bold p-5 pb-10 font-mono text-cyan-600 border-b">Active Packages</p>
+        <div class="py-4 border-b-2">
+            <Breadcrumb />
+            <p class="text-4xl font-bold px-5 text-center font-mono text-cyan-600 ">Active Packages</p> 
+        </div>
         <div class="px-5">
             <div class="overflow-x-auto">
                 <!-- Loader -->
@@ -20,48 +23,53 @@
                 <!-- Data table -->
                 <table v-if="!loading && packagesData.length > 0" class="table w-full my-2 border-collapse border border-gray-300">
                     <thead>
-                        <tr class="bg-gray-800 text-white items-center text-lg">
+                        <tr class="bg-sky-600 text-white items-center text-lg">
                             <th>Package Name</th>
-                            <th class="border-s">Package ID</th>
-                            <th class="border-s">Agent Name</th>
-                            <th class="border-s">Imam Name</th>
-                            <th class="border-s">Local Support Name</th>
-                            <th class="border-s">Origin Country</th>
-                            <th class="border-s">Origin City</th>
-                            <th class="border-s">Origin Airport</th>
-                            <th class="p-3 border-s">Status</th>
-                            <th class="text-center">Date</th>
-                            <th class="text-center">Details</th>
+                            <th class="border-s border-slate-400">Package ID</th>
+                            <th class="border-s border-slate-400">Agent Name</th>
+                            <th class="border-s border-slate-400">Imam Name</th>
+                            <th class="border-s border-slate-400">Local Support Name</th>
+                            <th class="border-s border-slate-400">Origin Country</th>
+                            <th class="border-s border-slate-400">Origin City</th>
+                            <th class="border-s border-slate-400">Origin Airport</th>
+                            <th class="text-center border-s border-slate-400">Details</th>
+                            <th class="p-3 border-s border-slate-400">Status</th>
+                            <th class="text-center border-s border-slate-400">Date</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="pkg in packagesData" :key="pkg.id" class="bg-gray-100">
                             <td>
                                 <div class="flex items-center gap-3">
-                                    <div class="avatar">
+                                    <!-- <div class="avatar">
                                         <div class="mask mask-squircle h-12 w-12">
                                             <img src="/src/assets/image/prayer-rugs.jpg" alt="Upcoming Premium Hajj Package 2026" />
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div>
                                         <div class="font-bold">{{ pkg.package_title }}</div>
                                     </div>
                                 </div>
                             </td>
-                            <td class="border-s border-slate-200" >{{ pkg.package_id }}</td>
-                            <td class="border-s border-slate-200" >{{ pkg.agent?.user?.name }}</td>
-                            <td class="border-s border-slate-200" >{{ pkg.imam?.user?.name }}</td>
-                            <td class="border-s border-slate-200" >{{ pkg.support_manager?.user?.name }}</td>
-                            <td class="border-s border-slate-200" >{{ pkg.country?.name }}</td>
-                            <td class="border-s border-slate-200" >{{ pkg.city?.name }}</td>
-                            <td class="border-s border-slate-200" >{{ pkg.airport.short_name }}</td>
+                            <td class="border-s border-slate-400" >{{ pkg.package_id }}</td>
+                            <td class="border-s border-slate-400" >{{ pkg.agent?.user?.name }}</td>
+                            <td class="border-s border-slate-400" >{{ pkg.imam?.user?.name }}</td>
+                            <td class="border-s border-slate-400" >{{ pkg.support_manager?.user?.name }}</td>
+                            <td class="border-s border-slate-400" >{{ pkg.country?.name }}</td>
+                            <td class="border-s border-slate-400" >{{ pkg.city?.name }}</td>
+                            <td class="border-s border-slate-400" >{{ pkg.airport.short_name }}</td>
+                            <td class="border-s border-slate-400">
+                                <button class="btn btn-primary btn-sm text-white">
+                                    <router-link :to="'imam_package_details/'+pkg.id">Details</router-link>
+                                </button>
+                            </td>
                             <td
                             
-                            class="border-s border-slate-200" 
+                            class="border-s border-slate-400 " 
                             :class="{
-                                'text-green-500': pkg.status_of_package === 'In Plan',
-                                'text-red-500': pkg.status_of_package === 'Fully Booked',
-                                'text-yellow-500 font-semibold': pkg.status_of_package !== 'In Plan' && pkg.status_of_package !== 'Fully Booked'
+                                'text-green-500 font-semibold ': pkg.status_of_package === 'In Plan',
+                                'text-sky-500 font-semibold ': pkg.status_of_package === 'Fully Booked',
+                                'text-orange-500 font-semibold ': pkg.status_of_package !== 'In Plan' && pkg.status_of_package !== 'Fully Booked'
                             }">
                                 <span v-if="pkg.status_of_package === '1'">Not In Plan</span>
                                 <span v-if="pkg.status_of_package === '2'">In Plan</span>
@@ -72,14 +80,10 @@
                                 <span v-if="pkg.status_of_package === '7'">Published</span>
                                 <span v-if="pkg.status_of_package === '7'">Discontinued</span>
                             </td>
-                            <td class="text-center border-s border-slate-200">
+                            
+                            <td class="text-center border-s border-slate-400">
                                 <p class="text-gray-600"><span class="font-semibold text-base">Started: </span>{{ pkg.start_at }}</p><br />
                                 <p class="text-red-600"><span class="font-semibold text-base">Ended: </span>{{ pkg.end_at }}</p>
-                            </td>
-                            <td class="border-s border-slate-200">
-                                <button class="btn btn-primary btn-xs text-white">
-                                    <router-link :to="'imam_package_details/'+pkg.id">Details</router-link>
-                                </button>
                             </td>
                         </tr>
                     </tbody>
@@ -93,6 +97,7 @@
 import { useAuthStore } from '@/stores/AuthStore';
 import { ref, onMounted } from 'vue';
 import { packages } from '@/stores/itinenary.ts'
+import Breadcrumb from "/src/components/Breadcrumb.vue";
 const store = useAuthStore();
 const packagesData = ref([]);
 const loading = ref(true);
@@ -116,6 +121,6 @@ onMounted(() => {
 
 <style scoped>
 tr:nth-child(even) {
-    background-color: rgba(173, 216, 230, 0.26);
+    background-color: rgba(51, 57, 59, 0.26);
 }
 </style>

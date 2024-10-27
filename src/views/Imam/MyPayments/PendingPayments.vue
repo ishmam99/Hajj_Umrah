@@ -1,6 +1,7 @@
 <template>
-    <section class="w-full p-10">
-        <p class="text-3xl font-bold pb-10 font-mono text-cyan-600">Pending Payments</p>
+    <section class="w-4/5 p-10">
+        <Breadcrumb />
+        <p class="text-3xl font-bold pb-2 text-center font-mono text-cyan-600 border-b-2 mb-4">Pending Payments</p>
         <div class="px-12">
             <div class="overflow-x-auto">
         <table class="table-auto w-full border-collapse bg-white shadow-md rounded-lg">
@@ -12,7 +13,7 @@
                     <th class="p-4 border-b border-gray-300 text-left">Due Date</th>
                     <th class="p-4 border-b border-gray-300 text-left">Amount Due</th>
                     <th class="p-4 border-b border-gray-300 text-left">Status</th>
-                    <th class="p-4 border-b border-gray-300 text-left">Action</th>
+                    <!-- <th class="p-4 border-b border-gray-300 text-left">Action</th> -->
                 </tr>
             </thead>
 
@@ -24,11 +25,11 @@
                     <td class="p-4 border-r">March 1, 2025</td>
                     <td class="p-4 border-r">$1,500</td>
                     <td class="p-4 text-yellow-500 font-semibold border-r">Pending</td>
-                    <td class="p-4">
+                    <!-- <td class="p-4">
                         <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">
                             Pay Now
                         </button>
-                    </td>
+                    </td> -->
                 </tr>
 
                 <!-- row 2 -->
@@ -38,11 +39,11 @@
                     <td class="p-4 border-r">April 5, 2025</td>
                     <td class="p-4 border-r">$500</td>
                     <td class="p-4 text-yellow-500 font-semibold border-r">Pending</td>
-                    <td class="p-4">
+                    <!-- <td class="p-4">
                         <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">
                             Pay Now
                         </button>
-                    </td>
+                    </td> -->
                 </tr>
 
                 <!-- row 3 -->
@@ -51,12 +52,12 @@
                     <td class="p-4 border-r">Umrah Special Package 2023</td>
                     <td class="p-4 border-r">June 1, 2023</td>
                     <td class="p-4 border-r">$750</td>
-                    <td class="p-4 text-green-500 font-semibold border-r">Completed</td>
-                    <td class="p-4">
+                    <td class="p-4 text-yellow-500 font-semibold border-r">pENDING</td>
+                    <!-- <td class="p-4">
                         <button class="bg-green-400 text-white font-semibold px-8 py-2 rounded cursor-not-allowed" disabled>
                             Paid
                         </button>
-                    </td>
+                    </td> -->
                 </tr>
             </tbody>
         </table>
@@ -64,6 +65,9 @@
         </div>
     </section>
 </template>
+<script setup>
+    import Breadcrumb from "/src/components/Breadcrumb.vue";
+</script>
 
 <style scoped>
 tr:nth-child(even) {
