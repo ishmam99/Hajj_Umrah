@@ -1330,16 +1330,16 @@ const router = createRouter({
           name: 'completed_packages',
           component: () => import('../views/Member/Profile/CompletedPackages.vue')
         },
-        {
-          path: '/future_packages',
-          name: 'Future_packages',
-          component: () => import('../views/Member/FuturePackages.vue')
-        },
-        {
-          path: '/previous_packages',
-          name: 'Previous_packages',
-          component: () => import('../views/Member/PreviousPackages.vue')
-        },
+        // {
+        //   path: '/future_packages',
+        //   name: 'Future_packages',
+        //   component: () => import('../views/Member/FuturePackages.vue')
+        // },
+        // {
+        //   path: '/previous_packages',
+        //   name: 'Previous_packages',
+        //   component: () => import('../views/Member/PreviousPackages.vue')
+        // },
         {
           path: '/customer_package_details/:id',
           name: 'customer_package_details',
