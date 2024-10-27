@@ -591,7 +591,7 @@ const router = createRouter({
         }
       ]
     },
-    //Customer Managemente Login
+    //Customer Management Login
     {
       path: '/customer_management_login',
       name: 'Customer Management Login',
@@ -1319,6 +1319,16 @@ const router = createRouter({
           path: '/completed_packages',
           name: 'completed_packages',
           component: () => import('../views/Member/Profile/CompletedPackages.vue')
+        },
+        {
+          path: '/future_packages',
+          name: 'Future_packages',
+          component: () => import('../views/Member/FuturePackages.vue')
+        },
+        {
+          path: '/previous_packages',
+          name: 'Previous_packages',
+          component: () => import('../views/Member/PreviousPackages.vue')
         },
         {
           path: '/customer_package_details/:id',
