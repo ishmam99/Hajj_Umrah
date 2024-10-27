@@ -1,94 +1,127 @@
 <template>
-    <div class="px-4 w-full">
-      <div class="flex flex-col justify-start">
-        <div class="flex flex-row justify-between items-center w-full px-4 py-5">
-          <div class="w-full">
-            <Breadcrumb />
-            <div class="w-full rounded-lg px-4 py-5 h-auto flex justify-center items-center border-b-2">
-              <h1 class="text-2xl font-bold">Customer Management System Dashboard</h1>
+    <div class="min-h-screen flex justify-center items-center bg-gray-100 p-6">
+      <div class="bg-white shadow-lg rounded-lg w-full">
+        
+        <!-- Profile Image Section -->
+        <div class="relative bg-gradient-to-r from-blue-500 to-cyan-600 p-6 rounded-t-lg text-center">
+          <img 
+            :src="people" 
+            alt="Profile Image"
+            class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
+          >
+          <h2 class="text-2xl text-white font-bold mt-4">{{ auth.user.name }}</h2>
+          <p class="text-white text-xl font-semibold"></p>
+        </div>
+  
+        <!-- Toggle Edit/Profile Mode -->
+        <div class="px-6 py-4">
+          <div class="flex justify-end">
+            <button 
+              @click="isEditing = !isEditing" 
+              class="px-4 py-2 rounded-md text-sm font-semibold  transition duration-300"
+              :class="isEditing ? 'bg-red-500 text-white hover:bg-red-600' : 'bg-blue-500 text-white hover:bg-blue-600'"
+            > 
+            <span v-if="!isEditing" class="flex items-center gap-1">
+              Edit Profile 
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M16.7574 2.99677L14.7574 4.99677H5V18.9968H19V9.23941L21 7.23941V19.9968C21 20.5491 20.5523 20.9968 20 20.9968H4C3.44772 20.9968 3 20.5491 3 19.9968V3.99677C3 3.44448 3.44772 2.99677 4 2.99677H16.7574ZM20.4853 2.09727L21.8995 3.51149L12.7071 12.7039L11.2954 12.7063L11.2929 11.2897L20.4853 2.09727Z"></path></svg>
+            </span>
+            <span v-else class="flex items-center gap-1">
+              Cancel Edit 
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 10.5858L14.8284 7.75736L16.2426 9.17157L13.4142 12L16.2426 14.8284L14.8284 16.2426L12 13.4142L9.17157 16.2426L7.75736 14.8284L10.5858 12L7.75736 9.17157L9.17157 7.75736L12 10.5858Z"></path></svg>
+            </span>
+            
+            </button>
+          </div>
+  
+          <!-- Profile Info / Edit Mode -->
+          <div v-if="!isEditing" class="space-y-6 py-20">
+            <!-- Display Profile Information -->
+            <div v-for="(value, key) in profileFields" :key="key" class="flex justify-between items-center bg-slate-100 rounded-lg p-4 shadow font-sans">
+              <p class="text-lg font-semibold text-gray-500">{{ key }}</p>
+              <p class="text-lg font-medium text-gray-900">{{ value || 'N/A' }}</p>
             </div>
-            <div class="w-full gap-3 h-auto flex flex-wrap justify-center items-center py-10">
-              <div class="w-fit rounded-[25px] bg-blue-500 text-white p-8 aspect">
-                <div class="h-auto w-auto gap-5 flex">
-                  <svg class="h-14 w-14 fill-white stroke-teal-800" xmlns="http://www.w3.org/2000/svg" fill="none"
-                      viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-                  <path d="M21.0082 3C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082ZM20 5H4V19H20V5ZM18 15V17H6V15H18ZM12 7V13H6V7H12ZM18 11V13H14V11H18ZM10 9H8V11H10V9ZM18 7V9H14V7H18Z"></path>
-                  </svg>
-                  <div class="my-2">
-                    <h2 class="text-4xl font-bold">{{ packages.length }} +</h2>
-                  </div>
-                </div>
-                <div class="my-2 w-full">
-                  <h2 class="text-2xl font-bold">Total Packages</h2>
-                </div>
+          </div>
+  
+          <!-- Edit Mode Form -->
+          <div v-else class="space-y-6 py-6">
+            <form @submit.prevent="updateProfile" class="space-y-6">
+              <div v-for="(field, key) in editableFields" :key="key" class="form-group">
+                <label class="block text-md font-medium text-gray-700 p-1">{{ field.label }}</label>
+                <input 
+                  v-model="userData[key]" 
+                  :type="field.type" 
+                  class="input input-bordered w-full  px-4 py-2 rounded-lg shadow-sm border-gray-300 outline-none"
+                  :style="field.type == 'gender' ? 'text-transform: lowercase;' : '' "
+                >
               </div>
-              <div class="w-fit rounded-[25px] bg-teal-600 text-white p-8 aspect">
-                <div class="h-auto w-auto gap-5 flex">
-                  <svg class="h-14 w-14 fill-white stroke-teal-800" xmlns="http://www.w3.org/2000/svg" fill="none"
-                      viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-                    <path d="M9 17C9 17 16 18 19 21H20C20.5523 21 21 20.5523 21 20V13.937C21.8626 13.715 22.5 12.9319 22.5 12C22.5 11.0681 21.8626 10.285 21 10.063V4C21 3.44772 20.5523 3 20 3H19C16 6 9 7 9 7H5C3.89543 7 3 7.89543 3 9V15C3 16.1046 3.89543 17 5 17H6L7 22H9V17ZM11 8.6612C11.6833 8.5146 12.5275 8.31193 13.4393 8.04373C15.1175 7.55014 17.25 6.77262 19 5.57458V18.4254C17.25 17.2274 15.1175 16.4499 13.4393 15.9563C12.5275 15.6881 11.6833 15.4854 11 15.3388V8.6612ZM5 9H9V15H5V9Z"></path>
-                  </svg>
-                  <div class="my-2">
-                    <h2 class="text-4xl font-bold">{{ packages.length }} +</h2>
-                  </div>
-                </div>
-                <div class="my-2 w-full">
-                  <h2 class="text-2xl font-bold">Completed Packages</h2>
-                </div>
+  
+              <!-- Image Upload -->
+              <div class="form-group">
+                <label class="block text-md font-medium text-gray-700 p-1">Update Image</label>
+                <input 
+                  @change="handleImageUpload" 
+                  type="file" 
+                  class="file-input file-input-bordered w-full outline-none"
+                />
               </div>
-              <div class="w-fit rounded-[25px] bg-green-600 text-white p-8 aspect">
-                <div class="h-auto w-auto gap-5 flex">
-                  <svg class="h-14 w-14 fill-white stroke-green-800" xmlns="http://www.w3.org/2000/svg" fill="none"
-                      viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-                  </svg>
-                  <div class="my-2">
-                    <h2 class="text-4xl font-bold">{{ packages.length }} +</h2>
-                  </div>
-                </div>
-                <div class="my-2 w-full">
-                  <h2 class="text-2xl font-bold">Active Packages</h2>
-                </div>
+  
+              <!-- Update Button -->
+              <div class="text-center">
+                <button 
+                  class="w-full py-3 px-6 rounded-lg bg-teal-500 text-white font-semibold hover:bg-teal-600 transition duration-300"
+                  type="submit"
+                  :disabled="isLoading"
+                >
+                  <span v-if="!isLoading">Update Profile</span>
+                  <span v-else>Updating...</span>
+                </button>
               </div>
-              <div class="w-fit rounded-[25px] bg-sky-600 text-white p-8 aspect">
-                <div class="h-auto w-auto gap-5 flex">
-                  <svg class="h-14 w-14 fill-white stroke-sky-800" xmlns="http://www.w3.org/2000/svg" fill="none"
-                      viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-                  </svg>
-                  <div class="my-2">
-                    <h2 class="text-4xl font-bold">{{ packages.length }} +</h2>
-                  </div>
-                </div>
-                <div class="my-2 w-full">
-                  <h2 class="text-2xl font-bold">Upcoming Packages</h2>
-                </div>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
-      <ProjectProgressChart class="bg-slate-50" />
     </div>
   </template>
+  
   <script setup>
-  
-  
-  import { ref, onMounted } from 'vue'
-  import { useSocialStore } from '/src/stores/SocialDashboard.ts'
-  import ProjectProgressChart from "/src/components/BarChart.vue";
-  import Breadcrumb from "/src/components/Breadcrumb.vue";
-  const packages = ref([])
-  const store = useSocialStore()
-  const getPackages = async () => {
-    const { data } = await api().get('package')
-    packages.value = data.data
-  }
-  
-  onMounted(async () => {
-     getPackages()
-  })
+ const isEditing = ref(false);
+import { ref } from "vue";
+//  import people from "../../../assets/image/userProfile.webp";
+ import people from "/src/assets/image/userProfile.webp";
+import { useAuthStore } from "@/stores/AuthStore";
+
+ const auth = useAuthStore();
+
+ const profileFields = {
+  Name: auth?.user?.name,
+  Email: auth?.user?.email,
+  'Phone Number': auth?.user?.customer?.phone_no,
+  Country: auth?.user?.customer?.country,
+  Address: auth?.user?.customer?.address,
+};
+
+const editableFields = {
+  name: { label: 'Name', type: 'text' },
+  email: { label: 'Email', type: 'email' },
+  phone_no: { label: 'Phone Number', type: 'text' },
+  country: { label: 'Country', type: 'text' },
+  address: { label: 'Address', type: 'text' },
+  gender: { label: 'Gender', type: 'text' },
+};
+
+const userData = ref({
+  name: auth?.user?.name,
+  email: auth?.user?.email,
+  address: auth?.user?.customer?.address,
+  phone_no: auth?.user?.customer?.phone_no,
+  country: auth?.user?.customer?.country,
+  gender: auth?.user?.customer?.gender,
+  image: people,
+  _method: 'PUT',
+});
+
   </script>
+  <style scoped>
+  /* Add any additional styles here */
+  </style>
   

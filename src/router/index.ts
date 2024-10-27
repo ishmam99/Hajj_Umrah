@@ -624,6 +624,11 @@ const router = createRouter({
       component: () => import('@/views/CustomerManagement/Dashboard.vue'),
       children: [
         {
+          path: '/Customer_management_dashboard_statistics',
+          name: 'Customer_Management_Dashboard_Statistics',
+          component: () => import('@/views/CustomerManagement/CustomerManagementDashboard.vue')
+        },
+        {
           path: '/Customer_management_Profile',
           name: 'Customer_Management_Profile',
           component: () => import('@/views/CustomerManagement/Profile/Profile.vue')
