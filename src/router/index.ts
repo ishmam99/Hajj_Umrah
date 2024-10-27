@@ -1296,9 +1296,19 @@ const router = createRouter({
           component: () => import('../views/Member/Profile/MembarProfile.vue')
         },
         {
-          path: '/member_package_list',
-          name: 'Membar_Package_List',
-          component: () => import('../views/Member/Profile/ViewPackages.vue')
+          path: '/member_current_package_details',
+          name: 'Membar_Package_Current_Details',
+          component: () => import('../views/Member/CurrentPackageDetails.vue')
+        },
+        {
+          path: '/member_package_list_future',
+          name: 'Membar_Package_List_Future',
+          component: () => import('../views/Member/Profile/ViewPackagesFuture.vue')
+        },
+        {
+          path: '/member_package_list_previous',
+          name: 'Membar_Package_List_Previous',
+          component: () => import('../views/Member/Profile/ViewPackagesPrevious.vue')
         },
         {
           path: '/member_todo_list',
