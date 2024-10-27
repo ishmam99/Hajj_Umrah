@@ -29,7 +29,7 @@
             <Label>Select Package</Label>
             <select name="" v-model="todoData.package_id" id="" class="select w-full border-gray-500">
               <option value="">Select Package</option>
-              <option :value="mypackage.id" v-if="packages" v-for="mypackage in packages">{{ mypackage.package_title }}</option>
+              <option :value="mypackage.id" v-if="packages" v-for="mypackage in packages">{{mypackage.id}}. {{ mypackage.package_title }} </option>
             </select>
        
           </div>

@@ -1,5 +1,6 @@
 <template>
     <section class="w-4/5 p-10">
+        <Breadcrumb/>
         <p class="text-3xl font-bold pb-10 font-mono text-cyan-600">Imam List</p>
         <div class="px-5">
             <div class="overflow-x-auto">
@@ -7,42 +8,33 @@
                     <!-- head -->
                     <thead>
                         <tr class="bg-teal-700 text-white items-center text-xl">
-                            <th>No.</th>
-                            <th>Imam Name</th>
-                            <th>City</th>
-                            <th>Country</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Joined Date</th>
+                            <th class="border-e">No.</th>
+                            <th class="border-e">Imam Name</th>
+                            <th class="border-e">Phone</th>
+                            <th class="border-e">Email</th>
+                            <th class="border-e">Country</th>
+                            <th>Address</th>
+                            <!-- <th>Joined Date</th>
                             <th>Status</th>
-                            <th>Actions</th>
+                            <th>Actions</th> -->
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(customer, index) in customers" :key="customer.id"
+                        <tr v-for="(imam, index) in imams" :key="imam.id"
                             :class="index % 2 === 0 ? 'bg-gray-100' : 'bg-white'">
-                            <th>{{ index + 1 }}.</th>
-                            <td>
-                                <div class="font-bold">{{ customer.name }}</div>
-                                <div class="text-sm opacity-50">{{ customer.company }}</div>
+                            <th class="border-e border-slate-300">{{ index + 1 }}.</th>
+                            <td class="border-e border-slate-300">
+                                <img :src="imam.imams_image" class="rounded-full" alt="">
+                                <div class="font-bold">{{ imam.name }}</div>
                             </td>
-                            <td>{{ customer.city }}</td>
-                            <td>{{ customer.country }}</td>
-                            <td>{{ customer.email }}</td>
-                            <td>{{ customer.phone }}</td>
-                            <td>{{ customer.joinedDate }}</td>
-                            <td>
-                                <span :class="{
-                                    'badge badge-success': customer.status === 'Active',
-                                    'badge badge-warning': customer.status === 'Pending',
-                                    'badge badge-error': customer.status === 'Inactive'
-                                }">
-                                    {{ customer.status }}
-                                </span>
-                            </td>
-                            <td>
+                            <td class="border-e border-slate-300">{{ imam.user.email }}</td>
+                            <td class="border-e border-slate-300">{{ imam.phone_no }}</td>
+                            <td class="border-e border-slate-300">{{ imam.country }}</td>
+                            <td>{{ imam.address }}</td>
+                            
+                            <!-- <td>
                                 <button class="btn btn-outline btn-xs">Details</button>
-                            </td>
+                            </td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -52,8 +44,19 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import Breadcrumb from '@/components/Breadcrumb.vue';
+import {ref , onMounted} from 'vue'
+// import { packages } from '@/stores/itinenary.ts'
+const imams = ref([])
+const getImamList = async () => {
+  const { data } = await api().get('imam')
+  imams.value = data.data
+}
 
+
+onMounted(() => {
+  getImamList()
+})
 const customers = ref([
     {
         id: 1,
@@ -94,6 +97,6 @@ const customers = ref([
 
 <style scoped>
 tr:nth-child(even) {
-    background-color: rgba(173, 216, 230, 0.26);
+    background-color: rgba(64, 73, 76, 0.181);
 }
 </style>

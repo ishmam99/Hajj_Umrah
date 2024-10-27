@@ -5,7 +5,7 @@
     <Breadcrumb />
    
     <p class="text-2xl font-bold text-center py-3 border-b-2 mb-4">Imam Package Details</p>
-
+ 
 
     <!-- Conditional Rendering for Package Details and To-Do List -->
     <div v-if="currentTab === 'details'" class="bg-green-100 py-10">
@@ -57,7 +57,9 @@
                    <p v-if="activity.by">By</p> 
                     <h1 class="font-bold text-lg text-sky-700">{{ activity.by }}</h1>
                    
-                     <p>{{ activity.description }}</p>
+                     <p class="border-e-4 border-blue-500 pe-10">{{ activity.description }}</p> 
+
+                     <p class="font-semibold">By <span class="text-blue-500">Package Admin</span></p>
                 </div>
               </div>
             </li>
@@ -211,5 +213,10 @@ const deleteTodo = (index) => {
 const sortTodos = () => {
   todos.value.sort((a, b) => parseInt(a.day) - parseInt(b.day));
 };
+watch(() => {
+  if (packageDetails.value && packageDetails.value.itineraries && packageDetails.value.itineraries.length > 0) {
+    selectedDay.value = packageDetails.value.itineraries[0];
+  }
+});
 </script>
 
