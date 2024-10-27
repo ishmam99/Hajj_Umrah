@@ -137,6 +137,7 @@ import { useAuthStore } from '@/stores/AuthStore';
 import Breadcrumb from "/src/components/Breadcrumb.vue";
 import { packages } from '@/stores/itinenary.ts';
 
+// Imports and component setup remain the same
 const store = useAuthStore();
 const packagesData = ref([]);
 const loading = ref(true);
@@ -144,24 +145,31 @@ const selectedCountry = ref('');
 const selectedCity = ref('');
 const selectedAirport = ref('');
 
-// Dynamic options for filters
+// Dynamic options for filters with unique entries
 const countryOptions = computed(() => {
-    return [...new Set(packagesData.value.map(pkg => pkg.country))]
-        .filter(Boolean);
-});
-const cityOptions = computed(() => {
-    return [...new Set(packagesData.value
-        .filter(pkg => !selectedCountry.value || pkg.country?.id === selectedCountry.value)
-        .map(pkg => pkg.city))].filter(Boolean);
-});
-const airportOptions = computed(() => {
-    return [...new Set(packagesData.value
-        .filter(pkg => (!selectedCountry.value || pkg.country?.id === selectedCountry.value) &&
-                       (!selectedCity.value || pkg.city?.id === selectedCity.value))
-        .map(pkg => pkg.airport))].filter(Boolean);
+    const countries = packagesData.value.map(pkg => pkg.country).filter(Boolean);
+    const uniqueCountries = Array.from(new Map(countries.map(country => [country.id, country])).values());
+    return uniqueCountries;
 });
 
-// Filtered package data
+const cityOptions = computed(() => {
+    const cities = packagesData.value
+        .filter(pkg => !selectedCountry.value || pkg.country?.id === selectedCountry.value)
+        .map(pkg => pkg.city).filter(Boolean);
+    const uniqueCities = Array.from(new Map(cities.map(city => [city.id, city])).values());
+    return uniqueCities;
+});
+
+const airportOptions = computed(() => {
+    const airports = packagesData.value
+        .filter(pkg => (!selectedCountry.value || pkg.country?.id === selectedCountry.value) &&
+                       (!selectedCity.value || pkg.city?.id === selectedCity.value))
+        .map(pkg => pkg.airport).filter(Boolean);
+    const uniqueAirports = Array.from(new Map(airports.map(airport => [airport.id, airport])).values());
+    return uniqueAirports;
+});
+
+// Filtered package data that initially shows all data
 const filteredPackages = computed(() => {
     return packagesData.value.filter(pkg => {
         return (
@@ -172,10 +180,12 @@ const filteredPackages = computed(() => {
     });
 });
 
+// Apply filters function (triggered only when filters change)
 const applyFilters = () => {
-    // The computed properties automatically update the view when filters change
+    // No action needed since computed properties update automatically based on filter changes
 };
 
+// Fetching all packages on component mount
 const getPackages = async () => {
     loading.value = true;
     try {
@@ -191,6 +201,7 @@ const getPackages = async () => {
 onMounted(() => {
     getPackages();
 });
+
 </script>
 
 <style scoped>
