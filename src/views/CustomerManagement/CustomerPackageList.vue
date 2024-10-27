@@ -88,8 +88,8 @@ const selectedYear = ref(new Date().getFullYear())
   const filterPackages = () => {
     console.log('dss',selectedYear.value)
     allList.value = customerPackages.value.filter(pkg => {
-      
-      if (pkg.package.package_year == selectedYear.value || pkg.package.city.name)
+     
+      if (pkg.package.package_year == selectedYear.value || pkg.package.city.name  == selectedCity.value)
       return pkg
     });
   console.log(allList.value)
