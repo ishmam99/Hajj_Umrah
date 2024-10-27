@@ -1,14 +1,23 @@
 <template>
-    <section class="w-full p-10">
-      <p class="text-3xl font-bold pb-10 font-mono text-indigo-600">Customer Package List</p>
-       <div class="flex flex-col w-1/3 gap-1">
-          <label for="">Sort by Year</label>
-          <select v-model="selectedYear" @change="filterPackages" class="select select-bordered px-4 py-2 rounded border shadow">
+    <section class="w-full py-10">
+      <p class="text-3xl px-3 font-bold pb-10 font-mono text-indigo-600">Customer Package List</p>
+      
+      <div class="px-1">
+        <div class="flex">
+         <div class="flex my-2 py-1 px-3 bg-gray-300 rounded-md w-1/2 justify-start gap-4 items-center">
+          <label for="" class="w-1/2 font-bold">Sort by Year</label>
+          <select v-model="selectedYear" @change="filterPackages" class="select select-bordered px-4 py-2 w-full rounded border shadow">
             <option disabled value="">Select Year</option>
             <option v-for="year in uniqueYears" :key="year" :value="year">{{ year }}</option>
           </select>
         </div>
-      <div class="px-5">
+         <div class="flex my-2 py-1 px-3 bg-gray-300 rounded-md w-1/2 justify-start gap-4 items-center">
+          <label for="" class="w-1/2 font-bold">Sort by City</label>
+          <select v-model="selectedCity" @change="filterPackages" class="select select-bordered px-4 py-2 rounded border shadow">
+            <option disabled value="">Select City</option>
+            <option v-for="city in uniqueCities" :key="city" :value="city">{{ city }}</option>
+          </select>
+        </div></div>
         <div class="overflow-x-auto">
           <table class="table w-full border-collapse border border-gray-300">
             <!-- head -->
@@ -28,7 +37,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-if="customerPackages.length > 0" v-for="(packageData, index) in customerPackages" :key="packageData.id" :class="index % 2 === 0 ? 'bg-gray-200' : 'bg-white'">
+              <tr v-if="allList.length > 0" v-for="(packageData, index) in allList" :key="packageData.id" :class="index % 2 === 0 ? 'bg-gray-200' : 'bg-white'">
                 <th>{{ index + 1 }}.</th>
                 <td>{{ packageData.customer.user.name }}</td>
                 <td>{{ packageData.package.package_title}}</td>
@@ -48,6 +57,9 @@
                   <button class="btn btn-outline btn-xs">Details</button>
                 </td>
               </tr>
+              <tr v-else>
+                <td class="text-center text-xl font-semibold text-gray-600" colspan="10">Sorry No Package Data found</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -56,11 +68,12 @@
   </template>
   
   <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref ,computed } from 'vue'
   
   const customerPackages = ref([]);
    const uniqueYears = ref(Array.from({length: 10}, (v, k) => 2022 + k))
-  
+  const allList = ref([])
+  const selectedCity = ref('');
 const selectedYear = ref(new Date().getFullYear())
   const statuses = [
     { id: 1, name: 'Not In Plan' },
@@ -74,16 +87,19 @@ const selectedYear = ref(new Date().getFullYear())
   ];
   const filterPackages = () => {
     console.log('dss',selectedYear.value)
-    customerPackages.value = customerPackages.value.filter(pkg => {
-      console.log(pkg.package.package_year ,selectedYear.value)
-      return pkg.package.package_year == selectedYear.value
+    allList.value = customerPackages.value.filter(pkg => {
+      
+      if (pkg.package.package_year == selectedYear.value || pkg.package.city.name)
+      return pkg
     });
-  console.log(customerPackages.value)
+  console.log(allList.value)
 };
    const getPackages = async () => {
   const { data } = await api().get('customer-packages')
   customerPackages.value = data.data
+  allList.value = data.data
   }
+  const uniqueCities = computed(() => [...new Set(customerPackages.value.map(pkg => pkg.package.city?.name))]);
   onMounted(() => {
    
     getPackages()

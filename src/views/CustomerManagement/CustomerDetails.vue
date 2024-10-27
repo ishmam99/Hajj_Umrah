@@ -2,6 +2,7 @@
     <div class="px-[5%] bg-white py-5 flex flex-col items-center">
         <img v-if="customer.image" :src="customer?.image" alt="" class="h-[100px] w-[100px] rounded-full border shadow-md">
         <img v-else src="/src/assets/image/home/download.jpeg" alt="" class="h-[100px] w-[100px] rounded-full border shadow-md">
+        <div class="grid grid-cols-2 gap-2 w-full">
         <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
             <p class="text-sm text-gray-500 pt-2">Name</p>
             <p class="text-xl font-semibold pb-2">{{ customer?.user?.name }}</p>
@@ -18,6 +19,15 @@
             <p class="text-sm text-gray-500 pt-2">Gender</p>
             <p class="text-xl font-semibold pb-2">{{ customer?.gender }}</p>
         </div>
+        <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
+            <p class="text-sm text-gray-500 pt-2">Address</p>
+            <p class="text-xl font-semibold pb-2">{{ customer?.address }}</p>
+        </div>
+        <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
+            <p class="text-sm text-gray-500 pt-2">Country</p>
+            <p class="text-xl font-semibold pb-2">{{ customer?.country }}</p>
+        </div>
+    </div>
         <div class="px-[20px] mt-10 bg-gray-300 py-5 rounded-md shadow-md">
           <p class="text-2xl font-bold py-3 border-b">View Packages</p>
           <div class="bg-slate-50 rounded-lg gap-y-2 w-full px-4 py-2 border-b-gray-100 mb-2 mt-3">
@@ -84,7 +94,7 @@ const getCustomer = async () => {
   customer.value = data.data
 }
  const getPackages = async () => {
-  const { data } = await api().get('customer-packages')
+  const { data } = await api().get('customer-packages-by/'+route.params.id)
   packages.value = data.data
  }
  onMounted(() => {
