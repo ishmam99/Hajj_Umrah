@@ -15,14 +15,14 @@
                   <path d="M21.0082 3C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082ZM20 5H4V19H20V5ZM18 15V17H6V15H18ZM12 7V13H6V7H12ZM18 11V13H14V11H18ZM10 9H8V11H10V9ZM18 7V9H14V7H18Z"></path>
                   </svg>
                   <div class="my-2">
-                    <h2 class="text-4xl font-bold">{{ packages.length }} +</h2>
+                    <h2 class="text-4xl font-bold">{{ totalPackages.length }} +</h2>
                   </div>
                 </div>
                 <div class="my-2 w-full">
                   <h2 class="text-2xl font-bold">Total Packages</h2>
                 </div>
               </div>
-              <div class="w-fit rounded-[25px] bg-teal-600 text-white p-8 aspect">
+              <!-- <div class="w-fit rounded-[25px] bg-teal-600 text-white p-8 aspect">
                 <div class="h-auto w-auto gap-5 flex">
                   <svg class="h-14 w-14 fill-white stroke-teal-800" xmlns="http://www.w3.org/2000/svg" fill="none"
                       viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
@@ -35,7 +35,7 @@
                 <div class="my-2 w-full">
                   <h2 class="text-2xl font-bold">Completed Packages</h2>
                 </div>
-              </div>
+              </div> -->
               <div class="w-fit rounded-[25px] bg-green-600 text-white p-8 aspect">
                 <div class="h-auto w-auto gap-5 flex">
                   <svg class="h-14 w-14 fill-white stroke-green-800" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -44,7 +44,7 @@
                         d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                   </svg>
                   <div class="my-2">
-                    <h2 class="text-4xl font-bold">{{ packages.length }} +</h2>
+                    <h2 class="text-4xl font-bold">{{ customers.length }} +</h2>
                   </div>
                 </div>
                 <div class="my-2 w-full">
@@ -59,7 +59,7 @@
                         d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                   </svg>
                   <div class="my-2">
-                    <h2 class="text-4xl font-bold">{{ packages.length }} +</h2>
+                    <h2 class="text-4xl font-bold">{{ customerPackages.length}} +</h2>
                   </div>
                 </div>
                 <div class="my-2 w-full">
@@ -72,6 +72,7 @@
       </div>
       <ProjectProgressChart class="bg-slate-50" />
     </div>
+    <!-- customerPackages{{ customerPackages.length }} -->
   </template>
   <script setup>
   
@@ -80,15 +81,33 @@
   import { useSocialStore } from '/src/stores/SocialDashboard.ts'
   import ProjectProgressChart from "/src/components/BarChart.vue";
   import Breadcrumb from "/src/components/Breadcrumb.vue";
-  const packages = ref([])
+  const totalPackages = ref([])
   const store = useSocialStore()
-  const getPackages = async () => {
-    const { data } = await api().get('package')
-    packages.value = data.data
-  }
+
+  const customerPackages = ref([])
+  const customers = ref([])
+
+  const getCustomers = async () => {
+  const { data } = await api().get('customers')
+  customers.value = data.data
+ }
+
+
+  const getCustomerPackages = async () => {
+  const { data } = await api().get('customer-packages')
+  customerPackages.value = data.data
+}
+
+const getPackages = async () => {
+  const { data } = await api().get('package')
+  totalPackages.value = data.data
+}
+
   
   onMounted(async () => {
      getPackages()
+     getCustomerPackages()
+     getCustomers()
   })
   </script>
   
