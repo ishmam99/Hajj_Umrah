@@ -2,8 +2,6 @@
     <div class="px-4 w-full">
       <div class="flex flex-col justify-start">
         <div class="flex flex-row justify-between items-center w-full px-4 py-5">
-          <!-- <Sidebar /> -->
-          <!-- <router-view v-if="$route.name == 'Umrah_Management_System'" /> -->
           <div class="w-full">
             <Breadcrumb />
             <div class="w-full rounded-lg px-4 py-5 h-auto flex justify-center items-center border-b-2">
