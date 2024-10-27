@@ -10,8 +10,8 @@
                     <th class="border px-3 py-3">Date</th>
                     <th class="border px-3 py-3">Day</th>
                     <th class="border px-3 py-3">Time</th>
-                    <th class="border px-3 py-3">Package</th>
                     <th class="border px-3 py-3">Task</th>
+                    <th class="border px-3 py-3">Package</th>
                     <th class="border px-3 py-3">Completed Status</th>
                     <th class="border px-3 py-3 text-center">Action</th>
                   </tr>
