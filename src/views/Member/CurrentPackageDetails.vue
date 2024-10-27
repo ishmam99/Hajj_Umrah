@@ -37,14 +37,14 @@
           <h3 class="text-3xl font-semibold text-gray-800 tracking-wide">Day {{ selectedDay.day }}: {{ selectedDay.date
             }}</h3>
           <ul class="space-y-6 mt-6">
-            <li v-for="(activity, idx) in selectedDay.activities" :key="idx" class="flex items-center space-x-6">
+            <li v-for="(activity, idx) in selectedDay.activities" :key="idx" class="flex  items-center space-x-6">
               <!-- Time Section -->
               <div class="text-blue-700 text-xl font-bold w-2/12">{{ activity.time }}</div>
               <!-- Timeline and Activity Section -->
               <div class="relative w-10/12">
                 <div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 bg-blue-400 h-full"></div>
                 <div
-                  class="ml-8 p-6 bg-gray-100 rounded-xl flex gap-7 shadow-lg hover:bg-gray-50 transition duration-200">
+                  class="ml-8 p-6 bg-gray-100 rounded-xl flex justify-between gap-7 shadow-lg hover:bg-gray-50 transition duration-200">
 
                   <p class="mx-4">{{ activity.activity_type }}</p>
                   <h1 class="font-bold text-lg">{{ activity.from }}</h1>
@@ -54,7 +54,24 @@
                   <h1 class="font-bold text-lg text-sky-700">{{ activity.by }}</h1>
 
                   <p>{{ activity.description }}</p>
-                  <p class="text-blue-600 font-semibold">{{ activity.created_by ? activity.created_by : 'Package Admin' }}</p>
+              <p class="flex gap-2" v-if="activity.todo_status">
+                  <svg v-if="activity.todo_status == 1" @click="updateStatus(activity.todo, 0)" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24" width="24" height="24" fill="rgba(21,175,235,1)">
+                  <path
+                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999 11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z">
+                  </path>
+                </svg>
+
+                <svg v-else-if="activity.todo_status == 0" @click="updateStatus(activity.todo, 1)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                  width="24" height="24" fill="rgba(213,23,23,1)">
+                  <path
+                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5Z">
+                  </path>
+                </svg>
+              
+                {{ activity.todo_status == '0' ? 'Pending' : 'Completed' }}
+              </p>
+                  <p class="text-blue-600 font-semibold">--{{ activity.created_by ? activity.created_by : 'Package Admin' }}</p>
                 </div>
               </div>
             </li>
@@ -163,7 +180,7 @@ import { itinerary } from '@/stores/itinenary.ts';
 import { packages } from '@/stores/itinenary.ts';
 import moment from 'moment';
 import { useAuthStore } from '@/stores/AuthStore';
-
+import Swal from 'sweetalert2'
 const auth = useAuthStore();
 
 
@@ -187,12 +204,23 @@ const getTodo = async () => {
   const { data } = await api().get('customer-to-do-lists')
   todoList.value = data.data
 }
+
+const getPackages = async () => {
+  const { data } = await api().get('customer-packages')
+  packages.value = data.data
+  let customer_package = packages.value[0]
+  packageDetails.value = packages.value[0]?.package
+  selectedDay.value = packageDetails.value.itineraries[0];
+  todoList.value = todoList.value.filter(t => t.customer_package_id == customer_package.id)
+  updateSelectedDay(selectedDay.value)
+ }
 // Fetch package details when mounted
 onMounted(() => {
   getTodo()
-  getPackage()
+  getPackages()
 });
 
+// Watch for route changes and refetch package details
 watch(() => route, () => {
   packageDetails.value = packages.find(data => data.id == packageID);
 });
@@ -204,22 +232,30 @@ const updateSelectedDay = (day) =>{
   // console.log('dayDate: ' + dayDate);
   // console.log('dayActivities', dayActivities);
   // let filteredTodoListByDate = todoList.filter(t => t.date == day.date)
-
   todoList.value.filter(t => (t.date == day.date));
   console.log(todoList.value)
     todoList.value.map(t =>{
       let data = {
-        time: t.time,
+        time: moment(t.time, 'HH:mm').format('HH:mm:ss'),
+        to: '',
+        by: '',
+        todo:t,
+        todo_status:t.status,
         date: t.date,
-        description: t.task,
+        activity_type: t.details,
         created_by: auth.user.name
       }
-      console.log(data)
-      selectedDay.value.activities.push(data)
+      console.log(t.date,selectedDay.value.date)
+      if(t.date == selectedDay.value.date)
+      {
+        console.log(data)
+        selectedDay.value.activities.push(data)
+      }
+      
     })
      // Sort selectedDay.value.activities by time
   selectedDay.value.activities.sort((a, b) => {
-    return moment(a.time, 'HH:mm').diff(moment(b.time, 'HH:mm'));
+    return moment(a.time, 'HH:mm:ss').diff(moment(b.time, 'HH:mm:ss'));
   });
 }
 
@@ -238,6 +274,29 @@ const addTodo = () => {
   }
 };
 
+const updateStatus = async (todo, status) => {
+  try {
+    todo._method = 'PUT'
+    todo.status = status
+    const data = await api().post('customer-to-do-lists/' + todo.id, todo)
+    if (data) {
+      getTodo()
+      getPackages()
+      Swal.fire({
+        icon: "success",
+        title: "Status Updated",
+        text: status == 1 ? "Congrats Task Completed" : "Task Unchecked Successfully",
+      });
+    }
+  }
+  catch (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Status Update Failed",
+      text: "Something went wrong ,Please Contact Support",
+    });
+  }
+}
 
 const deleteTodo = (index) => {
   todos.value.splice(index, 1);
