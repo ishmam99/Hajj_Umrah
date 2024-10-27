@@ -233,6 +233,8 @@ const updateSelectedDay = (day) =>{
   // console.log('dayActivities', dayActivities);
   // let filteredTodoListByDate = todoList.filter(t => t.date == day.date)
   todoList.value.filter(t => (t.date == day.date));
+  let updated_imam_todo = packageDetails.value.imam_to_do_lists.filter(t => (t.date == day.date))
+ console.log(updated_imam_todo)
   console.log(todoList.value)
     todoList.value.map(t =>{
       let data = {
@@ -246,7 +248,30 @@ const updateSelectedDay = (day) =>{
         created_by: auth.user.name
       }
       console.log(t.date,selectedDay.value.date)
-      if(t.date == selectedDay.value.date)
+      let f = selectedDay.value.activities.find(e => e.todo?.id == t.id)
+     console.log(f)
+      if(t.date == selectedDay.value.date && !f)
+      {
+        console.log(data)
+        selectedDay.value.activities.push(data)
+      }
+      
+    })
+     updated_imam_todo.map(t =>{
+      let data = {
+        time: moment(t.time, 'HH:mm').format('HH:mm:ss'),
+        to: '',
+        by: '',
+        imam_todo:t,
+        todo_status:t.status,
+        date: t.date,
+        activity_type: t.details,
+        created_by: packageDetails.value.imam.name+'(Imam)'
+      }
+      console.log(t.date,selectedDay.value.date)
+      let f = selectedDay.value.activities.find(e => e.imam_todo?.id == t.id)
+    //  console.log(f)
+      if(t.date == selectedDay.value.date && !f)
       {
         console.log(data)
         selectedDay.value.activities.push(data)

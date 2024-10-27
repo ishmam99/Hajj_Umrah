@@ -38,7 +38,8 @@
               <td class=" px-4 py-2 border-e-2">{{ pkg.agent?.user?.name }}</td>
               <td class=" px-4 py-2 border-e-2">{{ pkg.imam?.user?.name }}</td>
               <td class=" px-4 py-2 border-e-2">{{ pkg.support_manager?.user?.name }}</td>
-              <td class=" px-4 py-2"> <select v-model="pkg.status_of_package" class="select select-bordered w-full">
+              <td class=" px-4 py-2">
+                 <select v-model="pkg.status_of_package" class="select select-bordered w-full">
                 <option disabled selected>Select an option</option>
                 <option v-for="status in statuses" :value="status.id" >{{ status.name }}</option>
               </select></td>

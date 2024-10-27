@@ -629,6 +629,11 @@ const router = createRouter({
           component: () => import('@/views/CustomerManagement/Profile/Profile.vue')
         },
         {
+          path: '/Customer_Profile/:id',
+          name: 'Customer_Profile',
+          component: () => import('@/views/CustomerManagement/CustomerDetails.vue')
+        },
+        {
           path: '/Customer_management_customer_list',
           name: 'Customer_Management_Customer_List',
           component: () => import('@/views/CustomerManagement/CustomerList.vue')
