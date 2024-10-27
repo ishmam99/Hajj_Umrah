@@ -180,7 +180,7 @@ const getPackage = async () => {
   const { data } = await api().get('package/' + packageID)
   packageDetails.value = data.data
   selectedDay.value = packageDetails.value.itineraries[0];
-  todoList.value = todoList.value.filter(t => t.package.id == data.data.id)
+  todoList.value = todoList.value.filter(t => t.package?.id == data.data.id)
 
 }
 const getTodo = async () => {
