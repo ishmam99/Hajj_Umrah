@@ -193,7 +193,6 @@ onMounted(() => {
   getPackage()
 });
 
-// Watch for route changes and refetch package details
 watch(() => route, () => {
   packageDetails.value = packages.find(data => data.id == packageID);
 });

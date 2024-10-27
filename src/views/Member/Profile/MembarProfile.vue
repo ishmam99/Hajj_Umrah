@@ -9,7 +9,7 @@
             alt="Profile Image"
             class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
           >
-          <h2 class="text-2xl text-white font-bold mt-4">Mahmadullah</h2>
+          <h2 class="text-2xl text-white font-bold mt-4">{{ auth.user.name }}</h2>
           <p class="text-white text-xl font-semibold"></p>
         </div>
   
@@ -88,13 +88,16 @@
 import { ref } from "vue";
 //  import people from "../../../assets/image/userProfile.webp";
  import people from "/src/assets/image/userProfile.webp";
+import { useAuthStore } from "@/stores/AuthStore";
+
+ const auth = useAuthStore();
 
  const profileFields = {
-  Name: 'Mahmadullah',
-  Email: 'mammad@gmail.com',
-  'Phone Number': '+10124543232',
-  Country: 'USA',
-  Address: 'Texas',
+  Name: auth.user?.name,
+  Email: auth.user?.email,
+  'Phone Number': auth.user?.customer?.phone_no,
+  Country: auth.user?.customer?.country,
+  Address: auth.user?.customer?.address,
 };
 
 const editableFields = {
@@ -107,12 +110,12 @@ const editableFields = {
 };
 
 const userData = ref({
-  name: 'Mahmadultan',
-  email: 'mammad@gmail.com',
-  address: 'Texas',
-  phone_no: '+10124543232',
-  country: 'USA',
-  gender: 'Male',
+  name: auth.user?.name,
+  email: auth.user?.email,
+  address: auth.user?.customer.address,
+  phone_no: auth.user?.customer.phone_no,
+  country: auth.user?.customer.country,
+  gender: auth.user?.customer.gender,
   image: people,
   _method: 'PUT',
 });

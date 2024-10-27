@@ -4,7 +4,7 @@
   >
     <div class="bg-[#135D66] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
       <p class="text-xl font-bold text-white">Customer Dashboard</p>
-      <p class="text-xl font-bold text-white">Welcome Mr. Hashim</p>
+      <p class="text-xl font-bold text-white">Welcome <span class="text-yellow-500">{{ auth?.user?.name }}</span></p>
       <router-link
         to="/volunteer_profile"
         class="flex items-center gap-2 bg-white p-2 rounded-md"
@@ -103,13 +103,15 @@
 </template>
 
 <script setup>
-import { watch, ref } from 'vue'
+import { watch, ref, onMounted } from 'vue'
 import { useAuthStore } from '/src/stores/AuthStore'
 import { useRouter, useRoute } from 'vue-router'
 
 const route = useRoute()
 const router = useRouter()
 const store = useAuthStore()
+
+const auth = useAuthStore();
 
 const dropdown = ref(0)
 
@@ -122,6 +124,7 @@ const toggleAccordion = (accordionName) => {
     currentAccordions.value = accordionName
   }
 }
+
 
 watch(
   () => store.isAuthenticated,
