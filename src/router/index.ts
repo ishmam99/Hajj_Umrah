@@ -572,7 +572,7 @@ const router = createRouter({
         },
       ]
     },
-    //Imam Managemnte Login
+    //Imam Management Login
     {
       path: '/imam_management_login',
       name: 'Imam Management Login',

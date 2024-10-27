@@ -1,59 +1,95 @@
 <template>
-    <div class="px-[5%] bg-white py-5  flex flex-col items-center">
-         <img src="/src/assets/image/home/download.jpeg" alt="" class="h-[100px] w-[100px] rounded-full border shadow-md">
-         <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
-             <p class="text-sm text-gray-500 pt-2">Name</p>
-             <p class="text-xl font-semibold pb-2">User</p>
-         </div>
-         <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
-             <p class="text-sm text-gray-500 pt-2">Email Address</p>
-             <p class="text-xl font-semibold pb-2">user@idl.com</p>
-         </div>
-         <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
-             <p class="text-sm text-gray-500 pt-2">Phone Number</p>
-             <p class="text-xl font-semibold pb-2">+8801722222222</p>
-         </div>
-         <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
-             <p class="text-sm text-gray-500 pt-2">Gender</p>
-             <p class="text-xl font-semibold pb-2">Male</p>
-         </div>
-         <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
-             <p class="text-sm text-gray-500 pt-2">Date of Birth (DD/MM/YY)</p>
-             <p class="text-xl font-semibold pb-2">1/1/22</p>
-         </div>
-         
-         <div class="bg-slate-50 shadow-md rounded-md p-5 mt-5 w-full">
-             <div class="flex gap-3 items-center pt-2">
-                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="rgba(100,205,138,1)"><path d="M12 20.8995L16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995ZM12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13ZM12 15C9.79086 15 8 13.2091 8 11C8 8.79086 9.79086 7 12 7C14.2091 7 16 8.79086 16 11C16 13.2091 14.2091 15 12 15Z"></path></svg>
-                 <p class="font-bold">Address</p>
-             </div>
-             <button class="w-full bg-white font-semibold py-3 rounded-md shadow-md mt-5">+ Add new address</button>
-             
-             <div class="mt-5 px-5 py-2  bg-green-100 border border-green-500 rounded-md flex justify-between items-center gap-2">
-                 <div class="flex items-center gap-2">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="rgba(8,126,51,1)"><path d="M10.007 2.10377C8.60544 1.65006 7.08181 2.28116 6.41156 3.59306L5.60578 5.17023C5.51004 5.35763 5.35763 5.51004 5.17023 5.60578L3.59306 6.41156C2.28116 7.08181 1.65006 8.60544 2.10377 10.007L2.64923 11.692C2.71404 11.8922 2.71404 12.1078 2.64923 12.308L2.10377 13.993C1.65006 15.3946 2.28116 16.9182 3.59306 17.5885L5.17023 18.3942C5.35763 18.49 5.51004 18.6424 5.60578 18.8298L6.41156 20.407C7.08181 21.7189 8.60544 22.35 10.007 21.8963L11.692 21.3508C11.8922 21.286 12.1078 21.286 12.308 21.3508L13.993 21.8963C15.3946 22.35 16.9182 21.7189 17.5885 20.407L18.3942 18.8298C18.49 18.6424 18.6424 18.49 18.8298 18.3942L20.407 17.5885C21.7189 16.9182 22.35 15.3946 21.8963 13.993L21.3508 12.308C21.286 12.1078 21.286 11.8922 21.3508 11.692L21.8963 10.007C22.35 8.60544 21.7189 7.08181 20.407 6.41156L18.8298 5.60578C18.6424 5.51004 18.49 5.35763 18.3942 5.17023L17.5885 3.59306C16.9182 2.28116 15.3946 1.65006 13.993 2.10377L12.308 2.64923C12.1078 2.71403 11.8922 2.71404 11.692 2.64923L10.007 2.10377ZM6.75977 11.7573L8.17399 10.343L11.0024 13.1715L16.6593 7.51465L18.0735 8.92886L11.0024 15.9999L6.75977 11.7573Z"></path>
-                     </svg>
-                     <div>
-                         <p class="text-gray-500 text-sm">Sector: 12, Roard: 8, House: 6</p>
-                         <p class="text-lg font-semibold">Uttara , Dhaka</p>
-                         <p class="text-gray-500 text-sm">+8801722222222</p>
-                     </div>
-                 </div>
-                 <button class="bg-red-600 text-white text-sm rounded-md px-5 py-1.5">Verify</button>
-             </div>
-             <div class="mt-5 px-5 py-2 pl-10 bg-gray-100 border border-gray-500 rounded-md flex justify-between items-center gap-2">
-                 <div class="flex items-center gap-2">
-                     <div>
-                         <p class="text-gray-500 text-sm">Sector: 2, Roard: 8, House: 6</p>
-                         <p class="text-lg font-semibold">Uttara , Dhaka</p>
-                         <p class="text-gray-500 text-sm">+8801722222222</p>
-                     </div>
-                 </div>
-                 <button class="bg-red-600 text-white text-sm rounded-md px-5 py-1.5">Verify</button>
-             </div>
-         </div>
- 
-    </div> 
- </template>
- <script setup>
- </script>
+    <div class="px-4 w-4/5">
+      <div class="flex flex-col justify-start">
+        <div class="flex flex-row justify-between items-center w-full px-4 py-5">
+          <!-- <Sidebar /> -->
+          <div class="w-full">
+            <Breadcrumb />
+            <div class="w-full rounded-lg px-4 py-5 h-auto flex justify-center items-center border-b-2">
+              <h1 class="text-2xl font-bold">Imam Management System Dashboard</h1>
+            </div>
+            <div class="w-full gap-3 h-auto flex flex-wrap justify-center items-center py-10">
+              <div class="w-fit rounded-[25px] bg-blue-500 text-white p-8 aspect">
+                <div class="h-auto w-auto gap-5 flex">
+                  <svg class="h-14 w-14 fill-white stroke-teal-800" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                  <path d="M21.0082 3C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082ZM20 5H4V19H20V5ZM18 15V17H6V15H18ZM12 7V13H6V7H12ZM18 11V13H14V11H18ZM10 9H8V11H10V9ZM18 7V9H14V7H18Z"></path>
+                  </svg>
+                  <div class="my-2">
+                    <h2 class="text-4xl font-bold">{{ packages.length }} +</h2>
+                  </div>
+                </div>
+                <div class="my-2 w-full">
+                  <h2 class="text-2xl font-bold">Total Packages</h2>
+                </div>
+              </div>
+              <div class="w-fit rounded-[25px] bg-teal-600 text-white p-8 aspect">
+                <div class="h-auto w-auto gap-5 flex">
+                  <svg class="h-14 w-14 fill-white stroke-teal-800" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                    <path d="M9 17C9 17 16 18 19 21H20C20.5523 21 21 20.5523 21 20V13.937C21.8626 13.715 22.5 12.9319 22.5 12C22.5 11.0681 21.8626 10.285 21 10.063V4C21 3.44772 20.5523 3 20 3H19C16 6 9 7 9 7H5C3.89543 7 3 7.89543 3 9V15C3 16.1046 3.89543 17 5 17H6L7 22H9V17ZM11 8.6612C11.6833 8.5146 12.5275 8.31193 13.4393 8.04373C15.1175 7.55014 17.25 6.77262 19 5.57458V18.4254C17.25 17.2274 15.1175 16.4499 13.4393 15.9563C12.5275 15.6881 11.6833 15.4854 11 15.3388V8.6612ZM5 9H9V15H5V9Z"></path>
+                  </svg>
+                  <div class="my-2">
+                    <h2 class="text-4xl font-bold">{{ packages.length }} +</h2>
+                  </div>
+                </div>
+                <div class="my-2 w-full">
+                  <h2 class="text-2xl font-bold">Completed Packages</h2>
+                </div>
+              </div>
+              <div class="w-fit rounded-[25px] bg-green-600 text-white p-8 aspect">
+                <div class="h-auto w-auto gap-5 flex">
+                  <svg class="h-14 w-14 fill-white stroke-green-800" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                  </svg>
+                  <div class="my-2">
+                    <h2 class="text-4xl font-bold">{{ packages.length }} +</h2>
+                  </div>
+                </div>
+                <div class="my-2 w-full">
+                  <h2 class="text-2xl font-bold">Active Packages</h2>
+                </div>
+              </div>
+              <div class="w-fit rounded-[25px] bg-sky-600 text-white p-8 aspect">
+                <div class="h-auto w-auto gap-5 flex">
+                  <svg class="h-14 w-14 fill-white stroke-sky-800" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                  </svg>
+                  <div class="my-2">
+                    <h2 class="text-4xl font-bold">{{ packages.length }} +</h2>
+                  </div>
+                </div>
+                <div class="my-2 w-full">
+                  <h2 class="text-2xl font-bold">Upcoming Packages</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ProjectProgressChart class="bg-slate-50" />
+    </div>
+  </template>
+  <script setup>
+  
+  
+  import { ref, onMounted } from 'vue'
+  import { useSocialStore } from '/src/stores/SocialDashboard.ts'
+  import ProjectProgressChart from "/src/components/BarChart.vue";
+  import Breadcrumb from "/src/components/Breadcrumb.vue";
+  const packages = ref([])
+  const store = useSocialStore()
+  const getPackages = async () => {
+    const { data } = await api().get('package')
+    packages.value = data.data
+  }
+  
+  onMounted(async () => {
+     getPackages()
+  })
+  </script>
+  
