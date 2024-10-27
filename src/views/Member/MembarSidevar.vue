@@ -2,7 +2,7 @@
   <div class="bg-[#135D66] bg-cover">
     <div class="p-5 flex flex-col gap-3 font-semibold text-lg h-full">
       <p class="text-2xl font-bold text-[#ffffff]">Customer Dashboard</p>
-      <p class="text-xl font-bold text-white">Welcome Mr. karim</p>
+      <p class="text-xl font-bold text-white">Welcome <span class="text-yellow-500">{{ AuthStore?.user?.name }}</span></p>
       <router-link to="/Member_Profile" @click="dropdown = 0"
         class="flex items-center gap-2 bg-white p-2 rounded-md"><svg xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -11,50 +11,7 @@
           </path>
         </svg>Profile</router-link>
 
-      <!-- event panel  -->
-      <!-- <div class="bg-white p-2 rounded-md cursor-pointer ">
-        <p @click="dropdown = 1" class="pb-1 flex items-center gap-3 ">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-            <path
-              d="M3.16113 4.46875C5.58508 2.0448 9.44716 1.9355 12.0008 4.14085C14.5528 1.9355 18.4149 2.0448 20.8388 4.46875C23.2584 6.88836 23.3716 10.741 21.1785 13.2947L13.4142 21.0858C12.6686 21.8313 11.4809 21.8652 10.6952 21.1874L10.5858 21.0858L2.82141 13.2947C0.628282 10.741 0.741522 6.88836 3.16113 4.46875ZM4.57534 5.88296C2.86819 7.59011 2.81942 10.3276 4.42902 12.0937L4.57534 12.2469L12 19.6715L17.3026 14.3675L13.7677 10.8327L12.7071 11.8934C11.5355 13.0649 9.636 13.0649 8.46443 11.8934C7.29286 10.7218 7.29286 8.8223 8.46443 7.65073L10.5656 5.54823C8.85292 4.17713 6.37076 4.23993 4.7286 5.73663L4.57534 5.88296ZM13.0606 8.71139C13.4511 8.32086 14.0843 8.32086 14.4748 8.71139L18.7168 12.9533L19.4246 12.2469C21.1819 10.4896 21.1819 7.64032 19.4246 5.88296C17.7174 4.17581 14.9799 4.12704 13.2139 5.73663L13.0606 5.88296L9.87864 9.06494C9.51601 9.42757 9.49011 9.99942 9.80094 10.3919L9.87864 10.4792C10.2413 10.8418 10.8131 10.8677 11.2056 10.5569L11.2929 10.4792L13.0606 8.71139Z">
-            </path>
-          </svg>
-          Event Panel
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-            <path d="M12 16L6 10H18L12 16Z"></path>
-          </svg>
-        </p>
-        <div v-if="dropdown == 1" class="flex flex-col gap-3 pl-2 py-2 bg-slate-100 rounded-md">
-          <router-link to="/Select_Volunteer" class="flex items-center gap-2 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-              <path
-                d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z">
-              </path>
-            </svg>Registered List
-          </router-link>
-          <router-link to="/Select_Volunteer" class="flex items-center gap-2 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-              <path
-                d="M8.00008 6V9H5.00008V6H8.00008ZM3.00008 4V11H10.0001V4H3.00008ZM13.0001 4H21.0001V6H13.0001V4ZM13.0001 11H21.0001V13H13.0001V11ZM13.0001 18H21.0001V20H13.0001V18ZM10.7072 16.2071L9.29297 14.7929L6.00008 18.0858L4.20718 16.2929L2.79297 17.7071L6.00008 20.9142L10.7072 16.2071Z">
-              </path>
-            </svg>Active Event List
-          </router-link>
-          <router-link to="/Select_Volunteer" class="flex items-center gap-2 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-              <path
-                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM13 12V7H11V14H17V12H13Z">
-              </path>
-            </svg>Upcomming Event List
-          </router-link>
-          <router-link to="/Select_Volunteer" class="flex items-center gap-2 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-              <path
-                d="M8 4H21V6H8V4ZM3 3.5H6V6.5H3V3.5ZM3 10.5H6V13.5H3V10.5ZM3 17.5H6V20.5H3V17.5ZM8 11H21V13H8V11ZM8 18H21V20H8V18Z">
-              </path>
-            </svg>Past Event List
-          </router-link>
-        </div>
-      </div> -->
+      
 
       <!-- volunteer panel  -->
       <div v-if="AuthStore?.user?.is_volunteer == 2" class="bg-white p-2 rounded-md cursor-pointer">
@@ -334,7 +291,7 @@
             </svg>
           </p>
           <div v-if="dropdown2" class="flex flex-col gap-1 pl-3 py-2 bg-slate-100 rounded-md  ">
-            <router-link to="/member_package_list"
+            <router-link to="/member_current_package_details"
               class="hover:text-white hover:bg-[#135D66] py-2 flex items-center gap-2 pl-3 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                 <path
@@ -360,13 +317,13 @@
             </router-link>
 
           </div>
-          <router-link to="" @click="dropdown = 0" class="flex items-center gap-2 mb-1 py-1 bg-white rounded-md "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <router-link to="/member_package_list_future" @click="dropdown = 0" class="flex items-center gap-2 mb-1 py-1 bg-white rounded-md "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                 <path
                   d="M8.00008 6V9H5.00008V6H8.00008ZM3.00008 4V11H10.0001V4H3.00008ZM13.0001 4H21.0001V6H13.0001V4ZM13.0001 11H21.0001V13H13.0001V11ZM13.0001 18H21.0001V20H13.0001V18ZM10.7072 16.2071L9.29297 14.7929L6.00008 18.0858L4.20718 16.2929L2.79297 17.7071L6.00008 20.9142L10.7072 16.2071Z">
                 </path>
               </svg>Future Packages</router-link>
           
-            <router-link to="" @click="dropdown = 0" class="flex items-center gap-2 mb-1 py-1 bg-white rounded-md "><svg
+            <router-link to="/member_package_list_previous" @click="dropdown = 0" class="flex items-center gap-2 mb-1 py-1 bg-white rounded-md "><svg
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
               <path
                 d="M5.67591 4.25667C9.60392 1.03828 15.4094 1.26236 19.076 4.92893C22.9812 8.83418 22.9812 15.1658 19.076 19.0711C15.1707 22.9763 8.83906 22.9763 4.93382 19.0711C2.40932 16.5466 1.51676 13.0081 2.25611 9.76666L2.33275 9.45394L4.26718 9.96315C3.56967 12.623 4.26329 15.5721 6.34803 17.6569C9.47222 20.781 14.5375 20.781 17.6617 17.6569C20.7859 14.5327 20.7859 9.46734 17.6617 6.34315C14.8441 3.5255 10.4475 3.24903 7.32006 5.51375L7.09886 5.67983L8.1158 6.6967L3.5196 7.75736L4.58026 3.16117L5.67591 4.25667ZM13.0049 6V8H15.5049V10H10.0049C9.72874 10 9.50488 10.2239 9.50488 10.5C9.50488 10.7455 9.68176 10.9496 9.91501 10.9919L10.0049 11H14.0049C15.3856 11 16.5049 12.1193 16.5049 13.5C16.5049 14.8807 15.3856 16 14.0049 16H13.0049V18H11.0049V16H8.50488V14H14.0049C14.281 14 14.5049 13.7761 14.5049 13.5C14.5049 13.2545 14.328 13.0504 14.0948 13.0081L14.0049 13H10.0049C8.62417 13 7.50488 11.8807 7.50488 10.5C7.50488 9.11929 8.62417 8 10.0049 8H11.0049V6H13.0049Z">

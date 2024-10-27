@@ -612,7 +612,7 @@ const router = createRouter({
         }
       ]
     },
-    //Customer Managemente Login
+    //Customer Management Login
     {
       path: '/customer_management_login',
       name: 'Customer Management Login',
@@ -1317,9 +1317,19 @@ const router = createRouter({
           component: () => import('../views/Member/Profile/MembarProfile.vue')
         },
         {
-          path: '/member_package_list',
-          name: 'Membar_Package_List',
-          component: () => import('../views/Member/Profile/ViewPackages.vue')
+          path: '/member_current_package_details',
+          name: 'Membar_Package_Current_Details',
+          component: () => import('../views/Member/CurrentPackageDetails.vue')
+        },
+        {
+          path: '/member_package_list_future',
+          name: 'Membar_Package_List_Future',
+          component: () => import('../views/Member/Profile/ViewPackagesFuture.vue')
+        },
+        {
+          path: '/member_package_list_previous',
+          name: 'Membar_Package_List_Previous',
+          component: () => import('../views/Member/Profile/ViewPackagesPrevious.vue')
         },
         {
           path: '/member_todo_list',
@@ -1341,6 +1351,16 @@ const router = createRouter({
           name: 'completed_packages',
           component: () => import('../views/Member/Profile/CompletedPackages.vue')
         },
+        // {
+        //   path: '/future_packages',
+        //   name: 'Future_packages',
+        //   component: () => import('../views/Member/FuturePackages.vue')
+        // },
+        // {
+        //   path: '/previous_packages',
+        //   name: 'Previous_packages',
+        //   component: () => import('../views/Member/PreviousPackages.vue')
+        // },
         {
           path: '/customer_package_details/:id',
           name: 'customer_package_details',
