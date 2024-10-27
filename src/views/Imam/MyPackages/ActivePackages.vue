@@ -4,6 +4,34 @@
             <Breadcrumb />
             <p class="text-4xl font-bold px-5 text-center font-mono text-cyan-600 ">Active Packages</p> 
         </div>
+
+        <!-- Filters Section -->
+        <div class="flex gap-4 px-5 py-4 w-full">
+            <!-- Filter by Country -->
+            <select v-model="selectedCountry" @change="applyFilters" class="border rounded p-2 w-1/3">
+                <option value="">All Countries</option>
+                <option v-for="country in countryOptions" :key="country.id" :value="country.id">
+                    {{ country.name }}
+                </option>
+            </select>
+
+            <!-- Filter by City -->
+            <select v-model="selectedCity" @change="applyFilters" class="border rounded p-2 w-1/3">
+                <option value="">All Cities</option>
+                <option v-for="city in cityOptions" :key="city.id" :value="city.id">
+                    {{ city.name }}
+                </option>
+            </select>
+
+            <!-- Filter by Airport -->
+            <select v-model="selectedAirport" @change="applyFilters" class="border rounded p-2 w-1/3">
+                <option value="">All Airports</option>
+                <option v-for="airport in airportOptions" :key="airport.id" :value="airport.id">
+                    {{ airport.short_name }}
+                </option>
+            </select>
+        </div>
+
         <div class="px-5">
             <div class="overflow-x-auto">
                 <!-- Loader -->
@@ -16,12 +44,12 @@
                 </div>
                 
                 <!-- No data message -->
-                <p v-if="!loading && packagesData.length === 0" class="border w-1/4 mx-auto py-6 rounded my-10 bg-gray-200 text-center text-red-500 text-xl font-semibold">
+                <p v-if="!loading && filteredPackages.length === 0" class="border w-1/4 mx-auto py-6 rounded my-10 bg-gray-200 text-center text-red-500 text-xl font-semibold">
                     No data available for this user
                 </p>
 
                 <!-- Data table -->
-                <table v-if="!loading && packagesData.length > 0" class="table w-full my-2 border-collapse border border-gray-300">
+                <table v-if="!loading && filteredPackages.length > 0" class="table w-full my-2 border-collapse border border-gray-300">
                     <thead>
                         <tr class="bg-sky-600 text-white items-center text-lg">
                             <th>Package Name</th>
@@ -38,7 +66,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="pkg in packagesData" :key="pkg.id" class="bg-gray-100">
+                        <tr v-for="pkg in filteredPackages" :key="pkg.id" class="bg-gray-100">
+                            <!-- (Data rows here, same as provided in the initial code) -->
                             <td>
                                 <div class="flex items-center gap-3">
                                     <!-- <div class="avatar">
@@ -94,23 +123,59 @@
 </template>
 
 <script setup>
+import { ref, computed, onMounted } from 'vue';
 import { useAuthStore } from '@/stores/AuthStore';
-import { ref, onMounted } from 'vue';
-import { packages } from '@/stores/itinenary.ts'
 import Breadcrumb from "/src/components/Breadcrumb.vue";
+import { packages } from '@/stores/itinenary.ts';
+
 const store = useAuthStore();
 const packagesData = ref([]);
 const loading = ref(true);
+const selectedCountry = ref('');
+const selectedCity = ref('');
+const selectedAirport = ref('');
+
+// Dynamic options for filters
+const countryOptions = computed(() => {
+    return [...new Set(packagesData.value.map(pkg => pkg.country))]
+        .filter(Boolean);
+});
+const cityOptions = computed(() => {
+    return [...new Set(packagesData.value
+        .filter(pkg => !selectedCountry.value || pkg.country?.id === selectedCountry.value)
+        .map(pkg => pkg.city))].filter(Boolean);
+});
+const airportOptions = computed(() => {
+    return [...new Set(packagesData.value
+        .filter(pkg => (!selectedCountry.value || pkg.country?.id === selectedCountry.value) &&
+                       (!selectedCity.value || pkg.city?.id === selectedCity.value))
+        .map(pkg => pkg.airport))].filter(Boolean);
+});
+
+// Filtered package data
+const filteredPackages = computed(() => {
+    return packagesData.value.filter(pkg => {
+        return (
+            (!selectedCountry.value || pkg.country?.id === selectedCountry.value) &&
+            (!selectedCity.value || pkg.city?.id === selectedCity.value) &&
+            (!selectedAirport.value || pkg.airport?.id === selectedAirport.value)
+        );
+    });
+});
+
+const applyFilters = () => {
+    // The computed properties automatically update the view when filters change
+};
 
 const getPackages = async () => {
-    loading.value = true; // Start loading
+    loading.value = true;
     try {
         const { data } = await api().get('package');
         packagesData.value = data.data.filter(pkg => pkg.imam?.user?.id === store.user.id);
     } catch (error) {
         console.error(error);
     } finally {
-        loading.value = false; // End loading
+        loading.value = false;
     }
 };
 
