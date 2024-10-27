@@ -95,9 +95,9 @@ import { useAuthStore } from "@/stores/AuthStore";
  const profileFields = {
   Name: auth.user?.name,
   Email: auth.user?.email,
-  'Phone Number': auth.user?.customer?.phone_no,
-  Country: auth.user?.customer?.country,
-  Address: auth.user?.customer?.address,
+  'Phone Number': auth.user?.phone_no,
+  Country: auth.user?.country,
+  Address: auth.user?.address,
 };
 
 const editableFields = {
@@ -112,10 +112,10 @@ const editableFields = {
 const userData = ref({
   name: auth.user?.name,
   email: auth.user?.email,
-  address: auth.user?.customer.address,
-  phone_no: auth.user?.customer.phone_no,
-  country: auth.user?.customer.country,
-  gender: auth.user?.customer.gender,
+  address: auth.user?.address,
+  phone_no: auth.user?.phone_no,
+  country: auth.user?.country,
+  gender: auth.user?.gender,
   image: people,
   _method: 'PUT',
 });

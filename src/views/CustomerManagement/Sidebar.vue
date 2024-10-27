@@ -4,7 +4,7 @@
   >
     <div class="bg-[#135D66] p-5 h-full flex flex-col gap-3 font-semibold text-lg">
       <p class="text-xl font-bold text-white">Customer Management Dashboard</p>
-      <p class="text-xl font-bold text-white">Welcome Mr. Hashim</p>
+      <p class="text-xl font-bold text-white">Welcome <span>{{ auth?.user?.name }}</span></p>
       <router-link
         to="/Customer_management_Profile"
         class="flex items-center gap-2 bg-white p-2 rounded-md"
@@ -75,6 +75,7 @@ import { useRouter, useRoute } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 const store = useAuthStore()
+const auth = useAuthStore();
 
 const dropdown = ref(0)
 
