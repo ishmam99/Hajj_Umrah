@@ -21,19 +21,7 @@
               <td class="border-r border-slate-700  px-4 py-2">{{ todo?.day }}</td>
               <td class="border-r border-slate-700  px-4 py-2">{{ todo?.time }}</td>
               <td class="border-r border-slate-700  px-4 py-2">{{ todo?.details }}</td>
-              <!-- <td class="border-r border-slate-700 px-4 py-2 flex gap-4 justify-between items-center">
-                <select v-if="todo.status == 0"
-                  class="select select-success w-full max-w-xs"
-                  @change="updateStatus(todo, $event.target.value)"
-                  :value="todo.status"
-                >
-                  <option disabled>Select Status</option>
-                  <option value="0">Pending</option>
-                  <option value="1">Completed</option>
-                </select>
-                <span v-else class="w-full badge badge-success text-base font-semibold text-white">{{ todo.status == 1 ? 'Completed' : '' }}</span>
-                <button class="btn btn-xs btn-accent text-white">Submit</button>
-              </td> -->
+              
               <td class="border-r border-slate-700 px-4 py-2 flex gap-4 justify-between items-center">
                 <!-- Status Dropdown -->
                 <select v-if="todo.status == 0" class="select select-success w-full max-w-xs" v-model="status">
