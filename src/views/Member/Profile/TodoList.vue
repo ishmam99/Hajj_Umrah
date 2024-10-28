@@ -35,46 +35,22 @@
                 <button class="btn btn-xs btn-accent text-white">Submit</button>
               </td> -->
               <td class="border-r border-slate-700 px-4 py-2 flex gap-4 justify-between items-center">
-  <!-- Status Dropdown -->
-  <select v-if="todo.status == 0"
-    class="select select-success w-full max-w-xs"
-    v-model="status"
-  >
-    <option value="0">Pending</option>
-    <option value="1">Completed</option>
-  </select>
+                <!-- Status Dropdown -->
+                <select v-if="todo.status == 0" class="select select-success w-full max-w-xs" v-model="status">
+                  <option value="0">Pending</option>
+                  <option value="1">Completed</option>
+                </select>
 
-  <!-- Display Completed Status Badge -->
-  <span v-if="todo.status == 1" class="w-full badge badge-success text-base font-semibold text-white">
-    Completed
-  </span>
+                <!-- Display Completed Status Badge -->
+                <span v-if="todo.status == 1" class="w-full badge badge-success text-base font-semibold text-white">
+                  Completed
+                </span>
 
-  <!-- Submit Button -->
-  <button 
-    class="btn btn-xs btn-accent text-white"
-    @click="submitStatus(todo)"
-  >
-    Submit
-  </button>
-</td>
-
-              <!-- <td class="border-r border-slate-700 flex items-center gap-5  px-4 py-2">
-
-                <svg v-if="todo.status == 1" @click="updateStatus(todo, 0)" xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24" width="24" height="24" fill="rgba(21,175,235,1)">
-                  <path
-                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999 11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z">
-                  </path>
-                </svg>
-
-                <svg v-else @click="updateStatus(todo, 1)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                  width="24" height="24" fill="rgba(213,23,23,1)">
-                  <path
-                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5Z">
-                  </path>
-                </svg>
-                {{ todo.status == 0 ? 'Pending' : 'Completed' }}
-              </td> -->
+                <!-- Submit Button -->
+                <button class="btn btn-xs btn-accent text-white" @click="submitStatus(todo)">
+                  Submit
+                </button>
+              </td>
               <td class="text-center"><button @click="handleDeleteToDoList(todo.id)"
                   class="btn btn-xs btn-error text-white">Delete</button></td>
             </tr>
