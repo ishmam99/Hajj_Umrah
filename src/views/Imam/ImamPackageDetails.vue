@@ -37,11 +37,69 @@
         <div v-if="selectedDay" class=" bg-blue-600 p-4 rounded-b-lg" >
           <h3 class="text-3xl font-semibold text-white tracking-wide">Day {{ selectedDay.day }}: {{ selectedDay.date
             }}</h3>
-          <ul class="space-y-6 mt-6">
+            <div class="pt-4">
+              <div class="grid grid-cols-6 text-blue-600  rounded-lg font-bold py-4 px-2 bg-slate-200">
+                <span>Time</span>
+                <span class="ps-4">Task</span>
+                <span></span>
+                <span></span>
+                <span>Status</span>
+                <span class="ps-4">Originated By</span>
+              </div>
+            </div>
+            <div v-for="(activity, idx) in selectedDay.activities" :key="idx" class="">
+              <div class="grid grid-cols-6 mt-6 items-center gap-2 p-4 rounded-lg shadow-md">
+                <!-- Grid 1 -->
+                <p class="col-span-1 text-white text-xl font-bold py-4 me-8 border-e-4 border-white">{{
+                  activity.time }}</p>
+  
+                <!-- Grid 2-6 with background color and rounded corners -->
+                <div class="col-span-5 grid grid-cols-5 items-center bg-gray-100 rounded-lg ps-3 py-6">
+                  <!-- Grid 2 -->
+                  <span>{{ activity.activity_type }}</span>
+  
+                  <!-- Grid 3 -->
+                  <div class="flex gap-2 items-center" :class="activity.todo_status ? 'col-span-1' : 'col-span-2'">
+                    <h1 class="font-bold text-lg">{{ activity.from }}</h1>
+                    <p v-if="activity.to">To</p>
+                    <h1 class="font-bold text-lg">{{ activity.to }}</h1>
+                    <p v-if="activity.by">By</p>
+                    <h1 class="font-bold text-lg text-sky-700">{{ activity.by }}</h1>
+                  </div>
+  
+                  <!-- Grid 4 -->
+                  <p class="pe-2">{{ activity.description }}</p>
+  
+                  <!-- Grid 5 -->
+                  <p class="flex gap-2" v-if="activity.todo_status">
+  
+                    {{ activity.todo_status == '0' ? 'Pending' : 'Completed' }} 
+                  </p>
+  
+                  <!-- Grid 6 -->
+                  <p class="text-blue-600 font-semibold border-s-4 ps-4 border-blue-500 bors">
+                    --{{ activity.created_by ? activity.created_by : 'Package Admin' }}
+                  </p>
+                </div>
+              </div>
+  
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+          <!-- <ul class="space-y-6 mt-6">
             <li v-for="(activity, idx) in selectedDay.activities" :key="idx" class="flex  items-center space-x-6">
-              <!-- Time Section -->
+             
               <div class="text-white text-xl font-bold w-2/12">{{ activity.time }}</div>
-              <!-- Timeline and Activity Section -->
+             
               <div class="relative w-10/12">
                 <div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 bg-blue-400 h-full"></div>
                 <div
@@ -76,11 +134,11 @@
                 </div>
               </div>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
-    <!-- {{ todoList }} -->
+ 
     <!-- To-Do List Section -->
     <div v-if="currentTab === 'todo'" class="bg-green-100 py-10 px-6 max-w-screen-2xl  mx-auto shadow-2xl rounded-2xl">
       <div class="bg-white p-6 rounded-lg">
