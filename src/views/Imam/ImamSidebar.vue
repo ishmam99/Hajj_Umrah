@@ -48,6 +48,14 @@
               <div v-if="showMyLog" class="flex flex-col gap-4 p-3  rounded-md ">
                 <!-- Math Program -->
       
+                <router-link to="/imam_packages_active_itinerary"
+                class="flex items-center gap-2 space-y-2 p-2 rounded-md  shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <path
+                    d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM13 12V7H11V14H17V12H13Z">
+                  </path>
+                </svg> Itinerary
+              </router-link>
                 <router-link to="/imam_packages_active_package"
                 class="flex items-center gap-2 space-y-2 p-2 rounded-md  shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -64,7 +72,7 @@
                   </path>
                 </svg> Create To-Do List
               </router-link>
-                <router-link to="/imam_todo_list"
+                <router-link to="/imam_to_do_list"
                 class="flex items-center gap-2 space-y-2 p-2 rounded-md  shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                   <path
