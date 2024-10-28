@@ -43,8 +43,14 @@
                       </div>
                     </td>
                   </tr>
+                  <!-- <tr v-if="Customer.length == 0" class=""> -->
+                  <tr class="text-center w-full bg-yellow-200">
+                  </tr>
                 </tbody>
               </table>
+              <div v-if="packages.length == 0" class="bg-slate-200 text-center py-5">
+                <span class="font-semibold font-serif text-red-800 text-lg">No future packages found for this customer.</span>
+              </div>
             </div>
 
           </div>
@@ -69,9 +75,12 @@ const deletePackage = (packageId) => {
   { id: 8, name: 'Discontinued' }
  ]
 const getPackages = async () => {
-  const { data } = await api().get('customer-packages')
+  // const { data } = await api().get('customer-packages')
+  const { data } = await api().get('/my-future-package')
   packages.value = data.data
  }
+
+
 onMounted(() => {
   getPackages()
 })

@@ -1347,6 +1347,16 @@ const router = createRouter({
           component: () => import('../views/Member/Profile/TodoList.vue')
         },
         {
+          path: '/member_package_audio-video',
+          name: 'Membar_Package_Audio-Video',
+          component: () => import('../views/Member/Audio-Video.vue')
+        },
+        {
+          path: '/member_umrah_materials',
+          name: 'Membar_Umrah_Materials',
+          component: () => import('../views/Member/UmrahMaterials.vue')
+        },
+        {
           path: '/create_todo_list',
           name: 'create_todo_List',
           component: () => import('../views/Member/TodoListCreate.vue')

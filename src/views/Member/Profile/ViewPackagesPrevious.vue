@@ -45,6 +45,9 @@
                   </tr>
                 </tbody>
               </table>
+              <div v-if="packages.length == 0" class="bg-slate-200 text-center py-5">
+                <span class="font-semibold font-serif text-red-800 text-lg">No Previous packages found for this customer.</span>
+              </div>
             </div>
 
           </div>
@@ -69,7 +72,7 @@ const deletePackage = (packageId) => {
   { id: 8, name: 'Discontinued' }
  ]
 const getPackages = async () => {
-  const { data } = await api().get('customer-packages')
+  const { data } = await api().get('/my-previous-package')
   packages.value = data.data
  }
 onMounted(() => {
