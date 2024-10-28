@@ -70,7 +70,7 @@
                 <p>{{ activity.description }}</p>
 
                 <!-- Grid 5 -->
-                <p class="flex gap-2" v-if="activity.todo_status">
+                <p class="flex gap-2" v-if="activity.todo_status" :class="activity.todo_status == '0' ? 'badge badge-warning' : 'badge badge-accent'">
 
                   {{ activity.todo_status == '0' ? 'Pending' : 'Completed' }} 
                 </p>
