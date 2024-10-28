@@ -17,16 +17,16 @@
           <p class="border-s-2 px-1 text-center w-full">Origin Airport: <span class="">{{ packageDetails.airport.name
               }}</span></p>
         </div>
-        <p class="text-4xl font-extrabold text-blue-600 pb-8 border-b-2 border-gray-200 tracking-tight pt-6">Itinerary
-          Details</p>
+        <p class="text-4xl font-extrabold text-blue-600 pb-8 border-b-2 border-gray-200 tracking-tight pt-6">Itinerary Details</p>
 
         <!-- Tabs for Days -->
         <div class="my-8" v-if="packageDetails">
           <nav class="flex space-x-2 overflow-x-auto pb-4 border-b-2 border-gray-200">
-            <button v-for="(day, index) in packageDetails.itineraries" :key="index" @click="updateSelectedDay(day)" :class="{
-              'shadow-xl bg-blue-600 text-white rounded-full mx-2 px-5 py-2 text-lg font-semibold transition-transform duration-200 scale-105': selectedDay.id === day.id,
-              'text-gray-500 hover:bg-blue-100 hover:text-blue-600 transition-transform duration-200 rounded-full px-6 py-2 text-lg font-semibold': selectedDay.id !== day.id,
-            }" class="whitespace-nowrap">
+            <button v-for="(day, index) in packageDetails.itineraries" :key="index" @click="updateSelectedDay(day)"
+              :class="{
+                'shadow-xl bg-blue-600 text-white rounded-full mx-2 px-5 py-2 text-lg font-semibold transition-transform duration-200 scale-105': selectedDay.id === day.id,
+                'text-gray-500 hover:bg-blue-100 hover:text-blue-600 transition-transform duration-200 rounded-full px-6 py-2 text-lg font-semibold': selectedDay.id !== day.id,
+              }" class="whitespace-nowrap">
               Day {{ day?.day }}
             </button>
           </nav>
@@ -34,13 +34,62 @@
 
         <!-- Itinerary Details for Selected Day -->
         <div v-if="selectedDay" class="mt-8">
-          <h3 class="text-3xl font-semibold text-gray-800 tracking-wide">Day {{ selectedDay.day }}: {{ selectedDay.date
+          <h3 class="text-3xl font-semibold text-gray-800 tracking-wide mb-8">Day {{ selectedDay.day }}: {{ selectedDay.date
             }}</h3>
-          <ul class="space-y-6 mt-6">
-            <li v-for="(activity, idx) in selectedDay.activities" :key="idx" class="flex  items-center space-x-6">
-              <!-- Time Section -->
+          <div>
+            <div class="grid grid-cols-6 text-blue-700 font-bold py-4 px-2 bg-slate-200">
+              <span>Time</span>
+              <span class="ps-4">Task</span>
+              <span></span>
+              <span></span>
+              <span>Status</span>
+              <span>Originated By</span>
+            </div>
+          </div>
+          <div v-for="(activity, idx) in selectedDay.activities" :key="idx" class="">
+            <div class="grid grid-cols-6 mt-6 items-center gap-2 p-4 rounded-lg shadow-md">
+              <!-- Grid 1 -->
+              <p class="col-span-1 text-blue-700 text-xl font-bold py-4 me-8 border-e-4 border-blue-500">{{
+                activity.time }}</p>
+
+              <!-- Grid 2-6 with background color and rounded corners -->
+              <div class="col-span-5 grid grid-cols-5 items-center bg-gray-100 rounded-lg ps-3 py-6">
+                <!-- Grid 2 -->
+                <span>{{ activity.activity_type }}</span>
+
+                <!-- Grid 3 -->
+                <div class="flex gap-2 items-center" :class="activity.todo_status ? 'col-span-1' : 'col-span-2'">
+                  <h1 class="font-bold text-lg">{{ activity.from }}</h1>
+                  <p v-if="activity.to">To</p>
+                  <h1 class="font-bold text-lg">{{ activity.to }}</h1>
+                  <p v-if="activity.by">By</p>
+                  <h1 class="font-bold text-lg text-sky-700">{{ activity.by }}</h1>
+                </div>
+
+                <!-- Grid 4 -->
+                <p>{{ activity.description }}</p>
+
+                <!-- Grid 5 -->
+                <p class="flex gap-2" v-if="activity.todo_status">
+
+                  {{ activity.todo_status == '0' ? 'Pending' : 'Completed' }} 
+                </p>
+
+                <!-- Grid 6 -->
+                <p class="text-blue-600 font-semibold border-s-4 ps-2 border-[#77CDFF] bors">
+                  --{{ activity.created_by ? activity.created_by : 'Package Admin' }}
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <!-- <ul class="space-y-6 mt-6">
+            <li v-for="(activity, idx) in selectedDay.activities" :key="idx" class="flex items-center space-x-6">
               <div class="text-blue-700 text-xl font-bold w-2/12">{{ activity.time }}</div>
-              <!-- Timeline and Activity Section -->
               <div class="relative w-10/12">
                 <div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 bg-blue-400 h-full"></div>
                 <div
@@ -54,28 +103,30 @@
                   <h1 class="font-bold text-lg text-sky-700">{{ activity.by }}</h1>
 
                   <p>{{ activity.description }}</p>
-              <p class="flex gap-2" v-if="activity.todo_status">
-                  <svg v-if="activity.todo_status == 1" @click="updateStatus(activity.todo, 0)" xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24" width="24" height="24" fill="rgba(21,175,235,1)">
-                  <path
-                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999 11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z">
-                  </path>
-                </svg>
+                  <p class="flex gap-2" v-if="activity.todo_status">
+                    <svg v-if="activity.todo_status == 1" @click="updateStatus(activity.todo, 0)"
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                      fill="rgba(21,175,235,1)">
+                      <path
+                        d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999 11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z">
+                      </path>
+                    </svg>
 
-                <svg v-else-if="activity.todo_status == 0" @click="updateStatus(activity.todo, 1)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                  width="24" height="24" fill="rgba(213,23,23,1)">
-                  <path
-                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5Z">
-                  </path>
-                </svg>
-              
-                {{ activity.todo_status == '0' ? 'Pending' : 'Completed' }}
-              </p>
+                    <svg v-else-if="activity.todo_status == 0" @click="updateStatus(activity.todo, 1)"
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                      fill="rgba(213,23,23,1)">
+                      <path
+                        d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5Z">
+                      </path>
+                    </svg>
+
+                    {{ activity.todo_status == '0' ? 'Pending' : 'Completed' }}
+                  </p>
                   <p class="text-blue-600 font-semibold">--{{ activity.created_by ? activity.created_by : 'Package Admin' }}</p>
                 </div>
               </div>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
@@ -165,19 +216,13 @@
       </div>
     </div>
   </div>
-  <!-- s{{ selectedDay.date}} -->
-  <!-- todoList {{ todoList.id }} -->
-  <!-- filteredTodoListByDate {{ filteredTodoListByDate }} -->
-  <!-- selectedDay {{ selectedDay }} -->
-  <!-- todoList {{ todoList }} -->
-  <!-- packageDetails.itineraries = {{ packageDetails.itineraries[0] }} -->
 </template>
 
 <script setup>
 import { ref, watch, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-import { itinerary } from '@/stores/itinenary.ts';
-import { packages } from '@/stores/itinenary.ts';
+// import { itinerary } from '@/stores/itinenary.ts';
+// import { packages } from '@/stores/itinenary.ts';
 import moment from 'moment';
 import { useAuthStore } from '@/stores/AuthStore';
 import Swal from 'sweetalert2'
@@ -191,41 +236,40 @@ const packageID = route.params.id;
 const packageDetails = ref(null);
 const selectedDay = ref({});
 const todoList = ref([])
+
+const UserPackage = ref([]);
 // For tabs (Package Details and To-Do List)
 const currentTab = ref('details');
-const getPackage = async () => {
-  const { data } = await api().get('package/' + packageID)
-  packageDetails.value = data.data
-  selectedDay.value = packageDetails.value.itineraries[0];
-  todoList.value = todoList.value.filter(t => t.package?.id == data.data.id)
 
-}
 const getTodo = async () => {
   const { data } = await api().get('customer-to-do-lists')
   todoList.value = data.data
 }
 
-const getPackages = async () => {
-  const { data } = await api().get('customer-packages')
-  packages.value = data.data
-  let customer_package = packages.value[0]
-  packageDetails.value = packages.value[0]?.package
-  selectedDay.value = packageDetails.value.itineraries[0];
-  todoList.value = todoList.value.filter(t => t.customer_package_id == customer_package.id)
+
+const getPackage = async () => {
+  // const { data } = await api().get('customer-packages')
+  const { data } = await api().get('/my-current-package')
+  console.log('customer-packages', data);
+  UserPackage.value = data.data
+  let customer_package = UserPackage.value
+  packageDetails.value = UserPackage.value.package
+  selectedDay.value = packageDetails.value?.itineraries[0];
+  todoList.value = todoList.value.filter(t => t.customer_package_id == customer_package?.id)
   updateSelectedDay(selectedDay.value)
- }
+}
 // Fetch package details when mounted
 onMounted(() => {
   getTodo()
-  getPackages()
+  getPackage()
 });
 
 // Watch for route changes and refetch package details
-watch(() => route, () => {
-  packageDetails.value = packages.find(data => data.id == packageID);
-});
+// watch(() => route, () => {
+//   packageDetails.value = packages.find(data => data.id == packageID);
+// });
 
-const updateSelectedDay = (day) =>{
+const updateSelectedDay = (day) => {
   selectedDay.value = day
   // const dayDate = day.date;
   // const dayActivities = day.activities;
@@ -234,51 +278,49 @@ const updateSelectedDay = (day) =>{
   // let filteredTodoListByDate = todoList.filter(t => t.date == day.date)
   todoList.value.filter(t => (t.date == day.date));
   let updated_imam_todo = packageDetails.value.imam_to_do_lists.filter(t => (t.date == day.date))
- console.log(updated_imam_todo)
+  console.log(updated_imam_todo)
   console.log(todoList.value)
-    todoList.value.map(t =>{
-      let data = {
-        time: moment(t.time, 'HH:mm').format('HH:mm:ss'),
-        to: '',
-        by: '',
-        todo:t,
-        todo_status:t.status,
-        date: t.date,
-        activity_type: t.details,
-        created_by: auth.user.name
-      }
-      console.log(t.date,selectedDay.value.date)
-      let f = selectedDay.value.activities.find(e => e.todo?.id == t.id)
-     console.log(f)
-      if(t.date == selectedDay.value.date && !f)
-      {
-        console.log(data)
-        selectedDay.value.activities.push(data)
-      }
-      
-    })
-     updated_imam_todo.map(t =>{
-      let data = {
-        time: moment(t.time, 'HH:mm').format('HH:mm:ss'),
-        to: '',
-        by: '',
-        imam_todo:t,
-        todo_status:t.status,
-        date: t.date,
-        activity_type: t.details,
-        created_by: packageDetails.value.imam.name+'(Imam)'
-      }
-      console.log(t.date,selectedDay.value.date)
-      let f = selectedDay.value.activities.find(e => e.imam_todo?.id == t.id)
+  todoList.value.map(t => {
+    let data = {
+      time: moment(t.time, 'HH:mm').format('HH:mm:ss'),
+      to: '',
+      by: '',
+      todo: t,
+      todo_status: t.status,
+      date: t.date,
+      activity_type: t.details,
+      created_by: auth.user.name
+    }
+    console.log(t.date, selectedDay.value.date)
+    let f = selectedDay.value.activities.find(e => e.todo?.id == t.id)
+    console.log(f)
+    if (t.date == selectedDay.value.date && !f) {
+      console.log(data)
+      selectedDay.value.activities.push(data)
+    }
+
+  })
+  updated_imam_todo.map(t => {
+    let data = {
+      time: moment(t.time, 'HH:mm').format('HH:mm:ss'),
+      to: '',
+      by: '',
+      imam_todo: t,
+      todo_status: t.status,
+      date: t.date,
+      activity_type: t.details,
+      created_by: packageDetails.value.imam.name + '(Imam)'
+    }
+    console.log(t.date, selectedDay.value.date)
+    let f = selectedDay.value.activities.find(e => e.imam_todo?.id == t.id)
     //  console.log(f)
-      if(t.date == selectedDay.value.date && !f)
-      {
-        console.log(data)
-        selectedDay.value.activities.push(data)
-      }
-      
-    })
-     // Sort selectedDay.value.activities by time
+    if (t.date == selectedDay.value.date && !f) {
+      console.log(data)
+      selectedDay.value.activities.push(data)
+    }
+
+  })
+  // Sort selectedDay.value.activities by time
   selectedDay.value.activities.sort((a, b) => {
     return moment(a.time, 'HH:mm:ss').diff(moment(b.time, 'HH:mm:ss'));
   });
@@ -306,7 +348,7 @@ const updateStatus = async (todo, status) => {
     const data = await api().post('customer-to-do-lists/' + todo.id, todo)
     if (data) {
       getTodo()
-      getPackages()
+      getPackage()
       Swal.fire({
         icon: "success",
         title: "Status Updated",
