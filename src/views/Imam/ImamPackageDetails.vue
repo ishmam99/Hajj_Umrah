@@ -22,11 +22,11 @@
           Details</p>
 
         <!-- Tabs for Days -->
-        <div class="my-8" v-if="packageDetails">
-          <nav class="flex space-x-2 overflow-x-auto pb-4 border-b-2 border-gray-200">
+        <div class="mt-8" v-if="packageDetails">
+          <nav class="flex space-x-1 overflow-x-auto overflow-y-none  border-gray-200">
             <button v-for="(day, index) in packageDetails.itineraries" :key="index" @click="updateSelectedDay(day)" :class="{
-              'shadow-xl bg-blue-600 text-white rounded-full mx-2 px-5 py-2 text-lg font-semibold transition-transform duration-200 scale-105': selectedDay.id === day.id,
-              'text-gray-500 hover:bg-blue-100 hover:text-blue-600 transition-transform duration-200 rounded-full px-6 py-2 text-lg font-semibold': selectedDay.id !== day.id,
+              'shadow-xl bg-blue-600 text-white rounded-t-lg px-4 py-2 text-lg font-semibold transition-transform duration-200 scale-105': selectedDay.id === day.id,
+              'text-gray-500 hover:bg-blue-100 hover:text-blue-600 transition-transform duration-200 rounded-t-lg px-6 py-2 text-lg font-semibold': selectedDay.id !== day.id,
             }" class="whitespace-nowrap">
               Day {{ day?.day }}
             </button>
@@ -34,13 +34,13 @@
         </div>
 
         <!-- Itinerary Details for Selected Day -->
-        <div v-if="selectedDay" class="mt-8">
-          <h3 class="text-3xl font-semibold text-gray-800 tracking-wide">Day {{ selectedDay.day }}: {{ selectedDay.date
+        <div v-if="selectedDay" class=" bg-blue-600 p-4 rounded-b-lg" >
+          <h3 class="text-3xl font-semibold text-white tracking-wide">Day {{ selectedDay.day }}: {{ selectedDay.date
             }}</h3>
           <ul class="space-y-6 mt-6">
             <li v-for="(activity, idx) in selectedDay.activities" :key="idx" class="flex  items-center space-x-6">
               <!-- Time Section -->
-              <div class="text-blue-700 text-xl font-bold w-2/12">{{ activity.time }}</div>
+              <div class="text-white text-xl font-bold w-2/12">{{ activity.time }}</div>
               <!-- Timeline and Activity Section -->
               <div class="relative w-10/12">
                 <div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 bg-blue-400 h-full"></div>
@@ -54,8 +54,8 @@
                   <p v-if="activity.by">By</p>
                   <h1 class="font-bold text-lg text-sky-700">{{ activity.by }}</h1>
 
-                  <p>{{ activity.description }}</p>
-              <p class="flex gap-2" v-if="activity.todo_status">
+                  <p :class="!activity.todo? 'border-e-2 border-sky-400 pe-10' : ''">{{ activity.description }}</p>
+              <p class="flex gap-2 border-e-2 border-sky-400 pe-10" v-if="activity.todo_status">
                   <svg v-if="activity.todo_status == 1" @click="updateStatus(activity.todo, 0)" xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24" width="24" height="24" fill="rgba(21,175,235,1)">
                   <path
@@ -72,7 +72,7 @@
               
                 {{ activity.todo_status == '0' ? 'Pending' : 'Completed' }}
               </p>
-                  <p class="text-blue-600 font-semibold">--{{ activity.created_by ? activity.created_by : 'Package Admin' }}</p>
+                  <p class="text-blue-600 font-semibold ">{{ activity.created_by ? activity.created_by : 'Package Admin' }}</p>
                 </div>
               </div>
             </li>

@@ -529,6 +529,11 @@ const router = createRouter({
           component: () => import('@/views/Imam/MyPackages/ActivePackages.vue')
         },
         {
+          path: '/imam_packages_active_itinerary',
+          name: 'imam_packages_active_itinerary',
+          component: () => import('@/views/Imam/MyPackages/ActiveItinerary.vue')
+        },
+        {
           path: '/imam_packages_upcoming_package',
           name: 'imam_Packages_Upcoming_Package',
           component: () => import('@/views/Imam/MyPackages/UpcomingPackages.vue')
@@ -564,6 +569,11 @@ const router = createRouter({
           path: '/imam_todo_list',
           name: 'imam_todo_list',
           component: () => import('../views/Imam/TodoList.vue')
+        },
+        {
+          path: '/imam_to_do_list',
+          name: 'imam_to_do_list',
+          component: () => import('../views/Imam/NewTodoList.vue')
         },
         {
           path: '/create_imam_todo_list',
