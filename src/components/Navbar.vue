@@ -571,6 +571,13 @@
             </MenubarItem>
             <MenubarItem>
               <router-link
+                to="/vendor_management_login"
+                class="w-full hover:pl-5 duration-300 font-semibold"
+                >Vendor Management System</router-link
+              >
+            </MenubarItem>
+            <MenubarItem>
+              <router-link
                 to="/imam_management_login"
                 class="w-full hover:pl-5 duration-300 font-semibold"
                 >Imam Management System</router-link
