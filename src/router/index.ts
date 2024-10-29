@@ -582,6 +582,48 @@ const router = createRouter({
         },
       ]
     },
+    //Vendor Management Login
+    {
+      path: '/vendor_management_login',
+      name: 'Vendor Management Login',
+      component: () => import('../views/Auth/LogIn.vue')
+    },
+    {
+      path: '/Vendor_management_Dashboard',
+      name: 'Vendor_Management_Dashboard',
+      component: () => import('@/views/Admin/VendorManagement/VendorDashboard.vue'),
+      // children: [
+      //   {
+      //     path: '/Imam_management_Dashboard/Profile',
+      //     name: 'Imam_Management_Dashboard_Profile',
+      //     component: () => import('@/views/ImamManagement/Profile/ImamProfile.vue')
+      //   },
+      // ]
+      children: [
+        {
+          path: '/Vendor_management_Dashboard/Profile',
+          name: 'Vendor_Management_Dashboard_Profile',
+          component: () => import('../views/Admin/VendorManagement/Profile/VendorProfile.vue')
+        },
+        {
+          path: '/Vendor_management_dashboard_Profile',
+          name: 'Vendor_management_dashboard_Profile',
+          component: () => import('@/views/Admin/VendorManagement/VendorManagementDashboard.vue')
+        },
+        {
+          path: '/vendor_management_vendor_list',
+          name: 'Vendor_Management_vendor_List',
+          component: () => import('@/views/Admin/VendorManagement/VendorList.vue')
+        },
+        {
+          path: '/vendor_management_vendor_package_list',
+          name: 'Vendor_Management_Vendor_Package_List',
+          component: () => import('@/views/Admin/VendorManagement/VendorPackageList.vue')
+        }
+      ]
+    },
+
+
     //Imam Management Login
     {
       path: '/imam_management_login',
@@ -622,6 +664,9 @@ const router = createRouter({
         }
       ]
     },
+
+
+
     //Customer Management Login
     {
       path: '/customer_management_login',
@@ -907,7 +952,7 @@ const router = createRouter({
       component: () => import('../views/Auth/LogIn.vue')
     },
 
-    // supply chain
+    // supply chain management system
     {
       path: '/Supply_Chain_Management_Login',
       name: 'Supply Chain Management Login',
@@ -919,9 +964,9 @@ const router = createRouter({
       component: () => import('../views/Supply/SupplyDashbord.vue'),
       children: [
         {
-          path: '/Supply_Admin_Profile',
-          name: 'Supply_Admin_Profile',
-          component: () => import('../views/Supply/Profile/SupplyProfile.vue')
+          path: '/Supply_management_dashboard',
+          name: 'Supply_Management_Dashboard',
+          component: () => import('../views/Supply/Profile/SupplyManagementDashboard.vue')
         },
         {
           path: '/Supply_Create_Order',

@@ -151,6 +151,12 @@
           class="bg-white rounded-lg h-[550px] w-[500px]"
         />
         <img
+          v-if="route.name == 'Vendor Management Login'"
+          src="@/assets/image/common/login-2.png"
+          alt=""
+          class="bg-white rounded-lg h-[550px] w-[500px]"
+        />
+        <img
           v-if="route.name == 'Imam Management Login'"
           src="@/assets/image/common/login-2.png"
           alt=""
@@ -255,6 +261,10 @@ const login =async () => {
         authStore.currentDashboard = "Agent_Dashboard_Profile"
         router.push({ name: 'Agent_Dashboard_Profile' })
       }
+      // else if (authStore.role == 'AdminVendor') {
+      //   authStore.currentDashboard = "Vendor_Management_Dashboard_Profile"
+      //   router.push({ name: 'Vendor_Management_Dashboard_Profile' })
+      // }
       else if (authStore.role == 'AdminImam') {
         authStore.currentDashboard = "Imam_management_dashboard_Profile"
         router.push({ name: 'Imam_management_dashboard_Profile' })
@@ -279,9 +289,9 @@ const login =async () => {
         authStore.currentDashboard = "/Finance_Dashboard/Profile"
         router.push({ name: 'Finance_Dashboard_Profile' })
       }
-      else if (authStore.role == 'Supply') {
-        authStore.currentDashboard = "Supply_Admin_Profile"
-        router.push({ name: 'Supply_Admin_Profile' })
+      else if (authStore.role == 'AdminVendor') {
+        authStore.currentDashboard = "Supply_Management_Dashboard"
+        router.push({ name: 'Supply_Management_Dashboard' })
       }
       else if (authStore.role == 'Hr') {
         authStore.currentDashboard = "HR_Dashboard_Proile"
@@ -302,7 +312,7 @@ const login =async () => {
       
     } catch (error) {
       console.log(error);
-      errorData.value = error.response.data
+      errorData.value = error.response?.data
       console.log(errorData.value.message);
     }
     loginload.value = false
