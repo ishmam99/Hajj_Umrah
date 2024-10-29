@@ -14,12 +14,12 @@
           <div v-html="GraduationSVG"></div>
           Bid Management <div v-if="currentAccordions == '!bidManagement'" v-html="arrowDropRight"></div><div v-else v-html="arrowDropDown"></div>
         </button>
-        <div v-show="currentAccordions === 'bidManagement'" class="submenu mx-8 bg-slate-100 rounded-md p-2">
-          <router-link to="/Supply_Create_Bid" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md">- Create Bid</router-link>
-          <router-link to="/Supply_Bid_List" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md">- Bid List</router-link>
-          <router-link to="/Supply_Post_Bid" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md">- Post Bid</router-link>
-          <router-link to="/Supply_Select_Bid" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md">- Select Bid</router-link>
-          <router-link to="/Supply_Completed_Bid" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md">- Completed Bid</router-link>
+        <div v-show="currentAccordions === 'bidManagement'" class="submenu ms-8 bg-slate-100 rounded-md p-2">
+          <router-link to="/Supply_Create_Bid" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M10.4142 3L12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H10.4142ZM9.58579 5H4V19H20V7H11.5858L9.58579 5ZM12 9C13.1046 9 14 9.89543 14 11C14 11.7398 13.5983 12.3858 13.0011 12.7318L13 17H11L10.9999 12.7324C10.4022 12.3866 10 11.7403 10 11C10 9.89543 10.8954 9 12 9Z"></path></svg> Create Bid</router-link>
+          <router-link to="/Supply_Bid_List" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M3 4H21V6H3V4ZM3 19H21V21H3V19ZM11 14H21V16H11V14ZM11 9H21V11H11V9ZM7 12.5L3 16V9L7 12.5Z"></path></svg> Bid List</router-link>
+          <router-link to="/Supply_Post_Bid" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M3.78307 2.82598L12 1L20.2169 2.82598C20.6745 2.92766 21 3.33347 21 3.80217V13.7889C21 15.795 19.9974 17.6684 18.3282 18.7812L12 23L5.6718 18.7812C4.00261 17.6684 3 15.795 3 13.7889V3.80217C3 3.33347 3.32553 2.92766 3.78307 2.82598ZM5 4.60434V13.7889C5 15.1263 5.6684 16.3752 6.7812 17.1171L12 20.5963L17.2188 17.1171C18.3316 16.3752 19 15.1263 19 13.7889V4.60434L12 3.04879L5 4.60434ZM11 10V7H13V10H16V12H13V15H11V12H8V10H11Z"></path></svg> Post Bid</router-link>
+          <router-link to="/Supply_Select_Bid" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.7267 2.95694L16.2734 22.0432C16.1225 22.5716 15.7979 22.5956 15.5563 22.1126L11 13L1.9229 9.36919C1.41322 9.16532 1.41953 8.86022 1.95695 8.68108L21.0432 2.31901C21.5716 2.14285 21.8747 2.43866 21.7267 2.95694ZM19.0353 5.09647L6.81221 9.17085L12.4488 11.4255L15.4895 17.5068L19.0353 5.09647Z"></path></svg> Select Bid</router-link>
+          <router-link to="/Supply_Completed_Bid" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V6H22V20C22 20.5523 21.5523 21 21 21H13ZM8 10C6.34315 10 5 11.3431 5 13C5 14.6569 6.34315 16 8 16C9.65685 16 11 14.6569 11 13H8V10ZM13 10V12H19V10H13ZM13 14V16H19V14H13ZM2 3H22V5H2V3Z"></path></svg> Completed Bid</router-link>
         </div>
       </div>
 
@@ -28,7 +28,7 @@
           <div v-html="GraduationSVG"></div>
           Vendor Management <div v-if="currentAccordions == '!vendorManagement'" v-html="arrowDropRight"></div><div v-else v-html="arrowDropDown"></div>
         </button>
-        <div v-show="currentAccordions === 'vendorManagement'" class="submenu mx-8 bg-slate-100 rounded-md p-2">
+        <div v-show="currentAccordions === 'vendorManagement'" class="submenu ms-8 bg-slate-100 rounded-md p-2">
           <router-link to="/Supply_Hire_Vendor" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md">- New Vendor Application</router-link>
           <router-link to="/Supply_Vendor_List" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md">- Registered Vendor List</router-link>
           <router-link to="/Supply_Active_Vendor" class="flex items-center gap-2 hover:text-white hover:bg-[#16A085] p-2 rounded-md">- Active Vendor List</router-link>
