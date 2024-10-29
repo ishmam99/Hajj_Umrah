@@ -29,7 +29,15 @@
           </div>
         </div>
       </div>
-      <div class="bg-gray-100 h-full py-5 flex items-center justify-center gap-5 px-20 w-full">
+
+      <div v-if="registrationSuccess" class="px-8 py-10 mt-10 mb-48 w-[900px] mx-auto bg-green-500 shadow-md rounded-lg text-white text-center">
+        <p class="font-bold text-5xl">Congratulations!</p>
+        <p class="text-xl my-4">Your have successfully registered. 
+          <span class="text-blue-700 hover:text-slate-700 underline underline-offset-4"><router-link to="/vendor_login">Click Here</router-link></span> to login.</p>
+      </div>
+
+
+      <div v-if="!registrationSuccess" class="bg-gray-100 h-full py-5 flex items-center justify-center gap-5 px-20 w-full">
         <div class="space-y-8 w-3/4">
          
           <div class="bg-white rounded-xl p-5 w-full">
@@ -42,39 +50,28 @@
                 <div class="relative mb-3 w-full">
                   <input
                     type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                     id="exampleFormControlInput50"
                     value=""
-                    v-model="vendorCreateForm.first_name"
+                    placeholder="name"
+                    v-model="vendorCreateForm.name"
                   />
                   <label
                     for="exampleFormControlInput50"
                     class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                    >First Name <span class="text-red-500">*</span>
+                    >Name <span class="text-red-500">*</span>
                   </label>
                 </div>
-                <div class="relative mb-3 w-full">
-                  <input
-                    type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                    id="exampleFormControlInput50"
-                    value=""
-                    v-model="vendorCreateForm.last_name"
-                  />
-                  <label
-                    for="exampleFormControlInput50"
-                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                    >Last Name <span class="text-red-500">*</span>
-                  </label>
-                </div>
+
               </div>
               <div class="flex w-full gap-5">
                 <div class="relative mb-3 w-full">
                   <input
                     type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-2 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                     id="exampleFormControlInput50"
                     value=""
+                    placeholder="email"
                     v-model="vendorCreateForm.email"
                   />
                   <label
@@ -85,11 +82,12 @@
                 </div>
                 <div class="relative mb-3 w-full">
                   <input
-                    type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                    type="number"
+                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-2 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                     id="exampleFormControlInput50"
                     value=""
-                    v-model="vendorCreateForm.phone"
+                    placeholder="phone number"
+                    v-model="vendorCreateForm.phone_no"
                   />
                   <label
                     for="exampleFormControlInput50"
@@ -102,9 +100,10 @@
                 <div class="relative mb-3 w-full">
                   <input
                     type="text"
-                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-2 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                     id="exampleFormControlInput50"
                     value=""
+                    placeholder="address"
                     v-model="vendorCreateForm.address"
                   />
                   <label
@@ -117,29 +116,16 @@
                   <div class="relative mb-3 w-full">
                     <input
                       type="text"
-                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-2 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
                       id="exampleFormControlInput50"
                       value=""
-                      v-model="vendorCreateForm.city"
+                      placeholder="country"
+                      v-model="vendorCreateForm.country"
                     />
                     <label
                       for="exampleFormControlInput50"
                       class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                      >City <span class="text-red-500">*</span>
-                    </label>
-                  </div>
-                  <div class="relative mb-3 w-full">
-                    <input
-                      type="text"
-                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
-                      id="exampleFormControlInput50"
-                      value=""
-                      v-model="vendorCreateForm.state"
-                    />
-                    <label
-                      for="exampleFormControlInput50"
-                      class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
-                      >State <span class="text-red-500">*</span>
+                      >Country <span class="text-red-500">*</span>
                     </label>
                   </div>
                 </div>
@@ -147,19 +133,24 @@
               <div class="flex gap-5">
                 <div class="relative mb-3 w-1/2">
                   <div class="gap-5">
-                    <label for="">Date of Birth <span class="text-red-500">*</span> </label>
+                    <label for="">Gender <span class="text-red-500">*</span> </label>
                     <div class="pt-2">
-                      <input
-                        type="date"
+                      <select v-model="vendorCreateForm.gender" name="" id="" class="py-2 px-6 rounded-2xl w-full border-2">
+                        <option value="" disabled>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                      <!-- <input
+                        type="text"
                         class="py-2 px-6 rounded-2xl w-full border-2"
                         v-model="vendorCreateForm.dob"
-                      />
+                      /> -->
                     </div>
                   </div>
                 </div>
                 <div class="relative mb-3 w-1/2">
                   <div class="gap-5">
-                    <label for="">CV <span class="text-red-500">*</span> </label>
+                    <label for="">Image <span class="text-red-500">*</span> </label>
                     <div class="pt-2">
                       <Input
                         type="file"
@@ -167,6 +158,48 @@
                         @change="handleFileUpload"
                       />
                     </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex w-full gap-5">
+                <div class="relative mb-3 w-full relative">
+                  <input
+                    :type="showPassword ? 'text' : 'password'"
+                    class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-2 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                    id="exampleFormControlInput50"
+                    value=""
+                    placeholder="password (at least 8 characters)"
+                    v-model="vendorCreateForm.password"
+                  />
+                  <button type="button" @click="togglePasswordVisibility" class="absolute right-2 bottom-3">
+                    <span v-if="showPassword">Hide</span>
+                    <span v-else>Show</span>
+                  </button>
+                  <label
+                    for="exampleFormControlInput50"
+                    class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                    >Password <span class="text-red-500">*</span>
+                  </label>
+                </div>
+                <div class="flex w-full gap-5">
+                  <div class="relative mb-3 w-full relative">
+                    <input
+                     :type="showConfirmPassword ? 'text' : 'password'"
+                      class="peer block min-h-[auto] w-full rounded-xl border-2 px-3 py-2 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary placeholder:opacity-100 motion-reduce:transition-none"
+                      id="exampleFormControlInput50"
+                      value=""
+                       placeholder="confirm password"
+                      v-model="vendorCreateForm.password_confirmation"
+                    />
+                    <button type="button" @click="toggleConfirmPasswordVisibility" class="absolute right-2 bottom-3">
+                      <span v-if="showConfirmPassword">Hide</span>
+                      <span v-else>Show</span>
+                    </button>
+                    <label
+                      for="exampleFormControlInput50"
+                      class="absolute left-3 top-0 mb-0 z-10 text-xl px-2 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-900 transition-all duration-200 ease-out bg-white peer-focus:text-primary -translate-y-[0.9rem] scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+                      >Confirm Password <span class="text-red-500">*</span>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -188,11 +221,6 @@
               </button>
             </form>
            
-            <!-- <div class="flex justify-center gap-5">
-              <router-link to="/Member_Login" v-if="authStore.isAuthenticated == false" class="px-5 py-2 rounded-md bg-blue-600 text-white">Sign In</router-link>
-              <router-link to="/Signup" v-if="authStore.isAuthenticated == false" class="px-5 py-2 rounded-md bg-green-600 text-white">Sign Up</router-link>
-              <button v-else class="lg:w-[350px] h-[45px] rounded-2xl bg-emerald-700 text-white flex items-center justify-center font-bold">Apply</button>
-            </div> -->
           </div>
         </div>
       </div>
@@ -206,49 +234,57 @@ import { Input } from '/components/ui/input'
 import { useAuthStore } from '/src/stores/AuthStore.ts'
 import { ref} from 'vue'
 import { useToast } from '/components/ui/toast/use-toast'
+
+const registrationSuccess = ref(false);
 const authStore = useAuthStore()
 const loginload = ref(false)
 
+const showPassword = ref(false);
+const showConfirmPassword = ref(false);
 
+const togglePasswordVisibility = () => {
+  showPassword.value = !showPassword.value;
+};
+
+const toggleConfirmPasswordVisibility = () => {
+  showConfirmPassword.value = !showConfirmPassword.value;
+};
 const vendorCreateForm = ref({
-  first_name: '',
-  last_name: '',
+  name: '',
   email: '',
-  phone: '',
+  phone_no: '',
   address: '',
-  city: '',
-  state: '',
-  dob: '',
-  cv: null,
+  gender: '',
+  country: '',
+  vendor_image: '',
+  password: '',
+  password_confirmation: ''
 });
 
 const reset = () => {
   vendorCreateForm.value = {
-    first_name: '',
-    last_name: '',
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    state: '',
-    dob: '',
-    cv: null,
+    name: '',
+  email: '',
+  phone_no: '',
+  address: '',
+  gender: '',
+  country: '',
+  vendor_image: '',
+  password: '',
+  password_confirmation: ''
   };
 };
 
 const handleFileUpload = (event) => {
-  vendorCreateForm.value.cv = event.target.files[0];
+  vendorCreateForm.value.vendor_image = event.target.files[0];
 };
 
 const vendorForm = async () => {
   loginload.value = true
   try {
-    // const formData = new FormData();
-    // for (const key in vendorCreateForm.value) {
-    //   formData.append(key, vendorCreateForm.value[key]);
-    // }
 
-    const data = await api().post('vendor-registration-store', vendorCreateForm.value);
+    const data = await api().post('vendors', vendorCreateForm.value);
+    registrationSuccess.value = true;
     console.log(data);
     toast({
       title: 'Application Submitted',

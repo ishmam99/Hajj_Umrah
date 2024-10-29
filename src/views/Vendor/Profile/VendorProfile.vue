@@ -1,28 +1,28 @@
 <template>
-   <div class="px-[5%] bg-white py-5 w-3/4 flex flex-col items-center">
+   <div class="px-[5%] bg-slate-50 py-5 w-4/5 flex flex-col items-center">
         <img src="/src/assets/image/home/download.jpeg" alt="" class="h-[100px] w-[100px] rounded-full border shadow-md">
-        <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
+        <div class="bg-slate-100 px-5 mt-5 w-full rounded-md shadow-lg border border-slate-200 py-2">
             <p class="text-sm text-gray-500 pt-2">Name</p>
-            <p class="text-xl font-semibold pb-2">Mr. Hashim</p>
+            <p class="text-xl font-semibold pb-2">{{store?.user.name}}</p>
         </div>
-        <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
+        <div class="bg-slate-100 px-5 mt-5 w-full rounded-md shadow-lg border border-slate-200 py-2">
             <p class="text-sm text-gray-500 pt-2">Email Address</p>
-            <p class="text-xl font-semibold pb-2">user@idl.com</p>
+            <p class="text-xl font-semibold pb-2">{{store?.user.email}}</p>
         </div>
-        <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
+        <div class="bg-slate-100 px-5 mt-5 w-full rounded-md shadow-lg border border-slate-200 py-2">
             <p class="text-sm text-gray-500 pt-2">Phone Number</p>
-            <p class="text-xl font-semibold pb-2">+8801722222222</p>
+            <p class="text-xl font-semibold pb-2">{{store?.user?.vendor.phone_no}}</p>
         </div>
-        <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
+        <div class="bg-slate-100 px-5 mt-5 w-full rounded-md shadow-lg border border-slate-200 py-2">
             <p class="text-sm text-gray-500 pt-2">Gender</p>
-            <p class="text-xl font-semibold pb-2">Male</p>
+            <p class="text-xl font-semibold pb-2">{{store?.user.gender}}</p>
         </div>
-        <div class="bg-slate-50 px-5 mt-5 w-full rounded-md shadow-md">
+        <div class="bg-slate-100 px-5 mt-5 w-full rounded-md shadow-lg border border-slate-200 py-2">
             <p class="text-sm text-gray-500 pt-2">Date of Birth (DD/MM/YY)</p>
             <p class="text-xl font-semibold pb-2">1/1/22</p>
         </div>
         
-        <div class="bg-slate-50 shadow-md rounded-md p-5 mt-5 w-full">
+        <div class="bg-slate-100 shadow-md rounded-md p-5 mt-5 w-full">
             <div class="flex gap-3 items-center pt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="rgba(100,205,138,1)"><path d="M12 20.8995L16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995ZM12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13ZM12 15C9.79086 15 8 13.2091 8 11C8 8.79086 9.79086 7 12 7C14.2091 7 16 8.79086 16 11C16 13.2091 14.2091 15 12 15Z"></path></svg>
                 <p class="font-bold">Address</p>
@@ -56,4 +56,11 @@
    </div> 
 </template>
 <script setup>
+import { ref } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import { useAuthStore } from '/src/stores/AuthStore.ts'
+
+const route = useRoute()
+const router = useRouter()
+const store = useAuthStore()
 </script>
