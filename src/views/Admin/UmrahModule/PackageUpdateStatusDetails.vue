@@ -426,185 +426,8 @@
           </div> -->
         </div>
       </div>
-
-      <div
-        v-if="currentTab == 'flight'"
-        class="bg-white border-x-2 border-teal-700 border-b-2 px-2"
-      >
-        <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
-          Approve Package Flights 
-        </h1>
-        <div class="flex justify-end gap-2 items-center py-3 px-5">
-          <button @click="showAirForm = !showAirForm" class="btn btn-success text-white">
-            Add New Flight Details
-          </button>
-          <button v-if="showAirForm" @click="showAirForm = !showAirForm" class="btn bg-red-500 hover:bg-red-600 text-white">
-            Cancel
-          </button>
-        </div>
-        <div>
-
-          <div class="px-10" v-if="showAirForm">
-  <form class="space-y-4" @submit.prevent="saveFlightData">
-    <div class="flex w-full gap-4">
-      <!-- Airline Selection -->
-      <div class="flex items-center justify-between w-1/2">
-        <label for="airline" class="w-1/6">Airline:</label>
-        <select
-          id="airline"
-          v-model="packageFlightData.airline_id"
-          class="select select-bordered w-5/6"
-        >
-          <option disabled selected>Select Airline</option>
-          <option v-for="airline in airLinerRoutes" :key="airline.id" :value="airline.airline.id">
-            {{ airline?.airline?.name }} - {{ airline?.airline?.short_name }} {{ airline?.airline?.code }}
-          </option>
-        </select>
-      </div>
-
-      <!-- Origin City Selection -->
-      <div class="flex items-center justify-between w-1/2">
-        <label for="origin_city" class="w-1/6">Origin City:</label>
-        <select
-          id="origin_city"
-          v-model="packageFlightData.origin_airport_id"
-          class="select select-bordered w-5/6"
-        >
-          <option disabled selected>Select Origin City</option>
-          <option
-            v-for="airline in airLinerRoutes"
-            :key="airline.id"
-            :value="airline.origin_airport.city.id"
-          >
-            {{ airline.origin_airport.city.name }}
-          </option>
-        </select>
-      </div>
-    </div>
-
-    <div class="flex w-full gap-4">
-      <!-- Destination City Selection -->
-      <div class="flex items-center justify-between w-1/2">
-        <label for="destination_city" class="w-2/6">Destination City:</label>
-        <select
-          id="destination_city"
-          v-model="packageFlightData.destination_airport_id"
-          class="select select-bordered w-5/6"
-        >
-          <option disabled selected>Select Destination City</option>
-          <option
-            
-            v-for="airline in airLinerRoutes"
-            :key="airline.id"
-            :value="airline.destination_airport.city.id"
-          >
-            {{ airline.destination_airport.city.name }}
-          </option>
-        </select>
-      </div>
-
-      <!-- Departure Date -->
-      <div class="flex items-center justify-between w-1/2">
-        <label for="departure_date" class="w-1/6">Date:</label>
-        <input
-          type="date"
-          v-model="packageFlightData.departure_time"
-          id="departure_date"
-          class="border border-slate-300 w-5/6 p-2 rounded-lg"
-        />
-      </div>
-    </div>
-
-    <!-- Save Button -->
-    <div class="flex justify-center items-center mt-4">
-      <button type="submit" class="btn btn-success text-white">Save Flight</button>
-    </div>
-  </form>
-</div>
-
-          
-        </div>
-        <div class="px-10">
-          <div class="overflow-x-auto py-5">
-            <!-- <table class="table w-full bg-gray-200">
-              <thead>
-                <tr>
-                  <th>Flight Number</th>
-                  <th>Departure</th>
-                  <th>Transit</th>
-                  <th>Destination</th>
-                  <th>Departure Date</th>
-                  <th>Return Date</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="flight in package_flights" :key="flight.id">
-                  <td>
-                    {{ flight.airroute.flight_number ? flight.airroute.flight_number : 'F1G56' }}
-                  </td>
-                  <td>{{ flight.airroute.origin_airport.short_name }}</td>
-                  <td>{{ flight.airroute.destination_airport.short_name }}</td>
-
-                  <td>{{ packageDetails.start_at }}</td>
-                  <td>{{ packageDetails.end_at }}</td>
-                  <td>{{ flight.status == 1 ? 'Confirmed' : 'Pending' }}</td>
-                </tr>
-              </tbody>
-            </table> -->
-          </div>
-
-          <div class="border-t-2 border-teal-600 p-5">
-            <div
-              class="flex justify-start gap-5 items-center w-full py-2 px-5"
-              v-if="packageDetails"
-            >
-              <h1 class="w-full px-5">Flight Approval Status :</h1>
-
-              <select
-                v-model="packageDetails.package_status.flight_approve"
-                class="select select-bordered w-1/2" 
-              >
-              <option disabled selected>Select Status</option>
-              <option value="0">1. In Preparation</option>
-              <option value="1">1a. In Preparation -Started</option>
-              <option value="1">1b. In Preparation -In Work</option>
-              <option value="1">1c. In Preparation -Completed</option>
-              <option value="1">2. Quotation</option>
-              <option value="1">2a. Quotation -Requested</option>
-              <option value="1">2b. Quotation -Received</option>
-              <option value="1">2c. Quotation -Approved</option>
-              <option value="1">3. Contract </option>
-              <option value="1">3a. Contract -Requested</option>
-              <option value="1">3b. Contract -Received</option>
-              <option value="1">3c. Contract -Signed</option>
-              <option value="1">3d. Contract -Fund Deposited</option>
-              </select>
-              <button
-                @click="updatePackageStatus"
-                class="btn btn-info text-white"
-                :disabled="applying"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  v-if="applying"
-                  class="animate-spin"
-                  viewBox="0 0 24 24"
-                  width="18"
-                  height="18"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z"
-                  ></path>
-                </svg>
-                Apply
-              </button>
-            </div>
-            
-          </div>
-        </div>
-      </div>
+ <!-- v-if="currentTab == 'flight'" -->
+          <PackageFlight  v-if="currentTab == 'flight'" :countries="countries" @getPackage="getPackage()" :packageDetails="packageDetails" :package_flights="package_flights" />
       <div v-if="currentTab == 'bus'" class="bg-white border-x-2 border-teal-700 border-b-2">
         <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
           Approve Package Buses
@@ -1028,7 +851,9 @@
 </template>
 
 <script setup>
+import PackageFlight from './Components/PackageFlight.vue'
 import moment from 'moment'
+import Swal from 'sweetalert2'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 const currentTab = ref('date')
@@ -1039,8 +864,9 @@ const checkedStatus = ref({}) // Track checkbox states
 const currentCheckboxIndex = ref(0) // Track the index of the currently enabled checkbox
 const updating = ref(false)
 const applying = ref(false)
-const showAirForm = ref(false)
+
 const showHotelForm = ref(false)
+
 const flightData = ref({
   airline: null,
   airroute_id: null,
@@ -1062,32 +888,14 @@ const busData = ref({
   busRoute: null,
   package_id: null
 })
-const flights = ref([
-  {
-    id: 1,
-    flight_number: 'UA123',
-    departure: 'New York',
-    destination: 'Jeddah',
-    departure_date: '2023-02-01',
-    return_date: '2023-02-15',
-    status: 'pending'
-  },
-  {
-    id: 2,
-    flight_number: 'UA124',
-    departure: 'Jeddah',
-    destination: 'New York',
-    departure_date: '2023-02-15',
-    return_date: '2023-02-29',
-    status: 'pending'
-  }
-])
+
+
 
 const package_flights = ref([])
 const package_hotels = ref([])
 const package_transportations = ref([])
 const getPackage = async () => {
-  showAirForm.value = false
+  
   showBusForm.value = false
   showHotelForm.value = false
   const { data } = await api().get('package/' + packageID)
@@ -1141,45 +949,14 @@ const getAgents = async () => {
     console.log(error)
   }
 }
-const airlines = ref([])
 const hotels = ref([])
 const buses = ref([])
-const airLinerRoutes = ref([])
-const getAirlines = async () => {
-  const { data } = await api().get('airline')
-  airlines.value = data.data
-}
-const packageFlightData = ref({
-  airline_id : '',
-  origin_airport_id: '',
-  destination_airport_id: '',
-  fare: '',
-  departure_time: '',
-  arrival_time: '',
-  flight_number: ''
-})
-const getAirlineRoutes = async () => {
-  const { data } = await api().get('airroute')
-  airLinerRoutes.value = data.data
-}
-const saveFlightData = async () => {
-  try {
-    await api().post('airroute', {
-      airline_id: packageFlightData.value.airline.id,
-      origin_airport_id: packageFlightData.value.airroute_id,
-      destination_airport_id: packageFlightData.value.airline.destination_airport.id,
-      fare: packageFlightData.value.fare,
-      departure_time: packageFlightData.value.departure_time,
-      arrival_time: packageFlightData.value.arrival_time,
-      flight_number: packageFlightData.value.flight_number
-    });
-    getPackage(); // Call to refresh package data if necessary
-  } catch (error) {
-    console.error("Error saving flight data:", error);
-  }
-};
+const countries = ref([])
 
-
+const getCountries = async () => {
+  const { data } = await api().get('country')
+  countries.value = data.data.reverse()
+}
 
 const getBusRoutes = async () => {
   const { data } = await api().get('package-transport-vendors')
@@ -1247,9 +1024,8 @@ onMounted(() => {
   getPackage()
   getAgents()
   getImams()
-  getAirlines()
   getBusRoutes()
   getHotels()
-  getAirlineRoutes()
+  getCountries()
 })
 </script>
