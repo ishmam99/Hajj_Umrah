@@ -942,7 +942,7 @@ const router = createRouter({
       component: () => import('../views/Auth/LogIn.vue')
     },
 
-    // supply chain
+    // supply chain management system
     {
       path: '/Supply_Chain_Management_Login',
       name: 'Supply Chain Management Login',

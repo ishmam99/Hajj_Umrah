@@ -283,8 +283,8 @@ const login =async () => {
         router.push({ name: 'Finance_Dashboard_Profile' })
       }
       else if (authStore.role == 'AdminVendor') {
-        authStore.currentDashboard = "Supply_Admin_Profile"
-        router.push({ name: 'Supply_Admin_Profile' })
+        authStore.currentDashboard = "Supply_Management_Dashboard"
+        router.push({ name: 'Supply_Management_Dashboard' })
       }
       else if (authStore.role == 'Hr') {
         authStore.currentDashboard = "HR_Dashboard_Proile"
@@ -305,7 +305,7 @@ const login =async () => {
       
     } catch (error) {
       console.log(error);
-      errorData.value = error.response.data
+      errorData.value = error.response?.data
       console.log(errorData.value.message);
     }
     loginload.value = false

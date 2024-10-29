@@ -36,7 +36,7 @@
         </div>
       </div>
 
-      <button type="button" @click="store.logout()" class="py-2 px-5 mt-2 w-1/2 bg-red-800 rounded-md text-white duration-300 hover:bg-red-700 transition-colors">
+      <button type="button" @click="store.logout()" class="py-2 w-full mt-2 w-1/2 bg-red-800 rounded-md text-white duration-300 hover:bg-red-700 transition-colors">
         Log Out
       </button>
     </div>
