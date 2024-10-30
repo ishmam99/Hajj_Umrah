@@ -79,10 +79,9 @@ const getCompletedPackage = () => {
     console.error(error)
   }
 }
-
-onMounted = () => {
+onMounted (() => {
   getCompletedPackage()
-}
+})
 </script>
 
 <style scoped>
