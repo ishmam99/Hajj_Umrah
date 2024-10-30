@@ -1386,11 +1386,11 @@ const router = createRouter({
           name: 'Membar_Package_Current_Details',
           component: () => import('../views/Member/CurrentPackageDetails.vue')
         },
-        {
-          path: '/member_package_list_future',
-          name: 'Membar_Package_List_Future',
-          component: () => import('../views/Member/Profile/ViewPackagesFuture.vue')
-        },
+        // {
+        //   path: '/member_package_list_future',
+        //   name: 'Membar_Package_List_Future',
+        //   component: () => import('../views/Member/Profile/ViewPackagesFuture.vue')
+        // },
         {
           path: '/member_package_list_previous',
           name: 'Membar_Package_List_Previous',
@@ -1416,11 +1416,11 @@ const router = createRouter({
           name: 'create_todo_List',
           component: () => import('../views/Member/TodoListCreate.vue')
         },
-        {
-          path: '/wishlist',
-          name: 'wishlist',
-          component: () => import('../views/Member/Profile/Wishlist.vue')
-        },
+        // {
+        //   path: '/wishlist',
+        //   name: 'wishlist',
+        //   component: () => import('../views/Member/Profile/Wishlist.vue')
+        // },
         {
           path: '/completed_packages',
           name: 'completed_packages',

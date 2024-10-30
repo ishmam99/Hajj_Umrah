@@ -45,7 +45,7 @@
                   </tr>
                 </tbody>
               </table>
-              <div v-if="packages.length == 0" class="bg-slate-200 text-center py-5">
+              <div v-if="packages?.length == 0" class="bg-slate-200 text-center py-5">
                 <span class="font-semibold font-serif text-red-800 text-lg">No Previous packages found for this customer.</span>
               </div>
             </div>
