@@ -328,7 +328,9 @@
       <!-- v-if="currentTab == 'flight'" -->
       <PackageFlight v-if="currentTab == 'flight'" :countries="countries" @getPackage="getPackage()"
         :packageDetails="packageDetails" :package_flights="package_flights" />
-      <div v-if="currentTab == 'bus'" class="bg-white border-x-2 border-teal-700 border-b-2">
+
+
+      <!-- <div v-if="currentTab == 'bus'" class="bg-white border-x-2 border-teal-700 border-b-2">
         <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
           Approve Package Buses
         </h1>
@@ -341,65 +343,35 @@
           <div class="px-10" v-if="showBusForm">
             <form class="space-y-4" @submit.prevent="saveBus">
               <div class="flex items-center justify-between">
-                <div class="w-1/3 flex flex-col">
-                  <label for="busOperator" class="">Bus Operator:</label>
-                  <select id="busOperator" v-model="busData.busOperator" class="select select-bordered w-2/3">
-                    <option disabled selected>Select Bus Operator</option>
-                    <option v-for="operator in buses" :key="operator.id" :value="operator">
-                      {{ operator.name }}
-                    </option>
-                  </select>
-                </div>
-                <div class="w-1/3 flex flex-col">
-                  <label for="busOperator" class="">Origin Country:</label>
-                  <select id="busOperator" v-model="busData.busOperator" class="select select-bordered w-2/3">
-                    <option disabled selected>Select Origin Country</option>
-                    <option v-for="operator in buses" :key="operator.id" :value="operator">
-                      {{ operator.name }}
-                    </option>
-                  </select>
-                </div>
-                <div class="w-1/3 flex flex-col">
-                  <label for="busOperator" class="">Origin City:</label>
-                  <select id="busOperator" v-model="busData.busOperator" class="select select-bordered w-2/3">
-                    <option disabled selected>Select Origin City</option>
-                    <option v-for="operator in buses" :key="operator.id" :value="operator">
-                      {{ operator.name }}
-                    </option>
-                  </select>
-                </div>
+                <label for="busOperator" class="w-1/3">Bus Operator:</label>
+                <select
+                  id="busOperator"
+                  v-model="busData.busOperator"
+                  class="select select-bordered w-2/3"
+                >
+                  <option disabled selected>Select Bus Operator</option>
+                  <option v-for="operator in buses" :key="operator.id" :value="operator">
+                    {{ operator.name }}
+                  </option>
+                </select>
               </div>
               <div class="flex items-center justify-between">
-                <div class="w-1/3 flex flex-col">
-                  <label for="busRoute" class="w-1/3">Select From:</label>
-                  <select id="busRoute" v-model="busData.busRoute" class="select select-bordered w-2/3">
-                    <option disabled selected>Select From</option>
-                    <option v-if="busData.busOperator" v-for="route in busData.busOperator.routes" :key="route.id"
-                      :value="route.id">
-                      {{ route.bus_number }} : {{ route.departure_from }} To {{ route.departure_to }}
-                    </option>
-                  </select>
-                </div>
-                <div class="w-1/3 flex flex-col">
-                  <label for="busRoute" class="w-1/3">Destination City:</label>
-                  <select id="busRoute" v-model="busData.busRoute" class="select select-bordered w-2/3">
-                    <option disabled selected>Select Destination City</option>
-                    <option v-if="busData.busOperator" v-for="route in busData.busOperator.routes" :key="route.id"
-                      :value="route.id">
-                      {{ route.bus_number }} : {{ route.departure_from }} To {{ route.departure_to }}
-                    </option>
-                  </select>
-                </div>
-                <div class="w-1/3 flex flex-col">
-                  <label for="busRoute" class="w-1/3">Bus Route:</label>
-                  <select id="busRoute" v-model="busData.busRoute" class="select select-bordered w-2/3">
-                    <option disabled selected>Select Bus Route</option>
-                    <option v-if="busData.busOperator" v-for="route in busData.busOperator.routes" :key="route.id"
-                      :value="route.id">
-                      {{ route.bus_number }} : {{ route.departure_from }} To {{ route.departure_to }}
-                    </option>
-                  </select>
-                </div>
+                <label for="busRoute" class="w-1/3">Bus Route:</label>
+                <select
+                  id="busRoute"
+                  v-model="busData.busRoute"
+                  class="select select-bordered w-2/3"
+                >
+                  <option disabled selected>Select Bus Route</option>
+                  <option
+                    v-if="busData.busOperator"
+                    v-for="route in busData.busOperator.routes"
+                    :key="route.id"
+                    :value="route.id"
+                  >
+                    {{ route.bus_number }} : {{ route.departure_from }} To {{ route.departure_to }}
+                  </option>
+                </select>
               </div>
               <div class="flex justify-center items-center mt-4">
                 <button type="submit" class="btn btn-success text-white">Save Bus</button>
@@ -463,23 +435,12 @@
                 Apply
               </button>
             </div>
-            <!-- <div
-              class="flex justify-start gap-5 items-center w-full py-2 px-5"
-              v-if="packageDetails"
-            >
-              <div class="justify-between items-center w-full flex">
-                <label class="label px-5 w-full"> Note : </label>
-                <input
-                  v-model="packageDetails.package_status.bus_note"
-                  type="text"
-                  placeholder="Add a note"
-                  class="input input-bordered w-full input-sm"
-                />
-              </div>
-            </div> -->
           </div>
         </div>
-      </div>
+      </div> -->
+      <PackageBus v-if="currentTab == 'bus'" @getPackage="getPackage()" 
+        :packageDetails="packageDetails" :package_transportations="package_transportations" />
+      
       <div v-if="currentTab == 'hotel'" class="bg-white border-x-2 border-teal-700 border-b-2">
         <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
           Approve Package Hotels
@@ -713,6 +674,7 @@ import moment from 'moment'
 import Swal from 'sweetalert2'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import PackageBus from './Components/PackageBus.vue'
 const currentTab = ref('date')
 const route = useRoute()
 const packageID = route.params.id
@@ -739,12 +701,12 @@ const hotelData = ref({
   three_bed: null,
   four_bed: null
 })
-const showBusForm = ref(false)
-const busData = ref({
-  busOperator: null,
-  busRoute: null,
-  package_id: null
-})
+// const showBusForm = ref(false)
+// const busData = ref({
+//   busOperator: null,
+//   busRoute: null,
+//   package_id: null
+// })
 
 
 
@@ -753,7 +715,7 @@ const package_hotels = ref([])
 const package_transportations = ref([])
 const getPackage = async () => {
 
-  showBusForm.value = false
+  // showBusForm.value = false
   showHotelForm.value = false
   const { data } = await api().get('package/' + packageID)
   packageDetails.value = data.data
@@ -807,7 +769,7 @@ const getAgents = async () => {
   }
 }
 const hotels = ref([])
-const buses = ref([])
+// const buses = ref([])
 const countries = ref([])
 
 const getCountries = async () => {
@@ -815,10 +777,10 @@ const getCountries = async () => {
   countries.value = data.data.reverse()
 }
 
-const getBusRoutes = async () => {
-  const { data } = await api().get('package-transport-vendors')
-  buses.value = data.data
-}
+// const getBusRoutes = async () => {
+//   const { data } = await api().get('package-transport-vendors')
+//   buses.value = data.data
+// }
 const getHotels = async () => {
   const { data } = await api().get('hotels')
   hotels.value = data.data
@@ -830,13 +792,15 @@ const saveFligt = async () => {
   })
   getPackage()
 }
-const saveBus = async () => {
-  const data = await api().post('package-transports', {
-    package_id: packageDetails.value.id,
-    bus_route_id: busData.value.busRoute
-  })
-  getPackage()
-}
+
+// const saveBus = async () => {
+//   const data = await api().post('package-transports', {
+//     package_id: packageDetails.value.id,
+//     bus_route_id: busData.value.busRoute
+//   })
+//   getPackage()
+// }
+
 const addHotelData = async () => {
   hotelData.value.package_id = packageDetails.value.id
   console.log(hotelData.value)
@@ -881,7 +845,7 @@ onMounted(() => {
   getPackage()
   getAgents()
   getImams()
-  getBusRoutes()
+  // getBusRoutes()
   getHotels()
   getCountries()
 })

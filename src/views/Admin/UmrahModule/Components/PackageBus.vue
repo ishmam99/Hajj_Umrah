@@ -1,5 +1,5 @@
 <template>
-    <div v-if="currentTab == 'bus'" class="bg-white border-x-2 border-teal-700 border-b-2">
+    <div class="bg-white border-x-2 border-teal-700 border-b-2">
         <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
           Approve Package Buses
         </h1>
@@ -7,12 +7,15 @@
           <button @click="showBusForm = !showBusForm" class="btn btn-success text-white">
             Add New Bus Details
           </button>
+          <button v-if="showBusForm" @click="showBusForm = !showBusForm" class="btn bg-red-500 hover:bg-red-600 text-white">
+        Cancel
+      </button>
         </div>
         <div>
           <div class="px-10" v-if="showBusForm">
             <form class="space-y-4" @submit.prevent="saveBus">
               <div class="flex items-center justify-between">
-                <label for="busOperator" class="w-1/3">Bus Operator:</label>
+                <label for="busOperator" class="w-1/3">Bus Provider:</label>
                 <select
                   id="busOperator"
                   v-model="busData.busOperator"
@@ -141,24 +144,61 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
+import { onMounted, ref } from 'vue';
 
-const route = useRoute()
+const props = defineProps({
+  packageDetails: Object,
+  package_flights: Array
+});
+
+const emit = defineEmits('getPackage')
 
 const buses = ref([])
+const countries = ref([])
 
 const packageDetails = ref()
 const applying = ref(false)
 
-const package_transportations = ref([])
-const currentTab = ref('date')
-
 const showBusForm = ref(false)
+
+const package_transportations = ref([])
+
 const busData = ref({
   busOperator: null,
   busRoute: null,
   package_id: null
 })
+
+const getCountries = async () => {
+  const { data } = await api().get('country')
+  countries.value = data.data.reverse()
+}
+
+const saveBus = async () => {
+  const data = await api().post('package-transports', {
+    package_id: packageDetails.value.id,
+    bus_route_id: busData.value.busRoute
+  })
+  emit('getPackage')
+}
+
+
+const getPackage = async () => {
+
+showBusForm.value = false
+// showHotelForm.value = false
+const { data } = await api().get('package/' + packageID)
+packageDetails.value = data.data
+// package_flights.value = data.package_flights
+// package_hotels.value = data.package_hotels
+package_transportations.value = data.package_transportations
+updating.value = false
+applying.value = false
+}
+
+
+
+
 
 const getBusRoutes = async () => {
   const { data } = await api().get('package-transport-vendors')
@@ -174,7 +214,7 @@ const updatePackageStatus = async () => {
       packageDetails.value.package_status
     )
     if (data) {
-      getPackage()
+      emit('getPackage')
     }
   } catch (error) {
     console.log(error)
@@ -183,6 +223,7 @@ const updatePackageStatus = async () => {
 
 onMounted(() => {
   getBusRoutes()
+  getCountries()
 })
 
 </script>

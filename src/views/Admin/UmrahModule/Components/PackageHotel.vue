@@ -1,5 +1,5 @@
 <template>
-    <div v-if="currentTab == 'hotel'" class="bg-white border-x-2 border-teal-700 border-b-2">
+    <div class="bg-white border-x-2 border-teal-700 border-b-2">
         <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
           Approve Package Hotels
         </h1>
@@ -7,6 +7,9 @@
           <button @click="showHotelForm = !showHotelForm" class="btn btn-success text-white">
             Add New Hotel Details
           </button>
+          <button v-if="showHotelForm" @click="showHotelForm = !showHotelForm" class="btn bg-red-500 hover:bg-red-600 text-white">
+        Cancel
+      </button>
         </div>
         <div class="px-10 py-5">
           <form @submit.prevent="addHotelData" v-if="showHotelForm" class="px-2 py-3 bg-gray-200 rounded-md">
@@ -147,13 +150,35 @@
 </template>
 
 <script setup>
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 const hotels = ref([])
+const countries = ref([])
+
+const packageDetails = ref()
+const applying = ref(false)
+
+const getCountries = async () => {
+  const { data } = await api().get('country')
+  countries.value = data.data.reverse()
+}
 
 const currentTab = ref('date')
 const showHotelForm = ref(false)
 const package_hotels = ref([])
-const packageDetails = ref()
+
+const hotelData = ref({
+  checkin_date: null,
+  checkout_date: null,
+  hotel_id: null,
+  package_id: null,
+  two_bed: null,
+  three_bed: null,
+  four_bed: null
+})
+
 
 const addHotelData = async () => {
   hotelData.value.package_id = packageDetails.value.id
@@ -168,32 +193,30 @@ showBusForm.value = false
 showHotelForm.value = false
 const { data } = await api().get('package/' + packageID)
 packageDetails.value = data.data
-package_flights.value = data.package_flights
+// package_flights.value = data.package_flights
 package_hotels.value = data.package_hotels
-package_transportations.value = data.package_transportations
-updating.value = false
+// package_transportations.value = data.package_transportations
+// updating.value = false
 applying.value = false
 }
 
-const saveFligt = async () => {
-  const data = await api().post('package-flights', {
-    package_id: packageDetails.value.id,
-    airroute_id: flightData.value.airroute_id
-  })
-  getPackage()
+const getHotels = async () => {
+  const { data } = await api().get('hotels')
+  hotels.value = data.data
 }
 
-const hotelData = ref({
-  checkin_date: null,
-  checkout_date: null,
-  hotel_id: null,
-  package_id: null,
-  two_bed: null,
-  three_bed: null,
-  four_bed: null
-})
+// const saveFligt = async () => {
+//   const data = await api().post('package-flights', {
+//     package_id: packageDetails.value.id,
+//     airroute_id: flightData.value.airroute_id
+//   })
+//   getPackage()
+// }
+
 
 onMounted(() => {
+  getCountries()
+    getHotels()
     getPackage()
 })
 </script>
