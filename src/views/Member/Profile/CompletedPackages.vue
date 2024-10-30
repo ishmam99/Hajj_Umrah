@@ -52,6 +52,9 @@
 </template>
 <script setup>
 import { packages } from '@/stores/itinenary.ts'
+import { onMounted, ref } from 'vue';
+
+const completedPackages = ref([]);
 
 const deletePackage = (packageId) => {
   alert(`Package ${packageId} deleted!`)
@@ -66,6 +69,20 @@ const deletePackage = (packageId) => {
   { id: 7, name: 'Published' },
   { id: 8, name: 'Discontinued' }
 ]
+
+const getCompletedPackage = () => {
+  try{
+    const {data} = api().get('Completed Package List')
+    completedPackages.value = data
+  }
+  catch(error){
+    console.error(error)
+  }
+}
+
+onMounted = () => {
+  getCompletedPackage()
+}
 </script>
 
 <style scoped>
