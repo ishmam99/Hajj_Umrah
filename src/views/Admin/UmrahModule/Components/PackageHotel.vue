@@ -171,7 +171,7 @@ const getHotels = async () => {
 
 
 const showHotelForm = ref(false)
-const package_hotels = ref([])
+const package_hotels = ref(props.package_hotels)
 
 const hotelData = ref({
   checkin_date: null,

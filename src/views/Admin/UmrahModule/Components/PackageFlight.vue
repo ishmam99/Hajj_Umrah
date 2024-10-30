@@ -240,7 +240,7 @@
             Apply
           </button>
         </div>
-
+        
       </div>
     </div>
   </div>
