@@ -1,5 +1,5 @@
 <template>
-    <div v-if="currentTab == 'hotel'" class="bg-white border-x-2 border-teal-700 border-b-2">
+    <div class="bg-white border-x-2 border-teal-700 border-b-2">
         <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
           Approve Package Hotels
         </h1>
@@ -7,6 +7,9 @@
           <button @click="showHotelForm = !showHotelForm" class="btn btn-success text-white">
             Add New Hotel Details
           </button>
+          <button v-if="showHotelForm" @click="showHotelForm = !showHotelForm" class="btn bg-red-500 hover:bg-red-600 text-white">
+        Cancel
+      </button>
         </div>
         <div class="px-10 py-5">
           <form @submit.prevent="addHotelData" v-if="showHotelForm" class="px-2 py-3 bg-gray-200 rounded-md">
@@ -147,41 +150,28 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue';
+
+const props = defineProps({
+  packageDetails: Object,
+  package_hotels: Array
+});
+
+const emit = defineEmits('getPackage')
 
 const hotels = ref([])
 
-const currentTab = ref('date')
+const packageDetails = ref()
+const applying = ref(false)
+
+const getHotels = async () => {
+  const { data } = await api().get('hotels')
+  hotels.value = data.data
+}
+
+
 const showHotelForm = ref(false)
 const package_hotels = ref([])
-const packageDetails = ref()
-
-const addHotelData = async () => {
-  hotelData.value.package_id = packageDetails.value.id
-  console.log(hotelData.value)
-  const data = await api().post('package-hotels', hotelData.value)
-  getPackage()
-}
-
-const getPackage = async () => {
-
-showBusForm.value = false
-showHotelForm.value = false
-const { data } = await api().get('package/' + packageID)
-packageDetails.value = data.data
-package_flights.value = data.package_flights
-package_hotels.value = data.package_hotels
-package_transportations.value = data.package_transportations
-updating.value = false
-applying.value = false
-}
-
-const saveFligt = async () => {
-  const data = await api().post('package-flights', {
-    package_id: packageDetails.value.id,
-    airroute_id: flightData.value.airroute_id
-  })
-  getPackage()
-}
 
 const hotelData = ref({
   checkin_date: null,
@@ -193,7 +183,46 @@ const hotelData = ref({
   four_bed: null
 })
 
+
+const addHotelData = async () => {
+  hotelData.value.package_id = packageDetails.value.id
+  console.log(hotelData.value)
+  const data = await api().post('package-hotels', hotelData.value)
+  emit('getPackage')
+}
+
+const getPackage = async () => {
+
+const { data } = await api().get('package/' + packageID)
+packageDetails.value = data.data
+// package_flights.value = data.package_flights
+package_hotels.value = data.package_hotels
+// package_transportations.value = data.package_transportations
+// updating.value = false
+applying.value = false
+}
+
+const updatePackageStatus = async () => {
+  try {
+    applying.value = true
+    packageDetails.value.package_status._method = 'PUT'
+    const data = await api().post(
+      'package-status-update/' + packageDetails.value.package_status.id,
+      packageDetails.value.package_status
+    )
+    if (data) {
+      emit('getPackage')
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
 onMounted(() => {
-    getPackage()
+    getHotels()
 })
 </script>
+
+<style lang="scss" scoped></style>
