@@ -15,12 +15,12 @@
     <div>
 
       <div class="px-10" v-if="showAirForm">
-        <form class="space-y-4" @submit.prevent="saveFlightData()">
+        <form class="space-y-4" @submit.prevent="getFlightRoutes()">
           <div class="flex w-full gap-4">
             <!-- Airline Selection -->
             <div class="flex flex-col items-center space-y-2 justify-start w-1/2">
               <label for="airline" class="w-full">Airline : </label>
-              <select id="airline" v-model="selectedAirline" class="select select-bordered w-full">
+              <select id="airline" v-model="selectedAirline" required class="select select-bordered w-full">
                 <option disabled selected>Select Airline</option>
                 <option v-for="airline in airlines" :key="airline.id" :value="airline">
                   {{ airline.name }}
@@ -31,7 +31,7 @@
             <!-- Origin City Selection -->
             <div class="flex flex-col items-center space-y-2 justify-start w-1/2">
               <label for="origin_city text-start font-semibold" class="w-full">Origin Country :</label>
-              <select id="origin_country" v-model="selectedOriginCountry" class="select select-bordered w-full">
+              <select id="origin_country" v-model="selectedOriginCountry" required class="select select-bordered w-full">
                 <option disabled selected>Select Origin Country</option>
                 <option v-for="country in countries" :key="country.id" :value="country">
                   {{ country.name }}
@@ -40,7 +40,7 @@
             </div>
             <div class="flex flex-col items-center space-y-2 justify-start w-1/2">
               <label for="origin_city" class="w-full">Origin City:</label>
-              <select id="origin_city" v-model="selectedOriginCity" class="select select-bordered w-full">
+              <select id="origin_city" v-model="selectedOriginCity" required class="select select-bordered w-full">
                 <option disabled selected>Select Origin City</option>
                 <option v-if="selectedOriginCountry" v-for="city in selectedOriginCountry.cities" :key="city.id"
                   :value="city">
@@ -50,7 +50,7 @@
             </div>
             <div class="flex flex-col items-center space-y-2 justify-start w-1/2">
               <label for="origin_city" class="w-full">Origin Airport:</label>
-              <select id="origin_city" v-model="selectedOriginAirport" class="select select-bordered w-full">
+              <select id="origin_city" v-model="selectedOriginAirport" required class="select select-bordered w-full">
                 <option disabled selected>Select Origin Airport</option>
                 <option v-if="selectedOriginCity" v-for="airport in selectedOriginCity.airports" :key="airport.id"
                   :value="airport">
@@ -64,7 +64,7 @@
           <div class="flex w-full gap-4">
             <div class="flex flex-col items-center space-y-2 justify-start w-1/2">
               <label for="origin_city text-start font-semibold" class="w-full">Destination Country :</label>
-              <select id="destination_country" v-model="selectedDestinationCountry"
+              <select id="destination_country" v-model="selectedDestinationCountry" required
                 class="select select-bordered w-full">
                 <option disabled selected>Select Destination Country</option>
                 <option v-for="country in countries" :key="country.id" :value="country">
@@ -74,7 +74,7 @@
             </div>
             <div class="flex flex-col items-center space-y-2 justify-start w-1/2">
               <label for="origin_city" class="w-full">Destination City:</label>
-              <select id="origin_city" v-model="selectedDestinationCity" class="select select-bordered w-full">
+              <select id="origin_city" v-model="selectedDestinationCity" required class="select select-bordered w-full">
                 <option disabled selected>Select Destination City</option>
                 <option v-if="selectedDestinationCountry" v-for="city in selectedDestinationCountry.cities"
                   :key="city.id" :value="city">
@@ -84,7 +84,7 @@
             </div>
             <div class="flex flex-col items-center space-y-2 justify-start w-1/2">
               <label for="origin_city" class="w-full">Destination Airport:</label>
-              <select id="destination_airport" v-model="selectedDestinationAirport"
+              <select id="destination_airport" v-model="selectedDestinationAirport" required
                 class="select select-bordered w-full">
                 <option disabled selected>Select Destination Airport</option>
                 <option v-if="selectedDestinationCity" v-for="airport in selectedDestinationCity.airports"
@@ -104,8 +104,9 @@
 
           <!-- Save Button -->
           <div class="flex justify-center items-center mt-4">
-            <button type="button" @click="getFlightRoutes()" class="btn btn-success text-white">Get Flight</button>
+            <button type="submit"  class="btn btn-success text-white">Get Flight</button>
           </div>
+          </form>
           <div v-if="showAvailableList">
             <h1 class="text-center text-2xl border-b-2 border-gray-400" v-if="filteredRoutes.length == 0">No Available
               Flights Found</h1>
@@ -133,7 +134,7 @@
                       <h1 class="font-semibold text-lg">
                         {{ flight.origin_airport.short_name }}
                       </h1>
-                      <h1 class="font-semibold text-xl">{{ flight.arrival_time }}</h1>
+                      <h1 class="font-semibold text-xl">{{ flight.departure_time }}</h1>
 
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"
@@ -147,7 +148,7 @@
                       <h1 class="font-semibold text-lg">
                         {{ flight.destination_airport.short_name }}
                       </h1>
-                      <h1 class="font-semibold text-xl">{{ flight.departure_time }}</h1>
+                      <h1 class="font-semibold text-xl">{{ flight.arrival_time }}</h1>
 
                     </div>
                   </div>
@@ -155,10 +156,10 @@
 
                   <p class="font-bold text-sm">{{ flight.arrival_date }}</p>
                   <p class="font-bold text-sm">{{ flight.departure_date }}</p>
-                  <button type="submit" @click="selectedFlight = flight.id" class="btn btn-success text-white"
-                    :disabled="savingFlight">
+                  <button type="submit" @click="saveFlightData(flight.id)" class="btn btn-success text-white"
+                    :disabled="savingFlight == flight.id">
 
-                    <svg v-if="savingFlight" class="animate-spin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    <svg v-if="savingFlight == flight.id" class="animate-spin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                       width="18" height="18" fill="currentColor">
                       <path
                         d="M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z">
@@ -170,7 +171,7 @@
               </div>
             </div>
           </div>
-        </form>
+        
       </div>
 
 
@@ -247,7 +248,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, defineProps } from 'vue';
+import { onMounted, ref, defineProps ,defineEmits} from 'vue';
 import Swal from 'sweetalert2';
 
 // import moment from 'moment';
@@ -259,7 +260,7 @@ const props = defineProps({
   countries: Array,
   package_flights: Array
 });
-const emit = defineEmits('getPackage')
+const emit = defineEmits(['getPackage'])
 const showAvailableList = ref(false)
 const countries = props.countries
 const packageDetails = props.packageDetails
@@ -285,12 +286,12 @@ const getAirlineRoutes = async () => {
   const { data } = await api().get('airroute')
   airLinerRoutes.value = data.data
 }
-const saveFlightData = async () => {
-  savingFlight.value = true
+const saveFlightData = async (id) => {
+  savingFlight.value = id
   try {
-    await api().post('package-flights', {
-      package_id: packageDetails.value.id,
-      airroute_id: selectedFlight.value
+   const data = await api().post('package-flights', {
+      package_id: packageDetails.id,
+      airroute_id: id
     });
     emit('getPackage')
     if (data) {
@@ -301,6 +302,7 @@ const saveFlightData = async () => {
       });
     }
   } catch (error) {
+    console.log(error)
     Swal.fire({
       icon: "error",
       title: "Saving Flight Data Failed",
@@ -308,7 +310,7 @@ const saveFlightData = async () => {
     });
   }
 
-  savingFlight.value = false
+  savingFlight.value = null
 };
 
 const getFlightRoutes = () => {

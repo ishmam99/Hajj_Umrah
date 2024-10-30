@@ -146,14 +146,14 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref,defineEmits } from 'vue';
 
 const props = defineProps({
   packageDetails: Object,
   package_transportations: Array
 });
 
-const emit = defineEmits('getPackage')
+const emit = defineEmits(['getPackage'])
 
 const buses = ref([])
 const countries = ref([])
