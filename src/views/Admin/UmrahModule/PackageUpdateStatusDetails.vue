@@ -441,7 +441,7 @@
       <PackageBus v-if="currentTab == 'bus'" @getPackage="getPackage()" 
         :packageDetails="packageDetails" :package_transportations="package_transportations" />
       
-      <div v-if="currentTab == 'hotel'" class="bg-white border-x-2 border-teal-700 border-b-2">
+      <!-- <div v-if="currentTab == 'hotel'" class="bg-white border-x-2 border-teal-700 border-b-2">
         <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
           Approve Package Hotels
         </h1>
@@ -525,7 +525,6 @@
               </thead>
               <tbody>
                 <tr v-for="hotel in package_hotels" :key="hotel.id">
-                  <!-- {{ hotel }} -->
                   <td>{{ hotel.hotel.name }}</td>
                   <td>{{ hotel.hotel.city.name }}</td>
                   <td>{{ hotel.checkin_date }}</td>
@@ -569,23 +568,13 @@
                 Apply
               </button>
             </div>
-            <!-- <div
-              class="flex justify-start gap-5 items-center w-full py-2 px-5"
-              v-if="packageDetails"
-            >
-              <div class="justify-between items-center w-full flex">
-                <label class="label px-5 w-full"> Note : </label>
-                <input
-                  v-model="packageDetails.package_status.hotel_note"
-                  type="text"
-                  placeholder="Add a note"
-                  class="input input-bordered w-full input-sm"
-                />
-              </div>
-            </div> -->
           </div>
         </div>
-      </div>
+      </div> -->
+      
+      <PackageHotel v-if="currentTab == 'hotel'" @getPackage="getPackage()"
+        :packageDetails="packageDetails" :package_hotels="package_hotels" />
+      
       <div v-if="currentTab == 'fr'" class="bg-white border-x-2 border-teal-700 border-b-2">
         <h1 class="text-2xl py-3 font-semibold flex w-full items-center justify-center">
           Approve Umrah Package Final Review
@@ -675,6 +664,7 @@ import Swal from 'sweetalert2'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import PackageBus from './Components/PackageBus.vue'
+import PackageHotel from './Components/PackageHotel.vue'
 const currentTab = ref('date')
 const route = useRoute()
 const packageID = route.params.id

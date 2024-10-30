@@ -150,22 +150,26 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
+import { onMounted, ref } from 'vue';
 
-const route = useRoute()
+const props = defineProps({
+  packageDetails: Object,
+  package_hotels: Array
+});
+
+const emit = defineEmits('getPackage')
 
 const hotels = ref([])
-const countries = ref([])
 
 const packageDetails = ref()
 const applying = ref(false)
 
-const getCountries = async () => {
-  const { data } = await api().get('country')
-  countries.value = data.data.reverse()
+const getHotels = async () => {
+  const { data } = await api().get('hotels')
+  hotels.value = data.data
 }
 
-const currentTab = ref('date')
+
 const showHotelForm = ref(false)
 const package_hotels = ref([])
 
@@ -184,13 +188,11 @@ const addHotelData = async () => {
   hotelData.value.package_id = packageDetails.value.id
   console.log(hotelData.value)
   const data = await api().post('package-hotels', hotelData.value)
-  getPackage()
+  emit('getPackage')
 }
 
 const getPackage = async () => {
 
-showBusForm.value = false
-showHotelForm.value = false
 const { data } = await api().get('package/' + packageID)
 packageDetails.value = data.data
 // package_flights.value = data.package_flights
@@ -200,23 +202,27 @@ package_hotels.value = data.package_hotels
 applying.value = false
 }
 
-const getHotels = async () => {
-  const { data } = await api().get('hotels')
-  hotels.value = data.data
+const updatePackageStatus = async () => {
+  try {
+    applying.value = true
+    packageDetails.value.package_status._method = 'PUT'
+    const data = await api().post(
+      'package-status-update/' + packageDetails.value.package_status.id,
+      packageDetails.value.package_status
+    )
+    if (data) {
+      emit('getPackage')
+    }
+  } catch (error) {
+    console.log(error)
+  }
 }
 
-// const saveFligt = async () => {
-//   const data = await api().post('package-flights', {
-//     package_id: packageDetails.value.id,
-//     airroute_id: flightData.value.airroute_id
-//   })
-//   getPackage()
-// }
 
 
 onMounted(() => {
-  getCountries()
     getHotels()
-    getPackage()
 })
 </script>
+
+<style lang="scss" scoped></style>
