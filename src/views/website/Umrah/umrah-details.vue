@@ -33,7 +33,8 @@
         </div>
         <div class="bg-teal-600 text-white p-6 shadow-md rounded-lg">
           <h3 class="text-xl font-semibold">Price</h3>
-          <p>${{ packageDetails?.price }} per person</p>
+          <p>${{ parseInt( packageDetails?.price) }} / ${{ parseInt( packageDetails?.price)+150 }} / ${{ parseInt( packageDetails?.price)+300 }} per person</p>
+         
         </div>
       </div>
       <button class="mt-8 px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded">
@@ -94,31 +95,109 @@
           <thead class="bg-gray-200">
             <tr class="py-3 px-2 bg-sky-600 text-white">
               <th class="text-center py-2 px-4 border-e-2 border-white">Umrah Package Name</th>
-              <th class="text-center py-2 px-4 border-e-2 border-white">Select Section</th>
+              <th class="text-center py-2 px-4 border-e-2 border-white">Select Room</th>
+              <th class="text-center py-2 px-4 border-e-2 border-white">Price</th>
+              <th class="text-center py-2 px-4 border-e-2 border-white">Discount</th>
               <th class="text-center py-2 px-4 border-e-2 border-white">Get Pricing</th>
               <!-- <th class="text-left py-2 px-4">Services</th> -->
             </tr>
           </thead>
+          {{ no_of_p }}
           <tbody>
             <tr class="border-b-2 border-white">
               <td class="py-2 px-4 text-xl font-semibold text-center border-x-2 border-white">{{ packageDetails?.package_title }}</td>
               <td class="py-2 px-4 border-e-2 font-bold text-center border-white">Double </td>
+              <td class="py-2 px-4 border-e-2 font-bold text-center border-white">$3300 </td>
+              <td class="py-2 px-4 border-e-2 font-bold text-center border-white">
+                <div class="flex justify-between gap-2 items-center">
+                   <p class="w-full text-nowrap">
+                  Select Number of Persons:
+                </p>
+                
+                    <select name="" v-model="no_of_p" class="p-2 rounded-sm w-full" id="">
+                       <option value="" selected disabled>Select</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                    </select>
+                </div>
+                <div class="flex items-center justify-between gap-2 py-2 border-t-white border-t-2 mt-1">
+                  <p class=" py-1 rounded-md">Enter Promocode  </p>
+                  <input v-model="promo1" type="text" class="bg-white p-2 w-1/2 rounded-md" placeholder="Enter Promo">
+                 
+                </div>
+               
+              </td>
               <td class="py-2 px-4 border-e-2 border-white text-center">
-              <button @click="selected = 'double'" :class="selected == 'double'?'btn-info':'btn-success'" class="btn  text-white">{{ selected == 'double' ?'Selected': 'Select' }}</button>
+              <button @click="getPrice('double')" :class="selected == 'double'?'btn-info':'btn-success'" class="btn  text-white">{{ selected == 'double' ?'Selected': 'Select' }}</button>
               </td>
               <!-- <td class="py-2 px-4">{{ packaged.services.join(', ') }}</td> -->
             </tr>
             <tr class="border-b-2 border-white">
               <td class="py-2 px-4 text-xl font-semibold text-center border-x-2 border-white">{{ packageDetails?.package_title }}</td>
               <td class="py-2 px-4 border-e-2 font-bold text-center border-white">Triple </td>
+               <td class="py-2 px-4 border-e-2 font-bold text-center border-white">${{parseInt( packageDetails?.price)+150 }}  </td>
+                <td class="py-2 px-4 border-e-2 font-bold text-center border-white">
+                <div class="flex justify-between gap-2 items-center">
+                   <p class="w-full text-nowrap">
+                  Select Number of Persons:
+                </p>
+                
+                    <select name="" v-model="no_of_p" class="p-2 rounded-sm w-full" id="">
+                       <option value="" selected disabled>Select</option>
+                    <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                    </select>
+                </div>
+                <div class="flex items-center justify-between gap-2 py-2 border-t-white border-t-2 mt-1">
+                  <p class=" py-1 rounded-md">Enter Promocode  </p>
+                  <input v-model="promo2" type="text" class="bg-white p-2 w-1/2 rounded-md" placeholder="Enter Promo" />
+                 
+                </div>
+               
+              </td>
                 <td class="py-2 px-4 border-e-2 border-white text-center">
-               <button @click="selected = 'triple'" :class="selected == 'triple'?'btn-info':'btn-success'" class="btn  text-white">{{ selected == 'triple' ?'Selected': 'Select' }}</button></td>
+               <button @click="getPrice('triple')" :class="selected == 'triple'?'btn-info':'btn-success'" class="btn  text-white">{{ selected == 'triple' ?'Selected': 'Select' }}</button></td>
             </tr>
             <tr class="border-b-2 border-white">
               <td class="py-2 px-4 text-xl font-semibold text-center border-x-2 border-white">{{ packageDetails?.package_title }}</td>
               <td class="py-2 px-4 border-e-2 font-bold text-center border-white">Quad </td>
+               <td class="py-2 px-4 border-e-2 font-bold text-center border-white">${{parseInt( packageDetails?.price) }} </td>
+                <td class="py-2 px-4 border-e-2 font-bold text-center border-white">
+                <div class="flex justify-between gap-2 items-center">
+                   <p class="w-full text-nowrap">
+                  Select Number of Persons:
+                </p>
+                
+                    <select name="" v-model="no_of_p" class="p-2 rounded-sm w-full" id="">
+                       <option value="" selected disabled>Select</option>
+                     <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                    </select>
+                </div>
+                <div class="flex items-center justify-between gap-2 py-2 border-t-white border-t-2 mt-1">
+                  <p class=" py-1 rounded-md">Enter Promocode  </p>
+                  <input v-model="promo3" type="text" class="bg-white p-2 w-1/2 rounded-md" placeholder="Enter Promo">
+                 
+                </div>
+               
+              </td>
                 <td class="py-2 px-4 border-e-2 border-white text-center">
-                <button @click="selected = 'quad'" :class="selected == 'quad'?'btn-info':'btn-success'" class="btn  text-white">{{ selected == 'quad' ?'Selected': 'Select' }}</button></td>
+                <button @click="getPrice('quad')" :class="selected == 'quad'?'btn-info':'btn-success'" class="btn  text-white">{{ selected == 'quad' ?'Selected': 'Select' }}</button></td>
             </tr>
           </tbody>
         </table>
@@ -144,25 +223,26 @@
           <p class="text-lg flex justify-center items-center font-semibold">Pricing:</p>
           <div class="text-lg flex justify-center items-center font-semibold"> <div class="w-1/2">
             <div class="flex justify-between items-center">
-              <h1 class="text-md font-medium">Total:</h1>
-              <h1 class="text-md font-medium">${{ selected === 'triple' ? parseFloat(packageDetails.price) + 50 : selected === 'quad' ? parseFloat(packageDetails.price) + 100 : parseFloat(packageDetails.price) }}</h1>
+              <h1 class="text-md font-medium">Package Price:</h1>
+              <h1 class="text-md font-medium">${{ selected === 'triple' ? 3150 : selected === 'quad' ? 3000 : 3300 }} X {{ no_of_p }}</h1>
             </div>
             <div class="flex justify-between items-center">
-              <h1 class="text-md font-medium">Tax:</h1>
-              <h1 class="text-md font-medium">$100</h1>
+              <h1 class="text-md font-medium">Total:</h1>
+              <h1 class="text-md font-medium">${{ selected === 'triple' ? 3150*no_of_p : selected === 'quad' ? 3000*no_of_p : 3300*no_of_p }}</h1>
             </div>
+          
              <div class="flex justify-between items-center">
               <h1 class="text-md font-medium">Discount:</h1>
-              <h1 class="text-md font-medium">$50</h1>
+              <h1 class="text-md font-medium">${{ discount }}</h1>
             </div>
             <hr class="text-2xl font-bold border-2 border-blue-700">
             <div class="flex justify-between items-center">
               <h1 class="text-md font-medium">Sub Total:</h1>
-              <h1 class="text-md font-medium">${{ selected === 'triple' ? parseFloat(packageDetails.price) + 150 : selected === 'quad' ? parseFloat(packageDetails.price) + 200 : parseFloat(packageDetails.price) + 100 }}</h1>
+              <h1 class="text-md font-medium">${{(parseInt(packageDetails.price)*no_of_p)-discount}}</h1>
             </div>
           </div></div>
            <div class="text-center flex items-center justify-center">
-        <button @click="getSession(packageDetails.price)" class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white flex items-center gap-4 font-semibold rounded" :disabled="pending">
+        <button @click="(parseInt(packageDetails.price)*no_of_p)-discount" class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white flex items-center gap-4 font-semibold rounded" :disabled="pending">
          
           <svg v-if="pending" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="animate-spin" width="18" height="18" fill="currentColor"><path d="M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z"></path></svg>
         
@@ -226,6 +306,28 @@ const svgContent = `
 //         steps: []
 //     }
 // )
+const no_of_p = ref(1)
+const promo1 = ref()
+const promo2 = ref()
+const promo3 = ref()
+const discount = ref(0)
+const getPrice = (type) => {
+  selected.value = type
+  if (type == 'quad' && promo3)
+  {
+    discount.value = 100
+  }
+  else if (type == 'triple' && promo2)
+    {
+    discount.value = 150
+  
+  }
+   else if (type == 'double' && promo1)
+    {
+    discount.value = 200
+  
+  }
+}
 const packageDetails = ref()
 const getPackage = async() => {
   const { data } = await api().get('package/'+route.params.id)

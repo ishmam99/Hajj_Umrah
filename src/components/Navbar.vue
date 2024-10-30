@@ -533,10 +533,10 @@
           </MenubarContent>
         </MenubarMenu>
         
-
+        
         <MenubarMenu v-if="authStore?.user">
           <MenubarTrigger class="px-1 font-bold">
-            <router-link :to="authStore?.currentDashboard" class="p-1 rounded-md text-lg">
+            <router-link :to="{name:authStore?.currentDashboard}" class="p-1 rounded-md text-lg">
               Dashboard
             </router-link>
           </MenubarTrigger>

@@ -56,6 +56,7 @@
             <table class="table w-full bg-gray-200">
               <thead>
                 <tr>
+                  <th>Transport Provider</th>
                   <th>Bus Number</th>
                   <th>Departure</th>
                   <th>Departure Timing</th>
@@ -66,6 +67,7 @@
               </thead>
               <tbody>
                 <tr v-for="bus in package_transportations" :key="bus.id">
+                  <td>{{ bus.bus_route.package_transport_vendor_id.name }}</td>
                   <td>{{ bus.bus_route.bus_number }}</td>
                   <td>{{ bus.bus_route.departure_from }}</td>
                   <td>{{ bus.bus_route.departure_time }}</td>
@@ -148,7 +150,7 @@ import { onMounted, ref } from 'vue';
 
 const props = defineProps({
   packageDetails: Object,
-  package_flights: Array
+  package_transportations: Array
 });
 
 const emit = defineEmits('getPackage')
@@ -156,12 +158,12 @@ const emit = defineEmits('getPackage')
 const buses = ref([])
 const countries = ref([])
 
-const packageDetails = ref()
+const packageDetails = ref(props.packageDetails)
 const applying = ref(false)
 
 const showBusForm = ref(false)
 
-const package_transportations = ref([])
+const package_transportations = ref(props.package_transportations)
 
 const busData = ref({
   busOperator: null,

@@ -839,9 +839,19 @@ const router = createRouter({
           component: () => import('../views/Vendor/MyServices/AddTransportService.vue')
         },
         {
+          path: '/vendor_show_transportService',
+          name: 'vendor_show_transportService',
+          component: () => import('../views/Vendor/MyServices/ShowTransportList.vue')
+        },
+        {
           path: '/vendor_hotel_Service',
           name: 'vendor_hotel_Service',
           component: () => import('../views/Vendor/MyServices/HotelService.vue')
+        },
+        {
+          path: '/vendor_show_hotel_Service',
+          name: 'vendor_show_hotel_Service',
+          component: () => import('../views/Vendor/MyServices/ShowHotelList.vue')
         },
         {
           path: '/ground_transport_service',
