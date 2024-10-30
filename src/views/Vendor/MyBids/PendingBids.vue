@@ -1,116 +1,121 @@
 <template>
-  <div class="px-5 bg-slate-50 py-5 w-4/5">
-    <p class="text-2xl font-bold py-3 border-b">Pending Bids</p>
-    <div class="bg-white rounded-xl p-5 w-full shadow-md mt-5">
-      <div
-       class="rounded-md px-2 py-3 mt-4 flex gap-5 justify-between bg-gray-100 shadow-md items-center"
-     >
-       <table class="table-auto w-full">
-         <thead>
-           <tr class="bg-[#219C90] text-white text-lg" >
-             <th class="p-2 text-center w-1/6">No.</th>
-             <th class="p-2 text-center w-1/6">Bid Id</th>
-             <th class="p-2 text-center w-1/6">Starting Date</th>
-             <th class="p-2 text-center w-1/6">Ending Date</th>
-             <th class="p-2 text-center w-1/6">Status</th>
-             <!-- <th class="p-2 text-center w-1/6">Action</th> -->
-           </tr>
-         </thead>
-         <tbody>
-           <tr class="">
-             <td class="py-4 p-2 w-1/6 text-center">01</td>
-             <td class="py-4 p-2 text-center w-1/6">
-              U-2027-24A-2400-1
-             </td>
-             <td class="py-4 p-2 text-center w-1/6">20 September</td>
-             <td class="py-4 p-2 text-center w-1/6">30 September</td>
-             <td class="py-4 p-2 text-center w-1/6 font-bold text-blue-800">In Prepration</td>
-             <!-- <td class="py-4 p-2 text-center w-1/6">
-              <Select class="">
-                <SelectTrigger class="w-full">
-                  <SelectValue placeholder="Select one" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select</SelectLabel>
-                    <SelectItem value="Comfort The Sick"> Active </SelectItem>
-                    <SelectItem value="Educate The Children"> Inactive </SelectItem>
-                    <SelectItem value="Shelter The Homeless"> Repeate </SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-             </td> -->
-           </tr>
-         </tbody>
-       </table>
-     </div>
-    </div>
-  </div>
-</template>
-<script setup>
-import { useAuthStore } from '@/stores/AuthStore.ts'
-import { Input } from '/components/ui/input'
-import { ref } from 'vue'
-import { useStore } from '/src/stores/store'
-import api from '@/config/api'
-import { useToast } from '/components/ui/toast/use-toast'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue
-} from '/components/ui/select'
+  <section class="w-4/5 p-10 bg-gray-100">
+    <Breadcrumb />
+    <p class="text-3xl font-bold pb-2 mb-6 text-center border-b-2 font-mono text-green-600">
+      Pending Bids
+    </p>
 
-const store = useStore()
-const authStore = useAuthStore()
-const loading = ref(false)
+    <!-- Loading Spinner -->
+    <div v-if="loading" class="text-center py-4">
+      <svg
+        class="w-8 h-8 animate-spin text-green-500 mx-auto"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 0116 0H4z"></path>
+      </svg>
+      <p class="text-gray-600 mt-2">Loading accepted bids...</p>
+    </div>
+
+    <!-- Display Bids -->
+    <div v-else>
+      <!-- Hotel Bids Section -->
+      <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+        <h2 class="text-xl font-semibold text-blue-600 mb-4">Hotels</h2>
+        <table class="min-w-full border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+          <thead class="bg-blue-600 text-white">
+            <tr>
+              <th class="px-6 py-4 border-e text-left font-semibold">Hotel Name</th>
+              <th class="px-6 py-4 border-e text-left font-semibold">Code</th>
+              <th class="px-6 py-4 border-e text-left font-semibold">Location</th>
+              <th class="px-6 py-4 border-e text-left font-semibold">Amenities</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="hotel in hotels"
+              :key="hotel.id"
+              class="bg-white border-b border-gray-200 hover:bg-gray-50 transition-colors"
+            >
+              <td class="px-6 py-4 border-e whitespace-nowrap font-medium text-gray-700">{{ hotel.name }}</td>
+              <td class="px-6 py-4 border-e text-gray-600">{{ hotel.code }}</td>
+              <td class="px-6 py-4 border-e text-gray-600">{{ hotel.country.name }}, {{ hotel.city.name }}</td>
+              <td class="px-6 py-4 border-e text-gray-600">{{ hotel.details }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p v-if="!hotels.length" class="text-center text-gray-500 py-6">No hotels available</p>
+      </div>
+
+      <!-- Ground Services Section -->
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-xl font-semibold text-green-600 mb-4">Ground Transport Services</h2>
+        <table class="min-w-full border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+          <thead class="bg-green-600 text-white">
+            <tr>
+              <th class="px-6 py-4 border-e text-left font-semibold">Service Name</th>
+              <th class="px-6 py-4 border-e text-left font-semibold">Code</th>
+              <th class="px-6 py-4 border-e text-left font-semibold">Short Name</th>
+              <th class="px-6 py-4 border-e text-left font-semibold">Vehicle Type</th>
+              <th class="px-6 py-4 border-e text-left font-semibold">Seats</th>
+              <th class="px-6 py-4 border-e text-left font-semibold">Price/Day</th>
+              <th class="px-6 py-4 border-e text-left font-semibold">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="service in transportServices"
+              :key="service.id"
+              class="bg-white border-b border-gray-200 hover:bg-gray-50 transition-colors"
+            >
+              <td class="px-6 py-4 border-e whitespace-nowrap font-medium text-gray-700">{{ service.name }}</td>
+              <td class="px-6 py-4 border-e text-gray-600">{{ service.code }}</td>
+              <td class="px-6 py-4 border-e text-gray-600">{{ service.short_name }}</td>
+              <td class="px-6 py-4 border-e text-gray-600">{{ service.type }}</td>
+              <td class="px-6 py-4 border-e text-gray-600">{{ service.number_of_seats }}</td>
+              <td class="px-6 py-4 border-e text-gray-600">${{ service.price_per_day }}</td>
+              <td class="px-6 py-4 border-e text-gray-600">{{ service.details }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p v-if="!transportServices.length" class="text-center text-gray-500 py-6">No ground services available</p>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import Breadcrumb from '/src/components/Breadcrumb.vue'
+import { useToast } from '/components/ui/toast/use-toast'
+
+const hotels = ref([])
+const transportServices = ref([])
+const loading = ref(true)
 const { toast } = useToast()
 
-const ProgramForm = ref({
-  name: '',
-  description: '',
-  address: '',
-  city: '',
-  state: '',
-  start_date: '',
-  end_date: '',
-  state_time: '',
-  end_time: '',
-  image: ''
-})
-
-const selectedFile = ref(null)
-
-function onFileChange(event) {
-  selectedFile.value = event.target.files[0]
-  ProgramForm.value.image = event.target.files[0]
-  console.log('selected image', selectedFile.value)
-}
-
-const ProgramFormApply = async () => {
-  console.log(ProgramForm)
+const fetchAcceptedBids = async () => {
   loading.value = true
   try {
-    const data = await api().post('program-store',ProgramForm.value, {
-      headers: {
-          Authorization: `Bearer ${authStore.token}`
-        }
-    })
-    toast({
-      title: 'Success',
-      description: 'Program created '
-    })
-    console.log(data)
+    const [hotelData, transportData] = await Promise.all([
+      api().get('package-hotel-vendors'),
+      api().get('package-transport-vendors')
+    ])
+    hotels.value = hotelData.data.data
+    transportServices.value = transportData.data.data
   } catch (error) {
-    console.log(error)
-    toast({
-      title: 'Error',
-      description: 'Please Try Again'
-    })
+    console.error(error)
+    toast({ title: 'Error', description: 'Failed to load accepted bids', variant: 'destructive' })
+  } finally {
+    loading.value = false
   }
-  loading.value = false
 }
+
+onMounted(fetchAcceptedBids)
 </script>
+
+<style scoped>
+/* Add any specific styling here if needed */
+</style>
