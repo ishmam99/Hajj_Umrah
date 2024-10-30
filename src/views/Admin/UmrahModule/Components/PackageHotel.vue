@@ -161,7 +161,7 @@ const emit = defineEmits('getPackage')
 
 const hotels = ref([])
 
-const packageDetails = ref()
+const packageDetails = ref(props.packageDetails)
 const applying = ref(false)
 
 const getHotels = async () => {
