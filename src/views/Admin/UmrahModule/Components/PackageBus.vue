@@ -51,7 +51,7 @@
             </form>
           </div>
         </div>
-        <div class="px-10">
+        <div class="px-10" v-if="package_transportations.length > 0">
           <div class="overflow-x-auto py-5">
             <table class="table w-full bg-gray-200">
               <thead>
@@ -67,7 +67,7 @@
               </thead>
               <tbody>
                 <tr v-for="bus in package_transportations" :key="bus.id">
-                  <td>{{ bus.bus_route.package_transport_vendor_id.name }}</td>
+                  <td>{{ bus.bus_route.package_transport_vendor.name }}</td>
                   <td>{{ bus.bus_route.bus_number }}</td>
                   <td>{{ bus.bus_route.departure_from }}</td>
                   <td>{{ bus.bus_route.departure_time }}</td>
