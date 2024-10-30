@@ -61,11 +61,18 @@
 
           <div class="flex text-sm justify-between gap-2">
             <p class="text-gray-500">Don't have an account ?</p>
-            <router-link
+            <router-link 
+            v-if="route.name == 'Vendor Login'"
+              to="/Supply_Chain/vendor_registration"
+              class="text-gray-500 font-semibold hover:text-[#0b2036] cursor-pointer"
+              >Register
+              </router-link>
+            <router-link 
+            v-else
               to="/Signup"
               class="text-gray-500 font-semibold hover:text-[#0b2036] cursor-pointer"
-              >Register</router-link
-            >
+              >Register
+              </router-link>
           </div>
         </div>
       </form>
